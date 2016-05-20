@@ -1,0 +1,883 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFD3C07D1CEF06A000FA6EFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C07C1CEF06A000FA6EFA /* main.m */; };
+		CFD3C0801CEF06A000FA6EFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C07F1CEF06A000FA6EFA /* AppDelegate.m */; };
+		CFD3C0861CEF06A000FA6EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD3C0841CEF06A000FA6EFA /* Main.storyboard */; };
+		CFD3C0881CEF06A000FA6EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD3C0871CEF06A000FA6EFA /* Assets.xcassets */; };
+		CFD3C08B1CEF06A000FA6EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD3C0891CEF06A000FA6EFA /* LaunchScreen.storyboard */; };
+		CFD3C0961CEF06A000FA6EFA /* SQLifestyleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0951CEF06A000FA6EFA /* SQLifestyleTests.m */; };
+		CFD3C0A11CEF06A100FA6EFA /* SQLifestyleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0A01CEF06A100FA6EFA /* SQLifestyleUITests.m */; };
+		CFD3C11E1CEF06D000FA6EFA /* CALayer+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0B01CEF06D000FA6EFA /* CALayer+SQExtension.m */; };
+		CFD3C11F1CEF06D000FA6EFA /* NSArray+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0B21CEF06D000FA6EFA /* NSArray+SQExtension.m */; };
+		CFD3C1201CEF06D000FA6EFA /* NSDate+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0B41CEF06D000FA6EFA /* NSDate+SQExtension.m */; };
+		CFD3C1211CEF06D000FA6EFA /* NSMutableAttributedString+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0B61CEF06D000FA6EFA /* NSMutableAttributedString+SQExtension.m */; };
+		CFD3C1221CEF06D000FA6EFA /* NSString+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0B81CEF06D000FA6EFA /* NSString+SQExtension.m */; };
+		CFD3C1231CEF06D000FA6EFA /* SQAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0BA1CEF06D000FA6EFA /* SQAddressBook.m */; };
+		CFD3C1241CEF06D000FA6EFA /* SQAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0BC1CEF06D000FA6EFA /* SQAudioTool.m */; };
+		CFD3C1251CEF06D000FA6EFA /* SQBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0BE1CEF06D000FA6EFA /* SQBadgeView.m */; };
+		CFD3C1261CEF06D000FA6EFA /* SQBundleVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0C01CEF06D000FA6EFA /* SQBundleVersionManager.m */; };
+		CFD3C1271CEF06D000FA6EFA /* SQCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0C21CEF06D000FA6EFA /* SQCircularSlider.m */; };
+		CFD3C1281CEF06D000FA6EFA /* SQCollectionViewCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0C41CEF06D000FA6EFA /* SQCollectionViewCoverFlowLayout.m */; };
+		CFD3C1291CEF06D000FA6EFA /* SQCollectionViewLoopLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0C61CEF06D000FA6EFA /* SQCollectionViewLoopLayout.m */; };
+		CFD3C12A1CEF06D000FA6EFA /* SQCollectionViewScaleFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0C81CEF06D000FA6EFA /* SQCollectionViewScaleFlowLayout.m */; };
+		CFD3C12B1CEF06D000FA6EFA /* SQCollectionViewStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0CA1CEF06D000FA6EFA /* SQCollectionViewStackLayout.m */; };
+		CFD3C12C1CEF06D000FA6EFA /* SQCollectionViewWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0CC1CEF06D000FA6EFA /* SQCollectionViewWaterFlowLayout.m */; };
+		CFD3C12D1CEF06D000FA6EFA /* SQColorfulSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0CE1CEF06D000FA6EFA /* SQColorfulSlider.m */; };
+		CFD3C12E1CEF06D000FA6EFA /* SQCombineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0D01CEF06D000FA6EFA /* SQCombineViewController.m */; };
+		CFD3C12F1CEF06D000FA6EFA /* SQCopyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0D21CEF06D000FA6EFA /* SQCopyLabel.m */; };
+		CFD3C1301CEF06D000FA6EFA /* SQCountDown_Local.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0D41CEF06D000FA6EFA /* SQCountDown_Local.m */; };
+		CFD3C1311CEF06D000FA6EFA /* SQCountDown_Server.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0D61CEF06D000FA6EFA /* SQCountDown_Server.m */; };
+		CFD3C1321CEF06D000FA6EFA /* SQDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0D81CEF06D000FA6EFA /* SQDatePicker.m */; };
+		CFD3C1331CEF06D000FA6EFA /* SQDiscPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0DA1CEF06D000FA6EFA /* SQDiscPlayerView.m */; };
+		CFD3C1341CEF06D000FA6EFA /* SQHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0DC1CEF06D000FA6EFA /* SQHeaderFooterView.m */; };
+		CFD3C1351CEF06D000FA6EFA /* SQHttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0DE1CEF06D000FA6EFA /* SQHttpConnection.m */; };
+		CFD3C1361CEF06D000FA6EFA /* SQHyperLinks.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0E01CEF06D000FA6EFA /* SQHyperLinks.m */; };
+		CFD3C1371CEF06D000FA6EFA /* SQInfiniteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0E21CEF06D000FA6EFA /* SQInfiniteCell.m */; };
+		CFD3C1381CEF06D000FA6EFA /* SQInfiniteCell_Old.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0E41CEF06D000FA6EFA /* SQInfiniteCell_Old.m */; };
+		CFD3C1391CEF06D000FA6EFA /* SQLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0E61CEF06D000FA6EFA /* SQLockView.m */; };
+		CFD3C13A1CEF06D000FA6EFA /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0E91CEF06D000FA6EFA /* SQNavigationController.m */; };
+		CFD3C13B1CEF06D000FA6EFA /* SQNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0EB1CEF06D000FA6EFA /* SQNewFeatureViewController.m */; };
+		CFD3C13C1CEF06D000FA6EFA /* SQPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0ED1CEF06D000FA6EFA /* SQPageControl.m */; };
+		CFD3C13D1CEF06D000FA6EFA /* SQPaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0EF1CEF06D000FA6EFA /* SQPaintView.m */; };
+		CFD3C13E1CEF06D000FA6EFA /* SQPolishButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0F11CEF06D000FA6EFA /* SQPolishButton.m */; };
+		CFD3C13F1CEF06D000FA6EFA /* SQPopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0F31CEF06D000FA6EFA /* SQPopButton.m */; };
+		CFD3C1401CEF06D000FA6EFA /* SQPopLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0F51CEF06D000FA6EFA /* SQPopLayerView.m */; };
+		CFD3C1411CEF06D000FA6EFA /* SQProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0F71CEF06D000FA6EFA /* SQProgressButton.m */; };
+		CFD3C1421CEF06D000FA6EFA /* SQProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0F91CEF06D000FA6EFA /* SQProgressLayer.m */; };
+		CFD3C1431CEF06D000FA6EFA /* SQRemovableBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0FB1CEF06D000FA6EFA /* SQRemovableBadgeView.m */; };
+		CFD3C1441CEF06D000FA6EFA /* SQRemovableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0FD1CEF06D000FA6EFA /* SQRemovableButton.m */; };
+		CFD3C1451CEF06D000FA6EFA /* SQScaleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C0FF1CEF06D000FA6EFA /* SQScaleImageView.m */; };
+		CFD3C1461CEF06D000FA6EFA /* SQScaleTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1011CEF06D000FA6EFA /* SQScaleTableHeaderView.m */; };
+		CFD3C1471CEF06D000FA6EFA /* SQTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1031CEF06D000FA6EFA /* SQTabBar.m */; };
+		CFD3C1481CEF06D000FA6EFA /* SQTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1051CEF06D000FA6EFA /* SQTabBarButton.m */; };
+		CFD3C1491CEF06D000FA6EFA /* SQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1071CEF06D000FA6EFA /* SQTabBarController.m */; };
+		CFD3C14A1CEF06D000FA6EFA /* SQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1091CEF06D000FA6EFA /* SQTableViewCell.m */; };
+		CFD3C14B1CEF06D000FA6EFA /* SQTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C10B1CEF06D000FA6EFA /* SQTableViewController.m */; };
+		CFD3C14C1CEF06D000FA6EFA /* SQTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C10D1CEF06D000FA6EFA /* SQTableViewRow.m */; };
+		CFD3C14D1CEF06D000FA6EFA /* SQTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C10F1CEF06D000FA6EFA /* SQTableViewSection.m */; };
+		CFD3C14E1CEF06D000FA6EFA /* SQViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1111CEF06D000FA6EFA /* SQViewControllerManager.m */; };
+		CFD3C14F1CEF06D000FA6EFA /* SQWaterwaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1131CEF06D000FA6EFA /* SQWaterwaveView.m */; };
+		CFD3C1501CEF06D000FA6EFA /* SQWheelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1151CEF06D000FA6EFA /* SQWheelButton.m */; };
+		CFD3C1511CEF06D000FA6EFA /* UIBarButtonItem+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1171CEF06D000FA6EFA /* UIBarButtonItem+SQExtension.m */; };
+		CFD3C1521CEF06D000FA6EFA /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C1191CEF06D000FA6EFA /* UIColor+SQExtension.m */; };
+		CFD3C1531CEF06D000FA6EFA /* UIImage+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C11B1CEF06D000FA6EFA /* UIImage+SQExtension.m */; };
+		CFD3C1541CEF06D000FA6EFA /* UIView+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C11D1CEF06D000FA6EFA /* UIView+SQExtension.m */; };
+		CFD3C1591CEF0BB500FA6EFA /* NewFeature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFD3C1571CEF0BB500FA6EFA /* NewFeature.jpg */; };
+		CFD3C15A1CEF0BB500FA6EFA /* NewFeature2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFD3C1581CEF0BB500FA6EFA /* NewFeature2.jpg */; };
+		CFD3C15D1CEF0BFA00FA6EFA /* SQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3C15C1CEF0BFA00FA6EFA /* SQViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFD3C0921CEF06A000FA6EFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFD3C0701CEF06A000FA6EFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFD3C0771CEF06A000FA6EFA;
+			remoteInfo = SQLifestyle;
+		};
+		CFD3C09D1CEF06A100FA6EFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFD3C0701CEF06A000FA6EFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFD3C0771CEF06A000FA6EFA;
+			remoteInfo = SQLifestyle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFD3C0781CEF06A000FA6EFA /* SQLifestyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLifestyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD3C07C1CEF06A000FA6EFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFD3C07E1CEF06A000FA6EFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CFD3C07F1CEF06A000FA6EFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CFD3C0851CEF06A000FA6EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFD3C0871CEF06A000FA6EFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFD3C08A1CEF06A000FA6EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFD3C08C1CEF06A000FA6EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD3C0911CEF06A000FA6EFA /* SQLifestyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLifestyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD3C0951CEF06A000FA6EFA /* SQLifestyleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleTests.m; sourceTree = "<group>"; };
+		CFD3C0971CEF06A100FA6EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD3C09C1CEF06A100FA6EFA /* SQLifestyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLifestyleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD3C0A01CEF06A100FA6EFA /* SQLifestyleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleUITests.m; sourceTree = "<group>"; };
+		CFD3C0A21CEF06A100FA6EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD3C0AF1CEF06D000FA6EFA /* CALayer+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C0B01CEF06D000FA6EFA /* CALayer+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C0B11CEF06D000FA6EFA /* NSArray+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C0B21CEF06D000FA6EFA /* NSArray+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C0B31CEF06D000FA6EFA /* NSDate+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C0B41CEF06D000FA6EFA /* NSDate+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C0B51CEF06D000FA6EFA /* NSMutableAttributedString+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C0B61CEF06D000FA6EFA /* NSMutableAttributedString+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C0B71CEF06D000FA6EFA /* NSString+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C0B81CEF06D000FA6EFA /* NSString+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C0B91CEF06D000FA6EFA /* SQAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQAddressBook.h; sourceTree = "<group>"; };
+		CFD3C0BA1CEF06D000FA6EFA /* SQAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQAddressBook.m; sourceTree = "<group>"; };
+		CFD3C0BB1CEF06D000FA6EFA /* SQAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQAudioTool.h; sourceTree = "<group>"; };
+		CFD3C0BC1CEF06D000FA6EFA /* SQAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQAudioTool.m; sourceTree = "<group>"; };
+		CFD3C0BD1CEF06D000FA6EFA /* SQBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQBadgeView.h; sourceTree = "<group>"; };
+		CFD3C0BE1CEF06D000FA6EFA /* SQBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQBadgeView.m; sourceTree = "<group>"; };
+		CFD3C0BF1CEF06D000FA6EFA /* SQBundleVersionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQBundleVersionManager.h; sourceTree = "<group>"; };
+		CFD3C0C01CEF06D000FA6EFA /* SQBundleVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQBundleVersionManager.m; sourceTree = "<group>"; };
+		CFD3C0C11CEF06D000FA6EFA /* SQCircularSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCircularSlider.h; sourceTree = "<group>"; };
+		CFD3C0C21CEF06D000FA6EFA /* SQCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCircularSlider.m; sourceTree = "<group>"; };
+		CFD3C0C31CEF06D000FA6EFA /* SQCollectionViewCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCollectionViewCoverFlowLayout.h; sourceTree = "<group>"; };
+		CFD3C0C41CEF06D000FA6EFA /* SQCollectionViewCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCollectionViewCoverFlowLayout.m; sourceTree = "<group>"; };
+		CFD3C0C51CEF06D000FA6EFA /* SQCollectionViewLoopLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCollectionViewLoopLayout.h; sourceTree = "<group>"; };
+		CFD3C0C61CEF06D000FA6EFA /* SQCollectionViewLoopLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCollectionViewLoopLayout.m; sourceTree = "<group>"; };
+		CFD3C0C71CEF06D000FA6EFA /* SQCollectionViewScaleFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCollectionViewScaleFlowLayout.h; sourceTree = "<group>"; };
+		CFD3C0C81CEF06D000FA6EFA /* SQCollectionViewScaleFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCollectionViewScaleFlowLayout.m; sourceTree = "<group>"; };
+		CFD3C0C91CEF06D000FA6EFA /* SQCollectionViewStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCollectionViewStackLayout.h; sourceTree = "<group>"; };
+		CFD3C0CA1CEF06D000FA6EFA /* SQCollectionViewStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCollectionViewStackLayout.m; sourceTree = "<group>"; };
+		CFD3C0CB1CEF06D000FA6EFA /* SQCollectionViewWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCollectionViewWaterFlowLayout.h; sourceTree = "<group>"; };
+		CFD3C0CC1CEF06D000FA6EFA /* SQCollectionViewWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCollectionViewWaterFlowLayout.m; sourceTree = "<group>"; };
+		CFD3C0CD1CEF06D000FA6EFA /* SQColorfulSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQColorfulSlider.h; sourceTree = "<group>"; };
+		CFD3C0CE1CEF06D000FA6EFA /* SQColorfulSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQColorfulSlider.m; sourceTree = "<group>"; };
+		CFD3C0CF1CEF06D000FA6EFA /* SQCombineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCombineViewController.h; sourceTree = "<group>"; };
+		CFD3C0D01CEF06D000FA6EFA /* SQCombineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCombineViewController.m; sourceTree = "<group>"; };
+		CFD3C0D11CEF06D000FA6EFA /* SQCopyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCopyLabel.h; sourceTree = "<group>"; };
+		CFD3C0D21CEF06D000FA6EFA /* SQCopyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCopyLabel.m; sourceTree = "<group>"; };
+		CFD3C0D31CEF06D000FA6EFA /* SQCountDown_Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCountDown_Local.h; sourceTree = "<group>"; };
+		CFD3C0D41CEF06D000FA6EFA /* SQCountDown_Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCountDown_Local.m; sourceTree = "<group>"; };
+		CFD3C0D51CEF06D000FA6EFA /* SQCountDown_Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCountDown_Server.h; sourceTree = "<group>"; };
+		CFD3C0D61CEF06D000FA6EFA /* SQCountDown_Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCountDown_Server.m; sourceTree = "<group>"; };
+		CFD3C0D71CEF06D000FA6EFA /* SQDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDatePicker.h; sourceTree = "<group>"; };
+		CFD3C0D81CEF06D000FA6EFA /* SQDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDatePicker.m; sourceTree = "<group>"; };
+		CFD3C0D91CEF06D000FA6EFA /* SQDiscPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDiscPlayerView.h; sourceTree = "<group>"; };
+		CFD3C0DA1CEF06D000FA6EFA /* SQDiscPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDiscPlayerView.m; sourceTree = "<group>"; };
+		CFD3C0DB1CEF06D000FA6EFA /* SQHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHeaderFooterView.h; sourceTree = "<group>"; };
+		CFD3C0DC1CEF06D000FA6EFA /* SQHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHeaderFooterView.m; sourceTree = "<group>"; };
+		CFD3C0DD1CEF06D000FA6EFA /* SQHttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHttpConnection.h; sourceTree = "<group>"; };
+		CFD3C0DE1CEF06D000FA6EFA /* SQHttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHttpConnection.m; sourceTree = "<group>"; };
+		CFD3C0DF1CEF06D000FA6EFA /* SQHyperLinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHyperLinks.h; sourceTree = "<group>"; };
+		CFD3C0E01CEF06D000FA6EFA /* SQHyperLinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHyperLinks.m; sourceTree = "<group>"; };
+		CFD3C0E11CEF06D000FA6EFA /* SQInfiniteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQInfiniteCell.h; sourceTree = "<group>"; };
+		CFD3C0E21CEF06D000FA6EFA /* SQInfiniteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQInfiniteCell.m; sourceTree = "<group>"; };
+		CFD3C0E31CEF06D000FA6EFA /* SQInfiniteCell_Old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQInfiniteCell_Old.h; sourceTree = "<group>"; };
+		CFD3C0E41CEF06D000FA6EFA /* SQInfiniteCell_Old.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQInfiniteCell_Old.m; sourceTree = "<group>"; };
+		CFD3C0E51CEF06D000FA6EFA /* SQLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLockView.h; sourceTree = "<group>"; };
+		CFD3C0E61CEF06D000FA6EFA /* SQLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLockView.m; sourceTree = "<group>"; };
+		CFD3C0E71CEF06D000FA6EFA /* SQMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQMacro.h; sourceTree = "<group>"; };
+		CFD3C0E81CEF06D000FA6EFA /* SQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNavigationController.h; sourceTree = "<group>"; };
+		CFD3C0E91CEF06D000FA6EFA /* SQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNavigationController.m; sourceTree = "<group>"; };
+		CFD3C0EA1CEF06D000FA6EFA /* SQNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNewFeatureViewController.h; sourceTree = "<group>"; };
+		CFD3C0EB1CEF06D000FA6EFA /* SQNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNewFeatureViewController.m; sourceTree = "<group>"; };
+		CFD3C0EC1CEF06D000FA6EFA /* SQPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQPageControl.h; sourceTree = "<group>"; };
+		CFD3C0ED1CEF06D000FA6EFA /* SQPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQPageControl.m; sourceTree = "<group>"; };
+		CFD3C0EE1CEF06D000FA6EFA /* SQPaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQPaintView.h; sourceTree = "<group>"; };
+		CFD3C0EF1CEF06D000FA6EFA /* SQPaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQPaintView.m; sourceTree = "<group>"; };
+		CFD3C0F01CEF06D000FA6EFA /* SQPolishButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQPolishButton.h; sourceTree = "<group>"; };
+		CFD3C0F11CEF06D000FA6EFA /* SQPolishButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQPolishButton.m; sourceTree = "<group>"; };
+		CFD3C0F21CEF06D000FA6EFA /* SQPopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQPopButton.h; sourceTree = "<group>"; };
+		CFD3C0F31CEF06D000FA6EFA /* SQPopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQPopButton.m; sourceTree = "<group>"; };
+		CFD3C0F41CEF06D000FA6EFA /* SQPopLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQPopLayerView.h; sourceTree = "<group>"; };
+		CFD3C0F51CEF06D000FA6EFA /* SQPopLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQPopLayerView.m; sourceTree = "<group>"; };
+		CFD3C0F61CEF06D000FA6EFA /* SQProgressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQProgressButton.h; sourceTree = "<group>"; };
+		CFD3C0F71CEF06D000FA6EFA /* SQProgressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQProgressButton.m; sourceTree = "<group>"; };
+		CFD3C0F81CEF06D000FA6EFA /* SQProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQProgressLayer.h; sourceTree = "<group>"; };
+		CFD3C0F91CEF06D000FA6EFA /* SQProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQProgressLayer.m; sourceTree = "<group>"; };
+		CFD3C0FA1CEF06D000FA6EFA /* SQRemovableBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQRemovableBadgeView.h; sourceTree = "<group>"; };
+		CFD3C0FB1CEF06D000FA6EFA /* SQRemovableBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQRemovableBadgeView.m; sourceTree = "<group>"; };
+		CFD3C0FC1CEF06D000FA6EFA /* SQRemovableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQRemovableButton.h; sourceTree = "<group>"; };
+		CFD3C0FD1CEF06D000FA6EFA /* SQRemovableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQRemovableButton.m; sourceTree = "<group>"; };
+		CFD3C0FE1CEF06D000FA6EFA /* SQScaleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQScaleImageView.h; sourceTree = "<group>"; };
+		CFD3C0FF1CEF06D000FA6EFA /* SQScaleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQScaleImageView.m; sourceTree = "<group>"; };
+		CFD3C1001CEF06D000FA6EFA /* SQScaleTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQScaleTableHeaderView.h; sourceTree = "<group>"; };
+		CFD3C1011CEF06D000FA6EFA /* SQScaleTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQScaleTableHeaderView.m; sourceTree = "<group>"; };
+		CFD3C1021CEF06D000FA6EFA /* SQTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTabBar.h; sourceTree = "<group>"; };
+		CFD3C1031CEF06D000FA6EFA /* SQTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTabBar.m; sourceTree = "<group>"; };
+		CFD3C1041CEF06D000FA6EFA /* SQTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTabBarButton.h; sourceTree = "<group>"; };
+		CFD3C1051CEF06D000FA6EFA /* SQTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTabBarButton.m; sourceTree = "<group>"; };
+		CFD3C1061CEF06D000FA6EFA /* SQTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTabBarController.h; sourceTree = "<group>"; };
+		CFD3C1071CEF06D000FA6EFA /* SQTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTabBarController.m; sourceTree = "<group>"; };
+		CFD3C1081CEF06D000FA6EFA /* SQTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTableViewCell.h; sourceTree = "<group>"; };
+		CFD3C1091CEF06D000FA6EFA /* SQTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTableViewCell.m; sourceTree = "<group>"; };
+		CFD3C10A1CEF06D000FA6EFA /* SQTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTableViewController.h; sourceTree = "<group>"; };
+		CFD3C10B1CEF06D000FA6EFA /* SQTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTableViewController.m; sourceTree = "<group>"; };
+		CFD3C10C1CEF06D000FA6EFA /* SQTableViewRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTableViewRow.h; sourceTree = "<group>"; };
+		CFD3C10D1CEF06D000FA6EFA /* SQTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTableViewRow.m; sourceTree = "<group>"; };
+		CFD3C10E1CEF06D000FA6EFA /* SQTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTableViewSection.h; sourceTree = "<group>"; };
+		CFD3C10F1CEF06D000FA6EFA /* SQTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTableViewSection.m; sourceTree = "<group>"; };
+		CFD3C1101CEF06D000FA6EFA /* SQViewControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQViewControllerManager.h; sourceTree = "<group>"; };
+		CFD3C1111CEF06D000FA6EFA /* SQViewControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQViewControllerManager.m; sourceTree = "<group>"; };
+		CFD3C1121CEF06D000FA6EFA /* SQWaterwaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQWaterwaveView.h; sourceTree = "<group>"; };
+		CFD3C1131CEF06D000FA6EFA /* SQWaterwaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQWaterwaveView.m; sourceTree = "<group>"; };
+		CFD3C1141CEF06D000FA6EFA /* SQWheelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQWheelButton.h; sourceTree = "<group>"; };
+		CFD3C1151CEF06D000FA6EFA /* SQWheelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQWheelButton.m; sourceTree = "<group>"; };
+		CFD3C1161CEF06D000FA6EFA /* UIBarButtonItem+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C1171CEF06D000FA6EFA /* UIBarButtonItem+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C1181CEF06D000FA6EFA /* UIColor+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C1191CEF06D000FA6EFA /* UIColor+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C11A1CEF06D000FA6EFA /* UIImage+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C11B1CEF06D000FA6EFA /* UIImage+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C11C1CEF06D000FA6EFA /* UIView+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQExtension.h"; sourceTree = "<group>"; };
+		CFD3C11D1CEF06D000FA6EFA /* UIView+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQExtension.m"; sourceTree = "<group>"; };
+		CFD3C1551CEF081200FA6EFA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CFD3C1571CEF0BB500FA6EFA /* NewFeature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NewFeature.jpg; sourceTree = "<group>"; };
+		CFD3C1581CEF0BB500FA6EFA /* NewFeature2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NewFeature2.jpg; sourceTree = "<group>"; };
+		CFD3C15B1CEF0BFA00FA6EFA /* SQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQViewController.h; sourceTree = "<group>"; };
+		CFD3C15C1CEF0BFA00FA6EFA /* SQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFD3C0751CEF06A000FA6EFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD3C08E1CEF06A000FA6EFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD3C0991CEF06A100FA6EFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFD3C06F1CEF06A000FA6EFA = {
+			isa = PBXGroup;
+			children = (
+				CFD3C07A1CEF06A000FA6EFA /* SQLifestyle */,
+				CFD3C0941CEF06A000FA6EFA /* SQLifestyleTests */,
+				CFD3C09F1CEF06A100FA6EFA /* SQLifestyleUITests */,
+				CFD3C0791CEF06A000FA6EFA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFD3C0791CEF06A000FA6EFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3C0781CEF06A000FA6EFA /* SQLifestyle.app */,
+				CFD3C0911CEF06A000FA6EFA /* SQLifestyleTests.xctest */,
+				CFD3C09C1CEF06A100FA6EFA /* SQLifestyleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFD3C07A1CEF06A000FA6EFA /* SQLifestyle */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3C0AE1CEF06D000FA6EFA /* SQExtension */,
+				CFD3C07B1CEF06A000FA6EFA /* Supporting Files */,
+			);
+			path = SQLifestyle;
+			sourceTree = "<group>";
+		};
+		CFD3C07B1CEF06A000FA6EFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3C07E1CEF06A000FA6EFA /* AppDelegate.h */,
+				CFD3C07F1CEF06A000FA6EFA /* AppDelegate.m */,
+				CFD3C15B1CEF0BFA00FA6EFA /* SQViewController.h */,
+				CFD3C15C1CEF0BFA00FA6EFA /* SQViewController.m */,
+				CFD3C0841CEF06A000FA6EFA /* Main.storyboard */,
+				CFD3C0871CEF06A000FA6EFA /* Assets.xcassets */,
+				CFD3C0891CEF06A000FA6EFA /* LaunchScreen.storyboard */,
+				CFD3C1551CEF081200FA6EFA /* PrefixHeader.pch */,
+				CFD3C08C1CEF06A000FA6EFA /* Info.plist */,
+				CFD3C07C1CEF06A000FA6EFA /* main.m */,
+				CFD3C1561CEF0BB500FA6EFA /* NewFeature */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFD3C0941CEF06A000FA6EFA /* SQLifestyleTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3C0951CEF06A000FA6EFA /* SQLifestyleTests.m */,
+				CFD3C0971CEF06A100FA6EFA /* Info.plist */,
+			);
+			path = SQLifestyleTests;
+			sourceTree = "<group>";
+		};
+		CFD3C09F1CEF06A100FA6EFA /* SQLifestyleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3C0A01CEF06A100FA6EFA /* SQLifestyleUITests.m */,
+				CFD3C0A21CEF06A100FA6EFA /* Info.plist */,
+			);
+			path = SQLifestyleUITests;
+			sourceTree = "<group>";
+		};
+		CFD3C0AE1CEF06D000FA6EFA /* SQExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3C0AF1CEF06D000FA6EFA /* CALayer+SQExtension.h */,
+				CFD3C0B01CEF06D000FA6EFA /* CALayer+SQExtension.m */,
+				CFD3C0B11CEF06D000FA6EFA /* NSArray+SQExtension.h */,
+				CFD3C0B21CEF06D000FA6EFA /* NSArray+SQExtension.m */,
+				CFD3C0B31CEF06D000FA6EFA /* NSDate+SQExtension.h */,
+				CFD3C0B41CEF06D000FA6EFA /* NSDate+SQExtension.m */,
+				CFD3C0B51CEF06D000FA6EFA /* NSMutableAttributedString+SQExtension.h */,
+				CFD3C0B61CEF06D000FA6EFA /* NSMutableAttributedString+SQExtension.m */,
+				CFD3C0B71CEF06D000FA6EFA /* NSString+SQExtension.h */,
+				CFD3C0B81CEF06D000FA6EFA /* NSString+SQExtension.m */,
+				CFD3C0B91CEF06D000FA6EFA /* SQAddressBook.h */,
+				CFD3C0BA1CEF06D000FA6EFA /* SQAddressBook.m */,
+				CFD3C0BB1CEF06D000FA6EFA /* SQAudioTool.h */,
+				CFD3C0BC1CEF06D000FA6EFA /* SQAudioTool.m */,
+				CFD3C0BD1CEF06D000FA6EFA /* SQBadgeView.h */,
+				CFD3C0BE1CEF06D000FA6EFA /* SQBadgeView.m */,
+				CFD3C0BF1CEF06D000FA6EFA /* SQBundleVersionManager.h */,
+				CFD3C0C01CEF06D000FA6EFA /* SQBundleVersionManager.m */,
+				CFD3C0C11CEF06D000FA6EFA /* SQCircularSlider.h */,
+				CFD3C0C21CEF06D000FA6EFA /* SQCircularSlider.m */,
+				CFD3C0C31CEF06D000FA6EFA /* SQCollectionViewCoverFlowLayout.h */,
+				CFD3C0C41CEF06D000FA6EFA /* SQCollectionViewCoverFlowLayout.m */,
+				CFD3C0C51CEF06D000FA6EFA /* SQCollectionViewLoopLayout.h */,
+				CFD3C0C61CEF06D000FA6EFA /* SQCollectionViewLoopLayout.m */,
+				CFD3C0C71CEF06D000FA6EFA /* SQCollectionViewScaleFlowLayout.h */,
+				CFD3C0C81CEF06D000FA6EFA /* SQCollectionViewScaleFlowLayout.m */,
+				CFD3C0C91CEF06D000FA6EFA /* SQCollectionViewStackLayout.h */,
+				CFD3C0CA1CEF06D000FA6EFA /* SQCollectionViewStackLayout.m */,
+				CFD3C0CB1CEF06D000FA6EFA /* SQCollectionViewWaterFlowLayout.h */,
+				CFD3C0CC1CEF06D000FA6EFA /* SQCollectionViewWaterFlowLayout.m */,
+				CFD3C0CD1CEF06D000FA6EFA /* SQColorfulSlider.h */,
+				CFD3C0CE1CEF06D000FA6EFA /* SQColorfulSlider.m */,
+				CFD3C0CF1CEF06D000FA6EFA /* SQCombineViewController.h */,
+				CFD3C0D01CEF06D000FA6EFA /* SQCombineViewController.m */,
+				CFD3C0D11CEF06D000FA6EFA /* SQCopyLabel.h */,
+				CFD3C0D21CEF06D000FA6EFA /* SQCopyLabel.m */,
+				CFD3C0D31CEF06D000FA6EFA /* SQCountDown_Local.h */,
+				CFD3C0D41CEF06D000FA6EFA /* SQCountDown_Local.m */,
+				CFD3C0D51CEF06D000FA6EFA /* SQCountDown_Server.h */,
+				CFD3C0D61CEF06D000FA6EFA /* SQCountDown_Server.m */,
+				CFD3C0D71CEF06D000FA6EFA /* SQDatePicker.h */,
+				CFD3C0D81CEF06D000FA6EFA /* SQDatePicker.m */,
+				CFD3C0D91CEF06D000FA6EFA /* SQDiscPlayerView.h */,
+				CFD3C0DA1CEF06D000FA6EFA /* SQDiscPlayerView.m */,
+				CFD3C0DB1CEF06D000FA6EFA /* SQHeaderFooterView.h */,
+				CFD3C0DC1CEF06D000FA6EFA /* SQHeaderFooterView.m */,
+				CFD3C0DD1CEF06D000FA6EFA /* SQHttpConnection.h */,
+				CFD3C0DE1CEF06D000FA6EFA /* SQHttpConnection.m */,
+				CFD3C0DF1CEF06D000FA6EFA /* SQHyperLinks.h */,
+				CFD3C0E01CEF06D000FA6EFA /* SQHyperLinks.m */,
+				CFD3C0E11CEF06D000FA6EFA /* SQInfiniteCell.h */,
+				CFD3C0E21CEF06D000FA6EFA /* SQInfiniteCell.m */,
+				CFD3C0E31CEF06D000FA6EFA /* SQInfiniteCell_Old.h */,
+				CFD3C0E41CEF06D000FA6EFA /* SQInfiniteCell_Old.m */,
+				CFD3C0E51CEF06D000FA6EFA /* SQLockView.h */,
+				CFD3C0E61CEF06D000FA6EFA /* SQLockView.m */,
+				CFD3C0E71CEF06D000FA6EFA /* SQMacro.h */,
+				CFD3C0E81CEF06D000FA6EFA /* SQNavigationController.h */,
+				CFD3C0E91CEF06D000FA6EFA /* SQNavigationController.m */,
+				CFD3C0EA1CEF06D000FA6EFA /* SQNewFeatureViewController.h */,
+				CFD3C0EB1CEF06D000FA6EFA /* SQNewFeatureViewController.m */,
+				CFD3C0EC1CEF06D000FA6EFA /* SQPageControl.h */,
+				CFD3C0ED1CEF06D000FA6EFA /* SQPageControl.m */,
+				CFD3C0EE1CEF06D000FA6EFA /* SQPaintView.h */,
+				CFD3C0EF1CEF06D000FA6EFA /* SQPaintView.m */,
+				CFD3C0F01CEF06D000FA6EFA /* SQPolishButton.h */,
+				CFD3C0F11CEF06D000FA6EFA /* SQPolishButton.m */,
+				CFD3C0F21CEF06D000FA6EFA /* SQPopButton.h */,
+				CFD3C0F31CEF06D000FA6EFA /* SQPopButton.m */,
+				CFD3C0F41CEF06D000FA6EFA /* SQPopLayerView.h */,
+				CFD3C0F51CEF06D000FA6EFA /* SQPopLayerView.m */,
+				CFD3C0F61CEF06D000FA6EFA /* SQProgressButton.h */,
+				CFD3C0F71CEF06D000FA6EFA /* SQProgressButton.m */,
+				CFD3C0F81CEF06D000FA6EFA /* SQProgressLayer.h */,
+				CFD3C0F91CEF06D000FA6EFA /* SQProgressLayer.m */,
+				CFD3C0FA1CEF06D000FA6EFA /* SQRemovableBadgeView.h */,
+				CFD3C0FB1CEF06D000FA6EFA /* SQRemovableBadgeView.m */,
+				CFD3C0FC1CEF06D000FA6EFA /* SQRemovableButton.h */,
+				CFD3C0FD1CEF06D000FA6EFA /* SQRemovableButton.m */,
+				CFD3C0FE1CEF06D000FA6EFA /* SQScaleImageView.h */,
+				CFD3C0FF1CEF06D000FA6EFA /* SQScaleImageView.m */,
+				CFD3C1001CEF06D000FA6EFA /* SQScaleTableHeaderView.h */,
+				CFD3C1011CEF06D000FA6EFA /* SQScaleTableHeaderView.m */,
+				CFD3C1021CEF06D000FA6EFA /* SQTabBar.h */,
+				CFD3C1031CEF06D000FA6EFA /* SQTabBar.m */,
+				CFD3C1041CEF06D000FA6EFA /* SQTabBarButton.h */,
+				CFD3C1051CEF06D000FA6EFA /* SQTabBarButton.m */,
+				CFD3C1061CEF06D000FA6EFA /* SQTabBarController.h */,
+				CFD3C1071CEF06D000FA6EFA /* SQTabBarController.m */,
+				CFD3C1081CEF06D000FA6EFA /* SQTableViewCell.h */,
+				CFD3C1091CEF06D000FA6EFA /* SQTableViewCell.m */,
+				CFD3C10A1CEF06D000FA6EFA /* SQTableViewController.h */,
+				CFD3C10B1CEF06D000FA6EFA /* SQTableViewController.m */,
+				CFD3C10C1CEF06D000FA6EFA /* SQTableViewRow.h */,
+				CFD3C10D1CEF06D000FA6EFA /* SQTableViewRow.m */,
+				CFD3C10E1CEF06D000FA6EFA /* SQTableViewSection.h */,
+				CFD3C10F1CEF06D000FA6EFA /* SQTableViewSection.m */,
+				CFD3C1101CEF06D000FA6EFA /* SQViewControllerManager.h */,
+				CFD3C1111CEF06D000FA6EFA /* SQViewControllerManager.m */,
+				CFD3C1121CEF06D000FA6EFA /* SQWaterwaveView.h */,
+				CFD3C1131CEF06D000FA6EFA /* SQWaterwaveView.m */,
+				CFD3C1141CEF06D000FA6EFA /* SQWheelButton.h */,
+				CFD3C1151CEF06D000FA6EFA /* SQWheelButton.m */,
+				CFD3C1161CEF06D000FA6EFA /* UIBarButtonItem+SQExtension.h */,
+				CFD3C1171CEF06D000FA6EFA /* UIBarButtonItem+SQExtension.m */,
+				CFD3C1181CEF06D000FA6EFA /* UIColor+SQExtension.h */,
+				CFD3C1191CEF06D000FA6EFA /* UIColor+SQExtension.m */,
+				CFD3C11A1CEF06D000FA6EFA /* UIImage+SQExtension.h */,
+				CFD3C11B1CEF06D000FA6EFA /* UIImage+SQExtension.m */,
+				CFD3C11C1CEF06D000FA6EFA /* UIView+SQExtension.h */,
+				CFD3C11D1CEF06D000FA6EFA /* UIView+SQExtension.m */,
+			);
+			path = SQExtension;
+			sourceTree = "<group>";
+		};
+		CFD3C1561CEF0BB500FA6EFA /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				CFD3C1571CEF0BB500FA6EFA /* NewFeature.jpg */,
+				CFD3C1581CEF0BB500FA6EFA /* NewFeature2.jpg */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFD3C0771CEF06A000FA6EFA /* SQLifestyle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFD3C0A51CEF06A100FA6EFA /* Build configuration list for PBXNativeTarget "SQLifestyle" */;
+			buildPhases = (
+				CFD3C0741CEF06A000FA6EFA /* Sources */,
+				CFD3C0751CEF06A000FA6EFA /* Frameworks */,
+				CFD3C0761CEF06A000FA6EFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SQLifestyle;
+			productName = SQLifestyle;
+			productReference = CFD3C0781CEF06A000FA6EFA /* SQLifestyle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFD3C0901CEF06A000FA6EFA /* SQLifestyleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFD3C0A81CEF06A100FA6EFA /* Build configuration list for PBXNativeTarget "SQLifestyleTests" */;
+			buildPhases = (
+				CFD3C08D1CEF06A000FA6EFA /* Sources */,
+				CFD3C08E1CEF06A000FA6EFA /* Frameworks */,
+				CFD3C08F1CEF06A000FA6EFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFD3C0931CEF06A000FA6EFA /* PBXTargetDependency */,
+			);
+			name = SQLifestyleTests;
+			productName = SQLifestyleTests;
+			productReference = CFD3C0911CEF06A000FA6EFA /* SQLifestyleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CFD3C09B1CEF06A100FA6EFA /* SQLifestyleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFD3C0AB1CEF06A100FA6EFA /* Build configuration list for PBXNativeTarget "SQLifestyleUITests" */;
+			buildPhases = (
+				CFD3C0981CEF06A100FA6EFA /* Sources */,
+				CFD3C0991CEF06A100FA6EFA /* Frameworks */,
+				CFD3C09A1CEF06A100FA6EFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFD3C09E1CEF06A100FA6EFA /* PBXTargetDependency */,
+			);
+			name = SQLifestyleUITests;
+			productName = SQLifestyleUITests;
+			productReference = CFD3C09C1CEF06A100FA6EFA /* SQLifestyleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFD3C0701CEF06A000FA6EFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Doubles_Z;
+				TargetAttributes = {
+					CFD3C0771CEF06A000FA6EFA = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					CFD3C0901CEF06A000FA6EFA = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = CFD3C0771CEF06A000FA6EFA;
+					};
+					CFD3C09B1CEF06A100FA6EFA = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = CFD3C0771CEF06A000FA6EFA;
+					};
+				};
+			};
+			buildConfigurationList = CFD3C0731CEF06A000FA6EFA /* Build configuration list for PBXProject "SQLifestyle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFD3C06F1CEF06A000FA6EFA;
+			productRefGroup = CFD3C0791CEF06A000FA6EFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFD3C0771CEF06A000FA6EFA /* SQLifestyle */,
+				CFD3C0901CEF06A000FA6EFA /* SQLifestyleTests */,
+				CFD3C09B1CEF06A100FA6EFA /* SQLifestyleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFD3C0761CEF06A000FA6EFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD3C08B1CEF06A000FA6EFA /* LaunchScreen.storyboard in Resources */,
+				CFD3C0881CEF06A000FA6EFA /* Assets.xcassets in Resources */,
+				CFD3C15A1CEF0BB500FA6EFA /* NewFeature2.jpg in Resources */,
+				CFD3C0861CEF06A000FA6EFA /* Main.storyboard in Resources */,
+				CFD3C1591CEF0BB500FA6EFA /* NewFeature.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD3C08F1CEF06A000FA6EFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD3C09A1CEF06A100FA6EFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFD3C0741CEF06A000FA6EFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD3C1251CEF06D000FA6EFA /* SQBadgeView.m in Sources */,
+				CFD3C1321CEF06D000FA6EFA /* SQDatePicker.m in Sources */,
+				CFD3C1361CEF06D000FA6EFA /* SQHyperLinks.m in Sources */,
+				CFD3C1341CEF06D000FA6EFA /* SQHeaderFooterView.m in Sources */,
+				CFD3C14F1CEF06D000FA6EFA /* SQWaterwaveView.m in Sources */,
+				CFD3C13D1CEF06D000FA6EFA /* SQPaintView.m in Sources */,
+				CFD3C1401CEF06D000FA6EFA /* SQPopLayerView.m in Sources */,
+				CFD3C1311CEF06D000FA6EFA /* SQCountDown_Server.m in Sources */,
+				CFD3C1211CEF06D000FA6EFA /* NSMutableAttributedString+SQExtension.m in Sources */,
+				CFD3C1441CEF06D000FA6EFA /* SQRemovableButton.m in Sources */,
+				CFD3C14C1CEF06D000FA6EFA /* SQTableViewRow.m in Sources */,
+				CFD3C13F1CEF06D000FA6EFA /* SQPopButton.m in Sources */,
+				CFD3C1421CEF06D000FA6EFA /* SQProgressLayer.m in Sources */,
+				CFD3C1511CEF06D000FA6EFA /* UIBarButtonItem+SQExtension.m in Sources */,
+				CFD3C1381CEF06D000FA6EFA /* SQInfiniteCell_Old.m in Sources */,
+				CFD3C11E1CEF06D000FA6EFA /* CALayer+SQExtension.m in Sources */,
+				CFD3C1531CEF06D000FA6EFA /* UIImage+SQExtension.m in Sources */,
+				CFD3C13B1CEF06D000FA6EFA /* SQNewFeatureViewController.m in Sources */,
+				CFD3C1431CEF06D000FA6EFA /* SQRemovableBadgeView.m in Sources */,
+				CFD3C14B1CEF06D000FA6EFA /* SQTableViewController.m in Sources */,
+				CFD3C15D1CEF0BFA00FA6EFA /* SQViewController.m in Sources */,
+				CFD3C1411CEF06D000FA6EFA /* SQProgressButton.m in Sources */,
+				CFD3C12E1CEF06D000FA6EFA /* SQCombineViewController.m in Sources */,
+				CFD3C1371CEF06D000FA6EFA /* SQInfiniteCell.m in Sources */,
+				CFD3C1481CEF06D000FA6EFA /* SQTabBarButton.m in Sources */,
+				CFD3C13A1CEF06D000FA6EFA /* SQNavigationController.m in Sources */,
+				CFD3C1451CEF06D000FA6EFA /* SQScaleImageView.m in Sources */,
+				CFD3C1471CEF06D000FA6EFA /* SQTabBar.m in Sources */,
+				CFD3C1271CEF06D000FA6EFA /* SQCircularSlider.m in Sources */,
+				CFD3C14E1CEF06D000FA6EFA /* SQViewControllerManager.m in Sources */,
+				CFD3C1491CEF06D000FA6EFA /* SQTabBarController.m in Sources */,
+				CFD3C0801CEF06A000FA6EFA /* AppDelegate.m in Sources */,
+				CFD3C1461CEF06D000FA6EFA /* SQScaleTableHeaderView.m in Sources */,
+				CFD3C1241CEF06D000FA6EFA /* SQAudioTool.m in Sources */,
+				CFD3C1521CEF06D000FA6EFA /* UIColor+SQExtension.m in Sources */,
+				CFD3C13C1CEF06D000FA6EFA /* SQPageControl.m in Sources */,
+				CFD3C11F1CEF06D000FA6EFA /* NSArray+SQExtension.m in Sources */,
+				CFD3C1301CEF06D000FA6EFA /* SQCountDown_Local.m in Sources */,
+				CFD3C1281CEF06D000FA6EFA /* SQCollectionViewCoverFlowLayout.m in Sources */,
+				CFD3C1351CEF06D000FA6EFA /* SQHttpConnection.m in Sources */,
+				CFD3C12F1CEF06D000FA6EFA /* SQCopyLabel.m in Sources */,
+				CFD3C1291CEF06D000FA6EFA /* SQCollectionViewLoopLayout.m in Sources */,
+				CFD3C14A1CEF06D000FA6EFA /* SQTableViewCell.m in Sources */,
+				CFD3C12D1CEF06D000FA6EFA /* SQColorfulSlider.m in Sources */,
+				CFD3C1501CEF06D000FA6EFA /* SQWheelButton.m in Sources */,
+				CFD3C1331CEF06D000FA6EFA /* SQDiscPlayerView.m in Sources */,
+				CFD3C13E1CEF06D000FA6EFA /* SQPolishButton.m in Sources */,
+				CFD3C12C1CEF06D000FA6EFA /* SQCollectionViewWaterFlowLayout.m in Sources */,
+				CFD3C1541CEF06D000FA6EFA /* UIView+SQExtension.m in Sources */,
+				CFD3C1221CEF06D000FA6EFA /* NSString+SQExtension.m in Sources */,
+				CFD3C12B1CEF06D000FA6EFA /* SQCollectionViewStackLayout.m in Sources */,
+				CFD3C1201CEF06D000FA6EFA /* NSDate+SQExtension.m in Sources */,
+				CFD3C1231CEF06D000FA6EFA /* SQAddressBook.m in Sources */,
+				CFD3C1391CEF06D000FA6EFA /* SQLockView.m in Sources */,
+				CFD3C1261CEF06D000FA6EFA /* SQBundleVersionManager.m in Sources */,
+				CFD3C07D1CEF06A000FA6EFA /* main.m in Sources */,
+				CFD3C12A1CEF06D000FA6EFA /* SQCollectionViewScaleFlowLayout.m in Sources */,
+				CFD3C14D1CEF06D000FA6EFA /* SQTableViewSection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD3C08D1CEF06A000FA6EFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD3C0961CEF06A000FA6EFA /* SQLifestyleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD3C0981CEF06A100FA6EFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD3C0A11CEF06A100FA6EFA /* SQLifestyleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFD3C0931CEF06A000FA6EFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFD3C0771CEF06A000FA6EFA /* SQLifestyle */;
+			targetProxy = CFD3C0921CEF06A000FA6EFA /* PBXContainerItemProxy */;
+		};
+		CFD3C09E1CEF06A100FA6EFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFD3C0771CEF06A000FA6EFA /* SQLifestyle */;
+			targetProxy = CFD3C09D1CEF06A100FA6EFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFD3C0841CEF06A000FA6EFA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFD3C0851CEF06A000FA6EFA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CFD3C0891CEF06A000FA6EFA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFD3C08A1CEF06A000FA6EFA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFD3C0A31CEF06A100FA6EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFD3C0A41CEF06A100FA6EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFD3C0A61CEF06A100FA6EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = SQLifestyle/PrefixHeader.pch;
+				INFOPLIST_FILE = SQLifestyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = coderZsq.SQLifestyle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CFD3C0A71CEF06A100FA6EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = SQLifestyle/PrefixHeader.pch;
+				INFOPLIST_FILE = SQLifestyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = coderZsq.SQLifestyle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CFD3C0A91CEF06A100FA6EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SQLifestyleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = coderZsq.SQLifestyleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SQLifestyle.app/SQLifestyle";
+			};
+			name = Debug;
+		};
+		CFD3C0AA1CEF06A100FA6EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SQLifestyleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = coderZsq.SQLifestyleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SQLifestyle.app/SQLifestyle";
+			};
+			name = Release;
+		};
+		CFD3C0AC1CEF06A100FA6EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SQLifestyleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = coderZsq.SQLifestyleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SQLifestyle;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CFD3C0AD1CEF06A100FA6EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SQLifestyleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = coderZsq.SQLifestyleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SQLifestyle;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFD3C0731CEF06A000FA6EFA /* Build configuration list for PBXProject "SQLifestyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD3C0A31CEF06A100FA6EFA /* Debug */,
+				CFD3C0A41CEF06A100FA6EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFD3C0A51CEF06A100FA6EFA /* Build configuration list for PBXNativeTarget "SQLifestyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD3C0A61CEF06A100FA6EFA /* Debug */,
+				CFD3C0A71CEF06A100FA6EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFD3C0A81CEF06A100FA6EFA /* Build configuration list for PBXNativeTarget "SQLifestyleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD3C0A91CEF06A100FA6EFA /* Debug */,
+				CFD3C0AA1CEF06A100FA6EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFD3C0AB1CEF06A100FA6EFA /* Build configuration list for PBXNativeTarget "SQLifestyleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD3C0AC1CEF06A100FA6EFA /* Debug */,
+				CFD3C0AD1CEF06A100FA6EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFD3C0701CEF06A000FA6EFA /* Project object */;
+}
