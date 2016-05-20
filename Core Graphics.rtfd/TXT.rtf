@@ -1,0 +1,781 @@
+{\rtf1\ansi\ansicpg936\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset134 HiraginoSansGB-W3;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red109\green109\blue109;\red183\green0\blue4;
+\red83\green83\blue83;\red238\green242\blue247;\red187\green196\blue203;\red129\green148\blue173;\red138\green163\blue194;
+\red39\green78\blue192;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs32 \cf2 \expnd0\expndtw0\kerning0
+Paths\'d6\'d0\'b5\'c4\'bc\'b8\'b8\'f6\'d6\'d8\'d2\'aa\'d4\'aa\'cb\'d8
+\b0 \expnd0\expndtw0\kerning0
+\
+
+\b \expnd0\expndtw0\kerning0
+Points
+\b0 \expnd0\expndtw0\kerning0
+\
+ void CGContextMoveToPoint (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGFloat x,\
+  \uc0\u160  CGFloat y\
+ );\
+ \'d6\'b8\'b6\'a8\'d2\'bb\'b8\'f6\'b5\'e3\'b3\'c9\'ce\'aacurrent point\
+ Quartz\'bb\'e1\'b8\'fa\'d7\'d9current point\'d2\'bb\'b0\'e3\'d6\'b4\'d0\'d0\'cd\'ea\'d2\'bb\'b8\'f6\'cf\'e0\'b9\'d8\'ba\'af\'ca\'fd\'ba\'f3\'a3\'accurrent point\'b6\'bc\'bb\'e1\'cf\'e0\'d3\'a6\'b5\'c4\'b8\'c4\'b1\'e4.\
+ \
+
+\b \expnd0\expndtw0\kerning0
+Lines
+\b0 \expnd0\expndtw0\kerning0
+\
+ \'cf\'e0\'b9\'d8\'b5\'c4\'bc\'b8\'b8\'f6\'ba\'af\'ca\'fd\
+ void CGContextAddLineToPoint (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGFloat x,\
+  \uc0\u160  CGFloat y\
+ );\
+ \'b4\'b4\'bd\'a8\'d2\'bb\'cc\'f5\'d6\'b1\'cf\'df\'a3\'ac\'b4\'d3current point\'b5\'bd (x,y)\
+ \'c8\'bb\'ba\'f3current point\'bb\'e1\'b1\'e4\'b3\'c9(x,y)\
+ \
+ void CGContextAddLines (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  const CGPoint points[],\
+  \uc0\u160  size_t count\
+ );\
+ \'b4\'b4\'bd\'a8\'b6\'e0\'cc\'f5\'d6\'b1\'cf\'df\'a3\'ac\'b1\'c8\'c8\'e7points\'d3\'d0\'c1\'bd\'b8\'f6\'b5\'e3\'a3\'ac\'c4\'c7\'c3\'b4\'bb\'e1\'bb\'ad\'c1\'bd\'cc\'f5\'d6\'b1\'cf\'df \'b4\'d3current point\'b5\'bd (x1,y1),\
+ \'c8\'bb\'ba\'f3\'ca\'c7(x1,y1)\'b5\'bd(x2,y2)\
+ \'c8\'bb\'ba\'f3current point\'bb\'e1\'b1\'e4\'b3\'c9points\'d6\'d0\'b5\'c4\'d7\'ee\'ba\'f3\'d2\'bb\'b8\'f6\'b5\'e3\
+ \
+
+\b \expnd0\expndtw0\kerning0
+Arcs
+\b0 \expnd0\expndtw0\kerning0
+\
+ \'c1\'bd\'d6\'d6\'b7\'bd\'b7\'a8\'b4\'b4\'bd\'a8\'bb\'a1\'b6\'c8 \'b5\'da\'d2\'bb\'d6\'d6\
+ void CGContextAddArc (\
+  \uc0\u160  CGContextRef c, \u160  \u160 \
+  \uc0\u160  CGFloat x, \u160  \u160  \u160  \u160  \u160  \u160  //\'d4\'b2\'d0\'c4\'b5\'c4x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat y,   \u160 //\'d4\'b2\'d0\'c4\'b5\'c4x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat radius,  \u160 //\'d4\'b2\'b5\'c4\'b0\'eb\'be\'b6 \
+  \uc0\u160  CGFloat startAngle, \u160  \u160 //\'bf\'aa\'ca\'bc\'bb\'a1\'b6\'c8\
+  \uc0\u160  CGFloat endAngle,  \u160 //\'bd\'e1\'ca\'f8\'bb\'a1\'b6\'c8\
+  \uc0\u160  int clockwise \u160  \u160  \u160  \u160  \u160 //0\'b1\'ed\'ca\'be\'cb\'b3\'ca\'b1\'d5\'eb\'a3\'ac1\'b1\'ed\'ca\'be\'c4\'e6\'ca\'b1\'d5\'eb\
+ );\
+ \'bc\'d9\'c8\'e7\'cf\'eb\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6\'cd\'ea\'d5\'fb\'b5\'c4\'d4\'b2\'c8\'a6\'a3\'ac\'c4\'c7\'c3\'b4 \'bf\'aa\'ca\'bc\'bb\'a1\'b6\'c8\'be\'cd\'ca\'c70 \'bd\'e1\'ca\'f8\'bb\'a1\'b6\'c8\'ca\'c7 2pi\'a3\'ac \'d2\'f2\'ce\'aa\'d4\'b2\'d6\'dc\'b3\'a4\'ca\'c7 2*pi*r.\
+ \'d7\'ee\'ba\'f3\'a3\'ac\'ba\'af\'ca\'fd\'d6\'b4\'d0\'d0\'cd\'ea\'ba\'f3\'a3\'accurrent point\'be\'cd\'b1\'bb\'d6\'d8\'d6\'c3\'ce\'aa(x,y).\
+ \'bb\'b9\'d3\'d0\'d2\'bb\'b5\'e3\'d2\'aa\'d7\'a2\'d2\'e2\'b5\'c4\'ca\'c7\'a3\'ac\'bc\'d9\'c8\'e7\'b5\'b1\'c7\'b0path\'d2\'d1\'be\'ad\'b4\'e6\'d4\'da\'d2\'bb\'b8\'f6subpath\'a3\'ac\'c4\'c7\'c3\'b4\'d5\'e2\'b8\'f6\'ba\'af\'ca\'fd\'d6\'b4\'d0\'d0\'b5\'c4\'c1\'ed\'cd\'e2\'d2\'bb\'b8\'f6\'d0\'a7\'b9\'fb\'ca\'c7\
+ \'bb\'e1\'d3\'d0\'d2\'bb\'cc\'f5\'d6\'b1\'cf\'df\'a3\'ac\'b4\'d3current point\'b5\'bd\'bb\'a1\'b5\'c4\'c6\'f0\'b5\'e3\
+ \
+\uc0\u160 \
+ \'b5\'da\'b6\'fe\'d6\'d6\
+ void CGContextAddArcToPoint (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGFloat x1,  //\'b6\'cb\'b5\'e31\'b5\'c4x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat y1,  //\'b6\'cb\'b5\'e31\'b5\'c4y\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat x2,  //\'b6\'cb\'b5\'e32\'b5\'c4x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat y2,  //\'b6\'cb\'b5\'e32\'b5\'c4y\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat radius //\'b0\'eb\'be\'b6\
+ );\
+ \'d4\'ad\'c0\'ed\'a3\'ba\'ca\'d7\'cf\'c8\'bb\'ad\'c1\'bd\'cc\'f5\'cf\'df\'a3\'ac\'d5\'e2\'c1\'bd\'cc\'f5\'cf\'df\'b7\'d6\'b1\'f0\'ca\'c7 current point to (x1,y1) \'ba\'cd(x1,y1) to (x2,y2).\
+ \'d5\'e2\'d1\'f9\'be\'cd\'ca\'c7\'b3\'f6\'cf\'d6\'d2\'bb\'b8\'f6\'d2\'d4(x1,y1)\'ce\'aa\'b6\'a5\'b5\'e3\'b5\'c4\'c1\'bd\'cc\'f5\'c9\'e4\'cf\'df\'a3\'ac\
+ \'c8\'bb\'ba\'f3\'b6\'a8\'d2\'e5\'b0\'eb\'be\'b6\'b3\'a4\'b6\'c8\'a3\'ac\'d5\'e2\'b8\'f6\'b0\'eb\'be\'b6\'ca\'c7\'b4\'b9\'d6\'b1\'d3\'da\'c1\'bd\'cc\'f5\'c9\'e4\'cf\'df\'b5\'c4\'a3\'ac\'d5\'e2\'d1\'f9\'be\'cd\'c4\'dc\'be\'f6\'b6\'a8\'d2\'bb\'b8\'f6\'d4\'b2\'c1\'cb\'a3\'ac\'b8\'fc\'ba\'c3\'b5\'c4\'c0\'ed\'bd\'e2\'bf\'b4\'cf\'c2\'cd\'bc\'a3\'ac\'b2\'bb\'b9\'fd\'b8\'f6\'c8\'cb\'c8\'cf\'ce\'aa\'cf\'c2\'cd\'bc\'cb\'f9\'b1\'ea\'b5\'c4 tangent point 1\'b5\'c4\'ce\'bb\'d6\'c3\'ca\'c7\'b4\'ed\'ce\'f3\'b5\'c4\'a1\'a3\
+ \'d7\'ee\'ba\'f3\'a3\'ac\'ba\'af\'ca\'fd\'d6\'b4\'d0\'d0\'cd\'ea\'ba\'f3\'a3\'accurrent point\'be\'cd\'b1\'bb\'d6\'d8\'d6\'c3\'ce\'aa(x2,y2).\
+ \'bb\'b9\'d3\'d0\'d2\'bb\'b5\'e3\'d2\'aa\'d7\'a2\'d2\'e2\'b5\'c4\'ca\'c7\'a3\'ac\'bc\'d9\'c8\'e7\'b5\'b1\'c7\'b0path\'d2\'d1\'be\'ad\'b4\'e6\'d4\'da\'d2\'bb\'b8\'f6subpath\'a3\'ac\'c4\'c7\'c3\'b4\'d5\'e2\'b8\'f6\'ba\'af\'ca\'fd\'d6\'b4\'d0\'d0\'b5\'c4\'c1\'ed\'cd\'e2\'d2\'bb\'b8\'f6\'d0\'a7\'b9\'fb\'ca\'c7\
+ \'bb\'e1\'d3\'d0\'d2\'bb\'cc\'f5\'d6\'b1\'cf\'df\'a3\'ac\'b4\'d3current point\'b5\'bd(x1,y1)\
+ \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 1512365049866613352.gif \width8580 \height6440 \noorient
+}¬}\expnd0\expndtw0\kerning0
+\
+
+\b \expnd0\expndtw0\kerning0
+Curves
+\b0 \expnd0\expndtw0\kerning0
+\
+ \'bb\'ad\'c7\'fa\'cf\'df\'a3\'ac\'d2\'bb\'b0\'e3\'ca\'c7\'d2\'bb\'cc\'f5\'d6\'b1\'cf\'df\'a3\'ac\'c8\'bb\'ba\'f3\'b6\'a8\'d2\'e5\'bc\'b8\'b8\'f6\'bf\'d8\'d6\'c6\'b5\'e3\'a3\'ac\'ca\'b9\'d6\'b1\'cf\'df\'b1\'e4\'cd\'e4\'c7\'fa\'a1\'a3\
+ \'c8\'fd\'b4\'ce\'c7\'fa\'cf\'df\'ba\'af\'ca\'fd\
+ void CGContextAddCurveToPoint (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGFloat cp1x, //\'bf\'d8\'d6\'c6\'b5\'e31 x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat cp1y, //\'bf\'d8\'d6\'c6\'b5\'e31 y\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat cp2x, //\'bf\'d8\'d6\'c6\'b5\'e32 x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat cp2y, //\'bf\'d8\'d6\'c6\'b5\'e32 y\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat x,  //\'d6\'b1\'cf\'df\'b5\'c4\'d6\'d5\'b5\'e3 x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat y  //\'d6\'b1\'cf\'df\'b5\'c4\'d6\'d5\'b5\'e3 y\'d7\'f8\'b1\'ea\
+ );\
+ \'bc\'d9\'c8\'e7\'b5\'da\'b6\'fe\'b8\'f6\'bf\'d8\'d6\'c6\'b5\'e3\'a3\'a8cp2x\'a3\'accp2y\'a3\'a9\'b1\'c8\'a3\'a8cp1x,cp1y\'a3\'a9 \'b8\'fc\'bd\'d3\'bd\'fccurrent point\'a3\'ac\'c4\'c7\'c3\'b4\'bb\'e1\'d0\'ce\'b3\'c9\'d2\'bb\'b8\'f6\'b7\'e2\'b1\'d5\'b5\'c4\'c7\'fa\'cf\'df\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 3251035981009400471.gif \width6620 \height3060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+ \'b6\'fe\'b4\'ce\'c7\'fa\'cf\'df\'ba\'af\'ca\'fd\
+ void CGContextAddQuadCurveToPoint (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGFloat cpx,  //\'bf\'d8\'d6\'c6\'b5\'e3 x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat cpy,  //\'bf\'d8\'d6\'c6\'b5\'e3 y\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat x,  //\'d6\'b1\'cf\'df\'b5\'c4\'d6\'d5\'b5\'e3 x\'d7\'f8\'b1\'ea\
+  \uc0\u160  CGFloat y  //\'d6\'b1\'cf\'df\'b5\'c4\'d6\'d5\'b5\'e3 y\'d7\'f8\'b1\'ea\
+ );\
+ \'d6\'b4\'d0\'d0\'cd\'ea\'ba\'af\'ca\'fd\'c3\'b2\'cb\'c6current point\'b2\'bb\'bb\'e1\'b1\'e4\'bb\'af\'a3\'ac\'c3\'bb\'d3\'d0\'be\'df\'cc\'e5\'b2\'e2\'ca\'d4\'b9\'fd\
+ \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2313724308561861661.gif \width9240 \height3740 \noorient
+}¬}\expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Ellipses
+\b0 \expnd0\expndtw0\kerning0
+\
+ void CGContextAddEllipseInRect (\
+  \uc0\u160  CGContextRef context,\
+  \uc0\u160  CGRect rect  //\'d2\'bb\'be\'d8\'d0\'ce\
+ ); \
+ \'c8\'e7\'b9\'fb\'be\'d8\'d0\'ce\'ca\'c7\'d2\'bb\'b8\'f6\'d5\'fd\'b7\'bd\'d0\'ce\'a3\'ac\'c4\'c7\'c3\'b4\'bb\'ad\'b3\'f6\'c0\'b4\'be\'cd\'ca\'c7\'d2\'bb\'b8\'f6\'d4\'b2\
+ \'d6\'b4\'d0\'d0\'cd\'ea\'ba\'af\'ca\'fd\'c3\'b2\'cb\'c6current point\'b2\'bb\'bb\'e1\'b1\'e4\'bb\'af\'a3\'ac\'c3\'bb\'d3\'d0\'be\'df\'cc\'e5\'b2\'e2\'ca\'d4\'b9\'fd\
+
+\b \expnd0\expndtw0\kerning0
+Rectangles
+\b0 \expnd0\expndtw0\kerning0
+\
+ void CGContextAddRect (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGRect rect\
+ );\
+ \
+ \'d2\'bb\'b4\'ce\'d0\'d4\'bb\'ad\'b3\'f6\'b6\'e0\'b8\'f6\'be\'d8\'d0\'ce\
+ void CGContextAddRects (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  const CGRect rects[],\
+  \uc0\u160  size_t count\
+ );\
+ \'d0\'e8\'d2\'aa\'d7\'a2\'d2\'e2\'b5\'c4\'ca\'c7\'a3\'ac\'bb\'ad\'be\'d8\'d0\'ce\'d3\'d0\'d2\'bb\'d0\'a9\'cc\'d8\'b1\'f0\'a3\'accurrent point\'c3\'bb\'d3\'d0\'b7\'a2\'c9\'fa\'b1\'e4\'bb\'af\
+ \
+\
+
+\b \expnd0\expndtw0\kerning0
+Creating a Path
+\b0 \expnd0\expndtw0\kerning0
+\
+ \'b5\'f7\'d3\'c3\'ba\'af\'ca\'fd CGContextBeginPath \'bf\'aa\'ca\'bc\'b4\'b4\'bd\'a8\'c2\'b7\'be\'b6\'a3\'ac\'cf\'df\'b5\'f7\'d3\'c3\'ba\'af\'ca\'fdCGContextMoveToPoint\'c9\'e8\'d6\'c3\'c6\'f0\'b5\'e3\
+ \'c8\'bb\'ba\'f3\'bf\'aa\'ca\'bc\'bb\'ad\'d7\'d4\'bc\'ba\'cf\'eb\'bb\'ad\'b5\'c4\'c2\'b7\'be\'b6\'a3\'ac\'d7\'a2\'d2\'e2\'d2\'bb\'cf\'c2\'bc\'b8\'b5\'e3:\
+ 1.Lines, arcs, and curves,\'ca\'c7\'b4\'d3current point\'bf\'aa\'ca\'bc\'b5\'c4\
+ 2.\'bc\'d9\'c8\'e7\'cf\'eb\'b7\'e2\'b1\'d5\'d2\'bb\'cc\'f5\'c2\'b7\'be\'b6\'a3\'ac\'c4\'c7\'c3\'b4\'b5\'f7\'d3\'c3\'ba\'af\'ca\'fd CGContextClosePath \'b0\'d1\'b5\'b1\'c7\'b0\'b5\'e3\'ba\'cd\'c6\'f0\'b5\'e3\'c1\'ac\'bd\'d3\'c6\'f0\'c0\'b4\
+ 3.\'b5\'b1\'d4\'da\'bb\'ad arcs\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'acQuartz\'bb\'e1\'bb\'ad\'d2\'bb\'cc\'f5\'cf\'df\'b4\'d3current point \'b5\'bd starting point\
+ 4.\'bb\'ad\'be\'d8\'d0\'ce\'b5\'c4\'ca\'b1\'ba\'f2\'b2\'bb\'bb\'e1\'d3\'d0\'b5\'da\'c8\'fd\'cc\'f5\'c4\'c7\'d5\'e2\'d1\'f9\'b5\'c4\'b5\'c4\'d2\'bb\'cc\'f5\'d6\'b1\'cf\'df\
+ 5.\'b4\'b4\'bd\'a8\'cd\'ea\'c2\'b7\'be\'b6\'ba\'f3\'a3\'ac\'b1\'d8\'d0\'eb\'b5\'f7\'d3\'c3 painting \'ba\'af\'ca\'fd \uc0\u160 fill or stroke the path\'a3\'ac\'b2\'bb\'c8\'bb\'b2\'bb\'bb\'e1\'bb\'ad\'c9\'cf\'c3\'e6\'b6\'ab\'b6\'ab\'d4\'da\'cf\'e0\'d3\'a6\'b5\'c4\'c9\'e8\'b1\'b8\'c9\'cf\'a1\'bf\
+ 6.\'bf\'aa\'ca\'bc\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6\'d0\'c2\'b5\'c4\'c2\'b7\'be\'b6\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'ca\'b9\'d3\'c3\'ba\'af\'ca\'fd CGContextBeginPath\'a1\'a3\
+ \
+ \'d6\'d8\'b8\'b4\'c0\'fb\'d3\'c3\'c2\'b7\'be\'b6\'b5\'c4\'cf\'e0\'b9\'d8\'ba\'af\'ca\'fd\'ba\'cd\'ca\'fd\'be\'dd\'c0\'e0\'d0\'cd\
+ CGPathCreateMutable \'c0\'e0\'cb\'c6\'d3\'da CGContextBeginPath\
+ CGPathMoveToPoint \'c0\'e0\'cb\'c6\'d3\'da CGContextMoveToPoint\
+ CGPathAddLineToPoint \'c0\'e0\'cb\'c6\'d3\'da CGContextAddLineToPoint\
+ CGPathAddCurveToPoint \'c0\'e0\'cb\'c6\'d3\'da CGContextAddCurveToPoint\
+ CGPathAddEllipseInRect \'c0\'e0\'cb\'c6\'d3\'da CGContextAddEllipseInRect\
+ CGPathAddArc \'c0\'e0\'cb\'c6\'d3\'da CGContextAddArc\
+ CGPathAddRect \'c0\'e0\'cb\'c6\'d3\'da CGContextAddRect\
+ CGPathCloseSubpath \'c0\'e0\'cb\'c6\'d3\'da CGContextClosePath\
+ CGPathRef\
+ CGMutablePathRef\
+ \
+ \'d3\'c3CGContextAddPath\'ba\'af\'ca\'fd\'b0\'d1\'d2\'bb\'b8\'f6\'c2\'b7\'be\'b6\'cc\'ed\'bc\'d3\'b5\'bdgraphics context\'d6\'d0\
+ void CGContextAddPath (\
+  \uc0\u160  CGContextRef context,\
+  \uc0\u160  CGPathRef path\
+ );\
+\
+
+\b \expnd0\expndtw0\kerning0
+Painting a Path
+\b0 \expnd0\expndtw0\kerning0
+\
+ Stroking \'a3\'ba\'bb\'ad\'b3\'f6\'c2\'b7\'be\'b6\
+ Filling \'a3\'ba\'cc\'ee\'b3\'e4\'c2\'b7\'be\'b6\'b5\'c4\'b7\'e2\'b1\'d5\'c7\'f8\'d3\'f2\
+ \
+ \'d3\'b0\'cf\'ecStroking\'b5\'c4\'b2\'ce\'ca\'fd\
+ Line width\
+  void CGContextSetLineWidth (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGFloat width\
+  );\
+ Line join\'a3\'ba\'cf\'df\'d7\'aa\'cd\'e4\'b5\'c4\'ca\'b1\'ba\'f2\'b5\'c4\'d1\'f9\'ca\'bd\'a3\'ac\'b1\'c8\'c8\'e7\'d4\'b2\'bb\'ac\'b5\'c4\'b7\'bd\'ca\'bd\
+  void CGContextSetLineJoin (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGLineJoin join\
+  );\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2352286380371218298.gif \width1680 \height1120 \noorient
+}¬}\pard\pardeftab720
+\cf2 {{\NeXTGraphic 2312598408654868471.gif \width1680 \height1280 \noorient
+}¬}\pard\pardeftab720
+\cf2 {{\NeXTGraphic 2312598408654868466.gif \width1680 \height1180 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \u160 \
+ Line cap\'a3\'ba\'cf\'df\'b5\'c4\'c1\'bd\'b6\'cb\'b5\'c4\'d1\'f9\'ca\'bd\'a3\'ac\'b1\'c8\'c8\'e7\'c1\'bd\'b6\'cb\'b1\'e4\'b5\'c4\'d4\'b2\'bb\'ac\
+  void CGContextSetLineCap (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGLineCap cap\
+  );\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 1509831775076221302.gif \width1960 \height260 \noorient
+}¬}\pard\pardeftab720
+\cf2 {{\NeXTGraphic 928304473191957441.gif \width1760 \height260 \noorient
+}¬}\pard\pardeftab720
+\cf2 {{\NeXTGraphic 1509831775076221297.gif \width1960 \height260 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+ Miter limit\'a3\'ba\'b5\'b1Line join\'b5\'c4\'c4\'a3\'ca\'bd\'ca\'c7Miter join\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'d5\'e2\'b8\'f6\'b2\'ce\'ca\'fd\'bb\'e1\'d3\'d0\'d3\'b0\'cf\'ec\
+  void CGContextSetMiterLimit (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGFloat limit\
+  );\
+ Line dash pattern\'a3\'ba\'d0\'e9\'cf\'df\'cf\'e0\'b9\'d8\
+  void CGContextSetLineDash (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGFloat phase,\
+   \uc0\u160  const CGFloat lengths[],\
+   \uc0\u160  size_t count\
+  );\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 938437572353447124.gif \width8200 \height2860 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+ Stroke color space\
+  void CGContextSetStrokeColorSpace (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGColorSpaceRef colorspace\
+  );\
+ Stroke color\
+  void CGContextSetStrokeColor (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  const CGFloat components[]\
+  );\
+  void CGContextSetStrokeColorWithColor (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGColorRef color\
+  );\
+ Stroke pattern\'a3\'a8\'ba\'cd\'cd\'b8\'c3\'f7\'b6\'c8\'cf\'e0\'b9\'d8\'a3\'a9\
+  void CGContextSetStrokePattern (\
+   \uc0\u160  CGContextRef c,\
+   \uc0\u160  CGPatternRef pattern,\
+   \uc0\u160  const CGFloat components[]\
+  );\
+\
+\
+ Stroking\'b5\'c4\'cf\'e0\'b9\'d8\'ba\'af\'ca\'fd\
+ Strokes\'b5\'b1\'c7\'b0path.\
+ void CGContextStrokePath (\
+  \uc0\u160  CGContextRef c\
+ );\
+ \
+ Strokes \'d6\'b8\'b6\'a8\'b5\'c4 \'be\'d8\'d0\'ce.\
+ void CGContextStrokeRect (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGRect rect\
+ );\
+ \
+ Strokes \'d6\'b8\'b6\'a8\'b5\'c4 \'be\'d8\'d0\'ce, \'ca\'b9\'d3\'c3\'d6\'b8\'b6\'a8\'b5\'c4\'bf\'ed\'b6\'c8.\
+ void CGContextStrokeRectWithWidth (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGRect rect,\
+  \uc0\u160  CGFloat width\
+ );\
+  \
+ Strokes \'d6\'b8\'b6\'a8\'b5\'c4\'cd\'d6\'d4\'b2.\
+ void CGContextStrokeEllipseInRect (\
+  \uc0\u160  CGContextRef context,\
+  \uc0\u160  CGRect rect\
+ );\
+ \
+ Strokes \'d2\'bb\'d0\'a9\'d6\'b1\'cf\'df.\
+ void CGContextStrokeLineSegments (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  const CGPoint points[],\
+  \uc0\u160  size_t count\
+ );\
+ \
+ \'be\'f6\'b6\'a8\'ca\'c7Stroking \'bb\'b9\'ca\'c7Filling\
+ void CGContextDrawPath (\
+  \uc0\u160  CGContextRef c,\
+  \uc0\u160  CGPathDrawingMode mode\
+ );\
+  \
+
+\b \expnd0\expndtw0\kerning0
+Filling a Path
+\b0 \expnd0\expndtw0\kerning0
+\
+\'cc\'ee\'b3\'e4\'d2\'bb\'b8\'f6\'c2\'b7\'be\'b6\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'c2\'b7\'be\'b6\'c0\'ef\'c3\'e6\'b5\'c4\'d7\'d3\'c2\'b7\'be\'b6\'b6\'bc\'ca\'c7\'b6\'c0\'c1\'a2\'cc\'ee\'b3\'e4\'b5\'c4\'a1\'a3\
+\'bc\'d9\'c8\'e7\'ca\'c7\'d6\'d8\'b5\'fe\'b5\'c4\'c2\'b7\'be\'b6\'a3\'ac\'be\'f6\'b6\'a8\'d2\'bb\'b8\'f6\'b5\'e3\'ca\'c7\'b7\'f1\'b1\'bb\'cc\'ee\'b3\'e4\'a3\'ac\'d3\'d0\'c1\'bd\'d6\'d6\'b9\'e6\'d4\'f2\
+1,
+\b \expnd0\expndtw0\kerning0
+nonzero winding number rul
+\b0 \expnd0\expndtw0\kerning0
+e:\'b7\'c7\'c1\'e3\'c8\'c6\'ca\'fd\'b9\'e6\'d4\'f2\'a3\'ac\'bc\'d9\'c8\'e7\'d2\'bb\'b8\'f6\'b5\'e3\'b1\'bb\'b4\'d3\'d7\'f3\'b5\'bd\'d3\'d2\'bf\'e7\'b9\'fd\'a3\'ac\'bc\'c6\'ca\'fd\'c6\'f7+1\'a3\'ac\'b4\'d3\'d3\'d2\'b5\'bd\'d7\'f3\'bf\'e7\'b9\'fd\'a3\'ac\'bc\'c6\'ca\'fd\'c6\'f7-1\'a3\'ac\'d7\'ee\'ba\'f3\'a3\'ac\'c8\'e7\'b9\'fb\'bd\'e1\'b9\'fb\'ca\'c70\'a3\'ac\'c4\'c7\'c3\'b4\'b2\'bb\'cc\'ee\'b3\'e4\'a3\'ac\'c8\'e7\'b9\'fb\'ca\'c7\'b7\'c7\'c1\'e3\'a3\'ac\'c4\'c7\'c3\'b4\'cc\'ee\'b3\'e4\'a1\'a3\
+2,
+\b \expnd0\expndtw0\kerning0
+even-odd rule
+\b0 \expnd0\expndtw0\kerning0
+: \'c6\'e6\'c5\'bc\'b9\'e6\'d4\'f2\'a3\'ac\'bc\'d9\'c8\'e7\'d2\'bb\'b8\'f6\'b5\'e3\'b1\'bb\'bf\'e7\'b9\'fd\'a3\'ac\'c4\'c7\'c3\'b4+1\'a3\'ac\'d7\'ee\'ba\'f3\'ca\'c7\'c6\'e6\'ca\'fd\'a3\'ac\'c4\'c7\'c3\'b4\'d2\'aa\'b1\'bb\'cc\'ee\'b3\'e4\'a3\'ac\'c5\'bc\'ca\'fd\'d4\'f2\'b2\'bb\'cc\'ee\'b3\'e4\'a3\'ac\'ba\'cd\'b7\'bd\'cf\'f2\'c3\'bb\'d3\'d0\'b9\'d8\'cf\'b5\'a1\'a3\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2385500427623091106.gif \width7260 \height1880 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrt\brdrs\brdrw20\brdrcf3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth4280\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth6540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 Function\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+Description\uc0\u160 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth4280\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth6540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 CGContextEOFillPath\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 \'ca\'b9\'d3\'c3\'c6\'e6\'c5\'bc\'b9\'e6\'d4\'f2\'cc\'ee\'b3\'e4\'b5\'b1\'c7\'b0\'c2\'b7\'be\'b6\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth4280\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth6540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 CGContextFillPath\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 \'ca\'b9\'d3\'c3\'b7\'c7\'c1\'e3\'c8\'c6\'ca\'fd\'b9\'e6\'d4\'f2\'cc\'ee\'b3\'e4\'b5\'b1\'c7\'b0\'c2\'b7\'be\'b6\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth4280\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth6540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 CGContextFillRect\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 \'cc\'ee\'b3\'e4\'d6\'b8\'b6\'a8\'b5\'c4\'be\'d8\'d0\'ce\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth4280\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth6540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 CGContextFillRects\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 \'cc\'ee\'b3\'e4\'d6\'b8\'b6\'a8\'b5\'c4\'d2\'bb\'d0\'a9\'be\'d8\'d0\'ce\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth4280\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth6540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 CGContextFillEllipseInRect\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 \'cc\'ee\'b3\'e4\'d6\'b8\'b6\'a8\'be\'d8\'d0\'ce\'d6\'d0\'b5\'c4\'cd\'d6\'d4\'b2\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrb\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth4280\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth6540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 CGContextDrawPath\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 \'c1\'bd\'b8\'f6\'b2\'ce\'ca\'fd\'be\'f6\'b6\'a8\'cc\'ee\'b3\'e4\'b9\'e6\'d4\'f2\'a3\'ackCGPathFill\'b1\'ed\'ca\'be\'d3\'c3\'b7\'c7\'c1\'e3\'c8\'c6\'ca\'fd\'b9\'e6\'d4\'f2\'a3\'ackCGPathEOFill\'b1\'ed\'ca\'be\'d3\'c3\'c6\'e6\'c5\'bc\'b9\'e6\'d4\'f2\'a3\'ackCGPathFillStroke\'b1\'ed\'ca\'be\'cc\'ee\'b3\'e4\'a3\'ackCGPathEOFillStroke\'b1\'ed\'ca\'be\'c3\'e8\'cf\'df\'a3\'ac\'b2\'bb\'ca\'c7\'cc\'ee\'b3\'e4\cell \lastrow\row
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+
+\b \expnd0\expndtw0\kerning0
+Setting Blend Modes
+\b0 \expnd0\expndtw0\kerning0
+\
+\'c9\'e8\'d6\'c3\'b5\'b1\'d2\'bb\'b8\'f6\'d1\'d5\'c9\'ab\'b8\'b2\'b8\'c7\'c9\'cf\'c1\'ed\'cd\'e2\'d2\'bb\'b8\'f6\'d1\'d5\'c9\'ab\'a3\'ac\'c1\'bd\'b8\'f6\'d1\'d5\'c9\'ab\'d4\'f5\'c3\'b4\'bb\'ec\'ba\'cf\
+\'c4\'ac\'c8\'cf\'b7\'bd\'ca\'bd\'ca\'c7\
+result = (alpha * foreground) + (1 - alpha) * background\
+\
+CGContextSetBlendMode :\'c9\'e8\'d6\'c3blend mode.\
+CGContextSaveGState :\'b1\'a3\'b4\'e6blend mode.\
+CGContextRestoreGState:\'d4\'da\'c3\'bb\'d3\'d0\'b1\'a3\'b4\'e6\'d6\'ae\'c7\'b0\'a3\'ac\'d3\'c3\'d5\'e2\'b8\'f6\'ba\'af\'ca\'fd\'bb\'b9\'d4\'adblend mode.\
+\
+\'cf\'c2\'c3\'e6\'c1\'bd\'d5\'c5\'cd\'bc\'a3\'ac\'b5\'da\'d2\'bb\'d5\'c5\'ca\'c7\'b1\'b3\'be\'b0\'cd\'bc\'a3\'ac\'b5\'da\'b6\'fe\'d5\'c5\'ca\'c7\'c7\'b0\'be\'b0\'cd\'bc\'a3\'ac\'b6\'bc\'ca\'c7\'b2\'bb\'cd\'b8\'c3\'f7\'b5\'c4\'cd\'bc\'c6\'ac\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 3679722370538743059.gif \width5040 \height5040 \noorient
+}¬}\pard\pardeftab720
+\cf2 {{\NeXTGraphic 1538260747724014208.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trwWidth11040\trftsWidth3 \trbrdrt\brdrs\brdrw20\brdrcf3 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrb\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrs\brdrw20\brdrcf3 
+\clvertalc \clshdrawnil \clwWidth10920\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 
+\b \expnd0\expndtw0\kerning0
+Note
+\b0 \expnd0\expndtw0\kerning0
+: \uc0\u160 \'d5\'e2\'b8\'f6\'b9\'e6\'d4\'f2\'d2\'b2\'bf\'c9\'d2\'d4\'d3\'a6\'d3\'c3\'d3\'da\'cd\'bc\'c6\'ac\'a3\'ac\'d3\'c3\'ba\'af\'ca\'fd\'a3\'ba{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextSetBlendMode"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+CGContextSetBlendMode\uc0\u160 }}\'c0\'b4\'c9\'e8\'d6\'c3\cell \lastrow\row
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\uc0\u160 \u160 \u160 \
+
+\b \expnd0\expndtw0\kerning0
+Normal Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+\'d5\'e2\'b8\'f6\'c4\'a3\'ca\'bd\'a3\'ac\'be\'cd\'ca\'c7\'c4\'ac\'c8\'cf\'b5\'c4\'c4\'a3\'ca\'bd\'a3\'ac\'c7\'b0\'be\'b0\'cd\'bc\'b8\'b2\'b8\'c7\'c1\'cb\'b1\'b3\'be\'b0\'cd\'bc.\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2328361007350939988.gif \width5040 \height5040 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Multiply Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+\'b5\'f7\'d3\'c3\'ba\'af\'ca\'fdCGContextSetBlendMode \uc0\u160 \'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'ca\'b9\'d3\'c3\'b2\'ce\'ca\'fd\u160 kCGBlendModeMultiply.\
+\'bb\'ec\'ba\'cf\'c1\'cb\'c1\'bd\'d6\'d6\'d1\'d5\'c9\'ab\'a3\'ac\'d7\'ee\'d6\'d5\'b5\'c4\'d1\'d5\'c9\'ab\'b6\'bc\'bb\'e1\'b1\'c8\'d4\'ad\'cf\'c8\'b5\'c4\'c1\'bd\'d6\'d6\'d1\'d5\'c9\'ab\'b0\'b5\'a1\'a3\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 948852146491910950.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Screen Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+\'ca\'b9\'d3\'c3\'b2\'ce\'ca\'fd\'a3\'bakCGBlendModeScreen\
+\'b0\'d1\'c7\'b0\'be\'b0\'ba\'cd\'b1\'b3\'be\'b0\'cd\'bc\'b5\'c4\'d1\'d5\'c9\'ab\'cf\'c8\'b7\'b4\'b9\'fd\'c0\'b4\'a3\'ac\'c8\'bb\'ba\'f3\'bb\'ec\'ba\'cf\'a3\'ac\'bd\'e1\'b9\'fb\'bb\'ec\'ba\'cf\'b5\'c4\'b5\'d8\'b7\'bd\'b1\'c8\'cf\'c8\'c7\'b0\'b5\'c4\'d1\'d5\'c9\'ab\'b6\'bc\'d2\'aa\'c1\'c1\'a3\'ac\'c7\'b0\'be\'b0\'cd\'bc\'c3\'bb\'d3\'d0\'bb\'ec\'ba\'cf\'b5\'bd\'b5\'c3\'b5\'d8\'b7\'bd\'b1\'e4\'b3\'c9\'b0\'d7\'c9\'ab\'a3\'bf\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2309220708934495121.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Overlay Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+\'ca\'b9\'d3\'c3\'b2\'ce\'ca\'fdkCGBlendModeOverlay\
+\'c3\'f7\'c1\'c1\'c8\'a1\'be\'f6\'d3\'da\'b1\'b3\'be\'b0\'cd\'bc\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2369456353950440858.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Darken Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeDarken\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2362419479532763670.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Lighten Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeLighten\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 1__#$!@%!#__2369456353950440858.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Color Dodge Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeColorDodge\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 3233866007430058162.gif \width5040 \height5040 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Color Burn Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeColorBurn\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2355382605115168491.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Soft Light Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeSoftLight\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2347219830790557640.gif \width5040 \height5040 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+\uc0\u160 Hard Light Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeHardLight\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2323857407723569004.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Difference Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeDifference\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2323857407723568998.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Exclusion Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeExclusion\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2355101130138457833.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Hue Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeHue\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2348345730697398503.gif \width5040 \height5040 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Saturation Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeSaturation\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 2323575932746858340.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Color Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeColor\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 1533757148096556133.gif \width4960 \height4960 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Luminosity Blend Mode
+\b0 \expnd0\expndtw0\kerning0
+\
+kCGBlendModeLuminosity\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+{{\NeXTGraphic 1533757148096556129.gif \width5060 \height5060 \noorient
+}¬}\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\
+\uc0\u160 \
+
+\b \expnd0\expndtw0\kerning0
+Clipping to a Path
+\b0 \expnd0\expndtw0\kerning0
+\
+\'d5\'e2\'b8\'f6\'d3\'c3\'d4\'da\'a3\'ac\'bc\'d9\'c8\'e7\'ce\'d2\'c3\'c7\'d6\'bb\'cf\'eb\'b0\'d1\'cd\'bc\'c6\'ac\'b5\'c4\'b2\'bf\'b7\'d6\'b4\'f2\'d3\'a1\'b5\'bd\'c6\'c1\'c4\'bb\'b5\'c4\'ca\'b1\'ba\'f2\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat6 \trbrdrt\brdrs\brdrw20\brdrcf7 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 \tapadb80 
+\clvertalc \clshdrawnil \clwWidth14440\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt120 \clpadl120 \clpadb120 \clpadr120 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\f1\fs24 \cf5 \expnd0\expndtw0\kerning0
+CGContextBeginPath (context);\
+\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat6 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 \tapadb80 
+\clvertalc \clshdrawnil \clwWidth14440\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt120 \clpadl120 \clpadb120 \clpadr120 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+CGContextAddArc (context, w/2, h/2, ((w>h) ? h : w)/2, 0, 2*PI, 0);\
+\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat6 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 \tapadb80 
+\clvertalc \clshdrawnil \clwWidth14440\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt120 \clpadl120 \clpadb120 \clpadr120 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+CGContextClosePath (context);\
+\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat6 \trbrdrl\brdrs\brdrw20\brdrcf7 \trbrdrb\brdrs\brdrw20\brdrcf7 \trbrdrr\brdrs\brdrw20\brdrcf7 \tapadb80 
+\clvertalc \clshdrawnil \clwWidth14440\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt120 \clpadl120 \clpadb120 \clpadr120 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+CGContextClip (context);\cell \lastrow\row
+\pard\pardeftab720
+
+\f2 \cf2 \expnd0\expndtw0\kerning0
+\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb1040 \trbrdrt\brdrnil \trbrdrl\brdrs\brdrw20\brdrcf9 \trbrdrr\brdrnil 
+\clvertalc \clcbpat8 \clwWidth3133\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt78 \clpadl173 \clpadb78 \clpadr173 \gaph\cellx4320
+\clvertalc \clcbpat8 \clwWidth9973\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt78 \clpadl173 \clpadb78 \clpadr173 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\b\fs26 \cf1 \expnd0\expndtw0\kerning0
+Function\cell 
+\pard\intbl\itap1\pardeftab720
+\cf1 \expnd0\expndtw0\kerning0
+Description\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb1040 \trbrdrl\brdrs\brdrw20\brdrcf9 \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3133\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9973\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextClip"}}{\fldrslt 
+\f1\b0 \cf10 \expnd0\expndtw0\kerning0
+CGContextClip}}
+\b0 \cf2 \expnd0\expndtw0\kerning0
+\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+\'a0
+\f3 \'ca\'b9\'d3\'c3\'b7\'c7\'c1\'e3\'c8\'c6\'ca\'fd\'b9\'e6\'d4\'f2\'bc\'f4\'bc\'ad\'b5\'b1\'c7\'b0\'cd\'bc\'d0\'ce\'c9\'cf\'cf\'c2\'ce\'c4
+\f2 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb1040 \trbrdrl\brdrs\brdrw20\brdrcf9 \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3133\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9973\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextEOClip"}}{\fldrslt 
+\f1 \cf10 \expnd0\expndtw0\kerning0
+CGContextEOClip}}\expnd0\expndtw0\kerning0
+\cell 
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf2 \expnd0\expndtw0\kerning0
+\'ca\'b9\'d3\'c3\'c6\'e6\'c5\'bc\'b9\'e6\'d4\'f2\'bc\'f4\'bc\'ad\'b5\'b1\'c7\'b0\'c9\'cf\'cf\'c2\'ce\'c4
+\f2 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb1040 \trbrdrl\brdrs\brdrw20\brdrcf9 \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3133\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9973\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextClipToRect"}}{\fldrslt 
+\f1 \cf10 \expnd0\expndtw0\kerning0
+CGContextClipToRect}}\expnd0\expndtw0\kerning0
+\cell 
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf2 \expnd0\expndtw0\kerning0
+\'c9\'e8\'d6\'c3\'d2\'bb\'b8\'f6\'be\'d8\'d0\'ce\'c7\'f8\'d3\'f2\'ba\'cd\'b5\'b1\'c7\'b0\'b5\'c4\'bc\'f4\'bc\'ad\'c7\'f8\'d3\'f2\'b5\'c4\'bd\'bb\'bc\'af
+\f2 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb1040 \trbrdrl\brdrs\brdrw20\brdrcf9 \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3133\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9973\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextClipToRects"}}{\fldrslt 
+\f1 \cf10 \expnd0\expndtw0\kerning0
+CGContextClipToRects}}\expnd0\expndtw0\kerning0
+\cell 
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf2 \expnd0\expndtw0\kerning0
+\'c9\'e8\'d6\'c3\'d2\'bb\'d0\'a9\'be\'d8\'d0\'ce\'c7\'f8\'d3\'f2\'ba\'cd\'b5\'b1\'c7\'b0\'bc\'f4\'bc\'ad\'c7\'f8\'d3\'f2\'b5\'c4\'bd\'bb\'bc\'af
+\f2 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \tamarb1040 \trbrdrl\brdrs\brdrw20\brdrcf9 \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3133\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9973\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf9 \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadt173 \clpadl173 \clpadb173 \clpadr173 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextClipToMask"}}{\fldrslt 
+\f1 \cf10 \expnd0\expndtw0\kerning0
+CGContextClipToMask}}\expnd0\expndtw0\kerning0
+\cell 
+\pard\intbl\itap1\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+Maps a mask into the specified rectangle and intersects it with the current clipping area of the graphics context. Any subsequent path drawing you perform to the graphics context is clipped. (See\'a0{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_images/dq_images.html#//apple_ref/doc/uid/TP30001066-CH212-CJBHDDBE"}}{\fldrslt \cf10 \expnd0\expndtw0\kerning0
+\'93Masking an Image by Clipping the Context.}}\cell \lastrow\row
+}
