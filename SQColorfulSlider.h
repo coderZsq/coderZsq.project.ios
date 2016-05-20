@@ -1,9 +1,8 @@
 //
 //  SQColorfulSlider.h
-//  具有多个颜色的滑块
 //
-//  Created by mac on 13-11-20.
-//  Copyright (c) 2013年 mac. All rights reserved.
+//  Created by Doubles_Z on 15/9/5.
+//  Copyright (c) 2015年 Doubles_Z. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

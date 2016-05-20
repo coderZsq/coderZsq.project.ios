@@ -1,9 +1,8 @@
 //
 //  SQCollectionViewStackLayout.m
-//  SQMall Demo
 //
-//  Created by 双泉 朱 on 16/2/3.
-//  Copyright © 2016年 Castiel. All rights reserved.
+//  Created by Doubles_Z on 15/9/5.
+//  Copyright (c) 2015年 Doubles_Z. All rights reserved.
 //
 
 #import "SQCollectionViewStackLayout.h"
