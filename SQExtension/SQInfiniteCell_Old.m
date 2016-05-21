@@ -7,7 +7,7 @@
 
 #import "SQInfiniteCell_Old.h"
 
-@interface SQInfiniteCell_old () <UIScrollViewDelegate>
+@interface SQInfiniteCell_Old () <UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray * infiniteLoopArr;
 @property (strong, nonatomic) NSTimer        * timer;
