@@ -8,7 +8,9 @@
 #import "SQBundleVersionManager.h"
 #import "SQTabBarController.h"
 #import "SQNewFeatureViewController.h"
-#import "ViewController.h"
+#import "SQLifestyleViewController.h"
+#import "SQDiscoverViewController.h"
+#import "SQProfileViewController.h"
 
 @implementation SQBundleVersionManager
 
@@ -50,10 +52,14 @@
 
 - (SQTabBarController *)getTabbarController {
     
-    return [SQTabBarController tabbarWithViewControllers:@[[ViewController new]]
-                                                  titles:@[@"Lifestyle"]
-                                              imageNames:@[@""]
-                                      selectedImageNames:@[@""]];
+    return [SQTabBarController tabbarWithViewControllers:@[[SQLifestyleViewController new],
+                                                           [SQDiscoverViewController new],
+                                                           [SQProfileViewController new]]
+                                                  titles:@[@"Lifestyle",
+                                                           @"Discover",
+                                                           @"Profile"]
+                                              imageNames:@[@"",@"",@""]
+                                      selectedImageNames:@[@"",@"",@""]];
     
 }
 

@@ -15,7 +15,6 @@
 		CF8C291D1CF0406A00464155 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C291C1CF0406A00464155 /* AppDelegate.m */; };
 		CF8C29201CF0406A00464155 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF8C291E1CF0406A00464155 /* Main_iPhone.storyboard */; };
 		CF8C29231CF0406A00464155 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF8C29211CF0406A00464155 /* Main_iPad.storyboard */; };
-		CF8C29261CF0406A00464155 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29251CF0406A00464155 /* ViewController.m */; };
 		CF8C29281CF0406A00464155 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF8C29271CF0406A00464155 /* Images.xcassets */; };
 		CF8C292F1CF0406A00464155 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C292E1CF0406A00464155 /* XCTest.framework */; };
 		CF8C29301CF0406A00464155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C290C1CF0406A00464155 /* Foundation.framework */; };
@@ -77,6 +76,9 @@
 		CF8C29E81CF0411600464155 /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29AF1CF0411600464155 /* UIColor+SQExtension.m */; };
 		CF8C29E91CF0411600464155 /* UIImage+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29B11CF0411600464155 /* UIImage+SQExtension.m */; };
 		CF8C29EA1CF0411600464155 /* UIView+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29B31CF0411600464155 /* UIView+SQExtension.m */; };
+		CFF9BDF21CF148810000A4D2 /* SQLifestyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF9BDF11CF148810000A4D2 /* SQLifestyleViewController.m */; };
+		CFF9BDF51CF1489F0000A4D2 /* SQDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF9BDF41CF1489F0000A4D2 /* SQDiscoverViewController.m */; };
+		CFF9BDF81CF148AD0000A4D2 /* SQProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF9BDF71CF148AD0000A4D2 /* SQProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +104,6 @@
 		CF8C291C1CF0406A00464155 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CF8C291F1CF0406A00464155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		CF8C29221CF0406A00464155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		CF8C29241CF0406A00464155 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CF8C29251CF0406A00464155 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CF8C29271CF0406A00464155 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF8C292D1CF0406A00464155 /* SQLifestyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLifestyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8C292E1CF0406A00464155 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -221,6 +221,12 @@
 		CF8C29B11CF0411600464155 /* UIImage+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQExtension.m"; sourceTree = "<group>"; };
 		CF8C29B21CF0411600464155 /* UIView+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQExtension.h"; sourceTree = "<group>"; };
 		CF8C29B31CF0411600464155 /* UIView+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQExtension.m"; sourceTree = "<group>"; };
+		CFF9BDF01CF148810000A4D2 /* SQLifestyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleViewController.h; sourceTree = "<group>"; };
+		CFF9BDF11CF148810000A4D2 /* SQLifestyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleViewController.m; sourceTree = "<group>"; };
+		CFF9BDF31CF1489F0000A4D2 /* SQDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDiscoverViewController.h; sourceTree = "<group>"; };
+		CFF9BDF41CF1489F0000A4D2 /* SQDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDiscoverViewController.m; sourceTree = "<group>"; };
+		CFF9BDF61CF148AD0000A4D2 /* SQProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQProfileViewController.h; sourceTree = "<group>"; };
+		CFF9BDF71CF148AD0000A4D2 /* SQProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,9 +256,9 @@
 		CF8C29001CF0406A00464155 = {
 			isa = PBXGroup;
 			children = (
-				CF8C29441CF0411600464155 /* SQExtension */,
 				CF8C29121CF0406A00464155 /* SQLifestyle */,
 				CF8C29341CF0406A00464155 /* SQLifestyleTests */,
+				CF8C29441CF0411600464155 /* SQExtension */,
 				CF8C290B1CF0406A00464155 /* Frameworks */,
 				CF8C290A1CF0406A00464155 /* Products */,
 			);
@@ -281,13 +287,9 @@
 		CF8C29121CF0406A00464155 /* SQLifestyle */ = {
 			isa = PBXGroup;
 			children = (
-				CF8C291B1CF0406A00464155 /* AppDelegate.h */,
-				CF8C291C1CF0406A00464155 /* AppDelegate.m */,
-				CF8C291E1CF0406A00464155 /* Main_iPhone.storyboard */,
-				CF8C29211CF0406A00464155 /* Main_iPad.storyboard */,
-				CF8C29241CF0406A00464155 /* ViewController.h */,
-				CF8C29251CF0406A00464155 /* ViewController.m */,
-				CF8C29271CF0406A00464155 /* Images.xcassets */,
+				CFF9BDE81CF1483C0000A4D2 /* Lifestyle */,
+				CFF9BDE41CF1483C0000A4D2 /* Discover */,
+				CFF9BDEC1CF1483C0000A4D2 /* Proflie */,
 				CF8C29131CF0406A00464155 /* Supporting Files */,
 			);
 			path = SQLifestyle;
@@ -296,6 +298,11 @@
 		CF8C29131CF0406A00464155 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF8C291B1CF0406A00464155 /* AppDelegate.h */,
+				CF8C291C1CF0406A00464155 /* AppDelegate.m */,
+				CF8C291E1CF0406A00464155 /* Main_iPhone.storyboard */,
+				CF8C29211CF0406A00464155 /* Main_iPad.storyboard */,
+				CF8C29271CF0406A00464155 /* Images.xcassets */,
 				CF8C29141CF0406A00464155 /* SQLifestyle-Info.plist */,
 				CF8C29151CF0406A00464155 /* InfoPlist.strings */,
 				CF8C29181CF0406A00464155 /* main.m */,
@@ -440,6 +447,105 @@
 			path = SQExtension;
 			sourceTree = "<group>";
 		};
+		CFF9BDE41CF1483C0000A4D2 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				CFF9BDE61CF1483C0000A4D2 /* Model */,
+				CFF9BDE71CF1483C0000A4D2 /* View */,
+				CFF9BDE51CF1483C0000A4D2 /* Controller */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		CFF9BDE51CF1483C0000A4D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFF9BDF31CF1489F0000A4D2 /* SQDiscoverViewController.h */,
+				CFF9BDF41CF1489F0000A4D2 /* SQDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CFF9BDE61CF1483C0000A4D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFF9BDE71CF1483C0000A4D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFF9BDE81CF1483C0000A4D2 /* Lifestyle */ = {
+			isa = PBXGroup;
+			children = (
+				CFF9BDEA1CF1483C0000A4D2 /* Model */,
+				CFF9BDEB1CF1483C0000A4D2 /* View */,
+				CFF9BDE91CF1483C0000A4D2 /* Controller */,
+			);
+			path = Lifestyle;
+			sourceTree = "<group>";
+		};
+		CFF9BDE91CF1483C0000A4D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFF9BDF01CF148810000A4D2 /* SQLifestyleViewController.h */,
+				CFF9BDF11CF148810000A4D2 /* SQLifestyleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CFF9BDEA1CF1483C0000A4D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFF9BDEB1CF1483C0000A4D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFF9BDEC1CF1483C0000A4D2 /* Proflie */ = {
+			isa = PBXGroup;
+			children = (
+				CFF9BDEE1CF1483C0000A4D2 /* Model */,
+				CFF9BDEF1CF1483C0000A4D2 /* View */,
+				CFF9BDED1CF1483C0000A4D2 /* Controller */,
+			);
+			path = Proflie;
+			sourceTree = "<group>";
+		};
+		CFF9BDED1CF1483C0000A4D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFF9BDF61CF148AD0000A4D2 /* SQProfileViewController.h */,
+				CFF9BDF71CF148AD0000A4D2 /* SQProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CFF9BDEE1CF1483C0000A4D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFF9BDEF1CF1483C0000A4D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -543,7 +649,6 @@
 				CF8C29CC1CF0411600464155 /* SQHyperLinks.m in Sources */,
 				CF8C29CA1CF0411600464155 /* SQHeaderFooterView.m in Sources */,
 				CF8C29E51CF0411600464155 /* SQWaterwaveView.m in Sources */,
-				CF8C29261CF0406A00464155 /* ViewController.m in Sources */,
 				CF8C29D31CF0411600464155 /* SQPaintView.m in Sources */,
 				CF8C29D61CF0411600464155 /* SQPopLayerView.m in Sources */,
 				CF8C29C71CF0411600464155 /* SQCountDown_Server.m in Sources */,
@@ -557,6 +662,7 @@
 				CF8C29B41CF0411600464155 /* CALayer+SQExtension.m in Sources */,
 				CF8C29E91CF0411600464155 /* UIImage+SQExtension.m in Sources */,
 				CF8C29D11CF0411600464155 /* SQNewFeatureViewController.m in Sources */,
+				CFF9BDF21CF148810000A4D2 /* SQLifestyleViewController.m in Sources */,
 				CF8C29D91CF0411600464155 /* SQRemovableBadgeView.m in Sources */,
 				CF8C29E11CF0411600464155 /* SQTableViewController.m in Sources */,
 				CF8C29D71CF0411600464155 /* SQProgressButton.m in Sources */,
@@ -566,6 +672,7 @@
 				CF8C29D01CF0411600464155 /* SQNavigationController.m in Sources */,
 				CF8C29DB1CF0411600464155 /* SQScaleImageView.m in Sources */,
 				CF8C29DD1CF0411600464155 /* SQTabBar.m in Sources */,
+				CFF9BDF81CF148AD0000A4D2 /* SQProfileViewController.m in Sources */,
 				CF8C29BD1CF0411600464155 /* SQCircularSlider.m in Sources */,
 				CF8C29E41CF0411600464155 /* SQViewControllerManager.m in Sources */,
 				CF8C29DF1CF0411600464155 /* SQTabBarController.m in Sources */,
@@ -593,6 +700,7 @@
 				CF8C29B91CF0411600464155 /* SQAddressBook.m in Sources */,
 				CF8C29CF1CF0411600464155 /* SQLockView.m in Sources */,
 				CF8C29BC1CF0411600464155 /* SQBundleVersionManager.m in Sources */,
+				CFF9BDF51CF1489F0000A4D2 /* SQDiscoverViewController.m in Sources */,
 				CF8C29191CF0406A00464155 /* main.m in Sources */,
 				CF8C29C01CF0411600464155 /* SQCollectionViewScaleFlowLayout.m in Sources */,
 				CF8C29E31CF0411600464155 /* SQTableViewSection.m in Sources */,
@@ -810,6 +918,7 @@
 				CF8C29401CF0406A00464155 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF8C29411CF0406A00464155 /* Build configuration list for PBXNativeTarget "SQLifestyleTests" */ = {
 			isa = XCConfigurationList;
@@ -818,6 +927,7 @@
 				CF8C29431CF0406A00464155 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

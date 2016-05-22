@@ -15,7 +15,7 @@
 
 + (void)initialize
 {
-    UIColor * themeColor = [UIColor redColor];
+    UIColor * themeColor = [UIColor blackColor];
     UIFont  * themeFont  = [UIFont systemFontOfSize:0.1f];
     UINavigationBar * navigationBar = [UINavigationBar appearance];
     navigationBar.tintColor = themeColor;

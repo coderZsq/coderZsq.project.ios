@@ -65,7 +65,7 @@
     if (!_centerButton) {
         _centerButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_centerButton addTarget:self action:@selector(centerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_centerButton setHidden:NO];
+        [_centerButton setHidden:YES];
         [self addSubview:_centerButton];
     }
     return _centerButton;
