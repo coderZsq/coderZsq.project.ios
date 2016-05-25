@@ -1,5 +1,5 @@
 ##SQLifestyle
-The app is record my life
+Lifestyle is a free app that lets you connect with people, express yourself, and discover more about all the things you love.
 
 ##SQExtension
 * Custom Control
