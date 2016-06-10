@@ -7,6 +7,7 @@
 //
 
 #import "SQLifestyleViewController.h"
+#import "SQBannerCell.h"
 
 @interface SQLifestyleViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -16,9 +17,20 @@
 
 @implementation SQLifestyleViewController
 
+- (void)loadView {
+    [super loadView];
+    [self.navigationItem setTitleView:[UIView new]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (UITableView *)tableView {
@@ -28,6 +40,7 @@
         _tableView.frame = self.view.bounds;
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     }
     return _tableView;
 }
@@ -38,12 +51,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    static NSString * identifier = @"identifier";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }   cell.textLabel.text = @"https://github.com/coderZsq";
+    SQBannerCell * cell = [SQBannerCell cellWithTableView:tableView];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [SQBannerCell cellHeight];
 }
 
 @end

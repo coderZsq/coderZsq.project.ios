@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF424AF51D08561900114963 /* SQBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF424AF41D08561900114963 /* SQBannerCell.m */; };
 		CF8C290D1CF0406A00464155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C290C1CF0406A00464155 /* Foundation.framework */; };
 		CF8C290F1CF0406A00464155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C290E1CF0406A00464155 /* CoreGraphics.framework */; };
 		CF8C29111CF0406A00464155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C29101CF0406A00464155 /* UIKit.framework */; };
@@ -92,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF424AF31D08561900114963 /* SQBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQBannerCell.h; sourceTree = SOURCE_ROOT; };
+		CF424AF41D08561900114963 /* SQBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQBannerCell.m; sourceTree = SOURCE_ROOT; };
 		CF8C29091CF0406A00464155 /* SQLifestyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLifestyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8C290C1CF0406A00464155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF8C290E1CF0406A00464155 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -509,6 +512,8 @@
 		CFF9BDEB1CF1483C0000A4D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF424AF31D08561900114963 /* SQBannerCell.h */,
+				CF424AF41D08561900114963 /* SQBannerCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -684,6 +689,7 @@
 				CF8C29B51CF0411600464155 /* NSArray+SQExtension.m in Sources */,
 				CF8C29C61CF0411600464155 /* SQCountDown_Local.m in Sources */,
 				CF8C29BE1CF0411600464155 /* SQCollectionViewCoverFlowLayout.m in Sources */,
+				CF424AF51D08561900114963 /* SQBannerCell.m in Sources */,
 				CF8C29CB1CF0411600464155 /* SQHttpConnection.m in Sources */,
 				CF8C29C51CF0411600464155 /* SQCopyLabel.m in Sources */,
 				CF8C29BF1CF0411600464155 /* SQCollectionViewLoopLayout.m in Sources */,
