@@ -35,6 +35,45 @@
     return sections.rows.count;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SQTableViewSection * sections = self.dataSource[indexPath.section];
+    SQTableViewRow * rows = sections.rows[indexPath.row];
+    SQTableViewCell * cell = [rows.tableViewCell cellWithTableView:tableView];
+    return cell;
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    SQTableViewSection * sections = self.dataSource[indexPath.section];
+    SQTableViewRow * rows = sections.rows[indexPath.row];
+    [self.navigationController pushViewController:[rows.nextViewController new] animated:YES];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    SQTableViewSection * sections = self.dataSource[section];
+    SQHeaderFooterView * headerView = [sections.headerView viewWithTableView:tableView];
+    return headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    SQTableViewSection * sections = self.dataSource[section];
+    SQHeaderFooterView * footerView = [sections.footerView viewWithTableView:tableView];
+    return footerView;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    SQTableViewSection * sections = self.dataSource[section];
+    return sections.headerTitle;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    SQTableViewSection * sections = self.dataSource[section];
+    return sections.footerTitle;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     SQTableViewSection * sections = self.dataSource[indexPath.section];
     SQTableViewRow * rows = sections.rows[indexPath.row];
@@ -49,16 +88,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     SQTableViewSection * sections = self.dataSource[section];
     return  sections.footerHeight;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    SQTableViewSection * sections = self.dataSource[section];
-    return sections.headerTitle;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    SQTableViewSection * sections = self.dataSource[section];
-    return sections.footerTitle;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

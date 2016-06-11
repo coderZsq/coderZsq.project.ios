@@ -1,5 +1,6 @@
-####SQLifestyle
-Lifestyle is a free app that lets you connect with people, express yourself, and discover more about all the things you love.
+>Lifestyle作为踏上全栈之路的开始, 希望能够通过这样一个项目对 iOS + PHP + HTML5 + UI/UX的技术知识有进一步的了解,由于是兴趣项目,故不定期更新!! 
 
------------------------
-[If you have any question please feel free to pushing me!!](http://www.jianshu.com/users/9d7fad1a4693/timeline)
+##### 涉及内容:
+1. [无限轮播图](http://coderzsq.github.io/2016/06/10/iOS%20%E6%8A%95%E6%9C%BA%E6%B5%81%E5%AE%9E%E7%8E%B0%20%E6%97%A0%E9%99%90%E8%BD%AE%E6%92%AD%E5%9B%BE/)
+
+---------------------

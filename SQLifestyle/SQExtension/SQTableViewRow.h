@@ -11,6 +11,8 @@
 
 @property (nonatomic,assign) Class tableViewCell;
 
+@property (nonatomic,assign) Class nextViewController;
+
 @property (nonatomic,assign) double cellHeight;
 
 + (instancetype)rowForTableViewCell:(Class)tableViewCell cellHeight:(double)cellHeight;
