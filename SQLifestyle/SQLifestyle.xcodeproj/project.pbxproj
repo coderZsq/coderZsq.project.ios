@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF732F011D0D8B9900486811 /* SQLifestyleBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF732F001D0D8B9900486811 /* SQLifestyleBannerCell.m */; };
 		CF8C290D1CF0406A00464155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C290C1CF0406A00464155 /* Foundation.framework */; };
 		CF8C290F1CF0406A00464155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C290E1CF0406A00464155 /* CoreGraphics.framework */; };
 		CF8C29111CF0406A00464155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C29101CF0406A00464155 /* UIKit.framework */; };
@@ -78,7 +79,6 @@
 		CF8C29EA1CF0411600464155 /* UIView+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29B31CF0411600464155 /* UIView+SQExtension.m */; };
 		CFF94DA31D0C5A2E00E8EF29 /* SQDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF94D921D0C5A2E00E8EF29 /* SQDiscoverViewController.m */; };
 		CFF94DA41D0C5A2E00E8EF29 /* SQLifestyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF94D981D0C5A2E00E8EF29 /* SQLifestyleViewController.m */; };
-		CFF94DA51D0C5A2E00E8EF29 /* SQBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF94D9C1D0C5A2E00E8EF29 /* SQBannerCell.m */; };
 		CFF94DA61D0C5A2E00E8EF29 /* SQProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF94DA01D0C5A2E00E8EF29 /* SQProfileViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF732EFF1D0D8B9900486811 /* SQLifestyleBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleBannerCell.h; sourceTree = "<group>"; };
+		CF732F001D0D8B9900486811 /* SQLifestyleBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleBannerCell.m; sourceTree = "<group>"; };
 		CF8C29091CF0406A00464155 /* SQLifestyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLifestyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8C290C1CF0406A00464155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF8C290E1CF0406A00464155 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -226,8 +228,6 @@
 		CFF94D921D0C5A2E00E8EF29 /* SQDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDiscoverViewController.m; sourceTree = "<group>"; };
 		CFF94D971D0C5A2E00E8EF29 /* SQLifestyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleViewController.h; sourceTree = "<group>"; };
 		CFF94D981D0C5A2E00E8EF29 /* SQLifestyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleViewController.m; sourceTree = "<group>"; };
-		CFF94D9B1D0C5A2E00E8EF29 /* SQBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQBannerCell.h; sourceTree = "<group>"; };
-		CFF94D9C1D0C5A2E00E8EF29 /* SQBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQBannerCell.m; sourceTree = "<group>"; };
 		CFF94D9F1D0C5A2E00E8EF29 /* SQProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQProfileViewController.h; sourceTree = "<group>"; };
 		CFF94DA01D0C5A2E00E8EF29 /* SQProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -512,8 +512,8 @@
 		CFF94D9A1D0C5A2E00E8EF29 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CFF94D9B1D0C5A2E00E8EF29 /* SQBannerCell.h */,
-				CFF94D9C1D0C5A2E00E8EF29 /* SQBannerCell.m */,
+				CF732EFF1D0D8B9900486811 /* SQLifestyleBannerCell.h */,
+				CF732F001D0D8B9900486811 /* SQLifestyleBannerCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -658,6 +658,7 @@
 				CF8C29D61CF0411600464155 /* SQPopLayerView.m in Sources */,
 				CF8C29C71CF0411600464155 /* SQCountDown_Server.m in Sources */,
 				CF8C29B71CF0411600464155 /* NSMutableAttributedString+SQExtension.m in Sources */,
+				CF732F011D0D8B9900486811 /* SQLifestyleBannerCell.m in Sources */,
 				CF8C29DA1CF0411600464155 /* SQRemovableButton.m in Sources */,
 				CF8C29E21CF0411600464155 /* SQTableViewRow.m in Sources */,
 				CF8C29D51CF0411600464155 /* SQPopButton.m in Sources */,
@@ -668,7 +669,6 @@
 				CF8C29E91CF0411600464155 /* UIImage+SQExtension.m in Sources */,
 				CF8C29D11CF0411600464155 /* SQNewFeatureViewController.m in Sources */,
 				CF8C29D91CF0411600464155 /* SQRemovableBadgeView.m in Sources */,
-				CFF94DA51D0C5A2E00E8EF29 /* SQBannerCell.m in Sources */,
 				CF8C29E11CF0411600464155 /* SQTableViewController.m in Sources */,
 				CF8C29D71CF0411600464155 /* SQProgressButton.m in Sources */,
 				CFF94DA41D0C5A2E00E8EF29 /* SQLifestyleViewController.m in Sources */,

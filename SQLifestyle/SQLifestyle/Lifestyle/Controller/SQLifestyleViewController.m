@@ -7,7 +7,7 @@
 //
 
 #import "SQLifestyleViewController.h"
-#import "SQBannerCell.h"
+#import "SQLifestyleBannerCell.h"
 
 @interface SQLifestyleViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -51,12 +51,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    SQBannerCell * cell = [SQBannerCell cellWithTableView:tableView];
+    SQLifestyleBannerCell * cell = [SQLifestyleBannerCell cellWithTableView:tableView];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [SQBannerCell cellHeight];
+    return [SQLifestyleBannerCell cellHeight];
 }
 
 @end

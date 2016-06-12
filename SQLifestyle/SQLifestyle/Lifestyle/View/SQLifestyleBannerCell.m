@@ -1,15 +1,15 @@
 //
-//  SQBannerCell.m
+//  SQLifestyleBannerCell.m
 //  SQLifestyle
 //
 //  Created by Doubles_Z on 16-6-8.
 //  Copyright (c) 2016年 Doubles_Z. All rights reserved.
 //
 
-#import "SQBannerCell.h"
+#import "SQLifestyleBannerCell.h"
 #import "UIColor+SQExtension.h"
 
-@interface SQBannerCell () <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface SQLifestyleBannerCell () <UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic,strong) UICollectionView * collectionView;
 @property (nonatomic,strong) UICollectionViewFlowLayout * flowLayout;
@@ -23,14 +23,14 @@
 static const NSInteger kMultiply = 500;
 static const NSInteger kCounts = 5;
 
-@implementation SQBannerCell
+@implementation SQLifestyleBannerCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
     
-    NSString * identifier = NSStringFromClass([SQBannerCell class]);
-    SQBannerCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    NSString * identifier = NSStringFromClass([SQLifestyleBannerCell class]);
+    SQLifestyleBannerCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[SQBannerCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[SQLifestyleBannerCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     return cell;
 }
@@ -103,7 +103,7 @@ static const NSInteger kCounts = 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     cell.contentView.layer.contents = (__bridge id)[UIImage imageNamed:@"banner"].CGImage;
     return cell;

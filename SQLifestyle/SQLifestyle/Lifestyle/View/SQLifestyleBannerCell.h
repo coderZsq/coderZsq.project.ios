@@ -1,5 +1,5 @@
 //
-//  SQBannerCell.h
+//  SQLifestyleBannerCell.h
 //  SQLifestyle
 //
 //  Created by Doubles_Z on 16-6-8.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SQBannerCell : UITableViewCell
+@interface SQLifestyleBannerCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
