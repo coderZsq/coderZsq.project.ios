@@ -7,10 +7,12 @@
 
 #import "SQTabBarController.h"
 #import "SQTabBar.h"
+#import "SQTabbarControllerAnimatedTransitioning.h"
+#import "SQTabBarConst.h"
 
 #import "SQNavigationController.h"
 
-@interface SQTabBarController () <SQTabBarDelegate>
+@interface SQTabBarController () <SQTabBarDelegate,UITabBarControllerDelegate>
 
 @property (nonatomic,strong) SQTabBar * sqTabBar;
 
@@ -21,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tabBar addSubview:self.sqTabBar];
+    [self.view setBackgroundColor: TABBAR_BGC];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,7 +66,14 @@
 }
 
 - (void)tabBar:(SQTabBar *)tabBar didSelectItemFrom:(NSInteger)preIndex to:(NSInteger)selectedIndex {
-    self.selectedIndex = selectedIndex;
+
+                         _preIndex      = preIndex;
+    self.selectedIndex = _selectedIndex = selectedIndex;
+    self.delegate      = self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    return [SQTabbarControllerAnimatedTransitioning new];
 }
 
 @end

@@ -130,7 +130,9 @@ static const NSInteger kCounts = 5;
 }
 
 - (void)updateTimer {
-    [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + self.contentView.frame.size.width, 0) animated:YES];
+
+    NSInteger item = (self.collectionView.contentOffset.x + self.contentView.frame.size.width) * (kCounts * kMultiply)/ self.collectionView.contentSize.width;
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:item inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 }
 
 - (void)layoutSubviews {

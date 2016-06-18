@@ -33,6 +33,8 @@
 #define KC04_999999 [UIColor colorWithHexString:@"#999999"];
 #define KC05_dddddd [UIColor colorWithHexString:@"#dddddd"];
 
+#define TABBAR_BGC SQColor(248, 248, 248, 1)
+
 #define iOS7  [[UIDevice currentDevice]systemVersion].floatValue >= 7.0f
 #define iOS8  [[UIDevice currentDevice]systemVersion].floatValue >= 8.0f
 #define iOS9  [[UIDevice currentDevice]systemVersion].floatValue >= 9.0f
