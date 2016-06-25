@@ -6,7 +6,7 @@
 //
 
 #import "SQTabbarControllerAnimatedTransitioning.h"
-#import "SQTabBarConst.h"
+#import "SQTabBarGlobal.h"
 
 @implementation SQTabbarControllerAnimatedTransitioning
 

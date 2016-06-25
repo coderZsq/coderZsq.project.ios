@@ -76,8 +76,8 @@ static const double ratio = 0.7f;
     [self setTitle:self.item.title            forState:UIControlStateSelected];
     [self setImage:self.item.image            forState:UIControlStateNormal];
     [self setImage:self.item.selectedImage    forState:UIControlStateSelected];
-    [self setTitleColor:[UIColor grayColor  ] forState:UIControlStateNormal];
-    [self setTitleColor:SQColor(77, 133, 246, 1) forState:UIControlStateSelected];
+    [self setTitleColor:KC04_999999           forState:UIControlStateNormal];
+    [self setTitleColor:KC01_57c2de           forState:UIControlStateSelected];
     
     self.badgeView.badgeValue = self.item.badgeValue;
 

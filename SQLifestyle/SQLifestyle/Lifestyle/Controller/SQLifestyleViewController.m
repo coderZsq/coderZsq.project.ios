@@ -8,10 +8,17 @@
 
 #import "SQLifestyleViewController.h"
 #import "SQLifestyleBannerCell.h"
+#import "SQLifestyleSearchCell.h"
+#import "SQLifestyleSearchBarView.h"
+#import "SQLifestyleGlobal.h"
+#import "UIViewController+SQExtension.h"
 
 @interface SQLifestyleViewController () <UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,strong) NSArray * keysArr;
 @property (nonatomic,strong) UITableView * tableView;
+@property (nonatomic,strong) SQLifestyleSearchBarView * titleView;
+@property (nonatomic,strong) SQLifestyleSearchBarView * searchBarView;
 
 @end
 
@@ -19,14 +26,53 @@
 
 - (void)loadView {
     [super loadView];
-    [self.navigationItem setTitleView:[UIView new]];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationItem setTitleView:self.titleView];
     [self.navigationController.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
+    [self.navigationController.view addSubview:self.searchBarView];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    CGFloat searchBarViewX = kSpace;
+    CGFloat searchBarViewW = self.titleView.width;
+    CGFloat searchBarViewH = self.titleView.height;
+    CGFloat searchBarViewY = kScaleLength(210) + searchBarViewH - self.tableView.contentOffset.y - searchBarViewH;
+    self.searchBarView.frame = CGRectMake(searchBarViewX, searchBarViewY, searchBarViewW, searchBarViewH);
+}
+
+- (NSArray *)keysArr {
+    
+    if (!_keysArr) {
+        _keysArr = @[kSQLifestyleBannerKey,
+                     kSQLifestyleSearchKey,
+                     @"",@"",@"",@"",@"",
+                     @"",@"",@"",@"",@"",
+                     @"",@"",@"",@"",@"",
+                     @"",@"",@"",@"",@""];
+    }
+    return _keysArr;
+}
+
+- (SQLifestyleSearchBarView *)titleView {
+    
+    if (!_titleView) {
+        _titleView = [SQLifestyleSearchBarView new];
+        _titleView.frame = self.navigationController.navigationBar.frame;
+    }
+    return _titleView;
+}
+
+- (SQLifestyleSearchBarView *)searchBarView {
+    
+    if (!_searchBarView) {
+        _searchBarView = [SQLifestyleSearchBarView new];
+    }
+    return _searchBarView;
 }
 
 - (UITableView *)tableView {
@@ -37,22 +83,49 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.keysArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    SQLifestyleBannerCell * cell = [SQLifestyleBannerCell cellWithTableView:tableView];
+    NSString * const key = self.keysArr[indexPath.row];
+    if (key == kSQLifestyleBannerKey) {
+        SQLifestyleBannerCell * cell = [SQLifestyleBannerCell cellWithTableView:tableView];
+        return cell;
+    }
+    if (key == kSQLifestyleSearchKey) {
+        SQLifestyleSearchCell * cell = [SQLifestyleSearchCell cellWithTableView:tableView];
+        return cell;
+    }
+    static NSString * identifier = @"cell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }   cell.textLabel.text = @"https://coderZsq.github.io";
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [SQLifestyleBannerCell cellHeight];
+    NSString * const key = self.keysArr[indexPath.row];
+    if (key == kSQLifestyleBannerKey) {
+        return [SQLifestyleBannerCell cellHeight];
+    }
+    if (key == kSQLifestyleSearchKey) {
+        return [SQLifestyleSearchCell cellHeight];
+    }
+    return 44;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self viewWillLayoutSubviews];
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    [self navigationBarGradualChangeWithScrollView:scrollView titleView:self.titleView movableView:self.searchBarView offset:kScaleLength(190.5) color:KC01_57c2de];
 }
 
 @end

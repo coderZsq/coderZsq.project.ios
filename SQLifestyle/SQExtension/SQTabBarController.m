@@ -8,7 +8,7 @@
 #import "SQTabBarController.h"
 #import "SQTabBar.h"
 #import "SQTabbarControllerAnimatedTransitioning.h"
-#import "SQTabBarConst.h"
+#import "SQTabBarGlobal.h"
 
 #import "SQNavigationController.h"
 

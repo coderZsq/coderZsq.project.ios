@@ -27,13 +27,24 @@
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScaleLength(length) (length) * [UIScreen mainScreen].bounds.size.width / 320.0f
 
-#define KC01_57c2de [UIColor colorWithHexString:@"#57c2de"];
-#define KC02_2c2c2c [UIColor colorWithHexString:@"#2c2c2c"];
-#define KC03_666666 [UIColor colorWithHexString:@"#666666"];
-#define KC04_999999 [UIColor colorWithHexString:@"#999999"];
-#define KC05_dddddd [UIColor colorWithHexString:@"#dddddd"];
+#define kSpace 8
+#define kTimeInterval 0.25
+
+#define KC01_57c2de [UIColor colorWithHexString:@"#57c2de"]
+#define KC02_2c2c2c [UIColor colorWithHexString:@"#2c2c2c"]
+#define KC03_666666 [UIColor colorWithHexString:@"#666666"]
+#define KC04_999999 [UIColor colorWithHexString:@"#999999"]
+#define KC05_dddddd [UIColor colorWithHexString:@"#dddddd"]
+
+#define KF01_24px [UIFont systemFontOfSize:24]
+#define KF02_18px [UIFont systemFontOfSize:18]
+#define KF03_17px [UIFont systemFontOfSize:17]
+#define KF04_15px [UIFont systemFontOfSize:15]
+#define KF05_14px [UIFont systemFontOfSize:14]
+#define KF06_12px [UIFont systemFontOfSize:12]
 
 #define TABBAR_BGC SQColor(248, 248, 248, 1)
+#define GLOBAL_BGC TABBAR_BGC
 
 #define iOS7  [[UIDevice currentDevice]systemVersion].floatValue >= 7.0f
 #define iOS8  [[UIDevice currentDevice]systemVersion].floatValue >= 8.0f

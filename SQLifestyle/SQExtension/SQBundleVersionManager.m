@@ -58,9 +58,12 @@
                                                   titles:@[@"Lifestyle",
                                                            @"Discover",
                                                            @"Profile"]
-                                              imageNames:@[@"",@"",@""]
-                                      selectedImageNames:@[@"",@"",@""]];
-    
+                                              imageNames:@[@"lifestyle",
+                                                           @"discover",
+                                                           @"profile"]
+                                      selectedImageNames:@[@"lifestyle_select",
+                                                           @"discover_select",
+                                                           @"profile_select"]];
 }
 
 @end
