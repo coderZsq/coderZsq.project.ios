@@ -143,4 +143,12 @@ static char kWhenTouchedUpBlockKey;
     }
 }
 
+- (void)loomingAnimationWithDuration:(CGFloat)duration {
+    
+    self.alpha = 0.0;
+    [UIView animateWithDuration:duration animations:^{
+        self.alpha = 1.0;
+    }];
+}
+
 @end

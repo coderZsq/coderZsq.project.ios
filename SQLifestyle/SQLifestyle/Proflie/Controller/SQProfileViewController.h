@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SQProfileViewController : UIViewController
+@interface SQProfileViewController : SQViewController
 
 @end

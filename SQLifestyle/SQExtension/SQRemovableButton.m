@@ -26,14 +26,15 @@
     CGPoint previous = [touch previousLocationInView:self];
     
     CGPoint center = self.center;
+
     center.x += current.x - previous.x; center.y += current.y - previous.y;
     
     CGFloat screenWidth  = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
     
     CGFloat xMin = self.frame.size.width  * 0.5f; CGFloat xMax = screenWidth  - xMin;
-    CGFloat yMin = self.frame.size.height * 0.5f; CGFloat yMax = screenHeight - yMin;
-
+    CGFloat yMin = self.frame.size.height * 0.5f; CGFloat yMax = screenHeight - yMin - 49;
+    
     if (center.x > xMax) center.x = xMax; if (center.y > yMax) center.y = yMax;
     if (center.x < xMin) center.x = xMin; if (center.y < yMin) center.y = yMin;
     

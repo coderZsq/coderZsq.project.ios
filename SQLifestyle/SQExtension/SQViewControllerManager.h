@@ -5,16 +5,14 @@
 //  Copyright (c) 2015年 Doubles_Z. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@class SQTableViewController;
+#import <UIKit/UIKit.h>
 
 @interface SQViewControllerManager : NSObject
 
-@property (nonatomic,strong) SQTableViewController * currentViewController;
+@property (nonatomic,strong) UIViewController * currentViewController;
 
 + (SQViewControllerManager *)shareInstance;
 
-- (SQTableViewController *)currentViewController;
+- (UIViewController *)currentViewController;
 
 @end

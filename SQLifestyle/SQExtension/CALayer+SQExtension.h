@@ -19,5 +19,4 @@
 
 - (CAReplicatorLayer *)addReplicatorWithSuperLayer:(CALayer *)layer coordinate:(CGPoint)coordinate;
 
-
 @end

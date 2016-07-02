@@ -7,10 +7,12 @@
 //
 
 #import "SQLifestyleSearchCell.h"
+#import "SQLifestyleSearchBarView.h"
 
 @interface SQLifestyleSearchCell ()
 
 @property (nonatomic,strong) UIImageView * hotSpotsImageView;
+@property (nonatomic,strong) SQLifestyleSearchBarView * searchBarView;
 
 @end
 
@@ -40,14 +42,23 @@
     
     if (!_hotSpotsImageView) {
         _hotSpotsImageView = [UIImageView new];
-        _hotSpotsImageView.image = [UIImage imageNamed:@"Hot Spots"];
+        _hotSpotsImageView.image = [UIImage imageNamed:kLifestyle_hotspots];
     }
     return _hotSpotsImageView;
+}
+
+- (SQLifestyleSearchBarView *)searchBarView {
+    
+    if (!_searchBarView) {
+        _searchBarView = [SQLifestyleSearchBarView new];
+    }
+    return _searchBarView;
 }
 
 - (void)setupSubviews {
     [self setBackgroundColor:GLOBAL_BGC];
     [self.contentView addSubview:self.hotSpotsImageView];
+    [self.contentView addSubview:self.searchBarView];
 }
 
 - (void)layoutSubviews {
@@ -60,10 +71,16 @@
     CGFloat hotSpotsImageViewH = 20;
     CGFloat hotSpotsImageViewY = self.height - hotSpotsImageViewH - 5;
     self.hotSpotsImageView.frame = CGRectMake(hotSpotsImageViewX, hotSpotsImageViewY, hotSpotsImageViewW, hotSpotsImageViewH);
+    
+    CGFloat searchBarViewX = padding;
+    CGFloat searchBarViewY = 0;
+    CGFloat searchBarViewW = self.width - 2 * padding;
+    CGFloat searchBarViewH = 34;
+    self.searchBarView.frame = CGRectMake(searchBarViewX, searchBarViewY, searchBarViewW, searchBarViewH);
 }
 
 + (CGFloat)cellHeight {
-	return 70;
+	return 75;
 }
 
 @end

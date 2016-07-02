@@ -10,3 +10,5 @@
 
 extern NSString * const kSQLifestyleBannerKey;
 extern NSString * const kSQLifestyleSearchKey;
+
+extern NSString * const kSearchBarPlaceholder;

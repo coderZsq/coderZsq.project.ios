@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SQDiscoverViewController : UIViewController
+@interface SQDiscoverViewController : SQViewController
 
 @end

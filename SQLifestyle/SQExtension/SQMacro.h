@@ -14,6 +14,9 @@
 #import "SQTableViewController.h"
 #import "SQTableViewCell.h"
 #import "SQHeaderFooterView.h"
+#import "SQViewController.h"
+#import "SQVariableGlobal.h"
+#import "SQImageGlobal.h"
 #import "UIView+SQExtension.h"
 #import "UIImage+SQExtension.h"
 #import "UIColor+SQExtension.h"
@@ -49,6 +52,7 @@
 #define iOS7  [[UIDevice currentDevice]systemVersion].floatValue >= 7.0f
 #define iOS8  [[UIDevice currentDevice]systemVersion].floatValue >= 8.0f
 #define iOS9  [[UIDevice currentDevice]systemVersion].floatValue >= 9.0f
+#define iOS10  [[UIDevice currentDevice]systemVersion].floatValue >= 10.0f
 
 #ifdef DEBUG
 #define SQLog(...) NSLog(__VA_ARGS__)

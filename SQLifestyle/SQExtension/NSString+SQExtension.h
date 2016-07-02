@@ -18,6 +18,8 @@
 
 + (NSDictionary *)stringWithJSONString:(NSString *)JSONString;
 
+- (void)makeTelephoneCall;
+
 - (NSString *)getDateFormatFromString:(NSString *)string;
 
 - (CGSize)getSizeWithConstraint:(CGSize)Constraint font:(UIFont *)font;

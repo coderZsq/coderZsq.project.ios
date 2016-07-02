@@ -58,12 +58,12 @@
                                                   titles:@[@"Lifestyle",
                                                            @"Discover",
                                                            @"Profile"]
-                                              imageNames:@[@"lifestyle",
-                                                           @"discover",
-                                                           @"profile"]
-                                      selectedImageNames:@[@"lifestyle_select",
-                                                           @"discover_select",
-                                                           @"profile_select"]];
+                                              imageNames:@[kTabbar_lifestyle,
+                                                           kTabbar_discover,
+                                                           kTabbar_profile]
+                                      selectedImageNames:@[kTabbar_lifestyle_select,
+                                                           kTabbar_discover_select,
+                                                           kTabbar_profile_select]];
 }
 
 @end

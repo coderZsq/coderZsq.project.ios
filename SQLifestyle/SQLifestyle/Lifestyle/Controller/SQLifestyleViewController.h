@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SQLifestyleViewController : UIViewController
+@interface SQLifestyleViewController : SQViewController;
 
 @end

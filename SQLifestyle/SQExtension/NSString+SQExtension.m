@@ -40,6 +40,14 @@
                                            options:NSJSONReadingMutableContainers error:&error];
 }
 
+- (void)makeTelephoneCall {
+    NSString * num = self;
+    NSMutableString * str = [[NSMutableString alloc]initWithFormat:@"tel:%@",num];
+    UIWebView * callWebview = [[UIWebView alloc] init];
+    [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str]]];
+    [[UIApplication sharedApplication].keyWindow addSubview:callWebview];
+}
+
 - (NSString *)getDateFormatFromString:(NSString *)string {
     
     NSDateFormatter * formatter = [NSDateFormatter new];

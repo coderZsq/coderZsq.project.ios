@@ -7,7 +7,6 @@
 //
 
 #import "SQLifestyleBannerCell.h"
-#import "UIColor+SQExtension.h"
 
 @interface SQLifestyleBannerCell () <UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -74,7 +73,8 @@ static const NSInteger kCounts = 5;
     
     if (!_reliefArcImageView) {
         _reliefArcImageView = [UIImageView new];
-        _reliefArcImageView.image = [UIImage imageNamed:@"RelliefArc"];
+        _reliefArcImageView.image = [UIImage imageNamed:kLifestyle_relief];
+        _reliefArcImageView.userInteractionEnabled = NO;
     }
     return _reliefArcImageView;
 }
@@ -88,6 +88,7 @@ static const NSInteger kCounts = 5;
         _pageControl.numberOfPages = kCounts;
         _pageControl.pageIndicatorTintColor = KC05_dddddd;
         _pageControl.currentPageIndicatorTintColor = KC01_57c2de;
+        _pageControl.userInteractionEnabled = NO;
     }
     return _pageControl;
 }

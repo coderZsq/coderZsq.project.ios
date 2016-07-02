@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF270CA01D240820001462F8 /* SQPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF270C9F1D240820001462F8 /* SQPostViewController.m */; };
 		CF29A1631D1D82D0004AD562 /* SQLifestyleSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29A1621D1D82D0004AD562 /* SQLifestyleSearchCell.m */; };
 		CF29A16A1D1D8517004AD562 /* SQLifestyleGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29A1691D1D8517004AD562 /* SQLifestyleGlobal.m */; };
 		CF29A16E1D1D87AE004AD562 /* SQTabbarControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29A16D1D1D87AE004AD562 /* SQTabbarControllerAnimatedTransitioning.m */; };
 		CF29A1711D1D8B7B004AD562 /* SQLifestyleSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29A1701D1D8B7B004AD562 /* SQLifestyleSearchBarView.m */; };
 		CF29A17A1D1D9779004AD562 /* UIViewController+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29A1791D1D9779004AD562 /* UIViewController+SQExtension.m */; };
 		CF2C21E21D117FB3002E2EDC /* SQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2C21E01D117FB3002E2EDC /* SQLoadingView.m */; };
+		CF3C72A61D22B6300025648E /* CAAnimation+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3C72A51D22B6300025648E /* CAAnimation+SQExtension.m */; };
 		CF732F011D0D8B9900486811 /* SQLifestyleBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF732F001D0D8B9900486811 /* SQLifestyleBannerCell.m */; };
+		CF7E8B2F1D26AB40003B7449 /* SQVariableGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7E8B2E1D26AB40003B7449 /* SQVariableGlobal.m */; };
+		CF8557E71D26976800F254ED /* SQHoleAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8557E61D26976800F254ED /* SQHoleAnimatedTransitioning.m */; };
+		CF8557EB1D269CAC00F254ED /* SQDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8557EA1D269CAC00F254ED /* SQDisplayCell.m */; };
+		CF8557EE1D269CD500F254ED /* SQImageGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8557ED1D269CD500F254ED /* SQImageGlobal.m */; };
+		CF8557F11D26A48800F254ED /* SQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8557F01D26A48800F254ED /* SQViewController.m */; };
 		CF8C290D1CF0406A00464155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C290C1CF0406A00464155 /* Foundation.framework */; };
 		CF8C290F1CF0406A00464155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C290E1CF0406A00464155 /* CoreGraphics.framework */; };
 		CF8C29111CF0406A00464155 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C29101CF0406A00464155 /* UIKit.framework */; };
@@ -83,10 +90,13 @@
 		CF8C29E81CF0411600464155 /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29AF1CF0411600464155 /* UIColor+SQExtension.m */; };
 		CF8C29E91CF0411600464155 /* UIImage+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29B11CF0411600464155 /* UIImage+SQExtension.m */; };
 		CF8C29EA1CF0411600464155 /* UIView+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C29B31CF0411600464155 /* UIView+SQExtension.m */; };
+		CFA6CDB11D23FA030094710E /* SQLifestyleDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA6CDB01D23FA030094710E /* SQLifestyleDisplayCell.m */; };
 		CFB65DCF1D11862300CBDC7D /* SQTabBarGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB65DCE1D11862300CBDC7D /* SQTabBarGlobal.m */; };
+		CFF452BE1D228F050005DF97 /* SQDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF452BD1D228F050005DF97 /* SQDisplayViewController.m */; };
 		CFF94DA31D0C5A2E00E8EF29 /* SQDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF94D921D0C5A2E00E8EF29 /* SQDiscoverViewController.m */; };
 		CFF94DA41D0C5A2E00E8EF29 /* SQLifestyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF94D981D0C5A2E00E8EF29 /* SQLifestyleViewController.m */; };
 		CFF94DA61D0C5A2E00E8EF29 /* SQProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF94DA01D0C5A2E00E8EF29 /* SQProfileViewController.m */; };
+		CFFEDC3A1D2031B40092A67A /* SQLifestylePostButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFEDC391D2031B40092A67A /* SQLifestylePostButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +110,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF270C9E1D240820001462F8 /* SQPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQPostViewController.h; sourceTree = "<group>"; };
+		CF270C9F1D240820001462F8 /* SQPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQPostViewController.m; sourceTree = "<group>"; };
 		CF29A1611D1D82D0004AD562 /* SQLifestyleSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleSearchCell.h; sourceTree = "<group>"; };
 		CF29A1621D1D82D0004AD562 /* SQLifestyleSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleSearchCell.m; sourceTree = "<group>"; };
 		CF29A1681D1D8517004AD562 /* SQLifestyleGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleGlobal.h; sourceTree = "<group>"; };
@@ -112,8 +124,20 @@
 		CF29A1791D1D9779004AD562 /* UIViewController+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SQExtension.m"; sourceTree = "<group>"; };
 		CF2C21E01D117FB3002E2EDC /* SQLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLoadingView.m; sourceTree = "<group>"; };
 		CF2C21E11D117FB3002E2EDC /* SQLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLoadingView.h; sourceTree = "<group>"; };
+		CF3C72A41D22B6300025648E /* CAAnimation+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+SQExtension.h"; sourceTree = "<group>"; };
+		CF3C72A51D22B6300025648E /* CAAnimation+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+SQExtension.m"; sourceTree = "<group>"; };
 		CF732EFF1D0D8B9900486811 /* SQLifestyleBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleBannerCell.h; sourceTree = "<group>"; };
 		CF732F001D0D8B9900486811 /* SQLifestyleBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleBannerCell.m; sourceTree = "<group>"; };
+		CF7E8B2D1D26AB40003B7449 /* SQVariableGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQVariableGlobal.h; sourceTree = "<group>"; };
+		CF7E8B2E1D26AB40003B7449 /* SQVariableGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQVariableGlobal.m; sourceTree = "<group>"; };
+		CF8557E51D26976800F254ED /* SQHoleAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQHoleAnimatedTransitioning.h; sourceTree = "<group>"; };
+		CF8557E61D26976800F254ED /* SQHoleAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQHoleAnimatedTransitioning.m; sourceTree = "<group>"; };
+		CF8557E91D269CAC00F254ED /* SQDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDisplayCell.h; sourceTree = "<group>"; };
+		CF8557EA1D269CAC00F254ED /* SQDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDisplayCell.m; sourceTree = "<group>"; };
+		CF8557EC1D269CD500F254ED /* SQImageGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQImageGlobal.h; sourceTree = "<group>"; };
+		CF8557ED1D269CD500F254ED /* SQImageGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQImageGlobal.m; sourceTree = "<group>"; };
+		CF8557EF1D26A48800F254ED /* SQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQViewController.h; sourceTree = "<group>"; };
+		CF8557F01D26A48800F254ED /* SQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQViewController.m; sourceTree = "<group>"; };
 		CF8C29091CF0406A00464155 /* SQLifestyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLifestyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8C290C1CF0406A00464155 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF8C290E1CF0406A00464155 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -243,14 +267,20 @@
 		CF8C29B11CF0411600464155 /* UIImage+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQExtension.m"; sourceTree = "<group>"; };
 		CF8C29B21CF0411600464155 /* UIView+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQExtension.h"; sourceTree = "<group>"; };
 		CF8C29B31CF0411600464155 /* UIView+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQExtension.m"; sourceTree = "<group>"; };
+		CFA6CDAF1D23FA030094710E /* SQLifestyleDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleDisplayCell.h; sourceTree = "<group>"; };
+		CFA6CDB01D23FA030094710E /* SQLifestyleDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleDisplayCell.m; sourceTree = "<group>"; };
 		CFB65DCD1D11862300CBDC7D /* SQTabBarGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTabBarGlobal.h; sourceTree = "<group>"; };
 		CFB65DCE1D11862300CBDC7D /* SQTabBarGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTabBarGlobal.m; sourceTree = "<group>"; };
+		CFF452BC1D228F050005DF97 /* SQDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDisplayViewController.h; sourceTree = "<group>"; };
+		CFF452BD1D228F050005DF97 /* SQDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDisplayViewController.m; sourceTree = "<group>"; };
 		CFF94D911D0C5A2E00E8EF29 /* SQDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDiscoverViewController.h; sourceTree = "<group>"; };
 		CFF94D921D0C5A2E00E8EF29 /* SQDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDiscoverViewController.m; sourceTree = "<group>"; };
 		CFF94D971D0C5A2E00E8EF29 /* SQLifestyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestyleViewController.h; sourceTree = "<group>"; };
 		CFF94D981D0C5A2E00E8EF29 /* SQLifestyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestyleViewController.m; sourceTree = "<group>"; };
 		CFF94D9F1D0C5A2E00E8EF29 /* SQProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQProfileViewController.h; sourceTree = "<group>"; };
 		CFF94DA01D0C5A2E00E8EF29 /* SQProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQProfileViewController.m; sourceTree = "<group>"; };
+		CFFEDC381D2031B40092A67A /* SQLifestylePostButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLifestylePostButton.h; sourceTree = "<group>"; };
+		CFFEDC391D2031B40092A67A /* SQLifestylePostButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLifestylePostButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +307,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF270C9A1D240807001462F8 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				CF270C9B1D240807001462F8 /* Controller */,
+				CF270C9C1D240807001462F8 /* Model */,
+				CF270C9D1D240807001462F8 /* View */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		CF270C9B1D240807001462F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF270C9E1D240820001462F8 /* SQPostViewController.h */,
+				CF270C9F1D240820001462F8 /* SQPostViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CF270C9C1D240807001462F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF270C9D1D240807001462F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CF29A1641D1D84D3004AD562 /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +347,19 @@
 				CF29A1691D1D8517004AD562 /* SQLifestyleGlobal.m */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		CF8557E81D269C7200F254ED /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CF7E8B2D1D26AB40003B7449 /* SQVariableGlobal.h */,
+				CF7E8B2E1D26AB40003B7449 /* SQVariableGlobal.m */,
+				CF8557EC1D269CD500F254ED /* SQImageGlobal.h */,
+				CF8557ED1D269CD500F254ED /* SQImageGlobal.m */,
+				CF8557E91D269CAC00F254ED /* SQDisplayCell.h */,
+				CF8557EA1D269CAC00F254ED /* SQDisplayCell.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		CF8C29001CF0406A00464155 = {
@@ -323,6 +399,9 @@
 				CFF94D951D0C5A2E00E8EF29 /* Lifestyle */,
 				CFF94D8F1D0C5A2E00E8EF29 /* Discover */,
 				CFF94D9D1D0C5A2E00E8EF29 /* Proflie */,
+				CFF452B81D228EDF0005DF97 /* Display */,
+				CF270C9A1D240807001462F8 /* Post */,
+				CF8557E81D269C7200F254ED /* Common */,
 				CF8C29131CF0406A00464155 /* Supporting Files */,
 			);
 			path = SQLifestyle;
@@ -365,6 +444,8 @@
 		CF8C29441CF0411600464155 /* SQExtension */ = {
 			isa = PBXGroup;
 			children = (
+				CF3C72A41D22B6300025648E /* CAAnimation+SQExtension.h */,
+				CF3C72A51D22B6300025648E /* CAAnimation+SQExtension.m */,
 				CF8C29451CF0411600464155 /* CALayer+SQExtension.h */,
 				CF8C29461CF0411600464155 /* CALayer+SQExtension.m */,
 				CF8C29471CF0411600464155 /* NSArray+SQExtension.h */,
@@ -411,6 +492,8 @@
 				CF8C29701CF0411600464155 /* SQDiscPlayerView.m */,
 				CF8C29711CF0411600464155 /* SQHeaderFooterView.h */,
 				CF8C29721CF0411600464155 /* SQHeaderFooterView.m */,
+				CF8557E51D26976800F254ED /* SQHoleAnimatedTransitioning.h */,
+				CF8557E61D26976800F254ED /* SQHoleAnimatedTransitioning.m */,
 				CF8C29731CF0411600464155 /* SQHttpConnection.h */,
 				CF8C29741CF0411600464155 /* SQHttpConnection.m */,
 				CF8C29751CF0411600464155 /* SQHyperLinks.h */,
@@ -468,6 +551,8 @@
 				CF8C29A31CF0411600464155 /* SQTableViewRow.m */,
 				CF8C29A41CF0411600464155 /* SQTableViewSection.h */,
 				CF8C29A51CF0411600464155 /* SQTableViewSection.m */,
+				CF8557EF1D26A48800F254ED /* SQViewController.h */,
+				CF8557F01D26A48800F254ED /* SQViewController.m */,
 				CF8C29A61CF0411600464155 /* SQViewControllerManager.h */,
 				CF8C29A71CF0411600464155 /* SQViewControllerManager.m */,
 				CF8C29A81CF0411600464155 /* SQWaterwaveView.h */,
@@ -486,6 +571,39 @@
 				CF29A1791D1D9779004AD562 /* UIViewController+SQExtension.m */,
 			);
 			path = SQExtension;
+			sourceTree = "<group>";
+		};
+		CFF452B81D228EDF0005DF97 /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				CFF452B91D228EDF0005DF97 /* Controller */,
+				CFF452BA1D228EDF0005DF97 /* Model */,
+				CFF452BB1D228EDF0005DF97 /* View */,
+			);
+			path = Display;
+			sourceTree = "<group>";
+		};
+		CFF452B91D228EDF0005DF97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFF452BC1D228F050005DF97 /* SQDisplayViewController.h */,
+				CFF452BD1D228F050005DF97 /* SQDisplayViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CFF452BA1D228EDF0005DF97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFF452BB1D228EDF0005DF97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CFF94D8F1D0C5A2E00E8EF29 /* Discover */ = {
@@ -555,8 +673,12 @@
 				CF732F001D0D8B9900486811 /* SQLifestyleBannerCell.m */,
 				CF29A1611D1D82D0004AD562 /* SQLifestyleSearchCell.h */,
 				CF29A1621D1D82D0004AD562 /* SQLifestyleSearchCell.m */,
+				CFA6CDAF1D23FA030094710E /* SQLifestyleDisplayCell.h */,
+				CFA6CDB01D23FA030094710E /* SQLifestyleDisplayCell.m */,
 				CF29A16F1D1D8B7B004AD562 /* SQLifestyleSearchBarView.h */,
 				CF29A1701D1D8B7B004AD562 /* SQLifestyleSearchBarView.m */,
+				CFFEDC381D2031B40092A67A /* SQLifestylePostButton.h */,
+				CFFEDC391D2031B40092A67A /* SQLifestylePostButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -708,9 +830,14 @@
 				CF8C29DA1CF0411600464155 /* SQRemovableButton.m in Sources */,
 				CF8C29E21CF0411600464155 /* SQTableViewRow.m in Sources */,
 				CF8C29D51CF0411600464155 /* SQPopButton.m in Sources */,
+				CF270CA01D240820001462F8 /* SQPostViewController.m in Sources */,
+				CFFEDC3A1D2031B40092A67A /* SQLifestylePostButton.m in Sources */,
 				CF8C29D81CF0411600464155 /* SQProgressLayer.m in Sources */,
+				CF3C72A61D22B6300025648E /* CAAnimation+SQExtension.m in Sources */,
+				CF8557F11D26A48800F254ED /* SQViewController.m in Sources */,
 				CF29A16E1D1D87AE004AD562 /* SQTabbarControllerAnimatedTransitioning.m in Sources */,
 				CF8C29E71CF0411600464155 /* UIBarButtonItem+SQExtension.m in Sources */,
+				CF8557EB1D269CAC00F254ED /* SQDisplayCell.m in Sources */,
 				CF8C29CE1CF0411600464155 /* SQInfiniteCell_Old.m in Sources */,
 				CF8C29B41CF0411600464155 /* CALayer+SQExtension.m in Sources */,
 				CF8C29E91CF0411600464155 /* UIImage+SQExtension.m in Sources */,
@@ -718,6 +845,7 @@
 				CF8C29D91CF0411600464155 /* SQRemovableBadgeView.m in Sources */,
 				CF8C29E11CF0411600464155 /* SQTableViewController.m in Sources */,
 				CF8C29D71CF0411600464155 /* SQProgressButton.m in Sources */,
+				CF8557E71D26976800F254ED /* SQHoleAnimatedTransitioning.m in Sources */,
 				CFF94DA41D0C5A2E00E8EF29 /* SQLifestyleViewController.m in Sources */,
 				CF8C29C41CF0411600464155 /* SQCombineViewController.m in Sources */,
 				CF8C29CD1CF0411600464155 /* SQInfiniteCell.m in Sources */,
@@ -726,6 +854,9 @@
 				CF8C29D01CF0411600464155 /* SQNavigationController.m in Sources */,
 				CF8C29DB1CF0411600464155 /* SQScaleImageView.m in Sources */,
 				CF8C29DD1CF0411600464155 /* SQTabBar.m in Sources */,
+				CF8557EE1D269CD500F254ED /* SQImageGlobal.m in Sources */,
+				CFA6CDB11D23FA030094710E /* SQLifestyleDisplayCell.m in Sources */,
+				CF7E8B2F1D26AB40003B7449 /* SQVariableGlobal.m in Sources */,
 				CF29A17A1D1D9779004AD562 /* UIViewController+SQExtension.m in Sources */,
 				CF8C29BD1CF0411600464155 /* SQCircularSlider.m in Sources */,
 				CF8C29E41CF0411600464155 /* SQViewControllerManager.m in Sources */,
@@ -758,6 +889,7 @@
 				CF8C29BC1CF0411600464155 /* SQBundleVersionManager.m in Sources */,
 				CF8C29191CF0406A00464155 /* main.m in Sources */,
 				CF8C29C01CF0411600464155 /* SQCollectionViewScaleFlowLayout.m in Sources */,
+				CFF452BE1D228F050005DF97 /* SQDisplayViewController.m in Sources */,
 				CFF94DA61D0C5A2E00E8EF29 /* SQProfileViewController.m in Sources */,
 				CF8C29E31CF0411600464155 /* SQTableViewSection.m in Sources */,
 			);

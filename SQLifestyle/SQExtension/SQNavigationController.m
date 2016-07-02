@@ -15,21 +15,21 @@
 
 + (void)initialize
 {
-    UIColor * themeColor = [UIColor blackColor];
-    UIFont  * themeFont  = [UIFont systemFontOfSize:0.1f];
+    UIColor * themeColor = GLOBAL_BGC;
+//    UIFont  * themeFont  = [UIFont systemFontOfSize:0.1f];
     UINavigationBar * navigationBar = [UINavigationBar appearance];
     navigationBar.tintColor = themeColor;
-//    [navigationBar setBackgroundImage:[UIImage imageNamed:<#name#>] forBarMetrics:UIBarMetricsDefault];
+    [navigationBar setBackgroundImage:[UIImage imageWithColor:KC01_57c2de] forBarMetrics:UIBarMetricsDefault];
     
     NSMutableDictionary * navigationBarAttributes = @{}.mutableCopy;
     navigationBarAttributes[NSForegroundColorAttributeName] = themeColor;
-//    navigationBarAttributes[NSFontAttributeName]            = <#font#>;
+    navigationBarAttributes[NSFontAttributeName]            = KF03_17px;
     [navigationBar setTitleTextAttributes:navigationBarAttributes];
     
     UIBarButtonItem * item = [UIBarButtonItem appearance];
     NSMutableDictionary * itemAttributes = @{}.mutableCopy;
     itemAttributes[NSForegroundColorAttributeName] = themeColor;
-    itemAttributes[NSFontAttributeName]            = themeFont;
+//    itemAttributes[NSFontAttributeName]            = themeFont;
     [item setTitleTextAttributes:itemAttributes forState:0];
 }
 

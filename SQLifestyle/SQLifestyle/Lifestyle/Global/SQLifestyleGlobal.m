@@ -9,4 +9,6 @@
 #import "SQLifestyleGlobal.h"
 
 NSString * const kSQLifestyleBannerKey = @"轮播图";
-NSString * const kSQLifestyleSearchKey = @"热点";
+NSString * const kSQLifestyleSearchKey = @"搜索栏";
+
+NSString * const kSearchBarPlaceholder = @"Searching for something new";

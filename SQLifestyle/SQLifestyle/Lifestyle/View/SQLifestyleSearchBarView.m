@@ -7,6 +7,7 @@
 //
 
 #import "SQLifestyleSearchBarView.h"
+#import "SQLifestyleGlobal.h"
 
 @interface SQLifestyleSearchBarView ()
 
@@ -44,7 +45,7 @@
         _searchBarTextField.layer.borderWidth = 0.5f;
         _searchBarTextField.layer.cornerRadius = 5;
         _searchBarTextField.layer.masksToBounds= YES;
-        _searchBarTextField.placeholder = @"Searching for something new";
+        _searchBarTextField.placeholder = kSearchBarPlaceholder;
         _searchBarTextField.leftView = self.magnifierImageView;
         _searchBarTextField.leftViewMode = UITextFieldViewModeAlways;
         [_searchBarTextField setValue:KC04_999999 forKeyPath:@"placeholderLabel.textColor"];
@@ -56,7 +57,7 @@
     
     if (!_magnifierImageView) {
         _magnifierImageView = [UIImageView new];
-        _magnifierImageView.image = [UIImage imageNamed:@"fa-search"];
+        _magnifierImageView.image = [UIImage imageNamed:kLifestyle_magnifier];
         _magnifierImageView.frame = CGRectMake(0, 0, 34, 34);
         _magnifierImageView.contentMode = UIViewContentModeCenter;
     }
@@ -71,7 +72,7 @@
     [super layoutSubviews];
     
     CGFloat searchBarTextFieldX = 0;
-    CGFloat searchBarTextFieldY = 0;
+    CGFloat searchBarTextFieldY = 5;
     CGFloat searchBarTextFieldW = self.width;
     CGFloat searchBarTextFieldH = 34;
     self.searchBarTextField.frame = CGRectMake(searchBarTextFieldX, searchBarTextFieldY, searchBarTextFieldW, searchBarTextFieldH);

@@ -39,4 +39,6 @@ typedef void (^SQWhenTappedBlock)();
 
 - (void)whenTouchedUp:(SQWhenTappedBlock)block;
 
+- (void)loomingAnimationWithDuration:(CGFloat)duration;
+
 @end

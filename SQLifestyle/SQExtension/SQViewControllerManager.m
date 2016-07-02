@@ -23,7 +23,7 @@
     return [[self alloc]init];
 }
 
-- (SQTableViewController *)currentViewController {
+- (UIViewController *)currentViewController {
     return _currentViewController;
 }
 
