@@ -106,7 +106,7 @@
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    SQHoleAnimatedTransitioning * animatedTransitioning = [SQHoleAnimatedTransitioning new];
+    SQHoleAnimatedTransitioning * animatedTransitioning = [[SQHoleAnimatedTransitioning alloc]init];
     animatedTransitioning.frame = self.frame;
     return animatedTransitioning;
 }

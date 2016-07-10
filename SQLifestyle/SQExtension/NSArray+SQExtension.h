@@ -13,6 +13,4 @@
 
 - (NSString *)descriptionWithLocale:(id)locale;
 
-- (id)objectAtIndexG:(NSUInteger)index;
-
 @end

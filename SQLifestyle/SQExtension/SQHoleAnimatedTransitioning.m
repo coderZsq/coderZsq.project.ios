@@ -56,6 +56,7 @@ static const CGFloat kRatio = 1.5f;
     
     [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
     [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
+    self.transitionContext = nil;
 }
 
 

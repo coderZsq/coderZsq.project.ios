@@ -7,7 +7,7 @@
 
 #import "SQNavigationController.h"
 
-@interface SQNavigationController ()
+@interface SQNavigationController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -31,6 +31,20 @@
     itemAttributes[NSForegroundColorAttributeName] = themeColor;
 //    itemAttributes[NSFontAttributeName]            = themeFont;
     [item setTitleTextAttributes:itemAttributes forState:0];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    id target = self.interactivePopGestureRecognizer.delegate;
+    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc]initWithTarget:target action:@selector(handleNavigationTransition:)];
+    pan.delegate = self;
+    [self.view addGestureRecognizer:pan];
+    [self.interactivePopGestureRecognizer setEnabled:NO];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return self.childViewControllers.count == 1 ? NO : YES;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

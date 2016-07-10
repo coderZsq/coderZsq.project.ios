@@ -6,6 +6,7 @@
 //
 
 #import "NSArray+SQExtension.h"
+#import <objc/runtime.h>
 
 @implementation NSArray (SQExtension)
 
@@ -30,12 +31,26 @@
     return strM;
 }
 
-- (id)objectAtIndexG:(NSUInteger)index {
++ (void)load {
+
+    SEL safeSel   = @selector(safeObjectAtIndex:);
+    SEL unsafeSel = @selector(objectAtIndex:);
     
-    if (index < self.count) {
-        return self[index];
-    } else {
+    Class class = NSClassFromString(@"__NSArrayI");
+
+    Method safeMethod   = class_getInstanceMethod(class, safeSel);
+    Method unsafeMethod = class_getInstanceMethod(class, unsafeSel);
+    
+    method_exchangeImplementations(unsafeMethod, safeMethod);
+}
+
+- (id)safeObjectAtIndex:(NSUInteger)index {
+
+    if (index > (self.count - 1)) {
+        NSAssert(NO, @"beyond the boundary");
         return nil;
+    } else {
+        return [self safeObjectAtIndex:index];
     }
 }
 
