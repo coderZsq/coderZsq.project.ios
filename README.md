@@ -1,3 +1,6 @@
+#### 展示:
+![](http://upload-images.jianshu.io/upload_images/1229762-3da71ddcaa91bb24.gif?imageMogr2/auto-orient/strip)
+
 #### 涉及内容:
 - [Lifestyle 项目简述](http://coderzsq.github.io/2016/05/21/Lifestyle%20%E9%A1%B9%E7%9B%AE%E7%AE%80%E8%BF%B0/)
 - [iOS 做好开工前的准备](http://coderzsq.github.io/2016/05/21/iOS%20%E5%81%9A%E5%A5%BD%E5%BC%80%E5%B7%A5%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87/)
