@@ -1,9 +1,6 @@
 ### SQExtension
 使用SQExtension快速搭建项目架构, 快速使用轮子组件, 快速集成动画特效.
 
-#### 项目展示:
-![](http://upload-images.jianshu.io/upload_images/1229762-3da71ddcaa91bb24.gif?imageMogr2/auto-orient/strip)
-
 #### 涉及内容:
 - [Lifestyle 项目简述](http://coderzsq.github.io/2016/05/21/Lifestyle%20%E9%A1%B9%E7%9B%AE%E7%AE%80%E8%BF%B0/)
 - [iOS 做好开工前的准备](http://coderzsq.github.io/2016/05/21/iOS%20%E5%81%9A%E5%A5%BD%E5%BC%80%E5%B7%A5%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87/)
@@ -15,3 +12,6 @@
 - [iOS 超Easy实现 渐变导航栏](http://coderzsq.github.io/2016/06/25/iOS%20%E8%B6%85Easy%E5%AE%9E%E7%8E%B0%20%E6%B8%90%E5%8F%98%E5%AF%BC%E8%88%AA%E6%A0%8F/)
 - [iOS 狂霸酷炫拽之Button动效](http://coderzsq.github.io/2016/07/02/iOS%20%E7%8B%82%E9%9C%B8%E9%85%B7%E7%82%AB%E6%8B%BD%E4%B9%8BButton%E5%8A%A8%E6%95%88%20/)
 - [iOS 5行代码搞定全屏Pop转场](http://coderzsq.github.io/2016/07/10/iOS%205%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%90%9E%E5%AE%9A%E5%85%A8%E5%B1%8FPop%E8%BD%AC%E5%9C%BA/)
+
+#### 项目展示:
+![](http://upload-images.jianshu.io/upload_images/1229762-3da71ddcaa91bb24.gif?imageMogr2/auto-orient/strip)
