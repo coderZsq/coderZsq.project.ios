@@ -1,4 +1,4 @@
-### SQExtension
+## SQExtension
 使用SQExtension快速搭建项目架构, 快速使用轮子组件, 快速集成动画特效.
 
 #### 涉及内容:
