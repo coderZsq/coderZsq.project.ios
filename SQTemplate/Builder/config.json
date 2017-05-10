@@ -1,0 +1,19 @@
+{
+	"super" : "",
+	"controller" : "Home",
+	"model" : {
+		"models" : "Array"
+	},
+	"viewModel" : [
+		"register",
+		"login",
+		"exit",
+		"refresh"
+	],
+	"presenter" : [
+		"pushToNextViewController",
+		"popToRootViewController",
+		"showAlert",
+		"closeButtonClick"
+	]
+}
