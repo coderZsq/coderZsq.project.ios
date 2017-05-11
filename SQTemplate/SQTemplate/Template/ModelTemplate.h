@@ -11,9 +11,7 @@
 
 @interface ModelTemplate : NSObject <ModelInterface>
 
-@property (nonatomic,copy) NSString * text;
-@property (nonatomic,copy) NSString * detailText;
-@property (nonatomic,copy) NSString * imageUrl;
+@property (nonatomic,strong) NSArray * models;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

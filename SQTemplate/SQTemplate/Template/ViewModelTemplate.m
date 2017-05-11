@@ -13,40 +13,16 @@
 
 @implementation ViewModelTemplate
 
-- (NSMutableArray *)models {
-    
-    if (!_models) {
-        _models = [NSMutableArray array];
-    }
-    return _models;
-}
-
 - (void)dynamicBindingWithFinishedCallBack:(void (^)())finishCallBack {
 
     [DataBase requestDataWithClass:[NSObject class] finishedCallBack:^(NSDictionary *response) {
-        
-        NSDictionary * data = response;
-        NSArray * models = data[@"models"];
-        
-        [self.models removeAllObjects];
-        for (NSDictionary * dict in models) {
-            [self.models addObject:[ModelTemplate modelWithDictionary:dict]];
-        }
-        
+        _model = [ModelTemplate modelWithDictionary:response];
         finishCallBack();
     }];
     
     [NetWork requestDataWithType:MethodGetType URLString:@"http://localhost:3001/api/J1/getJ1List" parameter:nil finishedCallBack:^(NSDictionary * response){
-        
-        NSDictionary * data = response[@"data"];
-        NSArray * models = data[@"models"];
-        
-        [self.models removeAllObjects];
-        for (NSDictionary * dict in models) {
-            [self.models addObject:[ModelTemplate modelWithDictionary:dict]];
-        }
-        
-        [DataBase cache:[NSObject class] data:data[@"models"]];
+        _model = [ModelTemplate modelWithDictionary:response[@"data"]];
+        [DataBase cache:[ModelTemplate class] data:response[@"data"]];
         finishCallBack();
     }];
 }

@@ -11,8 +11,8 @@
 
 @interface <#Unit#>Presenter : NSObject<<#Unit#>ViewOperation>
 
-@property (nonatomic,strong) id<<#Unit#>ViewInterface> <#unit#>View;
-@property (nonatomic,strong) id<<#Unit#>ViewModelInterface> <#unit#>ViewModel;
+@property (nonatomic,weak) id<<#Unit#>ViewInterface> <#unit#>View;
+@property (nonatomic,weak) id<<#Unit#>ViewModelInterface> <#unit#>ViewModel;
 
 - (void)adapterWith<#Unit#>View:(id<<#Unit#>ViewInterface>)<#unit#>View <#unit#>ViewModel:(id<<#Unit#>ViewModelInterface>)<#unit#>ViewModel;
 

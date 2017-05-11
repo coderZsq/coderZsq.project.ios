@@ -8,7 +8,9 @@
 
 #import "ViewTemplate.h"
 #import "PresenterTemplate.h"
-#import "UIImageView+load.h"
+
+#import "TableViewCellTemplate.h"
+#import "SubmodelTemplate.h"
 
 @interface ViewTemplate () <UITableViewDataSource, UITableViewDelegate>
 
@@ -60,24 +62,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _viewModel.models.count;
+    return _viewModel.model.models.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * identifier = @"identifier";
-    id<ModelInterface> model = _viewModel.models[indexPath.row];
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    }
-    cell.textLabel.text = model.text;
-    cell.detailTextLabel.text = model.detailText;
-    [cell.imageView loadUrl:model.imageUrl placeholder:nil];
+
+    TableViewCellTemplate * cell = [TableViewCellTemplate cellWithTableView:tableView];
+    cell.dataSource = [SubmodelTemplate modelWithDictionary:_viewModel.model.models[indexPath.row]];
+    cell.dataModels = _viewModel.model.models;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return [TableViewCellTemplate cellHeight];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

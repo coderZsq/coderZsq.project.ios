@@ -23,6 +23,11 @@
 		CF12ECE51EC0255100E16BAE /* PresenterTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12ECDE1EC0255100E16BAE /* PresenterTemplate.m */; };
 		CF12ECE61EC0255100E16BAE /* ViewModelTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12ECE01EC0255100E16BAE /* ViewModelTemplate.m */; };
 		CF12ECE71EC0255100E16BAE /* ViewTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12ECE21EC0255100E16BAE /* ViewTemplate.m */; };
+		CF560D791EC43932002E0C48 /* CollectionViewCellTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D6F1EC43932002E0C48 /* CollectionViewCellTemplate.m */; };
+		CF560D7A1EC43932002E0C48 /* CollectionViewTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D711EC43932002E0C48 /* CollectionViewTemplate.m */; };
+		CF560D7B1EC43932002E0C48 /* SubmodelTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D741EC43932002E0C48 /* SubmodelTemplate.m */; };
+		CF560D7C1EC43932002E0C48 /* SubviewTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D761EC43932002E0C48 /* SubviewTemplate.m */; };
+		CF560D7D1EC43932002E0C48 /* TableViewCellTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D781EC43932002E0C48 /* TableViewCellTemplate.m */; };
 		CFE501B41EC19915006BDE68 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE501B31EC19915006BDE68 /* libc++.tbd */; };
 		E52E16C3C91B5C9FB4C1CCE5 /* libPods-SQTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 592B2C3619CABBFEB1FB83C4 /* libPods-SQTemplate.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +67,17 @@
 		CF12ECE01EC0255100E16BAE /* ViewModelTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModelTemplate.m; sourceTree = "<group>"; };
 		CF12ECE11EC0255100E16BAE /* ViewTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTemplate.h; sourceTree = "<group>"; };
 		CF12ECE21EC0255100E16BAE /* ViewTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTemplate.m; sourceTree = "<group>"; };
+		CF560D6E1EC43932002E0C48 /* CollectionViewCellTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellTemplate.h; sourceTree = "<group>"; };
+		CF560D6F1EC43932002E0C48 /* CollectionViewCellTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCellTemplate.m; sourceTree = "<group>"; };
+		CF560D701EC43932002E0C48 /* CollectionViewTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewTemplate.h; sourceTree = "<group>"; };
+		CF560D711EC43932002E0C48 /* CollectionViewTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewTemplate.m; sourceTree = "<group>"; };
+		CF560D721EC43932002E0C48 /* SubmodelInterfaceTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmodelInterfaceTemplate.h; sourceTree = "<group>"; };
+		CF560D731EC43932002E0C48 /* SubmodelTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmodelTemplate.h; sourceTree = "<group>"; };
+		CF560D741EC43932002E0C48 /* SubmodelTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmodelTemplate.m; sourceTree = "<group>"; };
+		CF560D751EC43932002E0C48 /* SubviewTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubviewTemplate.h; sourceTree = "<group>"; };
+		CF560D761EC43932002E0C48 /* SubviewTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubviewTemplate.m; sourceTree = "<group>"; };
+		CF560D771EC43932002E0C48 /* TableViewCellTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellTemplate.h; sourceTree = "<group>"; };
+		CF560D781EC43932002E0C48 /* TableViewCellTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellTemplate.m; sourceTree = "<group>"; };
 		CFE501B31EC19915006BDE68 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -117,6 +133,7 @@
 		CF053AE31EBC68FB002E9EF6 /* SQTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				CF560D6D1EC43932002E0C48 /* UITemplate */,
 				CF12ECD71EC0255100E16BAE /* Template */,
 				CF053AE71EBC68FB002E9EF6 /* AppDelegate.h */,
 				CF053AE81EBC68FB002E9EF6 /* AppDelegate.m */,
@@ -165,6 +182,24 @@
 				CF12ECE21EC0255100E16BAE /* ViewTemplate.m */,
 			);
 			path = Template;
+			sourceTree = "<group>";
+		};
+		CF560D6D1EC43932002E0C48 /* UITemplate */ = {
+			isa = PBXGroup;
+			children = (
+				CF560D6E1EC43932002E0C48 /* CollectionViewCellTemplate.h */,
+				CF560D6F1EC43932002E0C48 /* CollectionViewCellTemplate.m */,
+				CF560D701EC43932002E0C48 /* CollectionViewTemplate.h */,
+				CF560D711EC43932002E0C48 /* CollectionViewTemplate.m */,
+				CF560D721EC43932002E0C48 /* SubmodelInterfaceTemplate.h */,
+				CF560D731EC43932002E0C48 /* SubmodelTemplate.h */,
+				CF560D741EC43932002E0C48 /* SubmodelTemplate.m */,
+				CF560D751EC43932002E0C48 /* SubviewTemplate.h */,
+				CF560D761EC43932002E0C48 /* SubviewTemplate.m */,
+				CF560D771EC43932002E0C48 /* TableViewCellTemplate.h */,
+				CF560D781EC43932002E0C48 /* TableViewCellTemplate.m */,
+			);
+			path = UITemplate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,10 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF560D7C1EC43932002E0C48 /* SubviewTemplate.m in Sources */,
 				CF12ECD61EC0221000E16BAE /* CurrentViewController.m in Sources */,
 				CF053AEC1EBC68FB002E9EF6 /* ViewController.m in Sources */,
 				CF053AE91EBC68FB002E9EF6 /* AppDelegate.m in Sources */,
 				CF12ECE41EC0255100E16BAE /* ModelTemplate.m in Sources */,
+				CF560D7B1EC43932002E0C48 /* SubmodelTemplate.m in Sources */,
 				CF12ECD31EC01EC200E16BAE /* Router.m in Sources */,
 				CF12ECE51EC0255100E16BAE /* PresenterTemplate.m in Sources */,
 				CF053AE61EBC68FB002E9EF6 /* main.m in Sources */,
@@ -300,7 +337,10 @@
 				CF12ECE31EC0255100E16BAE /* ControllerTemplate.m in Sources */,
 				CF053B1A1EC0161E002E9EF6 /* UIImageView+load.m in Sources */,
 				CF12ECE61EC0255100E16BAE /* ViewModelTemplate.m in Sources */,
+				CF560D7D1EC43932002E0C48 /* TableViewCellTemplate.m in Sources */,
+				CF560D7A1EC43932002E0C48 /* CollectionViewTemplate.m in Sources */,
 				CF053B111EC008A3002E9EF6 /* NetWork.m in Sources */,
+				CF560D791EC43932002E0C48 /* CollectionViewCellTemplate.m in Sources */,
 				CF12ECE71EC0255100E16BAE /* ViewTemplate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

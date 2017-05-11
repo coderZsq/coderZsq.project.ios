@@ -11,8 +11,8 @@
 
 @interface PresenterTemplate : NSObject<ViewOperation>
 
-@property (nonatomic,strong) id<ViewInterface> view;
-@property (nonatomic,strong) id<ViewModelInterface> viewModel;
+@property (nonatomic,weak) id<ViewInterface> view;
+@property (nonatomic,weak) id<ViewModelInterface> viewModel;
 
 - (void)adapterWithView:(id<ViewInterface>)view viewModel:(id<ViewModelInterface>)viewModel;
 

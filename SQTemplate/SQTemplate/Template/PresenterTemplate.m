@@ -29,7 +29,7 @@
 }
 
 - (void)pushTo {
-    [[Router sharedInstance] push:@"Home"];
+    [[Router sharedInstance] push:@"Template"];
 }
 
 @end

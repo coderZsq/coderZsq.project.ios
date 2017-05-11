@@ -11,7 +11,7 @@
 
 @interface ViewModelTemplate : NSObject <ViewModelInterface>
 
-@property (nonatomic,strong) NSMutableArray * models;
+@property (nonatomic,strong) id<ModelInterface> model;
 
 - (void)dynamicBindingWithFinishedCallBack:(void (^)())finishCallBack;
 
