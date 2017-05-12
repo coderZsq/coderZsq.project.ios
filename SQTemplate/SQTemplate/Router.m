@@ -30,7 +30,8 @@
 - (NSDictionary *)map {
     
     if (!_map) {
-        _map = @{@"Template" : @"ControllerTemplate"};
+        _map = @{@"Template" : @"ControllerTemplate",
+                 @"SpecialSale" : @"HYSpecialSaleViewController"};
     }
     return _map;
 }

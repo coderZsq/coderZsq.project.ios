@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "<#Unit#>CellAdapter.h"
+#import "HYBlockThreeCollectionCellAdapter.h"
 
-@interface <#Unit#>Cell : UICollectionViewCell
+@interface HYBlockThreeCollectionCell : UICollectionViewCell
 
-@property (nonatomic,strong) id<<#Unit#>CellAdapter> adapter;
+@property (nonatomic,strong) id<HYBlockThreeCollectionCellAdapter> adapter;
 
 @end

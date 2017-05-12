@@ -44,8 +44,8 @@
 <#ViewSetup#>
 }
 
-- (void)setDataSource:(id<<#SubUnit#>ModelInterface>)dataSource {
-    _dataSource = dataSource;
+- (void)setAdapter:(id<<#Unit#>CellAdapter>)adapter {
+    _adapter = adapter;
 }
 
 - (void)layoutSubviews {

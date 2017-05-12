@@ -1,19 +1,13 @@
 {
 	"super" : "",
-	"controller" : "Home",
+	"controller" : "HYSpecialSale",
 	"model" : {
 		"models" : "Array"
 	},
 	"viewModel" : [
-		"register",
-		"login",
-		"exit",
-		"refresh"
+		"specialSale"
 	],
 	"presenter" : [
-		"pushToNextViewController",
-		"popToRootViewController",
-		"showAlert",
-		"closeButtonClick"
+		"pushToNextViewController"
 	]
 }

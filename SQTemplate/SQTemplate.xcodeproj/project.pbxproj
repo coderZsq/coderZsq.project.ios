@@ -28,6 +28,29 @@
 		CF560D7B1EC43932002E0C48 /* SubmodelTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D741EC43932002E0C48 /* SubmodelTemplate.m */; };
 		CF560D7C1EC43932002E0C48 /* SubviewTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D761EC43932002E0C48 /* SubviewTemplate.m */; };
 		CF560D7D1EC43932002E0C48 /* TableViewCellTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560D781EC43932002E0C48 /* TableViewCellTemplate.m */; };
+		CF560E5C1EC56C09002E0C48 /* HYBlockFiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E281EC56C09002E0C48 /* HYBlockFiveCell.m */; };
+		CF560E5D1EC56C09002E0C48 /* HYBlockFiveSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E2B1EC56C09002E0C48 /* HYBlockFiveSubView.m */; };
+		CF560E5E1EC56C09002E0C48 /* HYBlockFiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E2D1EC56C09002E0C48 /* HYBlockFiveView.m */; };
+		CF560E5F1EC56C09002E0C48 /* HYBlockFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E2F1EC56C09002E0C48 /* HYBlockFourCell.m */; };
+		CF560E601EC56C09002E0C48 /* HYBlockFourSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E321EC56C09002E0C48 /* HYBlockFourSubView.m */; };
+		CF560E611EC56C09002E0C48 /* HYBlockFourView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E341EC56C09002E0C48 /* HYBlockFourView.m */; };
+		CF560E621EC56C09002E0C48 /* HYBlockOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E361EC56C09002E0C48 /* HYBlockOneCell.m */; };
+		CF560E631EC56C09002E0C48 /* HYBlockOneSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E391EC56C09002E0C48 /* HYBlockOneSubView.m */; };
+		CF560E641EC56C09002E0C48 /* HYBlockOneView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E3B1EC56C09002E0C48 /* HYBlockOneView.m */; };
+		CF560E651EC56C09002E0C48 /* HYBlockThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E3D1EC56C09002E0C48 /* HYBlockThreeCell.m */; };
+		CF560E661EC56C09002E0C48 /* HYBlockThreeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E401EC56C09002E0C48 /* HYBlockThreeCollectionCell.m */; };
+		CF560E671EC56C09002E0C48 /* HYBlockThreeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E431EC56C09002E0C48 /* HYBlockThreeCollectionView.m */; };
+		CF560E681EC56C09002E0C48 /* HYBlockThreeSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E451EC56C09002E0C48 /* HYBlockThreeSubView.m */; };
+		CF560E691EC56C09002E0C48 /* HYBlockThreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E471EC56C09002E0C48 /* HYBlockThreeView.m */; };
+		CF560E6A1EC56C09002E0C48 /* HYBlockTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E491EC56C09002E0C48 /* HYBlockTitleView.m */; };
+		CF560E6B1EC56C09002E0C48 /* HYBlockTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E4B1EC56C09002E0C48 /* HYBlockTwoCell.m */; };
+		CF560E6C1EC56C09002E0C48 /* HYBlockTwoSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E4E1EC56C09002E0C48 /* HYBlockTwoSubView.m */; };
+		CF560E6D1EC56C09002E0C48 /* HYBlockTwoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E501EC56C09002E0C48 /* HYBlockTwoView.m */; };
+		CF560E6E1EC56C09002E0C48 /* HYSpecialSaleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E531EC56C09002E0C48 /* HYSpecialSaleModel.m */; };
+		CF560E6F1EC56C09002E0C48 /* HYSpecialSalePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E551EC56C09002E0C48 /* HYSpecialSalePresenter.m */; };
+		CF560E701EC56C09002E0C48 /* HYSpecialSaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E571EC56C09002E0C48 /* HYSpecialSaleView.m */; };
+		CF560E711EC56C09002E0C48 /* HYSpecialSaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E591EC56C09002E0C48 /* HYSpecialSaleViewController.m */; };
+		CF560E721EC56C09002E0C48 /* HYSpecialSaleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF560E5B1EC56C09002E0C48 /* HYSpecialSaleViewModel.m */; };
 		CFE501B41EC19915006BDE68 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE501B31EC19915006BDE68 /* libc++.tbd */; };
 		E52E16C3C91B5C9FB4C1CCE5 /* libPods-SQTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 592B2C3619CABBFEB1FB83C4 /* libPods-SQTemplate.a */; };
 /* End PBXBuildFile section */
@@ -78,6 +101,59 @@
 		CF560D761EC43932002E0C48 /* SubviewTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubviewTemplate.m; sourceTree = "<group>"; };
 		CF560D771EC43932002E0C48 /* TableViewCellTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellTemplate.h; sourceTree = "<group>"; };
 		CF560D781EC43932002E0C48 /* TableViewCellTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellTemplate.m; sourceTree = "<group>"; };
+		CF560E271EC56C09002E0C48 /* HYBlockFiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFiveCell.h; sourceTree = "<group>"; };
+		CF560E281EC56C09002E0C48 /* HYBlockFiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockFiveCell.m; sourceTree = "<group>"; };
+		CF560E291EC56C09002E0C48 /* HYBlockFiveCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFiveCellAdapter.h; sourceTree = "<group>"; };
+		CF560E2A1EC56C09002E0C48 /* HYBlockFiveSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFiveSubView.h; sourceTree = "<group>"; };
+		CF560E2B1EC56C09002E0C48 /* HYBlockFiveSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockFiveSubView.m; sourceTree = "<group>"; };
+		CF560E2C1EC56C09002E0C48 /* HYBlockFiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFiveView.h; sourceTree = "<group>"; };
+		CF560E2D1EC56C09002E0C48 /* HYBlockFiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockFiveView.m; sourceTree = "<group>"; };
+		CF560E2E1EC56C09002E0C48 /* HYBlockFourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFourCell.h; sourceTree = "<group>"; };
+		CF560E2F1EC56C09002E0C48 /* HYBlockFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockFourCell.m; sourceTree = "<group>"; };
+		CF560E301EC56C09002E0C48 /* HYBlockFourCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFourCellAdapter.h; sourceTree = "<group>"; };
+		CF560E311EC56C09002E0C48 /* HYBlockFourSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFourSubView.h; sourceTree = "<group>"; };
+		CF560E321EC56C09002E0C48 /* HYBlockFourSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockFourSubView.m; sourceTree = "<group>"; };
+		CF560E331EC56C09002E0C48 /* HYBlockFourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockFourView.h; sourceTree = "<group>"; };
+		CF560E341EC56C09002E0C48 /* HYBlockFourView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockFourView.m; sourceTree = "<group>"; };
+		CF560E351EC56C09002E0C48 /* HYBlockOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockOneCell.h; sourceTree = "<group>"; };
+		CF560E361EC56C09002E0C48 /* HYBlockOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockOneCell.m; sourceTree = "<group>"; };
+		CF560E371EC56C09002E0C48 /* HYBlockOneCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockOneCellAdapter.h; sourceTree = "<group>"; };
+		CF560E381EC56C09002E0C48 /* HYBlockOneSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockOneSubView.h; sourceTree = "<group>"; };
+		CF560E391EC56C09002E0C48 /* HYBlockOneSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockOneSubView.m; sourceTree = "<group>"; };
+		CF560E3A1EC56C09002E0C48 /* HYBlockOneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockOneView.h; sourceTree = "<group>"; };
+		CF560E3B1EC56C09002E0C48 /* HYBlockOneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockOneView.m; sourceTree = "<group>"; };
+		CF560E3C1EC56C09002E0C48 /* HYBlockThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockThreeCell.h; sourceTree = "<group>"; };
+		CF560E3D1EC56C09002E0C48 /* HYBlockThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockThreeCell.m; sourceTree = "<group>"; };
+		CF560E3E1EC56C09002E0C48 /* HYBlockThreeCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockThreeCellAdapter.h; sourceTree = "<group>"; };
+		CF560E3F1EC56C09002E0C48 /* HYBlockThreeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockThreeCollectionCell.h; sourceTree = "<group>"; };
+		CF560E401EC56C09002E0C48 /* HYBlockThreeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockThreeCollectionCell.m; sourceTree = "<group>"; };
+		CF560E411EC56C09002E0C48 /* HYBlockThreeCollectionCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockThreeCollectionCellAdapter.h; sourceTree = "<group>"; };
+		CF560E421EC56C09002E0C48 /* HYBlockThreeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockThreeCollectionView.h; sourceTree = "<group>"; };
+		CF560E431EC56C09002E0C48 /* HYBlockThreeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockThreeCollectionView.m; sourceTree = "<group>"; };
+		CF560E441EC56C09002E0C48 /* HYBlockThreeSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockThreeSubView.h; sourceTree = "<group>"; };
+		CF560E451EC56C09002E0C48 /* HYBlockThreeSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockThreeSubView.m; sourceTree = "<group>"; };
+		CF560E461EC56C09002E0C48 /* HYBlockThreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockThreeView.h; sourceTree = "<group>"; };
+		CF560E471EC56C09002E0C48 /* HYBlockThreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockThreeView.m; sourceTree = "<group>"; };
+		CF560E481EC56C09002E0C48 /* HYBlockTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockTitleView.h; sourceTree = "<group>"; };
+		CF560E491EC56C09002E0C48 /* HYBlockTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockTitleView.m; sourceTree = "<group>"; };
+		CF560E4A1EC56C09002E0C48 /* HYBlockTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockTwoCell.h; sourceTree = "<group>"; };
+		CF560E4B1EC56C09002E0C48 /* HYBlockTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockTwoCell.m; sourceTree = "<group>"; };
+		CF560E4C1EC56C09002E0C48 /* HYBlockTwoCellAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockTwoCellAdapter.h; sourceTree = "<group>"; };
+		CF560E4D1EC56C09002E0C48 /* HYBlockTwoSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockTwoSubView.h; sourceTree = "<group>"; };
+		CF560E4E1EC56C09002E0C48 /* HYBlockTwoSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockTwoSubView.m; sourceTree = "<group>"; };
+		CF560E4F1EC56C09002E0C48 /* HYBlockTwoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBlockTwoView.h; sourceTree = "<group>"; };
+		CF560E501EC56C09002E0C48 /* HYBlockTwoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBlockTwoView.m; sourceTree = "<group>"; };
+		CF560E511EC56C09002E0C48 /* HYSpecialSaleInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSpecialSaleInterface.h; sourceTree = "<group>"; };
+		CF560E521EC56C09002E0C48 /* HYSpecialSaleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSpecialSaleModel.h; sourceTree = "<group>"; };
+		CF560E531EC56C09002E0C48 /* HYSpecialSaleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSpecialSaleModel.m; sourceTree = "<group>"; };
+		CF560E541EC56C09002E0C48 /* HYSpecialSalePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSpecialSalePresenter.h; sourceTree = "<group>"; };
+		CF560E551EC56C09002E0C48 /* HYSpecialSalePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSpecialSalePresenter.m; sourceTree = "<group>"; };
+		CF560E561EC56C09002E0C48 /* HYSpecialSaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSpecialSaleView.h; sourceTree = "<group>"; };
+		CF560E571EC56C09002E0C48 /* HYSpecialSaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSpecialSaleView.m; sourceTree = "<group>"; };
+		CF560E581EC56C09002E0C48 /* HYSpecialSaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSpecialSaleViewController.h; sourceTree = "<group>"; };
+		CF560E591EC56C09002E0C48 /* HYSpecialSaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSpecialSaleViewController.m; sourceTree = "<group>"; };
+		CF560E5A1EC56C09002E0C48 /* HYSpecialSaleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSpecialSaleViewModel.h; sourceTree = "<group>"; };
+		CF560E5B1EC56C09002E0C48 /* HYSpecialSaleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSpecialSaleViewModel.m; sourceTree = "<group>"; };
 		CFE501B31EC19915006BDE68 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -133,6 +209,7 @@
 		CF053AE31EBC68FB002E9EF6 /* SQTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				CF560E261EC56C09002E0C48 /* HYSpecialSale */,
 				CF560D6D1EC43932002E0C48 /* UITemplate */,
 				CF12ECD71EC0255100E16BAE /* Template */,
 				CF053AE71EBC68FB002E9EF6 /* AppDelegate.h */,
@@ -200,6 +277,66 @@
 				CF560D781EC43932002E0C48 /* TableViewCellTemplate.m */,
 			);
 			path = UITemplate;
+			sourceTree = "<group>";
+		};
+		CF560E261EC56C09002E0C48 /* HYSpecialSale */ = {
+			isa = PBXGroup;
+			children = (
+				CF560E271EC56C09002E0C48 /* HYBlockFiveCell.h */,
+				CF560E281EC56C09002E0C48 /* HYBlockFiveCell.m */,
+				CF560E291EC56C09002E0C48 /* HYBlockFiveCellAdapter.h */,
+				CF560E2A1EC56C09002E0C48 /* HYBlockFiveSubView.h */,
+				CF560E2B1EC56C09002E0C48 /* HYBlockFiveSubView.m */,
+				CF560E2C1EC56C09002E0C48 /* HYBlockFiveView.h */,
+				CF560E2D1EC56C09002E0C48 /* HYBlockFiveView.m */,
+				CF560E2E1EC56C09002E0C48 /* HYBlockFourCell.h */,
+				CF560E2F1EC56C09002E0C48 /* HYBlockFourCell.m */,
+				CF560E301EC56C09002E0C48 /* HYBlockFourCellAdapter.h */,
+				CF560E311EC56C09002E0C48 /* HYBlockFourSubView.h */,
+				CF560E321EC56C09002E0C48 /* HYBlockFourSubView.m */,
+				CF560E331EC56C09002E0C48 /* HYBlockFourView.h */,
+				CF560E341EC56C09002E0C48 /* HYBlockFourView.m */,
+				CF560E351EC56C09002E0C48 /* HYBlockOneCell.h */,
+				CF560E361EC56C09002E0C48 /* HYBlockOneCell.m */,
+				CF560E371EC56C09002E0C48 /* HYBlockOneCellAdapter.h */,
+				CF560E381EC56C09002E0C48 /* HYBlockOneSubView.h */,
+				CF560E391EC56C09002E0C48 /* HYBlockOneSubView.m */,
+				CF560E3A1EC56C09002E0C48 /* HYBlockOneView.h */,
+				CF560E3B1EC56C09002E0C48 /* HYBlockOneView.m */,
+				CF560E3C1EC56C09002E0C48 /* HYBlockThreeCell.h */,
+				CF560E3D1EC56C09002E0C48 /* HYBlockThreeCell.m */,
+				CF560E3E1EC56C09002E0C48 /* HYBlockThreeCellAdapter.h */,
+				CF560E3F1EC56C09002E0C48 /* HYBlockThreeCollectionCell.h */,
+				CF560E401EC56C09002E0C48 /* HYBlockThreeCollectionCell.m */,
+				CF560E411EC56C09002E0C48 /* HYBlockThreeCollectionCellAdapter.h */,
+				CF560E421EC56C09002E0C48 /* HYBlockThreeCollectionView.h */,
+				CF560E431EC56C09002E0C48 /* HYBlockThreeCollectionView.m */,
+				CF560E441EC56C09002E0C48 /* HYBlockThreeSubView.h */,
+				CF560E451EC56C09002E0C48 /* HYBlockThreeSubView.m */,
+				CF560E461EC56C09002E0C48 /* HYBlockThreeView.h */,
+				CF560E471EC56C09002E0C48 /* HYBlockThreeView.m */,
+				CF560E481EC56C09002E0C48 /* HYBlockTitleView.h */,
+				CF560E491EC56C09002E0C48 /* HYBlockTitleView.m */,
+				CF560E4A1EC56C09002E0C48 /* HYBlockTwoCell.h */,
+				CF560E4B1EC56C09002E0C48 /* HYBlockTwoCell.m */,
+				CF560E4C1EC56C09002E0C48 /* HYBlockTwoCellAdapter.h */,
+				CF560E4D1EC56C09002E0C48 /* HYBlockTwoSubView.h */,
+				CF560E4E1EC56C09002E0C48 /* HYBlockTwoSubView.m */,
+				CF560E4F1EC56C09002E0C48 /* HYBlockTwoView.h */,
+				CF560E501EC56C09002E0C48 /* HYBlockTwoView.m */,
+				CF560E511EC56C09002E0C48 /* HYSpecialSaleInterface.h */,
+				CF560E521EC56C09002E0C48 /* HYSpecialSaleModel.h */,
+				CF560E531EC56C09002E0C48 /* HYSpecialSaleModel.m */,
+				CF560E541EC56C09002E0C48 /* HYSpecialSalePresenter.h */,
+				CF560E551EC56C09002E0C48 /* HYSpecialSalePresenter.m */,
+				CF560E561EC56C09002E0C48 /* HYSpecialSaleView.h */,
+				CF560E571EC56C09002E0C48 /* HYSpecialSaleView.m */,
+				CF560E581EC56C09002E0C48 /* HYSpecialSaleViewController.h */,
+				CF560E591EC56C09002E0C48 /* HYSpecialSaleViewController.m */,
+				CF560E5A1EC56C09002E0C48 /* HYSpecialSaleViewModel.h */,
+				CF560E5B1EC56C09002E0C48 /* HYSpecialSaleViewModel.m */,
+			);
+			path = HYSpecialSale;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,20 +465,43 @@
 				CF12ECD61EC0221000E16BAE /* CurrentViewController.m in Sources */,
 				CF053AEC1EBC68FB002E9EF6 /* ViewController.m in Sources */,
 				CF053AE91EBC68FB002E9EF6 /* AppDelegate.m in Sources */,
+				CF560E5F1EC56C09002E0C48 /* HYBlockFourCell.m in Sources */,
+				CF560E651EC56C09002E0C48 /* HYBlockThreeCell.m in Sources */,
+				CF560E711EC56C09002E0C48 /* HYSpecialSaleViewController.m in Sources */,
+				CF560E6F1EC56C09002E0C48 /* HYSpecialSalePresenter.m in Sources */,
 				CF12ECE41EC0255100E16BAE /* ModelTemplate.m in Sources */,
+				CF560E6E1EC56C09002E0C48 /* HYSpecialSaleModel.m in Sources */,
 				CF560D7B1EC43932002E0C48 /* SubmodelTemplate.m in Sources */,
+				CF560E721EC56C09002E0C48 /* HYSpecialSaleViewModel.m in Sources */,
+				CF560E611EC56C09002E0C48 /* HYBlockFourView.m in Sources */,
+				CF560E6B1EC56C09002E0C48 /* HYBlockTwoCell.m in Sources */,
+				CF560E621EC56C09002E0C48 /* HYBlockOneCell.m in Sources */,
+				CF560E6C1EC56C09002E0C48 /* HYBlockTwoSubView.m in Sources */,
+				CF560E631EC56C09002E0C48 /* HYBlockOneSubView.m in Sources */,
 				CF12ECD31EC01EC200E16BAE /* Router.m in Sources */,
+				CF560E691EC56C09002E0C48 /* HYBlockThreeView.m in Sources */,
 				CF12ECE51EC0255100E16BAE /* PresenterTemplate.m in Sources */,
 				CF053AE61EBC68FB002E9EF6 /* main.m in Sources */,
+				CF560E641EC56C09002E0C48 /* HYBlockOneView.m in Sources */,
+				CF560E681EC56C09002E0C48 /* HYBlockThreeSubView.m in Sources */,
 				CF053B141EC008B0002E9EF6 /* DataBase.m in Sources */,
 				CF12ECE31EC0255100E16BAE /* ControllerTemplate.m in Sources */,
+				CF560E661EC56C09002E0C48 /* HYBlockThreeCollectionCell.m in Sources */,
+				CF560E601EC56C09002E0C48 /* HYBlockFourSubView.m in Sources */,
 				CF053B1A1EC0161E002E9EF6 /* UIImageView+load.m in Sources */,
+				CF560E6D1EC56C09002E0C48 /* HYBlockTwoView.m in Sources */,
+				CF560E671EC56C09002E0C48 /* HYBlockThreeCollectionView.m in Sources */,
 				CF12ECE61EC0255100E16BAE /* ViewModelTemplate.m in Sources */,
 				CF560D7D1EC43932002E0C48 /* TableViewCellTemplate.m in Sources */,
+				CF560E5C1EC56C09002E0C48 /* HYBlockFiveCell.m in Sources */,
+				CF560E701EC56C09002E0C48 /* HYSpecialSaleView.m in Sources */,
 				CF560D7A1EC43932002E0C48 /* CollectionViewTemplate.m in Sources */,
 				CF053B111EC008A3002E9EF6 /* NetWork.m in Sources */,
+				CF560E5E1EC56C09002E0C48 /* HYBlockFiveView.m in Sources */,
 				CF560D791EC43932002E0C48 /* CollectionViewCellTemplate.m in Sources */,
+				CF560E5D1EC56C09002E0C48 /* HYBlockFiveSubView.m in Sources */,
 				CF12ECE71EC0255100E16BAE /* ViewTemplate.m in Sources */,
+				CF560E6A1EC56C09002E0C48 /* HYBlockTitleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

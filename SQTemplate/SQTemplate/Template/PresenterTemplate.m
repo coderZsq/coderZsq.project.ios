@@ -29,7 +29,7 @@
 }
 
 - (void)pushTo {
-    [[Router sharedInstance] push:@"Template"];
+    [[Router sharedInstance] push:@"SpecialSale"];
 }
 
 @end

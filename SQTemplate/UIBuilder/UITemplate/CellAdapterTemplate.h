@@ -1,5 +1,5 @@
 //
-//  SubmodelInterfaceTemplate.h
+//  CellAdapterTemplate.h
 //  SQTemplate
 //
 //  Created by 双泉 朱 on 17/5/11.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol <#SubUnit#>ModelInterface <NSObject>
+@protocol <#Unit#>CellAdapter <NSObject>
 <#ModelInterface#>
 
 @end

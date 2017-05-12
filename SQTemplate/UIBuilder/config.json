@@ -1,15 +1,15 @@
 {
-	"tableViewCell" : "No",
-	"collectionViewCell" : "Yes",
-	"subview" : "Yes",
+	"tableViewCell" : "Yes",
+	"collectionViewCell" : "No",
+	"subview" : "No",
 	"submodel" : "No",
 	"isImport" : "Yes",
 
-	"unit" : "HYGoodsView",
+	"unit" : "HYBlockFive",
 	"bean" : "Goods",
 	
 	"layout" : {
-		"blockView" : "HYBlockOneView"
+		"blockFiveView" : "HYBlockFiveView"
 	},
 	
 	"model" : {

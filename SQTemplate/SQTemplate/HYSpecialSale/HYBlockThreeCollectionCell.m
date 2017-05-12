@@ -6,14 +6,15 @@
 //  Copyright © 2017年 Doubles_Z. All rights reserved.
 //
 
-#import "<#Unit#>Cell.h"
-<#ViewImport#>
-@interface <#Unit#>Cell ()
+#import "HYBlockThreeCollectionCell.h"
 
-<#ViewProperty#>
+@interface HYBlockThreeCollectionCell ()
+
+@property (nonatomic,strong) UIButton * imageButton;
+
 @end
 
-@implementation <#Unit#>Cell
+@implementation HYBlockThreeCollectionCell
 
 - (void)dealloc {
     NSLog(@"%@ - execute %s",NSStringFromClass([self class]),__func__);
@@ -37,20 +38,31 @@
     return self;
 }
 
-<#ViewLazyLoad#>
+- (UIButton *)imageButton {
 
-- (void)setupSubviews {
-<#ViewSetup#>
+    if (!_imageButton) {
+        _imageButton = [UIButton new];
+    }
+    return _imageButton;
 }
 
-- (void)setAdapter:(id<<#Unit#>CellAdapter>)adapter {
+- (void)setupSubviews {
+    [self addSubview:self.imageButton];
+}
+
+- (void)setAdapter:(id<HYBlockThreeCollectionCellAdapter>)adapter {
     _adapter = adapter;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-<#ViewLayout#>
+    CGFloat imageButtonX = 0;
+    CGFloat imageButtonY = 0;
+    CGFloat imageButtonW = self.frame.size.width;
+    CGFloat imageButtonH = self.frame.size.height;
+    _imageButton.frame = CGRectMake(imageButtonX, imageButtonY, imageButtonW, imageButtonH);
+
 }
 
 @end

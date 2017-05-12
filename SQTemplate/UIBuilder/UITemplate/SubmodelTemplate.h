@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "<#SubUnit#>ModelInterface.h"
 
-@interface <#SubUnit#>Model : NSObject <<#SubUnit#>ModelInterface>
+@interface <#SubUnit#>Model : NSObject 
 <#ModelInterface#>
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

@@ -24,6 +24,7 @@ viewLazyLoad = ''
 viewSetup = ''
 viewLayout = ''
 viewImport = ''
+classImport = ''
 for key in data_json["layout"]:
    value = data_json["layout"][key]
    viewProperty += "@property (nonatomic,strong) " + str(value) + " * " + str(key) + ";\n"
@@ -32,6 +33,7 @@ for key in data_json["layout"]:
    viewLayout += "    CGFloat " + str(key) + "X = <#length#>;\n    CGFloat " + str(key) + "Y = <#length#>;\n    CGFloat " + str(key) + "W = <#length#>;\n    CGFloat " + str(key) + "H = <#length#>;\n    _" + str(key) + ".frame = CGRectMake(" + str(key) + "X, " + str(key) + "Y, " + str(key) + "W, " + str(key) + "H);\n\n"
    if isImport == 'Yes':
       viewImport += '#import "' + str(value) + '.h"\n'
+      classImport += '@class ' + str(value) + ';\n'
 
 model = ''
 for key in data_json["model"]:
@@ -71,7 +73,7 @@ def builder(path, file, isbean):
       w = open(cur_file_dir() + '/' + bean + file, 'w')
    else:
       w = open(cur_file_dir() + '/' + unit + file, 'w')
-   w.write(d.replace("<#ViewProperty#>", viewProperty).replace("<#Unit#>", unit).replace("<#ViewLazyLoad#>", viewLazyLoad).replace("<#ViewSetup#>",viewSetup).replace("<#ViewLayout#>",viewLayout).replace("<#SubUnit#>", bean).replace("<#ViewImport#>", viewImport).replace("<#ModelInterface#>", model))
+   w.write(d.replace("<#ViewProperty#>", viewProperty).replace("<#Unit#>", unit).replace("<#ViewLazyLoad#>", viewLazyLoad).replace("<#ViewSetup#>",viewSetup).replace("<#ViewLayout#>",viewLayout).replace("<#SubUnit#>", bean).replace("<#ViewImport#>", viewImport).replace("<#ModelInterface#>", model).replace("<#ClassImport#>", classImport))
    w.close()
 
 if subview == "Yes":
@@ -81,9 +83,9 @@ if subview == "Yes":
 if tableViewCell == "Yes":
    builder("TableViewCellTemplate.h", "Cell.h", "No")
    builder("TableViewCellTemplate.m", "Cell.m", "No")
+   builder("CellAdapterTemplate.h", "CellAdapter.h", "No")
 
 if submodel == 'Yes':
-   builder("SubmodelInterfaceTemplate.h", "ModelInterface.h", "Yes")
    builder("SubmodelTemplate.h", "Model.h", "Yes")
    builder("SubmodelTemplate.m", "Model.m", "Yes")
 
@@ -92,5 +94,7 @@ if collectionViewCell == 'Yes':
    builder("CollectionViewTemplate.m", "View.m", "No")
    builder("CollectionViewCellTemplate.h", "Cell.h", "No")
    builder("CollectionViewCellTemplate.m", "Cell.m", "No")
+   builder("CellAdapterTemplate.h", "CellAdapter.h", "No")
+
 
 

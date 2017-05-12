@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-<#ClassImport#>
-@interface <#Unit#>View : UIView
+@interface HYBlockTwoSubView : UIView
 
-<#ViewProperty#>
+@property (nonatomic,strong) UIButton * backgroundButton;
+
 @end

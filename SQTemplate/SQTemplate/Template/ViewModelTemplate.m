@@ -15,7 +15,7 @@
 
 - (void)dynamicBindingWithFinishedCallBack:(void (^)())finishCallBack {
 
-    [DataBase requestDataWithClass:[NSObject class] finishedCallBack:^(NSDictionary *response) {
+    [DataBase requestDataWithClass:[ModelTemplate class] finishedCallBack:^(NSDictionary *response) {
         _model = [ModelTemplate modelWithDictionary:response];
         finishCallBack();
     }];

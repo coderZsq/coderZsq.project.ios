@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "<#Unit#>CellAdapter.h"
+#import "HYBlockOneCellAdapter.h"
 
-@interface <#Unit#>Cell : UITableViewCell
+@interface HYBlockOneCell : UITableViewCell
 
-@property (nonatomic,strong) id<<#Unit#>CellAdapter> adapter;
+@property (nonatomic,strong) id<HYBlockOneCellAdapter> adapter;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

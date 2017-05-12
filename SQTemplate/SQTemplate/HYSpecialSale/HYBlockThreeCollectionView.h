@@ -1,5 +1,5 @@
 //
-//  SubviewTemplate.h
+//  CollectionViewTemplate.h
 //  SQTemplate
 //
 //  Created by 双泉 朱 on 17/5/11.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-<#ClassImport#>
-@interface <#Unit#>View : UIView
+@interface HYBlockThreeCollectionView : UIView
 
-<#ViewProperty#>
+@property (nonatomic,strong) NSArray * dataSourceArr;
+
 @end
