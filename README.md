@@ -3,6 +3,7 @@
 #### SQTemplate 
 > 使用SQTemplate自动生成零耦合架构模板, 快速构建代码架构, 实现代码分层.
 - [iOS 零耦合架构代码生成器](http://www.jianshu.com/p/47d565bf200e)
+- [iOS 适配UI界面代码生成器](http://www.jianshu.com/p/d15379908582)
 
 #### SQLifestyle 
 > 使用SQExtension快速搭建项目架构, 快速使用轮子组件, 快速集成动画特效.
