@@ -1,7 +1,7 @@
 ## Quickly Developer Tools of Objective-C
 
 #### SQTemplate 
-> 使用SQTemplate自动生成零耦合架构模板, 快速生成UI层代码, 实现分层解耦.
+> 使用SQTemplate自动生成零耦合架构代码, 快速生成UI层代码, 实现分层解耦.
 - [iOS 零耦合架构代码生成器](http://www.jianshu.com/p/47d565bf200e)
 - [iOS 适配UI界面代码生成器](http://www.jianshu.com/p/d15379908582)
 
