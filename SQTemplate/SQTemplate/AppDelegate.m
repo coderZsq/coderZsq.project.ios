@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ControllerTemplate.h"
-#import "DataBase.h"
+#import "HYSpecialSaleViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[ControllerTemplate new]];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[HYSpecialSaleViewController new]];
     return YES;
 }
 
