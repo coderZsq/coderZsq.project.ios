@@ -4,6 +4,7 @@
 > 使用SQTemplate自动生成架构代码, 快速生成UI层代码, 实现分层解耦.
 - [iOS 执行.py脚本生成解耦架构](http://www.jianshu.com/p/47d565bf200e)
 - [iOS 执行.py脚本生成UI层结构](http://www.jianshu.com/p/d15379908582)
+- [iOS 移动端面向文档开发](http://www.jianshu.com/p/b35d06cf189a)
 
 #### SQLifestyle 
 > 使用SQExtension快速搭建项目架构, 快速使用轮子组件, 快速集成动画特效.
