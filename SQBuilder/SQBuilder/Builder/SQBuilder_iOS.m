@@ -97,20 +97,37 @@
 
     NSString * class = @"";
     NSString * modified = @"";
-    if ([datatype caseInsensitiveCompare:@"String"] == NSOrderedSame) {
-        class = @"NSString *"; modified = @"copy";
-    } else if ([datatype caseInsensitiveCompare:@"Int"] == NSOrderedSame) {
-        class = @"NSInteger"; modified = @"assign";
-    } else if ([datatype caseInsensitiveCompare:@"Float"] == NSOrderedSame) {
-        class = @"CGFloat"; modified = @"assign";
-    } else if ([datatype caseInsensitiveCompare:@"Bool"] == NSOrderedSame) {
-        class = @"BOOL"; modified = @"assign";
-    } else if ([datatype caseInsensitiveCompare:@"Array"] == NSOrderedSame) {
-        class = @"NSArray *"; modified = @"strong";
-    } else if ([datatype caseInsensitiveCompare:@"Dictionary"] == NSOrderedSame) {
-        class = @"NSDictionary *"; modified = @"strong";
+    
+    if ([self.prefix caseInsensitiveCompare:@"HY"] == NSOrderedSame) {
+        if ([datatype caseInsensitiveCompare:@"HYString"] == NSOrderedSame) {
+            class = @"NSString *"; modified = @"copy";
+        } else if ([datatype caseInsensitiveCompare:@"HYInt"] == NSOrderedSame) {
+            class = @"NSInteger"; modified = @"assign";
+        } else if ([datatype caseInsensitiveCompare:@"HYboolean"] == NSOrderedSame) {
+            class = @"BOOL"; modified = @"assign";
+        } else if ([datatype containsString:@"HYModel"]) {
+            NSString * temp1 = [[datatype componentsSeparatedByString:@"<"] lastObject];
+            NSString * temp2 = [[temp1 componentsSeparatedByString:@">"] firstObject];
+            class = [NSString stringWithFormat:@"%@ *", temp2]; modified = @"strong";
+        } else if ([datatype containsString:@"HYList"]) {
+            class = @"NSMutableArray *"; modified = @"strong";
+        }
     } else {
-        class = [NSString stringWithFormat:@"%@ *", datatype]; modified = @"strong";
+        if ([datatype caseInsensitiveCompare:@"String"] == NSOrderedSame) {
+            class = @"NSString *"; modified = @"copy";
+        } else if ([datatype caseInsensitiveCompare:@"Int"] == NSOrderedSame) {
+            class = @"NSInteger"; modified = @"assign";
+        } else if ([datatype caseInsensitiveCompare:@"Float"] == NSOrderedSame) {
+            class = @"CGFloat"; modified = @"assign";
+        } else if ([datatype caseInsensitiveCompare:@"Bool"] == NSOrderedSame) {
+            class = @"BOOL"; modified = @"assign";
+        } else if ([datatype caseInsensitiveCompare:@"Array"] == NSOrderedSame) {
+            class = @"NSArray *"; modified = @"strong";
+        } else if ([datatype caseInsensitiveCompare:@"Dictionary"] == NSOrderedSame) {
+            class = @"NSDictionary *"; modified = @"strong";
+        } else {
+            class = [NSString stringWithFormat:@"%@ *", datatype]; modified = @"strong";
+        }
     }
     return @{@"class" : class, @"modified" : modified};
 }

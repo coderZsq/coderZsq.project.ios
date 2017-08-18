@@ -20,9 +20,9 @@
 	<key>dataList</key>
 	<dict>
 		<key>model</key>
-		<string>Array</string>
+		<string>HYModel&lt;Goods&gt;</string>
 		<key>name</key>
-		<string>String</string>
+		<string>HYList&lt;HAHA&gt;</string>
 		<key>map</key>
 		<string>Dictionary</string>
 		<key>num</key>
