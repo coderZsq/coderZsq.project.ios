@@ -7,9 +7,9 @@
 	<key>builderType</key>
 	<string>iOS</string>
 	<key>prefix</key>
-	<string>HY</string>
+	<string>SQ</string>
 	<key>module</key>
-	<string>Home</string>
+	<string>Perfect</string>
 	<key>parameter</key>
 	<dict>
 		<key>kksss</key>
@@ -20,9 +20,9 @@
 	<key>dataList</key>
 	<dict>
 		<key>model</key>
-		<string>HYModel&lt;Goods&gt;</string>
+		<string>Array</string>
 		<key>name</key>
-		<string>HYList&lt;HAHA&gt;</string>
+		<string>String</string>
 		<key>map</key>
 		<string>Dictionary</string>
 		<key>num</key>
