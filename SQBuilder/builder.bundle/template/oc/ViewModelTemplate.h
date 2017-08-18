@@ -13,7 +13,7 @@
 
 @property (nonatomic,strong) id<<#Root#><#Unit#>ModelInterface> model;
 
-- (void)initializeWithParameter:(NSDictionary *)parameter finishedCallBack:(void(^)())finishCallBack;
+- (void)initializeWithModel:(id<<#Root#><#Unit#>ModelInterface>)model <#InitializeInterface#>completion:(void(^)())completion;
 <#ViewModelInterface#>
 
 @end

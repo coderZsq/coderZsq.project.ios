@@ -13,6 +13,7 @@
 @property (nonatomic,copy) NSString * user;
 @property (nonatomic,copy) NSString * prefix;
 @property (nonatomic,copy) NSString * module;
+@property (nonatomic,strong) NSDictionary * parameter;
 @property (nonatomic,strong) NSDictionary * dataList;
 @property (nonatomic,strong) NSArray * actionList;
 

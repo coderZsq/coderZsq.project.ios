@@ -11,7 +11,7 @@
 
 @implementation <#Root#><#Unit#>ViewModel
 
-- (void)initializeWithParameter:(NSDictionary *)parameter finishedCallBack:(void(^)())finishCallBack {
+- (void)initializeWithModel:(id<<#Root#><#Unit#>ModelInterface>)model <#InitializeInterface#>completion:(void(^)())completion {
 
 }
 

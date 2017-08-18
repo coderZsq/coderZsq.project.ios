@@ -19,7 +19,7 @@
 @property (nonatomic,strong) id<<#Root#><#Unit#>ModelInterface> model;
 
 @optional
-- (void)initializeWithParameter:(NSDictionary *)parameter completion:(void(^)())completion;
+- (void)initializeWithModel:(id<<#Root#><#Unit#>ModelInterface>)model <#InitializeInterface#>completion:(void(^)())completion;
 <#ViewModelInterface#>
 @end
 

@@ -11,6 +11,7 @@
 
 @interface <#Root#><#Unit#>Presenter : NSObject<<#Root#><#Unit#>ViewModelInterface>
 
+<#InitializeProperty#>
 - (void)adapterWith<#Unit#>View:(id<<#Root#><#Unit#>ViewInterface>)<#unit#>View <#unit#>ViewModel:(id<<#Root#><#Unit#>ViewModelInterface>)<#unit#>ViewModel;
 
 @end

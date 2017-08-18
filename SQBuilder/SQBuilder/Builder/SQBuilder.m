@@ -32,6 +32,7 @@ typedef NS_ENUM(NSUInteger, SQBuilderType) {
     builder.user = config[@"user"];
     builder.prefix = config[@"prefix"];
     builder.module = config[@"module"];
+    builder.parameter = config[@"parameter"];
     builder.dataList = config[@"dataList"];
     builder.actionList = config[@"actionList"];
     [builder build];
