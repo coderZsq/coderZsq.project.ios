@@ -18,14 +18,15 @@ typedef NS_ENUM(NSUInteger, SQBuilderType) {
 
 @implementation SQBuilder
 
-+ (void)runWithFileParser:(NSDictionary *)config {
++ (void)runWithFileParser:(NSDictionary *)config success:(void (^)())success failure:(void (^)())failure {
 
     SQBuilderType builderType = SQBuilderTypeNone;
     if ([config[@"builderType"] caseInsensitiveCompare:@"iOS"] == NSOrderedSame) {
-        builderType = SQBuilderTypeiOS;
-    }
-    if ([config[@"builderType"] caseInsensitiveCompare:@"Android"] == NSOrderedSame) {
-        builderType = SQBuilderTypeAndroid;
+        builderType = SQBuilderTypeiOS; success();
+    } else if ([config[@"builderType"] caseInsensitiveCompare:@"Android"] == NSOrderedSame) {
+        builderType = SQBuilderTypeAndroid; success();
+    } else {
+        failure(); return;
     }
     
     SQBuilder * builder = [SQBuilder builderWithType:builderType];

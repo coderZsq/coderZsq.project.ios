@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "SQBuilder.h"
-#import "SQFileParser.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [SQBuilder runWithFileParser:[SQFileParser parser_plist_r]];
     return YES;
 }
 

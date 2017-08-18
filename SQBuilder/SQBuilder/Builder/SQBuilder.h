@@ -17,7 +17,7 @@
 @property (nonatomic,strong) NSDictionary * dataList;
 @property (nonatomic,strong) NSArray * actionList;
 
-+ (void)runWithFileParser:(NSDictionary *)config;
++ (void)runWithFileParser:(NSDictionary *)config success:(void (^)())success failure:(void (^)())failure;
 
 - (void)build;
 
