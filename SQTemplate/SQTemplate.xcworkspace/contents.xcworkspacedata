@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SQBuilder/SQBuilder.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SQTemplate.xcodeproj">
    </FileRef>
    <FileRef

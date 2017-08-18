@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[HYSpecialSaleViewController new]];
+    
     return YES;
 }
 
