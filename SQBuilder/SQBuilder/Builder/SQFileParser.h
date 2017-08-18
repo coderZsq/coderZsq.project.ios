@@ -12,6 +12,6 @@
 
 + (NSDictionary *)parser_plist_r;
 
-+ (void)parser_ios_rw:(NSString *)path filename:(NSString *)filename header:(NSString *)header parameter:(NSMutableArray *)parameter;
++ (void)parser_rw:(NSString *)path code:(NSString *)code filename:(NSString *)filename header:(NSString *)header parameter:(NSMutableArray *)parameter;
 
 @end

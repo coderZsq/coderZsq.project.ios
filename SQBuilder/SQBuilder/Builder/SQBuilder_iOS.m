@@ -89,7 +89,7 @@
                                        @{@"<#InitializeParameter#>" : initialize_parameter},
                                        @{@"<#InitializeInterface#>" : initialize_interface},
                                        ].mutableCopy;
-        [SQFileParser parser_ios_rw:path filename:filename header:header parameter:parameter];
+        [SQFileParser parser_rw:path code:@"oc" filename:filename header:header parameter:parameter];
     }
 }
 

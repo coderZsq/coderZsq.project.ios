@@ -16,20 +16,20 @@
     return [NSDictionary dictionaryWithContentsOfFile:[bundle pathForResource:@"config/config.plist" ofType:nil]];
 }
 
-+ (void)parser_ios_rw:(NSString *)path filename:(NSString *)filename header:(NSString *)header parameter:(NSMutableArray *)parameter {
++ (void)parser_rw:(NSString *)path code:(NSString *)code filename:(NSString *)filename header:(NSString *)header parameter:(NSMutableArray *)parameter {
 
     NSString * arch = [[filename componentsSeparatedByString:@"."]firstObject];
     NSString * suffix = [[filename componentsSeparatedByString:@"."]lastObject];
     NSString * filename_r = [NSString stringWithFormat:@"%@Template.%@", arch,suffix];
     NSString * filename_w = [NSString stringWithFormat:@"%@/%@%@.%@", path,header,arch,suffix];
-    NSString * template =  [SQFileParser parser_oc_r:filename_r];
+    NSString * template =  [SQFileParser parser_r:filename_r code:[code lowercaseString]];
     [[SQFileParser replaceThougth:template parameter:parameter] writeToFile:filename_w atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
-+ (NSString *)parser_oc_r:(NSString *)filename {
++ (NSString *)parser_r:(NSString *)filename code:(NSString *)code {
     
     NSBundle * bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"builder.bundle" ofType:nil]];
-    return [NSMutableString stringWithContentsOfFile:[bundle pathForResource:[NSString stringWithFormat:@"template/oc/%@", filename] ofType:nil] encoding:NSUTF8StringEncoding error:nil];
+    return [NSMutableString stringWithContentsOfFile:[bundle pathForResource:[NSString stringWithFormat:@"template/%@/%@", code, filename] ofType:nil] encoding:NSUTF8StringEncoding error:nil];
 }
 
 static NSString * code;
