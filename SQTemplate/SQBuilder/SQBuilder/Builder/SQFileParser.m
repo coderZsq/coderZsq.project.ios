@@ -13,7 +13,12 @@
 + (NSDictionary *)parser_plist_r {
     
     NSBundle * bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"builder.bundle" ofType:nil]];
-    return [NSDictionary dictionaryWithContentsOfFile:[bundle pathForResource:@"config/config.plist" ofType:nil]];
+    NSDictionary * config = [NSDictionary dictionaryWithContentsOfFile:[bundle pathForResource:@"config/config.plist" ofType:nil]];
+    NSMutableDictionary * plist = [NSDictionary dictionaryWithContentsOfFile:[bundle pathForResource:[NSString stringWithFormat:@"config/%@.plist",config[@"builderSource"]] ofType:nil]].mutableCopy;
+    [config enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [plist setObject:obj forKey:key];
+    }];
+    return plist;
 }
 
 + (void)parser_rw:(NSString *)path code:(NSString *)code filename:(NSString *)filename header:(NSString *)header parameter:(NSMutableArray *)parameter {
