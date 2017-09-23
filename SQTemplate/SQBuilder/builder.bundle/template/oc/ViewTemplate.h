@@ -11,7 +11,7 @@
 
 @interface <#Root#><#Unit#>View : UIView <<#Root#><#Unit#>ViewInterface>
 
-@property (nonatomic,strong) id<<#Root#><#Unit#>ViewModelInterface> <#unit#>Operation;
 @property (nonatomic,strong) id<<#Root#><#Unit#>ViewModelInterface> <#unit#>ViewModel;
+@property (nonatomic,strong) id<<#Root#><#Unit#>ViewModelInterface> <#unit#>Operator;
 
 @end

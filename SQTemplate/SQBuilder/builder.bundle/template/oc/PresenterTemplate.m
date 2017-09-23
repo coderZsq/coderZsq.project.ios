@@ -26,7 +26,7 @@
     __weak id<<#Root#><#Unit#>ViewModelInterface> __<#unit#>ViewModel = _<#unit#>ViewModel;
     [_<#unit#>ViewModel initializeWithModel:__<#unit#>ViewModel.model <#InitializeParameter#>completion:^{
         _self.<#unit#>View.<#unit#>ViewModel = __<#unit#>ViewModel;
-        _self.<#unit#>View.<#unit#>Operation = _self;
+        _self.<#unit#>View.<#unit#>Operator = _self;
     }];
 }
 

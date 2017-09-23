@@ -26,6 +26,6 @@
 @protocol <#Root#><#Unit#>ViewInterface <NSObject>
 
 @property (nonatomic,strong) id<<#Root#><#Unit#>ViewModelInterface> <#unit#>ViewModel;
-@property (nonatomic,strong) id<<#Root#><#Unit#>ViewModelInterface> <#unit#>Operation;
+@property (nonatomic,strong) id<<#Root#><#Unit#>ViewModelInterface> <#unit#>Operator;
 
 @end
