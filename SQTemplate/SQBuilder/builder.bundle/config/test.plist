@@ -8,22 +8,22 @@
 	<string>Perfect</string>
 	<key>parameter</key>
 	<dict>
-		<key>kksss</key>
+		<key>name</key>
 		<string>string</string>
-		<key>tabId</key>
+		<key>age</key>
 		<string>Int</string>
 	</dict>
 	<key>dataList</key>
 	<dict>
-		<key>model</key>
+		<key>array</key>
 		<string>Array</string>
-		<key>name</key>
+		<key>string</key>
 		<string>String</string>
-		<key>map</key>
+		<key>dictionary</key>
 		<string>Dictionary</string>
-		<key>num</key>
+		<key>int</key>
 		<string>Int</string>
-		<key>vector</key>
+		<key>float</key>
 		<string>float</string>
 	</dict>
 	<key>actionList</key>

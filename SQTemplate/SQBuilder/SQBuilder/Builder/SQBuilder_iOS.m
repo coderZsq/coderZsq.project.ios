@@ -17,6 +17,9 @@
     
     NSFileManager * manager = [NSFileManager defaultManager];
     NSString * path = [NSString stringWithFormat:@"/Users/%@/Desktop/%@", self.user, self.module];
+    if ([manager fileExistsAtPath:path]) {
+        [manager removeItemAtPath:path error:nil];
+    }
     [manager createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:nil];
     
     NSMutableString * initialize_property = @"".mutableCopy;
