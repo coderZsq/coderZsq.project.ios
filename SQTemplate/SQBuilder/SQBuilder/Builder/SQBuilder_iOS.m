@@ -25,6 +25,7 @@
     NSMutableString * initialize_property = @"".mutableCopy;
     NSMutableString * initialize_parameter = @"".mutableCopy;
     NSMutableString * initialize_interface = @"".mutableCopy;
+    NSMutableString * initialize_assignment = @"".mutableCopy;
     [self.parameter enumerateKeysAndObjectsUsingBlock:^(NSString *  _Nonnull name, NSString *  _Nonnull datatype, BOOL * _Nonnull stop) {
         NSDictionary * property = [_self parserDataType:datatype];
         NSString * class = property[@"class"];
@@ -32,6 +33,7 @@
         [initialize_property appendFormat:@"@property (nonatomic,%@) %@ %@;\n", modified, class, name];
         [initialize_parameter appendFormat:@"%@:_self.%@ ", name, name];
         [initialize_interface appendFormat:@"%@:(%@)%@ ", name, class, name];
+        [initialize_assignment appendFormat:@"\n        _%@Presenter.%@ = _%@;", [_self.module lowercaseString], name, name];
     }];
     
     NSMutableString * presenterFrag_h = @"".mutableCopy;
@@ -42,7 +44,7 @@
     [self.actionList enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull action, NSUInteger idx, BOOL * _Nonnull stop) {
         
         NSString * frag = action[@"function"];
-        NSMutableString * func = [NSMutableString stringWithFormat:@"WithModel:(id<%@%@ModelInterface>)model", self.prefix, self.module];
+        NSMutableString * func = [NSMutableString stringWithFormat:@"WithModel:(id<%@%@ModelInterface>)model", _self.prefix, _self.module];
         NSMutableString * func_in_presenter = @"WithModel:model".mutableCopy;
         [action[@"parameter"] enumerateKeysAndObjectsUsingBlock:^(NSString *  _Nonnull name, NSString *  _Nonnull datatype, BOOL * _Nonnull stop) {
             NSDictionary * property = [_self parserDataType:datatype];
@@ -55,9 +57,9 @@
         [presenterFrag_h appendFormat:@"- (void)%@%@;\n", frag, func];
         [presenterFrag_m appendFormat:@"- (void)%@%@ {\n\n", frag, func];
         [presenterFrag_m appendFormat:@"    __weak typeof(self) _self = self;\n"];
-        [presenterFrag_m appendFormat:@"    __weak id<%@%@ViewModelInterface> __%@ViewModel = _%@ViewModel;\n", self.prefix, self.module, [self.module lowercaseString], [self.module lowercaseString]];
-        [presenterFrag_m appendFormat:@"    [_%@ViewModel %@%@ completion:^{\n", [self.module lowercaseString], frag, func_in_presenter];
-        [presenterFrag_m appendFormat:@"        _self.%@View.%@ViewModel = __%@ViewModel;\n", [self.module lowercaseString],[self.module lowercaseString],[self.module lowercaseString]];
+        [presenterFrag_m appendFormat:@"    __weak id<%@%@ViewModelInterface> __%@ViewModel = _%@ViewModel;\n", _self.prefix, _self.module, [_self.module lowercaseString], [_self.module lowercaseString]];
+        [presenterFrag_m appendFormat:@"    [_%@ViewModel %@%@ completion:^{\n", [_self.module lowercaseString], frag, func_in_presenter];
+        [presenterFrag_m appendFormat:@"        _self.%@View.%@ViewModel = __%@ViewModel;\n", [_self.module lowercaseString],[_self.module lowercaseString],[self.module lowercaseString]];
         [presenterFrag_m appendFormat:@"        completion();\n    }];\n}\n\n"];
         [viewModelFrag_h appendFormat:@"- (void)%@%@;\n", frag, func];
         [viewModelFrag_m appendFormat:@"- (void)%@%@ {\n\n}\n\n", frag, func];
@@ -91,6 +93,7 @@
                                        @{@"<#InitializeProperty#>" : initialize_property},
                                        @{@"<#InitializeParameter#>" : initialize_parameter},
                                        @{@"<#InitializeInterface#>" : initialize_interface},
+                                       @{@"<#InitializeAssignment#>" : initialize_assignment},
                                        ].mutableCopy;
         [SQFileParser parser_rw:path code:@"oc" filename:filename header:header parameter:parameter];
     }

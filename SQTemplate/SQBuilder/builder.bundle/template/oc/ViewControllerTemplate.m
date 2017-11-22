@@ -30,7 +30,7 @@
 - (<#Root#><#Unit#>Presenter *)<#unit#>Presenter {
     
     if (!_<#unit#>Presenter) {
-        _<#unit#>Presenter = [<#Root#><#Unit#>Presenter new];
+        _<#unit#>Presenter = [<#Root#><#Unit#>Presenter new];<#InitializeAssignment#>
     }
     return _<#unit#>Presenter;
 }

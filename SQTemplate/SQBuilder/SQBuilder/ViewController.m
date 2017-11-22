@@ -27,7 +27,7 @@
         title = @"Build Error!!!"; message = @"please enter the right builder type!!";
     }];
 
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title     message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         exit(0);
     }]];

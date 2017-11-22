@@ -11,6 +11,14 @@
 
 @implementation <#Root#><#Unit#>ViewModel
 
+- (<#Root#><#Unit#>Model *)model {
+    
+    if (!_model) {
+        _model = [<#Root#><#Unit#>Model new];
+    }
+    return _model;
+}
+
 - (void)initializeWithModel:(id<<#Root#><#Unit#>ModelInterface>)model <#InitializeInterface#>completion:(void(^)())completion {
 
 }

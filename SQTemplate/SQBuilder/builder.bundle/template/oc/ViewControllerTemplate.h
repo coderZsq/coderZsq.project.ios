@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface <#Root#><#Unit#>ViewController : <#Root#>ViewController
+@interface <#Root#><#Unit#>ViewController : UIViewController
 
+<#InitializeProperty#>
 @end
