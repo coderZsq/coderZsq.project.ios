@@ -62,13 +62,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _viewModel.model.models.count;
+    return _viewModel.model.models.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    //无服务器 --> 测试点击跳转
+    if (0 == indexPath.row) {
+        static NSString * identifier = @"identifier";
+        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+            cell.layer.contents = (__bridge id)[UIImage imageNamed:@"5cm : s"].CGImage;
+        }
+        return cell;
+    }
+    
     TableViewCellTemplate * cell = [TableViewCellTemplate cellWithTableView:tableView];
-    cell.dataSource = [SubmodelTemplate modelWithDictionary:_viewModel.model.models[indexPath.row]];
+    cell.dataSource = [SubmodelTemplate modelWithDictionary:_viewModel.model.models[indexPath.row - 1]];
     cell.dataModels = _viewModel.model.models;
     return cell;
 }

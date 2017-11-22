@@ -83,6 +83,7 @@
     
     CollectionViewCellTemplate * cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CollectionViewCellTemplate class]) forIndexPath:indexPath];
     cell.dataSource = [SubmodelTemplate modelWithDictionary:_dataSourceArr[indexPath.item]];
+    cell.backgroundColor = [UIColor colorWithRed:248 / 255.0 green:227 / 255.0 blue:235 / 255.0 alpha:1.0];
     return cell;
 }
 

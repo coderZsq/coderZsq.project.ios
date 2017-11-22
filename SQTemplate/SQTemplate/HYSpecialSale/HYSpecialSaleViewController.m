@@ -21,10 +21,6 @@
 
 @implementation HYSpecialSaleViewController
 
-- (void)loadView {
-    [super loadView];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
