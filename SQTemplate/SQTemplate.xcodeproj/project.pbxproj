@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14CF2BC41FC7059200BDF14F /* UIViewController+hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CF2BC31FC7059200BDF14F /* UIViewController+hook.m */; };
 		CF053AE61EBC68FB002E9EF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF053AE51EBC68FB002E9EF6 /* main.m */; };
 		CF053AE91EBC68FB002E9EF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF053AE81EBC68FB002E9EF6 /* AppDelegate.m */; };
-		CF053AEC1EBC68FB002E9EF6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF053AEB1EBC68FB002E9EF6 /* ViewController.m */; };
 		CF053AEF1EBC68FB002E9EF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF053AED1EBC68FB002E9EF6 /* Main.storyboard */; };
 		CF053AF11EBC68FB002E9EF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF053AF01EBC68FB002E9EF6 /* Assets.xcassets */; };
 		CF053AF41EBC68FB002E9EF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF053AF21EBC68FB002E9EF6 /* LaunchScreen.storyboard */; };
@@ -56,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14CF2BC21FC7059200BDF14F /* UIViewController+hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+hook.h"; sourceTree = "<group>"; };
+		14CF2BC31FC7059200BDF14F /* UIViewController+hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+hook.m"; sourceTree = "<group>"; };
 		51AD9D0245D84F44B950BECC /* Pods-SQTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQTemplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQTemplate/Pods-SQTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		592B2C3619CABBFEB1FB83C4 /* libPods-SQTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2C21C7E3F7442A32E7953D /* Pods-SQTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQTemplate/Pods-SQTemplate.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,8 +65,6 @@
 		CF053AE51EBC68FB002E9EF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF053AE71EBC68FB002E9EF6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF053AE81EBC68FB002E9EF6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CF053AEA1EBC68FB002E9EF6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CF053AEB1EBC68FB002E9EF6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CF053AEE1EBC68FB002E9EF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF053AF01EBC68FB002E9EF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF053AF31EBC68FB002E9EF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -214,8 +214,6 @@
 				CF12ECD71EC0255100E16BAE /* Template */,
 				CF053AE71EBC68FB002E9EF6 /* AppDelegate.h */,
 				CF053AE81EBC68FB002E9EF6 /* AppDelegate.m */,
-				CF053AEA1EBC68FB002E9EF6 /* ViewController.h */,
-				CF053AEB1EBC68FB002E9EF6 /* ViewController.m */,
 				CF053B0F1EC008A3002E9EF6 /* NetWork.h */,
 				CF053B101EC008A3002E9EF6 /* NetWork.m */,
 				CF053B121EC008B0002E9EF6 /* DataBase.h */,
@@ -224,6 +222,8 @@
 				CF12ECD21EC01EC200E16BAE /* Router.m */,
 				CF053B181EC0161E002E9EF6 /* UIImageView+load.h */,
 				CF053B191EC0161E002E9EF6 /* UIImageView+load.m */,
+				14CF2BC21FC7059200BDF14F /* UIViewController+hook.h */,
+				14CF2BC31FC7059200BDF14F /* UIViewController+hook.m */,
 				CF12ECD41EC0221000E16BAE /* CurrentViewController.h */,
 				CF12ECD51EC0221000E16BAE /* CurrentViewController.m */,
 				CF053AED1EBC68FB002E9EF6 /* Main.storyboard */,
@@ -445,13 +445,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SQTemplate-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -463,7 +466,6 @@
 			files = (
 				CF560D7C1EC43932002E0C48 /* SubviewTemplate.m in Sources */,
 				CF12ECD61EC0221000E16BAE /* CurrentViewController.m in Sources */,
-				CF053AEC1EBC68FB002E9EF6 /* ViewController.m in Sources */,
 				CF053AE91EBC68FB002E9EF6 /* AppDelegate.m in Sources */,
 				CF560E5F1EC56C09002E0C48 /* HYBlockFourCell.m in Sources */,
 				CF560E651EC56C09002E0C48 /* HYBlockThreeCell.m in Sources */,
@@ -478,6 +480,7 @@
 				CF560E621EC56C09002E0C48 /* HYBlockOneCell.m in Sources */,
 				CF560E6C1EC56C09002E0C48 /* HYBlockTwoSubView.m in Sources */,
 				CF560E631EC56C09002E0C48 /* HYBlockOneSubView.m in Sources */,
+				14CF2BC41FC7059200BDF14F /* UIViewController+hook.m in Sources */,
 				CF12ECD31EC01EC200E16BAE /* Router.m in Sources */,
 				CF560E691EC56C09002E0C48 /* HYBlockThreeView.m in Sources */,
 				CF12ECE51EC0255100E16BAE /* PresenterTemplate.m in Sources */,

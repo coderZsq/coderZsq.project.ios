@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
 
-@interface HYSpecialSaleViewController : ViewController
+@interface HYSpecialSaleViewController : UIViewController
 
 @end
