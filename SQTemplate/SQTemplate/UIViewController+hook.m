@@ -14,10 +14,12 @@
 
 + (void)load {
     
-    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated) {
-        kCurrentViewController = aspectInfo.instance;
-    } error:NULL];
-    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated) {
+            kCurrentViewController = aspectInfo.instance;
+        } error:NULL];
+    });
 }
     
 @end
