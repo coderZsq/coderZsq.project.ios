@@ -60,7 +60,7 @@
         [presenterFrag_m appendFormat:@"    __weak id<%@%@ViewModelInterface> __%@ViewModel = _%@ViewModel;\n", _self.prefix, _self.module, [_self.module lowercaseString], [_self.module lowercaseString]];
         [presenterFrag_m appendFormat:@"    [_%@ViewModel %@%@ completion:^{\n", [_self.module lowercaseString], frag, func_in_presenter];
         [presenterFrag_m appendFormat:@"        _self.%@View.%@ViewModel = __%@ViewModel;\n", [_self.module lowercaseString],[_self.module lowercaseString],[self.module lowercaseString]];
-        [presenterFrag_m appendFormat:@"        completion();\n    }];\n}\n\n"];
+        [presenterFrag_m appendFormat:@"        if (completion) {completion();}\n    }];\n}\n\n"];
         [viewModelFrag_h appendFormat:@"- (void)%@%@;\n", frag, func];
         [viewModelFrag_m appendFormat:@"- (void)%@%@ {\n\n}\n\n", frag, func];
     }];
