@@ -2,11 +2,11 @@
 
 #### SQTemplate 
 > 使用SQBuilder自动生成架构代码, 快速生成UI层代码, 实现分层解耦.
-- [iOS 执行.py脚本生成解耦架构](http://www.jianshu.com/p/47d565bf200e)
-- [iOS 执行.py脚本生成UI层结构](http://www.jianshu.com/p/d15379908582)
-- [iOS 移动端面向文档开发](http://www.jianshu.com/p/b35d06cf189a)
-- [iOS 移动端生成工具开发](http://www.jianshu.com/p/cb36b36f90dd)
-- [iOS 移动端架构初探心得](http://www.jianshu.com/p/933c24506ac3)
+- [iOS 执行.py脚本生成解耦架构](https://coderzsq.github.io/2017/05/iOS-%E6%89%A7%E8%A1%8C.py%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E8%A7%A3%E8%80%A6%E6%9E%B6%E6%9E%84/)
+- [iOS 执行.py脚本生成UI层结构](https://coderzsq.github.io/2017/05/iOS-%E6%89%A7%E8%A1%8C.py%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90UI%E5%B1%82%E7%BB%93%E6%9E%84/)
+- [iOS 移动端面向文档开发](https://coderzsq.github.io/2017/07/iOS-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%9D%A2%E5%90%91%E6%96%87%E6%A1%A3%E5%BC%80%E5%8F%91/)
+- [iOS 移动端生成工具开发](https://coderzsq.github.io/2017/08/iOS-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/)
+- [iOS 移动端架构初探心得](https://coderzsq.github.io/2017/11/iOS-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%9D%E6%8E%A2%E5%BF%83%E5%BE%97/)
 
 #### SQLifestyle 
 > 使用SQExtension快速搭建项目架构, 快速使用轮子组件, 快速集成动画特效.
