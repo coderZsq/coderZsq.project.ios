@@ -26,6 +26,7 @@
 }
 
 - (UIView *)dequeueReusableView {
+    
     UIView * view = [_waitUsedQueue anyObject];
     if (view == nil) {
         return nil;

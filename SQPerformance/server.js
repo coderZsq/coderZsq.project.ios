@@ -24,10 +24,10 @@ http.createServer((req, res) => {
         }
 
         let json = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 100; i++) {
             let arr = [];
-            for (let i = 0; i < randomNumber(2); i++) {
-                arr.push("aa")//(randomString(randomNumber(1)));
+            for (let i = 0; i < randomNumber(3); i++) {
+                arr.push(randomString(randomNumber(1)));
             }
             json.push(arr);
         }

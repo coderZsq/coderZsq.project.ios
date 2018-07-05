@@ -26,18 +26,18 @@
     [self.service fetchMockDataWithParam:nil completion:^(NSArray<ComponentModel *> *models, NSError *error) {
         
         if (models.count > 0 && error == nil) {
-//            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 NSMutableArray * array = [NSMutableArray new];
                 for (ComponentModel * model in models) {
                     ComponentLayout * layout = [self preLayoutFrom:model];
                     [array addObject:layout];
                 }
-//                dispatch_async(dispatch_get_main_queue(), ^{
+                dispatch_async(dispatch_get_main_queue(), ^{
                     if (completion) {
                         completion(array);
                     }
-//                });
-//            });
+                });
+            });
         }
     }];
 }
@@ -54,16 +54,20 @@
     CGFloat spaceYStart = 0;
     
     NSMutableArray * elements = [NSMutableArray new];
-    CGFloat x = 0;
-    CGFloat y = 0;
+    CGFloat x = 5.;
+    CGFloat y = 0.;
+    CGFloat height = 0.;
     for (NSInteger i = 0; i < model.count; i++) {
         NSString * text = model[i];
         CGSize size = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading  attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size;
-        
-        
-        
+        if ((x + size.width) > layout.cellWidth) {
+            x = 5;
+            y += (size.height + 10);
+            height = y + size.height + 5;
+        }
         CGRect frame = CGRectMake(x, y, size.width + 5, size.height + 5);
-        NSLog(@"%@",NSStringFromCGRect(frame));
+        x += (size.width + 10);
+
         Element * element = [Element new];
         element.value = text;
         element.frame = frame;
@@ -71,8 +75,8 @@
     }
     
     layout.labels = elements;
-//    spaceYStart += (line * height);
-    layout.cellHeight = 44;
+    spaceYStart += height;
+    layout.cellHeight = spaceYStart;
     return layout;
 }
 

@@ -40,6 +40,13 @@
     _reusePool = [ReusePool new];
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    for (UILabel * label in self.contentView.subviews) {
+        [label removeFromSuperview];
+    }
+}
+
 - (void)setupData:(ComponentLayout *)layout {
 
     for (Element * element in layout.labels) {
@@ -50,7 +57,7 @@
         }
         label.text = element.value;
         label.frame = element.frame;
-        label.backgroundColor = [UIColor redColor];
+        label.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:label];
     }
     [_reusePool reset];
