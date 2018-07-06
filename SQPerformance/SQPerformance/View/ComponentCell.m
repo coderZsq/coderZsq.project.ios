@@ -12,7 +12,9 @@
 #import "ReusePool.h"
 #import "AsyncDrawLayer.h"
 
-@interface ComponentCell ()
+@interface ComponentCell () {
+    dispatch_semaphore_t semaphore;
+}
 
 @property (nonatomic,strong) ReusePool * labelReusePool;
 @property (nonatomic,strong) ReusePool * imageReusePool;
@@ -55,6 +57,7 @@
     if ([self.layer isKindOfClass:[AsyncDrawLayer class]]) {
         _drawLayer = (AsyncDrawLayer *)self.layer;
     }
+    semaphore = dispatch_semaphore_create(5);
     _labelReusePool = [ReusePool new];
     _imageReusePool = [ReusePool new];
     _asyncReusePool = [ReusePool new];
@@ -158,7 +161,9 @@
         UIGraphicsEndImageContext();
     };
     layer.contents = nil;
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     dispatch_async(dispatch_get_global_queue(0, 0), drawBlock);
+    dispatch_semaphore_signal(semaphore);
 }
 
 - (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
@@ -167,10 +172,7 @@
     if (asynchronously) {
         [self setNeedsDisplay];
         return;
-    } else {
-        self.layer.contents = nil;
     }
-
     for (Element * element in layout.textElements) {
         UILabel * label = (UILabel *)[_labelReusePool dequeueReusableObject];
         if (!label) {
