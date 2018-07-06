@@ -51,14 +51,16 @@
     ComponentLayout * layout = [ComponentLayout new];
     layout.cellWidth = [UIScreen mainScreen].bounds.size.width;
     
-    CGFloat spaceYStart = 0;
+    CGFloat cursor = 0;
     
-    NSMutableArray * elements = [NSMutableArray new];
     CGFloat x = 5.;
     CGFloat y = 0.;
     CGFloat height = 0.;
-    for (NSInteger i = 0; i < model.count; i++) {
-        NSString * text = model[i];
+    
+    NSMutableArray * textElements = [NSMutableArray array];
+    NSArray * texts = model[@"texts"];
+    for (NSUInteger i = 0; i < texts.count; i++) {
+        NSString * text = texts[i];
         CGSize size = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading  attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size;
         if ((x + size.width) > layout.cellWidth) {
             x = 5;
@@ -71,12 +73,35 @@
         Element * element = [Element new];
         element.value = text;
         element.frame = frame;
-        [elements addObject:element];
+        [textElements addObject:element];
     }
+    cursor += height + 5;
     
-    layout.labels = elements;
-    spaceYStart += height;
-    layout.cellHeight = spaceYStart;
+    x = 5.; y = cursor; height = 0.;
+    
+    NSMutableArray * imageElements = [NSMutableArray array];
+    NSArray * images = model[@"images"];
+    for (NSUInteger i = 0; i < images.count; i++) {
+        NSString * url = images[i];
+        CGSize size = CGSizeMake(40, 40);
+        if ((x + size.width) > layout.cellWidth) {
+            x = 5;
+            y += (size.height + 5);
+            height = (y - cursor) + size.height + 5;
+        }
+        CGRect frame = CGRectMake(x, y, size.width, size.height);
+        x += (size.width + 5);
+        
+        Element * element = [Element new];
+        element.value = url;
+        element.frame = frame;
+        [imageElements addObject:element];
+    }
+    cursor += height + 5;
+    
+    layout.cellHeight = cursor;
+    layout.textElements = textElements;
+    layout.imageElements = imageElements;
     return layout;
 }
 

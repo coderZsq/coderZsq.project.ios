@@ -10,9 +10,9 @@
 
 @interface ReusePool : NSObject
 
-- (UIView *)dequeueReusableView;
+- (NSObject *)dequeueReusableObject;
 
-- (void)addUsingView: (UIView *)view;
+- (void)addUsingObject: (NSObject *)object;
 
 - (void)reset;
 

@@ -6,30 +6,37 @@ http.createServer((req, res) => {
         console.log(req.url);
 
         let randomNumber = function (n) {
-            var rnd = "";
+            var randomNumber = "";
             for (var i = 0; i < n; i++)
-                rnd += Math.floor(Math.random() * 10);
-            return rnd;
+                randomNumber += Math.floor(Math.random() * 10);
+            return randomNumber;
         }
 
         let randomString = function(len) {　　
            len = len || 32;　　
             var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';　　
             var maxPos = $chars.length;　　
-            var pwd = '';　　
+            var randomString = '';　　
             for (i = 0; i < len; i++) {　　　　
-                 pwd += $chars.charAt(Math.floor(Math.random() * maxPos));　　
+                randomString += $chars.charAt(Math.floor(Math.random() * maxPos));　　
             }　　
-             return pwd;
+            return randomString;
         }
 
         let json = [];
         for (let i = 0; i < 100; i++) {
-            let arr = [];
+            let obj = {};
+            let texts = [];
+            let images = [];
             for (let i = 0; i < randomNumber(3); i++) {
-                arr.push(randomString(randomNumber(1)));
+                texts.push(randomString(randomNumber(1)));
             }
-            json.push(arr);
+            for (let i = 0; i < 32; i++) {
+                images.push("https://avatars3.githubusercontent.com/u/19483268?s=40&v=4");
+            }
+            obj.texts = texts;
+            obj.images = images;
+            json.push(obj);
         }
         res.writeHead(200, {
             'Content-Type': 'application/json'

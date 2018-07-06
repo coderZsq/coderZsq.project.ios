@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class ComponentModel;
+
 typedef void(^RequestCompletionBlock)(NSArray <ComponentModel *> *models, NSError *error);
 
 @interface Service : NSObject

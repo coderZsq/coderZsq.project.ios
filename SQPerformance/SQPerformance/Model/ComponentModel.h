@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ComponentModel : NSArray
+@interface ComponentModel : NSDictionary
 
 @end
 

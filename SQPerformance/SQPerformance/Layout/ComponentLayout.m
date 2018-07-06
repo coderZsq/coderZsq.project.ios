@@ -15,10 +15,8 @@
 {
     self = [super init];
     if (self) {
-        _labels = [NSMutableArray new];
-        _label2 = [Element new];
-        _label3 = [Element new];
-        _label4 = [Element new];
+        _textElements = [NSMutableArray new];
+        _imageElements = [NSMutableArray new];
     }
     return self;
 }

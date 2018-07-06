@@ -25,30 +25,30 @@
     return self;
 }
 
-- (UIView *)dequeueReusableView {
+- (UIView *)dequeueReusableObject {
     
-    UIView * view = [_waitUsedQueue anyObject];
-    if (view == nil) {
+    NSObject * object = [_waitUsedQueue anyObject];
+    if (object == nil) {
         return nil;
     } else {
-        [_waitUsedQueue removeObject:view];
-        [_usingQueue addObject:view];
-        return view;
+        [_waitUsedQueue removeObject:object];
+        [_usingQueue addObject:object];
+        return object;
     }
 }
 
-- (void)addUsingView:(UIView *)view {
-    if (view == nil) {
+- (void)addUsingObject:(UIView *)object {
+    if (object == nil) {
         return;
     }
-    [_usingQueue addObject:view];
+    [_usingQueue addObject:object];
 }
 
 - (void)reset {
-    UIView * view = nil;
-    while ((view = [_usingQueue anyObject])) {
-        [_usingQueue removeObject:view];
-        [_waitUsedQueue addObject:view];
+    NSObject * object = nil;
+    while ((object = [_usingQueue anyObject])) {
+        [_usingQueue removeObject:object];
+        [_waitUsedQueue addObject:object];
     }
 }
 
