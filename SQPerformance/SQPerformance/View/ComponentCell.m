@@ -10,12 +10,22 @@
 #import "ComponentLayout.h"
 #import "Element.h"
 #import "ReusePool.h"
+#import "AsyncDrawLayer.h"
 
 @interface ComponentCell ()
 
-@property (nonatomic, strong) ReusePool * labelReusePool;
-@property (nonatomic, strong) ReusePool * imageReusePool;
+@property (nonatomic,strong) ReusePool * labelReusePool;
+@property (nonatomic,strong) ReusePool * imageReusePool;
+@property (nonatomic,strong) ReusePool * asyncReusePool;
 
+@property (nonatomic,weak) AsyncDrawLayer * drawLayer;
+@property (nonatomic,strong) ComponentLayout * layout;
+@property (nonatomic,assign, getter=isAsynchronously) BOOL asynchronously;
+
+@end
+
+@interface UIImage (Extension)
+- (UIImage *)cornerRadius:(CGFloat)cornerRadius;
 @end
 
 @implementation ComponentCell
@@ -40,8 +50,14 @@
 }
 
 - (void)setupConfig {
+    self.opaque = NO;
+    self.layer.contentsScale = [[UIScreen mainScreen] scale];
+    if ([self.layer isKindOfClass:[AsyncDrawLayer class]]) {
+        _drawLayer = (AsyncDrawLayer *)self.layer;
+    }
     _labelReusePool = [ReusePool new];
     _imageReusePool = [ReusePool new];
+    _asyncReusePool = [ReusePool new];
 }
 
 - (void)prepareForReuse {
@@ -51,7 +67,107 @@
     }
 }
 
-- (void)setupData:(ComponentLayout *)layout {
++ (Class)layerClass {
+    return [AsyncDrawLayer class];
+}
+
+- (void)didMoveToWindow {
+    [super didMoveToWindow];
+    if (!self.layer.contents) {
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setNeedsDisplay {
+    [self.layer setNeedsDisplay];
+}
+
+- (void)setNeedsDisplayInRect:(CGRect)rect {
+    [self.layer setNeedsDisplayInRect:rect];
+}
+
+- (void)displayLayer:(CALayer *)layer {
+    
+    if (!layer) return;
+    if (layer != self.layer) return;
+    if (![layer isKindOfClass:[AsyncDrawLayer class]]) return;
+    if (!self.isAsynchronously) return;
+
+    AsyncDrawLayer * tempLayer = (AsyncDrawLayer *)layer;
+    [tempLayer increaseCount];
+    
+    NSUInteger oldCount = tempLayer.drawsCount;
+    CGRect bounds = self.bounds;
+    UIColor * backgroundColor = self.backgroundColor;
+    
+    void (^drawBlock)(void) = ^{
+        void (^failedBlock)(void) = ^{
+            
+        };
+        if (tempLayer.drawsCount != oldCount) {
+            failedBlock();
+            return;
+        }
+        CGSize contextSize = layer.bounds.size;
+        BOOL contextSizeValid = contextSize.width >= 1 && contextSize.height > 1;
+        CGContextRef context = NULL;
+        BOOL drawingFinished = YES;
+        
+        if (contextSizeValid) {
+            UIGraphicsBeginImageContextWithOptions(contextSize, layer.isOpaque, layer.contentsScale);
+            context = UIGraphicsGetCurrentContext();
+            CGContextSaveGState(context);
+            if (bounds.origin.x || bounds.origin.y) {
+                CGContextTranslateCTM(context, self.bounds.origin.x, -self.bounds.origin.y);
+            }
+            if (tempLayer.drawsCount != oldCount) {
+                drawingFinished = NO;
+            } else {
+                if (backgroundColor && backgroundColor != [UIColor clearColor]) {
+                    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
+                    CGContextFillRect(context, bounds);
+                }
+                drawingFinished = [self asyncDraw:YES context:context];
+            }
+            CGContextRestoreGState(context);
+        }
+        if (drawingFinished && oldCount == tempLayer.drawsCount) {
+            CGImageRef cgImage = context ? CGBitmapContextCreateImage(context) : NULL;
+            {
+                UIImage * image = cgImage ? [UIImage imageWithCGImage:cgImage] : nil;
+                
+                void (^finishBlock)(void) = ^{
+                    if (oldCount != tempLayer.drawsCount) {
+                        failedBlock();
+                        return;
+                    }
+                    layer.contents = (id)image.CGImage;
+                    layer.opacity = 0.0;
+                    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                        layer.opacity = 1.0;
+                    } completion:NULL];
+                };
+                dispatch_async(dispatch_get_main_queue(), finishBlock);
+            }
+            if (cgImage) {
+                CGImageRelease(cgImage);
+            }
+        } else {
+            failedBlock();
+        }
+        UIGraphicsEndImageContext();
+    };
+    layer.contents = nil;
+    dispatch_async(dispatch_get_global_queue(0, 0), drawBlock);
+}
+
+- (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
+    _layout = layout; _asynchronously = asynchronously;
+    
+    if (asynchronously) {
+        [self setNeedsDisplay];
+        return;
+    }
 
     for (Element * element in layout.textElements) {
         UILabel * label = (UILabel *)[_labelReusePool dequeueReusableObject];
@@ -61,11 +177,11 @@
         }
         label.text = element.value;
         label.frame = element.frame;
-        label.backgroundColor = [UIColor lightGrayColor];
+        label.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:label];
     }
     [_labelReusePool reset];
-    
+
     for (Element * element in layout.imageElements) {
         UIImageView * imageView = (UIImageView *)[_imageReusePool dequeueReusableObject];
         if (!imageView) {
@@ -107,9 +223,53 @@
     CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgImage);
     cgImage = CGBitmapContextCreateImage(context);
     
-    UIImage * image = [UIImage imageWithCGImage:cgImage];
+    UIImage * image = [[UIImage imageWithCGImage:cgImage] cornerRadius:width * 0.5];
     CGContextRelease(context);
     CGImageRelease(cgImage);
+    return image;
+}
+
+- (BOOL)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context {
+
+    for (Element * element in _layout.textElements) {
+        NSMutableParagraphStyle* paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+        paragraphStyle.alignment = NSTextAlignmentCenter;
+        [element.value drawInRect:element.frame withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
+                                                                 NSForegroundColorAttributeName:[UIColor blackColor],
+                                                                 NSParagraphStyleAttributeName:paragraphStyle}];
+    }
+
+    for (Element * element in _layout.imageElements) {
+        UIImage * image = (UIImage *)[_asyncReusePool dequeueReusableObject];
+        if (!image) {
+            image = [self preDecodeFrom:element.value];
+            [_asyncReusePool addUsingObject:image];
+        }
+        [image drawInRect:element.frame];
+    }
+    [_asyncReusePool reset];
+
+    return YES;
+}
+
+@end
+
+@implementation UIImage (Extension)
+
+- (UIImage *)cornerRadius:(CGFloat)cornerRadius {
+    
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
+    UIGraphicsBeginImageContextWithOptions(self.size, false, [UIScreen mainScreen].scale);
+    CGContextAddPath(UIGraphicsGetCurrentContext(), bezierPath.CGPath);
+    CGContextClip(UIGraphicsGetCurrentContext());
+    
+    [self drawInRect:rect];
+    
+    CGContextDrawPath(UIGraphicsGetCurrentContext(), kCGPathFillStroke);
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     return image;
 }
 

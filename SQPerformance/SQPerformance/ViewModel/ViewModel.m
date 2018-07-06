@@ -23,8 +23,8 @@
 }
 
 - (void)reloadData:(LayoutCompeltionBlock)completion {
+    
     [self.service fetchMockDataWithParam:nil completion:^(NSArray<ComponentModel *> *models, NSError *error) {
-        
         if (models.count > 0 && error == nil) {
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 NSMutableArray * array = [NSMutableArray new];

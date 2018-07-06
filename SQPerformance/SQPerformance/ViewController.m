@@ -16,6 +16,7 @@
 @property (nonatomic,strong) ViewModel * viewModel;
 @property (nonatomic,strong) NSMutableArray <ComponentLayout *> * layouts;
 @property (nonatomic,strong) UITableView * tableView;
+@property (nonatomic,assign, getter=isAsyncDraw) BOOL asyncDraw;
 
 @end
 
@@ -50,8 +51,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self setTitle:@"Performance optimization"];
     [self.view addSubview:self.tableView];
+    UISwitch * view = [UISwitch new];
+    [view addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithCustomView:view];
+    [self.navigationItem setRightBarButtonItem:item];
+
     [self.viewModel reloadData:^(NSArray<ComponentLayout *> *layouts) {
         [self.layouts removeAllObjects];
         [self.layouts addObjectsFromArray:layouts];
@@ -70,7 +76,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ComponentCell * cell = [ComponentCell cellWithTableView:tableView];
-    [cell setupData:self.layouts[indexPath.row]];
+    [cell setupData:self.layouts[indexPath.row] asynchronously:self.isAsyncDraw];
     return cell;
 }
 
@@ -83,5 +89,9 @@
     return layout.cellHeight;
 }
 
+- (void)switchValueChanged:(UISwitch *)sender {
+    self.asyncDraw = sender.isOn ? YES : NO;
+    [self.tableView reloadData];
+}
 
 @end

@@ -13,6 +13,6 @@
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
-- (void)setupData:(ComponentLayout *)layout;
+- (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously;
 
 @end

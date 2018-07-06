@@ -25,7 +25,7 @@
     return self;
 }
 
-- (UIView *)dequeueReusableObject {
+- (NSObject *)dequeueReusableObject {
     
     NSObject * object = [_waitUsedQueue anyObject];
     if (object == nil) {

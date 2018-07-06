@@ -15,6 +15,7 @@
 		148BF77D20EDDB1300F44F26 /* ComponentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BF77C20EDDB1300F44F26 /* ComponentModel.m */; };
 		148BF78020EDF6E200F44F26 /* ComponentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BF77F20EDF6E200F44F26 /* ComponentCell.m */; };
 		148BF78B20EE11F800F44F26 /* ReusePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BF78A20EE11F800F44F26 /* ReusePool.m */; };
+		14ADF80420EF3504007A8451 /* AsyncDrawLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ADF80320EF3504007A8451 /* AsyncDrawLayer.m */; };
 		14B7C67420EDAB3700593B39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B7C67320EDAB3700593B39 /* AppDelegate.m */; };
 		14B7C67720EDAB3700593B39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B7C67620EDAB3700593B39 /* ViewController.m */; };
 		14B7C67A20EDAB3700593B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B7C67820EDAB3700593B39 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 		148BF77F20EDF6E200F44F26 /* ComponentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComponentCell.m; sourceTree = "<group>"; };
 		148BF78920EE11F800F44F26 /* ReusePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReusePool.h; sourceTree = "<group>"; };
 		148BF78A20EE11F800F44F26 /* ReusePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReusePool.m; sourceTree = "<group>"; };
+		14ADF80220EF3504007A8451 /* AsyncDrawLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncDrawLayer.h; sourceTree = "<group>"; };
+		14ADF80320EF3504007A8451 /* AsyncDrawLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncDrawLayer.m; sourceTree = "<group>"; };
 		14B7C66F20EDAB3700593B39 /* SQPerformance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQPerformance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B7C67220EDAB3700593B39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14B7C67320EDAB3700593B39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 			children = (
 				148BF78920EE11F800F44F26 /* ReusePool.h */,
 				148BF78A20EE11F800F44F26 /* ReusePool.m */,
+				14ADF80220EF3504007A8451 /* AsyncDrawLayer.h */,
+				14ADF80320EF3504007A8451 /* AsyncDrawLayer.m */,
 				148BF77E20EDF6E200F44F26 /* ComponentCell.h */,
 				148BF77F20EDF6E200F44F26 /* ComponentCell.m */,
 			);
@@ -275,6 +280,7 @@
 				14B7C67420EDAB3700593B39 /* AppDelegate.m in Sources */,
 				148BF77D20EDDB1300F44F26 /* ComponentModel.m in Sources */,
 				148BF77320EDD9AF00F44F26 /* CellLayout.m in Sources */,
+				14ADF80420EF3504007A8451 /* AsyncDrawLayer.m in Sources */,
 				148BF78B20EE11F800F44F26 /* ReusePool.m in Sources */,
 				148BF77020EDD98700F44F26 /* Element.m in Sources */,
 				148BF77920EDDA5400F44F26 /* ComponentLayout.m in Sources */,
