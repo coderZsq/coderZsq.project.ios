@@ -26,7 +26,8 @@
     
     [self.service fetchMockDataWithParam:nil completion:^(NSArray<ComponentModel *> *models, NSError *error) {
         if (models.count > 0 && error == nil) {
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_SERIAL);
+            dispatch_async(queue, ^{
                 NSMutableArray * array = [NSMutableArray new];
                 for (ComponentModel * model in models) {
                     ComponentLayout * layout = [self preLayoutFrom:model];

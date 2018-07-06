@@ -13,12 +13,13 @@
 #import "AsyncDrawLayer.h"
 
 @interface ComponentCell () {
-    dispatch_semaphore_t semaphore;
+    dispatch_queue_t serialQueue;
+    dispatch_queue_t concurrentQueue;
 }
 
 @property (nonatomic,strong) ReusePool * labelReusePool;
 @property (nonatomic,strong) ReusePool * imageReusePool;
-@property (nonatomic,strong) ReusePool * asyncReusePool;
+@property (class, nonatomic,strong) ReusePool * asyncReusePool;
 
 @property (nonatomic,weak) AsyncDrawLayer * drawLayer;
 @property (nonatomic,strong) ComponentLayout * layout;
@@ -31,6 +32,21 @@
 @end
 
 @implementation ComponentCell
+
+static ReusePool * _asyncReusePool = nil;
+
++ (ReusePool *)asyncReusePool {
+    if (_asyncReusePool == nil) {
+        _asyncReusePool = [[ReusePool alloc] init];
+    }
+    return _asyncReusePool;
+}
+
++ (void)setAsyncReusePool:(ReusePool *)asyncReusePool {
+    if (_asyncReusePool != asyncReusePool) {
+        _asyncReusePool = asyncReusePool;
+    }
+}
 
 - (void)dealloc {
 #if DEBUG
@@ -57,7 +73,8 @@
     if ([self.layer isKindOfClass:[AsyncDrawLayer class]]) {
         _drawLayer = (AsyncDrawLayer *)self.layer;
     }
-    semaphore = dispatch_semaphore_create(5);
+    serialQueue = dispatch_queue_create("serial",DISPATCH_QUEUE_SERIAL);
+    concurrentQueue = dispatch_queue_create("concurrent", DISPATCH_QUEUE_CONCURRENT);
     _labelReusePool = [ReusePool new];
     _imageReusePool = [ReusePool new];
     _asyncReusePool = [ReusePool new];
@@ -89,14 +106,19 @@
     [self.layer setNeedsDisplayInRect:rect];
 }
 
+- (void)drawRect:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self asyncDraw:NO context:context];
+}
+
 - (void)displayLayer:(CALayer *)layer {
     
     if (!layer) return;
     if (layer != self.layer) return;
     if (![layer isKindOfClass:[AsyncDrawLayer class]]) return;
     if (!self.isAsynchronously) return;
-
-    AsyncDrawLayer * tempLayer = (AsyncDrawLayer *)layer;
+    
+    AsyncDrawLayer *tempLayer = (AsyncDrawLayer *)layer;
     [tempLayer increaseCount];
     
     NSUInteger oldCount = tempLayer.drawsCount;
@@ -104,15 +126,18 @@
     UIColor * backgroundColor = self.backgroundColor;
     
     void (^drawBlock)(void) = ^{
+        
         void (^failedBlock)(void) = ^{
             
         };
+        
         if (tempLayer.drawsCount != oldCount) {
             failedBlock();
             return;
         }
+        
         CGSize contextSize = layer.bounds.size;
-        BOOL contextSizeValid = contextSize.width >= 1 && contextSize.height > 1;
+        BOOL contextSizeValid = contextSize.width >= 1 && contextSize.height >= 1;
         CGContextRef context = NULL;
         BOOL drawingFinished = YES;
         
@@ -120,9 +145,11 @@
             UIGraphicsBeginImageContextWithOptions(contextSize, layer.isOpaque, layer.contentsScale);
             context = UIGraphicsGetCurrentContext();
             CGContextSaveGState(context);
+            
             if (bounds.origin.x || bounds.origin.y) {
-                CGContextTranslateCTM(context, self.bounds.origin.x, -self.bounds.origin.y);
+                CGContextTranslateCTM(context, bounds.origin.x, -bounds.origin.y);
             }
+            
             if (tempLayer.drawsCount != oldCount) {
                 drawingFinished = NO;
             } else {
@@ -134,11 +161,11 @@
             }
             CGContextRestoreGState(context);
         }
+        
         if (drawingFinished && oldCount == tempLayer.drawsCount) {
-            CGImageRef cgImage = context ? CGBitmapContextCreateImage(context) : NULL;
+            CGImageRef CGImage = context ? CGBitmapContextCreateImage(context) : NULL;
             {
-                UIImage * image = cgImage ? [UIImage imageWithCGImage:cgImage] : nil;
-                
+                UIImage * image = CGImage ? [UIImage imageWithCGImage:CGImage] : nil;
                 void (^finishBlock)(void) = ^{
                     if (oldCount != tempLayer.drawsCount) {
                         failedBlock();
@@ -152,25 +179,23 @@
                 };
                 dispatch_async(dispatch_get_main_queue(), finishBlock);
             }
-            if (cgImage) {
-                CGImageRelease(cgImage);
+            if (CGImage) {
+                CGImageRelease(CGImage);
             }
         } else {
             failedBlock();
         }
         UIGraphicsEndImageContext();
     };
+    
     layer.contents = nil;
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    dispatch_async(dispatch_get_global_queue(0, 0), drawBlock);
-    dispatch_semaphore_signal(semaphore);
+    dispatch_async(serialQueue, drawBlock);
 }
 
 - (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
     _layout = layout; _asynchronously = asynchronously;
     
     if (asynchronously) {
-        [self setNeedsDisplay];
         return;
     }
     for (Element * element in layout.textElements) {
@@ -185,15 +210,20 @@
         [self.contentView addSubview:label];
     }
     [_labelReusePool reset];
-
+    
     for (Element * element in layout.imageElements) {
         UIImageView * imageView = (UIImageView *)[_imageReusePool dequeueReusableObject];
         if (!imageView) {
             imageView = [UIImageView new];
             [_imageReusePool addUsingObject:imageView];
         }
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            UIImage * image = [self preDecodeFrom:element.value];
+        dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(queue, ^{
+            UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
+            if (!image) {
+                image = [self preDecodeFrom:element.value];
+                [ComponentCell.asyncReusePool addUsingObject:image];
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 imageView.image = image;
             });
@@ -201,6 +231,7 @@
         imageView.frame = element.frame;
         [self.contentView addSubview:imageView];
     }
+    [ComponentCell.asyncReusePool reset];
     [_imageReusePool reset];
 }
 
@@ -234,7 +265,7 @@
 }
 
 - (BOOL)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context {
-
+    
     for (Element * element in _layout.textElements) {
         NSMutableParagraphStyle* paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
@@ -243,17 +274,17 @@
                                                                  NSForegroundColorAttributeName:[UIColor blackColor],
                                                                  NSParagraphStyleAttributeName:paragraphStyle}];
     }
-
+    
     for (Element * element in _layout.imageElements) {
-        UIImage * image = (UIImage *)[_asyncReusePool dequeueReusableObject];
+        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
         if (!image) {
             image = [self preDecodeFrom:element.value];
-            [_asyncReusePool addUsingObject:image];
+            [ComponentCell.asyncReusePool addUsingObject:image];
         }
         [image drawInRect:element.frame];
     }
     [_asyncReusePool reset];
-
+    
     return YES;
 }
 

@@ -117,8 +117,8 @@
     CGFloat tableViewW = self.view.bounds.size.width;
     CGFloat tableViewH = self.view.bounds.size.height;
     _contentView.contentSize = CGSizeMake(tableViewW * 2, tableViewH);
-    _asyncTableView.frame = CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH);
-    _tableView.frame = CGRectMake(tableViewX + tableViewW, tableViewY, tableViewW, tableViewH);
+    _tableView.frame = CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH);
+    _asyncTableView.frame = CGRectMake(tableViewX + tableViewW, tableViewY, tableViewW, tableViewH);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
