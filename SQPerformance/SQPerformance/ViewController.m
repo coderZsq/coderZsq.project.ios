@@ -101,12 +101,6 @@
         [self.tableView reloadData];
         [self.asyncTableView reloadData];
     }];
-    
-    [self.viewModel loadMoreData:^(NSArray<ComponentLayout *> *layouts) {
-        [self.layouts addObjectsFromArray:layouts];
-        [self.tableView reloadData];
-        [self.asyncTableView reloadData];
-    }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -133,6 +127,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSInteger row = [indexPath row];
+    if (row == self.layouts.count - 3) {
+        [self.viewModel loadMoreData:^(NSArray<ComponentLayout *> *layouts) {
+            [self.layouts addObjectsFromArray:layouts];
+            [self.tableView reloadData];
+            [self.asyncTableView reloadData];
+        }];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
