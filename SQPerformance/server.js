@@ -31,7 +31,7 @@ http.createServer((req, res) => {
             for (let i = 0; i < randomNumber(3); i++) {
                 texts.push(randomString(randomNumber(1)));
             }
-            for (let i = 0; i < 32; i++) {
+            for (let i = 0; i < 16; i++) {
                 images.push("https://avatars3.githubusercontent.com/u/19483268?s=40&v=4");
             }
             obj.texts = texts;
