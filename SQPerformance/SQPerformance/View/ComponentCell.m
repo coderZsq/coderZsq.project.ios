@@ -167,6 +167,8 @@
     if (asynchronously) {
         [self setNeedsDisplay];
         return;
+    } else {
+        self.layer.contents = nil;
     }
 
     for (Element * element in layout.textElements) {
