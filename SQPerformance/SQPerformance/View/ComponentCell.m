@@ -30,6 +30,9 @@
 @interface UIImage (Extension)
 - (UIImage *)cornerRadius:(CGFloat)cornerRadius;
 @end
+@interface NSString (Extension)
+- (void)preDecodeThroughQueue:(dispatch_queue_t)queue completion:(void(^)(UIImage *))completion;
+@end
 
 @implementation ComponentCell
 
@@ -106,10 +109,7 @@ static ReusePool * _asyncReusePool = nil;
     [self.layer setNeedsDisplayInRect:rect];
 }
 
-- (void)drawRect:(CGRect)rect {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self asyncDraw:NO context:context completion:nil];
-}
+- (void)drawRect:(CGRect)rect {}
 
 - (void)displayLayer:(CALayer *)layer {
     
@@ -138,7 +138,6 @@ static ReusePool * _asyncReusePool = nil;
         CGSize contextSize = layer.bounds.size;
         BOOL contextSizeValid = contextSize.width >= 1 && contextSize.height >= 1;
         CGContextRef context = NULL;
-        BOOL drawingFinished = YES;
         
         if (contextSizeValid) {
             UIGraphicsBeginImageContextWithOptions(contextSize, layer.isOpaque, layer.contentsScale);
@@ -208,7 +207,8 @@ static ReusePool * _asyncReusePool = nil;
         }
         UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
         if (!image) {
-            [self preDecodeFrom:element.value completion:^(UIImage * image) {
+            NSString * url = element.value;
+            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
                 [ComponentCell.asyncReusePool addUsingObject:image];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     imageView.image = image;
@@ -224,10 +224,62 @@ static ReusePool * _asyncReusePool = nil;
     [_imageReusePool reset];
 }
 
-- (void)preDecodeFrom:(NSString *)url completion:(void(^)(UIImage *))completion {
+- (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL))completion {
     
-    dispatch_async(concurrentQueue, ^{
-        CGImageRef cgImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]].CGImage;
+    for (Element * element in _layout.textElements) {
+        NSMutableParagraphStyle * paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+        paragraphStyle.alignment = NSTextAlignmentCenter;
+        [element.value drawInRect:element.frame withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
+                                                                 NSForegroundColorAttributeName:[UIColor blackColor],
+                                                                 NSParagraphStyleAttributeName:paragraphStyle}];
+    }
+    completion(YES);
+    for (Element * element in _layout.imageElements) {
+        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
+        if (!image) {
+            NSString * url = element.value;
+            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
+                [ComponentCell.asyncReusePool addUsingObject:image];
+                [image drawInRect:element.frame];
+                completion(YES);
+            }];
+        } else {
+            [image drawInRect:element.frame];
+            completion(YES);
+        }
+    }
+    [_asyncReusePool reset];
+}
+
+@end
+
+@implementation UIImage (Extension)
+
+- (UIImage *)cornerRadius:(CGFloat)cornerRadius {
+    
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    UIBezierPath * bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
+    UIGraphicsBeginImageContextWithOptions(self.size, false, [UIScreen mainScreen].scale);
+    CGContextAddPath(UIGraphicsGetCurrentContext(), bezierPath.CGPath);
+    CGContextClip(UIGraphicsGetCurrentContext());
+    
+    [self drawInRect:rect];
+    
+    CGContextDrawPath(UIGraphicsGetCurrentContext(), kCGPathFillStroke);
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+@end
+
+@implementation NSString (Extension)
+
+- (void)preDecodeThroughQueue:(dispatch_queue_t)queue completion:(void(^)(UIImage *))completion {
+    
+    dispatch_async(queue, ^{
+        CGImageRef cgImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self]]].CGImage;
         CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(cgImage) & kCGBitmapAlphaInfoMask;
         
         BOOL hasAlpha = NO;
@@ -253,53 +305,6 @@ static ReusePool * _asyncReusePool = nil;
         CGImageRelease(cgImage);
         completion(image);
     });
-}
-
-- (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL))completion {
-    
-    for (Element * element in _layout.textElements) {
-        NSMutableParagraphStyle* paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-        paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
-        paragraphStyle.alignment = NSTextAlignmentCenter;
-        [element.value drawInRect:element.frame withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
-                                                                 NSForegroundColorAttributeName:[UIColor blackColor],
-                                                                 NSParagraphStyleAttributeName:paragraphStyle}];
-    }
-    
-    for (Element * element in _layout.imageElements) {
-        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
-        if (!image) {
-            [self preDecodeFrom:element.value completion:^(UIImage * image) {
-                [ComponentCell.asyncReusePool addUsingObject:image];
-                [image drawInRect:element.frame];
-                completion(YES);
-            }];
-        } else {
-            [image drawInRect:element.frame];
-            completion(YES);
-        }
-    }
-    [_asyncReusePool reset];
-}
-
-@end
-
-@implementation UIImage (Extension)
-
-- (UIImage *)cornerRadius:(CGFloat)cornerRadius {
-    
-    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
-    UIGraphicsBeginImageContextWithOptions(self.size, false, [UIScreen mainScreen].scale);
-    CGContextAddPath(UIGraphicsGetCurrentContext(), bezierPath.CGPath);
-    CGContextClip(UIGraphicsGetCurrentContext());
-    
-    [self drawInRect:rect];
-    
-    CGContextDrawPath(UIGraphicsGetCurrentContext(), kCGPathFillStroke);
-    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
 }
 
 @end

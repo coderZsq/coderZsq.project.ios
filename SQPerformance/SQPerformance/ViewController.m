@@ -52,7 +52,7 @@
         _contentView.scrollEnabled = NO;
         [_contentView setPagingEnabled:YES];
         [_contentView setBounces:NO];
-//        [_contentView addSubview:self.tableView];
+        [_contentView addSubview:self.tableView];
         [_contentView addSubview:self.asyncTableView];
     }
     return _contentView;
