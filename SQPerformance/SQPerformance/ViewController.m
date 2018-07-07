@@ -100,6 +100,12 @@
         [self.layouts addObjectsFromArray:layouts];
         [self.tableView reloadData];
         [self.asyncTableView reloadData];
+    } error:^{
+        UIAlertController * alertViewController = [UIAlertController alertControllerWithTitle:@"Error" message:@"please turn on the server!!!\n use command [$ node server.js] " preferredStyle:UIAlertControllerStyleAlert];
+        [alertViewController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            exit(1);
+        }]];
+        [self presentViewController:alertViewController animated:YES completion:nil];
     }];
 }
 

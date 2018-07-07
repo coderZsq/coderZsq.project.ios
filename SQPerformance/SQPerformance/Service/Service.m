@@ -18,8 +18,8 @@
         if ([responseObject[@"status"] isEqualToString: @"success"]) {
             completion(responseObject[@"data"], nil);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
-
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completion(nil, error);
     }];
 }
 

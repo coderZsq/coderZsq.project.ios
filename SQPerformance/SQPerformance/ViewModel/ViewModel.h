@@ -18,7 +18,7 @@ typedef void(^LayoutCompeltionBlock)(NSArray <ComponentLayout *>* layouts);
 
 @property (nonatomic,strong) Service *service;
 
-- (void)reloadData:(LayoutCompeltionBlock)completion;
+- (void)reloadData:(LayoutCompeltionBlock)completion error:(void(^)(void))error;
 
 - (void)loadMoreData:(LayoutCompeltionBlock)completion;
 

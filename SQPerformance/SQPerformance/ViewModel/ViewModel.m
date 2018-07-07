@@ -22,7 +22,7 @@
     return _service;
 }
 
-- (void)reloadData:(LayoutCompeltionBlock)completion {
+- (void)reloadData:(LayoutCompeltionBlock)completion error:(void(^)(void))errorCompletion {
     
     [self.service fetchMockDataWithParam:nil completion:^(NSArray<ComponentModel *> *models, NSError *error) {
         if (models.count > 0 && error == nil) {
@@ -39,12 +39,14 @@
                     }
                 });
             });
+        } else {
+            errorCompletion();
         }
     }];
 }
 
 - (void)loadMoreData:(LayoutCompeltionBlock)completion {
-    [self reloadData:completion];
+    [self reloadData:completion error:nil];
 }
 
 - (ComponentLayout *)preLayoutFrom:(ComponentModel *)model {
