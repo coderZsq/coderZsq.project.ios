@@ -108,7 +108,7 @@ static ReusePool * _asyncReusePool = nil;
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    [self asyncDraw:NO context:context];
+    [self asyncDraw:NO context:context completion:nil];
 }
 
 - (void)displayLayer:(CALayer *)layer {
@@ -125,12 +125,11 @@ static ReusePool * _asyncReusePool = nil;
     CGRect bounds = self.bounds;
     UIColor * backgroundColor = self.backgroundColor;
     
-    void (^drawBlock)(void) = ^{
-        
+    layer.contents = nil;
+    dispatch_async(serialQueue, ^{
         void (^failedBlock)(void) = ^{
-            
+            NSLog(@"displayLayer failed");
         };
-        
         if (tempLayer.drawsCount != oldCount) {
             failedBlock();
             return;
@@ -145,51 +144,41 @@ static ReusePool * _asyncReusePool = nil;
             UIGraphicsBeginImageContextWithOptions(contextSize, layer.isOpaque, layer.contentsScale);
             context = UIGraphicsGetCurrentContext();
             CGContextSaveGState(context);
-            
             if (bounds.origin.x || bounds.origin.y) {
                 CGContextTranslateCTM(context, bounds.origin.x, -bounds.origin.y);
             }
-            
-            if (tempLayer.drawsCount != oldCount) {
-                drawingFinished = NO;
-            } else {
-                if (backgroundColor && backgroundColor != [UIColor clearColor]) {
-                    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
-                    CGContextFillRect(context, bounds);
-                }
-                drawingFinished = [self asyncDraw:YES context:context];
+            if (backgroundColor && backgroundColor != [UIColor clearColor]) {
+                CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
+                CGContextFillRect(context, bounds);
             }
+            [self asyncDraw:YES context:context completion:^(BOOL drawingFinished) {
+                if (drawingFinished && oldCount == tempLayer.drawsCount) {
+                    CGImageRef CGImage = context ? CGBitmapContextCreateImage(context) : NULL;
+                    {
+                        UIImage * image = CGImage ? [UIImage imageWithCGImage:CGImage] : nil;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            if (oldCount != tempLayer.drawsCount) {
+                                failedBlock();
+                                return;
+                            }
+                            layer.contents = (id)image.CGImage;
+                            layer.opacity = 0.0;
+                            [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                                layer.opacity = 1.0;
+                            } completion:NULL];
+                        });
+                    }
+                    if (CGImage) {
+                        CGImageRelease(CGImage);
+                    }
+                } else {
+                    failedBlock();
+                }
+            }];
             CGContextRestoreGState(context);
         }
-        
-        if (drawingFinished && oldCount == tempLayer.drawsCount) {
-            CGImageRef CGImage = context ? CGBitmapContextCreateImage(context) : NULL;
-            {
-                UIImage * image = CGImage ? [UIImage imageWithCGImage:CGImage] : nil;
-                void (^finishBlock)(void) = ^{
-                    if (oldCount != tempLayer.drawsCount) {
-                        failedBlock();
-                        return;
-                    }
-                    layer.contents = (id)image.CGImage;
-                    layer.opacity = 0.0;
-                    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                        layer.opacity = 1.0;
-                    } completion:NULL];
-                };
-                dispatch_async(dispatch_get_main_queue(), finishBlock);
-            }
-            if (CGImage) {
-                CGImageRelease(CGImage);
-            }
-        } else {
-            failedBlock();
-        }
         UIGraphicsEndImageContext();
-    };
-    
-    layer.contents = nil;
-    dispatch_async(serialQueue, drawBlock);
+    });
 }
 
 - (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
@@ -217,17 +206,17 @@ static ReusePool * _asyncReusePool = nil;
             imageView = [UIImageView new];
             [_imageReusePool addUsingObject:imageView];
         }
-        dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
-        dispatch_async(queue, ^{
-            UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
-            if (!image) {
-                image = [self preDecodeFrom:element.value];
+        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
+        if (!image) {
+            [self preDecodeFrom:element.value completion:^(UIImage * image) {
                 [ComponentCell.asyncReusePool addUsingObject:image];
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                imageView.image = image;
-            });
-        });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    imageView.image = image;
+                });
+            }];
+        } else {
+            imageView.image = image;
+        }
         imageView.frame = element.frame;
         [self.contentView addSubview:imageView];
     }
@@ -235,36 +224,38 @@ static ReusePool * _asyncReusePool = nil;
     [_imageReusePool reset];
 }
 
-- (UIImage *)preDecodeFrom:(NSString *)url {
+- (void)preDecodeFrom:(NSString *)url completion:(void(^)(UIImage *))completion {
     
-    CGImageRef cgImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]].CGImage;
-    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(cgImage) & kCGBitmapAlphaInfoMask;
-    
-    BOOL hasAlpha = NO;
-    if (alphaInfo == kCGImageAlphaPremultipliedLast ||
-        alphaInfo == kCGImageAlphaPremultipliedFirst ||
-        alphaInfo == kCGImageAlphaLast ||
-        alphaInfo == kCGImageAlphaFirst) {
-        hasAlpha = YES;
-    }
-    
-    CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
-    bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;
-    
-    size_t width = CGImageGetWidth(cgImage);
-    size_t height = CGImageGetHeight(cgImage);
-    
-    CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, CGColorSpaceCreateDeviceRGB(), bitmapInfo);
-    CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgImage);
-    cgImage = CGBitmapContextCreateImage(context);
-    
-    UIImage * image = [[UIImage imageWithCGImage:cgImage] cornerRadius:width * 0.5];
-    CGContextRelease(context);
-    CGImageRelease(cgImage);
-    return image;
+    dispatch_async(concurrentQueue, ^{
+        CGImageRef cgImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]].CGImage;
+        CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(cgImage) & kCGBitmapAlphaInfoMask;
+        
+        BOOL hasAlpha = NO;
+        if (alphaInfo == kCGImageAlphaPremultipliedLast ||
+            alphaInfo == kCGImageAlphaPremultipliedFirst ||
+            alphaInfo == kCGImageAlphaLast ||
+            alphaInfo == kCGImageAlphaFirst) {
+            hasAlpha = YES;
+        }
+        
+        CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
+        bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;
+        
+        size_t width = CGImageGetWidth(cgImage);
+        size_t height = CGImageGetHeight(cgImage);
+        
+        CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, CGColorSpaceCreateDeviceRGB(), bitmapInfo);
+        CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgImage);
+        cgImage = CGBitmapContextCreateImage(context);
+        
+        UIImage * image = [[UIImage imageWithCGImage:cgImage] cornerRadius:width * 0.5];
+        CGContextRelease(context);
+        CGImageRelease(cgImage);
+        completion(image);
+    });
 }
 
-- (BOOL)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context {
+- (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL))completion {
     
     for (Element * element in _layout.textElements) {
         NSMutableParagraphStyle* paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -278,14 +269,17 @@ static ReusePool * _asyncReusePool = nil;
     for (Element * element in _layout.imageElements) {
         UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
         if (!image) {
-            image = [self preDecodeFrom:element.value];
-            [ComponentCell.asyncReusePool addUsingObject:image];
+            [self preDecodeFrom:element.value completion:^(UIImage * image) {
+                [ComponentCell.asyncReusePool addUsingObject:image];
+                [image drawInRect:element.frame];
+                completion(YES);
+            }];
+        } else {
+            [image drawInRect:element.frame];
+            completion(YES);
         }
-        [image drawInRect:element.frame];
     }
     [_asyncReusePool reset];
-    
-    return YES;
 }
 
 @end
