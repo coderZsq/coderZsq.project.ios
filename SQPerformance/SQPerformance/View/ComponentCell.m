@@ -30,6 +30,7 @@
 @interface UIImage (Extension)
 - (UIImage *)cornerRadius:(CGFloat)cornerRadius;
 @end
+
 @interface NSString (Extension)
 - (void)preDecodeThroughQueue:(dispatch_queue_t)queue completion:(void(^)(UIImage *))completion;
 @end
@@ -183,23 +184,25 @@ static ReusePool * _asyncReusePool = nil;
 - (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
     _layout = layout; _asynchronously = asynchronously;
     
-    if (asynchronously) {
-        return;
-    }
-    for (Element * element in layout.textElements) {
-        UILabel * label = (UILabel *)[_labelReusePool dequeueReusableObject];
-        if (!label) {
-            label = [UILabel new];
-            [_labelReusePool addUsingObject:label];
+    [self displayImageView];
+    if (!asynchronously) {
+        for (Element * element in layout.textElements) {
+            UILabel * label = (UILabel *)[_labelReusePool dequeueReusableObject];
+            if (!label) {
+                label = [UILabel new];
+                [_labelReusePool addUsingObject:label];
+            }
+            label.text = element.value;
+            label.frame = element.frame;
+            label.font = [UIFont systemFontOfSize:15];
+            [self.contentView addSubview:label];
         }
-        label.text = element.value;
-        label.frame = element.frame;
-        label.font = [UIFont systemFontOfSize:15];
-        [self.contentView addSubview:label];
+        [_labelReusePool reset];
     }
-    [_labelReusePool reset];
-    
-    for (Element * element in layout.imageElements) {
+}
+
+- (void)displayImageView {
+    for (Element * element in _layout.imageElements) {
         UIImageView * imageView = (UIImageView *)[_imageReusePool dequeueReusableObject];
         if (!imageView) {
             imageView = [UIImageView new];
@@ -235,21 +238,22 @@ static ReusePool * _asyncReusePool = nil;
                                                                  NSParagraphStyleAttributeName:paragraphStyle}];
     }
     completion(YES);
-    for (Element * element in _layout.imageElements) {
-        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
-        if (!image) {
-            NSString * url = element.value;
-            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
-                [ComponentCell.asyncReusePool addUsingObject:image];
-                [image drawInRect:element.frame];
-                completion(YES);
-            }];
-        } else {
-            [image drawInRect:element.frame];
-            completion(YES);
-        }
-    }
-    [_asyncReusePool reset];
+    //TODO:
+    //    for (Element * element in _layout.imageElements) {
+    //        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
+    //        if (!image) {
+    //            NSString * url = element.value;
+    //            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
+    //                [ComponentCell.asyncReusePool addUsingObject:image];
+    //                [image drawInRect:element.frame];
+    //                completion(YES);
+    //            }];
+    //        } else {
+    //            [image drawInRect:element.frame];
+    //            completion(YES);
+    //        }
+    //    }
+    //    [_asyncReusePool reset];
 }
 
 @end
