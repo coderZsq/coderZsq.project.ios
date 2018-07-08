@@ -194,7 +194,7 @@ static ReusePool * _asyncReusePool = nil;
             }
             label.text = element.value;
             label.frame = element.frame;
-            label.font = [UIFont systemFontOfSize:15];
+            label.font = [UIFont systemFontOfSize:7];
             [self.contentView addSubview:label];
         }
         [_labelReusePool reset];
@@ -233,7 +233,7 @@ static ReusePool * _asyncReusePool = nil;
         NSMutableParagraphStyle * paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
         paragraphStyle.alignment = NSTextAlignmentCenter;
-        [element.value drawInRect:element.frame withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
+        [element.value drawInRect:element.frame withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:7],
                                                                  NSForegroundColorAttributeName:[UIColor blackColor],
                                                                  NSParagraphStyleAttributeName:paragraphStyle}];
     }

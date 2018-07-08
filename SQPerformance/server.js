@@ -28,7 +28,7 @@ http.createServer((req, res) => {
             let obj = {};
             let texts = [];
             let images = [];
-            for (let i = 0; i < randomNumber(3); i++) {
+            for (let i = 0; i < randomNumber(4); i++) {
                 texts.push(randomString(randomNumber(1)));
             }
             for (let i = 0; i < 16; i++) {

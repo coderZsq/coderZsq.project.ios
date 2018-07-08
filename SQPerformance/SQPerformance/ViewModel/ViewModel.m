@@ -64,7 +64,7 @@
     NSArray * texts = model[@"texts"];
     for (NSUInteger i = 0; i < texts.count; i++) {
         NSString * text = texts[i];
-        CGSize size = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading  attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size;
+        CGSize size = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading  attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:7]} context:nil].size;
         if ((x + size.width) > layout.cellWidth) {
             x = 5;
             y += (size.height + 10);
