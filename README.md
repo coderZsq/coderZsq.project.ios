@@ -1,7 +1,7 @@
 ## Quickly Developer Tools of Objective-C
 
 #### SQPerformance
-> iOS相关性能优化方案的集合, 包括界面, 网络, 包大小等.
+> iOS界面相关性能优化, 包括预排版, 预渲染, 异步绘制等.
 - [iOS 界面性能优化浅析](https://coderzsq.github.io/2018/07/iOS-%E7%95%8C%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%B5%85%E6%9E%90/)
 
 #### SQTemplate 
