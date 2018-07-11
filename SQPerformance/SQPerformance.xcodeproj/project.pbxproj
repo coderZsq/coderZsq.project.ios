@@ -22,6 +22,7 @@
 		14B7C67C20EDAB3700593B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B7C67B20EDAB3700593B39 /* Assets.xcassets */; };
 		14B7C67F20EDAB3700593B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B7C67D20EDAB3700593B39 /* LaunchScreen.storyboard */; };
 		14B7C68220EDAB3700593B39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B7C68120EDAB3700593B39 /* main.m */; };
+		14E1E04420F5F1290080456D /* PermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1E04320F5F1290080456D /* PermenantThread.m */; };
 		1DC6345D33BB63181422400C /* libPods-SQPerformance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B73E3EA95A835B2CEC3895F /* libPods-SQPerformance.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		14B7C67E20EDAB3700593B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14B7C68020EDAB3700593B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14B7C68120EDAB3700593B39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14E1E04220F5F1290080456D /* PermenantThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PermenantThread.h; sourceTree = "<group>"; };
+		14E1E04320F5F1290080456D /* PermenantThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PermenantThread.m; sourceTree = "<group>"; };
 		68A488FB01B87B0413DDB489 /* Pods-SQPerformance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQPerformance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQPerformance/Pods-SQPerformance.debug.xcconfig"; sourceTree = "<group>"; };
 		8B73E3EA95A835B2CEC3895F /* libPods-SQPerformance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQPerformance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C79B94ECD28E9F1A5BFF30 /* Pods-SQPerformance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQPerformance.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQPerformance/Pods-SQPerformance.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				148BF78A20EE11F800F44F26 /* ReusePool.m */,
 				144506C420F1B1D100CA61F4 /* AsyncDrawLayer.h */,
 				144506C520F1B1D100CA61F4 /* AsyncDrawLayer.m */,
+				14E1E04220F5F1290080456D /* PermenantThread.h */,
+				14E1E04320F5F1290080456D /* PermenantThread.m */,
 				148BF77E20EDF6E200F44F26 /* ComponentCell.h */,
 				148BF77F20EDF6E200F44F26 /* ComponentCell.m */,
 			);
@@ -274,6 +279,7 @@
 			files = (
 				148BF76420EDCF2E00F44F26 /* ViewModel.m in Sources */,
 				148BF78020EDF6E200F44F26 /* ComponentCell.m in Sources */,
+				14E1E04420F5F1290080456D /* PermenantThread.m in Sources */,
 				14B7C67720EDAB3700593B39 /* ViewController.m in Sources */,
 				148BF75E20EDCEE100F44F26 /* Service.m in Sources */,
 				14B7C68220EDAB3700593B39 /* main.m in Sources */,

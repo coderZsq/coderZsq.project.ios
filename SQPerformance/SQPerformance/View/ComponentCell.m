@@ -11,9 +11,9 @@
 #import "Element.h"
 #import "ReusePool.h"
 #import "AsyncDrawLayer.h"
+#import "PermenantThread.h"
 
 @interface ComponentCell () {
-    dispatch_queue_t serialQueue;
     dispatch_queue_t concurrentQueue;
 }
 
@@ -24,6 +24,8 @@
 @property (nonatomic,weak) AsyncDrawLayer * drawLayer;
 @property (nonatomic,strong) ComponentLayout * layout;
 @property (nonatomic,assign, getter=isAsynchronously) BOOL asynchronously;
+
+@property (nonatomic,strong) PermenantThread * thread;
 
 @end
 
@@ -53,6 +55,7 @@ static ReusePool * _asyncReusePool = nil;
 }
 
 - (void)dealloc {
+    [_thread stop];
 #if DEBUG
     NSLog(@"--------");
     NSLog(@"%@ - execute %s",NSStringFromClass([self class]),__func__);
@@ -77,11 +80,11 @@ static ReusePool * _asyncReusePool = nil;
     if ([self.layer isKindOfClass:[AsyncDrawLayer class]]) {
         _drawLayer = (AsyncDrawLayer *)self.layer;
     }
-    serialQueue = dispatch_queue_create("serial",DISPATCH_QUEUE_SERIAL);
     concurrentQueue = dispatch_queue_create("concurrent", DISPATCH_QUEUE_CONCURRENT);
     _labelReusePool = [ReusePool new];
     _imageReusePool = [ReusePool new];
     _asyncReusePool = [ReusePool new];
+    _thread = [PermenantThread new];
 }
 
 - (void)prepareForReuse {
@@ -127,7 +130,7 @@ static ReusePool * _asyncReusePool = nil;
     UIColor * backgroundColor = self.backgroundColor;
     
     layer.contents = nil;
-    dispatch_async(serialQueue, ^{
+    [_thread executeTask:^{
         void (^failedBlock)(void) = ^{
             NSLog(@"displayLayer failed");
         };
@@ -178,7 +181,7 @@ static ReusePool * _asyncReusePool = nil;
             CGContextRestoreGState(context);
         }
         UIGraphicsEndImageContext();
-    });
+    }];
 }
 
 - (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
@@ -238,22 +241,22 @@ static ReusePool * _asyncReusePool = nil;
                                                                  NSParagraphStyleAttributeName:paragraphStyle}];
     }
     completion(YES);
-    //TODO:
-    //    for (Element * element in _layout.imageElements) {
-    //        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
-    //        if (!image) {
-    //            NSString * url = element.value;
-    //            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
-    //                [ComponentCell.asyncReusePool addUsingObject:image];
-    //                [image drawInRect:element.frame];
-    //                completion(YES);
-    //            }];
-    //        } else {
-    //            [image drawInRect:element.frame];
-    //            completion(YES);
-    //        }
-    //    }
-    //    [_asyncReusePool reset];
+    for (Element * element in _layout.imageElements) {
+        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
+        if (!image) {
+            NSString * url = element.value;
+            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
+                [ComponentCell.asyncReusePool addUsingObject:image];
+                //TODO
+                //CGContextDrawImage(context, element.frame, image.CGImage);
+                //completion(YES);
+            }];
+        } else {
+            [image drawInRect:element.frame];
+            completion(YES);
+        }
+    }
+    [_asyncReusePool reset];
 }
 
 @end
@@ -303,7 +306,6 @@ static ReusePool * _asyncReusePool = nil;
         CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, CGColorSpaceCreateDeviceRGB(), bitmapInfo);
         CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgImage);
         cgImage = CGBitmapContextCreateImage(context);
-        
         UIImage * image = [[UIImage imageWithCGImage:cgImage] cornerRadius:width * 0.5];
         CGContextRelease(context);
         CGImageRelease(cgImage);

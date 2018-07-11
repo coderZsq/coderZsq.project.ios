@@ -45,7 +45,9 @@
     if (object == nil) {
         return;
     }
+    [_lock lock];
     [_usingQueue addObject:object];
+    [_lock unlock];
 }
 
 - (void)reset {
