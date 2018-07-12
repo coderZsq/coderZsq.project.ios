@@ -6,10 +6,10 @@
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "AsyncDrawCell.h"
 
 @class ComponentLayout;
-@interface ComponentCell : UITableViewCell
+@interface ComponentCell : AsyncDrawCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

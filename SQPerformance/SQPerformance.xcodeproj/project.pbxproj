@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144040A920F7358900F70A12 /* AsyncDrawCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144040A820F7358900F70A12 /* AsyncDrawCell.m */; };
 		144506C620F1B1D100CA61F4 /* AsyncDrawLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 144506C520F1B1D100CA61F4 /* AsyncDrawLayer.m */; };
 		148BF75E20EDCEE100F44F26 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BF75D20EDCEE100F44F26 /* Service.m */; };
 		148BF76420EDCF2E00F44F26 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BF76320EDCF2E00F44F26 /* ViewModel.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		144040A720F7358900F70A12 /* AsyncDrawCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncDrawCell.h; sourceTree = "<group>"; };
+		144040A820F7358900F70A12 /* AsyncDrawCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncDrawCell.m; sourceTree = "<group>"; };
 		144506C420F1B1D100CA61F4 /* AsyncDrawLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncDrawLayer.h; sourceTree = "<group>"; };
 		144506C520F1B1D100CA61F4 /* AsyncDrawLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncDrawLayer.m; sourceTree = "<group>"; };
 		148BF75C20EDCEE100F44F26 /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
@@ -127,10 +130,12 @@
 			children = (
 				148BF78920EE11F800F44F26 /* ReusePool.h */,
 				148BF78A20EE11F800F44F26 /* ReusePool.m */,
-				144506C420F1B1D100CA61F4 /* AsyncDrawLayer.h */,
-				144506C520F1B1D100CA61F4 /* AsyncDrawLayer.m */,
 				14E1E04220F5F1290080456D /* PermenantThread.h */,
 				14E1E04320F5F1290080456D /* PermenantThread.m */,
+				144506C420F1B1D100CA61F4 /* AsyncDrawLayer.h */,
+				144506C520F1B1D100CA61F4 /* AsyncDrawLayer.m */,
+				144040A720F7358900F70A12 /* AsyncDrawCell.h */,
+				144040A820F7358900F70A12 /* AsyncDrawCell.m */,
 				148BF77E20EDF6E200F44F26 /* ComponentCell.h */,
 				148BF77F20EDF6E200F44F26 /* ComponentCell.m */,
 			);
@@ -279,6 +284,7 @@
 			files = (
 				148BF76420EDCF2E00F44F26 /* ViewModel.m in Sources */,
 				148BF78020EDF6E200F44F26 /* ComponentCell.m in Sources */,
+				144040A920F7358900F70A12 /* AsyncDrawCell.m in Sources */,
 				14E1E04420F5F1290080456D /* PermenantThread.m in Sources */,
 				14B7C67720EDAB3700593B39 /* ViewController.m in Sources */,
 				148BF75E20EDCEE100F44F26 /* Service.m in Sources */,
