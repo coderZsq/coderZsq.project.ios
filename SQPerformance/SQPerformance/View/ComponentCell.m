@@ -122,7 +122,7 @@ static ReusePool * _asyncReusePool = nil;
     }
 }
 
-- (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL))completion {
+- (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL, BOOL))completion {
     
     for (Element * element in _layout.textElements) {
         NSMutableParagraphStyle * paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -132,7 +132,6 @@ static ReusePool * _asyncReusePool = nil;
                                                                  NSForegroundColorAttributeName:[UIColor blackColor],
                                                                  NSParagraphStyleAttributeName:paragraphStyle}];
     }
-    completion(YES);
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrent", DISPATCH_QUEUE_CONCURRENT);
     for (Element * element in _layout.imageElements) {
@@ -144,17 +143,16 @@ static ReusePool * _asyncReusePool = nil;
                 [url preDecodeWithCGCoordinateSystem:YES completion:^(UIImage * image) {
                     [ComponentCell.asyncReusePool addUsingObject:image];
                     CGContextDrawImage(context, element.frame, image.CGImage);
-//                    completion(YES);
                 }];
                 dispatch_group_leave(group);
             });
         } else {
             CGContextDrawImage(context, element.frame, image.CGImage);
-            completion(YES);
         }
     }
+    completion(YES, NO);
     dispatch_group_notify(group, concurrentQueue, ^{
-        completion(YES);
+        completion(YES, YES);
     });
     [_asyncReusePool reset];
 }

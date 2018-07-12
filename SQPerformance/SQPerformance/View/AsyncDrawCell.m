@@ -93,8 +93,8 @@
                 CGContextFillRect(context, bounds);
             }
             UIGraphicsPushContext(context);
-            [self asyncDraw:YES context:context completion:^(BOOL drawingFinished) {
-                if (drawingFinished && oldCount == tempLayer.drawsCount) {
+            [self asyncDraw:YES context:context completion:^(BOOL drawing, BOOL finished) {
+                if (drawing && oldCount == tempLayer.drawsCount) {
                     CGImageRef CGImage = context ? CGBitmapContextCreateImage(context) : NULL;
                     {
                         UIImage * image = CGImage ? [UIImage imageWithCGImage:CGImage] : nil;
@@ -116,12 +116,15 @@
                 } else {
                     failedBlock();
                 }
+                if (finished) {
+                    CGContextRelease(context);
+                }
             }];
         }
         UIGraphicsPopContext();
     }];
 }
 
-- (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL))completion {}
+- (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL, BOOL))completion {}
 
 @end
