@@ -13,9 +13,7 @@
 #import "AsyncDrawLayer.h"
 #import "PermenantThread.h"
 
-@interface ComponentCell () {
-    dispatch_queue_t concurrentQueue;
-}
+@interface ComponentCell ()
 
 @property (nonatomic,strong) ReusePool * labelReusePool;
 @property (nonatomic,strong) ReusePool * imageReusePool;
@@ -34,7 +32,7 @@
 @end
 
 @interface NSString (Extension)
-- (void)preDecodeThroughQueue:(dispatch_queue_t)queue completion:(void(^)(UIImage *))completion;
+- (void)preDecode:(void(^)(UIImage *))completion;
 @end
 
 @implementation ComponentCell
@@ -80,7 +78,6 @@ static ReusePool * _asyncReusePool = nil;
     if ([self.layer isKindOfClass:[AsyncDrawLayer class]]) {
         _drawLayer = (AsyncDrawLayer *)self.layer;
     }
-    concurrentQueue = dispatch_queue_create("concurrent", DISPATCH_QUEUE_CONCURRENT);
     _labelReusePool = [ReusePool new];
     _imageReusePool = [ReusePool new];
     _asyncReusePool = [ReusePool new];
@@ -146,9 +143,10 @@ static ReusePool * _asyncReusePool = nil;
             CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
             CGContextRef context = CGBitmapContextCreate(NULL, contextSize.width, contextSize.height, 8, contextSize.width * 4, colorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrderDefault);
             CGColorSpaceRelease(colorSpace);
-            if (bounds.origin.x || bounds.origin.y) {
-                CGContextTranslateCTM(context, bounds.origin.x, -bounds.origin.y);
-            }
+            CGAffineTransform normalState = CGContextGetCTM(context);
+            CGContextTranslateCTM(context, 0, bounds.size.height);
+            CGContextScaleCTM(context, 1, -1);
+            CGContextConcatCTM(context, normalState);
             if (backgroundColor && backgroundColor != [UIColor clearColor]) {
                 CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
                 CGContextFillRect(context, bounds);
@@ -166,7 +164,7 @@ static ReusePool * _asyncReusePool = nil;
                             }
                             layer.contents = (id)image.CGImage;
                             layer.opacity = 0.0;
-                            [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                            [UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                                 layer.opacity = 1.0;
                             } completion:NULL];
                         });
@@ -199,34 +197,33 @@ static ReusePool * _asyncReusePool = nil;
             [self.contentView addSubview:label];
         }
         [_labelReusePool reset];
-        [self displayImageView];
-    }
-}
-
-- (void)displayImageView {
-    for (Element * element in _layout.imageElements) {
-        UIImageView * imageView = (UIImageView *)[_imageReusePool dequeueReusableObject];
-        if (!imageView) {
-            imageView = [UIImageView new];
-            [_imageReusePool addUsingObject:imageView];
-        }
-        UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
-        if (!image) {
-            NSString * url = element.value;
-            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
-                [ComponentCell.asyncReusePool addUsingObject:image];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    imageView.image = image;
+        
+        for (Element * element in _layout.imageElements) {
+            UIImageView * imageView = (UIImageView *)[_imageReusePool dequeueReusableObject];
+            if (!imageView) {
+                imageView = [UIImageView new];
+                [_imageReusePool addUsingObject:imageView];
+            }
+            UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
+            if (!image) {
+                NSString * url = element.value;
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    [url preDecode:^(UIImage * image) {
+                        [ComponentCell.asyncReusePool addUsingObject:image];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            imageView.image = image;
+                        });
+                    }];
                 });
-            }];
-        } else {
-            imageView.image = image;
+            } else {
+                imageView.image = image;
+            }
+            imageView.frame = element.frame;
+            [self.contentView addSubview:imageView];
         }
-        imageView.frame = element.frame;
-        [self.contentView addSubview:imageView];
+        [ComponentCell.asyncReusePool reset];
+        [_imageReusePool reset];
     }
-    [ComponentCell.asyncReusePool reset];
-    [_imageReusePool reset];
 }
 
 - (void)asyncDraw:(BOOL)asynchronously context:(CGContextRef)context completion:(void(^)(BOOL))completion {
@@ -240,20 +237,28 @@ static ReusePool * _asyncReusePool = nil;
                                                                  NSParagraphStyleAttributeName:paragraphStyle}];
     }
     completion(YES);
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrent", DISPATCH_QUEUE_CONCURRENT);
     for (Element * element in _layout.imageElements) {
         UIImage * image = (UIImage *)[ComponentCell.asyncReusePool dequeueReusableObject];
         if (!image) {
-            NSString * url = element.value;
-            [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
-                [ComponentCell.asyncReusePool addUsingObject:image];
-                CGContextDrawImage(context, element.frame, image.CGImage);
-                completion(YES);
-            }];
+            dispatch_group_enter(group);
+            dispatch_group_async(group, concurrentQueue, ^{
+                NSString * url = element.value;
+                [url preDecode:^(UIImage * image) {
+                    [ComponentCell.asyncReusePool addUsingObject:image];
+                    CGContextDrawImage(context, element.frame, image.CGImage);
+                }];
+                dispatch_group_leave(group);
+            });
         } else {
             [image drawInRect:element.frame];
             completion(YES);
         }
     }
+    dispatch_group_notify(group, concurrentQueue, ^{
+        completion(YES);
+    });
     [_asyncReusePool reset];
 }
 
@@ -281,35 +286,33 @@ static ReusePool * _asyncReusePool = nil;
 
 @implementation NSString (Extension)
 
-- (void)preDecodeThroughQueue:(dispatch_queue_t)queue completion:(void(^)(UIImage *))completion {
+- (void)preDecode:(void(^)(UIImage *))completion {
     
-    dispatch_async(queue, ^{
-        CGImageRef cgImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self]]].CGImage;
-        CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(cgImage) & kCGBitmapAlphaInfoMask;
-        
-        BOOL hasAlpha = NO;
-        if (alphaInfo == kCGImageAlphaPremultipliedLast ||
-            alphaInfo == kCGImageAlphaPremultipliedFirst ||
-            alphaInfo == kCGImageAlphaLast ||
-            alphaInfo == kCGImageAlphaFirst) {
-            hasAlpha = YES;
-        }
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
-        bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;
-        
-        size_t width = CGImageGetWidth(cgImage);
-        size_t height = CGImageGetHeight(cgImage);
-        
-        CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, colorSpace, bitmapInfo);
-        CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgImage);
-        cgImage = CGBitmapContextCreateImage(context);
-        UIImage * image = [[UIImage imageWithCGImage:cgImage] cornerRadius:width * 0.5];
-        CGColorSpaceRelease(colorSpace);
-        CGContextRelease(context);
-        CGImageRelease(cgImage);
-        completion(image);
-    });
+    CGImageRef cgImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self]]].CGImage;
+    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(cgImage) & kCGBitmapAlphaInfoMask;
+    
+    BOOL hasAlpha = NO;
+    if (alphaInfo == kCGImageAlphaPremultipliedLast ||
+        alphaInfo == kCGImageAlphaPremultipliedFirst ||
+        alphaInfo == kCGImageAlphaLast ||
+        alphaInfo == kCGImageAlphaFirst) {
+        hasAlpha = YES;
+    }
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
+    bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;
+    
+    size_t width = CGImageGetWidth(cgImage);
+    size_t height = CGImageGetHeight(cgImage);
+    
+    CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, colorSpace, bitmapInfo);
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgImage);
+    cgImage = CGBitmapContextCreateImage(context);
+    UIImage * image = [[UIImage imageWithCGImage:cgImage] cornerRadius:width * 0.5];
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(context);
+    CGImageRelease(cgImage);
+    completion(image);
 }
 
 @end
