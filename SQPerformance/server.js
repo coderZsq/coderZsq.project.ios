@@ -32,7 +32,7 @@ http.createServer((req, res) => {
                 texts.push(randomString(randomNumber(1)));
             }
             for (let i = 0; i < 16; i++) {
-                images.push("https://avatars3.githubusercontent.com/u/19483268?s=40&v=4");
+                images.push("https://upload-images.jianshu.io/upload_images/12332870-d145e76f9f3d74d1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240");
             }
             obj.texts = texts;
             obj.images = images;
