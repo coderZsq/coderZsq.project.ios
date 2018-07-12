@@ -141,12 +141,11 @@ static ReusePool * _asyncReusePool = nil;
         
         CGSize contextSize = layer.bounds.size;
         BOOL contextSizeValid = contextSize.width >= 1 && contextSize.height >= 1;
-        CGContextRef context = NULL;
         
         if (contextSizeValid) {
-            UIGraphicsBeginImageContextWithOptions(contextSize, layer.isOpaque, layer.contentsScale);
-            context = UIGraphicsGetCurrentContext();
-            CGContextSaveGState(context);
+            CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+            CGContextRef context = CGBitmapContextCreate(NULL, contextSize.width, contextSize.height, 8, contextSize.width * 4, colorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrderDefault);
+            CGColorSpaceRelease(colorSpace);
             if (bounds.origin.x || bounds.origin.y) {
                 CGContextTranslateCTM(context, bounds.origin.x, -bounds.origin.y);
             }
@@ -154,6 +153,7 @@ static ReusePool * _asyncReusePool = nil;
                 CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
                 CGContextFillRect(context, bounds);
             }
+            UIGraphicsPushContext(context);
             [self asyncDraw:YES context:context completion:^(BOOL drawingFinished) {
                 if (drawingFinished && oldCount == tempLayer.drawsCount) {
                     CGImageRef CGImage = context ? CGBitmapContextCreateImage(context) : NULL;
@@ -178,16 +178,14 @@ static ReusePool * _asyncReusePool = nil;
                     failedBlock();
                 }
             }];
-            CGContextRestoreGState(context);
         }
-        UIGraphicsEndImageContext();
+        UIGraphicsPopContext();
     }];
 }
 
 - (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
     _layout = layout; _asynchronously = asynchronously;
     
-    [self displayImageView];
     if (!asynchronously) {
         for (Element * element in layout.textElements) {
             UILabel * label = (UILabel *)[_labelReusePool dequeueReusableObject];
@@ -201,6 +199,7 @@ static ReusePool * _asyncReusePool = nil;
             [self.contentView addSubview:label];
         }
         [_labelReusePool reset];
+        [self displayImageView];
     }
 }
 
@@ -247,9 +246,8 @@ static ReusePool * _asyncReusePool = nil;
             NSString * url = element.value;
             [url preDecodeThroughQueue:concurrentQueue completion:^(UIImage * image) {
                 [ComponentCell.asyncReusePool addUsingObject:image];
-                //TODO
-                //CGContextDrawImage(context, element.frame, image.CGImage);
-                //completion(YES);
+                CGContextDrawImage(context, element.frame, image.CGImage);
+                completion(YES);
             }];
         } else {
             [image drawInRect:element.frame];
@@ -296,17 +294,18 @@ static ReusePool * _asyncReusePool = nil;
             alphaInfo == kCGImageAlphaFirst) {
             hasAlpha = YES;
         }
-        
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
         CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
         bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;
         
         size_t width = CGImageGetWidth(cgImage);
         size_t height = CGImageGetHeight(cgImage);
         
-        CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, CGColorSpaceCreateDeviceRGB(), bitmapInfo);
+        CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, colorSpace, bitmapInfo);
         CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgImage);
         cgImage = CGBitmapContextCreateImage(context);
         UIImage * image = [[UIImage imageWithCGImage:cgImage] cornerRadius:width * 0.5];
+        CGColorSpaceRelease(colorSpace);
         CGContextRelease(context);
         CGImageRelease(cgImage);
         completion(image);
