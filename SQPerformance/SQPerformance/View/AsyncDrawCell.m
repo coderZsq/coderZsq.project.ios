@@ -77,16 +77,17 @@
             return;
         }
         
-        CGSize contextSize = layer.bounds.size;
-        BOOL contextSizeValid = contextSize.width >= 1 && contextSize.height >= 1;
+        CGSize size = layer.bounds.size;
+        BOOL contextSizeValid = size.width >= 1 && size.height >= 1;
         
         if (contextSizeValid) {
+            CGFloat scaleFactor = [[UIScreen mainScreen] scale];
             CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-            CGContextRef context = CGBitmapContextCreate(NULL, contextSize.width, contextSize.height, 8, contextSize.width * 4, colorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrderDefault);
+            CGContextRef context = CGBitmapContextCreate(NULL, size.width * scaleFactor, size.height * scaleFactor, 8, size.width * 4 * scaleFactor, colorSpace, kCGImageAlphaPremultipliedFirst | kCGImageByteOrderDefault);
             CGColorSpaceRelease(colorSpace);
             CGAffineTransform normalState = CGContextGetCTM(context);
-            CGContextTranslateCTM(context, 0, bounds.size.height);
-            CGContextScaleCTM(context, 1, -1);
+            CGContextTranslateCTM(context, 0, size.height * scaleFactor);
+            CGContextScaleCTM(context, scaleFactor, -scaleFactor);
             CGContextConcatCTM(context, normalState);
             if (backgroundColor && backgroundColor != [UIColor clearColor]) {
                 CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
