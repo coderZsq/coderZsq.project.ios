@@ -22,8 +22,7 @@ $ node server.js
 
 ##### Display
 
-<img src="./SQPerformance/contents/step1.gif">
-<img src="./SQPerformance/contents/step2.gif">
+<img src="./SQPerformance/contents/step1.gif"><img src="./SQPerformance/contents/step2.gif">
 
 
 - Step1: The left is used `pre-layout`, `reusepool`, `pre-decode`, `pre-render`.
