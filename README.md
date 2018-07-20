@@ -5,7 +5,7 @@
 
 ##### Get Started
 
-- First, you need a [node](First you need an environment) server environment
+- First, you need a [node](https://nodejs.org/en/) server environment
 
 - Then, run the following command to launch server
 
@@ -19,11 +19,6 @@ $ node server.js
 - `fluency-ui` >>> `pre-decode`
 - `fluency-ui` >>> `pre-render`
 - `fluency-ui` >>> `asynchronous drawing`
-
-##### Effect
-
-<video src="./SQPerformance/contents/before.mp4" width="300" loop="loop" autoplay="autoplay"></video>
-<video src="./SQPerformance/contents/after.mp4" width="300" loop="loop" autoplay="autoplay"></video>
 
 ##### Article
 - [iOS 界面性能优化浅析 2018-07](https://coderzsq.github.io/2018/07/iOS-%E7%95%8C%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%B5%85%E6%9E%90/)
