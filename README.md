@@ -89,7 +89,9 @@ $ npm start
 
 
 ##### Display
+
 <img src="./SQLifestyle/contents/vedio.gif">
+
 ##### Article
 
 - [iOS 做好开工前的准备 / 2016 / 05](https://coderzsq.github.io/2016/05/iOS-%E5%81%9A%E5%A5%BD%E5%BC%80%E5%B7%A5%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87/)
