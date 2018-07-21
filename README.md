@@ -14,11 +14,11 @@ $ node server.js
 ```
 
 ##### Contents
-- `pre-layout` >>> when the `asynchronous thread` is started, the `typesetting processing` is performed while the network data is acquired.
-- `reuse-pool` >>> design a universal `reuse pool` to reduce `memory consumption`. reference `UITableViewCell`.
-- `pre-decode` >>> perform image `decoding operations` on `asynchronous threads` to `reduce resource usage` of the main thread
-- `pre-render` >>> `graphics rendering` in `asynchronous threads`, using the `CPU` for rendering operations, avoiding `GPU` `off-screen rendering` consumption
-- `asynchronous drawing` >>> create a `graphics context` in an `asynchronous thread` and draw it into `layer.contents`
+- `Pre-layout` >>> when the `asynchronous thread` is started, the `typesetting processing` is performed while the network data is acquired.
+- `Reuse-pool` >>> design a universal `reuse pool` to reduce `memory consumption`. reference `UITableViewCell`.
+- `Pre-decode` >>> perform image `decoding operations` on `asynchronous threads` to `reduce resource usage` of the main thread
+- `Pre-render` >>> `graphics rendering` in `asynchronous threads`, using the `CPU` for rendering operations, avoiding `GPU` `off-screen rendering` consumption
+- `Asynchronous drawing` >>> create a `graphics context` in an `asynchronous thread` and draw it into `layer.contents`
 
 
 ##### Display
@@ -26,8 +26,8 @@ $ node server.js
 <img src="./SQPerformance/contents/step1.gif"><img src="./SQPerformance/contents/step2.gif">
 
 
-- `Step1`: The left is used `pre-layout`, `reusepool`, `pre-decode`, `pre-render`.
-- `Step2`: The Right is used `pre-layout`, `reusepool`, `pre-decode`, `pre-render`, `asynchronous drawing`.
+- `step1`: The left side is used `pre-layout`, `reusepool`, `pre-decode`, `pre-render`.
+- `step2`: The right side is used `pre-layout`, `reusepool`, `pre-decode`, `pre-render`, `asynchronous drawing`.
 
 Then you can see that is maintained at 60fps when launch the `asynchronous drawing`.
 
@@ -78,7 +78,24 @@ $ npm start
 ### SQLifestyle
 > Focus on `quickly build projects` and integrate some fun `animations`
 
+##### Contents
+
+- `SQExtension` >>> quickly build project infrastructure and `tools`.
+- `Infinite carousel` >>> the `easiest way` to achieve high performance infinite carousel.
+- `Custom transition` >>> achieve a full range of `custom transition mechanisms`.
+` `Gradient navigationbar`>>> analyze the implementation process and principle of the `gradient navigation bar` in all aspects
 
 
+##### Display
+<img src="./SQLifestyle/contents/vedio.gif">
+##### Article
+
+- [iOS 做好开工前的准备 / 2016 / 05](https://coderzsq.github.io/2016/05/iOS-%E5%81%9A%E5%A5%BD%E5%BC%80%E5%B7%A5%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87/)
+- [iOS 集成Reveal UI调试利器 / 2016 / 05](https://coderzsq.github.io/2016/05/iOS-%E9%9B%86%E6%88%90Reveal-UI%E8%B0%83%E8%AF%95%E5%88%A9%E5%99%A8/)
+- [iOS 投机流实现 无限轮播图 / 2016 / 06](https://coderzsq.github.io/2016/06/iOS-%E6%8A%95%E6%9C%BA%E6%B5%81%E5%AE%9E%E7%8E%B0-%E6%97%A0%E9%99%90%E8%BD%AE%E6%92%AD%E5%9B%BE/)
+- [iOS 会跳舞的TabbarController / 2016 06](https://coderzsq.github.io/2016/06/iOS-%E4%BC%9A%E8%B7%B3%E8%88%9E%E7%9A%84TabbarController/)
+- [iOS 超Easy实现 渐变导航栏 / 2016 / 06](https://coderzsq.github.io/2016/06/iOS-%E8%B6%85Easy%E5%AE%9E%E7%8E%B0-%E6%B8%90%E5%8F%98%E5%AF%BC%E8%88%AA%E6%A0%8F/)
+- [iOS 狂霸酷炫拽之Button动效 / 2016 / 07](https://coderzsq.github.io/2016/07/iOS-%E7%8B%82%E9%9C%B8%E9%85%B7%E7%82%AB%E6%8B%BD%E4%B9%8BButton%E5%8A%A8%E6%95%88/)
+-  [iOS 5行代码搞定全屏Pop转场 / 2016 / 07](https://coderzsq.github.io/2016/07/iOS-5%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%90%9E%E5%AE%9A%E5%85%A8%E5%B1%8FPop%E8%BD%AC%E5%9C%BA/)
 
 
