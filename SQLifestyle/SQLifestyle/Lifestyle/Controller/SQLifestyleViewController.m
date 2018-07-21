@@ -118,7 +118,7 @@
         _tableView.frame = self.view.bounds;
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
+        _tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = GLOBAL_BGC;
     }

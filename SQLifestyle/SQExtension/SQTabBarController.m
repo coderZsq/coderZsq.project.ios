@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBar.tintColor = KC01_57c2de;
+    self.tabBar.unselectedItemTintColor = KC04_999999;
     [self.tabBar addSubview:self.sqTabBar];
     [self.view setBackgroundColor: TABBAR_BGC];
 }

@@ -53,8 +53,32 @@ $ npm start
 ```
 
 ##### Content
-- `SQTemplate` >>> 
+- `SQTemplate`  
+	- `Template` >>> a template for `general architecture design` 
+	- `UITemplate`>>> `quickly` create a `template for the UI`
+- `SQBuilder`	
+	- `SQBuilder`	 >>> generate `iOS` / `Android` architecture code from a template
+	- `SQBuilder Sample` >>> a `simple version` generator written in `python`
+	
+##### Display
 
+<img src="./SQTemplate/contents/img1.png" width="370"><img src="./SQTemplate/contents/img2.png" width="370">
 
+- `img1`: `SQTemplate` project reference `MVC`, `MVVM`, `MVP`, `VIPER`, `CDD` design.
+- `img2`: `SQBuilder` project generator code on the desktop.
+
+##### Article
+
+- [iOS 执行.py脚本生成解耦架构 / 2017 / 05](https://coderzsq.github.io/2017/05/iOS-%E6%89%A7%E8%A1%8C.py%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E8%A7%A3%E8%80%A6%E6%9E%B6%E6%9E%84/)
+- [iOS 执行.py脚本生成UI层结构 / 2017 / 05](https://coderzsq.github.io/2017/05/iOS-%E6%89%A7%E8%A1%8C.py%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90UI%E5%B1%82%E7%BB%93%E6%9E%84/)
+- [iOS 移动端面向文档开发 / 2017 / 07](https://coderzsq.github.io/2017/07/iOS-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%9D%A2%E5%90%91%E6%96%87%E6%A1%A3%E5%BC%80%E5%8F%91/)
+- [iOS 移动端生成工具开发 / 2017 / 08](https://coderzsq.github.io/2017/08/iOS-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/)
+- [iOS 移动端架构初探心得 / 2017 / 11](https://coderzsq.github.io/2017/11/iOS-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%9D%E6%8E%A2%E5%BF%83%E5%BE%97/)
 
 ### SQLifestyle
+> Focus on `quickly build projects` and integrate some fun `animations`
+
+
+
+
+
