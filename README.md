@@ -90,7 +90,7 @@ $ npm start
 
 ##### Display
 
-<img src="./SQLifestyle/contents/vedio.gif">
+<img src="./SQLifestyle/contents/img1.gif"><img src="./SQLifestyle/contents/img2.gif">
 
 ##### Article
 
