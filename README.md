@@ -83,7 +83,7 @@ $ npm start
 - `SQExtension` >>> quickly build project infrastructure and `tools`.
 - `Infinite carousel` >>> the `easiest way` to achieve high performance infinite carousel.
 - `Custom transition` >>> achieve a full range of `custom transition mechanisms`.
-` `Gradient navigationbar`>>> analyze the implementation process and principle of the `gradient navigation bar` in all aspects
+- `Gradient navigationbar`>>> analyze the implementation process and principle of the `gradient navigation bar` in all aspects
 
 
 ##### Display
