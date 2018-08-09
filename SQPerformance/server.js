@@ -2,6 +2,28 @@ const http = require('http');
 
 http.createServer((req, res) => {
 
+    if (decodeURI(req.url) == "/test1") {
+        res.writeHead(200, {
+            'Content-Type': 'application/json'
+        });
+
+        res.end(JSON.stringify({
+            data: "11111111111111",
+            status: 'success'
+        }));
+    }
+
+    if (decodeURI(req.url) == "/test2") {
+        res.writeHead(200, {
+            'Content-Type': 'application/json'
+        });
+
+        res.end(JSON.stringify({
+            data: "22222222222222",
+            status: 'success'
+        }));
+    }
+
     if (decodeURI(req.url) == "/fetchMockData") {
         console.log(req.url);
 

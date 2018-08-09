@@ -7,20 +7,27 @@
 //
 
 #import "Service.h"
-#import <AFNetworking.h>
+#import "SQFetchManager.h"
 
 @implementation Service
 
 - (void)fetchMockDataWithParam:(NSDictionary *)parameter completion:(RequestCompletionBlock)completion {
     
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://localhost:8080/fetchMockData" parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [SQFetchManager managerWithState:SQFetchConcurrentState]
+    .GET(@"http://localhost:8080/fetchMockData", nil, ^(NSDictionary *responseObject){
         if ([responseObject[@"status"] isEqualToString: @"success"]) {
             completion(responseObject[@"data"], nil);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        completion(nil, error);
-    }];
+        NSLog(@"1111");
+    }, nil)
+    .GET(@"http://localhost:8080/test1", nil, ^(NSDictionary *responseObject){
+        NSLog(@"2222");
+    }, nil)
+    .GET(@"http://localhost:8080/test2", nil, ^(NSDictionary *responseObject){
+        NSLog(@"3333");
+    },nil);
+    
+    NSLog(@"4444");
 }
 
 @end
