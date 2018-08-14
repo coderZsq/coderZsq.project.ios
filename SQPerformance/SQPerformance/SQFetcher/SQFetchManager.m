@@ -20,12 +20,14 @@
         NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
         request.HTTPMethod = @"GET";
         NSURLSessionDataTask * task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            NSError * err;
-            NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
-            if(err) {
-                failure(err);
-            } else {
-                success(responseObject);
+            if (data) {
+                NSError * err;
+                NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
+                if(err) {
+                    failure(err);
+                } else {
+                    success(responseObject);
+                }
             }
         }];
         [task resume];
