@@ -22,6 +22,7 @@
     
     if (!_operationQueue) {
         _operationQueue = [NSOperationQueue new];
+        _operationQueue.maxConcurrentOperationCount = 6;
     }
     return _operationQueue;
 }
