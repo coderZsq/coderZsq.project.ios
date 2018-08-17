@@ -2,7 +2,7 @@ const http = require('http');
 
 http.createServer((req, res) => {
 
-    if (decodeURI(req.url) == "/test1") {
+    if (decodeURI(req.url) == "/get") {
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });
@@ -13,7 +13,7 @@ http.createServer((req, res) => {
         }));
     }
 
-    if (decodeURI(req.url) == "/test2") {
+    if (decodeURI(req.url) == "/post") {
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });

@@ -20,11 +20,11 @@
         }
         NSLog(@"EXCUTE: http://localhost:8090/fetchMockData");
     }, nil)
-    .GET(@"http://localhost:8090/test1", nil, ^(NSDictionary *responseObject){
-        NSLog(@"EXCUTE: http://localhost:8090/test1");
+    .GET(@"http://localhost:8090/get", @{@"username": @"Castie!"}, ^(NSDictionary *responseObject){
+        NSLog(@"EXCUTE: http://localhost:8090/get %@", responseObject);
     }, nil)
-    .GET(@"http://localhost:8090/test2", nil, ^(NSDictionary *responseObject){
-        NSLog(@"EXCUTE: http://localhost:8090/test2");
+    .POST(@"http://localhost:8090/post", @{@"username": @"Castie!"}, ^(NSDictionary *responseObject){
+        NSLog(@"EXCUTE: http://localhost:8090/post %@", responseObject);
     },nil);
 }
 
