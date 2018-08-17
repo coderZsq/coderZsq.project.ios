@@ -13,21 +13,19 @@
 
 - (void)fetchMockDataWithParam:(NSDictionary *)parameter completion:(RequestCompletionBlock)completion {
     
-    [SQFetchManager managerWithState:SQFetchConcurrentState]
-    .GET(@"http://localhost:8080/fetchMockData", nil, ^(NSDictionary *responseObject){
+    [SQFetchManager managerWithState:SQFetchSerialState]
+    .GET(@"http://localhost:8090/fetchMockData", nil, ^(NSDictionary *responseObject){
         if ([responseObject[@"status"] isEqualToString: @"success"]) {
             completion(responseObject[@"data"], nil);
         }
-        NSLog(@"1111");
+        NSLog(@"EXCUTE: http://localhost:8090/fetchMockData");
     }, nil)
-    .GET(@"http://localhost:8080/test1", nil, ^(NSDictionary *responseObject){
-        NSLog(@"2222");
+    .GET(@"http://localhost:8090/test1", nil, ^(NSDictionary *responseObject){
+        NSLog(@"EXCUTE: http://localhost:8090/test1");
     }, nil)
-    .GET(@"http://localhost:8080/test2", nil, ^(NSDictionary *responseObject){
-        NSLog(@"3333");
+    .GET(@"http://localhost:8090/test2", nil, ^(NSDictionary *responseObject){
+        NSLog(@"EXCUTE: http://localhost:8090/test2");
     },nil);
-    
-    NSLog(@"4444");
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 typedef NS_ENUM(NSInteger, SQFetchState) {
     SQFetchSerialState,
     SQFetchConcurrentState
