@@ -37,9 +37,16 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
     return ^(NSString * URLString, NSDictionary * parameters, void(^success)(NSDictionary *), void(^failure)(NSError *)){
         NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
             dispatch_semaphore_t semaphore = NULL;
-            if (self.state == SQFetchSerialState) semaphore = dispatch_semaphore_create(0);
-            [[self __dataTaskWithHTTPMethod:SQGETMethod URLString:URLString parameters:parameters success:success failure:failure semaphore:semaphore] resume];
-            if (self.state == SQFetchSerialState) dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            if (self.state == SQFetchSerialState)
+                semaphore = dispatch_semaphore_create(0);
+            [[self __dataTaskWithHTTPMethod:SQGETMethod
+                                  URLString:URLString
+                                 parameters:parameters
+                                    success:success
+                                    failure:failure
+                                  semaphore:semaphore] resume];
+            if (self.state == SQFetchSerialState)
+                dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         }];
         if (self.preOperation) {
             [operation addDependency:self.preOperation];
