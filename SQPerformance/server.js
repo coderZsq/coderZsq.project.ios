@@ -1,30 +1,39 @@
 const http = require('http');
+const querystring = require('querystring');
 
 http.createServer((req, res) => {
 
-    if (decodeURI(req.url) == "/get") {
+    if (decodeURI(req.url).indexOf("/get") != -1) {
+        console.log(req.url);
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });
-
         res.end(JSON.stringify({
-            data: "11111111111111",
-            status: 'success'
+            data: "GET Method",
+            status: 'Success'
         }));
     }
 
-    if (decodeURI(req.url) == "/post") {
+    if (decodeURI(req.url).indexOf("/post") != -1) {
+        console.log(req.url);
+        let body = "";
+        req.on('data', function (chunk) {
+            body += chunk;  
+        });
+        req.on('end', function () {
+            body = querystring.parse(body);
+            console.log(body);
+        });
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });
-
         res.end(JSON.stringify({
-            data: "22222222222222",
-            status: 'success'
+            data: "POST Method",
+            status: 'Success'
         }));
     }
 
-    if (decodeURI(req.url) == "/fetchMockData") {
+    if (decodeURI(req.url).indexOf("/fetchMockData") != -1) {
         console.log(req.url);
 
         let randomNumber = function (n) {

@@ -24,6 +24,7 @@
 		14B7C67C20EDAB3700593B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B7C67B20EDAB3700593B39 /* Assets.xcassets */; };
 		14B7C67F20EDAB3700593B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B7C67D20EDAB3700593B39 /* LaunchScreen.storyboard */; };
 		14B7C68220EDAB3700593B39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B7C68120EDAB3700593B39 /* main.m */; };
+		14D2B8F321291D1200A0A211 /* SQFetchSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D2B8F221291D1200A0A211 /* SQFetchSerialization.m */; };
 		14E1E04420F5F1290080456D /* PermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1E04320F5F1290080456D /* PermenantThread.m */; };
 		1DC6345D33BB63181422400C /* libPods-SQPerformance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B73E3EA95A835B2CEC3895F /* libPods-SQPerformance.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,8 @@
 		14B7C67E20EDAB3700593B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14B7C68020EDAB3700593B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14B7C68120EDAB3700593B39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14D2B8F121291D1200A0A211 /* SQFetchSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFetchSerialization.h; sourceTree = "<group>"; };
+		14D2B8F221291D1200A0A211 /* SQFetchSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFetchSerialization.m; sourceTree = "<group>"; };
 		14E1E04220F5F1290080456D /* PermenantThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PermenantThread.h; sourceTree = "<group>"; };
 		14E1E04320F5F1290080456D /* PermenantThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PermenantThread.m; sourceTree = "<group>"; };
 		68A488FB01B87B0413DDB489 /* Pods-SQPerformance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQPerformance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQPerformance/Pods-SQPerformance.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 			children = (
 				14932022211AD46700068954 /* SQFetchManager.h */,
 				14932023211AD46700068954 /* SQFetchManager.m */,
+				14D2B8F121291D1200A0A211 /* SQFetchSerialization.h */,
+				14D2B8F221291D1200A0A211 /* SQFetchSerialization.m */,
 			);
 			path = SQFetcher;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				148BF77320EDD9AF00F44F26 /* CellLayout.m in Sources */,
 				144506C620F1B1D100CA61F4 /* AsyncDrawLayer.m in Sources */,
 				148BF78B20EE11F800F44F26 /* ReusePool.m in Sources */,
+				14D2B8F321291D1200A0A211 /* SQFetchSerialization.m in Sources */,
 				148BF77020EDD98700F44F26 /* Element.m in Sources */,
 				148BF77920EDDA5400F44F26 /* ComponentLayout.m in Sources */,
 			);

@@ -7,6 +7,12 @@
 //
 
 #import "SQFetchManager.h"
+#import "SQFetchSerialization.h"
+
+typedef NS_ENUM(NSInteger, SQHTTPMethod) {
+    SQGETMethod,
+    SQPOSTMethod
+};
 
 @interface SQFetchManager()
 
@@ -32,7 +38,7 @@
         NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
             dispatch_semaphore_t semaphore = NULL;
             if (self.state == SQFetchSerialState) semaphore = dispatch_semaphore_create(0);
-            [[self dataTaskWithHTTPMethod:@"GET" URLString:URLString parameters:parameters success:success failure:failure semaphore:semaphore] resume];
+            [[self __dataTaskWithHTTPMethod:SQGETMethod URLString:URLString parameters:parameters success:success failure:failure semaphore:semaphore] resume];
             if (self.state == SQFetchSerialState) dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         }];
         if (self.preOperation) {
@@ -49,13 +55,19 @@
     return ^(NSString * URLString, NSDictionary * parameters, void(^success)(NSDictionary *), void(^failure)(NSError *)){
         NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
             dispatch_semaphore_t semaphore = NULL;
-            if (self.state == SQFetchSerialState) semaphore = dispatch_semaphore_create(0);
-            [[self dataTaskWithHTTPMethod:@"POST" URLString:URLString parameters:parameters success:success failure:failure semaphore:semaphore] resume];
-            if (self.state == SQFetchSerialState) dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            if (self.state == SQFetchSerialState)
+                semaphore = dispatch_semaphore_create(0);
+            [[self __dataTaskWithHTTPMethod:SQPOSTMethod
+                                URLString:URLString
+                               parameters:parameters
+                                  success:success
+                                  failure:failure
+                                semaphore:semaphore] resume];
+            if (self.state == SQFetchSerialState)
+                dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         }];
-        if (self.preOperation) {
+        if (self.preOperation)
             [operation addDependency:self.preOperation];
-        }
         [self.operationQueue addOperation:operation];
         self.preOperation = operation;
         
@@ -63,27 +75,39 @@
     };
 }
 
-- (NSURLSessionDataTask *)dataTaskWithHTTPMethod:(NSString *)method
+- (NSURLSessionDataTask *)__dataTaskWithHTTPMethod:(SQHTTPMethod)method
                                        URLString:(NSString *)URLString
                                       parameters:(NSDictionary *)parameters
                                          success:(void (^)(NSDictionary *))success
                                          failure:(void (^)(NSError *))failure
                                        semaphore:(dispatch_semaphore_t)semaphore {
+    if (method == SQGETMethod) {
+        URLString = [URLString stringByAppendingString:
+                     [SQFetchSerialization getMethodSerializationWithParameters:parameters]];
+    }
     
     NSURL * url = [NSURL URLWithString:URLString];
     NSURLSession * session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
-    request.HTTPMethod = method;
+    
+    if (method == SQPOSTMethod) {
+        request.HTTPMethod = @"POST";
+        request.HTTPBody = [SQFetchSerialization postMethodSerializationWithParameters:parameters];
+    }
+    
     NSURLSessionDataTask * task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data) {
             NSError * err;
-            NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
+            NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data
+                                                                            options:NSJSONReadingMutableContainers error:&err];
             if(err) {
                 failure(err);
-                if (self.state == SQFetchSerialState) dispatch_semaphore_signal(semaphore);
+                if (self.state == SQFetchSerialState)
+                    dispatch_semaphore_signal(semaphore);
             } else {
                 success(responseObject);
-                if (self.state == SQFetchSerialState) dispatch_semaphore_signal(semaphore);
+                if (self.state == SQFetchSerialState)
+                    dispatch_semaphore_signal(semaphore);
             }
         }
     }];
