@@ -42,6 +42,10 @@
                                            @"param9" : @"9.9",
                                            }, ^(NSDictionary *responseObject){
               NSLog(@"EXCUTE: http://localhost:8090/post %@", responseObject);
+    },nil)
+    
+    .GET(@"http://localhost:8090/image", nil, ^(NSDictionary *responseObject){
+        NSLog(@"EXCUTE: http://localhost:8090/image %@", responseObject);
     },nil);
 }
 

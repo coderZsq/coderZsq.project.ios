@@ -1,5 +1,6 @@
 const http = require('http');
 const querystring = require('querystring');
+const fs = require('fs');
 
 http.createServer((req, res) => {
 
@@ -31,6 +32,23 @@ http.createServer((req, res) => {
             data: "POST Method",
             status: 'Success'
         }));
+    }
+
+    if (decodeURI(req.url).indexOf("/image") != -1) {
+        let path = __dirname + '/contents/Castie!.jpg';
+        fs.readFile(path, 'binary', (err, file) => {
+            if (err) {
+                console.log(err);
+                return;
+            } else {
+                res.writeHead(200, {
+                    'Content-Type': 'image/jpeg'
+                });
+                res.write(file, 'binary');
+                res.end();
+                return;
+            }
+        })
     }
 
     if (decodeURI(req.url).indexOf("/fetchMockData") != -1) {
