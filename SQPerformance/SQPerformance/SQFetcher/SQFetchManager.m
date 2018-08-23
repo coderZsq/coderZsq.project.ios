@@ -8,6 +8,7 @@
 
 #import "SQFetchManager.h"
 #import "SQFetchSerialization.h"
+#import "SQFetchReachability.h"
 #import "SQFetchCache.h"
 
 typedef NS_ENUM(NSInteger, SQHTTPMethod) {
@@ -89,6 +90,10 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
                                          success:(void (^)(id))success
                                          failure:(void (^)(NSError *))failure
                                        semaphore:(dispatch_semaphore_t)semaphore {
+    SQFetchReachability * reachability = [SQFetchReachability sharedInstance];
+    if (reachability.status == NotReachable) {
+        return nil;
+    }
     id cache = [SQFetchCache getCacheFromKey:URLString];
     if (cache) {
         success(cache);

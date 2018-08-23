@@ -28,6 +28,8 @@
 		14E1E04420F5F1290080456D /* PermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1E04320F5F1290080456D /* PermenantThread.m */; };
 		14FDEC81212E585400326E42 /* UIImageView+SQFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDEC80212E585400326E42 /* UIImageView+SQFetcher.m */; };
 		14FDEC84212E5F7C00326E42 /* SQFetchCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDEC83212E5F7C00326E42 /* SQFetchCache.m */; };
+		14FDEC87212EA7DB00326E42 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDEC85212EA7DA00326E42 /* Reachability.m */; };
+		14FDEC8A212EA95800326E42 /* SQFetchReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDEC89212EA95800326E42 /* SQFetchReachability.m */; };
 		1DC6345D33BB63181422400C /* libPods-SQPerformance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B73E3EA95A835B2CEC3895F /* libPods-SQPerformance.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,10 @@
 		14FDEC80212E585400326E42 /* UIImageView+SQFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SQFetcher.m"; sourceTree = "<group>"; };
 		14FDEC82212E5F7C00326E42 /* SQFetchCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFetchCache.h; sourceTree = "<group>"; };
 		14FDEC83212E5F7C00326E42 /* SQFetchCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFetchCache.m; sourceTree = "<group>"; };
+		14FDEC85212EA7DA00326E42 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		14FDEC86212EA7DA00326E42 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		14FDEC88212EA95800326E42 /* SQFetchReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFetchReachability.h; sourceTree = "<group>"; };
+		14FDEC89212EA95800326E42 /* SQFetchReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFetchReachability.m; sourceTree = "<group>"; };
 		68A488FB01B87B0413DDB489 /* Pods-SQPerformance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQPerformance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQPerformance/Pods-SQPerformance.debug.xcconfig"; sourceTree = "<group>"; };
 		8B73E3EA95A835B2CEC3895F /* libPods-SQPerformance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQPerformance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C79B94ECD28E9F1A5BFF30 /* Pods-SQPerformance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQPerformance.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQPerformance/Pods-SQPerformance.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +169,8 @@
 				14932023211AD46700068954 /* SQFetchManager.m */,
 				14D2B8F121291D1200A0A211 /* SQFetchSerialization.h */,
 				14D2B8F221291D1200A0A211 /* SQFetchSerialization.m */,
+				14FDEC88212EA95800326E42 /* SQFetchReachability.h */,
+				14FDEC89212EA95800326E42 /* SQFetchReachability.m */,
 				14FDEC82212E5F7C00326E42 /* SQFetchCache.h */,
 				14FDEC83212E5F7C00326E42 /* SQFetchCache.m */,
 				14FDEC7F212E585400326E42 /* UIImageView+SQFetcher.h */,
@@ -202,6 +210,8 @@
 				14B7C67320EDAB3700593B39 /* AppDelegate.m */,
 				14B7C67520EDAB3700593B39 /* ViewController.h */,
 				14B7C67620EDAB3700593B39 /* ViewController.m */,
+				14FDEC86212EA7DA00326E42 /* Reachability.h */,
+				14FDEC85212EA7DA00326E42 /* Reachability.m */,
 				14B7C67820EDAB3700593B39 /* Main.storyboard */,
 				14B7C67B20EDAB3700593B39 /* Assets.xcassets */,
 				14B7C67D20EDAB3700593B39 /* LaunchScreen.storyboard */,
@@ -322,6 +332,7 @@
 				14FDEC84212E5F7C00326E42 /* SQFetchCache.m in Sources */,
 				14B7C68220EDAB3700593B39 /* main.m in Sources */,
 				14932024211AD46700068954 /* SQFetchManager.m in Sources */,
+				14FDEC87212EA7DB00326E42 /* Reachability.m in Sources */,
 				14B7C67420EDAB3700593B39 /* AppDelegate.m in Sources */,
 				148BF77D20EDDB1300F44F26 /* ComponentModel.m in Sources */,
 				148BF77320EDD9AF00F44F26 /* CellLayout.m in Sources */,
@@ -330,6 +341,7 @@
 				14D2B8F321291D1200A0A211 /* SQFetchSerialization.m in Sources */,
 				148BF77020EDD98700F44F26 /* Element.m in Sources */,
 				148BF77920EDDA5400F44F26 /* ComponentLayout.m in Sources */,
+				14FDEC8A212EA95800326E42 /* SQFetchReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
