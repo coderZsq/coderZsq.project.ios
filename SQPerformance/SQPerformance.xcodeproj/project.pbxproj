@@ -26,6 +26,8 @@
 		14B7C68220EDAB3700593B39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B7C68120EDAB3700593B39 /* main.m */; };
 		14D2B8F321291D1200A0A211 /* SQFetchSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D2B8F221291D1200A0A211 /* SQFetchSerialization.m */; };
 		14E1E04420F5F1290080456D /* PermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1E04320F5F1290080456D /* PermenantThread.m */; };
+		14FDEC81212E585400326E42 /* UIImageView+SQFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDEC80212E585400326E42 /* UIImageView+SQFetcher.m */; };
+		14FDEC84212E5F7C00326E42 /* SQFetchCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FDEC83212E5F7C00326E42 /* SQFetchCache.m */; };
 		1DC6345D33BB63181422400C /* libPods-SQPerformance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B73E3EA95A835B2CEC3895F /* libPods-SQPerformance.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,11 @@
 		14D2B8F221291D1200A0A211 /* SQFetchSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFetchSerialization.m; sourceTree = "<group>"; };
 		14E1E04220F5F1290080456D /* PermenantThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PermenantThread.h; sourceTree = "<group>"; };
 		14E1E04320F5F1290080456D /* PermenantThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PermenantThread.m; sourceTree = "<group>"; };
+		14FDEC7E212E578700326E42 /* SQFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFetcher.h; sourceTree = "<group>"; };
+		14FDEC7F212E585400326E42 /* UIImageView+SQFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SQFetcher.h"; sourceTree = "<group>"; };
+		14FDEC80212E585400326E42 /* UIImageView+SQFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SQFetcher.m"; sourceTree = "<group>"; };
+		14FDEC82212E5F7C00326E42 /* SQFetchCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFetchCache.h; sourceTree = "<group>"; };
+		14FDEC83212E5F7C00326E42 /* SQFetchCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFetchCache.m; sourceTree = "<group>"; };
 		68A488FB01B87B0413DDB489 /* Pods-SQPerformance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQPerformance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQPerformance/Pods-SQPerformance.debug.xcconfig"; sourceTree = "<group>"; };
 		8B73E3EA95A835B2CEC3895F /* libPods-SQPerformance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQPerformance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C79B94ECD28E9F1A5BFF30 /* Pods-SQPerformance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQPerformance.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQPerformance/Pods-SQPerformance.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,10 +158,15 @@
 		14932025211AD47400068954 /* SQFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				14FDEC7E212E578700326E42 /* SQFetcher.h */,
 				14932022211AD46700068954 /* SQFetchManager.h */,
 				14932023211AD46700068954 /* SQFetchManager.m */,
 				14D2B8F121291D1200A0A211 /* SQFetchSerialization.h */,
 				14D2B8F221291D1200A0A211 /* SQFetchSerialization.m */,
+				14FDEC82212E5F7C00326E42 /* SQFetchCache.h */,
+				14FDEC83212E5F7C00326E42 /* SQFetchCache.m */,
+				14FDEC7F212E585400326E42 /* UIImageView+SQFetcher.h */,
+				14FDEC80212E585400326E42 /* UIImageView+SQFetcher.m */,
 			);
 			path = SQFetcher;
 			sourceTree = "<group>";
@@ -303,9 +315,11 @@
 				148BF76420EDCF2E00F44F26 /* ViewModel.m in Sources */,
 				148BF78020EDF6E200F44F26 /* ComponentCell.m in Sources */,
 				144040A920F7358900F70A12 /* AsyncDrawCell.m in Sources */,
+				14FDEC81212E585400326E42 /* UIImageView+SQFetcher.m in Sources */,
 				14E1E04420F5F1290080456D /* PermenantThread.m in Sources */,
 				14B7C67720EDAB3700593B39 /* ViewController.m in Sources */,
 				148BF75E20EDCEE100F44F26 /* Service.m in Sources */,
+				14FDEC84212E5F7C00326E42 /* SQFetchCache.m in Sources */,
 				14B7C68220EDAB3700593B39 /* main.m in Sources */,
 				14932024211AD46700068954 /* SQFetchManager.m in Sources */,
 				14B7C67420EDAB3700593B39 /* AppDelegate.m in Sources */,

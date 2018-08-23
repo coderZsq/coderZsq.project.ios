@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
     return _operationQueue;
 }
 
-- (SQFetchManager *(^)(NSString *, NSDictionary *, void(^)(NSDictionary *), void(^)(NSError *)))GET {
+- (SQFetchManager *(^)(NSString *, NSDictionary *, void(^)(id), void(^)(NSError *)))GET {
     return ^(NSString * URLString, NSDictionary * parameters, void(^success)(NSDictionary *), void(^failure)(NSError *)){
         NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
             dispatch_semaphore_t semaphore = NULL;
@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
     };
 }
 
-- (SQFetchManager *(^)(NSString *, NSDictionary *, void (^)(NSDictionary *), void (^)(NSError *)))POST {
+- (SQFetchManager *(^)(NSString *, NSDictionary *, void (^)(id), void (^)(NSError *)))POST {
     return ^(NSString * URLString, NSDictionary * parameters, void(^success)(NSDictionary *), void(^failure)(NSError *)){
         NSBlockOperation * operation = [NSBlockOperation blockOperationWithBlock:^{
             dispatch_semaphore_t semaphore = NULL;
@@ -85,7 +85,7 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
 - (NSURLSessionDataTask *)__dataTaskWithHTTPMethod:(SQHTTPMethod)method
                                        URLString:(NSString *)URLString
                                       parameters:(NSDictionary *)parameters
-                                         success:(void (^)(NSDictionary *))success
+                                         success:(void (^)(id))success
                                          failure:(void (^)(NSError *))failure
                                        semaphore:(dispatch_semaphore_t)semaphore {
     if (method == SQGETMethod) {
@@ -103,20 +103,19 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
     }
     
     NSURLSessionDataTask * task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (data) {
-            NSError * err;
-            NSDictionary * responseObject = [NSJSONSerialization JSONObjectWithData:data
-                                                                            options:NSJSONReadingMutableContainers error:&err];
-            if(err) {
-                failure(err);
-                if (self.state == SQFetchSerialState)
-                    dispatch_semaphore_signal(semaphore);
-            } else {
-                success(responseObject);
-                if (self.state == SQFetchSerialState)
-                    dispatch_semaphore_signal(semaphore);
-            }
+        NSError * err;
+        id responseObject = [SQFetchSerialization serializationWithContentType:response.MIMEType
+                                                                          data:data error:err];
+        if(err) {
+            failure(err);
+            if (self.state == SQFetchSerialState)
+                dispatch_semaphore_signal(semaphore);
+        } else {
+            success(responseObject);
+            if (self.state == SQFetchSerialState)
+                dispatch_semaphore_signal(semaphore);
         }
+        
     }];
     return task;
 }

@@ -14,4 +14,6 @@
 
 + (NSData *)postMethodSerializationWithParameters:(NSDictionary *)parameters;
 
++ (id)serializationWithContentType:(NSString *)contentType data:(NSData *)data error:(NSError *)error;
+
 @end

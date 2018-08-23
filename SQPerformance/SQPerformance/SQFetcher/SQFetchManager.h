@@ -15,9 +15,9 @@ typedef NS_ENUM(NSInteger, SQFetchState) {
 
 @interface SQFetchManager : NSObject
 
-@property (nonatomic,strong) SQFetchManager * (^GET)(NSString * url, NSDictionary * parameters, void(^success)(NSDictionary *), void(^failure)(NSError *));
+@property (nonatomic,strong) SQFetchManager * (^GET)(NSString * url, NSDictionary * parameters, void(^success)(id), void(^failure)(NSError *));
 
-@property (nonatomic,strong) SQFetchManager * (^POST)(NSString * url, NSDictionary * parameters, void(^success)(NSDictionary *), void(^failure)(NSError *));
+@property (nonatomic,strong) SQFetchManager * (^POST)(NSString * url, NSDictionary * parameters, void(^success)(id), void(^failure)(NSError *));
 
 + (SQFetchManager *)managerWithState:(SQFetchState)state;
 

@@ -10,6 +10,7 @@
 #import "ComponentLayout.h"
 #import "Element.h"
 #import "ReusePool.h"
+#import "UIImageView+SQFetcher.h"
 
 @interface ComponentCell ()
 
@@ -108,13 +109,14 @@ static ReusePool * _asyncReusePool = nil;
                 [_imageReusePool addUsingObject:imageView];
             }
             NSString * url = element.value;
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                [url preDecodeWithCGCoordinateSystem:NO completion:^(UIImage * image) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        imageView.image = image;
-                    });
-                }];
-            });
+//            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//                [url preDecodeWithCGCoordinateSystem:NO completion:^(UIImage * image) {
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        imageView.image = image;
+//                    });
+//                }];
+//            });
+            [imageView sq_imageWithURLString:url];
             imageView.frame = element.frame;
             [self.contentView addSubview:imageView];
         }

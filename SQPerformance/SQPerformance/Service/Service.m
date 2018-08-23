@@ -7,7 +7,8 @@
 //
 
 #import "Service.h"
-#import "SQFetchManager.h"
+#import "SQFetcher.h"
+#import <UIKit/UIKit.h>
 
 @implementation Service
 
@@ -44,7 +45,7 @@
               NSLog(@"EXCUTE: http://localhost:8090/post %@", responseObject);
     },nil)
     
-    .GET(@"http://localhost:8090/image", nil, ^(NSDictionary *responseObject){
+    .GET(@"http://localhost:8090/image", nil, ^(UIImage *responseObject){
         NSLog(@"EXCUTE: http://localhost:8090/image %@", responseObject);
     },nil);
 }
