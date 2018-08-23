@@ -8,6 +8,7 @@
 
 #import "SQFetchManager.h"
 #import "SQFetchSerialization.h"
+#import "SQFetchCache.h"
 
 typedef NS_ENUM(NSInteger, SQHTTPMethod) {
     SQGETMethod,
@@ -88,11 +89,17 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
                                          success:(void (^)(id))success
                                          failure:(void (^)(NSError *))failure
                                        semaphore:(dispatch_semaphore_t)semaphore {
+    id cache = [SQFetchCache getCacheFromKey:URLString];
+    if (cache) {
+        success(cache);
+        return nil;
+    }
+
     if (method == SQGETMethod) {
         URLString = [URLString stringByAppendingString:
                      [SQFetchSerialization getMethodSerializationWithParameters:parameters]];
     }
-    
+
     NSURL * url = [NSURL URLWithString:URLString];
     NSURLSession * session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
@@ -106,6 +113,7 @@ typedef NS_ENUM(NSInteger, SQHTTPMethod) {
         NSError * err;
         id responseObject = [SQFetchSerialization serializationWithContentType:response.MIMEType
                                                                           data:data error:err];
+        [SQFetchCache setCache:responseObject key:URLString];
         if(err) {
             failure(err);
             if (self.state == SQFetchSerialState)

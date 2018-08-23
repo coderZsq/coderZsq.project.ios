@@ -10,4 +10,10 @@
 
 @interface SQFetchCache : NSObject
 
++ (void)setCache:(NSData *)data key:(NSString *)key;
+
++ (id)getCacheFromKey:(NSString *)key;
+
++ (void)clearDiskCache;
+
 @end
