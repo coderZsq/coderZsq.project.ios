@@ -87,7 +87,7 @@ static ReusePool * _asyncReusePool = nil;
 
 - (void)setupData:(ComponentLayout *)layout asynchronously:(BOOL)asynchronously {
     _layout = layout; _asynchronously = asynchronously;
-    
+
     if (!asynchronously) {
         for (Element * element in layout.textElements) {
             UILabel * label = (UILabel *)[_labelReusePool dequeueReusableObject];
