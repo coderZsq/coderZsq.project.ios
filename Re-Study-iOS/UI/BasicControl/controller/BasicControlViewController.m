@@ -9,20 +9,127 @@
 #import "BasicControlViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
+@interface __Model : NSObject
+@property (nonatomic, copy) NSString * text;
+@property (nonatomic, copy) NSString * backgroundColor;
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)modelWithDict:(NSDictionary *)dict;
+@end
+
+@implementation __Model
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    
+    if (self = [super init]) {
+        self.text = dict[@"text"];
+        self.backgroundColor = dict[@"backgroundColor"];
+    }
+    return self;
+}
+
++ (instancetype)modelWithDict:(NSDictionary *)dict {
+    return [[self alloc]initWithDict:dict];
+}
+
+@end
+
+IB_DESIGNABLE
+@interface __View : UIView
+IBInspectable
+@property (nonatomic, copy) NSString * text;
+IBInspectable
+@property (nonatomic, strong) UIColor * backgroundColor;
+@property (nonatomic, strong) __Model * model;
+- (void)setText:(NSString *)text backgroundColor:(UIColor *)backgroundColor;
+- (instancetype)initWithModel:(__Model *)model;
++ (instancetype)viewWithModel:(__Model *)model;
++ (instancetype)view;
+@end
+
+@interface __View()
+@property (nonatomic, weak) IBOutlet UILabel * label;
+@end
+
+@implementation __View
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        UILabel * label = [UILabel new];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.lineBreakMode = NSLineBreakByClipping;
+        [self addSubview:label];
+        _label = label;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        NSLog(@"%s", __func__);
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    NSLog(@"%s", __func__);
+}
+
+- (instancetype)initWithModel:(__Model *)model {
+    if (self = [super init]) {
+        self.model = model;
+    }
+    return self;
+}
+
++ (instancetype)viewWithModel:(__Model *)model {
+    if ([self view]) {
+        __View * view = [self view];
+        view.model = model;
+        return view;
+    }
+    return [[self alloc]initWithModel:model];
+}
+
++ (instancetype)view {
+    return [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass(self) owner:nil
+                                       options:nil]firstObject];
+}
+
+- (void)setText:(NSString *)text {
+    _label.text = text;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    _label.backgroundColor = backgroundColor;
+}
+
+- (void)setText:(NSString *)text backgroundColor:(UIColor *)backgroundColor {
+    _label.text = text;
+    _label.backgroundColor = backgroundColor;
+}
+
+- (void)setModel:(__Model *)model {
+    _model = model;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [self setText:model.text backgroundColor:[[UIColor class] performSelector:NSSelectorFromString(model.backgroundColor)]];
+#pragma clang diagnostic pop
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.label.frame = self.bounds;
+}
+
+@end
+
 @interface BasicControlViewController ()
 @property (nonatomic, strong) AVPlayer * player;
 @property (nonatomic, weak) UIView * contentView;
 @property (nonatomic, weak) UIButton * addButton;
 @property (nonatomic, weak) UIButton * minusButton;
 @property (nonatomic, copy) NSArray * dataSource;
-@end
-
-@interface Model : NSObject
-@property (nonatomic, copy) NSString * text;
-@property (nonatomic, copy) NSString * backgroundColor;
-@end
-
-@implementation Model
 @end
 
 @implementation BasicControlViewController
@@ -34,15 +141,14 @@
     
     UILabel * label = [UILabel new];
     label.text = @
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq "
-    "https://github.com/coderZsq ";
+    "github.com/coderZsq "
+    "github.com/coderZsq "
+    "github.com/coderZsq "
+    "github.com/coderZsq "
+    "github.com/coderZsq "
+    "github.com/coderZsq "
+    "github.com/coderZsq "
+    "github.com/coderZsq ";
     label.backgroundColor = [UIColor lightGrayColor];
     label.frame = CGRectMake(90, 100, 200, 100);
     label.numberOfLines = 0;
@@ -75,6 +181,11 @@
     imageView.image = [UIImage imageNamed:@"Avatar"];
     imageView.contentMode = UIViewContentModeCenter;
     imageView.clipsToBounds = YES;
+    UIToolbar * toolbar = [UIToolbar new];
+    toolbar.frame = imageView.bounds;
+    toolbar.barStyle = UIBarStyleDefault;
+    toolbar.alpha = .5;
+    [imageView addSubview:toolbar];
     [self.view addSubview:imageView];
     
 #if 0
@@ -98,7 +209,7 @@
     NSMutableArray * animationImages = [NSMutableArray array];
     NSInteger count = 300;
     for (NSInteger i = 1; i <= count; i++) {
-        NSString * imageName = [NSString stringWithFormat:@"Layer %li", i];
+        NSString * imageName = [NSString stringWithFormat:@"Layer %li", (long)i];
         NSString * imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:@"jpg"];
         UIImage * image = [UIImage imageWithContentsOfFile:imagePath];
         [animationImages addObject:image];
@@ -116,7 +227,7 @@
     NSBundle * bundle = [NSBundle mainBundle];
     NSURL * url = [bundle URLForResource:@"video" withExtension:@"m4a"];
     self.player = [AVPlayer playerWithURL:url];
-    [self.player play];
+//    [self.player play];
     
     UIButton * button = [UIButton new];
     button.backgroundColor = [UIColor lightGrayColor];
@@ -160,10 +271,7 @@
         NSString * path = [[NSBundle mainBundle] pathForResource:@"dataSource" ofType:@"plist"];
         NSArray * plist = [NSArray arrayWithContentsOfFile:path];
         for (NSDictionary * dict in plist) {
-            Model * model = [Model new];
-            model.text = dict[@"text"];
-            model.backgroundColor = dict[@"backgroundColor"];
-            [dataSource addObject:model];
+            [dataSource addObject:[__Model modelWithDict:dict]];
         }
         _dataSource = dataSource;
     }
@@ -186,17 +294,9 @@
     CGFloat ySpace = 20;
     CGFloat y = row * (height + ySpace);
     
-    Model * model = self.dataSource[index - 2];
-    UILabel * label = [UILabel new];
-    label.frame = CGRectMake(x, y, width, height);
-    label.text = model.text;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.lineBreakMode = NSLineBreakByClipping;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    label.backgroundColor = [[UIColor class] performSelector:NSSelectorFromString(model.backgroundColor)];
-#pragma clang diagnostic pop
-    [self.contentView addSubview:label];
+    __View * view = [__View viewWithModel:self.dataSource[index - 2]];
+    view.frame = CGRectMake(x, y, width, height);
+    [self.contentView addSubview:view];
     
     self.minusButton.enabled = YES;
     if (self.contentView.subviews.count >= 9) {

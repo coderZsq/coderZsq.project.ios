@@ -310,6 +310,7 @@
 		1407CE60213FB62A00A3FC77 /* Layer 293.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD34213FB62A00A3FC77 /* Layer 293.jpg */; };
 		1407CE61213FB62A00A3FC77 /* Layer 287.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD35213FB62A00A3FC77 /* Layer 287.jpg */; };
 		1461DB5E213FD58300D938DC /* dataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* dataSource.plist */; };
+		14A5DBC421402EF10006FB1F /* __View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A5DBC321402EF10006FB1F /* __View.xib */; };
 		14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F73213F75D20082B143 /* AppDelegate.m */; };
 		14EB4F77213F75D20082B143 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F76213F75D20082B143 /* ViewController.m */; };
 		14EB4F7A213F75D20082B143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F78213F75D20082B143 /* Main.storyboard */; };
@@ -622,6 +623,7 @@
 		1407CD34213FB62A00A3FC77 /* Layer 293.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 293.jpg"; sourceTree = "<group>"; };
 		1407CD35213FB62A00A3FC77 /* Layer 287.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 287.jpg"; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* dataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataSource.plist; sourceTree = "<group>"; };
+		14A5DBC321402EF10006FB1F /* __View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = __View.xib; sourceTree = "<group>"; };
 		14EB4F6F213F75D20082B143 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB4F72213F75D20082B143 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14EB4F73213F75D20082B143 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 		1407CC09213FB62A00A3FC77 /* video */ = {
 			isa = PBXGroup;
 			children = (
+				1407CC05213FB0C300A3FC77 /* video.m4a */,
 				1407CC0A213FB62A00A3FC77 /* Layer 261.jpg */,
 				1407CC0B213FB62A00A3FC77 /* Layer 275.jpg */,
 				1407CC0C213FB62A00A3FC77 /* Layer 249.jpg */,
@@ -953,6 +956,31 @@
 			path = video;
 			sourceTree = "<group>";
 		};
+		14A5DBC521402F9E0006FB1F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				14EB4F88213F7D2E0082B143 /* BasicControlViewController.h */,
+				14EB4F89213F7D2E0082B143 /* BasicControlViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		14A5DBC621402FAB0006FB1F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				14A5DBC321402EF10006FB1F /* __View.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		14A5DBC7214037360006FB1F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				1461DB5D213FD58300D938DC /* dataSource.plist */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		14EB4F66213F75D20082B143 = {
 			isa = PBXGroup;
 			children = (
@@ -985,8 +1013,10 @@
 		14EB4F8B213F7D390082B143 /* BasicControl */ = {
 			isa = PBXGroup;
 			children = (
-				14EB4F88213F7D2E0082B143 /* BasicControlViewController.h */,
-				14EB4F89213F7D2E0082B143 /* BasicControlViewController.m */,
+				14A5DBC521402F9E0006FB1F /* controller */,
+				14A5DBC621402FAB0006FB1F /* view */,
+				1407CC09213FB62A00A3FC77 /* video */,
+				14A5DBC7214037360006FB1F /* data */,
 			);
 			path = BasicControl;
 			sourceTree = "<group>";
@@ -994,9 +1024,6 @@
 		14EB4F8C213F7D5C0082B143 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1407CC09213FB62A00A3FC77 /* video */,
-				1407CC05213FB0C300A3FC77 /* video.m4a */,
-				1461DB5D213FD58300D938DC /* dataSource.plist */,
 				14EB4F72213F75D20082B143 /* AppDelegate.h */,
 				14EB4F73213F75D20082B143 /* AppDelegate.m */,
 				14EB4F78213F75D20082B143 /* Main.storyboard */,
@@ -1032,6 +1059,7 @@
 		14EB4F67213F75D20082B143 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Castie!";
 				TargetAttributes = {
@@ -1139,6 +1167,7 @@
 				1407CDEE213FB62A00A3FC77 /* Layer 72.jpg in Resources */,
 				1407CD49213FB62A00A3FC77 /* Layer 31.jpg in Resources */,
 				1407CE48213FB62A00A3FC77 /* Layer 130.jpg in Resources */,
+				14A5DBC421402EF10006FB1F /* __View.xib in Resources */,
 				1407CD81213FB62A00A3FC77 /* Layer 161.jpg in Resources */,
 				1407CE11213FB62A00A3FC77 /* Layer 178.jpg in Resources */,
 				1407CDC1213FB62A00A3FC77 /* Layer 164.jpg in Resources */,
