@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BasicControlViewController.h"
+#import "ScrollViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -18,7 +19,8 @@
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = @[[BasicControlViewController class]];
+        _dataSource = @[[BasicControlViewController class],
+                        [ScrollViewController class]];
     }
     return _dataSource;
 }

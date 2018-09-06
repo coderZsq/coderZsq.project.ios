@@ -309,8 +309,12 @@
 		1407CE5F213FB62A00A3FC77 /* Layer 278.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD33213FB62A00A3FC77 /* Layer 278.jpg */; };
 		1407CE60213FB62A00A3FC77 /* Layer 293.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD34213FB62A00A3FC77 /* Layer 293.jpg */; };
 		1407CE61213FB62A00A3FC77 /* Layer 287.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD35213FB62A00A3FC77 /* Layer 287.jpg */; };
+		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
 		1461DB5E213FD58300D938DC /* dataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* dataSource.plist */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
+		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
+		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
+		14A3A49421411A0100A6C233 /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A3A49321411A0100A6C233 /* PageView.xib */; };
 		14A5DBC421402EF10006FB1F /* __View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A5DBC321402EF10006FB1F /* __View.xib */; };
 		14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F73213F75D20082B143 /* AppDelegate.m */; };
 		14EB4F77213F75D20082B143 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F76213F75D20082B143 /* ViewController.m */; };
@@ -623,9 +627,16 @@
 		1407CD33213FB62A00A3FC77 /* Layer 278.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 278.jpg"; sourceTree = "<group>"; };
 		1407CD34213FB62A00A3FC77 /* Layer 293.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 293.jpg"; sourceTree = "<group>"; };
 		1407CD35213FB62A00A3FC77 /* Layer 287.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 287.jpg"; sourceTree = "<group>"; };
+		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
+		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* dataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataSource.plist; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
+		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		14A3A48B2140E7C400A6C233 /* ScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		14A3A48F214119DE00A6C233 /* PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
+		14A3A490214119DE00A6C233 /* PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageView.m; sourceTree = "<group>"; };
+		14A3A49321411A0100A6C233 /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
 		14A5DBC321402EF10006FB1F /* __View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = __View.xib; sourceTree = "<group>"; };
 		14EB4F6F213F75D20082B143 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB4F72213F75D20082B143 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -959,6 +970,15 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		142583DE21411FD70043B11B /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				142583DB21411FCF0043B11B /* Proxy.h */,
+				142583DC21411FCF0043B11B /* Proxy.m */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
 		14A3A4892140D97600A6C233 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -966,6 +986,35 @@
 				14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		14A3A48D2140E7CD00A6C233 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				14A3A48E2140EA4C00A6C233 /* Controller */,
+				14A3A492214119E900A6C233 /* View */,
+				142583DE21411FD70043B11B /* Proxy */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		14A3A48E2140EA4C00A6C233 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14A3A48A2140E7C400A6C233 /* ScrollViewController.h */,
+				14A3A48B2140E7C400A6C233 /* ScrollViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14A3A492214119E900A6C233 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14A3A48F214119DE00A6C233 /* PageView.h */,
+				14A3A490214119DE00A6C233 /* PageView.m */,
+				14A3A49321411A0100A6C233 /* PageView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		14A5DBC521402F9E0006FB1F /* Controller */ = {
@@ -1013,6 +1062,7 @@
 			isa = PBXGroup;
 			children = (
 				14EB4F8B213F7D390082B143 /* BasicControl */,
+				14A3A48D2140E7CD00A6C233 /* ScrollView */,
 				14EB4F75213F75D20082B143 /* ViewController.h */,
 				14EB4F76213F75D20082B143 /* ViewController.m */,
 				14EB4F80213F75D30082B143 /* Info.plist */,
@@ -1176,6 +1226,7 @@
 				1407CD93213FB62A00A3FC77 /* Layer 188.jpg in Resources */,
 				1407CE07213FB62A00A3FC77 /* Layer 224.jpg in Resources */,
 				1407CD6D213FB62A00A3FC77 /* Layer 106.jpg in Resources */,
+				14A3A49421411A0100A6C233 /* PageView.xib in Resources */,
 				1407CDEB213FB62A00A3FC77 /* Layer 143.jpg in Resources */,
 				1407CDEE213FB62A00A3FC77 /* Layer 72.jpg in Resources */,
 				1407CD49213FB62A00A3FC77 /* Layer 31.jpg in Resources */,
@@ -1421,8 +1472,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
+				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				14EB4F77213F75D20082B143 /* ViewController.m in Sources */,
 				14EB4F8A213F7D2E0082B143 /* BasicControlViewController.m in Sources */,
+				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
+				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
 				14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */,
 			);
