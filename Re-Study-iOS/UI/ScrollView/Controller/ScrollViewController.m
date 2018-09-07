@@ -9,6 +9,9 @@
 #import "ScrollViewController.h"
 #import "PageView.h"
 #import "Proxy.h"
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
 
 @interface ScrollViewController () <UIScrollViewDelegate>
 @property (nonatomic, weak) UIScrollView * scrollView2;
@@ -16,6 +19,8 @@
 @property (nonatomic, weak) UIImageView * imageView;
 @property (nonatomic, weak) UIPageControl * pageControl;
 @property (nonatomic, weak) NSTimer * timer;
+@property (nonatomic, weak) NSLayoutConstraint * wlc;
+@property (nonatomic, weak) NSLayoutConstraint * hlc;
 @end
 
 @implementation ScrollViewController
@@ -31,14 +36,25 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     UIScrollView * scrollView = [UIScrollView new];
-    scrollView.frame = CGRectMake(30, 100, 100, 100);
     scrollView.backgroundColor = [UIColor lightGrayColor];
+    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:scrollView];
+    
+    NSLayoutConstraint * xlc = [NSLayoutConstraint constraintWithItem:scrollView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1. constant:30.];
+    NSLayoutConstraint * ylc = [NSLayoutConstraint constraintWithItem:scrollView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1. constant:100.];
+    NSLayoutConstraint * wlc = [NSLayoutConstraint constraintWithItem:scrollView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:.0 constant:100.];
+    _wlc = wlc;
+    NSLayoutConstraint * hlc = [NSLayoutConstraint constraintWithItem:scrollView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:.0 constant:100.];
+    _hlc = hlc;
+    [self.view addConstraints:@[xlc, ylc]];
+    [scrollView addConstraints:@[wlc, hlc]];
 
-    UIView * darkGrayView = [UIView new];
-    darkGrayView.frame = CGRectMake(0, 0, 44, 44);
-    darkGrayView.backgroundColor = [UIColor darkGrayColor];
-    [scrollView addSubview:darkGrayView];
+    UIButton * darkGrayButton = [UIButton new];
+    darkGrayButton.frame = CGRectMake(0, 0, 44, 44);
+    darkGrayButton.backgroundColor = [UIColor darkGrayColor];
+    [darkGrayButton addTarget:self action:@selector(darkGrayButtonTouchDragInside:) forControlEvents:UIControlEventTouchDragInside];
+    [darkGrayButton addTarget:self action:@selector(darkGrayButtonTouchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
+    [scrollView addSubview:darkGrayButton];
 
     scrollView.clipsToBounds = NO;
     scrollView.contentSize = CGSizeMake(125, 125);
@@ -47,10 +63,20 @@
 //    scrollView.userInteractionEnabled = NO;
     
     UIScrollView * scrollView2 = [UIScrollView new];
-    scrollView2.frame = CGRectMake(140, 100, 100, 100);
     scrollView2.backgroundColor = [UIColor lightGrayColor];
+    scrollView2.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:scrollView2];
     _scrollView2 = scrollView2;
+    
+    NSString * hvfl = @"H:[scrollView]-hspace-[scrollView2(100)]";
+    NSString * vvfl = @"V:|-vspace-[scrollView2(100)]";
+    NSDictionary * metrics = @{@"hspace": @10, @"vspace" : @100};
+//    NSDictionary * views = @{@"scrollView" : scrollView, @"scrollView2" : scrollView2};
+    NSDictionary * views = NSDictionaryOfVariableBindings(scrollView, scrollView2);
+    NSArray * hlcs = [NSLayoutConstraint constraintsWithVisualFormat:hvfl options:kNilOptions metrics:metrics views:views];
+    [self.view addConstraints:hlcs];
+    NSArray * vlcs = [NSLayoutConstraint constraintsWithVisualFormat:vvfl options:kNilOptions metrics:metrics views:views];
+    [self.view addConstraints:vlcs];
 
     UIImageView * imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Avatar"]];
     [scrollView2 addSubview:imageView];
@@ -79,9 +105,9 @@
     scrollView2.minimumZoomScale = 0.5;
     
     UIView * contentView = [UIView new];
-    contentView.frame = CGRectMake(250, 100, 100, 100);
+    contentView.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 125, 100, 100, 100);
     contentView.backgroundColor = [UIColor lightGrayColor];
-    contentView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
+    contentView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
 #if 0
     typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) {
         UIViewAutoresizingNone                 = 0,
@@ -114,22 +140,34 @@
     [self.view addSubview:contentView];
     
     UIScrollView * scrollView3 = [UIScrollView new];
-    scrollView3.frame = CGRectMake(30, 210, 320, 120);
+//    scrollView3.frame = CGRectMake(30, 210, 320, 120);
     scrollView3.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:scrollView3];
     _scrollView3 = scrollView3;
     
+    [scrollView3 makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(scrollView.bottom).offset(10);
+        make.left.equalTo(scrollView);
+        make.right.equalTo(contentView);
+        make.height.equalTo(120);
+    }];
+#if 0
+    [scrollView3 updateConstraints:^(MASConstraintMaker *make) {}];
+    [scrollView3 remakeConstraints:^(MASConstraintMaker *make) {}];
+#endif
+    [scrollView3 layoutIfNeeded];
     CGFloat scrollView3W = scrollView3.frame.size.width;
     CGFloat scrollView3H = scrollView3.frame.size.height;
 
     NSUInteger count = 5;
     for (NSInteger i = 0; i < count; i++) {
-        UIImageView * imageView2 = [UIImageView new];
-        imageView2.image = [UIImage imageNamed:@"Avatar"];
-        imageView2.contentMode = UIViewContentModeCenter;
-        imageView2.frame = CGRectMake(i * scrollView3W, 0, scrollView3W, scrollView3H);
-        [scrollView3 addSubview:imageView2];
+        UIImageView * imageView = [UIImageView new];
+        imageView.image = [UIImage imageNamed:@"Avatar"];
+        imageView.contentMode = UIViewContentModeCenter;
+        imageView.frame = CGRectMake(i * scrollView3W, 0, scrollView3W, scrollView3H);
+        [scrollView3 addSubview:imageView];
     }
+    
     scrollView3.contentSize = CGSizeMake(count * scrollView3W, 0);
     scrollView3.showsHorizontalScrollIndicator = NO;
     
@@ -154,6 +192,11 @@
     pageView.backgroundColor = [UIColor lightGrayColor];
     pageView.frame = CGRectMake(30, 340, 320, 120);
     [self.view addSubview:pageView];
+    
+    [pageView makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(scrollView3.bottom).offset(10);
+        make.left.width.height.equalTo(scrollView3);
+    }];
 }
 
 - (void)startTimer {
@@ -167,12 +210,28 @@
 }
 
 - (void)nextPage:(NSTimer *)sender {
-    NSLog(@"%@", sender.userInfo);
+//    NSLog(@"%@", sender.userInfo);
     NSInteger page = self.pageControl.currentPage + 1;
     if (page == self.pageControl.numberOfPages) {
         page = 0;
     }
     [self.scrollView3 setContentOffset:CGPointMake(page * self.scrollView3.frame.size.width, 0) animated:YES];
+}
+
+- (void)darkGrayButtonTouchDragInside:(UIButton *)sender {
+    self.wlc.constant = 44.;
+    self.hlc.constant = 44.;
+    [UIView animateWithDuration:1. animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)darkGrayButtonTouchDragOutside:(UIButton *)sender {
+    self.wlc.constant = 100.;
+    self.hlc.constant = 100.;
+    [UIView animateWithDuration:1. animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 - (void)directionButtonClick:(UIButton *)sender {
