@@ -35,14 +35,23 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.imageView.image = [UIImage imageNamed:@"Mark"];
     }
     cell.textLabel.text = NSStringFromClass(self.dataSource[indexPath.row]);
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.navigationController pushViewController:[self.dataSource[indexPath.row] new] animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"basic";
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    return @"Some examples of basic user interaction learning.";
 }
 
 @end

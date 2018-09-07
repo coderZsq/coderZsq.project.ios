@@ -33,7 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"Scroll View";
+    self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:244./255 alpha:1.];
 
     UIScrollView * scrollView = [UIScrollView new];
     scrollView.backgroundColor = [UIColor lightGrayColor];

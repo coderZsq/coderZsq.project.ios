@@ -1,16 +1,20 @@
 PODS:
   - Masonry (1.0.2)
+  - MJExtension (3.0.13)
 
 DEPENDENCIES:
   - Masonry
+  - MJExtension
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Masonry
+    - MJExtension
 
 SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
 
-PODFILE CHECKSUM: 0290b1dc4f07603962371aaf313c1b08122e8ace
+PODFILE CHECKSUM: e603cd1df5d90a76275e0859ecb3e66ba1884377
 
 COCOAPODS: 1.5.3

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>groups</key>
+		<array>
+			<dict>
+				<key>text</key>
+				<string>Re-Study-iOS</string>
+				<key>imageName</key>
+				<string>Avatar</string>
+			</dict>
+			<dict>
+				<key>text</key>
+				<string>SQLifestyle</string>
+				<key>imageName</key>
+				<string>Avatar</string>
+			</dict>
+			<dict>
+				<key>text</key>
+				<string>SQTemplate</string>
+				<key>imageName</key>
+				<string>Avatar</string>
+			</dict>
+			<dict>
+				<key>text</key>
+				<string>SQPerformance</string>
+				<key>imageName</key>
+				<string>Avatar</string>
+			</dict>
+		</array>
+		<key>titleHeader</key>
+		<string>coderZsq.project.ios</string>
+		<key>titleFooter</key>
+		<string>A lightweight and efficient application development tool set for iOS, and accelerating the developing speed.</string>
+	</dict>
+	<dict>
+		<key>groups</key>
+		<array>
+			<dict>
+				<key>text</key>
+				<string>PhotoGallery</string>
+				<key>imageName</key>
+				<string>Avatar</string>
+			</dict>
+			<dict>
+				<key>text</key>
+				<string>RouterPattern</string>
+				<key>imageName</key>
+				<string>Avatar</string>
+			</dict>
+			<dict>
+				<key>text</key>
+				<string>StudyNotes</string>
+				<key>imageName</key>
+				<string>Avatar</string>
+			</dict>
+		</array>
+		<key>titleHeader</key>
+		<string>coderZsq.practice.native</string>
+		<key>titleFooter</key>
+		<string>For advanced moblie-end development technology pre-research &amp; ideas &amp; practice. ( Focus areas: Native )</string>
+	</dict>
+</array>
+</plist>

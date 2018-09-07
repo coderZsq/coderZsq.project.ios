@@ -170,8 +170,9 @@ IB_DESIGNABLE
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.title = @"Basic Control";
+    self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:244./255 alpha:1.];
+
     UILabel * label = [UILabel new];
     label.text = @
     "github.com/coderZsq "
