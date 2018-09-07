@@ -35,7 +35,7 @@
 @end
 
 @interface TableViewController2 ()
-@property (nonatomic, strong) NSArray * dataSource;
+@property (nonatomic, copy) NSArray * dataSource;
 @end
 
 @implementation TableViewController2
@@ -43,7 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Index bar";
+    self.title = @"Plain Style";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"identifier"];
     
 //    self.tableView.sectionIndexColor = [UIColor lightGrayColor];
@@ -94,6 +94,11 @@
 
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     return [self.dataSource valueForKeyPath:@"title"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"TableViewController3" bundle:nil];
+    [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"TableViewController3"] animated:YES];
 }
 
 @end

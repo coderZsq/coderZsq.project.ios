@@ -71,7 +71,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"Table View";
+    self.title = @"Grouped Style";
     self.view.backgroundColor = [UIColor whiteColor];
     
     UITableView * tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
