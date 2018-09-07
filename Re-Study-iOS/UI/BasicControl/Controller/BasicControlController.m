@@ -1,12 +1,12 @@
 //
-//  BasicControlViewController.m
+//  BasicControlController.m
 //  UI
 //
 //  Created by 朱双泉 on 2018/9/5.
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import "BasicControlViewController.h"
+#import "BasicControlController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "UIImage+Resizing.h"
 
@@ -151,7 +151,7 @@ IB_DESIGNABLE
 
 @end
 
-@interface BasicControlViewController ()
+@interface BasicControlController ()
 @property (nonatomic, strong) AVPlayer * player;
 @property (nonatomic, weak) UIView * contentView;
 @property (nonatomic, weak) UIButton * addButton;
@@ -160,7 +160,7 @@ IB_DESIGNABLE
 @property (nonatomic, copy) NSArray * dataSource;
 @end
 
-@implementation BasicControlViewController
+@implementation BasicControlController
 
 - (void)dealloc {
     [_addButton removeObserver:self forKeyPath:@"enabled"];

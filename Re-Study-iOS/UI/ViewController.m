@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "BasicControlViewController.h"
+#import "BasicControlController.h"
 #import "ScrollViewController.h"
+#import "TableViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -19,8 +20,9 @@
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = @[[BasicControlViewController class],
-                        [ScrollViewController class]];
+        _dataSource = @[[BasicControlController class],
+                        [ScrollViewController class],
+                        [TableViewController class]];
     }
     return _dataSource;
 }

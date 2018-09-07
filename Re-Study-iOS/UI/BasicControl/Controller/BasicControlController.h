@@ -1,5 +1,5 @@
 //
-//  BasicControlViewController.h
+//  BasicControlController.h
 //  UI
 //
 //  Created by 朱双泉 on 2018/9/5.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BasicControlViewController : UIViewController
+@interface BasicControlController : UIViewController
 
 @end

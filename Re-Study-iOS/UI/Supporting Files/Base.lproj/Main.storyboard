@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--UI-->
         <scene sceneID="YeL-ah-kSI">
             <objects>
                 <tableViewController id="teJ-T4-Mz6" customClass="ViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Root View Controller" id="0aQ-O4-D0k"/>
+                    <navigationItem key="navigationItem" title="UI" id="0aQ-O4-D0k"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJq-4p-X0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

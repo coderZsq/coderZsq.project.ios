@@ -311,6 +311,7 @@
 		1407CE61213FB62A00A3FC77 /* Layer 287.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD35213FB62A00A3FC77 /* Layer 287.jpg */; };
 		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
 		1461DB5E213FD58300D938DC /* dataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* dataSource.plist */; };
+		146AE850214220AE000D6E58 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE84F214220AE000D6E58 /* TableViewController.m */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
 		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
@@ -321,7 +322,7 @@
 		14EB4F7A213F75D20082B143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F78213F75D20082B143 /* Main.storyboard */; };
 		14EB4F7F213F75D30082B143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F7D213F75D30082B143 /* LaunchScreen.storyboard */; };
 		14EB4F82213F75D30082B143 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F81213F75D30082B143 /* main.m */; };
-		14EB4F8A213F7D2E0082B143 /* BasicControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F89213F7D2E0082B143 /* BasicControlViewController.m */; };
+		14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F89213F7D2E0082B143 /* BasicControlController.m */; };
 		FDFF69EC5379083E72389A87 /* libPods-UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E470806DE8E61F1D7E1E5BB1 /* libPods-UI.a */; };
 /* End PBXBuildFile section */
 
@@ -631,6 +632,8 @@
 		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* dataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataSource.plist; sourceTree = "<group>"; };
+		146AE84E214220AE000D6E58 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		146AE84F214220AE000D6E58 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
@@ -648,8 +651,8 @@
 		14EB4F7E213F75D30082B143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14EB4F80213F75D30082B143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14EB4F81213F75D30082B143 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		14EB4F88213F7D2E0082B143 /* BasicControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicControlViewController.h; sourceTree = "<group>"; };
-		14EB4F89213F7D2E0082B143 /* BasicControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicControlViewController.m; sourceTree = "<group>"; };
+		14EB4F88213F7D2E0082B143 /* BasicControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicControlController.h; sourceTree = "<group>"; };
+		14EB4F89213F7D2E0082B143 /* BasicControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicControlController.m; sourceTree = "<group>"; };
 		3CEA8B2C29B93F3C3859F1B9 /* Pods-UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UI/Pods-UI.debug.xcconfig"; sourceTree = "<group>"; };
 		E101F1918D38C36AA2E8AE0B /* Pods-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI/Pods-UI.release.xcconfig"; sourceTree = "<group>"; };
 		E470806DE8E61F1D7E1E5BB1 /* libPods-UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -984,6 +987,23 @@
 			path = Proxy;
 			sourceTree = "<group>";
 		};
+		146AE851214220BC000D6E58 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				146AE852214220D1000D6E58 /* Controller */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		146AE852214220D1000D6E58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				146AE84E214220AE000D6E58 /* TableViewController.h */,
+				146AE84F214220AE000D6E58 /* TableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		14A3A4892140D97600A6C233 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,8 +1045,8 @@
 		14A5DBC521402F9E0006FB1F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				14EB4F88213F7D2E0082B143 /* BasicControlViewController.h */,
-				14EB4F89213F7D2E0082B143 /* BasicControlViewController.m */,
+				14EB4F88213F7D2E0082B143 /* BasicControlController.h */,
+				14EB4F89213F7D2E0082B143 /* BasicControlController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1070,6 +1090,7 @@
 			children = (
 				14EB4F8B213F7D390082B143 /* BasicControl */,
 				14A3A48D2140E7CD00A6C233 /* ScrollView */,
+				146AE851214220BC000D6E58 /* TableView */,
 				14EB4F75213F75D20082B143 /* ViewController.h */,
 				14EB4F76213F75D20082B143 /* ViewController.m */,
 				14EB4F80213F75D30082B143 /* Info.plist */,
@@ -1520,7 +1541,8 @@
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				14EB4F77213F75D20082B143 /* ViewController.m in Sources */,
-				14EB4F8A213F7D2E0082B143 /* BasicControlViewController.m in Sources */,
+				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
+				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
