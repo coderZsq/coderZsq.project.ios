@@ -175,12 +175,16 @@
     scrollView3.delegate = self;
     
     UIPageControl * pageControl = [UIPageControl new];
-    pageControl.frame = CGRectMake(30, 310, 320, 0);
     pageControl.numberOfPages = count;
     pageControl.hidesForSinglePage = YES;
     pageControl.enabled = NO;
     [self.view addSubview:pageControl];
     _pageControl = pageControl;
+    
+    [pageControl makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.width.equalTo(scrollView3);
+        make.height.equalTo(37);
+    }];
     
     [pageControl setValue:[UIImage imageNamed:@"current"] forKey:@"_currentPageImage"];
     [pageControl setValue:[UIImage imageNamed:@"other"] forKey:@"_pageImage"];
@@ -190,7 +194,6 @@
     PageView * pageView = [PageView pageView];
     pageView.imageNames = @[@"Avatar", @"Avatar", @"Avatar"];
     pageView.backgroundColor = [UIColor lightGrayColor];
-    pageView.frame = CGRectMake(30, 340, 320, 120);
     [self.view addSubview:pageView];
     
     [pageView makeConstraints:^(MASConstraintMaker *make) {
