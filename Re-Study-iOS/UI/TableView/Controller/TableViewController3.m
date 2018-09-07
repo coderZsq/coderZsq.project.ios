@@ -66,14 +66,14 @@
 
 - (void)edit:(UIBarButtonItem *)sender {
     [self.tableView setEditing:!self.tableView.editing animated:YES];
-    _addItem.enabled = _subItem.enabled = !self.tableView.isEditing;
+    _addItem.enabled = !self.tableView.isEditing;
 }
-
+#if 0
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.dataSource removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
-
+#endif
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction * action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Delete" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         if (self.dataSource.count) {
