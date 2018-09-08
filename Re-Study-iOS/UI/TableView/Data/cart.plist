@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>subtitle</key>
+		<integer>53</integer>
+		<key>text</key>
+		<string>Castie! - 0</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>84</integer>
+		<key>text</key>
+		<string>Castie! - 1</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>97</integer>
+		<key>text</key>
+		<string>Castie! - 2</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>28</integer>
+		<key>text</key>
+		<string>Castie! - 3</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>27</integer>
+		<key>text</key>
+		<string>Castie! - 4</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>48</integer>
+		<key>text</key>
+		<string>Castie! - 5</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>4</integer>
+		<key>text</key>
+		<string>Castie! - 6</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>9</integer>
+		<key>text</key>
+		<string>Castie! - 7</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>81</integer>
+		<key>text</key>
+		<string>Castie! - 8</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>64</integer>
+		<key>text</key>
+		<string>Castie! - 9</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>50</integer>
+		<key>text</key>
+		<string>Castie! - 10</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>78</integer>
+		<key>text</key>
+		<string>Castie! - 11</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>34</integer>
+		<key>text</key>
+		<string>Castie! - 12</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>45</integer>
+		<key>text</key>
+		<string>Castie! - 13</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>60</integer>
+		<key>text</key>
+		<string>Castie! - 14</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>75</integer>
+		<key>text</key>
+		<string>Castie! - 15</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>85</integer>
+		<key>text</key>
+		<string>Castie! - 16</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>100</integer>
+		<key>text</key>
+		<string>Castie! - 17</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>72</integer>
+		<key>text</key>
+		<string>Castie! - 18</string>
+	</dict>
+	<dict>
+		<key>subtitle</key>
+		<integer>27</integer>
+		<key>text</key>
+		<string>Castie! - 19</string>
+	</dict>
+</array>
+</plist>

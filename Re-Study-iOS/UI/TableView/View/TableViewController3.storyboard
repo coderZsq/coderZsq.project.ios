@@ -43,9 +43,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cil-ln-0Vt">
+                                            <rect key="frame" x="345" y="138" width="22" height="24.5"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="cil-ln-0Vt" firstAttribute="bottom" secondItem="aoP-Qv-FBy" secondAttribute="bottom" id="Dmu-hj-aIu"/>
                                         <constraint firstItem="aoP-Qv-FBy" firstAttribute="leading" secondItem="S3l-K9-VDH" secondAttribute="leading" id="Inb-Kg-LCg"/>
+                                        <constraint firstItem="cil-ln-0Vt" firstAttribute="top" secondItem="aoP-Qv-FBy" secondAttribute="top" id="Mg5-60-6aL"/>
                                         <constraint firstAttribute="trailing" secondItem="S3l-K9-VDH" secondAttribute="trailing" constant="8" id="Oqk-fU-yuY"/>
                                         <constraint firstItem="aoP-Qv-FBy" firstAttribute="top" secondItem="S3l-K9-VDH" secondAttribute="bottom" constant="10" id="P4d-1I-41a"/>
                                         <constraint firstItem="9fp-af-v39" firstAttribute="top" secondItem="aoP-Qv-FBy" secondAttribute="bottom" constant="10" id="PKI-gh-dSb"/>
@@ -54,10 +59,12 @@
                                         <constraint firstItem="9fp-af-v39" firstAttribute="leading" secondItem="aoP-Qv-FBy" secondAttribute="leading" id="Uzb-UA-Wh3"/>
                                         <constraint firstItem="S3l-K9-VDH" firstAttribute="leading" secondItem="tut-jp-pVW" secondAttribute="leading" constant="8" id="Zok-mv-38I"/>
                                         <constraint firstItem="9fp-af-v39" firstAttribute="trailing" secondItem="S3l-K9-VDH" secondAttribute="trailing" id="dGs-d6-lcf"/>
+                                        <constraint firstItem="cil-ln-0Vt" firstAttribute="trailing" secondItem="S3l-K9-VDH" secondAttribute="trailing" id="vAD-jt-s2D"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descLabel" destination="9fp-af-v39" id="Yyn-NN-LR5"/>
+                                    <outlet property="infoButton" destination="cil-ln-0Vt" id="Snd-UE-ZEe"/>
                                     <outlet property="label" destination="aoP-Qv-FBy" id="78S-xn-Bh9"/>
                                 </connections>
                             </tableViewCell>

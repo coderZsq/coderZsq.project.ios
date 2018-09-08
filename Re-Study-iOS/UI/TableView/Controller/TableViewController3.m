@@ -7,10 +7,21 @@
 //
 
 #import "TableViewController3.h"
+#import <MJExtension.h>
+
+@interface __Model2: NSObject
+@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * desc;
+@property (nonatomic, assign, getter=isChecked) BOOL checked;
+@end
+
+@implementation __Model2
+@end
 
 @interface TableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @end
 
 @implementation TableViewCell
@@ -18,8 +29,7 @@
 
 @interface TableViewController3 ()
 @property (nonatomic, strong) NSMutableArray * dataSource;
-@property (nonatomic, weak) UIBarButtonItem * addItem;
-@property (nonatomic, weak) UIBarButtonItem * subItem;
+@property (nonatomic, weak) UIBarButtonItem * insertItem;
 @end
 
 @implementation TableViewController3
@@ -29,12 +39,11 @@
     
     self.title = @"Cell Reload";
     
-    UIBarButtonItem * addItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
-    UIBarButtonItem * subItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(sub:)];
+    UIBarButtonItem * insertItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insert:)];
+    UIBarButtonItem * removeItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(remove:)];
     UIBarButtonItem * editItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)];
-    self.navigationItem.rightBarButtonItems = @[editItem, subItem, addItem];
-    _addItem = addItem;
-    _subItem = subItem;
+    self.navigationItem.rightBarButtonItems = @[editItem, removeItem, insertItem];
+    _insertItem = insertItem;
     
 //    self.tableView.allowsMultipleSelection = YES;
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
@@ -44,13 +53,16 @@
 #endif
 }
 
-- (void)add:(UIBarButtonItem *)sender {
-    NSDictionary * data = @{@"title" : @"Castie! Resume", @"description" : @"Shuangquan Zhu is a professional developer who focuses on iOS now. He has strong knowledge of Objective-C, C++ and Swift. With these skills, he created quite a few quickly developer tools. He also leads the J1 iOS team to promote the project process.\nHe crazy loves playing basketball with friends in spare time, He also loves traveling, writing and listening music. He is always willing to try new things, and keeping to learn from them."};
-    [self.dataSource insertObject:data atIndex:0];
+- (void)insert:(UIBarButtonItem *)sender {
+    __Model2 * model = [__Model2 new];
+    model.title = [NSString stringWithFormat:@"Castie! Resume - %ld", self.dataSource.count];
+    model.desc = @"Shuangquan Zhu is a professional developer who focuses on iOS now. He has strong knowledge of Objective-C, C++ and Swift. With these skills, he created quite a few quickly developer tools. He also leads the J1 iOS team to promote the project process.\nHe crazy loves playing basketball with friends in spare time, He also loves traveling, writing and listening music. He is always willing to try new things, and keeping to learn from them.";
+    [self.dataSource insertObject:model atIndex:0];
     [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
 }
 
-- (void)sub:(UIBarButtonItem *)sender {
+- (void)remove:(UIBarButtonItem *)sender {
+    
     if (self.tableView.isEditing) {
         NSMutableIndexSet * indexSet = [NSMutableIndexSet indexSet];
         for (NSIndexPath * indexPath in self.tableView.indexPathsForSelectedRows) {
@@ -58,6 +70,21 @@
         }
         [self.dataSource removeObjectsAtIndexes:indexSet];
         [self.tableView deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows withRowAnimation:UITableViewRowAnimationRight];
+        return;
+    }
+    
+    NSMutableIndexSet * indexSet = [NSMutableIndexSet indexSet];
+    NSMutableArray * indexArray = [NSMutableArray array];
+    for (NSInteger i = 0; i < self.dataSource.count; i++) {
+        __Model2 * model = self.dataSource[i];
+        if (model.isChecked) {
+            [indexSet addIndex:i];
+            [indexArray addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+        }
+    }
+    if (indexSet.count) {
+        [self.dataSource removeObjectsAtIndexes:indexSet];
+        [self.tableView deleteRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationRight];
     } else if (self.dataSource.count) {
         [self.dataSource removeObjectAtIndex:0];
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationRight];
@@ -66,7 +93,7 @@
 
 - (void)edit:(UIBarButtonItem *)sender {
     [self.tableView setEditing:!self.tableView.editing animated:YES];
-    _addItem.enabled = !self.tableView.isEditing;
+    _insertItem.enabled = !self.tableView.isEditing;
 }
 #if 0
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,10 +108,12 @@
             [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
         }
     }];
-    UITableViewRowAction * action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"上天!!" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+    UITableViewRowAction * action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"My Best" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"TableViewController4" bundle:nil];
+        [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"TableViewController4"] animated:YES];
     }];
     action2.backgroundColor = [UIColor darkGrayColor];
-    UITableViewRowAction * action3 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"老子要" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+    UITableViewRowAction * action3 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Try" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
 #if 0
         self.tableView.editing = NO;
 #endif
@@ -97,10 +126,10 @@
     return @"Delete";
 }
 #endif
-- (NSArray *)dataSource {
+- (NSMutableArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = [NSMutableArray arrayWithArray:[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"list" ofType:@"plist"]]];
+        _dataSource = [__Model2 mj_objectArrayWithFilename:@"list.plist"];
     }
     return _dataSource;
 }
@@ -110,20 +139,31 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    __Model2 * model = self.dataSource[indexPath.row];
     TableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
-    cell.label.text = self.dataSource[indexPath.row][@"title"];
-    cell.descLabel.text = self.dataSource[indexPath.row][@"description"];
+    cell.label.text = model.title;
+    cell.descLabel.text = model.desc;
+    cell.infoButton.enabled = model.isChecked;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!tableView.isEditing) {
+        __Model2 * model = self.dataSource[indexPath.row];
+        model.checked = !model.isChecked;
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 # if 0
 TableViewCell * cell;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __func__);
+    __Model2 * model = self.dataSource[indexPath.row];
     if (!cell)
         cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
-    cell.label.text = self.dataSource[indexPath.row][@"title"];
-    cell.descLabel.text = self.dataSource[indexPath.row][@"description"];
+    cell.label.text = model.title;
+    cell.descLabel.text = model.desc;
     cell.descLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 20;
     [cell layoutIfNeeded];
     return CGRectGetMaxY(cell.descLabel.frame) + 10;
