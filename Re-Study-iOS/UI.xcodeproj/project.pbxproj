@@ -317,10 +317,10 @@
 		146AE850214220AE000D6E58 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE84F214220AE000D6E58 /* TableViewController.m */; };
 		146AE854214234A9000D6E58 /* groups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE853214234A9000D6E58 /* groups.plist */; };
 		146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE85721423B3F000D6E58 /* TableViewController2.m */; };
-		146AE85A2142524A000D6E58 /* groups2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8592142524A000D6E58 /* groups2.plist */; };
 		146AE85E2142B143000D6E58 /* TableViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE85C2142B143000D6E58 /* TableViewController3.m */; };
 		146AE8612142B1D0000D6E58 /* TableViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8602142B1D0000D6E58 /* TableViewController3.storyboard */; };
 		146AE8642142BDF2000D6E58 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8632142BDF1000D6E58 /* list.plist */; };
+		146DA9882143F86900DF9E2B /* groups2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146DA9872143F86800DF9E2B /* groups2.plist */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
 		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
@@ -650,13 +650,13 @@
 		146AE853214234A9000D6E58 /* groups.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = groups.plist; sourceTree = "<group>"; };
 		146AE85621423B3F000D6E58 /* TableViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController2.h; sourceTree = "<group>"; };
 		146AE85721423B3F000D6E58 /* TableViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController2.m; sourceTree = "<group>"; };
-		146AE8592142524A000D6E58 /* groups2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = groups2.plist; sourceTree = "<group>"; };
 		146AE85B2142B142000D6E58 /* TableViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController3.h; sourceTree = "<group>"; };
 		146AE85C2142B143000D6E58 /* TableViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController3.m; sourceTree = "<group>"; };
 		146AE8602142B1D0000D6E58 /* TableViewController3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewController3.storyboard; sourceTree = "<group>"; };
 		146AE8632142BDF1000D6E58 /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
 		146AE8652142CDA7000D6E58 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		146AE8662142CDA7000D6E58 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		146DA9872143F86800DF9E2B /* groups2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = groups2.plist; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
@@ -1039,7 +1039,7 @@
 			isa = PBXGroup;
 			children = (
 				146AE853214234A9000D6E58 /* groups.plist */,
-				146AE8592142524A000D6E58 /* groups2.plist */,
+				146DA9872143F86800DF9E2B /* groups2.plist */,
 				146AE8632142BDF1000D6E58 /* list.plist */,
 				142A2D382143840C00435F95 /* cart.plist */,
 			);
@@ -1510,6 +1510,7 @@
 				1407CD52213FB62A00A3FC77 /* Layer 30.jpg in Resources */,
 				1407CD45213FB62A00A3FC77 /* Layer 289.jpg in Resources */,
 				1407CDE8213FB62A00A3FC77 /* Layer 142.jpg in Resources */,
+				146DA9882143F86900DF9E2B /* groups2.plist in Resources */,
 				1407CE15213FB62A00A3FC77 /* Layer 151.jpg in Resources */,
 				1407CD44213FB62A00A3FC77 /* Layer 260.jpg in Resources */,
 				1407CDC3213FB62A00A3FC77 /* Layer 158.jpg in Resources */,
@@ -1548,7 +1549,6 @@
 				1407CD5A213FB62A00A3FC77 /* Layer 20.jpg in Resources */,
 				1407CE56213FB62A00A3FC77 /* Layer 251.jpg in Resources */,
 				1407CDD7213FB62A00A3FC77 /* Layer 140.jpg in Resources */,
-				146AE85A2142524A000D6E58 /* groups2.plist in Resources */,
 				1407CDB9213FB62A00A3FC77 /* Layer 83.jpg in Resources */,
 				1407CE3B213FB62A00A3FC77 /* Layer 11.jpg in Resources */,
 				1407CE51213FB62A00A3FC77 /* Layer 290.jpg in Resources */,

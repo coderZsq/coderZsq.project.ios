@@ -50,10 +50,6 @@
 //    self.tableView.sectionIndexBackgroundColor = [UIColor darkGrayColor];
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
-
 - (NSArray *)dataSource {
     
     if (!_dataSource) {

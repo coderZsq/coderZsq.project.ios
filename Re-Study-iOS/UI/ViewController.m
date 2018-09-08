@@ -16,7 +16,11 @@
 @end
 
 @implementation ViewController
-
+#if 0
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+#endif
 - (NSArray *)dataSource {
     
     if (!_dataSource) {

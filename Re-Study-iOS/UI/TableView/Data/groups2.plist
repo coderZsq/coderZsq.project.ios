@@ -3,124 +3,136 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>groups</key>
+		<array>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 5</string>
+			</dict>
+		</array>
 		<key>title</key>
 		<string>A</string>
+	</dict>
+	<dict>
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
 			</dict>
 		</array>
-	</dict>
-	<dict>
 		<key>title</key>
 		<string>B</string>
+	</dict>
+	<dict>
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
-	</dict>
-	<dict>
 		<key>title</key>
 		<string>C</string>
-		<key>groups</key>
-		<array>
-			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-		</array>
 	</dict>
 	<dict>
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 2</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -130,28 +142,16 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQTemplate</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 1</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -161,28 +161,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -192,28 +198,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -223,28 +235,40 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 5</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -254,28 +278,40 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 5</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -285,28 +321,28 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -316,28 +352,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -347,28 +389,22 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 2</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -378,28 +414,28 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -409,28 +445,22 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 2</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -440,28 +470,10 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQLifestyle</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 0</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -471,28 +483,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -502,28 +520,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -533,28 +557,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -564,28 +594,28 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -595,28 +625,16 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQTemplate</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 1</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -626,28 +644,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -657,28 +681,34 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -688,28 +718,10 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQLifestyle</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 0</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -719,28 +731,16 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
-			</dict>
-			<dict>
 				<key>text</key>
-				<string>SQTemplate</string>
-				<key>imageName</key>
-				<string>Avatar</string>
-			</dict>
-			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
-				<key>imageName</key>
-				<string>Avatar</string>
+				<string>Castie! - 1</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -750,28 +750,28 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
 			</dict>
 		</array>
 		<key>title</key>
@@ -781,28 +781,52 @@
 		<key>groups</key>
 		<array>
 			<dict>
-				<key>text</key>
-				<string>Re-Study-iOS</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 0</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQLifestyle</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 1</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQTemplate</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 2</string>
 			</dict>
 			<dict>
-				<key>text</key>
-				<string>SQPerformance</string>
 				<key>imageName</key>
 				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 3</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 4</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 5</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 6</string>
+			</dict>
+			<dict>
+				<key>imageName</key>
+				<string>Avatar</string>
+				<key>text</key>
+				<string>Castie! - 7</string>
 			</dict>
 		</array>
 		<key>title</key>
