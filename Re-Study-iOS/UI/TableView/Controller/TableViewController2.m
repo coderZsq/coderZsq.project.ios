@@ -94,7 +94,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard * sb = [UIStoryboard storyboardWithName:@"TableViewController3" bundle:nil];
-    [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"TableViewController3"] animated:YES];
+    [self.navigationController pushViewController:[sb instantiateInitialViewController] animated:YES];
 }
 
 @end

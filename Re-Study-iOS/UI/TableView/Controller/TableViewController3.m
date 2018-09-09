@@ -110,7 +110,7 @@
     }];
     UITableViewRowAction * action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"My Best" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         UIStoryboard * sb = [UIStoryboard storyboardWithName:@"TableViewController4" bundle:nil];
-        [self.navigationController pushViewController:[sb instantiateViewControllerWithIdentifier:@"TableViewController4"] animated:YES];
+        [self.navigationController pushViewController:[sb instantiateInitialViewController] animated:YES];
     }];
     action2.backgroundColor = [UIColor darkGrayColor];
     UITableViewRowAction * action3 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Try" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {

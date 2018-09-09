@@ -309,6 +309,7 @@
 		1407CE5F213FB62A00A3FC77 /* Layer 278.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD33213FB62A00A3FC77 /* Layer 278.jpg */; };
 		1407CE60213FB62A00A3FC77 /* Layer 293.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD34213FB62A00A3FC77 /* Layer 293.jpg */; };
 		1407CE61213FB62A00A3FC77 /* Layer 287.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD35213FB62A00A3FC77 /* Layer 287.jpg */; };
+		141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F892144F1A2009A9443 /* ViewController.xib */; };
 		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
 		142A2D392143840C00435F95 /* cart.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* cart.plist */; };
 		1461DB5E213FD58300D938DC /* dataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* dataSource.plist */; };
@@ -638,6 +639,8 @@
 		1407CD33213FB62A00A3FC77 /* Layer 278.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 278.jpg"; sourceTree = "<group>"; };
 		1407CD34213FB62A00A3FC77 /* Layer 293.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 293.jpg"; sourceTree = "<group>"; };
 		1407CD35213FB62A00A3FC77 /* Layer 287.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 287.jpg"; sourceTree = "<group>"; };
+		141D7F8821442C37009A9443 /* main.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.pch; sourceTree = "<group>"; };
+		141D7F892144F1A2009A9443 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
 		142A2D382143840C00435F95 /* cart.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cart.plist; sourceTree = "<group>"; };
@@ -1144,8 +1147,8 @@
 				146AE851214220BC000D6E58 /* TableView */,
 				14EB4F75213F75D20082B143 /* ViewController.h */,
 				14EB4F76213F75D20082B143 /* ViewController.m */,
+				141D7F892144F1A2009A9443 /* ViewController.xib */,
 				14EB4F80213F75D30082B143 /* Info.plist */,
-				1407CC07213FB46500A3FC77 /* Assets.xcassets */,
 				14EB4F8C213F7D5C0082B143 /* Supporting Files */,
 			);
 			path = UI;
@@ -1166,11 +1169,13 @@
 		14EB4F8C213F7D5C0082B143 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				14EB4F72213F75D20082B143 /* AppDelegate.h */,
-				14EB4F73213F75D20082B143 /* AppDelegate.m */,
+				1407CC07213FB46500A3FC77 /* Assets.xcassets */,
 				14EB4F78213F75D20082B143 /* Main.storyboard */,
 				14EB4F7D213F75D30082B143 /* LaunchScreen.storyboard */,
+				14EB4F72213F75D20082B143 /* AppDelegate.h */,
+				14EB4F73213F75D20082B143 /* AppDelegate.m */,
 				14EB4F81213F75D30082B143 /* main.m */,
+				141D7F8821442C37009A9443 /* main.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1303,6 +1308,7 @@
 				1407CD64213FB62A00A3FC77 /* Layer 266.jpg in Resources */,
 				1407CE33213FB62A00A3FC77 /* Layer 38.jpg in Resources */,
 				1407CE37213FB62A00A3FC77 /* Layer 108.jpg in Resources */,
+				141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */,
 				1407CD94213FB62A00A3FC77 /* Layer 163.jpg in Resources */,
 				1407CDD3213FB62A00A3FC77 /* Layer 155.jpg in Resources */,
 				1407CD9E213FB62A00A3FC77 /* Layer 228.jpg in Resources */,
@@ -1753,6 +1759,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMZP26248F;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UI/Supporting Files/main.pch";
 				INFOPLIST_FILE = UI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1772,6 +1780,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BMZP26248F;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UI/Supporting Files/main.pch";
 				INFOPLIST_FILE = UI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (

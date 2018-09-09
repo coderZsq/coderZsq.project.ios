@@ -17,10 +17,42 @@
 
 @implementation ViewController
 #if 0
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+- (UIView *)view {
+    
+    if (!_view) {
+        [self loadView];
+        [self viewDidLoad];
+    }
+    return _view;
+}
+
+- (void)loadView {
+    UIView * view = nil;
+    if (!view) {
+        view = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateInitialViewController].view;
+    } else if (!view) {
+        view = [[[NSBundle mainBundle]loadNibNamed:@"ViewController" owner:nil options:nil]firstObject];
+    } else if (!view) {
+        view = [UIView new];
+    }
+    self.view = view;
+    [super loadView];
+}
 #endif
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"UI";
+}
+
 - (NSArray *)dataSource {
     
     if (!_dataSource) {

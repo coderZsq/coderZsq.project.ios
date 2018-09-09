@@ -7,6 +7,65 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+
+@interface Application : NSObject
++ (instancetype)shareApplication;
+- (void)setIconBadgeNumber:(NSInteger)number;
+- (void)setNetworkActivityState:(BOOL)visible;
+- (void)setStateBarStyle:(UIStatusBarStyle)style;
+- (void)openURL:(NSString *)URLString;
+@end
+
+@implementation Application
+
+static Application * application;
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        application = [self new];
+    });
+}
+
++ (instancetype)shareApplication {
+    return application;
+}
+
++ (instancetype)alloc {
+    if (application) {
+        [[NSException exceptionWithName:@"NSInternalInconsistencyException" reason:@"There can only be one Application instance." userInfo:nil] raise];
+    }
+    return [super alloc];
+}
+
+- (void)setIconBadgeNumber:(NSInteger)number {
+    UIApplication * app = [UIApplication sharedApplication];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    [app registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil]];
+#pragma clang diagnostic pop
+    app.applicationIconBadgeNumber = number;
+}
+
+- (void)setNetworkActivityState:(BOOL)visible {
+    UIApplication * app = [UIApplication sharedApplication];
+    app.networkActivityIndicatorVisible = visible;
+}
+
+- (void)setStateBarStyle:(UIStatusBarStyle)style {
+    UIApplication * app = [UIApplication sharedApplication];
+    app.statusBarStyle = style;
+}
+
+- (void)openURL:(NSString *)URLString {
+    UIApplication * app = [UIApplication sharedApplication];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    [app openURL:[NSURL URLWithString:URLString]];
+#pragma clang diagnostic pop
+}
+
+@end
 
 @interface AppDelegate ()
 
@@ -16,36 +75,62 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+#if 0
+    Application * app = [Application shareApplication];
+    Application * app2 = [Application shareApplication];
+//    Application * app3 = [[Application alloc]init];
+    NSLog(@"%p - %p", app, app2);
+    [app setIconBadgeNumber:0];
+    [app setNetworkActivityState:YES];
+    [app openURL:@"https://github.com/coderZsq"];
+    [app setStateBarStyle:UIStatusBarStyleLightContent];
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController * nc = [[UINavigationController alloc]initWithRootViewController:[ViewController new]];
+    //    UIViewController * vc = [[ViewController alloc]initWithNibName:nil bundle:nil];
+    UIViewController * vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+    UINavigationController * nc2 = [[UINavigationController alloc]initWithRootViewController:vc];
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    [sb instantiateViewControllerWithIdentifier:@"identifier"];
+    UINavigationController * nc3 = [sb instantiateInitialViewController];
+    self.window.rootViewController = nc2;
+    self.window.windowLevel = UIWindowLevelNormal;
+    [self.window makeKeyAndVisible];
+
+    UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;
+    UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;
+    UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar __TVOS_PROHIBITED;
+#endif
     return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    NSLog(@"%s", __func__);
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSLog(@"%s", __func__);
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    NSLog(@"%s", __func__);
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSLog(@"%s", __func__);
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSLog(@"%s", __func__);
 }
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    NSLog(@"%s", __func__);
+}
 
 @end

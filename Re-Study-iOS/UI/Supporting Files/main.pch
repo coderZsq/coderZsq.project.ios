@@ -1,0 +1,25 @@
+//
+//  main.pch
+//  main
+//
+//  Created by 朱双泉 on 2018/9/9.
+//  Copyright © 2018 Castie!. All rights reserved.
+//
+
+#ifndef main_pch
+#define main_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+#endif
+
+#endif /* main_pch */
