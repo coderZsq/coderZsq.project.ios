@@ -10,6 +10,7 @@
 #import "BasicControlController.h"
 #import "ScrollViewController.h"
 #import "TableViewController.h"
+#import "PickerViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -56,15 +57,24 @@
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = @[[BasicControlController class],
-                        [ScrollViewController class],
-                        [TableViewController class]];
+        _dataSource = @[@{@"classes" : @[[BasicControlController class],
+                                       [ScrollViewController class],
+                                       [TableViewController class]],
+                          @"titleheader" : @"basic",
+                          @"titlefooter" : @"Some examples of basic user interaction learning."},
+                        @{@"classes" : @[[PickerViewController class]],
+                          @"titleheader" : @"advanced",
+                          @"titlefooter" : @"Some examples of advanced user interaction learning."}];
     }
     return _dataSource;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSource.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.dataSource[section][@"classes"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,20 +84,31 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.imageView.image = [UIImage imageNamed:@"Mark"];
     }
-    cell.textLabel.text = NSStringFromClass(self.dataSource[indexPath.row]);
+    cell.textLabel.text = NSStringFromClass(self.dataSource[indexPath.section][@"classes"][indexPath.row]);
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController pushViewController:[self.dataSource[indexPath.row] new] animated:YES];
+    NSArray * classes = self.dataSource[indexPath.section][@"classes"];
+    UIViewController * vc = nil;
+    UIStoryboard * sb = nil;
+    @try {
+        sb = [UIStoryboard storyboardWithName:NSStringFromClass(classes[indexPath.row]) bundle:nil];
+    } @catch (NSException *exception)  {
+        NSLog(@"%@", exception);
+    } @finally {
+        if (sb) vc = [sb instantiateInitialViewController];
+        else vc = [classes[indexPath.row] new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"basic";
+    return self.dataSource[section][@"titleheader"];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return @"Some examples of basic user interaction learning.";
+    return self.dataSource[section][@"titlefooter"];
 }
 
 @end

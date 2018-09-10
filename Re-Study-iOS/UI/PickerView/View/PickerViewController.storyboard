@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="daU-O6-1sC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picker View Controller-->
+        <scene sceneID="lJp-zt-baR">
+            <objects>
+                <viewController id="daU-O6-1sC" customClass="PickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TEE-Ih-TSr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="fei-1E-7hO">
+                                <rect key="frame" x="40" y="40" width="295" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="2Yv-qs-yb0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTT-yd-4wX" userLabel="Country">
+                                <rect key="frame" x="40" y="200" width="66" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwp-T4-d4B" customClass="CountryTextField">
+                                <rect key="frame" x="116" y="195" width="219" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06J-Zo-2aS">
+                                <rect key="frame" x="40" y="240" width="64.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ux4-BP-bdE" customClass="BirthdayTextField">
+                                <rect key="frame" x="114" y="236" width="220.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIb-Lo-DjU">
+                                <rect key="frame" x="40" y="281" width="65.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5T-c9-fRz" customClass="CityTextField">
+                                <rect key="frame" x="115" y="277" width="219.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="06J-Zo-2aS" firstAttribute="top" secondItem="OTT-yd-4wX" secondAttribute="bottom" constant="20" id="20i-WK-JhO"/>
+                            <constraint firstItem="OTT-yd-4wX" firstAttribute="leading" secondItem="RbQ-fd-MZ7" secondAttribute="leading" constant="40" id="2ZY-1a-YQP"/>
+                            <constraint firstItem="Ux4-BP-bdE" firstAttribute="leading" secondItem="06J-Zo-2aS" secondAttribute="trailing" constant="10" id="8Op-za-nUh"/>
+                            <constraint firstItem="RbQ-fd-MZ7" firstAttribute="trailing" secondItem="Ux4-BP-bdE" secondAttribute="trailing" constant="40" id="FqC-2v-Ukk"/>
+                            <constraint firstItem="vwp-T4-d4B" firstAttribute="centerY" secondItem="OTT-yd-4wX" secondAttribute="centerY" id="Gzu-ni-oQQ"/>
+                            <constraint firstItem="L5T-c9-fRz" firstAttribute="leading" secondItem="zIb-Lo-DjU" secondAttribute="trailing" constant="10" id="KTX-lh-ifO"/>
+                            <constraint firstItem="06J-Zo-2aS" firstAttribute="leading" secondItem="RbQ-fd-MZ7" secondAttribute="leading" constant="40" id="NvZ-vD-Gif"/>
+                            <constraint firstItem="zIb-Lo-DjU" firstAttribute="leading" secondItem="RbQ-fd-MZ7" secondAttribute="leading" constant="40" id="WOX-jT-v9C"/>
+                            <constraint firstItem="OTT-yd-4wX" firstAttribute="top" secondItem="fei-1E-7hO" secondAttribute="bottom" constant="30" id="aJt-Vh-P67"/>
+                            <constraint firstItem="RbQ-fd-MZ7" firstAttribute="trailing" secondItem="vwp-T4-d4B" secondAttribute="trailing" constant="40" id="aVt-Ay-dyr"/>
+                            <constraint firstItem="RbQ-fd-MZ7" firstAttribute="trailing" secondItem="L5T-c9-fRz" secondAttribute="trailing" constant="40" id="b3w-bf-6dg"/>
+                            <constraint firstItem="fei-1E-7hO" firstAttribute="top" secondItem="RbQ-fd-MZ7" secondAttribute="top" constant="20" id="bHw-Mu-Q9Z"/>
+                            <constraint firstItem="zIb-Lo-DjU" firstAttribute="top" secondItem="06J-Zo-2aS" secondAttribute="bottom" constant="20" id="fK4-R8-Mf5"/>
+                            <constraint firstItem="Ux4-BP-bdE" firstAttribute="centerY" secondItem="06J-Zo-2aS" secondAttribute="centerY" id="l35-7q-p4D"/>
+                            <constraint firstItem="fei-1E-7hO" firstAttribute="leading" secondItem="RbQ-fd-MZ7" secondAttribute="leading" constant="40" id="l61-xC-rty"/>
+                            <constraint firstItem="L5T-c9-fRz" firstAttribute="centerY" secondItem="zIb-Lo-DjU" secondAttribute="centerY" id="paP-15-SeS"/>
+                            <constraint firstItem="vwp-T4-d4B" firstAttribute="leading" secondItem="OTT-yd-4wX" secondAttribute="trailing" constant="10" id="r6y-fw-Q3J"/>
+                            <constraint firstItem="RbQ-fd-MZ7" firstAttribute="trailing" secondItem="fei-1E-7hO" secondAttribute="trailing" constant="40" id="rid-kd-KPt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RbQ-fd-MZ7"/>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayTextField" destination="Ux4-BP-bdE" id="CjL-qf-S6Y"/>
+                        <outlet property="cityTextField" destination="L5T-c9-fRz" id="giZ-2g-HZf"/>
+                        <outlet property="countryTextField" destination="vwp-T4-d4B" id="RN9-xW-oX4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOW-Fe-PMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="142.57871064467767"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Avatar" width="400" height="400"/>
+    </resources>
+</document>

@@ -171,7 +171,7 @@ IB_DESIGNABLE
     [super viewDidLoad];
     
     self.title = @"Basic Control";
-    self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:244./255 alpha:1.];
+    self.view.backgroundColor = BackgroundColor;
 
     UILabel * label = [UILabel new];
     label.text = @
@@ -311,7 +311,7 @@ IB_DESIGNABLE
     
     if (!_dataSource) {
         NSMutableArray * dataSource  = [NSMutableArray array];
-        NSString * path = [[NSBundle mainBundle] pathForResource:@"dataSource" ofType:@"plist"];
+        NSString * path = [[NSBundle mainBundle] pathForResource:@"basiccontrol" ofType:@"plist"];
         NSArray * plist = [NSArray arrayWithContentsOfFile:path];
         NSLog(@"%s - %@", __func__, [plist valueForKeyPath:@"text"]);
         NSLog(@"%s - %@", __func__, [plist valueForKeyPath:@"@count"]);

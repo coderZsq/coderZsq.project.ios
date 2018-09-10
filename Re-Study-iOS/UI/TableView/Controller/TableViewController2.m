@@ -55,12 +55,12 @@
     if (!_dataSource) {
 #if 0
         [__Group2 mj_objectArrayWithKeyValuesArray:data];
-        [__Group2 mj_objectArrayWithFile:[[NSBundle mainBundle]pathForResource:@"groups2" ofType:@"plist"]];
+        [__Group2 mj_objectArrayWithFile:[[NSBundle mainBundle]pathForResource:@"tableview2" ofType:@"plist"]];
 #endif
         [__Group2 mj_setupObjectClassInArray:^NSDictionary *{
             return @{@"groups": @"__Data2"};
         }];
-        _dataSource = [__Group2 mj_objectArrayWithFilename:@"groups2.plist"];
+        _dataSource = [__Group2 mj_objectArrayWithFilename:@"tableview2.plist"];
     }
     return _dataSource;
 }

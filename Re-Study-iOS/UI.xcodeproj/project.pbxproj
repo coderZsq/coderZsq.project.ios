@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1407CC06213FB0C300A3FC77 /* video.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1407CC05213FB0C300A3FC77 /* video.m4a */; };
-		1407CC08213FB46500A3FC77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1407CC07213FB46500A3FC77 /* Assets.xcassets */; };
 		1407CD36213FB62A00A3FC77 /* Layer 261.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CC0A213FB62A00A3FC77 /* Layer 261.jpg */; };
 		1407CD37213FB62A00A3FC77 /* Layer 275.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CC0B213FB62A00A3FC77 /* Layer 275.jpg */; };
 		1407CD38213FB62A00A3FC77 /* Layer 249.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CC0C213FB62A00A3FC77 /* Layer 249.jpg */; };
@@ -309,19 +308,30 @@
 		1407CE5F213FB62A00A3FC77 /* Layer 278.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD33213FB62A00A3FC77 /* Layer 278.jpg */; };
 		1407CE60213FB62A00A3FC77 /* Layer 293.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD34213FB62A00A3FC77 /* Layer 293.jpg */; };
 		1407CE61213FB62A00A3FC77 /* Layer 287.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1407CD35213FB62A00A3FC77 /* Layer 287.jpg */; };
+		140DEBED21461146009DB0EF /* CountryTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEBEC21461146009DB0EF /* CountryTextField.m */; };
+		140DEBEF21461466009DB0EF /* pickerview2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 140DEBEE21461466009DB0EF /* pickerview2.plist */; };
+		140DEBF521461674009DB0EF /* FlagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140DEBF421461674009DB0EF /* FlagView.xib */; };
+		140DEBF721461980009DB0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140DEBF62146197F009DB0EF /* Assets.xcassets */; };
+		140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEBF921463AF8009DB0EF /* BirthdayTextField.m */; };
+		140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEBFC21463F0F009DB0EF /* CityTextField.m */; };
+		140DEBFF21464121009DB0EF /* pickerview3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 140DEBFE21464121009DB0EF /* pickerview3.plist */; };
+		140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC0121464CF0009DB0EF /* UITextField+DefaultText.m */; };
 		141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F892144F1A2009A9443 /* ViewController.xib */; };
+		141D7F8D21453248009A9443 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D7F8C21453248009A9443 /* PickerViewController.m */; };
+		141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F9021453FFB009A9443 /* PickerViewController.storyboard */; };
+		141D7F94214552E8009A9443 /* pickerview.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F93214552E7009A9443 /* pickerview.plist */; };
 		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
-		142A2D392143840C00435F95 /* cart.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* cart.plist */; };
-		1461DB5E213FD58300D938DC /* dataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* dataSource.plist */; };
+		142A2D392143840C00435F95 /* tableview4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* tableview4.plist */; };
+		1461DB5E213FD58300D938DC /* basiccontrol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* basiccontrol.plist */; };
 		146472BB2143714F006D9B78 /* TableViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 146472BA2143714F006D9B78 /* TableViewController4.m */; };
 		146472BD21437168006D9B78 /* TableViewController4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146472BC21437168006D9B78 /* TableViewController4.storyboard */; };
 		146AE850214220AE000D6E58 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE84F214220AE000D6E58 /* TableViewController.m */; };
-		146AE854214234A9000D6E58 /* groups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE853214234A9000D6E58 /* groups.plist */; };
+		146AE854214234A9000D6E58 /* tableview.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE853214234A9000D6E58 /* tableview.plist */; };
 		146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE85721423B3F000D6E58 /* TableViewController2.m */; };
 		146AE85E2142B143000D6E58 /* TableViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE85C2142B143000D6E58 /* TableViewController3.m */; };
 		146AE8612142B1D0000D6E58 /* TableViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8602142B1D0000D6E58 /* TableViewController3.storyboard */; };
-		146AE8642142BDF2000D6E58 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8632142BDF1000D6E58 /* list.plist */; };
-		146DA9882143F86900DF9E2B /* groups2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146DA9872143F86800DF9E2B /* groups2.plist */; };
+		146AE8642142BDF2000D6E58 /* tableview3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8632142BDF1000D6E58 /* tableview3.plist */; };
+		146DA9882143F86900DF9E2B /* tableview2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146DA9872143F86800DF9E2B /* tableview2.plist */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
 		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
@@ -338,7 +348,6 @@
 
 /* Begin PBXFileReference section */
 		1407CC05213FB0C300A3FC77 /* video.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.m4a; sourceTree = "<group>"; };
-		1407CC07213FB46500A3FC77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1407CC0A213FB62A00A3FC77 /* Layer 261.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 261.jpg"; sourceTree = "<group>"; };
 		1407CC0B213FB62A00A3FC77 /* Layer 275.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 275.jpg"; sourceTree = "<group>"; };
 		1407CC0C213FB62A00A3FC77 /* Layer 249.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 249.jpg"; sourceTree = "<group>"; };
@@ -639,27 +648,43 @@
 		1407CD33213FB62A00A3FC77 /* Layer 278.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 278.jpg"; sourceTree = "<group>"; };
 		1407CD34213FB62A00A3FC77 /* Layer 293.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 293.jpg"; sourceTree = "<group>"; };
 		1407CD35213FB62A00A3FC77 /* Layer 287.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Layer 287.jpg"; sourceTree = "<group>"; };
+		140DEBEB21461146009DB0EF /* CountryTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryTextField.h; sourceTree = "<group>"; };
+		140DEBEC21461146009DB0EF /* CountryTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryTextField.m; sourceTree = "<group>"; };
+		140DEBEE21461466009DB0EF /* pickerview2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pickerview2.plist; sourceTree = "<group>"; };
+		140DEBF421461674009DB0EF /* FlagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlagView.xib; sourceTree = "<group>"; };
+		140DEBF62146197F009DB0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		140DEBF821463AF8009DB0EF /* BirthdayTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BirthdayTextField.h; sourceTree = "<group>"; };
+		140DEBF921463AF8009DB0EF /* BirthdayTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BirthdayTextField.m; sourceTree = "<group>"; };
+		140DEBFB21463F0F009DB0EF /* CityTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityTextField.h; sourceTree = "<group>"; };
+		140DEBFC21463F0F009DB0EF /* CityTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityTextField.m; sourceTree = "<group>"; };
+		140DEBFE21464121009DB0EF /* pickerview3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pickerview3.plist; sourceTree = "<group>"; };
+		140DEC0021464CF0009DB0EF /* UITextField+DefaultText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+DefaultText.h"; sourceTree = "<group>"; };
+		140DEC0121464CF0009DB0EF /* UITextField+DefaultText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+DefaultText.m"; sourceTree = "<group>"; };
 		141D7F8821442C37009A9443 /* main.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.pch; sourceTree = "<group>"; };
 		141D7F892144F1A2009A9443 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		141D7F8B21453248009A9443 /* PickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		141D7F8C21453248009A9443 /* PickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		141D7F9021453FFB009A9443 /* PickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickerViewController.storyboard; sourceTree = "<group>"; };
+		141D7F93214552E7009A9443 /* pickerview.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pickerview.plist; sourceTree = "<group>"; };
 		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
-		142A2D382143840C00435F95 /* cart.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cart.plist; sourceTree = "<group>"; };
-		1461DB5D213FD58300D938DC /* dataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataSource.plist; sourceTree = "<group>"; };
+		142A2D382143840C00435F95 /* tableview4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview4.plist; sourceTree = "<group>"; };
+		1461DB5D213FD58300D938DC /* basiccontrol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = basiccontrol.plist; sourceTree = "<group>"; };
 		146472B92143714F006D9B78 /* TableViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController4.h; sourceTree = "<group>"; };
 		146472BA2143714F006D9B78 /* TableViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController4.m; sourceTree = "<group>"; };
 		146472BC21437168006D9B78 /* TableViewController4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewController4.storyboard; sourceTree = "<group>"; };
 		146AE84E214220AE000D6E58 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		146AE84F214220AE000D6E58 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		146AE853214234A9000D6E58 /* groups.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = groups.plist; sourceTree = "<group>"; };
+		146AE853214234A9000D6E58 /* tableview.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tableview.plist; sourceTree = "<group>"; };
 		146AE85621423B3F000D6E58 /* TableViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController2.h; sourceTree = "<group>"; };
 		146AE85721423B3F000D6E58 /* TableViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController2.m; sourceTree = "<group>"; };
 		146AE85B2142B142000D6E58 /* TableViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController3.h; sourceTree = "<group>"; };
 		146AE85C2142B143000D6E58 /* TableViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController3.m; sourceTree = "<group>"; };
 		146AE8602142B1D0000D6E58 /* TableViewController3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewController3.storyboard; sourceTree = "<group>"; };
-		146AE8632142BDF1000D6E58 /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
+		146AE8632142BDF1000D6E58 /* tableview3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview3.plist; sourceTree = "<group>"; };
 		146AE8652142CDA7000D6E58 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		146AE8662142CDA7000D6E58 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		146DA9872143F86800DF9E2B /* groups2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = groups2.plist; sourceTree = "<group>"; };
+		146DA9872143F86800DF9E2B /* tableview2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview2.plist; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
@@ -1004,6 +1029,60 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		140DEC0321464CF5009DB0EF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				140DEC0021464CF0009DB0EF /* UITextField+DefaultText.h */,
+				140DEC0121464CF0009DB0EF /* UITextField+DefaultText.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		141D7F8E21453254009A9443 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				141D7F8F21453FE5009A9443 /* Controller */,
+				141D7F9221454004009A9443 /* View */,
+				140DEC0321464CF5009DB0EF /* Category */,
+				141D7F9521455416009A9443 /* Data */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
+		141D7F8F21453FE5009A9443 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				141D7F8B21453248009A9443 /* PickerViewController.h */,
+				141D7F8C21453248009A9443 /* PickerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		141D7F9221454004009A9443 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				141D7F9021453FFB009A9443 /* PickerViewController.storyboard */,
+				140DEBEB21461146009DB0EF /* CountryTextField.h */,
+				140DEBEC21461146009DB0EF /* CountryTextField.m */,
+				140DEBF421461674009DB0EF /* FlagView.xib */,
+				140DEBF821463AF8009DB0EF /* BirthdayTextField.h */,
+				140DEBF921463AF8009DB0EF /* BirthdayTextField.m */,
+				140DEBFB21463F0F009DB0EF /* CityTextField.h */,
+				140DEBFC21463F0F009DB0EF /* CityTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		141D7F9521455416009A9443 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				141D7F93214552E7009A9443 /* pickerview.plist */,
+				140DEBEE21461466009DB0EF /* pickerview2.plist */,
+				140DEBFE21464121009DB0EF /* pickerview3.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		142583DE21411FD70043B11B /* Proxy */ = {
 			isa = PBXGroup;
 			children = (
@@ -1041,10 +1120,10 @@
 		146AE855214234AF000D6E58 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				146AE853214234A9000D6E58 /* groups.plist */,
-				146DA9872143F86800DF9E2B /* groups2.plist */,
-				146AE8632142BDF1000D6E58 /* list.plist */,
-				142A2D382143840C00435F95 /* cart.plist */,
+				146AE853214234A9000D6E58 /* tableview.plist */,
+				146DA9872143F86800DF9E2B /* tableview2.plist */,
+				146AE8632142BDF1000D6E58 /* tableview3.plist */,
+				142A2D382143840C00435F95 /* tableview4.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1116,7 +1195,7 @@
 		14A5DBC7214037360006FB1F /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				1461DB5D213FD58300D938DC /* dataSource.plist */,
+				1461DB5D213FD58300D938DC /* basiccontrol.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1145,6 +1224,7 @@
 				14EB4F8B213F7D390082B143 /* BasicControl */,
 				14A3A48D2140E7CD00A6C233 /* ScrollView */,
 				146AE851214220BC000D6E58 /* TableView */,
+				141D7F8E21453254009A9443 /* PickerView */,
 				14EB4F75213F75D20082B143 /* ViewController.h */,
 				14EB4F76213F75D20082B143 /* ViewController.m */,
 				141D7F892144F1A2009A9443 /* ViewController.xib */,
@@ -1169,7 +1249,7 @@
 		14EB4F8C213F7D5C0082B143 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1407CC07213FB46500A3FC77 /* Assets.xcassets */,
+				140DEBF62146197F009DB0EF /* Assets.xcassets */,
 				14EB4F78213F75D20082B143 /* Main.storyboard */,
 				14EB4F7D213F75D30082B143 /* LaunchScreen.storyboard */,
 				14EB4F72213F75D20082B143 /* AppDelegate.h */,
@@ -1364,7 +1444,9 @@
 				1407CD91213FB62A00A3FC77 /* Layer 52.jpg in Resources */,
 				1407CDD1213FB62A00A3FC77 /* Layer 196.jpg in Resources */,
 				1407CE1E213FB62A00A3FC77 /* Layer 283.jpg in Resources */,
+				140DEBFF21464121009DB0EF /* pickerview3.plist in Resources */,
 				1407CDEA213FB62A00A3FC77 /* Layer 157.jpg in Resources */,
+				140DEBEF21461466009DB0EF /* pickerview2.plist in Resources */,
 				1407CD89213FB62A00A3FC77 /* Layer 217.jpg in Resources */,
 				1407CDCD213FB62A00A3FC77 /* Layer 237.jpg in Resources */,
 				1407CE2D213FB62A00A3FC77 /* Layer 282.jpg in Resources */,
@@ -1380,13 +1462,13 @@
 				1407CE59213FB62A00A3FC77 /* Layer 127.jpg in Resources */,
 				146472BD21437168006D9B78 /* TableViewController4.storyboard in Resources */,
 				1407CE57213FB62A00A3FC77 /* Layer 16.jpg in Resources */,
-				146AE854214234A9000D6E58 /* groups.plist in Resources */,
+				146AE854214234A9000D6E58 /* tableview.plist in Resources */,
 				1407CD6C213FB62A00A3FC77 /* Layer 112.jpg in Resources */,
 				1407CE30213FB62A00A3FC77 /* Layer 257.jpg in Resources */,
 				1407CDC5213FB62A00A3FC77 /* Layer 41.jpg in Resources */,
 				1407CE32213FB62A00A3FC77 /* Layer 10.jpg in Resources */,
 				1407CD85213FB62A00A3FC77 /* Layer 44.jpg in Resources */,
-				1461DB5E213FD58300D938DC /* dataSource.plist in Resources */,
+				1461DB5E213FD58300D938DC /* basiccontrol.plist in Resources */,
 				1407CD73213FB62A00A3FC77 /* Layer 265.jpg in Resources */,
 				1407CD74213FB62A00A3FC77 /* Layer 259.jpg in Resources */,
 				1407CD82213FB62A00A3FC77 /* Layer 175.jpg in Resources */,
@@ -1468,7 +1550,7 @@
 				1407CDCE213FB62A00A3FC77 /* Layer 70.jpg in Resources */,
 				1407CD50213FB62A00A3FC77 /* Layer 101.jpg in Resources */,
 				1407CD37213FB62A00A3FC77 /* Layer 275.jpg in Resources */,
-				142A2D392143840C00435F95 /* cart.plist in Resources */,
+				142A2D392143840C00435F95 /* tableview4.plist in Resources */,
 				1407CDA6213FB62A00A3FC77 /* Layer 43.jpg in Resources */,
 				1407CE5D213FB62A00A3FC77 /* Layer 250.jpg in Resources */,
 				1407CDAA213FB62A00A3FC77 /* Layer 166.jpg in Resources */,
@@ -1483,7 +1565,6 @@
 				1407CDD0213FB62A00A3FC77 /* Layer 58.jpg in Resources */,
 				1407CE53213FB62A00A3FC77 /* Layer 292.jpg in Resources */,
 				1407CE0E213FB62A00A3FC77 /* Layer 61.jpg in Resources */,
-				1407CC08213FB46500A3FC77 /* Assets.xcassets in Resources */,
 				1407CD99213FB62A00A3FC77 /* Layer 5.jpg in Resources */,
 				1407CE41213FB62A00A3FC77 /* Layer 285.jpg in Resources */,
 				1407CE20213FB62A00A3FC77 /* Layer 240.jpg in Resources */,
@@ -1493,13 +1574,14 @@
 				1407CD4E213FB62A00A3FC77 /* Layer 129.jpg in Resources */,
 				1407CD88213FB62A00A3FC77 /* Layer 93.jpg in Resources */,
 				1407CD84213FB62A00A3FC77 /* Layer 78.jpg in Resources */,
-				146AE8642142BDF2000D6E58 /* list.plist in Resources */,
+				146AE8642142BDF2000D6E58 /* tableview3.plist in Resources */,
 				1407CE2B213FB62A00A3FC77 /* Layer 241.jpg in Resources */,
 				1407CE01213FB62A00A3FC77 /* Layer 191.jpg in Resources */,
 				1407CD9A213FB62A00A3FC77 /* Layer 53.jpg in Resources */,
 				1407CE0A213FB62A00A3FC77 /* Layer 226.jpg in Resources */,
 				1407CE27213FB62A00A3FC77 /* Layer 137.jpg in Resources */,
 				1407CD4F213FB62A00A3FC77 /* Layer 115.jpg in Resources */,
+				140DEBF721461980009DB0EF /* Assets.xcassets in Resources */,
 				1407CD95213FB62A00A3FC77 /* Layer 177.jpg in Resources */,
 				1407CE34213FB62A00A3FC77 /* Layer 121.jpg in Resources */,
 				1407CE05213FB62A00A3FC77 /* Layer 63.jpg in Resources */,
@@ -1516,7 +1598,7 @@
 				1407CD52213FB62A00A3FC77 /* Layer 30.jpg in Resources */,
 				1407CD45213FB62A00A3FC77 /* Layer 289.jpg in Resources */,
 				1407CDE8213FB62A00A3FC77 /* Layer 142.jpg in Resources */,
-				146DA9882143F86900DF9E2B /* groups2.plist in Resources */,
+				146DA9882143F86900DF9E2B /* tableview2.plist in Resources */,
 				1407CE15213FB62A00A3FC77 /* Layer 151.jpg in Resources */,
 				1407CD44213FB62A00A3FC77 /* Layer 260.jpg in Resources */,
 				1407CDC3213FB62A00A3FC77 /* Layer 158.jpg in Resources */,
@@ -1550,10 +1632,12 @@
 				1407CE3A213FB62A00A3FC77 /* Layer 39.jpg in Resources */,
 				1407CDF1213FB62A00A3FC77 /* Layer 209.jpg in Resources */,
 				1407CDB3213FB62A00A3FC77 /* Layer 205.jpg in Resources */,
+				141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */,
 				1407CDBD213FB62A00A3FC77 /* Layer 2.jpg in Resources */,
 				146AE8612142B1D0000D6E58 /* TableViewController3.storyboard in Resources */,
 				1407CD5A213FB62A00A3FC77 /* Layer 20.jpg in Resources */,
 				1407CE56213FB62A00A3FC77 /* Layer 251.jpg in Resources */,
+				140DEBF521461674009DB0EF /* FlagView.xib in Resources */,
 				1407CDD7213FB62A00A3FC77 /* Layer 140.jpg in Resources */,
 				1407CDB9213FB62A00A3FC77 /* Layer 83.jpg in Resources */,
 				1407CE3B213FB62A00A3FC77 /* Layer 11.jpg in Resources */,
@@ -1567,6 +1651,7 @@
 				1407CE61213FB62A00A3FC77 /* Layer 287.jpg in Resources */,
 				1407CDF9213FB62A00A3FC77 /* Layer 76.jpg in Resources */,
 				1407CD92213FB62A00A3FC77 /* Layer 4.jpg in Resources */,
+				141D7F94214552E8009A9443 /* pickerview.plist in Resources */,
 				1407CE36213FB62A00A3FC77 /* Layer 109.jpg in Resources */,
 				1407CE23213FB62A00A3FC77 /* Layer 13.jpg in Resources */,
 				1407CD5D213FB62A00A3FC77 /* Layer 105.jpg in Resources */,
@@ -1607,12 +1692,17 @@
 				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
+				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
 				146472BB2143714F006D9B78 /* TableViewController4.m in Sources */,
 				146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */,
 				14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */,
 				146AE85E2142B143000D6E58 /* TableViewController3.m in Sources */,
+				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
+				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
+				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
+				140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

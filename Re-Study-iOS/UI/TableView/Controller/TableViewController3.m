@@ -42,6 +42,7 @@
     UIBarButtonItem * insertItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insert:)];
     UIBarButtonItem * removeItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(remove:)];
     UIBarButtonItem * editItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)];
+    NSLog(@"%@", self.navigationController.childViewControllers);
     self.navigationItem.rightBarButtonItems = @[editItem, removeItem, insertItem];
     _insertItem = insertItem;
     
@@ -129,7 +130,7 @@
 - (NSMutableArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = [__Model2 mj_objectArrayWithFilename:@"list.plist"];
+        _dataSource = [__Model2 mj_objectArrayWithFilename:@"tableview3.plist"];
     }
     return _dataSource;
 }

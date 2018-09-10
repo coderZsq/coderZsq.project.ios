@@ -72,7 +72,7 @@
     [super viewDidLoad];
 
     self.title = @"Grouped Style";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = BackgroundColor;
     
     UITableView * tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableView.dataSource = self;
@@ -97,7 +97,7 @@
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        NSArray * data = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"groups" ofType:@"plist"]];
+        NSArray * data = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"tableview" ofType:@"plist"]];
         NSMutableArray * dataSource = [NSMutableArray array];
         for (NSDictionary * dict in data) {
             __Group * group = [__Group groupWithDict:dict];

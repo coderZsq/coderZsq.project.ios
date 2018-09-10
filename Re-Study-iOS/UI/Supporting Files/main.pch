@@ -20,6 +20,8 @@
 #define NSLog(...)
 #endif
 
+#define BackgroundColor [UIColor colorWithRed:239./255. green:239./255. blue:244./255 alpha:1.]
+
 #endif
 
 #endif /* main_pch */
