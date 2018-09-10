@@ -316,6 +316,9 @@
 		140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEBFC21463F0F009DB0EF /* CityTextField.m */; };
 		140DEBFF21464121009DB0EF /* pickerview3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 140DEBFE21464121009DB0EF /* pickerview3.plist */; };
 		140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC0121464CF0009DB0EF /* UITextField+DefaultText.m */; };
+		140DEC06214665E1009DB0EF /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC05214665E1009DB0EF /* NavigationController.m */; };
+		140DEC0A2146675B009DB0EF /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140DEC092146675B009DB0EF /* NavigationController.storyboard */; };
+		140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC0D21466852009DB0EF /* NavigationViewController.m */; };
 		141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F892144F1A2009A9443 /* ViewController.xib */; };
 		141D7F8D21453248009A9443 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D7F8C21453248009A9443 /* PickerViewController.m */; };
 		141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F9021453FFB009A9443 /* PickerViewController.storyboard */; };
@@ -660,6 +663,11 @@
 		140DEBFE21464121009DB0EF /* pickerview3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pickerview3.plist; sourceTree = "<group>"; };
 		140DEC0021464CF0009DB0EF /* UITextField+DefaultText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+DefaultText.h"; sourceTree = "<group>"; };
 		140DEC0121464CF0009DB0EF /* UITextField+DefaultText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+DefaultText.m"; sourceTree = "<group>"; };
+		140DEC04214665E1009DB0EF /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		140DEC05214665E1009DB0EF /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		140DEC092146675B009DB0EF /* NavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
+		140DEC0C21466852009DB0EF /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		140DEC0D21466852009DB0EF /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		141D7F8821442C37009A9443 /* main.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.pch; sourceTree = "<group>"; };
 		141D7F892144F1A2009A9443 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		141D7F8B21453248009A9443 /* PickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
@@ -1038,6 +1046,34 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		140DEC07214665EC009DB0EF /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				140DEC0821466740009DB0EF /* Controller */,
+				140DEC0B2146675F009DB0EF /* View */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		140DEC0821466740009DB0EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				140DEC04214665E1009DB0EF /* NavigationController.h */,
+				140DEC05214665E1009DB0EF /* NavigationController.m */,
+				140DEC0C21466852009DB0EF /* NavigationViewController.h */,
+				140DEC0D21466852009DB0EF /* NavigationViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		140DEC0B2146675F009DB0EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				140DEC092146675B009DB0EF /* NavigationController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		141D7F8E21453254009A9443 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1225,6 +1261,7 @@
 				14A3A48D2140E7CD00A6C233 /* ScrollView */,
 				146AE851214220BC000D6E58 /* TableView */,
 				141D7F8E21453254009A9443 /* PickerView */,
+				140DEC07214665EC009DB0EF /* NavigationController */,
 				14EB4F75213F75D20082B143 /* ViewController.h */,
 				14EB4F76213F75D20082B143 /* ViewController.m */,
 				141D7F892144F1A2009A9443 /* ViewController.xib */,
@@ -1602,6 +1639,7 @@
 				1407CE15213FB62A00A3FC77 /* Layer 151.jpg in Resources */,
 				1407CD44213FB62A00A3FC77 /* Layer 260.jpg in Resources */,
 				1407CDC3213FB62A00A3FC77 /* Layer 158.jpg in Resources */,
+				140DEC0A2146675B009DB0EF /* NavigationController.storyboard in Resources */,
 				1407CDAE213FB62A00A3FC77 /* Layer 198.jpg in Resources */,
 				1407CD7B213FB62A00A3FC77 /* Layer 79.jpg in Resources */,
 				1407CE4D213FB62A00A3FC77 /* Layer 28.jpg in Resources */,
@@ -1689,9 +1727,11 @@
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				14EB4F77213F75D20082B143 /* ViewController.m in Sources */,
+				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
 				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
+				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
 				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,

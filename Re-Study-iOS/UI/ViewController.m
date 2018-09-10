@@ -11,6 +11,7 @@
 #import "ScrollViewController.h"
 #import "TableViewController.h"
 #import "PickerViewController.h"
+#import "NavigationController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -36,15 +37,15 @@
 }
 
 - (void)loadView {
-    UIView * view = nil;
-    if (!view) {
-        view = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateInitialViewController].view;
-    } else if (!view) {
-        view = [[[NSBundle mainBundle]loadNibNamed:@"ViewController" owner:nil options:nil]firstObject];
-    } else if (!view) {
-        view = [UIView new];
-    }
-    self.view = view;
+    //    UIView * view = nil;
+    //    if (!view) {
+    //        view = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateInitialViewController].view;
+    //    } else if (!view) {
+    //        view = [[[NSBundle mainBundle]loadNibNamed:@"ViewController" owner:nil options:nil]firstObject];
+    //    } else if (!view) {
+    //        view = [UIView new];
+    //    }
+    //    self.view = view;
     [super loadView];
 }
 #endif
@@ -58,11 +59,12 @@
     
     if (!_dataSource) {
         _dataSource = @[@{@"classes" : @[[BasicControlController class],
-                                       [ScrollViewController class],
-                                       [TableViewController class]],
+                                         [ScrollViewController class],
+                                         [TableViewController class]],
                           @"titleheader" : @"basic",
                           @"titlefooter" : @"Some examples of basic user interaction learning."},
-                        @{@"classes" : @[[PickerViewController class]],
+                        @{@"classes" : @[[PickerViewController class],
+                                         [NavigationController class]],
                           @"titleheader" : @"advanced",
                           @"titlefooter" : @"Some examples of advanced user interaction learning."}];
     }
@@ -99,7 +101,9 @@
     } @finally {
         if (sb) vc = [sb instantiateInitialViewController];
         else vc = [classes[indexPath.row] new];
-        [self.navigationController pushViewController:vc animated:YES];
+        if ([vc isKindOfClass:[NavigationController class]])
+            [self presentViewController:vc animated:YES completion:nil];
+        else [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
