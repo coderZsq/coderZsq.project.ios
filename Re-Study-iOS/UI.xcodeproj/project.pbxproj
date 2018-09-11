@@ -335,6 +335,9 @@
 		146AE8612142B1D0000D6E58 /* TableViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8602142B1D0000D6E58 /* TableViewController3.storyboard */; };
 		146AE8642142BDF2000D6E58 /* tableview3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146AE8632142BDF1000D6E58 /* tableview3.plist */; };
 		146DA9882143F86900DF9E2B /* tableview2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146DA9872143F86800DF9E2B /* tableview2.plist */; };
+		1475F4652147638C00237FC6 /* NavigationViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1475F4642147638C00237FC6 /* NavigationViewController2.m */; };
+		1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1475F46721478FF300237FC6 /* NavigationViewController3.m */; };
+		1475F46B214792F700237FC6 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1475F46A214792F700237FC6 /* ContactModel.m */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
 		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
@@ -693,6 +696,12 @@
 		146AE8652142CDA7000D6E58 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		146AE8662142CDA7000D6E58 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		146DA9872143F86800DF9E2B /* tableview2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview2.plist; sourceTree = "<group>"; };
+		1475F4632147638C00237FC6 /* NavigationViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController2.h; sourceTree = "<group>"; };
+		1475F4642147638C00237FC6 /* NavigationViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController2.m; sourceTree = "<group>"; };
+		1475F46621478FF300237FC6 /* NavigationViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController3.h; sourceTree = "<group>"; };
+		1475F46721478FF300237FC6 /* NavigationViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController3.m; sourceTree = "<group>"; };
+		1475F469214792F700237FC6 /* ContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
+		1475F46A214792F700237FC6 /* ContactModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
@@ -1051,6 +1060,7 @@
 			children = (
 				140DEC0821466740009DB0EF /* Controller */,
 				140DEC0B2146675F009DB0EF /* View */,
+				1475F46C214792FE00237FC6 /* Model */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
@@ -1062,6 +1072,10 @@
 				140DEC05214665E1009DB0EF /* NavigationController.m */,
 				140DEC0C21466852009DB0EF /* NavigationViewController.h */,
 				140DEC0D21466852009DB0EF /* NavigationViewController.m */,
+				1475F4632147638C00237FC6 /* NavigationViewController2.h */,
+				1475F4642147638C00237FC6 /* NavigationViewController2.m */,
+				1475F46621478FF300237FC6 /* NavigationViewController3.h */,
+				1475F46721478FF300237FC6 /* NavigationViewController3.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1171,6 +1185,15 @@
 				146472BC21437168006D9B78 /* TableViewController4.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1475F46C214792FE00237FC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1475F469214792F700237FC6 /* ContactModel.h */,
+				1475F46A214792F700237FC6 /* ContactModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		14A3A4892140D97600A6C233 /* Category */ = {
@@ -1734,11 +1757,14 @@
 				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
 				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
+				1475F46B214792F700237FC6 /* ContactModel.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
 				146472BB2143714F006D9B78 /* TableViewController4.m in Sources */,
+				1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */,
 				146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */,
 				14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */,
 				146AE85E2142B143000D6E58 /* TableViewController3.m in Sources */,
+				1475F4652147638C00237FC6 /* NavigationViewController2.m in Sources */,
 				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
 				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
