@@ -97,8 +97,8 @@
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1. * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        if ([self.accountTextField.text isEqualToString:@"Cas"] &&
-            [self.passwordTextField.text isEqualToString:@"666"]) {
+        if ([self.accountTextField.text isEqualToString:@"Castie!"] &&
+            [self.passwordTextField.text isEqualToString:@"666666"]) {
             NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
             [userDefault setObject:self.accountTextField.text forKey:kAccount];
             [userDefault setObject:self.passwordTextField.text forKey:kPassword];

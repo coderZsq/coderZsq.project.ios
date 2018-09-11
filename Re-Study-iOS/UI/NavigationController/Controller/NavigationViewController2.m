@@ -34,13 +34,19 @@
 - (NSMutableArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = @[].mutableCopy;
+        NSString * path =  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        NSString * filePath = [path stringByAppendingPathComponent:@"dataSource.data"];
+        NSArray * dataSource = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        _dataSource = dataSource.count ? dataSource.mutableCopy : @[].mutableCopy;
     }
     return _dataSource;
 }
 
 - (void)navigationViewController3:(NavigationViewController3 *)vc addModel:(ContactModel *)model {
     [self.dataSource addObject:model];
+    NSString * path =  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString * filePath = [path stringByAppendingPathComponent:@"dataSource.data"];
+    [NSKeyedArchiver archiveRootObject:self.dataSource toFile:filePath];
     [self.tableView reloadData];
 }
 
