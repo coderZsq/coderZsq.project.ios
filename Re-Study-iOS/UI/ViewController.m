@@ -101,7 +101,7 @@
     } @finally {
         if (sb) vc = [sb instantiateInitialViewController];
         else vc = [classes[indexPath.row] new];
-        if ([vc isKindOfClass:[NavigationController class]])
+        if ([vc isKindOfClass:[UINavigationController class]])
             [self presentViewController:vc animated:YES completion:nil];
         else [self.navigationController pushViewController:vc animated:YES];
     }
