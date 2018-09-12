@@ -1,24 +1,25 @@
 //
-//  ViewController.m
+//  RootViewController.m
 //  UI
 //
 //  Created by 朱双泉 on 2018/9/5.
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 #import "BasicControlController.h"
 #import "ScrollViewController.h"
 #import "TableViewController.h"
 #import "PickerViewController.h"
 #import "NavigationController.h"
 #import "TabBarController.h"
+#import "ViewController.h"
 
-@interface ViewController ()
+@interface RootViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
 @end
 
-@implementation ViewController
+@implementation RootViewController
 #if 0
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -42,7 +43,7 @@
     //    if (!view) {
     //        view = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateInitialViewController].view;
     //    } else if (!view) {
-    //        view = [[[NSBundle mainBundle]loadNibNamed:@"ViewController" owner:nil options:nil]firstObject];
+    //        view = [[[NSBundle mainBundle]loadNibNamed:@"RootViewController" owner:nil options:nil]firstObject];
     //    } else if (!view) {
     //        view = [UIView new];
     //    }
@@ -66,7 +67,8 @@
                           @"titlefooter" : @"Some examples of basic user interaction learning."},
                         @{@"classes" : @[[PickerViewController class],
                                          [NavigationController class],
-                                         [TabBarController class]],
+                                         [TabBarController class],
+                                         [ViewController class]],
                           @"titleheader" : @"advanced",
                           @"titlefooter" : @"Some examples of advanced user interaction learning."}];
     }

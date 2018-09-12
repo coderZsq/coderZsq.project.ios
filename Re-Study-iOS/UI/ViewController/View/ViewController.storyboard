@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nmH-iG-Gy1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="RcW-Vh-0zP">
+            <objects>
+                <viewController id="nmH-iG-Gy1" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HO2-Y6-lYl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aTW-SA-vmw">
+                                <rect key="frame" x="10" y="30" width="100" height="130"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="KDQ-oP-UGJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="CSf-H0-MuD"/>
+                                            <constraint firstAttribute="height" constant="100" id="KBm-tJ-QiV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8j-8f-5uh">
+                                        <rect key="frame" x="15" y="100" width="70" height="30"/>
+                                        <state key="normal" title="Transform"/>
+                                        <connections>
+                                            <action selector="transformButtonClick:" destination="nmH-iG-Gy1" eventType="touchUpInside" id="hW3-jf-Fb2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AY-v7-E60" customClass="EventView">
+                                <rect key="frame" x="120" y="30" width="100" height="100"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aTW-SA-vmw" firstAttribute="top" secondItem="neW-LZ-5Au" secondAttribute="top" constant="10" id="0JF-vA-Pkm"/>
+                            <constraint firstItem="1AY-v7-E60" firstAttribute="bottom" secondItem="KDQ-oP-UGJ" secondAttribute="bottom" id="Fuu-WV-tM7"/>
+                            <constraint firstItem="1AY-v7-E60" firstAttribute="leading" secondItem="aTW-SA-vmw" secondAttribute="trailing" constant="10" id="SxK-JT-9Ia"/>
+                            <constraint firstItem="1AY-v7-E60" firstAttribute="height" secondItem="KDQ-oP-UGJ" secondAttribute="height" id="T4o-br-ENO"/>
+                            <constraint firstItem="aTW-SA-vmw" firstAttribute="leading" secondItem="neW-LZ-5Au" secondAttribute="leading" constant="10" id="VCj-Yc-BBb"/>
+                            <constraint firstItem="1AY-v7-E60" firstAttribute="top" secondItem="KDQ-oP-UGJ" secondAttribute="top" id="e8a-c0-Ssf"/>
+                            <constraint firstItem="1AY-v7-E60" firstAttribute="width" secondItem="KDQ-oP-UGJ" secondAttribute="width" id="tFc-1b-IIB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="neW-LZ-5Au"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="KDQ-oP-UGJ" id="Fsp-NG-dCW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ouo-8J-6Rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Avatar" width="400" height="400"/>
+    </resources>
+</document>

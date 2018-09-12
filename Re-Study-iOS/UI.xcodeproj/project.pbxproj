@@ -323,7 +323,10 @@
 		1418AAC32148EA0E00CACDC3 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAC22148EA0E00CACDC3 /* UIViewController+Navigation.m */; };
 		1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAC52148F6EE00CACDC3 /* TabBarController.m */; };
 		1418AACA2148F81B00CACDC3 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1418AAC92148F81B00CACDC3 /* TabBarController.storyboard */; };
-		141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F892144F1A2009A9443 /* ViewController.xib */; };
+		1418AACD2149079E00CACDC3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AACC2149079E00CACDC3 /* RootViewController.m */; };
+		1418AAD02149080000CACDC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AACF2149080000CACDC3 /* ViewController.m */; };
+		1418AAD42149082800CACDC3 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1418AAD32149082800CACDC3 /* ViewController.storyboard */; };
+		141D7F8A2144F1A2009A9443 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F892144F1A2009A9443 /* RootViewController.xib */; };
 		141D7F8D21453248009A9443 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D7F8C21453248009A9443 /* PickerViewController.m */; };
 		141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F9021453FFB009A9443 /* PickerViewController.storyboard */; };
 		141D7F94214552E8009A9443 /* pickerview.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F93214552E7009A9443 /* pickerview.plist */; };
@@ -348,7 +351,6 @@
 		14A3A49421411A0100A6C233 /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A3A49321411A0100A6C233 /* PageView.xib */; };
 		14A5DBC421402EF10006FB1F /* __View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A5DBC321402EF10006FB1F /* __View.xib */; };
 		14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F73213F75D20082B143 /* AppDelegate.m */; };
-		14EB4F77213F75D20082B143 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F76213F75D20082B143 /* ViewController.m */; };
 		14EB4F7A213F75D20082B143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F78213F75D20082B143 /* Main.storyboard */; };
 		14EB4F7F213F75D30082B143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F7D213F75D30082B143 /* LaunchScreen.storyboard */; };
 		14EB4F82213F75D30082B143 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F81213F75D30082B143 /* main.m */; };
@@ -682,8 +684,12 @@
 		1418AAC42148F6EE00CACDC3 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		1418AAC52148F6EE00CACDC3 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		1418AAC92148F81B00CACDC3 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
+		1418AACC2149079E00CACDC3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1418AACE2149080000CACDC3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1418AACF2149080000CACDC3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1418AAD32149082800CACDC3 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
 		141D7F8821442C37009A9443 /* main.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.pch; sourceTree = "<group>"; };
-		141D7F892144F1A2009A9443 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		141D7F892144F1A2009A9443 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		141D7F8B21453248009A9443 /* PickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		141D7F8C21453248009A9443 /* PickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		141D7F9021453FFB009A9443 /* PickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickerViewController.storyboard; sourceTree = "<group>"; };
@@ -724,8 +730,7 @@
 		14EB4F6F213F75D20082B143 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB4F72213F75D20082B143 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14EB4F73213F75D20082B143 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		14EB4F75213F75D20082B143 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		14EB4F76213F75D20082B143 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14EB4F75213F75D20082B143 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		14EB4F79213F75D20082B143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14EB4F7E213F75D30082B143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14EB4F80213F75D30082B143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1137,6 +1142,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1418AAD12149080600CACDC3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1418AAD22149081400CACDC3 /* Controller */,
+				1418AAD521490E0D00CACDC3 /* View */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1418AAD22149081400CACDC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1418AACE2149080000CACDC3 /* ViewController.h */,
+				1418AACF2149080000CACDC3 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1418AAD521490E0D00CACDC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1418AAD32149082800CACDC3 /* ViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		141D7F8E21453254009A9443 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1335,9 +1366,10 @@
 				141D7F8E21453254009A9443 /* PickerView */,
 				140DEC07214665EC009DB0EF /* NavigationController */,
 				1418AAC72148F6FF00CACDC3 /* TabbarController */,
-				14EB4F75213F75D20082B143 /* ViewController.h */,
-				14EB4F76213F75D20082B143 /* ViewController.m */,
-				141D7F892144F1A2009A9443 /* ViewController.xib */,
+				1418AAD12149080600CACDC3 /* ViewController */,
+				14EB4F75213F75D20082B143 /* RootViewController.h */,
+				1418AACC2149079E00CACDC3 /* RootViewController.m */,
+				141D7F892144F1A2009A9443 /* RootViewController.xib */,
 				14EB4F80213F75D30082B143 /* Info.plist */,
 				14EB4F8C213F7D5C0082B143 /* Supporting Files */,
 			);
@@ -1498,7 +1530,7 @@
 				1407CD64213FB62A00A3FC77 /* Layer 266.jpg in Resources */,
 				1407CE33213FB62A00A3FC77 /* Layer 38.jpg in Resources */,
 				1407CE37213FB62A00A3FC77 /* Layer 108.jpg in Resources */,
-				141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */,
+				141D7F8A2144F1A2009A9443 /* RootViewController.xib in Resources */,
 				1407CD94213FB62A00A3FC77 /* Layer 163.jpg in Resources */,
 				1407CDD3213FB62A00A3FC77 /* Layer 155.jpg in Resources */,
 				1407CD9E213FB62A00A3FC77 /* Layer 228.jpg in Resources */,
@@ -1515,6 +1547,7 @@
 				1407CD42213FB62A00A3FC77 /* Layer 248.jpg in Resources */,
 				1407CE24213FB62A00A3FC77 /* Layer 136.jpg in Resources */,
 				1407CD7A213FB62A00A3FC77 /* Layer 45.jpg in Resources */,
+				1418AAD42149082800CACDC3 /* ViewController.storyboard in Resources */,
 				1407CD4D213FB62A00A3FC77 /* Layer 128.jpg in Resources */,
 				1407CD93213FB62A00A3FC77 /* Layer 188.jpg in Resources */,
 				1407CE07213FB62A00A3FC77 /* Layer 224.jpg in Resources */,
@@ -1801,10 +1834,10 @@
 				1418AAC32148EA0E00CACDC3 /* UIViewController+Navigation.m in Sources */,
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
-				14EB4F77213F75D20082B143 /* ViewController.m in Sources */,
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
 				1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */,
 				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
+				1418AAD02149080000CACDC3 /* ViewController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
 				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
@@ -1823,6 +1856,7 @@
 				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
 				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
 				140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */,
+				1418AACD2149079E00CACDC3 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
