@@ -30,6 +30,7 @@
     
     UILabel * titleLabel = [UILabel new];
     titleLabel.text = self.title;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;

@@ -12,6 +12,7 @@
 #import "TableViewController.h"
 #import "PickerViewController.h"
 #import "NavigationController.h"
+#import "TabBarController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -64,7 +65,8 @@
                           @"titleheader" : @"basic",
                           @"titlefooter" : @"Some examples of basic user interaction learning."},
                         @{@"classes" : @[[PickerViewController class],
-                                         [NavigationController class]],
+                                         [NavigationController class],
+                                         [TabBarController class]],
                           @"titleheader" : @"advanced",
                           @"titlefooter" : @"Some examples of advanced user interaction learning."}];
     }
@@ -101,8 +103,8 @@
     } @finally {
         if (sb) vc = [sb instantiateInitialViewController];
         else vc = [classes[indexPath.row] new];
-        if ([vc isKindOfClass:[UINavigationController class]])
-            [self presentViewController:vc animated:YES completion:nil];
+        if ([vc isKindOfClass:[UINavigationController class]] || [vc isKindOfClass:[UITabBarController class]])
+            [self presentViewController:vc animated:YES completion:nil];            
         else [self.navigationController pushViewController:vc animated:YES];
     }
 }

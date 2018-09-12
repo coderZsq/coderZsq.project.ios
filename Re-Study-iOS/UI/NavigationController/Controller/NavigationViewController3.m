@@ -25,11 +25,10 @@
     [self defaultNavigationLayout];
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self defaultNavigationSetting];
-    
+
     [self.nameTextField addTarget:self action:@selector(textChange:) forControlEvents:UIControlEventEditingChanged];
     [self.telTextField addTarget:self action:@selector(textChange:) forControlEvents:UIControlEventEditingChanged];
     [self textChange:nil];

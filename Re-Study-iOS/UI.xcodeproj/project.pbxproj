@@ -321,6 +321,8 @@
 		140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC0D21466852009DB0EF /* NavigationViewController.m */; };
 		1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAB82148C98700CACDC3 /* UIImage+Color.m */; };
 		1418AAC32148EA0E00CACDC3 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAC22148EA0E00CACDC3 /* UIViewController+Navigation.m */; };
+		1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAC52148F6EE00CACDC3 /* TabBarController.m */; };
+		1418AACA2148F81B00CACDC3 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1418AAC92148F81B00CACDC3 /* TabBarController.storyboard */; };
 		141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F892144F1A2009A9443 /* ViewController.xib */; };
 		141D7F8D21453248009A9443 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D7F8C21453248009A9443 /* PickerViewController.m */; };
 		141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F9021453FFB009A9443 /* PickerViewController.storyboard */; };
@@ -677,6 +679,9 @@
 		1418AAB82148C98700CACDC3 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		1418AAC12148EA0E00CACDC3 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		1418AAC22148EA0E00CACDC3 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		1418AAC42148F6EE00CACDC3 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		1418AAC52148F6EE00CACDC3 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		1418AAC92148F81B00CACDC3 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		141D7F8821442C37009A9443 /* main.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.pch; sourceTree = "<group>"; };
 		141D7F892144F1A2009A9443 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		141D7F8B21453248009A9443 /* PickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
@@ -1106,6 +1111,32 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		1418AAC72148F6FF00CACDC3 /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				1418AAC82148F71600CACDC3 /* Controller */,
+				1418AACB2148F82200CACDC3 /* View */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		1418AAC82148F71600CACDC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1418AAC42148F6EE00CACDC3 /* TabBarController.h */,
+				1418AAC52148F6EE00CACDC3 /* TabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1418AACB2148F82200CACDC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1418AAC92148F81B00CACDC3 /* TabBarController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		141D7F8E21453254009A9443 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,6 +1334,7 @@
 				146AE851214220BC000D6E58 /* TableView */,
 				141D7F8E21453254009A9443 /* PickerView */,
 				140DEC07214665EC009DB0EF /* NavigationController */,
+				1418AAC72148F6FF00CACDC3 /* TabbarController */,
 				14EB4F75213F75D20082B143 /* ViewController.h */,
 				14EB4F76213F75D20082B143 /* ViewController.m */,
 				141D7F892144F1A2009A9443 /* ViewController.xib */,
@@ -1557,6 +1589,7 @@
 				1407CE16213FB62A00A3FC77 /* Layer 179.jpg in Resources */,
 				1407CD4C213FB62A00A3FC77 /* Layer 114.jpg in Resources */,
 				1407CE46213FB62A00A3FC77 /* Layer 118.jpg in Resources */,
+				1418AACA2148F81B00CACDC3 /* TabBarController.storyboard in Resources */,
 				1407CD77213FB62A00A3FC77 /* Layer 92.jpg in Resources */,
 				1407CDFD213FB62A00A3FC77 /* Layer 147.jpg in Resources */,
 				1407CD53213FB62A00A3FC77 /* Layer 24.jpg in Resources */,
@@ -1787,6 +1820,7 @@
 				1475F4652147638C00237FC6 /* NavigationViewController2.m in Sources */,
 				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
+				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
 				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
 				140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */,
 			);
