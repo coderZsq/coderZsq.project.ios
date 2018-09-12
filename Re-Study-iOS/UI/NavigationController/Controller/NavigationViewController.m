@@ -9,6 +9,7 @@
 #import "NavigationViewController.h"
 #import <MBProgressHUD.h>
 #import "NavigationViewController2.h"
+#import "UIViewController+Navigation.h"
 
 #define kAccount @"account"
 #define kPassword @"password"
@@ -25,9 +26,14 @@
 
 @implementation NavigationViewController
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self defaultNavigationLayout];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self defaultNavigationSetting];
 #if 0
     NSLog(@"%@", NSHomeDirectory());
     //Documents

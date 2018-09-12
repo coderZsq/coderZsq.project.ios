@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = [NSString stringWithFormat:@"%@'s Address book", self.accountName];
+    self.title = [NSString stringWithFormat:@"%@'s contacts", self.accountName];
     
     UILabel * titleLabel = [UILabel new];
     titleLabel.text = self.title;

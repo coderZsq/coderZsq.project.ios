@@ -8,6 +8,7 @@
 
 #import "NavigationViewController3.h"
 #import "ContactModel.h"
+#import "UIViewController+Navigation.h"
 
 @interface NavigationViewController3 ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -19,8 +20,15 @@
 
 @implementation NavigationViewController3
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self defaultNavigationLayout];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self defaultNavigationSetting];
     
     [self.nameTextField addTarget:self action:@selector(textChange:) forControlEvents:UIControlEventEditingChanged];
     [self.telTextField addTarget:self action:@selector(textChange:) forControlEvents:UIControlEventEditingChanged];
