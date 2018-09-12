@@ -40,8 +40,102 @@
 
 @end
 
-@interface ViewController ()
+@interface HitTestButton : UIButton
+@property (nonatomic, weak) UIButton * subButton;
+@end
+@implementation HitTestButton
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (self.subButton && [self.subButton pointInside:[self convertPoint:point toView:self.subButton] withEvent:event]) {
+        return self.subButton;
+    } else return [super hitTest:point withEvent:event];
+}
+
+@end
+
+@class HitTestView;
+@protocol HitTestViewDelegate <NSObject>
+- (void)hitTestView:(id)hitTestView matchView:(UIView *)view ;
+@end
+
+@interface HitTestView : UIView
+@property (nonatomic, weak) id<HitTestViewDelegate> delegate;
+@end
+
+@interface HitTestView()
+@property (nonatomic, weak) IBOutlet HitTestButton * button;
+@end
+
+@implementation HitTestView
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@", [self class]);
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if ([self.button hitTest:[self convertPoint:point toView:self.button] withEvent:event]) {
+        if (self.button.subButton && [self.button.subButton pointInside:[self convertPoint:point toView:self.button.subButton] withEvent:event]) {
+            [self hitTestView:self matchView:self.button.subButton];
+            return self.button.subButton;
+        } else {
+            [self hitTestView:self matchView:self.button];
+            return self.button;
+        }
+    }
+    UIView * view = [super hitTest:point withEvent:event];
+    [self hitTestView:self matchView:view];
+    return view;
+}
+
+- (void)hitTestView:(id)hitTestView matchView:(UIView *)view  {
+    if ([self.delegate respondsToSelector:@selector(hitTestView:matchView:)]) {
+        [self.delegate hitTestView:self matchView:view];
+    }
+}
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    BOOL pointInside = [super pointInside:point withEvent:event];
+    NSLog(@"PointInside - %@", pointInside ? @"YES" : @"NO");
+    return pointInside;
+}
+
+@end
+
+@interface HitTestView_Gray3 : UIView
+@end
+@implementation HitTestView_Gray3
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
+@end
+
+@interface HitTestView_Gray2 : UIView
+@end
+@implementation HitTestView_Gray2
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
+@end
+
+@interface HitTestView_Gray1 : UIView
+@end
+@implementation HitTestView_Gray1
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
+@end
+
+@interface HitTestView_White2 : UIView
+@end
+@implementation HitTestView_White2
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
+@end
+
+@interface HitTestView_White1 : UIView
+@end
+@implementation HitTestView_White1
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
+@end
+
+@interface ViewController () <HitTestViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet HitTestView *hitTestView;
+@property (weak, nonatomic) IBOutlet UILabel *hitTestLabel;
+@property (nonatomic, strong) UIButton * subButton;
 @end
 
 @implementation ViewController
@@ -49,6 +143,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"View";
+    self.hitTestView.delegate = self;
+}
+
+- (void)hitTestView:(id)hitTestView matchView:(UIView *)view {
+    NSLog(@"%@", [view class]);
+    self.hitTestLabel.text = [NSString stringWithFormat:@"%@ - %p", NSStringFromClass([view class]), view];
+}
+
+- (IBAction)addButtonClick:(HitTestButton *)sender {
+    if (!self.subButton) {
+        self.subButton = [UIButton new];
+        [self.subButton setBackgroundImage:[UIImage imageNamed:@"Resize"] forState:UIControlStateNormal];
+        [self.subButton setBackgroundImage:[UIImage imageNamed:@"Avatar"] forState:UIControlStateHighlighted];
+        self.subButton.alpha = .7;
+        self.subButton.frame = CGRectMake(-69, -19, 60, 60);
+        sender.subButton = self.subButton;
+        [sender addSubview:self.subButton];
+    }
 }
 
 - (IBAction)transformButtonClick:(UIButton *)sender {
@@ -70,3 +182,6 @@
 }
 
 @end
+
+
+

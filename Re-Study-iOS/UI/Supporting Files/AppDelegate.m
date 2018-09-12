@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "Window.h"
 
 @interface Application : NSObject
 + (instancetype)shareApplication;
@@ -75,6 +76,11 @@ static Application * application;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[Window alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateInitialViewController];
+    [self.window makeKeyAndVisible];
+    
 #if 0
     Application * app = [Application shareApplication];
     Application * app2 = [Application shareApplication];

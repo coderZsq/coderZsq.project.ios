@@ -42,11 +42,11 @@
 
 - (void)defaultNavigationLayout {
     __weak typeof (self) _self = self;
-    [[self navigationView] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [[self navigationView] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(_self.view);
         make.height.mas_equalTo([[UIApplication sharedApplication] statusBarFrame].size.height + _self.navigationController.navigationBar.frame.size.height);
     }];
-    [[self dividingView] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [[self dividingView] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(_self.navigationView);
         make.height.mas_equalTo(1);
     }];

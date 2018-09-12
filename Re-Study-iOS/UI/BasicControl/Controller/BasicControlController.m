@@ -172,7 +172,13 @@ IB_DESIGNABLE
     
     self.title = @"Basic Control";
     self.view.backgroundColor = BackgroundColor;
-
+    
+    UIScrollView * scrollView = [UIScrollView new];
+    scrollView.frame = self.view.bounds;
+    scrollView.contentInset = UIEdgeInsetsMake(-Top, 0, 0, 0);
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 730);
+    [self.view addSubview:scrollView];
+    
     UILabel * label = [UILabel new];
     label.text = @
     "github.com/coderZsq "
@@ -190,7 +196,7 @@ IB_DESIGNABLE
     label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
     label.lineBreakMode = NSLineBreakByTruncatingMiddle;
-    [self.view addSubview:label];
+    [scrollView addSubview:label];
     
 #if 0
     typedef NS_ENUM(NSInteger, NSLineBreakMode) {
@@ -214,7 +220,7 @@ IB_DESIGNABLE
     toolbar.barStyle = UIBarStyleDefault;
     toolbar.alpha = .5;
     [imageView addSubview:toolbar];
-    [self.view addSubview:imageView];
+    [scrollView addSubview:imageView];
     
 #if 0
     typedef NS_ENUM(NSInteger, UIViewContentMode) {
@@ -248,7 +254,7 @@ IB_DESIGNABLE
     frameImageView.animationRepeatCount = 0;
     frameImageView.animationDuration = count * .03;
     [frameImageView startAnimating];
-    [self.view addSubview:frameImageView];
+    [scrollView addSubview:frameImageView];
     
     [self performSelector:@selector(selector) withObject:nil afterDelay:frameImageView.animationDuration];
     
@@ -269,7 +275,7 @@ IB_DESIGNABLE
     button.adjustsImageWhenHighlighted = NO;
 //    button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
 //    button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-    [self.view addSubview:button];
+    [scrollView addSubview:button];
     
     UIView * view = [UIView new];
     UIButton * addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
@@ -286,7 +292,7 @@ IB_DESIGNABLE
     view.backgroundColor = [UIColor lightGrayColor];
     view.frame = CGRectMake(90, 500, 200, 190);
     view.clipsToBounds = YES;
-    [self.view addSubview:view];
+    [scrollView addSubview:view];
     
     UILabel * hudLabel = [UILabel new];
     hudLabel.frame = CGRectMake(140, 580, 100, 30);
@@ -295,7 +301,7 @@ IB_DESIGNABLE
     hudLabel.textAlignment = NSTextAlignmentCenter;
     hudLabel.alpha = .0;
     hudLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.5];
-    [self.view addSubview:hudLabel];
+    [scrollView addSubview:hudLabel];
 
     _contentView = view;
     _addButton = addButton;
