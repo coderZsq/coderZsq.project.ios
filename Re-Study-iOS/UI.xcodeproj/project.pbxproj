@@ -319,6 +319,7 @@
 		140DEC06214665E1009DB0EF /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC05214665E1009DB0EF /* NavigationController.m */; };
 		140DEC0A2146675B009DB0EF /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140DEC092146675B009DB0EF /* NavigationController.storyboard */; };
 		140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC0D21466852009DB0EF /* NavigationViewController.m */; };
+		1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAB82148C98700CACDC3 /* UIImage+Color.m */; };
 		141D7F8A2144F1A2009A9443 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F892144F1A2009A9443 /* ViewController.xib */; };
 		141D7F8D21453248009A9443 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D7F8C21453248009A9443 /* PickerViewController.m */; };
 		141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F9021453FFB009A9443 /* PickerViewController.storyboard */; };
@@ -671,6 +672,8 @@
 		140DEC092146675B009DB0EF /* NavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		140DEC0C21466852009DB0EF /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		140DEC0D21466852009DB0EF /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		1418AAB72148C98700CACDC3 /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		1418AAB82148C98700CACDC3 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		141D7F8821442C37009A9443 /* main.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.pch; sourceTree = "<group>"; };
 		141D7F892144F1A2009A9443 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		141D7F8B21453248009A9443 /* PickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
@@ -1061,6 +1064,7 @@
 				140DEC0821466740009DB0EF /* Controller */,
 				140DEC0B2146675F009DB0EF /* View */,
 				1475F46C214792FE00237FC6 /* Model */,
+				1418AABA2148C98C00CACDC3 /* Category */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
@@ -1086,6 +1090,15 @@
 				140DEC092146675B009DB0EF /* NavigationController.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1418AABA2148C98C00CACDC3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1418AAB72148C98700CACDC3 /* UIImage+Color.h */,
+				1418AAB82148C98700CACDC3 /* UIImage+Color.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		141D7F8E21453254009A9443 /* PickerView */ = {
@@ -1751,6 +1764,7 @@
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				14EB4F77213F75D20082B143 /* ViewController.m in Sources */,
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
+				1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */,
 				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,

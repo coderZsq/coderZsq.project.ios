@@ -21,6 +21,8 @@
 #endif
 
 #define BackgroundColor [UIColor colorWithRed:239./255. green:239./255. blue:244./255 alpha:1.]
+#define SystemColor [UIColor colorWithRed:43./255. green:125./255. blue:246./255 alpha:1.]
+#define Top ([[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)
 
 #endif
 

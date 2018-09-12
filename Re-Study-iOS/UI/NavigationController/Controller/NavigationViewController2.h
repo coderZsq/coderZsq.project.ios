@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class ContactModel;
-@interface NavigationViewController2 : UITableViewController
+@interface NavigationViewController2 : UIViewController
 
 @property (nonatomic, copy) NSString * accountName;
 @property (nonatomic, strong) ContactModel * model;

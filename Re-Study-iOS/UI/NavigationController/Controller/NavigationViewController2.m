@@ -9,8 +9,16 @@
 #import "NavigationViewController2.h"
 #import "NavigationViewController3.h"
 #import "ContactModel.h"
+#import "UIImage+Color.h"
 
-@interface NavigationViewController2 () </*UIActionSheetDelegate, UIAlertViewDelegate*/NavigationViewController3Delegate>
+#define kOriginalOffsetY -220
+#define kOriginalHeight 200
+
+@interface NavigationViewController2 () </*UIActionSheetDelegate, UIAlertViewDelegate*/NavigationViewController3Delegate, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (nonatomic, strong) NSMutableArray * dataSource;
 @end
 
@@ -19,7 +27,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = [NSString stringWithFormat:@"%@'s Address book", self.accountName];
+    
+    UILabel * titleLabel = [UILabel new];
+    titleLabel.text = self.title;
+    titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+    
+    self.view.backgroundColor = BackgroundColor;
     self.tableView.tableFooterView = [UIView new];
+#if 0
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.alpha = 0;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"Resize"] forBarMetrics:UIBarMetricsDefault]; //UIBarMetricsCompact
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.tableView setContentInset:UIEdgeInsetsMake(-Top, 0, 0, 0)];
+    
+    UIView * view = [UIView new];
+    view.backgroundColor = [UIColor redColor];
+    view.frame = CGRectMake(0, 0, 0, 200);
+    self.tableView.tableHeaderView = view;
+#endif
+    [self.navigationController.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
+    [self.tableView setContentInset:UIEdgeInsetsMake(-(kOriginalOffsetY + Top), 0, 0, 0)];
+    [self.tableView setContentOffset:CGPointMake(0, kOriginalOffsetY + Top)];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%@", NSStringFromCGRect(self.tableView.frame));
+    NSLog(@"%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -42,15 +82,20 @@
     return _dataSource;
 }
 
-- (void)navigationViewController3:(NavigationViewController3 *)vc addModel:(ContactModel *)model {
-    [self.dataSource addObject:model];
+- (void)archiveDataSource {
     NSString * path =  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString * filePath = [path stringByAppendingPathComponent:@"dataSource.data"];
     [NSKeyedArchiver archiveRootObject:self.dataSource toFile:filePath];
+}
+
+- (void)navigationViewController3:(NavigationViewController3 *)vc addModel:(ContactModel *)model {
+    [self.dataSource addObject:model];
+    [self archiveDataSource];
     [self.tableView reloadData];
 }
 
 - (void)navigationViewController3:(NavigationViewController3 *)vc saveModel:(ContactModel *)model {
+    [self archiveDataSource];
     [self.tableView reloadData];
 }
 
@@ -70,7 +115,32 @@
     return cell;
 }
 
-- (IBAction)logoutClick:(UIBarButtonItem *)sender {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"%f", scrollView.contentOffset.y);
+    CGFloat offset = scrollView.contentOffset.y - kOriginalOffsetY;
+    CGFloat height = kOriginalHeight - offset;
+    if (height <= Top) {
+        height = Top;
+    }
+    self.heightConstraint.constant = height;
+    
+    CGFloat alpha = offset * 1 / (kOriginalHeight - Top);
+    if (alpha >= 1) {
+        alpha = .99;
+    }
+    UIColor * color = [UIColor colorWithWhite:1. alpha:alpha];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:color] forBarMetrics:UIBarMetricsDefault];
+    UILabel * titleLabel = (UILabel *)self.navigationItem.titleView;
+    titleLabel.textColor = [UIColor colorWithWhite:.0 alpha:alpha];
+    [self.logoutButton setTitleColor:[SystemColor colorWithAlphaComponent:alpha] forState:UIControlStateNormal];
+    [self.addButton setTitleColor:[SystemColor colorWithAlphaComponent:alpha] forState:UIControlStateNormal];
+}
+
+- (IBAction)logoutButtonClick:(UIButton *)sender {
 //    UIActionSheet * action = [[UIActionSheet alloc]initWithTitle:@"Confirm Logout?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Confirm" otherButtonTitles:nil];
 //    [action showInView:self.view];
     
