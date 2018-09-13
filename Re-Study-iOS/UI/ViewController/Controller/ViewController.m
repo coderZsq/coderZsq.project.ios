@@ -101,35 +101,19 @@
 
 @end
 
-@interface HitTestView_Gray3 : UIView
-@end
-@implementation HitTestView_Gray3
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
-@end
+#define TouchBeganTest - (void)touchesBegan:(NSSet<UITouch *> *)touches\
+withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
 
-@interface HitTestView_Gray2 : UIView
-@end
-@implementation HitTestView_Gray2
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
-@end
-
-@interface HitTestView_Gray1 : UIView
-@end
-@implementation HitTestView_Gray1
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
-@end
-
-@interface HitTestView_White2 : UIView
-@end
-@implementation HitTestView_White2
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
-@end
-
-@interface HitTestView_White1 : UIView
-@end
-@implementation HitTestView_White1
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
-@end
+@interface HitTestView_Gray3 : UIView @end
+@implementation HitTestView_Gray3 TouchBeganTest @end
+@interface HitTestView_Gray2 : UIView @end
+@implementation HitTestView_Gray2 TouchBeganTest @end
+@interface HitTestView_Gray1 : UIView @end
+@implementation HitTestView_Gray1 TouchBeganTest @end
+@interface HitTestView_White2 : UIView @end
+@implementation HitTestView_White2 TouchBeganTest @end
+@interface HitTestView_White1 : UIView @end
+@implementation HitTestView_White1 TouchBeganTest @end
 
 @interface ViewController () <HitTestViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

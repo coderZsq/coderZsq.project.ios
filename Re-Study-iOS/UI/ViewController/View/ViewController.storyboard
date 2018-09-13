@@ -97,7 +97,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.90722823475823189" green="0.90722823475823189" blue="0.90722823475823189" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="9Li-HG-GEJ" secondAttribute="trailing" constant="10" id="0Rb-eD-5c9"/>
                                             <constraint firstAttribute="height" constant="100" id="Evh-mX-qQI"/>
@@ -114,7 +114,7 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.88336770304568524" green="0.88336770304568524" blue="0.88336770304568524" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Cm5-7P-Xb6" secondAttribute="trailing" constant="25" id="OBN-fX-gDE"/>
                                     <constraint firstItem="Cm5-7P-Xb6" firstAttribute="top" secondItem="1AY-v7-E60" secondAttribute="top" id="aIH-Ff-qp9"/>
@@ -128,7 +128,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aTW-SA-vmw" firstAttribute="top" secondItem="neW-LZ-5Au" secondAttribute="top" constant="10" id="0JF-vA-Pkm"/>
                             <constraint firstItem="1AY-v7-E60" firstAttribute="bottom" secondItem="KDQ-oP-UGJ" secondAttribute="bottom" id="Fuu-WV-tM7"/>
