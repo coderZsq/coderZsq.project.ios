@@ -115,8 +115,14 @@ TouchTest
 
 @implementation MainViewController
 
+- (void)viewDidLayoutSubviews {[super viewDidLayoutSubviews];Log}
+- (void)viewWillLayoutSubviews {[super viewWillLayoutSubviews];Log}
+- (void)viewDidAppear:(BOOL)animated {[super viewDidAppear:animated];Log}
+- (void)viewWillAppear:(BOOL)animated {[super viewWillAppear:animated];Log}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    Log
     self.title = @"View";
     self.hitTestView.delegate = self;
     

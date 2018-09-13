@@ -75,6 +75,9 @@
         UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(mainViewPan:)];
         panGesture.delegate = self;
         [_mainView addGestureRecognizer:panGesture];
+        UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(unPan)];
+        [_mainView addGestureRecognizer:tapGesture];
+        _mainView.layer.cornerRadius = 40;
         self.title = mainViewController.title;
         [self addChildViewController:mainViewController];
     }
@@ -87,8 +90,6 @@
         [_leftView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
         }];
-        UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(unPan)];
-        [_leftView addGestureRecognizer:tapGesture];
         [self addChildViewController:leftViewController];
     }
 }
