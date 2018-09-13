@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  PanSubviewController.h
 //  UI
 //
-//  Created by 朱双泉 on 2018/9/12.
+//  Created by 朱双泉 on 2018/9/13.
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PanViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : PanViewController
 
 @end
