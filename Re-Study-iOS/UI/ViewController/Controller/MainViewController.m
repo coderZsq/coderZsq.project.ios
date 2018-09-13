@@ -111,11 +111,16 @@ TouchTest
 @property (weak, nonatomic) IBOutlet HitTestView *hitTestView;
 @property (weak, nonatomic) IBOutlet UILabel *hitTestLabel;
 @property (nonatomic, weak) UIButton * subButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 @end
 
 @implementation MainViewController
 
-- (void)viewDidLayoutSubviews {[super viewDidLayoutSubviews];Log}
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    Log
+    self.topConstraint.constant = Top + 20;
+}
 - (void)viewWillLayoutSubviews {[super viewWillLayoutSubviews];Log}
 - (void)viewDidAppear:(BOOL)animated {[super viewDidAppear:animated];Log}
 - (void)viewWillAppear:(BOOL)animated {[super viewWillAppear:animated];Log}
