@@ -23,6 +23,18 @@
 #define BackgroundColor [UIColor colorWithRed:239./255. green:239./255. blue:244./255 alpha:1.]
 #define SystemColor [UIColor colorWithRed:43./255. green:125./255. blue:246./255 alpha:1.]
 #define Top ([[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)
+#define TouchBeganTest \
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {\
+NSLog(@"%@ %s", [self class], __func__);\
+[super touchesBegan:touches withEvent:event];\
+}
+#define TouchEndTest \
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {\
+NSLog(@"%@ %s", [self class], __func__);\
+[super touchesEnded:touches withEvent:event];\
+}
+#define TouchTest TouchBeganTest TouchEndTest
+#define Log NSLog(@"%s", __func__);
 
 #endif
 

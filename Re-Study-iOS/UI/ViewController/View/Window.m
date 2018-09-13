@@ -11,6 +11,7 @@
 
 @implementation Window
 
+TouchTest
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     if (self.userInteractionEnabled == NO || self.hidden == YES || self.alpha <= .01) return nil;
     if (![self pointInside:point withEvent:event]) return nil;

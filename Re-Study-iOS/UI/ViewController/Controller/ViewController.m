@@ -12,10 +12,7 @@
 @end
 @implementation EventView
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%s", __func__);
-}
-
+TouchBeganTest
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch * touch = [touches anyObject];
     CGPoint previousLocation = [touch previousLocationInView:self];
@@ -28,7 +25,7 @@
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%s", __func__);
+    NSLog(@"%@ %s", [self class], __func__);
     [UIView animateWithDuration:.5 animations:^{
         self.transform = CGAffineTransformIdentity;
     }];
@@ -55,7 +52,7 @@
 
 @class HitTestView;
 @protocol HitTestViewDelegate <NSObject>
-- (void)hitTestView:(id)hitTestView matchView:(UIView *)view ;
+- (void)hitTestView:(HitTestView *)hitTestView matchView:(UIView *)view ;
 @end
 
 @interface HitTestView : UIView
@@ -68,10 +65,7 @@
 
 @implementation HitTestView
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@", [self class]);
-}
-
+TouchTest
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     if ([self.button hitTest:[self convertPoint:point toView:self.button] withEvent:event]) {
         if (self.button.subButton && [self.button.subButton pointInside:[self convertPoint:point toView:self.button.subButton] withEvent:event]) {
@@ -101,25 +95,22 @@
 
 @end
 
-#define TouchBeganTest - (void)touchesBegan:(NSSet<UITouch *> *)touches\
-withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
-
 @interface HitTestView_Gray3 : UIView @end
-@implementation HitTestView_Gray3 TouchBeganTest @end
+@implementation HitTestView_Gray3 TouchTest @end
 @interface HitTestView_Gray2 : UIView @end
-@implementation HitTestView_Gray2 TouchBeganTest @end
+@implementation HitTestView_Gray2 TouchTest @end
 @interface HitTestView_Gray1 : UIView @end
-@implementation HitTestView_Gray1 TouchBeganTest @end
+@implementation HitTestView_Gray1 TouchTest @end
 @interface HitTestView_White2 : UIView @end
-@implementation HitTestView_White2 TouchBeganTest @end
+@implementation HitTestView_White2 TouchTest @end
 @interface HitTestView_White1 : UIView @end
-@implementation HitTestView_White1 TouchBeganTest @end
+@implementation HitTestView_White1 TouchTest @end
 
-@interface ViewController () <HitTestViewDelegate>
+@interface ViewController () <HitTestViewDelegate, UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet HitTestView *hitTestView;
 @property (weak, nonatomic) IBOutlet UILabel *hitTestLabel;
-@property (nonatomic, strong) UIButton * subButton;
+@property (nonatomic, weak) UIButton * subButton;
 @end
 
 @implementation ViewController
@@ -128,8 +119,107 @@ withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
     [super viewDidLoad];
     self.title = @"View";
     self.hitTestView.delegate = self;
+    
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTap:)];
+    tapGesture.delegate = self;
+    [self.imageView addGestureRecognizer:tapGesture];
+    UILongPressGestureRecognizer * longPressGestrue = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewLongPress:)];
+    longPressGestrue.delegate = self;
+    [self.imageView addGestureRecognizer:longPressGestrue];
+    UISwipeGestureRecognizer  * swipeGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewSwipe:)];
+    swipeGesture.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.imageView addGestureRecognizer:swipeGesture];
+    UISwipeGestureRecognizer  * swipeGesture2 = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewSwipe:)];
+    swipeGesture2.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.imageView addGestureRecognizer:swipeGesture2];
+//    UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewPan:)];
+//    [self.imageView addGestureRecognizer:panGesture];
+    UIRotationGestureRecognizer * rotationGesture = [[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewRoataion:)];
+    [self.imageView addGestureRecognizer:rotationGesture];
+    rotationGesture.delegate = self;
+    UIPinchGestureRecognizer * pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewPinch:)];
+    pinchGesture.delegate = self;
+    [self.imageView addGestureRecognizer:pinchGesture];
 }
 
+- (void)imageViewTap:(UITapGestureRecognizer *)sender {
+    Log
+}
+
+- (void)imageViewLongPress:(UILongPressGestureRecognizer *)sender {
+    Log
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+            NSLog(@"UIGestureRecognizerStateBegan");
+            break;
+        case UIGestureRecognizerStateChanged:
+            NSLog(@"UIGestureRecognizerStateChanged");
+            break;
+        case UIGestureRecognizerStateEnded:
+            NSLog(@"UIGestureRecognizerStateEnded");
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)imageViewSwipe:(UISwipeGestureRecognizer *)sender {
+    Log
+    if (sender.direction == UISwipeGestureRecognizerDirectionDown) {
+        NSLog(@"UISwipeGestureRecognizerDirectionDown");
+    } else if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+        NSLog(@"UISwipeGestureRecognizerDirectionRight");
+    }
+    [self transformButtonClick:nil];
+}
+
+- (void)imageViewPan:(UIPanGestureRecognizer *)sender {
+    Log
+    CGPoint translation = [sender translationInView:self.imageView];
+    self.imageView.transform = CGAffineTransformTranslate(self.imageView.transform, translation.x, translation.y);
+    [sender setTranslation:CGPointMake(0, 0) inView:self.imageView];
+    [self gestureRecognizerStateEnded:sender];
+}
+
+- (void)imageViewRoataion:(UIRotationGestureRecognizer *)sender {
+    Log
+    self.imageView.transform = CGAffineTransformRotate(self.imageView.transform, sender.rotation);
+    sender.rotation = 0.;
+    [self gestureRecognizerStateEnded:sender];
+}
+
+- (void)imageViewPinch:(UIPinchGestureRecognizer *)sender {
+    Log
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, sender.scale, sender.scale);
+    sender.scale = 1.;
+    [self gestureRecognizerStateEnded:sender];
+}
+
+- (void)gestureRecognizerStateEnded:(UIGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        [UIView animateWithDuration:.5 animations:^{
+            self.imageView.transform = CGAffineTransformIdentity;
+        }];
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+//    CGPoint location = [touch locationInView:self.imageView];
+//    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]] &&
+//        location.x < self.imageView.bounds.size.width * .5 ) {
+//        return YES;
+//    } else if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]] &&
+//               location.x > self.imageView.bounds.size.width * .5) {
+//        return YES;
+//    }
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+TouchTest
 - (void)hitTestView:(id)hitTestView matchView:(UIView *)view {
     NSLog(@"%@", [view class]);
     self.hitTestLabel.text = [NSString stringWithFormat:@"%@ - %p", NSStringFromClass([view class]), view];
@@ -137,13 +227,14 @@ withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
 
 - (IBAction)addButtonClick:(HitTestButton *)sender {
     if (!self.subButton) {
-        self.subButton = [UIButton new];
-        [self.subButton setBackgroundImage:[UIImage imageNamed:@"Resize"] forState:UIControlStateNormal];
-        [self.subButton setBackgroundImage:[UIImage imageNamed:@"Avatar"] forState:UIControlStateHighlighted];
-        self.subButton.alpha = .7;
-        self.subButton.frame = CGRectMake(-69, -19, 60, 60);
-        sender.subButton = self.subButton;
-        [sender addSubview:self.subButton];
+        UIButton * subButton = [UIButton new];
+        [subButton setBackgroundImage:[UIImage imageNamed:@"Resize"] forState:UIControlStateNormal];
+        [subButton setBackgroundImage:[UIImage imageNamed:@"Avatar"] forState:UIControlStateHighlighted];
+        subButton.alpha = .7;
+        subButton.frame = CGRectMake(-69, -19, 60, 60);
+        sender.subButton = subButton;
+        [sender addSubview:subButton];
+        _subButton = subButton;
     }
 }
 
@@ -166,6 +257,3 @@ withEvent:(UIEvent *)event {NSLog(@"%@", [self class]);}
 }
 
 @end
-
-
-

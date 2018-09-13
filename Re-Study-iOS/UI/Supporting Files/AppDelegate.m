@@ -74,7 +74,6 @@ static Application * application;
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[Window alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -110,26 +109,21 @@ static Application * application;
     return YES;
 }
 
-
 - (void)applicationWillResignActive:(UIApplication *)application {
     NSLog(@"%s", __func__);
 }
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     NSLog(@"%s", __func__);
 }
 
-
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     NSLog(@"%s", __func__);
 }
 
-
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     NSLog(@"%s", __func__);
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     NSLog(@"%s", __func__);
