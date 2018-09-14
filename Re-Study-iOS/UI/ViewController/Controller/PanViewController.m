@@ -11,7 +11,7 @@
 
 @interface PanViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) UIView * mainView;
-@property (nonatomic, weak) UIView * leftView;
+@property (nonatomic, weak) UIView * secondaryView;
 @end
 
 @implementation PanViewController
@@ -83,14 +83,14 @@
     }
 }
 
-- (void)setLeftViewController:(UIViewController *)leftViewController {
-    if (!_leftView) {
-        _leftView = leftViewController.view;
-        [self.view insertSubview:_leftView atIndex:0];
-        [_leftView mas_updateConstraints:^(MASConstraintMaker *make) {
+- (void)setSecondaryViewController:(UIViewController *)secondaryViewController {
+    if (!_secondaryView) {
+        _secondaryView = secondaryViewController.view;
+        [self.view insertSubview:_secondaryView atIndex:0];
+        [_secondaryView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
         }];
-        [self addChildViewController:leftViewController];
+        [self addChildViewController:secondaryViewController];
     }
 }
 

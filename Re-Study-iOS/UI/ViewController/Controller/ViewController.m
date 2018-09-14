@@ -16,11 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIViewController * mainViewController = [[UIStoryboard storyboardWithName:@"MainViewController" bundle:nil] instantiateInitialViewController];
-    UIViewController * leftViewController = [[UIStoryboard storyboardWithName:@"TableViewController3" bundle:nil]instantiateInitialViewController];
-    self.mainViewController = mainViewController;
-    self.leftViewController = leftViewController;
+
+    self.mainViewController = [[UIStoryboard storyboardWithName:@"MainViewController" bundle:nil] instantiateInitialViewController];;
+    self.secondaryViewController = [[UIStoryboard storyboardWithName:@"TableViewController3" bundle:nil]instantiateInitialViewController];;
 }
 
 @end

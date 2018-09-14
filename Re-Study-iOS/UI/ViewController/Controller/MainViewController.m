@@ -258,7 +258,7 @@ TouchTest
         [subButton setBackgroundImage:[UIImage imageNamed:@"Resize"] forState:UIControlStateNormal];
         [subButton setBackgroundImage:[UIImage imageNamed:@"Avatar"] forState:UIControlStateHighlighted];
         subButton.alpha = .7;
-        subButton.frame = CGRectMake(-69, -19, 60, 60);
+        subButton.frame = CGRectMake(-79, -19, 60, 60);
         sender.subButton = subButton;
         [sender addSubview:subButton];
         _subButton = subButton;

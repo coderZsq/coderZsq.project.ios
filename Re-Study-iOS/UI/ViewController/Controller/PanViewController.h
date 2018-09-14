@@ -11,7 +11,7 @@
 @interface PanViewController : UIViewController
 
 @property (nonatomic, weak) UIViewController * mainViewController;
-@property (nonatomic, weak) UIViewController * leftViewController;
+@property (nonatomic, weak) UIViewController * secondaryViewController;
 
 - (void)pan;
 - (void)unPan;
