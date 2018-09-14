@@ -332,6 +332,7 @@
 		141D7F94214552E8009A9443 /* pickerview.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F93214552E7009A9443 /* pickerview.plist */; };
 		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
 		142A2D392143840C00435F95 /* tableview4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* tableview4.plist */; };
+		144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */; };
 		144BD38A21493A620096EA95 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 144BD38921493A620096EA95 /* Window.m */; };
 		1461DB5E213FD58300D938DC /* basiccontrol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* basiccontrol.plist */; };
 		146472BB2143714F006D9B78 /* TableViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 146472BA2143714F006D9B78 /* TableViewController4.m */; };
@@ -701,6 +702,8 @@
 		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
 		142A2D382143840C00435F95 /* tableview4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview4.plist; sourceTree = "<group>"; };
+		144B2300214B99FF0090A3E2 /* UIImage+CircleBorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CircleBorder.h"; sourceTree = "<group>"; };
+		144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleBorder.m"; sourceTree = "<group>"; };
 		144BD38821493A620096EA95 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		144BD38921493A620096EA95 /* Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* basiccontrol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = basiccontrol.plist; sourceTree = "<group>"; };
@@ -1159,6 +1162,7 @@
 			children = (
 				1418AAD22149081400CACDC3 /* Controller */,
 				1418AAD521490E0D00CACDC3 /* View */,
+				144B2303214B9A8A0090A3E2 /* Category */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1240,6 +1244,15 @@
 				142583DC21411FCF0043B11B /* Proxy.m */,
 			);
 			path = Proxy;
+			sourceTree = "<group>";
+		};
+		144B2303214B9A8A0090A3E2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				144B2300214B99FF0090A3E2 /* UIImage+CircleBorder.h */,
+				144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		146AE851214220BC000D6E58 /* TableView */ = {
@@ -1857,6 +1870,7 @@
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
 				1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */,
 				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
+				144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */,
 				1418AAD02149080000CACDC3 /* MainViewController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,

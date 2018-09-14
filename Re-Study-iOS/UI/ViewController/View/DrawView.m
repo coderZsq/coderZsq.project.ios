@@ -81,7 +81,7 @@
 //    CGFloat g = arc4random_uniform(256) / 255.;
 //    CGFloat b = arc4random_uniform(256) / 255.;
 //    CGFloat value = (arc4random() % 100 + 130) / 255.;
-    CGFloat value = (255. - (25. + ratio * 5)) / 255.;
+    CGFloat value = (255. - (ratio * 10) + 70.) / 255.;
     return [UIColor colorWithRed:value green:value blue:value alpha:1.];
 }
 
@@ -139,15 +139,18 @@
 - (void)drawRect:(CGRect)rect {
     Log
     NSLog(@"%@", NSStringFromCGRect(rect));
-    
     CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(ctx, 10, 10);
+    CGContextScaleCTM(ctx, .8, .8);
+    CGContextRotateCTM(ctx, M_PI * 2);
+    CGContextSaveGState(ctx);
     UIBezierPath * path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(20, 20)];
-    [path addLineToPoint:CGPointMake(80, 80)];
-    [path addLineToPoint:CGPointMake(20, 80)];
-    [path moveToPoint:CGPointMake(20, 80)];
-    [path addLineToPoint:CGPointMake(80, 20)];
-    [path addLineToPoint:CGPointMake(20, 20)];
+    [path moveToPoint:CGPointMake(10, 10)];
+    [path addLineToPoint:CGPointMake(90, 90)];
+    [path addLineToPoint:CGPointMake(10, 90)];
+    [path moveToPoint:CGPointMake(10, 90)];
+    [path addLineToPoint:CGPointMake(90, 10)];
+    [path addLineToPoint:CGPointMake(10, 10)];
     CGContextSetLineWidth(ctx, 5.);
 #if 0
     /* Line join styles. */
@@ -170,18 +173,19 @@
     CGContextAddPath(ctx, path.CGPath);
     
     UIBezierPath * path2 = [UIBezierPath bezierPath];
-    [path2 moveToPoint:CGPointMake(0, 30)];
-    [path2 addQuadCurveToPoint:CGPointMake(100, 30) controlPoint:CGPointMake(50, 75)];
+    [path2 moveToPoint:CGPointMake(-10, 30)];
+    [path2 addQuadCurveToPoint:CGPointMake(110, 30) controlPoint:CGPointMake(50, 80)];
     CGContextAddPath(ctx, path2.CGPath);
     
     //    UIBezierPath * path3 = [UIBezierPath bezierPathWithRect:rect];
     //    UIBezierPath * path3 = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:50];
-    UIBezierPath * path3 = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(10, 10, 80, 80)];
+    UIBezierPath * path3 = [UIBezierPath bezierPathWithOvalInRect:rect];
     CGContextAddPath(ctx, path3.CGPath);
     [[[UIColor darkGrayColor] colorWithAlphaComponent:.7] set];
     //    CGContextStrokePath(ctx);
     //    CGContextFillPath(ctx);
     [path fill];
+    CGContextRestoreGState(ctx);
     [path2 stroke];
     [path3 stroke];
 }
