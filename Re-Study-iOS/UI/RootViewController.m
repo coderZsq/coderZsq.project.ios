@@ -14,6 +14,7 @@
 #import "NavigationController.h"
 #import "TabBarController.h"
 #import "ViewController.h"
+#import "LayerController.h"
 
 @interface RootViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -68,7 +69,8 @@
                         @{@"classes" : @[[PickerViewController class],
                                          [NavigationController class],
                                          [TabBarController class],
-                                         [ViewController class]],
+                                         [ViewController class],
+                                         [LayerController class]],
                           @"titleheader" : @"advanced",
                           @"titlefooter" : @"Some examples of advanced user interaction learning."}];
     }

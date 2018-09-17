@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PIY-2x-Zlg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Layer Controller-->
+        <scene sceneID="eeU-kz-E3B">
+            <objects>
+                <viewController id="PIY-2x-Zlg" customClass="LayerController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="udn-0j-jBh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQJ-Eu-PCq">
+                                <rect key="frame" x="20" y="40" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="FkB-na-BlC"/>
+                                    <constraint firstAttribute="height" constant="100" id="qiz-lr-5yy"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-jL-v6s">
+                                <rect key="frame" x="20" y="150" width="100" height="30"/>
+                                <state key="normal" title="Transction"/>
+                                <connections>
+                                    <action selector="transactionButtonClick:" destination="PIY-2x-Zlg" eventType="touchUpInside" id="13b-cr-Mr3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WQJ-Eu-PCq" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="2mP-bh-No8"/>
+                            <constraint firstItem="1MZ-jL-v6s" firstAttribute="top" secondItem="WQJ-Eu-PCq" secondAttribute="bottom" constant="10" id="4lV-GI-Bp4"/>
+                            <constraint firstItem="1MZ-jL-v6s" firstAttribute="trailing" secondItem="WQJ-Eu-PCq" secondAttribute="trailing" id="9Cg-oK-xYR"/>
+                            <constraint firstItem="WQJ-Eu-PCq" firstAttribute="leading" secondItem="mFO-1R-UM1" secondAttribute="leading" constant="20" id="FDw-8R-aOa"/>
+                            <constraint firstItem="1MZ-jL-v6s" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="leading" id="HGu-Aq-v1J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mFO-1R-UM1"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="WQJ-Eu-PCq" id="1f6-41-yoa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Lw-c5-rbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="243"/>
+        </scene>
+    </scenes>
+</document>

@@ -337,6 +337,8 @@
 		1459BFA0214F460B00F9AA58 /* SecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BF9F214F460B00F9AA58 /* SecondaryViewController.m */; };
 		1459BFA2214F461F00F9AA58 /* SecondaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459BFA1214F461F00F9AA58 /* SecondaryViewController.storyboard */; };
 		1459BFA5214F49B200F9AA58 /* LockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BFA4214F49B200F9AA58 /* LockView.m */; };
+		1459BFA8214F970100F9AA58 /* LayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BFA7214F970100F9AA58 /* LayerController.m */; };
+		1459BFAC214F973300F9AA58 /* LayerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459BFAB214F973300F9AA58 /* LayerController.storyboard */; };
 		1461DB5E213FD58300D938DC /* basiccontrol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* basiccontrol.plist */; };
 		146472BB2143714F006D9B78 /* TableViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 146472BA2143714F006D9B78 /* TableViewController4.m */; };
 		146472BD21437168006D9B78 /* TableViewController4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146472BC21437168006D9B78 /* TableViewController4.storyboard */; };
@@ -714,6 +716,9 @@
 		1459BFA1214F461F00F9AA58 /* SecondaryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondaryViewController.storyboard; sourceTree = "<group>"; };
 		1459BFA3214F49B200F9AA58 /* LockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockView.h; sourceTree = "<group>"; };
 		1459BFA4214F49B200F9AA58 /* LockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockView.m; sourceTree = "<group>"; };
+		1459BFA6214F970100F9AA58 /* LayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerController.h; sourceTree = "<group>"; };
+		1459BFA7214F970100F9AA58 /* LayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerController.m; sourceTree = "<group>"; };
+		1459BFAB214F973300F9AA58 /* LayerController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LayerController.storyboard; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* basiccontrol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = basiccontrol.plist; sourceTree = "<group>"; };
 		146472B92143714F006D9B78 /* TableViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController4.h; sourceTree = "<group>"; };
 		146472BA2143714F006D9B78 /* TableViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController4.m; sourceTree = "<group>"; };
@@ -1268,6 +1273,32 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		1459BFA9214F970E00F9AA58 /* LayerController */ = {
+			isa = PBXGroup;
+			children = (
+				1459BFAA214F972200F9AA58 /* Controller */,
+				1459BFAD214F974300F9AA58 /* View */,
+			);
+			path = LayerController;
+			sourceTree = "<group>";
+		};
+		1459BFAA214F972200F9AA58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1459BFA6214F970100F9AA58 /* LayerController.h */,
+				1459BFA7214F970100F9AA58 /* LayerController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1459BFAD214F974300F9AA58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1459BFAB214F973300F9AA58 /* LayerController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		146AE851214220BC000D6E58 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1413,6 +1444,7 @@
 				140DEC07214665EC009DB0EF /* NavigationController */,
 				1418AAC72148F6FF00CACDC3 /* TabbarController */,
 				1418AAD12149080600CACDC3 /* ViewController */,
+				1459BFA9214F970E00F9AA58 /* LayerController */,
 				14EB4F75213F75D20082B143 /* RootViewController.h */,
 				1418AACC2149079E00CACDC3 /* RootViewController.m */,
 				141D7F892144F1A2009A9443 /* RootViewController.xib */,
@@ -1762,6 +1794,7 @@
 				1407CE55213FB62A00A3FC77 /* Layer 245.jpg in Resources */,
 				1407CD8A213FB62A00A3FC77 /* Layer 203.jpg in Resources */,
 				1407CD4B213FB62A00A3FC77 /* Layer 100.jpg in Resources */,
+				1459BFAC214F973300F9AA58 /* LayerController.storyboard in Resources */,
 				1407CD4E213FB62A00A3FC77 /* Layer 129.jpg in Resources */,
 				1407CD88213FB62A00A3FC77 /* Layer 93.jpg in Resources */,
 				1407CD84213FB62A00A3FC77 /* Layer 78.jpg in Resources */,
@@ -1889,6 +1922,7 @@
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
 				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
+				1459BFA8214F970100F9AA58 /* LayerController.m in Sources */,
 				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				1475F46B214792F700237FC6 /* ContactModel.m in Sources */,
