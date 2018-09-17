@@ -334,6 +334,9 @@
 		142A2D392143840C00435F95 /* tableview4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* tableview4.plist */; };
 		144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */; };
 		144BD38A21493A620096EA95 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 144BD38921493A620096EA95 /* Window.m */; };
+		1459BFA0214F460B00F9AA58 /* SecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BF9F214F460B00F9AA58 /* SecondaryViewController.m */; };
+		1459BFA2214F461F00F9AA58 /* SecondaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459BFA1214F461F00F9AA58 /* SecondaryViewController.storyboard */; };
+		1459BFA5214F49B200F9AA58 /* LockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BFA4214F49B200F9AA58 /* LockView.m */; };
 		1461DB5E213FD58300D938DC /* basiccontrol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* basiccontrol.plist */; };
 		146472BB2143714F006D9B78 /* TableViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 146472BA2143714F006D9B78 /* TableViewController4.m */; };
 		146472BD21437168006D9B78 /* TableViewController4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146472BC21437168006D9B78 /* TableViewController4.storyboard */; };
@@ -706,6 +709,11 @@
 		144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleBorder.m"; sourceTree = "<group>"; };
 		144BD38821493A620096EA95 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		144BD38921493A620096EA95 /* Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
+		1459BF9E214F460B00F9AA58 /* SecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewController.h; sourceTree = "<group>"; };
+		1459BF9F214F460B00F9AA58 /* SecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewController.m; sourceTree = "<group>"; };
+		1459BFA1214F461F00F9AA58 /* SecondaryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondaryViewController.storyboard; sourceTree = "<group>"; };
+		1459BFA3214F49B200F9AA58 /* LockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockView.h; sourceTree = "<group>"; };
+		1459BFA4214F49B200F9AA58 /* LockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockView.m; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* basiccontrol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = basiccontrol.plist; sourceTree = "<group>"; };
 		146472B92143714F006D9B78 /* TableViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController4.h; sourceTree = "<group>"; };
 		146472BA2143714F006D9B78 /* TableViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController4.m; sourceTree = "<group>"; };
@@ -1174,6 +1182,8 @@
 				14F90643214A3D3C00D6E141 /* ViewController.m */,
 				1418AACE2149080000CACDC3 /* MainViewController.h */,
 				1418AACF2149080000CACDC3 /* MainViewController.m */,
+				1459BF9E214F460B00F9AA58 /* SecondaryViewController.h */,
+				1459BF9F214F460B00F9AA58 /* SecondaryViewController.m */,
 				14F9063F214A2EE300D6E141 /* PanViewController.h */,
 				14F90640214A2EE300D6E141 /* PanViewController.m */,
 			);
@@ -1184,10 +1194,13 @@
 			isa = PBXGroup;
 			children = (
 				1418AAD32149082800CACDC3 /* MainViewController.storyboard */,
-				144BD38821493A620096EA95 /* Window.h */,
-				144BD38921493A620096EA95 /* Window.m */,
+				1459BFA1214F461F00F9AA58 /* SecondaryViewController.storyboard */,
 				14F90645214A4F6700D6E141 /* DrawView.h */,
 				14F90646214A4F6700D6E141 /* DrawView.m */,
+				1459BFA3214F49B200F9AA58 /* LockView.h */,
+				1459BFA4214F49B200F9AA58 /* LockView.m */,
+				144BD38821493A620096EA95 /* Window.h */,
+				144BD38921493A620096EA95 /* Window.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1595,6 +1608,7 @@
 				1407CE11213FB62A00A3FC77 /* Layer 178.jpg in Resources */,
 				1407CDC1213FB62A00A3FC77 /* Layer 164.jpg in Resources */,
 				1407CDF6213FB62A00A3FC77 /* Layer 225.jpg in Resources */,
+				1459BFA2214F461F00F9AA58 /* SecondaryViewController.storyboard in Resources */,
 				1407CE28213FB62A00A3FC77 /* Layer 12.jpg in Resources */,
 				1407CD3D213FB62A00A3FC77 /* Layer 300.jpg in Resources */,
 				1407CD7D213FB62A00A3FC77 /* Layer 174.jpg in Resources */,
@@ -1882,6 +1896,7 @@
 				14F90647214A4F6700D6E141 /* DrawView.m in Sources */,
 				146472BB2143714F006D9B78 /* TableViewController4.m in Sources */,
 				1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */,
+				1459BFA5214F49B200F9AA58 /* LockView.m in Sources */,
 				14F90641214A2EE300D6E141 /* PanViewController.m in Sources */,
 				146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */,
 				14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */,
@@ -1891,6 +1906,7 @@
 				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
 				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
+				1459BFA0214F460B00F9AA58 /* SecondaryViewController.m in Sources */,
 				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
 				144BD38A21493A620096EA95 /* Window.m in Sources */,
 				140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */,

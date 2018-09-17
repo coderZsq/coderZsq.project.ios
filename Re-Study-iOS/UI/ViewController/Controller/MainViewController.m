@@ -123,6 +123,7 @@ typedef NS_ENUM(NSInteger, SegmentedType) {
 @property (weak, nonatomic) IBOutlet UIImageView *screencaptureImageView;
 @property (nonatomic, assign) CGPoint startPoint;
 @property (nonatomic, weak) UIView * maskView;
+@property (weak, nonatomic) IBOutlet UIView *handleView;
 @property (nonatomic, assign) SegmentedType segmentedType;
 @end
 
@@ -142,6 +143,10 @@ typedef NS_ENUM(NSInteger, SegmentedType) {
     Log
     self.title = @"View";
     self.hitTestView.delegate = self;
+    
+    self.view.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.view.layer.shadowRadius = 20;
+    self.view.layer.shadowOpacity = .5;
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTap:)];
     tapGesture.numberOfTapsRequired = 2;
@@ -435,10 +440,14 @@ typedef NS_ENUM(NSInteger, SegmentedType) {
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
     self.segmentedType = sender.selectedSegmentIndex;
-    if (self.segmentedType != SegmentedTypeAdjust) {
-        [UIView animateWithDuration:.5 animations:^{
-            self.screencaptureImageView.transform = CGAffineTransformIdentity;
-        }];
+    if (self.segmentedType == SegmentedTypeSelect) {
+        UIGraphicsBeginImageContext(self.screencaptureImageView.bounds.size);
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
+        [self.handleView.layer renderInContext:ctx];
+        UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+        self.screencaptureImageView.image = image;
+        UIGraphicsEndImageContext();
+        self.screencaptureImageView.transform = CGAffineTransformIdentity;
     }
 }
 

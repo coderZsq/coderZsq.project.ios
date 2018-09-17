@@ -6,8 +6,194 @@
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DrawView.h"
 #import "Proxy.h"
+
+@interface HandleView () <UIGestureRecognizerDelegate>
+@property (nonatomic, weak) UIImageView * imageView;
+@end
+
+@implementation HandleView
+
+- (UIImageView *)imageView {
+    
+    if (!_imageView) {
+        UIImageView * imageView = [UIImageView new];
+        imageView.frame = self.bounds;
+        imageView.userInteractionEnabled = YES;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [self addSubview:imageView];
+        _imageView = imageView;
+        self.clipsToBounds = YES;
+        [self addGestureRecognizers];
+    }
+    return _imageView;
+}
+
+- (void)setImage:(UIImage *)image {
+    _image = image;
+    self.imageView.image = image;
+}
+
+- (void)addGestureRecognizers {
+    UILongPressGestureRecognizer * longPressGestrue = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewLongPress:)];
+    longPressGestrue.delegate = self;
+    [self.imageView addGestureRecognizer:longPressGestrue];
+    UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewPan:)];
+    [self.imageView addGestureRecognizer:panGesture];
+    UIRotationGestureRecognizer * rotationGesture = [[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewRoataion:)];
+    [self.imageView addGestureRecognizer:rotationGesture];
+    rotationGesture.delegate = self;
+    UIPinchGestureRecognizer * pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewPinch:)];
+    pinchGesture.delegate = self;
+    [self.imageView addGestureRecognizer:pinchGesture];
+}
+
+- (void)imageViewLongPress:(UILongPressGestureRecognizer *)sender {
+    Log
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan: {
+            [UIView animateWithDuration:.25 animations:^{
+                self.imageView.alpha = .0;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:.25 animations:^{
+                    self.imageView.alpha = 1.;
+                } completion:^(BOOL finished) {
+                    UIGraphicsBeginImageContext(self.bounds.size);
+                    CGContextRef ctx = UIGraphicsGetCurrentContext();
+                    [self.layer renderInContext:ctx];
+                    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+                    if ([self.delegate respondsToSelector:@selector(handleView:image:)]) {
+                        [self.delegate handleView:self image:image];
+                    }
+                    [self removeFromSuperview];
+                    UIGraphicsEndImageContext();
+                }];
+            }];
+        }   break;
+        default:
+            break;
+    }
+}
+
+- (void)imageViewPan:(UIPanGestureRecognizer *)sender {
+    Log
+    CGPoint translation = [sender translationInView:sender.view];
+    sender.view.transform = CGAffineTransformTranslate(sender.view.transform, translation.x, translation.y);
+    [sender setTranslation:CGPointMake(0, 0) inView:sender.view];
+}
+
+- (void)imageViewRoataion:(UIRotationGestureRecognizer *)sender {
+    Log
+    sender.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
+    sender.rotation = 0.;
+}
+
+- (void)imageViewPinch:(UIPinchGestureRecognizer *)sender {
+    Log
+    sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
+    sender.scale = 1.;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+@end
+
+@interface BezierPath: UIBezierPath
+@property (nonatomic, strong) UIColor * lineColor;
+@end
+@implementation BezierPath
+@end
+
+@interface DrawView5 ()
+@property (nonatomic, strong) BezierPath * path;
+@property (nonatomic, strong) NSMutableArray * pathArrayM;
+@property (nonatomic, assign) CGFloat lineWidth;
+@property (nonatomic, strong) UIColor * lineColor;
+@end
+
+@implementation DrawView5
+
+- (void)handleView:(HandleView *)handleView image:(UIImage *)image {
+    self.image = image;
+}
+
+- (void)setImage:(UIImage *)image {
+    _image = image;
+    [self.pathArrayM addObject:image];
+    [self setNeedsDisplay];
+}
+
+- (void)clear {
+    [self.pathArrayM removeAllObjects];
+    [self setNeedsDisplay];
+}
+
+- (void)undo {
+    [self.pathArrayM removeLastObject];
+    [self setNeedsDisplay];
+}
+
+- (void)eraser {
+    _lineColor = self.backgroundColor;
+}
+
+- (void)setLineWidth:(CGFloat)width {
+    _lineWidth = width;
+}
+
+- (void)setLineColor:(UIColor *)color {
+    _lineColor = [color colorWithAlphaComponent:.7];
+}
+
+- (NSMutableArray *)pathArrayM {
+    
+    if (!_pathArrayM) {
+        _pathArrayM = @[].mutableCopy;
+    }
+    return _pathArrayM;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture:)];
+    [self addGestureRecognizer:panGesture];
+    self.lineWidth = 10;
+    self.lineColor = [[UIColor redColor] colorWithAlphaComponent:.7];
+}
+
+- (void)panGesture:(UIPanGestureRecognizer *)sender {
+    CGPoint currentPoint = [sender locationInView:self];
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        BezierPath * path = [BezierPath bezierPath];
+        path.lineWidth = self.lineWidth;
+        path.lineColor = self.lineColor;
+        path.lineJoinStyle = kCGLineJoinRound;
+        path.lineCapStyle = kCGLineCapRound;
+        self.path = path;
+        [path moveToPoint:currentPoint];
+        [self.pathArrayM addObject:path];
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+        [self.path addLineToPoint:currentPoint];
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)drawRect:(CGRect)rect {
+    for (BezierPath * path in self.pathArrayM) {
+        if ([path isKindOfClass:[UIImage class]]) {
+            UIImage * image = (UIImage *)path;
+            [image drawInRect:rect];
+        } else {
+            [path.lineColor set];
+            [path stroke];
+        }
+    }
+}
+
+@end
 
 @interface DrawView4 : UIView
 @property (nonatomic, assign) CGFloat offsetX;
@@ -72,15 +258,15 @@
     shadow.shadowColor = [UIColor whiteColor];
     shadow.shadowOffset = CGSizeMake(2, 2);
     attributes[NSShadowAttributeName] = shadow;
-//    [text drawInRect:rect withAttributes:attributes];
+    //    [text drawInRect:rect withAttributes:attributes];
     [text drawAtPoint:CGPointMake((rect.size.width - size.width) * .5, (rect.size.height - size.height) * .5) withAttributes:attributes];
 }
 
 - (UIColor *)calculateColorWithRatio:(CGFloat)ratio {
-//    CGFloat r = arc4random_uniform(256) / 255.;
-//    CGFloat g = arc4random_uniform(256) / 255.;
-//    CGFloat b = arc4random_uniform(256) / 255.;
-//    CGFloat value = (arc4random() % 100 + 130) / 255.;
+    //    CGFloat r = arc4random_uniform(256) / 255.;
+    //    CGFloat g = arc4random_uniform(256) / 255.;
+    //    CGFloat b = arc4random_uniform(256) / 255.;
+    //    CGFloat value = (arc4random() % 100 + 130) / 255.;
     CGFloat value = (255. - (ratio * 10) + 70.) / 255.;
     return [UIColor colorWithRed:value green:value blue:value alpha:1.];
 }

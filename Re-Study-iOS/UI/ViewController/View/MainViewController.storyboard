@@ -93,6 +93,29 @@
                                     <constraint firstAttribute="height" constant="10" id="h7z-sP-FOP"/>
                                 </constraints>
                             </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-ya-mNg">
+                                <rect key="frame" x="20" y="310" width="330" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RoZ-ZG-MpT">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="200"/>
+                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="5cE-4Q-W9o" appends="YES" id="nF6-6v-9Sk"/>
+                                            <outletCollection property="gestureRecognizers" destination="pKG-RG-40a" appends="YES" id="bYR-80-eZo"/>
+                                            <outletCollection property="gestureRecognizers" destination="eTJ-d1-jyV" appends="YES" id="bJJ-d1-agN"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="RoZ-ZG-MpT" firstAttribute="top" secondItem="rNI-ya-mNg" secondAttribute="top" id="6SL-iT-vht"/>
+                                    <constraint firstAttribute="height" constant="200" id="i4E-sE-s31"/>
+                                    <constraint firstItem="RoZ-ZG-MpT" firstAttribute="leading" secondItem="rNI-ya-mNg" secondAttribute="leading" id="iTp-DP-CNB"/>
+                                    <constraint firstAttribute="bottom" secondItem="RoZ-ZG-MpT" secondAttribute="bottom" id="rCO-KR-lNR"/>
+                                    <constraint firstAttribute="trailing" secondItem="RoZ-ZG-MpT" secondAttribute="trailing" id="tP6-Sa-U1a"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AY-v7-E60" customClass="EventView">
                                 <rect key="frame" x="130" y="0.0" width="221" height="100"/>
                                 <subviews>
@@ -177,29 +200,6 @@
                                     <constraint firstItem="Cm5-7P-Xb6" firstAttribute="leading" secondItem="1AY-v7-E60" secondAttribute="leading" id="gAc-4F-gQd"/>
                                 </constraints>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-ya-mNg">
-                                <rect key="frame" x="20" y="310" width="330" height="200"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RoZ-ZG-MpT">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="200"/>
-                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="5cE-4Q-W9o" appends="YES" id="nF6-6v-9Sk"/>
-                                            <outletCollection property="gestureRecognizers" destination="pKG-RG-40a" appends="YES" id="bYR-80-eZo"/>
-                                            <outletCollection property="gestureRecognizers" destination="eTJ-d1-jyV" appends="YES" id="bJJ-d1-agN"/>
-                                        </connections>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="RoZ-ZG-MpT" firstAttribute="top" secondItem="rNI-ya-mNg" secondAttribute="top" id="6SL-iT-vht"/>
-                                    <constraint firstAttribute="height" constant="200" id="i4E-sE-s31"/>
-                                    <constraint firstItem="RoZ-ZG-MpT" firstAttribute="leading" secondItem="rNI-ya-mNg" secondAttribute="leading" id="iTp-DP-CNB"/>
-                                    <constraint firstAttribute="bottom" secondItem="RoZ-ZG-MpT" secondAttribute="bottom" id="rCO-KR-lNR"/>
-                                    <constraint firstAttribute="trailing" secondItem="RoZ-ZG-MpT" secondAttribute="trailing" id="tP6-Sa-U1a"/>
-                                </constraints>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S0g-N4-qco">
                                 <rect key="frame" x="40" y="520" width="161" height="32"/>
                                 <segments>
@@ -269,6 +269,7 @@
                         <viewLayoutGuide key="safeArea" id="neW-LZ-5Au"/>
                     </view>
                     <connections>
+                        <outlet property="handleView" destination="rNI-ya-mNg" id="qel-B3-hza"/>
                         <outlet property="hitTestLabel" destination="iAx-d2-fdr" id="U7u-v1-sX9"/>
                         <outlet property="hitTestView" destination="Cm5-7P-Xb6" id="zK9-xA-ThK"/>
                         <outlet property="imageView" destination="KDQ-oP-UGJ" id="Au1-AL-1qd"/>
