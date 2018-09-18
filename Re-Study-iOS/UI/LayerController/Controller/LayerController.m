@@ -18,12 +18,17 @@
 @interface LayerController ()
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *clockImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *clockImageView2;
 @property (nonatomic, weak) CALayer * layer;
 @property (nonatomic, weak) CALayer * secondHandLayer;
 @property (nonatomic, weak) CALayer * minuteHandLayer;
 @property (nonatomic, weak) CALayer * hourHandLayer;
+@property (nonatomic, weak) CALayer * secondHandLayer2;
+@property (nonatomic, weak) CALayer * minuteHandLayer2;
+@property (nonatomic, weak) CALayer * hourHandLayer2;
 @property (nonatomic, weak) CALayer * fishLayer;
 @property (weak, nonatomic) IBOutlet UIView *contentView2;
+@property (weak, nonatomic) IBOutlet UIView *panView;
 @end
 
 @implementation LayerController
@@ -74,9 +79,10 @@
     keyAnimation.keyPath = @"transform.rotation";
     keyAnimation.values = @[@(AngleToRadio(-5)), @(AngleToRadio(5)), @(AngleToRadio(-5))];
     keyAnimation.repeatCount = INFINITY;
-//    keyAnimation.autoreverses = YES;
+    //    keyAnimation.autoreverses = YES;
     keyAnimation.duration = .25;
     [self.clockImageView.layer addAnimation:keyAnimation forKey:nil];
+    [self.clockImageView2.layer addAnimation:keyAnimation forKey:nil];
     
     [self clockRun];
     [NSTimer scheduledTimerWithTimeInterval:1. repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -88,8 +94,14 @@
     WheelView * view = [WheelView wheelView];
     view.frame = self.contentView2.bounds;
     [self.contentView2 addSubview:view];
-    
     [view start];
+    
+    self.clockImageView.layer.contentsRect = CGRectMake(0, 0, 1., .5);
+    self.clockImageView2.layer.contentsRect = CGRectMake(0, .5, 1., .5);
+    self.clockImageView.layer.anchorPoint = CGPointMake(.5, 1);
+    self.clockImageView2.layer.anchorPoint = CGPointMake(.5, 0);
+    self.clockImageView.clipsToBounds = YES;
+    self.clockImageView2.clipsToBounds = YES;
 }
 
 - (IBAction)transactionButtonClick:(UIButton *)sender {
@@ -126,7 +138,8 @@
         layer.backgroundColor = [UIColor redColor].CGColor;
         layer.bounds = CGRectMake(0, 0, 1, 35);
         layer.anchorPoint = CGPointMake(.5, 1);
-        layer.position = CGPointMake(self.clockImageView.bounds.size.width * .5, self.clockImageView.bounds.size.height * .5);
+        //        layer.position = CGPointMake(self.clockImageView.bounds.size.width * .5, self.clockImageView.bounds.size.height * .5);
+        layer.position = CGPointMake(self.clockImageView.bounds.size.width * .5, self.clockImageView.bounds.size.height);
         [self.clockImageView.layer addSublayer:layer];
         _secondHandLayer = layer;
     }
@@ -140,7 +153,7 @@
         layer.backgroundColor = [UIColor blackColor].CGColor;
         layer.bounds = CGRectMake(0, 0, 1.5, 35);
         layer.anchorPoint = CGPointMake(.5, 1);
-        layer.position = CGPointMake(self.clockImageView.bounds.size.width * .5, self.clockImageView.bounds.size.height * .5);
+        layer.position = CGPointMake(self.clockImageView.bounds.size.width * .5, self.clockImageView.bounds.size.height);
         [self.clockImageView.layer addSublayer:layer];
         _minuteHandLayer = layer;
     }
@@ -154,11 +167,53 @@
         layer.backgroundColor = [UIColor blackColor].CGColor;
         layer.bounds = CGRectMake(0, 0, 1.5, 25);
         layer.anchorPoint = CGPointMake(.5, 1);
-        layer.position = CGPointMake(self.clockImageView.bounds.size.width * .5, self.clockImageView.bounds.size.height * .5);
+        layer.position = CGPointMake(self.clockImageView.bounds.size.width * .5, self.clockImageView.bounds.size.height);
         [self.clockImageView.layer addSublayer:layer];
         _hourHandLayer = layer;
     }
     return _hourHandLayer;
+}
+
+- (CALayer *)secondHandLayer2 {
+    
+    if (!_secondHandLayer2) {
+        CALayer * layer = [CALayer layer];
+        layer.backgroundColor = [UIColor redColor].CGColor;
+        layer.bounds = CGRectMake(0, 0, 1, 35);
+        layer.anchorPoint = CGPointMake(.5, 1);
+        layer.position = CGPointMake(self.clockImageView2.bounds.size.width * .5, 0);
+        [self.clockImageView2.layer addSublayer:layer];
+        _secondHandLayer2 = layer;
+    }
+    return _secondHandLayer2;
+}
+
+- (CALayer *)minuteHandLayer2 {
+    
+    if (!_minuteHandLayer2) {
+        CALayer * layer = [CALayer layer];
+        layer.backgroundColor = [UIColor blackColor].CGColor;
+        layer.bounds = CGRectMake(0, 0, 1.5, 35);
+        layer.anchorPoint = CGPointMake(.5, 1);
+        layer.position = CGPointMake(self.clockImageView2.bounds.size.width * .5, 0);
+        [self.clockImageView2.layer addSublayer:layer];
+        _minuteHandLayer2 = layer;
+    }
+    return _minuteHandLayer2;
+}
+
+- (CALayer *)hourHandLayer2 {
+    
+    if (!_hourHandLayer2) {
+        CALayer * layer = [CALayer layer];
+        layer.backgroundColor = [UIColor blackColor].CGColor;
+        layer.bounds = CGRectMake(0, 0, 1.5, 25);
+        layer.anchorPoint = CGPointMake(.5, 1);
+        layer.position = CGPointMake(self.clockImageView2.bounds.size.width * .5, 0);
+        [self.clockImageView2.layer addSublayer:layer];
+        _hourHandLayer2 = layer;
+    }
+    return _hourHandLayer2;
 }
 
 - (void)clockRun {
@@ -173,6 +228,9 @@
     self.minuteHandLayer.transform = CATransform3DMakeRotation(AngleToRadio(mintueAngle), 0, 0, 1);
     self.hourHandLayer.transform = CATransform3DMakeRotation(AngleToRadio(hourAngle), 0, 0, 1);
     self.secondHandLayer.transform = CATransform3DMakeRotation(AngleToRadio(secondAngle), 0, 0, 1);
+    self.minuteHandLayer2.transform = CATransform3DMakeRotation(AngleToRadio(mintueAngle), 0, 0, 1);
+    self.hourHandLayer2.transform = CATransform3DMakeRotation(AngleToRadio(hourAngle), 0, 0, 1);
+    self.secondHandLayer2.transform = CATransform3DMakeRotation(AngleToRadio(secondAngle), 0, 0, 1);
 }
 
 - (CALayer *)fishLayer {
@@ -215,13 +273,20 @@
 }
 
 - (IBAction)clockImageViewSwipeGesture:(UISwipeGestureRecognizer *)sender {
-    self.clockImageView.image = [UIImage imageNamed:@"Clock"];
+    self.clockImageView2.image = [UIImage imageNamed:@"Clock"];
     CATransition * animation = [CATransition animation];
     animation.type = @"push";//@"cube";//@"oglFlip";
     animation.subtype = sender.direction == UISwipeGestureRecognizerDirectionRight ? @"fromLeft" : @"fromRight";
     animation.duration = .25;
-    [self.clockImageView.layer addAnimation:animation forKey:nil];
+    [self.clockImageView2.layer addAnimation:animation forKey:nil];
 }
 
+- (IBAction)panGesture:(UIPanGestureRecognizer *)sender {
+    CGPoint translation = [sender translationInView:sender.view];
+    CGFloat angle = translation.y *  M_PI / 200.;
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = -1 / 300.;
+    self.clockImageView.layer.transform = CATransform3DRotate(transform, -angle, 1, 0, 0);
+}
 
 @end

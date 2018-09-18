@@ -38,17 +38,21 @@
                                     <constraint firstAttribute="height" constant="100" id="qiz-lr-5yy"/>
                                 </constraints>
                             </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-qH-9FS">
+                                <rect key="frame" x="135" y="65" width="100" height="50"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Nb1-5O-x0b" appends="YES" id="CKe-Y6-OLU"/>
+                                    <outletCollection property="gestureRecognizers" destination="iw0-f6-cpw" appends="YES" id="2rP-Nj-17o"/>
+                                </connections>
+                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-Pb-N1F">
-                                <rect key="frame" x="135" y="40" width="100" height="100"/>
+                                <rect key="frame" x="135" y="65" width="100" height="50"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="hKD-8X-00W"/>
+                                    <constraint firstAttribute="height" constant="50" id="hKD-8X-00W"/>
                                     <constraint firstAttribute="width" constant="100" id="sxZ-bA-Gfn"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="5cf-t3-E32" appends="YES" id="ujA-Ge-ssT"/>
-                                    <outletCollection property="gestureRecognizers" destination="IOv-rn-JJL" appends="YES" id="535-EB-HhF"/>
-                                </connections>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35A-wk-H2s">
                                 <rect key="frame" x="245" y="40" width="100" height="100"/>
@@ -58,33 +62,58 @@
                                     <constraint firstAttribute="width" constant="100" id="nIu-Jy-LzN"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5K-mg-aK1">
+                                <rect key="frame" x="135" y="40" width="100" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="8Nt-7w-Jfo"/>
+                                    <constraint firstAttribute="height" constant="50" id="oo2-Ht-JKs"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="q2a-2G-9jb" appends="YES" id="Aim-Zo-WqK"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wz1-qH-9FS" firstAttribute="top" secondItem="TIC-Pb-N1F" secondAttribute="top" id="2Hy-gt-VOW"/>
                             <constraint firstItem="WQJ-Eu-PCq" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="2mP-bh-No8"/>
                             <constraint firstItem="WQJ-Eu-PCq" firstAttribute="leading" secondItem="mFO-1R-UM1" secondAttribute="leading" constant="25" id="FDw-8R-aOa"/>
                             <constraint firstItem="TIC-Pb-N1F" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="trailing" constant="10" id="GMP-eh-bkI"/>
+                            <constraint firstItem="x5K-mg-aK1" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="HxB-KF-xUB"/>
                             <constraint firstItem="35A-wk-H2s" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="NJJ-Bg-RKU"/>
-                            <constraint firstItem="TIC-Pb-N1F" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="j0p-Hx-lmM"/>
+                            <constraint firstItem="wz1-qH-9FS" firstAttribute="bottom" secondItem="TIC-Pb-N1F" secondAttribute="bottom" id="WXC-wg-xde"/>
+                            <constraint firstItem="wz1-qH-9FS" firstAttribute="leading" secondItem="TIC-Pb-N1F" secondAttribute="leading" id="Xvh-Yt-y2H"/>
+                            <constraint firstItem="wz1-qH-9FS" firstAttribute="trailing" secondItem="TIC-Pb-N1F" secondAttribute="trailing" id="g1t-KP-1db"/>
+                            <constraint firstItem="TIC-Pb-N1F" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="45" id="j0p-Hx-lmM"/>
                             <constraint firstItem="35A-wk-H2s" firstAttribute="leading" secondItem="TIC-Pb-N1F" secondAttribute="trailing" constant="10" id="s5E-25-uWP"/>
+                            <constraint firstItem="TIC-Pb-N1F" firstAttribute="centerX" secondItem="x5K-mg-aK1" secondAttribute="centerX" id="xpi-5n-v1l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mFO-1R-UM1"/>
                     </view>
                     <connections>
                         <outlet property="clockImageView" destination="TIC-Pb-N1F" id="Lbl-Uw-UAb"/>
+                        <outlet property="clockImageView2" destination="wz1-qH-9FS" id="ZfK-tP-FDt"/>
                         <outlet property="contentView" destination="WQJ-Eu-PCq" id="s55-MM-32d"/>
                         <outlet property="contentView2" destination="35A-wk-H2s" id="fFp-fj-aBX"/>
+                        <outlet property="panView" destination="x5K-mg-aK1" id="naZ-9z-6zm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Lw-c5-rbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="5cf-t3-E32">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="q2a-2G-9jb">
                     <connections>
-                        <action selector="clockImageViewSwipeGesture:" destination="PIY-2x-Zlg" id="bfJ-pb-VkB"/>
+                        <action selector="panGesture:" destination="PIY-2x-Zlg" id="Xdt-ui-BJg"/>
+                    </connections>
+                </panGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Nb1-5O-x0b">
+                    <connections>
+                        <action selector="clockImageViewSwipeGesture:" destination="PIY-2x-Zlg" id="bMO-Hm-1JY"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="IOv-rn-JJL">
+                <swipeGestureRecognizer direction="left" id="iw0-f6-cpw">
                     <connections>
-                        <action selector="clockImageViewSwipeGesture:" destination="PIY-2x-Zlg" id="Bno-9g-H80"/>
+                        <action selector="clockImageViewSwipeGesture:" destination="PIY-2x-Zlg" id="idi-FH-hcz"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
