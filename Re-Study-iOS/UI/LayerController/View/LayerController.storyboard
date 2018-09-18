@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQJ-Eu-PCq">
-                                <rect key="frame" x="20" y="40" width="100" height="100"/>
+                                <rect key="frame" x="25" y="40" width="100" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-jL-v6s">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -38,29 +38,55 @@
                                     <constraint firstAttribute="height" constant="100" id="qiz-lr-5yy"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-Pb-N1F">
-                                <rect key="frame" x="130" y="40" width="100" height="100"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-Pb-N1F">
+                                <rect key="frame" x="135" y="40" width="100" height="100"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="hKD-8X-00W"/>
                                     <constraint firstAttribute="width" constant="100" id="sxZ-bA-Gfn"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5cf-t3-E32" appends="YES" id="ujA-Ge-ssT"/>
+                                    <outletCollection property="gestureRecognizers" destination="IOv-rn-JJL" appends="YES" id="535-EB-HhF"/>
+                                </connections>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35A-wk-H2s">
+                                <rect key="frame" x="245" y="40" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="IWa-u8-zeI"/>
+                                    <constraint firstAttribute="width" constant="100" id="nIu-Jy-LzN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WQJ-Eu-PCq" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="2mP-bh-No8"/>
-                            <constraint firstItem="WQJ-Eu-PCq" firstAttribute="leading" secondItem="mFO-1R-UM1" secondAttribute="leading" constant="20" id="FDw-8R-aOa"/>
+                            <constraint firstItem="WQJ-Eu-PCq" firstAttribute="leading" secondItem="mFO-1R-UM1" secondAttribute="leading" constant="25" id="FDw-8R-aOa"/>
                             <constraint firstItem="TIC-Pb-N1F" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="trailing" constant="10" id="GMP-eh-bkI"/>
+                            <constraint firstItem="35A-wk-H2s" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="NJJ-Bg-RKU"/>
                             <constraint firstItem="TIC-Pb-N1F" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="j0p-Hx-lmM"/>
+                            <constraint firstItem="35A-wk-H2s" firstAttribute="leading" secondItem="TIC-Pb-N1F" secondAttribute="trailing" constant="10" id="s5E-25-uWP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mFO-1R-UM1"/>
                     </view>
                     <connections>
                         <outlet property="clockImageView" destination="TIC-Pb-N1F" id="Lbl-Uw-UAb"/>
                         <outlet property="contentView" destination="WQJ-Eu-PCq" id="s55-MM-32d"/>
+                        <outlet property="contentView2" destination="35A-wk-H2s" id="fFp-fj-aBX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Lw-c5-rbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5cf-t3-E32">
+                    <connections>
+                        <action selector="clockImageViewSwipeGesture:" destination="PIY-2x-Zlg" id="bfJ-pb-VkB"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="IOv-rn-JJL">
+                    <connections>
+                        <action selector="clockImageViewSwipeGesture:" destination="PIY-2x-Zlg" id="Bno-9g-H80"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="204" y="242.42878560719643"/>
         </scene>

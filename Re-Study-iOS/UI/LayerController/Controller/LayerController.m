@@ -7,6 +7,8 @@
 //
 
 #import "LayerController.h"
+#import "WheelView.h"
+
 #define AngleToRadio(angle) ((angle) * M_PI / 180.)
 #define kPerSecondArc 6
 #define kPerMinuteArc 6
@@ -21,6 +23,7 @@
 @property (nonatomic, weak) CALayer * minuteHandLayer;
 @property (nonatomic, weak) CALayer * hourHandLayer;
 @property (nonatomic, weak) CALayer * fishLayer;
+@property (weak, nonatomic) IBOutlet UIView *contentView2;
 @end
 
 @implementation LayerController
@@ -81,6 +84,12 @@
     }];
     
     [self.contentView.layer addSublayer:self.fishLayer];
+    
+    WheelView * view = [WheelView wheelView];
+    view.frame = self.contentView2.bounds;
+    [self.contentView2 addSubview:view];
+    
+    [view start];
 }
 
 - (IBAction)transactionButtonClick:(UIButton *)sender {
@@ -204,5 +213,15 @@
     }
     return _fishLayer;
 }
+
+- (IBAction)clockImageViewSwipeGesture:(UISwipeGestureRecognizer *)sender {
+    self.clockImageView.image = [UIImage imageNamed:@"Clock"];
+    CATransition * animation = [CATransition animation];
+    animation.type = @"push";//@"cube";//@"oglFlip";
+    animation.subtype = sender.direction == UISwipeGestureRecognizerDirectionRight ? @"fromLeft" : @"fromRight";
+    animation.duration = .25;
+    [self.clockImageView.layer addAnimation:animation forKey:nil];
+}
+
 
 @end

@@ -362,6 +362,8 @@
 		14EB4F7F213F75D30082B143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F7D213F75D30082B143 /* LaunchScreen.storyboard */; };
 		14EB4F82213F75D30082B143 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F81213F75D30082B143 /* main.m */; };
 		14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F89213F7D2E0082B143 /* BasicControlController.m */; };
+		14F3A1E32150CB6600EA6A42 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F3A1E22150CB6600EA6A42 /* WheelView.m */; };
+		14F3A1E52150CB7400EA6A42 /* WheelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F3A1E42150CB7400EA6A42 /* WheelView.xib */; };
 		14F90641214A2EE300D6E141 /* PanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F90640214A2EE300D6E141 /* PanViewController.m */; };
 		14F90644214A3D3C00D6E141 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F90643214A3D3C00D6E141 /* ViewController.m */; };
 		14F90647214A4F6700D6E141 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F90646214A4F6700D6E141 /* DrawView.m */; };
@@ -759,6 +761,9 @@
 		14EB4F81213F75D30082B143 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14EB4F88213F7D2E0082B143 /* BasicControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicControlController.h; sourceTree = "<group>"; };
 		14EB4F89213F7D2E0082B143 /* BasicControlController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicControlController.m; sourceTree = "<group>"; };
+		14F3A1E12150CB6600EA6A42 /* WheelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
+		14F3A1E22150CB6600EA6A42 /* WheelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
+		14F3A1E42150CB7400EA6A42 /* WheelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WheelView.xib; sourceTree = "<group>"; };
 		14F9063F214A2EE300D6E141 /* PanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanViewController.h; sourceTree = "<group>"; };
 		14F90640214A2EE300D6E141 /* PanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanViewController.m; sourceTree = "<group>"; };
 		14F90642214A3D3C00D6E141 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1295,6 +1300,9 @@
 			isa = PBXGroup;
 			children = (
 				1459BFAB214F973300F9AA58 /* LayerController.storyboard */,
+				14F3A1E12150CB6600EA6A42 /* WheelView.h */,
+				14F3A1E22150CB6600EA6A42 /* WheelView.m */,
+				14F3A1E42150CB7400EA6A42 /* WheelView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1602,6 +1610,7 @@
 				1407CD43213FB62A00A3FC77 /* Layer 274.jpg in Resources */,
 				1407CD8D213FB62A00A3FC77 /* Layer 229.jpg in Resources */,
 				1407CD6A213FB62A00A3FC77 /* Layer 37.jpg in Resources */,
+				14F3A1E52150CB7400EA6A42 /* WheelView.xib in Resources */,
 				1407CE21213FB62A00A3FC77 /* Layer 254.jpg in Resources */,
 				1407CE4C213FB62A00A3FC77 /* Layer 14.jpg in Resources */,
 				1407CD8F213FB62A00A3FC77 /* Layer 91.jpg in Resources */,
@@ -1921,6 +1930,7 @@
 				1418AAD02149080000CACDC3 /* MainViewController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
+				14F3A1E32150CB6600EA6A42 /* WheelView.m in Sources */,
 				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
 				1459BFA8214F970100F9AA58 /* LayerController.m in Sources */,
 				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,

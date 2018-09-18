@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WheelView">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LuckyBaseBackground" translatesAutoresizingMaskIntoConstraints="NO" id="fvJ-o9-4Fd">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LuckyRotateWheel" translatesAutoresizingMaskIntoConstraints="NO" id="7tW-ed-FM7">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XST-Fu-cV3">
+                    <rect key="frame" x="108" y="108" width="71.5" height="71.5"/>
+                    <state key="normal" backgroundImage="LuckyCenterButton"/>
+                    <state key="highlighted" backgroundImage="LuckyCenterButtonPressed"/>
+                    <connections>
+                        <action selector="chosenButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="qxI-l8-ENJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7tW-ed-FM7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="0ui-DQ-9XF"/>
+                <constraint firstItem="XST-Fu-cV3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="C3l-O9-yzt"/>
+                <constraint firstItem="XST-Fu-cV3" firstAttribute="width" secondItem="7tW-ed-FM7" secondAttribute="width" multiplier="0.25" id="MCu-ft-9Ry"/>
+                <constraint firstItem="fvJ-o9-4Fd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MQN-aj-f85"/>
+                <constraint firstItem="XST-Fu-cV3" firstAttribute="height" secondItem="7tW-ed-FM7" secondAttribute="height" multiplier="0.25" id="Nnr-KN-by4"/>
+                <constraint firstAttribute="trailing" secondItem="fvJ-o9-4Fd" secondAttribute="trailing" id="PEz-8j-6m5"/>
+                <constraint firstItem="XST-Fu-cV3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Udt-M1-1dw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fvJ-o9-4Fd" secondAttribute="bottom" id="Vns-cN-2gW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7tW-ed-FM7" secondAttribute="trailing" id="d9d-OD-jGe"/>
+                <constraint firstItem="7tW-ed-FM7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kbF-sr-g4c"/>
+                <constraint firstItem="fvJ-o9-4Fd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qhK-x9-icJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7tW-ed-FM7" secondAttribute="bottom" id="xtc-6d-518"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="7tW-ed-FM7" id="vIx-0D-TsC"/>
+            </connections>
+            <point key="canvasLocation" x="-15" y="-14"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LuckyBaseBackground" width="286" height="286"/>
+        <image name="LuckyCenterButton" width="81" height="81"/>
+        <image name="LuckyCenterButtonPressed" width="81" height="81"/>
+        <image name="LuckyRotateWheel" width="286" height="286"/>
+    </resources>
+</document>
