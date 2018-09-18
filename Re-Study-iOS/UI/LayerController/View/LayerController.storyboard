@@ -20,37 +20,52 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQJ-Eu-PCq">
                                 <rect key="frame" x="20" y="40" width="100" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-jL-v6s">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <connections>
+                                            <action selector="transactionButtonClick:" destination="PIY-2x-Zlg" eventType="touchUpInside" id="13b-cr-Mr3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="1MZ-jL-v6s" firstAttribute="top" secondItem="WQJ-Eu-PCq" secondAttribute="top" id="4Aq-Fc-jPK"/>
+                                    <constraint firstAttribute="trailing" secondItem="1MZ-jL-v6s" secondAttribute="trailing" id="5Sd-k2-4RO"/>
                                     <constraint firstAttribute="width" constant="100" id="FkB-na-BlC"/>
+                                    <constraint firstAttribute="bottom" secondItem="1MZ-jL-v6s" secondAttribute="bottom" id="iz5-05-K0K"/>
+                                    <constraint firstItem="1MZ-jL-v6s" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="leading" id="nhH-ub-yr9"/>
                                     <constraint firstAttribute="height" constant="100" id="qiz-lr-5yy"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-jL-v6s">
-                                <rect key="frame" x="20" y="150" width="100" height="30"/>
-                                <state key="normal" title="Transction"/>
-                                <connections>
-                                    <action selector="transactionButtonClick:" destination="PIY-2x-Zlg" eventType="touchUpInside" id="13b-cr-Mr3"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-Pb-N1F">
+                                <rect key="frame" x="130" y="40" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hKD-8X-00W"/>
+                                    <constraint firstAttribute="width" constant="100" id="sxZ-bA-Gfn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WQJ-Eu-PCq" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="2mP-bh-No8"/>
-                            <constraint firstItem="1MZ-jL-v6s" firstAttribute="top" secondItem="WQJ-Eu-PCq" secondAttribute="bottom" constant="10" id="4lV-GI-Bp4"/>
-                            <constraint firstItem="1MZ-jL-v6s" firstAttribute="trailing" secondItem="WQJ-Eu-PCq" secondAttribute="trailing" id="9Cg-oK-xYR"/>
                             <constraint firstItem="WQJ-Eu-PCq" firstAttribute="leading" secondItem="mFO-1R-UM1" secondAttribute="leading" constant="20" id="FDw-8R-aOa"/>
-                            <constraint firstItem="1MZ-jL-v6s" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="leading" id="HGu-Aq-v1J"/>
+                            <constraint firstItem="TIC-Pb-N1F" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="trailing" constant="10" id="GMP-eh-bkI"/>
+                            <constraint firstItem="TIC-Pb-N1F" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="j0p-Hx-lmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mFO-1R-UM1"/>
                     </view>
                     <connections>
-                        <outlet property="contentView" destination="WQJ-Eu-PCq" id="1f6-41-yoa"/>
+                        <outlet property="clockImageView" destination="TIC-Pb-N1F" id="Lbl-Uw-UAb"/>
+                        <outlet property="contentView" destination="WQJ-Eu-PCq" id="s55-MM-32d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Lw-c5-rbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="243"/>
+            <point key="canvasLocation" x="204" y="242.42878560719643"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Clock" width="200" height="200"/>
+    </resources>
 </document>
