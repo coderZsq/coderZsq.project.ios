@@ -330,6 +330,7 @@
 		141D7F8D21453248009A9443 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D7F8C21453248009A9443 /* PickerViewController.m */; };
 		141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F9021453FFB009A9443 /* PickerViewController.storyboard */; };
 		141D7F94214552E8009A9443 /* pickerview.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F93214552E7009A9443 /* pickerview.plist */; };
+		141F093B2151FA5200779F00 /* ReplicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141F093A2151FA5200779F00 /* ReplicatorView.m */; };
 		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
 		142A2D392143840C00435F95 /* tableview4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* tableview4.plist */; };
 		144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */; };
@@ -706,6 +707,8 @@
 		141D7F8C21453248009A9443 /* PickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		141D7F9021453FFB009A9443 /* PickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickerViewController.storyboard; sourceTree = "<group>"; };
 		141D7F93214552E7009A9443 /* pickerview.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pickerview.plist; sourceTree = "<group>"; };
+		141F09392151FA5200779F00 /* ReplicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplicatorView.h; sourceTree = "<group>"; };
+		141F093A2151FA5200779F00 /* ReplicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplicatorView.m; sourceTree = "<group>"; };
 		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
 		142A2D382143840C00435F95 /* tableview4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview4.plist; sourceTree = "<group>"; };
@@ -1303,6 +1306,8 @@
 				14F3A1E12150CB6600EA6A42 /* WheelView.h */,
 				14F3A1E22150CB6600EA6A42 /* WheelView.m */,
 				14F3A1E42150CB7400EA6A42 /* WheelView.xib */,
+				141F09392151FA5200779F00 /* ReplicatorView.h */,
+				141F093A2151FA5200779F00 /* ReplicatorView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1935,6 +1940,7 @@
 				1459BFA8214F970100F9AA58 /* LayerController.m in Sources */,
 				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
+				141F093B2151FA5200779F00 /* ReplicatorView.m in Sources */,
 				1475F46B214792F700237FC6 /* ContactModel.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
 				14F90647214A4F6700D6E141 /* DrawView.m in Sources */,

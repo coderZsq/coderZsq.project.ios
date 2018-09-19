@@ -8,6 +8,7 @@
 
 #import "LayerController.h"
 #import "WheelView.h"
+#import "ReplicatorView.h"
 
 #define AngleToRadio(angle) ((angle) * M_PI / 180.)
 #define kPerSecondArc 6
@@ -118,6 +119,41 @@
     gradientLayer.masksToBounds = YES;
     [self.clockImageView2.layer addSublayer:gradientLayer];
     _gradientLayer = gradientLayer;
+    
+    CGFloat H = 20;
+    ReplicatorView * replicatorView = [[ReplicatorView alloc]initWithFrame:CGRectMake(0, 0, H, H)];
+    replicatorView.layer.anchorPoint = CGPointMake(.5, 1);
+    CAReplicatorLayer * replicatorLayer = [CAReplicatorLayer layer];
+//    CGFloat Y = view2.bounds.size.height - H;
+    CALayer * layer2 = [CALayer layer];
+//    layer2.frame = CGRectMake(0, Y, 5, H);
+    layer2.bounds = CGRectMake(0, 0, 2.5, H);
+    layer2.anchorPoint = CGPointMake(0, 1);
+    layer2.position = CGPointMake(0, replicatorView.bounds.size.height);
+    layer2.backgroundColor = SystemColor.CGColor;
+    [replicatorLayer addSublayer:layer2];
+    [replicatorView.layer addSublayer:replicatorLayer];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:replicatorView];
+    
+    CABasicAnimation * animation2 = [CABasicAnimation animation];
+    animation2.keyPath = @"transform.scale.y";
+    animation2.toValue = @0;
+    animation2.repeatCount = INFINITY;
+    animation2.duration = .6;
+    animation2.autoreverses = YES;
+    [layer2 addAnimation: animation2 forKey:nil];
+    
+    replicatorLayer.instanceCount = 5;
+    replicatorLayer.instanceDelay = .3;
+    replicatorLayer.instanceTransform = CATransform3DMakeTranslation(5, 0, 0);
+    
+    CAReplicatorLayer * replicatorLayer2 = (CAReplicatorLayer *)replicatorView.layer;
+    replicatorLayer2.instanceCount = 2;
+    replicatorLayer2.instanceTransform = CATransform3DMakeRotation(M_PI, 1, 0, 0);
+    replicatorLayer2.instanceRedOffset -= .8;
+    replicatorLayer2.instanceGreenOffset -= .8;
+    replicatorLayer2.instanceBlueOffset -= .8;
+    replicatorLayer2.instanceAlphaOffset -= .95;
 }
 
 - (IBAction)transactionButtonClick:(UIButton *)sender {
