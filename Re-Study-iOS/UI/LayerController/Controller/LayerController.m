@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *clockImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *clockImageView2;
+@property (weak, nonatomic) IBOutlet UIView *contentView2;
+@property (weak, nonatomic) IBOutlet UIView *panView;
 @property (nonatomic, weak) CALayer * layer;
 @property (nonatomic, weak) CALayer * secondHandLayer;
 @property (nonatomic, weak) CALayer * minuteHandLayer;
@@ -27,8 +29,7 @@
 @property (nonatomic, weak) CALayer * minuteHandLayer2;
 @property (nonatomic, weak) CALayer * hourHandLayer2;
 @property (nonatomic, weak) CALayer * fishLayer;
-@property (weak, nonatomic) IBOutlet UIView *contentView2;
-@property (weak, nonatomic) IBOutlet UIView *panView;
+@property (nonatomic, weak) CAGradientLayer * gradientLayer;
 @end
 
 @implementation LayerController
@@ -102,6 +103,21 @@
     self.clockImageView2.layer.anchorPoint = CGPointMake(.5, 0);
     self.clockImageView.clipsToBounds = YES;
     self.clockImageView2.clipsToBounds = YES;
+    
+    CAGradientLayer * gradientLayer = [CAGradientLayer layer];
+//    gradientLayer.startPoint = CGPointMake(0, 0);
+//    gradientLayer.endPoint = CGPointMake(1, 0);
+    gradientLayer.locations = @[@.5];
+    gradientLayer.colors = @[(id)[UIColor clearColor].CGColor,
+                             (id)[[UIColor blackColor] colorWithAlphaComponent:.7].CGColor];
+    gradientLayer.opacity = 0;
+    CGFloat padding = 5;
+    gradientLayer.frame = CGRectMake(padding, -self.clockImageView2.bounds.size.height + padding,
+                                     self.clockImageView2.bounds.size.width - padding * 2, self.contentView2.bounds.size.height - padding * 2);
+    gradientLayer.cornerRadius = (self.clockImageView2.bounds.size.width - padding * 2) * .5;
+    gradientLayer.masksToBounds = YES;
+    [self.clockImageView2.layer addSublayer:gradientLayer];
+    _gradientLayer = gradientLayer;
 }
 
 - (IBAction)transactionButtonClick:(UIButton *)sender {
@@ -287,6 +303,16 @@
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = -1 / 300.;
     self.clockImageView.layer.transform = CATransform3DRotate(transform, -angle, 1, 0, 0);
+    
+    CGFloat opacity = translation.y * 1 /200.;
+    self.gradientLayer.opacity = opacity;
+    
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        [UIView animateWithDuration:.25 delay:0 usingSpringWithDamping:.25 initialSpringVelocity:0 options:(UIViewAnimationOptionCurveLinear) animations:^{
+            self.gradientLayer.opacity = 0;
+            self.clockImageView.layer.transform = CATransform3DIdentity;
+        } completion:nil];
+    }
 }
 
 @end
