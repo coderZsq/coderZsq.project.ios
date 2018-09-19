@@ -335,6 +335,9 @@
 		142A2D392143840C00435F95 /* tableview4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* tableview4.plist */; };
 		144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */; };
 		144BD38A21493A620096EA95 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 144BD38921493A620096EA95 /* Window.m */; };
+		1454DFE5215219E5002F44F1 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1454DFE4215219E5002F44F1 /* ContentView.m */; };
+		1454DFE8215222AC002F44F1 /* BadgeValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1454DFE7215222AC002F44F1 /* BadgeValueButton.m */; };
+		1454DFEA21523693002F44F1 /* path.data in Resources */ = {isa = PBXBuildFile; fileRef = 1454DFE921523693002F44F1 /* path.data */; };
 		1459BFA0214F460B00F9AA58 /* SecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BF9F214F460B00F9AA58 /* SecondaryViewController.m */; };
 		1459BFA2214F461F00F9AA58 /* SecondaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459BFA1214F461F00F9AA58 /* SecondaryViewController.storyboard */; };
 		1459BFA5214F49B200F9AA58 /* LockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BFA4214F49B200F9AA58 /* LockView.m */; };
@@ -716,6 +719,11 @@
 		144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleBorder.m"; sourceTree = "<group>"; };
 		144BD38821493A620096EA95 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		144BD38921493A620096EA95 /* Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
+		1454DFE3215219E5002F44F1 /* ContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		1454DFE4215219E5002F44F1 /* ContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
+		1454DFE6215222AC002F44F1 /* BadgeValueButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeValueButton.h; sourceTree = "<group>"; };
+		1454DFE7215222AC002F44F1 /* BadgeValueButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeValueButton.m; sourceTree = "<group>"; };
+		1454DFE921523693002F44F1 /* path.data */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = path.data; sourceTree = "<group>"; };
 		1459BF9E214F460B00F9AA58 /* SecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondaryViewController.h; sourceTree = "<group>"; };
 		1459BF9F214F460B00F9AA58 /* SecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondaryViewController.m; sourceTree = "<group>"; };
 		1459BFA1214F461F00F9AA58 /* SecondaryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondaryViewController.storyboard; sourceTree = "<group>"; };
@@ -1281,11 +1289,20 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		1454DFEB21523698002F44F1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1454DFE921523693002F44F1 /* path.data */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		1459BFA9214F970E00F9AA58 /* LayerController */ = {
 			isa = PBXGroup;
 			children = (
 				1459BFAA214F972200F9AA58 /* Controller */,
 				1459BFAD214F974300F9AA58 /* View */,
+				1454DFEB21523698002F44F1 /* Data */,
 			);
 			path = LayerController;
 			sourceTree = "<group>";
@@ -1308,6 +1325,10 @@
 				14F3A1E42150CB7400EA6A42 /* WheelView.xib */,
 				141F09392151FA5200779F00 /* ReplicatorView.h */,
 				141F093A2151FA5200779F00 /* ReplicatorView.m */,
+				1454DFE3215219E5002F44F1 /* ContentView.h */,
+				1454DFE4215219E5002F44F1 /* ContentView.m */,
+				1454DFE6215222AC002F44F1 /* BadgeValueButton.h */,
+				1454DFE7215222AC002F44F1 /* BadgeValueButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1633,6 +1654,7 @@
 				1407CE31213FB62A00A3FC77 /* Layer 243.jpg in Resources */,
 				1407CE18213FB62A00A3FC77 /* Layer 192.jpg in Resources */,
 				1407CD7E213FB62A00A3FC77 /* Layer 160.jpg in Resources */,
+				1454DFEA21523693002F44F1 /* path.data in Resources */,
 				1407CD86213FB62A00A3FC77 /* Layer 50.jpg in Resources */,
 				1407CE5B213FB62A00A3FC77 /* Layer 132.jpg in Resources */,
 				1407CE0C213FB62A00A3FC77 /* Layer 49.jpg in Resources */,
@@ -1925,6 +1947,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1454DFE5215219E5002F44F1 /* ContentView.m in Sources */,
 				1418AAC32148EA0E00CACDC3 /* UIViewController+Navigation.m in Sources */,
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
@@ -1935,6 +1958,7 @@
 				1418AAD02149080000CACDC3 /* MainViewController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
+				1454DFE8215222AC002F44F1 /* BadgeValueButton.m in Sources */,
 				14F3A1E32150CB6600EA6A42 /* WheelView.m in Sources */,
 				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
 				1459BFA8214F970100F9AA58 /* LayerController.m in Sources */,

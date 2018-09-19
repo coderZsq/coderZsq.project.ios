@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,20 +76,81 @@
                                     <outletCollection property="gestureRecognizers" destination="q2a-2G-9jb" appends="YES" id="Aim-Zo-WqK"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvA-KW-LmS" customClass="ContentView">
+                                <rect key="frame" x="25" y="170" width="320" height="300"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EvA-KW-LmS" secondAttribute="height" multiplier="16:15" id="d8q-gU-eOy"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xco-ia-kp4">
+                                <rect key="frame" x="25" y="480" width="160" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonClick:" destination="EvA-KW-LmS" eventType="touchUpInside" id="mgO-3G-6J0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqP-UF-hbK">
+                                <rect key="frame" x="185" y="480" width="160" height="30"/>
+                                <state key="normal" title="Redraw"/>
+                                <connections>
+                                    <action selector="redrawButtonClick:" destination="EvA-KW-LmS" eventType="touchUpInside" id="Yhy-XZ-1zi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb3-VB-vZI" customClass="BadgeValueButton">
+                                <rect key="frame" x="330" y="155" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GZQ-3l-qa6"/>
+                                    <constraint firstAttribute="width" constant="30" id="sFl-Ab-f6c"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kb8-0h-7nb" customClass="BadgeValueButton">
+                                <rect key="frame" x="330" y="155" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Gua-oL-1Mu"/>
+                                    <constraint firstAttribute="width" constant="30" id="q8G-50-8Fg"/>
+                                </constraints>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outlet property="button" destination="Lb3-VB-vZI" id="9PT-KY-Dkr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="NqP-UF-hbK" firstAttribute="top" secondItem="Xco-ia-kp4" secondAttribute="top" id="0kO-JN-Gz0"/>
                             <constraint firstItem="wz1-qH-9FS" firstAttribute="top" secondItem="TIC-Pb-N1F" secondAttribute="top" id="2Hy-gt-VOW"/>
                             <constraint firstItem="WQJ-Eu-PCq" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="2mP-bh-No8"/>
+                            <constraint firstItem="Kb8-0h-7nb" firstAttribute="top" secondItem="EvA-KW-LmS" secondAttribute="top" constant="-15" id="4D2-F6-4eL"/>
+                            <constraint firstItem="Kb8-0h-7nb" firstAttribute="trailing" secondItem="EvA-KW-LmS" secondAttribute="trailing" constant="15" id="53b-dr-IFT"/>
+                            <constraint firstItem="Xco-ia-kp4" firstAttribute="leading" secondItem="EvA-KW-LmS" secondAttribute="leading" id="5UT-IW-tus"/>
+                            <constraint firstItem="EvA-KW-LmS" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="leading" id="BEw-Ot-ok1"/>
                             <constraint firstItem="WQJ-Eu-PCq" firstAttribute="leading" secondItem="mFO-1R-UM1" secondAttribute="leading" constant="25" id="FDw-8R-aOa"/>
+                            <constraint firstItem="EvA-KW-LmS" firstAttribute="top" secondItem="WQJ-Eu-PCq" secondAttribute="bottom" constant="30" id="FsN-IF-sgU"/>
                             <constraint firstItem="TIC-Pb-N1F" firstAttribute="leading" secondItem="WQJ-Eu-PCq" secondAttribute="trailing" constant="10" id="GMP-eh-bkI"/>
                             <constraint firstItem="x5K-mg-aK1" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="HxB-KF-xUB"/>
+                            <constraint firstItem="Xco-ia-kp4" firstAttribute="width" secondItem="EvA-KW-LmS" secondAttribute="width" multiplier="0.5" id="JBR-Sq-HwT"/>
+                            <constraint firstItem="Xco-ia-kp4" firstAttribute="top" secondItem="EvA-KW-LmS" secondAttribute="bottom" constant="10" id="KFf-Nj-yo3"/>
+                            <constraint firstItem="35A-wk-H2s" firstAttribute="trailing" secondItem="EvA-KW-LmS" secondAttribute="trailing" id="L7p-VZ-oCk"/>
                             <constraint firstItem="35A-wk-H2s" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="20" id="NJJ-Bg-RKU"/>
+                            <constraint firstItem="Kb8-0h-7nb" firstAttribute="trailing" secondItem="Lb3-VB-vZI" secondAttribute="trailing" id="VfO-ch-xY0"/>
                             <constraint firstItem="wz1-qH-9FS" firstAttribute="bottom" secondItem="TIC-Pb-N1F" secondAttribute="bottom" id="WXC-wg-xde"/>
                             <constraint firstItem="wz1-qH-9FS" firstAttribute="leading" secondItem="TIC-Pb-N1F" secondAttribute="leading" id="Xvh-Yt-y2H"/>
+                            <constraint firstItem="Kb8-0h-7nb" firstAttribute="leading" secondItem="Lb3-VB-vZI" secondAttribute="leading" id="bWU-yF-Tfr"/>
+                            <constraint firstItem="Kb8-0h-7nb" firstAttribute="bottom" secondItem="Lb3-VB-vZI" secondAttribute="bottom" id="csO-5k-Y8U"/>
+                            <constraint firstItem="NqP-UF-hbK" firstAttribute="leading" secondItem="Xco-ia-kp4" secondAttribute="trailing" id="fho-8U-cuj"/>
                             <constraint firstItem="wz1-qH-9FS" firstAttribute="trailing" secondItem="TIC-Pb-N1F" secondAttribute="trailing" id="g1t-KP-1db"/>
                             <constraint firstItem="TIC-Pb-N1F" firstAttribute="top" secondItem="mFO-1R-UM1" secondAttribute="top" constant="45" id="j0p-Hx-lmM"/>
+                            <constraint firstItem="Kb8-0h-7nb" firstAttribute="top" secondItem="Lb3-VB-vZI" secondAttribute="top" id="ryG-bN-Uco"/>
                             <constraint firstItem="35A-wk-H2s" firstAttribute="leading" secondItem="TIC-Pb-N1F" secondAttribute="trailing" constant="10" id="s5E-25-uWP"/>
+                            <constraint firstItem="NqP-UF-hbK" firstAttribute="width" secondItem="Xco-ia-kp4" secondAttribute="width" id="szC-jh-75U"/>
                             <constraint firstItem="TIC-Pb-N1F" firstAttribute="centerX" secondItem="x5K-mg-aK1" secondAttribute="centerX" id="xpi-5n-v1l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mFO-1R-UM1"/>
