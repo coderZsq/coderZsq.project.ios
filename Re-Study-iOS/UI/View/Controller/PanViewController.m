@@ -12,6 +12,7 @@
 @interface PanViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) UIView * mainView;
 @property (nonatomic, weak) UIView * secondaryView;
+@property (nonatomic, assign, getter=isPan) BOOL pan;
 @end
 
 @implementation PanViewController
@@ -33,6 +34,7 @@
 }
 
 - (void)pan {
+    self.pan = YES;
     [UIView animateWithDuration:.25 animations:^{
         [self positionWithOffset:[UIScreen mainScreen].bounds.size.width * .8];
         CGRect frame = self.mainView.frame;
@@ -42,6 +44,7 @@
 }
 
 - (void)unPan {
+    self.pan = NO;
     [UIView animateWithDuration:.25 animations:^{
         self.mainView.transform = CGAffineTransformIdentity;
         self.mainView.frame = self.view.bounds;
@@ -75,7 +78,15 @@
         UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(mainViewPan:)];
         panGesture.delegate = self;
         [_mainView addGestureRecognizer:panGesture];
+//        UIView * tapView = [UIView new];
+//        [_mainView addSubview:tapView];
+//        [tapView mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.left.bottom.equalTo(self.mainView);
+//            make.top.mas_equalTo(Top + 44);
+//            make.width.mas_equalTo(self.mainView.bounds.size.width * .24);
+//        }];
         UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(unPan)];
+        tapGesture.delegate = self;
         [_mainView addGestureRecognizer:tapGesture];
         _mainView.layer.cornerRadius = 40;
         self.title = mainViewController.title;
@@ -100,7 +111,16 @@
 }
 
 TouchTest
-//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-//    return self.mainView == touch.view ? YES : NO;
-//}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    NSLog(@"%@", [touch.view class]);
+    if (self.isPan) {
+        return YES;
+    } else if ([NSStringFromClass([touch.view class]) hasPrefix:@"HitTestView"]) {
+        return NO;
+    } else if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"] && ![gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        return NO;
+    }
+    return YES;
+}
+
 @end

@@ -23,13 +23,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqT-Sc-ck3">
-                    <rect key="frame" x="306.5" y="16.5" width="35.5" height="17"/>
+                    <rect key="frame" x="316.5" y="16.5" width="35.5" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="cnZ-2Q-gT9">
-                    <rect key="frame" x="342" y="10" width="30" height="30"/>
+                    <rect key="frame" x="352" y="10" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="hec-jF-6pB"/>
                         <constraint firstAttribute="width" constant="30" id="rVE-8S-PFn"/>
@@ -42,7 +42,7 @@
                 <constraint firstItem="cnZ-2Q-gT9" firstAttribute="leading" secondItem="vqT-Sc-ck3" secondAttribute="trailing" id="R4u-kQ-LUL"/>
                 <constraint firstItem="vqT-Sc-ck3" firstAttribute="centerY" secondItem="jvV-sZ-ItW" secondAttribute="centerY" id="W1h-5t-zfT"/>
                 <constraint firstItem="cnZ-2Q-gT9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gQC-q7-L9H"/>
-                <constraint firstAttribute="trailing" secondItem="cnZ-2Q-gT9" secondAttribute="trailing" constant="10" id="t86-hZ-BlL"/>
+                <constraint firstAttribute="trailing" secondItem="cnZ-2Q-gT9" secondAttribute="trailing" id="t86-hZ-BlL"/>
                 <constraint firstItem="cnZ-2Q-gT9" firstAttribute="centerY" secondItem="jvV-sZ-ItW" secondAttribute="centerY" id="ypl-la-L8o"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

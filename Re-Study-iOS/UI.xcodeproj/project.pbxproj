@@ -335,6 +335,8 @@
 		141F093B2151FA5200779F00 /* ReplicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141F093A2151FA5200779F00 /* ReplicatorView.m */; };
 		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
 		142A2D392143840C00435F95 /* tableview4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* tableview4.plist */; };
+		143AF90621538CD20047BB79 /* SQShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 143AF90521538CD20047BB79 /* SQShareView.m */; };
+		143AF90821538CDF0047BB79 /* SQShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 143AF90721538CDF0047BB79 /* SQShareView.xib */; };
 		144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */; };
 		144BD38A21493A620096EA95 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 144BD38921493A620096EA95 /* Window.m */; };
 		1454DFE5215219E5002F44F1 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1454DFE4215219E5002F44F1 /* ContentView.m */; };
@@ -390,6 +392,7 @@
 		14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F89213F7D2E0082B143 /* BasicControlController.m */; };
 		14F3A1E32150CB6600EA6A42 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F3A1E22150CB6600EA6A42 /* WheelView.m */; };
 		14F3A1E52150CB7400EA6A42 /* WheelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F3A1E42150CB7400EA6A42 /* WheelView.xib */; };
+		14F45B8021538A210019130D /* SQCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F45B7F21538A210019130D /* SQCoverView.m */; };
 		14F90641214A2EE300D6E141 /* PanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F90640214A2EE300D6E141 /* PanViewController.m */; };
 		14F90644214A3D3C00D6E141 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F90643214A3D3C00D6E141 /* ViewController.m */; };
 		14F90647214A4F6700D6E141 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F90646214A4F6700D6E141 /* DrawView.m */; };
@@ -740,6 +743,9 @@
 		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
 		142A2D382143840C00435F95 /* tableview4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview4.plist; sourceTree = "<group>"; };
+		143AF90421538CD20047BB79 /* SQShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQShareView.h; sourceTree = "<group>"; };
+		143AF90521538CD20047BB79 /* SQShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQShareView.m; sourceTree = "<group>"; };
+		143AF90721538CDF0047BB79 /* SQShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQShareView.xib; sourceTree = "<group>"; };
 		144B2300214B99FF0090A3E2 /* UIImage+CircleBorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CircleBorder.h"; sourceTree = "<group>"; };
 		144B2301214B99FF0090A3E2 /* UIImage+CircleBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleBorder.m"; sourceTree = "<group>"; };
 		144BD38821493A620096EA95 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
@@ -835,6 +841,8 @@
 		14F3A1E12150CB6600EA6A42 /* WheelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
 		14F3A1E22150CB6600EA6A42 /* WheelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
 		14F3A1E42150CB7400EA6A42 /* WheelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WheelView.xib; sourceTree = "<group>"; };
+		14F45B7E21538A210019130D /* SQCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCoverView.h; sourceTree = "<group>"; };
+		14F45B7F21538A210019130D /* SQCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQCoverView.m; sourceTree = "<group>"; };
 		14F9063F214A2EE300D6E141 /* PanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanViewController.h; sourceTree = "<group>"; };
 		14F90640214A2EE300D6E141 /* PanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanViewController.m; sourceTree = "<group>"; };
 		14F90642214A3D3C00D6E141 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1529,6 +1537,11 @@
 				145C2C6B2153753C003B203D /* SQSectionView.m */,
 				145C2C6D2153754E003B203D /* SQSectionView.xib */,
 				1416735121537BF5007453B8 /* SQHomeDetailViewController.storyboard */,
+				14F45B7E21538A210019130D /* SQCoverView.h */,
+				14F45B7F21538A210019130D /* SQCoverView.m */,
+				143AF90421538CD20047BB79 /* SQShareView.h */,
+				143AF90521538CD20047BB79 /* SQShareView.m */,
+				143AF90721538CDF0047BB79 /* SQShareView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2023,6 +2036,7 @@
 				1407CD74213FB62A00A3FC77 /* Layer 259.jpg in Resources */,
 				1407CD82213FB62A00A3FC77 /* Layer 175.jpg in Resources */,
 				1407CE1B213FB62A00A3FC77 /* Layer 48.jpg in Resources */,
+				143AF90821538CDF0047BB79 /* SQShareView.xib in Resources */,
 				1407CE14213FB62A00A3FC77 /* Layer 145.jpg in Resources */,
 				1407CDE1213FB62A00A3FC77 /* Layer 220.jpg in Resources */,
 				1407CE42213FB62A00A3FC77 /* Layer 252.jpg in Resources */,
@@ -2267,7 +2281,9 @@
 				1475F46B214792F700237FC6 /* ContactModel.m in Sources */,
 				145C2C6C2153753C003B203D /* SQSectionView.m in Sources */,
 				14805D48215345A700CF1255 /* SQMessageViewController.m in Sources */,
+				14F45B8021538A210019130D /* SQCoverView.m in Sources */,
 				14805D4E2153509D00CF1255 /* SQTabBarController.m in Sources */,
+				143AF90621538CD20047BB79 /* SQShareView.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
 				14805D60215368DE00CF1255 /* SQSectionItem.m in Sources */,
 				14F90647214A4F6700D6E141 /* DrawView.m in Sources */,

@@ -43,12 +43,20 @@
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageOriginalWithNamed:@"menuIcon"] style:0 target:self action:@selector(menuBarButtonClick:)];
+    if (self.childViewControllers.count == 0) {
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageOriginalWithNamed:@"menuIcon"] style:0 target:self action:@selector(menuBarButtonClick:)];
+    } else {
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageOriginalWithNamed:@"NavBack"] style:0 target:self action:@selector(back)];
+    }
     [super pushViewController:viewController animated:animated];
 }
 
 - (void)menuBarButtonClick:(UIBarButtonItem *)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pan" object:nil];
+}
+
+- (void)back {
+    [self popViewControllerAnimated:YES];
 }
 
 @end

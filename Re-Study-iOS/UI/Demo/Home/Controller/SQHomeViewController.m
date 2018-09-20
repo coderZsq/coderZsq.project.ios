@@ -31,7 +31,8 @@
     [super viewDidLoad];
     self.title = @"首页";
     self.tableView.rowHeight = 161;
-    self.tableView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"bgImage"].CGImage);
+//    self.tableView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"bgImage"].CGImage);
+    self.tableView.backgroundColor = BackgroundColor;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SQHomeCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SQHomeCell class])];
 }
 
@@ -71,7 +72,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"SQHomeDetailViewController" bundle:nil]instantiateInitialViewController] animated:YES];
 }
 
 @end

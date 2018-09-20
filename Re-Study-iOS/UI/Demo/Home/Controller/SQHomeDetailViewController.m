@@ -7,26 +7,38 @@
 //
 
 #import "SQHomeDetailViewController.h"
+#import "UIImage+SQImage.h"
+#import "SQCoverView.h"
+#import "SQShareView.h"
 
-@interface SQHomeDetailViewController ()
-
+@interface SQHomeDetailViewController () <SQCoverViewDelegate>
+@property (nonatomic, weak) SQShareView * shareView;
 @end
 
 @implementation SQHomeDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = BackgroundColor;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageOriginalWithNamed:@"share"] style:0 target:self action:@selector(shareBarButtonClick:)];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)shareBarButtonClick:(UIBarButtonItem *)sender {
+    SQCoverView * coverView = [SQCoverView show];
+//    coverView.delegate = self;
+    coverView.didClosedBlock = ^(SQCoverView * coverView){
+        [self.shareView hiddenShareViewWhenCompletion:^{
+            [coverView removeFromSuperview];
+        }];
+    };
+    SQShareView * shareView = [SQShareView shareView];
+    self.shareView = shareView;
 }
-*/
+
+- (void)coverViewDidClosed:(SQCoverView *)coverView {
+    [self.shareView hiddenShareViewWhenCompletion:^{
+        [coverView removeFromSuperview];
+    }];
+}
 
 @end
