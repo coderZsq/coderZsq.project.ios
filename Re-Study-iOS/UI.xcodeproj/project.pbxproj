@@ -319,6 +319,8 @@
 		140DEC06214665E1009DB0EF /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC05214665E1009DB0EF /* NavigationController.m */; };
 		140DEC0A2146675B009DB0EF /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140DEC092146675B009DB0EF /* NavigationController.storyboard */; };
 		140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140DEC0D21466852009DB0EF /* NavigationViewController.m */; };
+		1416735021537BD6007453B8 /* SQHomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416734F21537BD6007453B8 /* SQHomeDetailViewController.m */; };
+		1416735221537BF5007453B8 /* SQHomeDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1416735121537BF5007453B8 /* SQHomeDetailViewController.storyboard */; };
 		1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAB82148C98700CACDC3 /* UIImage+Color.m */; };
 		1418AAC32148EA0E00CACDC3 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAC22148EA0E00CACDC3 /* UIViewController+Navigation.m */; };
 		1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1418AAC52148F6EE00CACDC3 /* TabBarController.m */; };
@@ -344,6 +346,9 @@
 		1459BFA5214F49B200F9AA58 /* LockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BFA4214F49B200F9AA58 /* LockView.m */; };
 		1459BFA8214F970100F9AA58 /* LayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1459BFA7214F970100F9AA58 /* LayerController.m */; };
 		1459BFAC214F973300F9AA58 /* LayerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459BFAB214F973300F9AA58 /* LayerController.storyboard */; };
+		145C2C6C2153753C003B203D /* SQSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145C2C6B2153753C003B203D /* SQSectionView.m */; };
+		145C2C6E2153754E003B203D /* SQSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145C2C6D2153754E003B203D /* SQSectionView.xib */; };
+		145C2C7121537A46003B203D /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 145C2C6F21537A46003B203D /* UIColor+SQExtension.m */; };
 		1461DB5E213FD58300D938DC /* basiccontrol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* basiccontrol.plist */; };
 		146472BB2143714F006D9B78 /* TableViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 146472BA2143714F006D9B78 /* TableViewController4.m */; };
 		146472BD21437168006D9B78 /* TableViewController4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146472BC21437168006D9B78 /* TableViewController4.storyboard */; };
@@ -364,6 +369,15 @@
 		14805D452153458000CF1255 /* SQDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D442153458000CF1255 /* SQDiscoveryViewController.m */; };
 		14805D48215345A700CF1255 /* SQMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D47215345A700CF1255 /* SQMessageViewController.m */; };
 		14805D4B215345E000CF1255 /* SQSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D4A215345E000CF1255 /* SQSettingViewController.m */; };
+		14805D4E2153509D00CF1255 /* SQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D4D2153509D00CF1255 /* SQTabBarController.m */; };
+		14805D51215357CD00CF1255 /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D50215357CD00CF1255 /* SQNavigationController.m */; };
+		14805D542153629A00CF1255 /* UIImage+SQImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D532153629A00CF1255 /* UIImage+SQImage.m */; };
+		14805D592153683300CF1255 /* HomeDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14805D572153683300CF1255 /* HomeDatas.plist */; };
+		14805D5A2153683300CF1255 /* message.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14805D582153683300CF1255 /* message.plist */; };
+		14805D5D2153689000CF1255 /* SQHomeCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D5C2153689000CF1255 /* SQHomeCellItem.m */; };
+		14805D60215368DE00CF1255 /* SQSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D5F215368DE00CF1255 /* SQSectionItem.m */; };
+		14805D6421536C7400CF1255 /* SQHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D6221536C7400CF1255 /* SQHomeCell.m */; };
+		14805D6521536C7400CF1255 /* SQHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14805D6321536C7400CF1255 /* SQHomeCell.xib */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
 		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
@@ -701,6 +715,9 @@
 		140DEC092146675B009DB0EF /* NavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		140DEC0C21466852009DB0EF /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		140DEC0D21466852009DB0EF /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		1416734E21537BD6007453B8 /* SQHomeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeDetailViewController.h; sourceTree = "<group>"; };
+		1416734F21537BD6007453B8 /* SQHomeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeDetailViewController.m; sourceTree = "<group>"; };
+		1416735121537BF5007453B8 /* SQHomeDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQHomeDetailViewController.storyboard; sourceTree = "<group>"; };
 		1418AAB72148C98700CACDC3 /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		1418AAB82148C98700CACDC3 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		1418AAC12148EA0E00CACDC3 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
@@ -742,6 +759,11 @@
 		1459BFA6214F970100F9AA58 /* LayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerController.h; sourceTree = "<group>"; };
 		1459BFA7214F970100F9AA58 /* LayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerController.m; sourceTree = "<group>"; };
 		1459BFAB214F973300F9AA58 /* LayerController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LayerController.storyboard; sourceTree = "<group>"; };
+		145C2C6A2153753C003B203D /* SQSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSectionView.h; sourceTree = "<group>"; };
+		145C2C6B2153753C003B203D /* SQSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSectionView.m; sourceTree = "<group>"; };
+		145C2C6D2153754E003B203D /* SQSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQSectionView.xib; sourceTree = "<group>"; };
+		145C2C6F21537A46003B203D /* UIColor+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SQExtension.m"; path = "../../../../../SQLifestyle/SQExtension/UIColor+SQExtension.m"; sourceTree = "<group>"; };
+		145C2C7021537A46003B203D /* UIColor+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SQExtension.h"; path = "../../../../../SQLifestyle/SQExtension/UIColor+SQExtension.h"; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* basiccontrol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = basiccontrol.plist; sourceTree = "<group>"; };
 		146472B92143714F006D9B78 /* TableViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController4.h; sourceTree = "<group>"; };
 		146472BA2143714F006D9B78 /* TableViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController4.m; sourceTree = "<group>"; };
@@ -777,6 +799,21 @@
 		14805D47215345A700CF1255 /* SQMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMessageViewController.m; sourceTree = "<group>"; };
 		14805D49215345E000CF1255 /* SQSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSettingViewController.h; sourceTree = "<group>"; };
 		14805D4A215345E000CF1255 /* SQSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSettingViewController.m; sourceTree = "<group>"; };
+		14805D4C2153509D00CF1255 /* SQTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTabBarController.h; sourceTree = "<group>"; };
+		14805D4D2153509D00CF1255 /* SQTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTabBarController.m; sourceTree = "<group>"; };
+		14805D4F215357CD00CF1255 /* SQNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQNavigationController.h; sourceTree = "<group>"; };
+		14805D50215357CD00CF1255 /* SQNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQNavigationController.m; sourceTree = "<group>"; };
+		14805D522153629A00CF1255 /* UIImage+SQImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SQImage.h"; sourceTree = "<group>"; };
+		14805D532153629A00CF1255 /* UIImage+SQImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQImage.m"; sourceTree = "<group>"; };
+		14805D572153683300CF1255 /* HomeDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeDatas.plist; sourceTree = "<group>"; };
+		14805D582153683300CF1255 /* message.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = message.plist; sourceTree = "<group>"; };
+		14805D5B2153689000CF1255 /* SQHomeCellItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeCellItem.h; sourceTree = "<group>"; };
+		14805D5C2153689000CF1255 /* SQHomeCellItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeCellItem.m; sourceTree = "<group>"; };
+		14805D5E215368DE00CF1255 /* SQSectionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSectionItem.h; sourceTree = "<group>"; };
+		14805D5F215368DE00CF1255 /* SQSectionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSectionItem.m; sourceTree = "<group>"; };
+		14805D6121536C7400CF1255 /* SQHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeCell.h; sourceTree = "<group>"; };
+		14805D6221536C7400CF1255 /* SQHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeCell.m; sourceTree = "<group>"; };
+		14805D6321536C7400CF1255 /* SQHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQHomeCell.xib; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
@@ -1329,6 +1366,7 @@
 				1454E05421524811002F44F1 /* Message */,
 				1454E04121524811002F44F1 /* Other */,
 				1454E04221524811002F44F1 /* Setting */,
+				14805D562153683300CF1255 /* Supporting Files */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -1336,6 +1374,7 @@
 		1454E04121524811002F44F1 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				14805D55215362A100CF1255 /* Category */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1423,6 +1462,10 @@
 				1454E04D21524811002F44F1 /* DemoController.m */,
 				14805D3D2153412500CF1255 /* SQSecondaryViewController.h */,
 				14805D3E2153412500CF1255 /* SQSecondaryViewController.m */,
+				14805D4C2153509D00CF1255 /* SQTabBarController.h */,
+				14805D4D2153509D00CF1255 /* SQTabBarController.m */,
+				14805D4F215357CD00CF1255 /* SQNavigationController.h */,
+				14805D50215357CD00CF1255 /* SQNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1459,6 +1502,8 @@
 			children = (
 				14805D402153455500CF1255 /* SQHomeViewController.h */,
 				14805D412153455500CF1255 /* SQHomeViewController.m */,
+				1416734E21537BD6007453B8 /* SQHomeDetailViewController.h */,
+				1416734F21537BD6007453B8 /* SQHomeDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1466,6 +1511,10 @@
 		1454E05221524811002F44F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14805D5B2153689000CF1255 /* SQHomeCellItem.h */,
+				14805D5C2153689000CF1255 /* SQHomeCellItem.m */,
+				14805D5E215368DE00CF1255 /* SQSectionItem.h */,
+				14805D5F215368DE00CF1255 /* SQSectionItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1473,6 +1522,13 @@
 		1454E05321524811002F44F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14805D6121536C7400CF1255 /* SQHomeCell.h */,
+				14805D6221536C7400CF1255 /* SQHomeCell.m */,
+				14805D6321536C7400CF1255 /* SQHomeCell.xib */,
+				145C2C6A2153753C003B203D /* SQSectionView.h */,
+				145C2C6B2153753C003B203D /* SQSectionView.m */,
+				145C2C6D2153754E003B203D /* SQSectionView.xib */,
+				1416735121537BF5007453B8 /* SQHomeDetailViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1598,6 +1654,26 @@
 				1475F46A214792F700237FC6 /* ContactModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14805D55215362A100CF1255 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				145C2C7021537A46003B203D /* UIColor+SQExtension.h */,
+				145C2C6F21537A46003B203D /* UIColor+SQExtension.m */,
+				14805D522153629A00CF1255 /* UIImage+SQImage.h */,
+				14805D532153629A00CF1255 /* UIImage+SQImage.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		14805D562153683300CF1255 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14805D572153683300CF1255 /* HomeDatas.plist */,
+				14805D582153683300CF1255 /* message.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		14A3A4892140D97600A6C233 /* Category */ = {
@@ -1901,6 +1977,7 @@
 				1407CDE9213FB62A00A3FC77 /* Layer 156.jpg in Resources */,
 				1407CD3F213FB62A00A3FC77 /* Layer 116.jpg in Resources */,
 				1407CD55213FB62A00A3FC77 /* Layer 277.jpg in Resources */,
+				1416735221537BF5007453B8 /* SQHomeDetailViewController.storyboard in Resources */,
 				1407CDA9213FB62A00A3FC77 /* Layer 199.jpg in Resources */,
 				1407CE12213FB62A00A3FC77 /* Layer 150.jpg in Resources */,
 				1407CDC4213FB62A00A3FC77 /* Layer 3.jpg in Resources */,
@@ -1916,6 +1993,7 @@
 				1407CD91213FB62A00A3FC77 /* Layer 52.jpg in Resources */,
 				1407CDD1213FB62A00A3FC77 /* Layer 196.jpg in Resources */,
 				1407CE1E213FB62A00A3FC77 /* Layer 283.jpg in Resources */,
+				14805D5A2153683300CF1255 /* message.plist in Resources */,
 				140DEBFF21464121009DB0EF /* pickerview3.plist in Resources */,
 				1407CDEA213FB62A00A3FC77 /* Layer 157.jpg in Resources */,
 				140DEBEF21461466009DB0EF /* pickerview2.plist in Resources */,
@@ -1963,6 +2041,7 @@
 				1407CD75213FB62A00A3FC77 /* Layer 202.jpg in Resources */,
 				1407CD76213FB62A00A3FC77 /* Layer 216.jpg in Resources */,
 				1407CD7C213FB62A00A3FC77 /* Layer 7.jpg in Resources */,
+				14805D592153683300CF1255 /* HomeDatas.plist in Resources */,
 				1407CD3B213FB62A00A3FC77 /* Layer 117.jpg in Resources */,
 				1407CDF2213FB62A00A3FC77 /* Layer 221.jpg in Resources */,
 				1407CD83213FB62A00A3FC77 /* Layer 6.jpg in Resources */,
@@ -2018,6 +2097,7 @@
 				1407CE10213FB62A00A3FC77 /* Layer 187.jpg in Resources */,
 				1407CD79213FB62A00A3FC77 /* Layer 51.jpg in Resources */,
 				1407CDE4213FB62A00A3FC77 /* Layer 67.jpg in Resources */,
+				145C2C6E2153754E003B203D /* SQSectionView.xib in Resources */,
 				1407CD5E213FB62A00A3FC77 /* Layer 111.jpg in Resources */,
 				1407CE0B213FB62A00A3FC77 /* Layer 232.jpg in Resources */,
 				1407CD69213FB62A00A3FC77 /* Layer 270.jpg in Resources */,
@@ -2126,6 +2206,7 @@
 				1407CE1A213FB62A00A3FC77 /* Layer 74.jpg in Resources */,
 				1407CE61213FB62A00A3FC77 /* Layer 287.jpg in Resources */,
 				1407CDF9213FB62A00A3FC77 /* Layer 76.jpg in Resources */,
+				14805D6521536C7400CF1255 /* SQHomeCell.xib in Resources */,
 				1407CD92213FB62A00A3FC77 /* Layer 4.jpg in Resources */,
 				141D7F94214552E8009A9443 /* pickerview.plist in Resources */,
 				1407CE36213FB62A00A3FC77 /* Layer 109.jpg in Resources */,
@@ -2167,8 +2248,10 @@
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
+				14805D6421536C7400CF1255 /* SQHomeCell.m in Sources */,
 				1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */,
 				14805D3C2153405900CF1255 /* SQMenuButton.m in Sources */,
+				14805D5D2153689000CF1255 /* SQHomeCellItem.m in Sources */,
 				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
 				144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */,
 				1418AAD02149080000CACDC3 /* MainViewController.m in Sources */,
@@ -2182,10 +2265,14 @@
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				141F093B2151FA5200779F00 /* ReplicatorView.m in Sources */,
 				1475F46B214792F700237FC6 /* ContactModel.m in Sources */,
+				145C2C6C2153753C003B203D /* SQSectionView.m in Sources */,
 				14805D48215345A700CF1255 /* SQMessageViewController.m in Sources */,
+				14805D4E2153509D00CF1255 /* SQTabBarController.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
+				14805D60215368DE00CF1255 /* SQSectionItem.m in Sources */,
 				14F90647214A4F6700D6E141 /* DrawView.m in Sources */,
 				146472BB2143714F006D9B78 /* TableViewController4.m in Sources */,
+				145C2C7121537A46003B203D /* UIColor+SQExtension.m in Sources */,
 				1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */,
 				14805D4B215345E000CF1255 /* SQSettingViewController.m in Sources */,
 				1459BFA5214F49B200F9AA58 /* LockView.m in Sources */,
@@ -2198,6 +2285,7 @@
 				1454E05821524811002F44F1 /* DemoController.m in Sources */,
 				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
+				14805D51215357CD00CF1255 /* SQNavigationController.m in Sources */,
 				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
 				14805D3F2153412500CF1255 /* SQSecondaryViewController.m in Sources */,
 				1459BFA0214F460B00F9AA58 /* SecondaryViewController.m in Sources */,
@@ -2205,8 +2293,10 @@
 				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
 				144BD38A21493A620096EA95 /* Window.m in Sources */,
 				140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */,
+				1416735021537BD6007453B8 /* SQHomeDetailViewController.m in Sources */,
 				1418AACD2149079E00CACDC3 /* RootViewController.m in Sources */,
 				14805D422153455500CF1255 /* SQHomeViewController.m in Sources */,
+				14805D542153629A00CF1255 /* UIImage+SQImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

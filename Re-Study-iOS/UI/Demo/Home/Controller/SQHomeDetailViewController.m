@@ -1,22 +1,22 @@
 //
-//  SQDiscoveryViewController.m
+//  SQHomeDetailViewController.m
 //  UI
 //
 //  Created by 朱双泉 on 2018/9/20.
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import "SQDiscoveryViewController.h"
+#import "SQHomeDetailViewController.h"
 
-@interface SQDiscoveryViewController ()
+@interface SQHomeDetailViewController ()
 
 @end
 
-@implementation SQDiscoveryViewController
+@implementation SQHomeDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"发现";
+    // Do any additional setup after loading the view.
 }
 
 /*

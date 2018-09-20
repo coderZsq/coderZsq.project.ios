@@ -7,87 +7,71 @@
 //
 
 #import "SQHomeViewController.h"
+#import "SQSectionItem.h"
+#import "SQHomeCellItem.h"
+#import "SQHomeCell.h"
+#import "SQSectionView.h"
+#import "UIColor+SQExtension.h"
 
 @interface SQHomeViewController ()
-
+@property (nonatomic, copy) NSArray * dataSource;
 @end
 
 @implementation SQHomeViewController
 
+- (NSArray *)dataSource {
+    
+    if (!_dataSource) {
+        _dataSource = [SQSectionItem getSectionItem];
+    }
+    return _dataSource;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"首页";
+    self.tableView.rowHeight = 161;
+    self.tableView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"bgImage"].CGImage);
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SQHomeCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SQHomeCell class])];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return self.dataSource.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    SQSectionItem * item = self.dataSource[section];
+    return item.body.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    SQHomeCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SQHomeCell class])];
+    SQSectionItem * item = self.dataSource[indexPath.section];
+    SQHomeCellItem * cellItem = item.body[indexPath.row];
+    cell.backgroundImageView.image = [UIImage imageNamed:cellItem.imageURL];
+    cell.titleLabel.text = cellItem.section_title;
+    cell.descriptionLabel.text = cellItem.poi_name;
+    cell.supportLabel.text = cellItem.fav_count;
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    SQSectionItem * item = self.dataSource[section];
+    SQSectionView * view = [SQSectionView sectionView];
+    view.titleLabel.text = item.tag_name;
+    view.descriptionLabel.text = item.section_count;
+    view.backgroundColor = [UIColor colorWithHexString:item.color];
+    return view;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
