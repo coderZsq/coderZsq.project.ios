@@ -100,7 +100,7 @@
 }
 
 TouchTest
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    return self.mainView == touch.view ? YES : NO;
-}
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+//    return self.mainView == touch.view ? YES : NO;
+//}
 @end

@@ -357,6 +357,13 @@
 		1475F4652147638C00237FC6 /* NavigationViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1475F4642147638C00237FC6 /* NavigationViewController2.m */; };
 		1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1475F46721478FF300237FC6 /* NavigationViewController3.m */; };
 		1475F46B214792F700237FC6 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1475F46A214792F700237FC6 /* ContactModel.m */; };
+		14805D3921533C6100CF1255 /* SQSecondaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14805D3821533C6100CF1255 /* SQSecondaryViewController.storyboard */; };
+		14805D3C2153405900CF1255 /* SQMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D3B2153405900CF1255 /* SQMenuButton.m */; };
+		14805D3F2153412500CF1255 /* SQSecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D3E2153412500CF1255 /* SQSecondaryViewController.m */; };
+		14805D422153455500CF1255 /* SQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D412153455500CF1255 /* SQHomeViewController.m */; };
+		14805D452153458000CF1255 /* SQDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D442153458000CF1255 /* SQDiscoveryViewController.m */; };
+		14805D48215345A700CF1255 /* SQMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D47215345A700CF1255 /* SQMessageViewController.m */; };
+		14805D4B215345E000CF1255 /* SQSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D4A215345E000CF1255 /* SQSettingViewController.m */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
 		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
@@ -757,6 +764,19 @@
 		1475F46721478FF300237FC6 /* NavigationViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController3.m; sourceTree = "<group>"; };
 		1475F469214792F700237FC6 /* ContactModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
 		1475F46A214792F700237FC6 /* ContactModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
+		14805D3821533C6100CF1255 /* SQSecondaryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQSecondaryViewController.storyboard; sourceTree = "<group>"; };
+		14805D3A2153405900CF1255 /* SQMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQMenuButton.h; sourceTree = "<group>"; };
+		14805D3B2153405900CF1255 /* SQMenuButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMenuButton.m; sourceTree = "<group>"; };
+		14805D3D2153412500CF1255 /* SQSecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSecondaryViewController.h; sourceTree = "<group>"; };
+		14805D3E2153412500CF1255 /* SQSecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSecondaryViewController.m; sourceTree = "<group>"; };
+		14805D402153455500CF1255 /* SQHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeViewController.h; sourceTree = "<group>"; };
+		14805D412153455500CF1255 /* SQHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeViewController.m; sourceTree = "<group>"; };
+		14805D432153458000CF1255 /* SQDiscoveryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQDiscoveryViewController.h; sourceTree = "<group>"; };
+		14805D442153458000CF1255 /* SQDiscoveryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQDiscoveryViewController.m; sourceTree = "<group>"; };
+		14805D46215345A700CF1255 /* SQMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQMessageViewController.h; sourceTree = "<group>"; };
+		14805D47215345A700CF1255 /* SQMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMessageViewController.m; sourceTree = "<group>"; };
+		14805D49215345E000CF1255 /* SQSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSettingViewController.h; sourceTree = "<group>"; };
+		14805D4A215345E000CF1255 /* SQSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSettingViewController.m; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
@@ -1333,6 +1353,8 @@
 		1454E04321524811002F44F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14805D49215345E000CF1255 /* SQSettingViewController.h */,
+				14805D4A215345E000CF1255 /* SQSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1364,6 +1386,8 @@
 		1454E04721524811002F44F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14805D432153458000CF1255 /* SQDiscoveryViewController.h */,
+				14805D442153458000CF1255 /* SQDiscoveryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1397,6 +1421,8 @@
 			children = (
 				1454E04C21524811002F44F1 /* DemoController.h */,
 				1454E04D21524811002F44F1 /* DemoController.m */,
+				14805D3D2153412500CF1255 /* SQSecondaryViewController.h */,
+				14805D3E2153412500CF1255 /* SQSecondaryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1411,6 +1437,9 @@
 		1454E04F21524811002F44F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14805D3821533C6100CF1255 /* SQSecondaryViewController.storyboard */,
+				14805D3A2153405900CF1255 /* SQMenuButton.h */,
+				14805D3B2153405900CF1255 /* SQMenuButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1428,6 +1457,8 @@
 		1454E05121524811002F44F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14805D402153455500CF1255 /* SQHomeViewController.h */,
+				14805D412153455500CF1255 /* SQHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1459,6 +1490,8 @@
 		1454E05521524811002F44F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14805D46215345A700CF1255 /* SQMessageViewController.h */,
+				14805D47215345A700CF1255 /* SQMessageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1739,7 +1772,7 @@
 		14EB4F67213F75D20082B143 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = "";
+				CLASSPREFIX = SQ;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Castie!";
 				TargetAttributes = {
@@ -1972,6 +2005,7 @@
 				1407CD36213FB62A00A3FC77 /* Layer 261.jpg in Resources */,
 				1407CE43213FB62A00A3FC77 /* Layer 246.jpg in Resources */,
 				1407CDA5213FB62A00A3FC77 /* Layer 94.jpg in Resources */,
+				14805D3921533C6100CF1255 /* SQSecondaryViewController.storyboard in Resources */,
 				1407CE19213FB62A00A3FC77 /* Layer 60.jpg in Resources */,
 				1407CD7F213FB62A00A3FC77 /* Layer 148.jpg in Resources */,
 				1407CDFB213FB62A00A3FC77 /* Layer 8.jpg in Resources */,
@@ -2134,6 +2168,7 @@
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
 				1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */,
+				14805D3C2153405900CF1255 /* SQMenuButton.m in Sources */,
 				14EB4F8A213F7D2E0082B143 /* BasicControlController.m in Sources */,
 				144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */,
 				1418AAD02149080000CACDC3 /* MainViewController.m in Sources */,
@@ -2147,10 +2182,12 @@
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				141F093B2151FA5200779F00 /* ReplicatorView.m in Sources */,
 				1475F46B214792F700237FC6 /* ContactModel.m in Sources */,
+				14805D48215345A700CF1255 /* SQMessageViewController.m in Sources */,
 				14EB4F82213F75D30082B143 /* main.m in Sources */,
 				14F90647214A4F6700D6E141 /* DrawView.m in Sources */,
 				146472BB2143714F006D9B78 /* TableViewController4.m in Sources */,
 				1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */,
+				14805D4B215345E000CF1255 /* SQSettingViewController.m in Sources */,
 				1459BFA5214F49B200F9AA58 /* LockView.m in Sources */,
 				14F90641214A2EE300D6E141 /* PanViewController.m in Sources */,
 				146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */,
@@ -2162,11 +2199,14 @@
 				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
 				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
+				14805D3F2153412500CF1255 /* SQSecondaryViewController.m in Sources */,
 				1459BFA0214F460B00F9AA58 /* SecondaryViewController.m in Sources */,
+				14805D452153458000CF1255 /* SQDiscoveryViewController.m in Sources */,
 				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
 				144BD38A21493A620096EA95 /* Window.m in Sources */,
 				140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */,
 				1418AACD2149079E00CACDC3 /* RootViewController.m in Sources */,
+				14805D422153455500CF1255 /* SQHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

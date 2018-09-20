@@ -16,7 +16,6 @@
 #import "ViewController.h"
 #import "LayerController.h"
 #import "DemoController.h"
-#import "PanViewController.h"
 
 @interface RootViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -112,7 +111,7 @@
     } @finally {
         if (sb) vc = [sb instantiateInitialViewController];
         else vc = [classes[indexPath.row] new];
-        if ([vc isKindOfClass:[UINavigationController class]] || [vc isKindOfClass:[UITabBarController class]] || [vc isKindOfClass:[PanViewController class]])
+        if ([vc isKindOfClass:[UINavigationController class]] || [vc isKindOfClass:[UITabBarController class]] || [vc isKindOfClass:[DemoController class]])
             [self presentViewController:vc animated:YES completion:nil];
         else [self.navigationController pushViewController:vc animated:YES];
     }

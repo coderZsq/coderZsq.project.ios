@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bcm-Hd-Joh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Secondary View Controller-->
+        <scene sceneID="bbg-pf-09X">
+            <objects>
+                <viewController id="Bcm-Hd-Joh" customClass="SQSecondaryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jtb-fw-Nvt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="cF4-i1-S66">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chw-MH-DNT">
+                                <rect key="frame" x="16" y="48" width="158" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="城市" image="city_down">
+                                    <color key="titleColor" red="0.58952470362227138" green="0.96235281229019165" blue="0.90387982322026827" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ird-PN-7xB" customClass="SQMenuButton">
+                                <rect key="frame" x="31" y="109" width="185" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="home"/>
+                                <state key="selected" image="homeSeletced"/>
+                                <connections>
+                                    <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="oGB-x4-06f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hL-39-w7c" customClass="SQMenuButton">
+                                <rect key="frame" x="31" y="171" width="185" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="found"/>
+                                <state key="selected" image="foundSelected"/>
+                                <connections>
+                                    <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="I9e-jo-Eta"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcS-zv-uuU">
+                                <rect key="frame" x="18" y="378" width="194" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="weixin"/>
+                                <state key="selected" image="foundSelected"/>
+                                <state key="highlighted" image="weixinH"/>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOW-UT-lPl" customClass="SQMenuButton">
+                                <rect key="frame" x="22" y="465" width="185" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="message"/>
+                                <state key="selected" image="messageSelected"/>
+                                <connections>
+                                    <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="vLK-3j-5kC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-q0-Xqp">
+                                <rect key="frame" x="18" y="316" width="194" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="sina"/>
+                                <state key="selected" image="foundSelected"/>
+                                <state key="highlighted" image="sinaH"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5x-Ox-Vgh" customClass="SQMenuButton">
+                                <rect key="frame" x="14" y="260" width="202" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="unLogin"/>
+                                <state key="selected" image="foundSelected"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackLine" translatesAutoresizingMaskIntoConstraints="NO" id="TtN-YF-Dig">
+                                <rect key="frame" x="12" y="225" width="166" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackLine" translatesAutoresizingMaskIntoConstraints="NO" id="IeT-Td-VK5">
+                                <rect key="frame" x="12" y="432" width="166" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wD-L6-5gI" customClass="SQMenuButton">
+                                <rect key="frame" x="16" y="527" width="185" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seting"/>
+                                <state key="selected" image="setingSelected"/>
+                                <connections>
+                                    <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="oyy-sf-RG9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cF4-i1-S66" firstAttribute="leading" secondItem="Jtb-fw-Nvt" secondAttribute="leading" id="IKD-Od-MB2"/>
+                            <constraint firstAttribute="trailing" secondItem="cF4-i1-S66" secondAttribute="trailing" id="rhR-Mj-yg1"/>
+                            <constraint firstItem="cF4-i1-S66" firstAttribute="top" secondItem="Jtb-fw-Nvt" secondAttribute="top" id="woy-9X-Xgm"/>
+                            <constraint firstAttribute="bottom" secondItem="cF4-i1-S66" secondAttribute="bottom" id="xil-Kt-gNu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="20G-ba-TWs"/>
+                    </view>
+                    <connections>
+                        <outlet property="preSelectedButton" destination="ird-PN-7xB" id="wwD-XM-HhJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0k-Ku-gdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bgImage" width="194" height="186"/>
+        <image name="blackLine" width="258" height="24"/>
+        <image name="city_down" width="16" height="9"/>
+        <image name="found" width="185" height="54"/>
+        <image name="foundSelected" width="185" height="54"/>
+        <image name="home" width="185" height="54"/>
+        <image name="homeSeletced" width="185" height="54"/>
+        <image name="message" width="185" height="54"/>
+        <image name="messageSelected" width="185" height="54"/>
+        <image name="seting" width="185" height="54"/>
+        <image name="setingSelected" width="185" height="54"/>
+        <image name="sina" width="194" height="51"/>
+        <image name="sinaH" width="194" height="51"/>
+        <image name="unLogin" width="202" height="50"/>
+        <image name="weixin" width="194" height="51"/>
+        <image name="weixinH" width="194" height="51"/>
+    </resources>
+</document>
