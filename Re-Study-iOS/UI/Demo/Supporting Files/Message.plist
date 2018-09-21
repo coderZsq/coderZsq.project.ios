@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>header</key>
+		<dict>
+			<key>detail</key>
+			<string>虽然数码产品日新月异，打字和收发邮件的便利让整个世界几乎能够零距离的交流，不过很多人依然迷恋于纸张的手感，就算互联网提供了更快速的选择，还是很执著于翻阅书本及杂志的真实感，偶尔也想提笔写张手写卡片，把满满暖意寄给朋友。</string>
+			<key>feeltitle</key>
+			<string>不折腾，才逍遥</string>
+			<key>image</key>
+			<string>header1.jpg</string>
+			<key>tag</key>
+			<string>乐活,有趣,纯质,探店,逛街</string>
+			<key>title</key>
+			<string>Schoene Schreibwaren 文化用具专卖【用纸张留住岁月】</string>
+		</dict>
+		<key>themes</key>
+		<array>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-11</string>
+				<key>img</key>
+				<string>3.jpg</string>
+				<key>keywords</key>
+				<string>织体和曲式</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;其实静下心来看看你的衣橱，其实你并不需要这么多的衣服。要学着为衣橱做减法，太时髦的，小了穿不下的，商店打折冲动购入从未穿过一次的，统统扔掉！你真正需要的是一些百搭、质量过硬、能够反复穿搭的经典款。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=148</string>
+				<key>title</key>
+				<string>张学友-定风波</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-11</string>
+				<key>img</key>
+				<string>4.jpg</string>
+				<key>keywords</key>
+				<string>乐活 赏味 有趣</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;世界那么大，我想去看看! 世界那么大，你有时间去看看吗？你有勇气去看看吗？你有足够的粪土去看看吗旅行的冲动就如绚烂的烟花稍纵即逝，狂欢过后还是要面对漫漫岁月的平淡。不如来一场不出京城的跨国盛宴，满足你环游世界的心愿。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=187</string>
+				<key>title</key>
+				<string>登封造极</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-18</string>
+				<key>img</key>
+				<string>5.jpg</string>
+				<key>keywords</key>
+				<string>音色、力度、和声</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;博物馆一直是我的最爱，每每隔着千百年时光凝望那些陈 旧的古物，总是莫名感动。当鲜活的面孔与肉体都已化为尘埃，当一段激荡的故事变为泛黄纸页上几行冰冷的文字，当这世间再没有人记得你的名字，知道你的存在，而曾经于手中的一块铜镜，一把铁剑，或是一片残瓦，或许曾见证一段传奇，承载一世的苍凉。 &lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=149</string>
+				<key>title</key>
+				<string>岁月里的酸甜苦辣</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-18</string>
+				<key>img</key>
+				<string>6.jpg</string>
+				<key>keywords</key>
+				<string>曲调、节奏</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;博物馆一直是我的最爱，每每隔着千百年时光凝望那些陈 旧的古物，总是莫名感动。当鲜活的面孔与肉体都已化为尘埃，当一段激荡的故事变为泛黄纸页上几行冰冷的文字，当这世间再没有人记得你的名字，知道你的存在，而曾经于手中的一块铜镜，一把铁剑，或是一片残瓦，或许曾见证一段传奇，承载一世的苍凉。 &lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=149</string>
+				<key>title</key>
+				<string>1年1张学友演唱</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>header</key>
+		<dict>
+			<key>detail</key>
+			<string>虽然数码产品日新月异，打字和收发邮件的便利让整个世界几乎能够零距离的交流，不过很多人依然迷恋于纸张的手感，就算互联网提供了更快速的选择，还是很执著于翻阅书本及杂志的真实感，偶尔也想提笔写张手写卡片，把满满暖意寄给朋友。</string>
+			<key>feeltitle</key>
+			<string>一事精致，便能动人</string>
+			<key>image</key>
+			<string>header2.jpg</string>
+			<key>tag</key>
+			<string>乐活,有趣,纯质,探店,逛街</string>
+			<key>title</key>
+			<string>Schoene Schreibwaren 文化用具专卖【用纸张留住岁月】</string>
+		</dict>
+		<key>themes</key>
+		<array>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-01</string>
+				<key>img</key>
+				<string>7.jpg</string>
+				<key>keywords</key>
+				<string>电子音乐 R&amp;B</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;世界那么大，我想去看看! 世界那么大，你有时间去看看吗？你有勇气去看看吗？你有足够的粪土去看看吗旅行的冲动就如绚烂的烟花稍纵即逝，狂欢过后还是要面对漫漫岁月的平淡。不如来一场不出京城的跨国盛宴，满足你环游世界的心愿。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=187</string>
+				<key>title</key>
+				<string>来场大爱，从早到晚的国际盛宴</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-18</string>
+				<key>img</key>
+				<string>8.jpg</string>
+				<key>keywords</key>
+				<string>英伦摇滚 神游舞曲</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;博物馆一直是我的最爱，每每隔着千百年时光凝望那些陈 旧的古物，总是莫名感动。当鲜活的面孔与肉体都已化为尘埃，当一段激荡的故事变为泛黄纸页上几行冰冷的文字，当这世间再没有人记得你的名字，知道你的存在，而曾经于手中的一块铜镜，一把铁剑，或是一片残瓦，或许曾见证一段传奇，承载一世的苍凉。 &lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=149</string>
+				<key>title</key>
+				<string>岁月里的酸甜苦辣</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-18</string>
+				<key>img</key>
+				<string>9.jpg</string>
+				<key>keywords</key>
+				<string> 匪帮说唱 Big-Beat</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;博物馆一直是我的最爱，每每隔着千百年时光凝望那些陈 旧的古物，总是莫名感动。当鲜活的面孔与肉体都已化为尘埃，当一段激荡的故事变为泛黄纸页上几行冰冷的文字，当这世间再没有人记得你的名字，知道你的存在，而曾经于手中的一块铜镜，一把铁剑，或是一片残瓦，或许曾见证一段传奇，承载一世的苍凉。 &lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=149</string>
+				<key>title</key>
+				<string>岁月里的酸甜苦辣</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-01</string>
+				<key>img</key>
+				<string>10.jpg</string>
+				<key>keywords</key>
+				<string> 乡村音乐  爵士</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;世界那么大，我想去看看! 世界那么大，你有时间去看看吗？你有勇气去看看吗？你有足够的粪土去看看吗旅行的冲动就如绚烂的烟花稍纵即逝，狂欢过后还是要面对漫漫岁月的平淡。不如来一场不出京城的跨国盛宴，满足你环游世界的心愿。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=187</string>
+				<key>title</key>
+				<string>来场大爱，从早到晚的国际盛宴</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>header</key>
+		<dict>
+			<key>detail</key>
+			<string>虽然数码产品日新月异，打字和收发邮件的便利让整个世界几乎能够零距离的交流，不过很多人依然迷恋于纸张的手感，就算互联网提供了更快速的选择，还是很执著于翻阅书本及杂志的真实感，偶尔也想提笔写张手写卡片，把满满暖意寄给朋友。</string>
+			<key>feeltitle</key>
+			<string>想象你是一颗飞翔的种子</string>
+			<key>image</key>
+			<string>header4.jpg</string>
+			<key>tag</key>
+			<string>乐活,有趣,纯质,探店,逛街</string>
+			<key>title</key>
+			<string>Schoene Schreibwaren 文化用具专卖【用纸张留住岁月】</string>
+		</dict>
+		<key>themes</key>
+		<array>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-01</string>
+				<key>img</key>
+				<string>1.jpg</string>
+				<key>keywords</key>
+				<string>摇滚  爵士 朋克</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;世界那么大，我想去看看! 世界那么大，你有时间去看看吗？你有勇气去看看吗？你有足够的粪土去看看吗旅行的冲动就如绚烂的烟花稍纵即逝，狂欢过后还是要面对漫漫岁月的平淡。不如来一场不出京城的跨国盛宴，满足你环游世界的心愿。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=187</string>
+				<key>title</key>
+				<string>来场大爱，从早到晚的国际盛宴</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-01</string>
+				<key>img</key>
+				<string>2.jpg</string>
+				<key>keywords</key>
+				<string>重金属音乐 爵士</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;世界那么大，我想去看看! 世界那么大，你有时间去看看吗？你有勇气去看看吗？你有足够的粪土去看看吗旅行的冲动就如绚烂的烟花稍纵即逝，狂欢过后还是要面对漫漫岁月的平淡。不如来一场不出京城的跨国盛宴，满足你环游世界的心愿。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=187</string>
+				<key>title</key>
+				<string>来场大爱，从早到晚的国际盛宴</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-01</string>
+				<key>img</key>
+				<string>12.jpg</string>
+				<key>keywords</key>
+				<string>宁静 典雅 情感</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;世界那么大，我想去看看! 世界那么大，你有时间去看看吗？你有勇气去看看吗？你有足够的粪土去看看吗旅行的冲动就如绚烂的烟花稍纵即逝，狂欢过后还是要面对漫漫岁月的平淡。不如来一场不出京城的跨国盛宴，满足你环游世界的心愿。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=187</string>
+				<key>title</key>
+				<string>来场大爱，从早到晚的国际盛宴</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-18</string>
+				<key>img</key>
+				<string>13.jpg</string>
+				<key>keywords</key>
+				<string>如风声、雷声\吉他</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;博物馆一直是我的最爱，每每隔着千百年时光凝望那些陈 旧的古物，总是莫名感动。当鲜活的面孔与肉体都已化为尘埃，当一段激荡的故事变为泛黄纸页上几行冰冷的文字，当这世间再没有人记得你的名字，知道你的存在，而曾经于手中的一块铜镜，一把铁剑，或是一片残瓦，或许曾见证一段传奇，承载一世的苍凉。 &lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=149</string>
+				<key>title</key>
+				<string>岁月里的酸甜苦辣</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>header</key>
+		<dict>
+			<key>detail</key>
+			<string>虽然数码产品日新月异，打字和收发邮件的便利让整个世界几乎能够零距离的交流，不过很多人依然迷恋于纸张的手感，就算互联网提供了更快速的选择，还是很执著于翻阅书本及杂志的真实感，偶尔也想提笔写张手写卡片，把满满暖意寄给朋友。</string>
+			<key>feeltitle</key>
+			<string>不折腾，才逍遥</string>
+			<key>image</key>
+			<string>header3.jpg</string>
+			<key>tag</key>
+			<string>乐活,有趣,纯质,探店,逛街</string>
+			<key>title</key>
+			<string>Schoene Schreibwaren 文化用具专卖【用纸张留住岁月】</string>
+		</dict>
+		<key>themes</key>
+		<array>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-11</string>
+				<key>img</key>
+				<string>15.jpg</string>
+				<key>keywords</key>
+				<string>贝司  皮夹克 长头发</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;其实静下心来看看你的衣橱，其实你并不需要这么多的衣服。要学着为衣橱做减法，太时髦的，小了穿不下的，商店打折冲动购入从未穿过一次的，统统扔掉！你真正需要的是一些百搭、质量过硬、能够反复穿搭的经典款。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=148</string>
+				<key>title</key>
+				<string>乐享生活 购物为先</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-01</string>
+				<key>img</key>
+				<string>16.jpg</string>
+				<key>keywords</key>
+				<string>歌词、旋律</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;世界那么大，我想去看看! 世界那么大，你有时间去看看吗？你有勇气去看看吗？你有足够的粪土去看看吗旅行的冲动就如绚烂的烟花稍纵即逝，狂欢过后还是要面对漫漫岁月的平淡。不如来一场不出京城的跨国盛宴，满足你环游世界的心愿。&lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=187</string>
+				<key>title</key>
+				<string>来场大爱，从早到晚的国际盛宴</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-18</string>
+				<key>img</key>
+				<string>17.jpg</string>
+				<key>keywords</key>
+				<string>梦想 真实 感觉</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;博物馆一直是我的最爱，每每隔着千百年时光凝望那些陈 旧的古物，总是莫名感动。当鲜活的面孔与肉体都已化为尘埃，当一段激荡的故事变为泛黄纸页上几行冰冷的文字，当这世间再没有人记得你的名字，知道你的存在，而曾经于手中的一块铜镜，一把铁剑，或是一片残瓦，或许曾见证一段传奇，承载一世的苍凉。 &lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=149</string>
+				<key>title</key>
+				<string>岁月里的酸甜苦辣</string>
+			</dict>
+			<dict>
+				<key>begin_time</key>
+				<string>2015-08-18</string>
+				<key>img</key>
+				<string>18.jpg</string>
+				<key>keywords</key>
+				<string>狂野 信仰 力量</string>
+				<key>text</key>
+				<string>&lt;body&gt;&lt;p&gt;博物馆一直是我的最爱，每每隔着千百年时光凝望那些陈 旧的古物，总是莫名感动。当鲜活的面孔与肉体都已化为尘埃，当一段激荡的故事变为泛黄纸页上几行冰冷的文字，当这世间再没有人记得你的名字，知道你的存在，而曾经于手中的一块铜镜，一把铁剑，或是一片残瓦，或许曾见证一段传奇，承载一世的苍凉。 &lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;/body&gt;</string>
+				<key>themeurl</key>
+				<string>http://api.xiaorizi.me/api/themedetail/?themeid=149</string>
+				<key>title</key>
+				<string>岁月里的酸甜苦辣</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

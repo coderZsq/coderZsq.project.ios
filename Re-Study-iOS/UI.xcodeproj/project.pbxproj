@@ -379,6 +379,12 @@
 		14805D60215368DE00CF1255 /* SQSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D5F215368DE00CF1255 /* SQSectionItem.m */; };
 		14805D6421536C7400CF1255 /* SQHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D6221536C7400CF1255 /* SQHomeCell.m */; };
 		14805D6521536C7400CF1255 /* SQHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14805D6321536C7400CF1255 /* SQHomeCell.xib */; };
+		1496B7732154EBA2005B4BBE /* Message.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1496B7722154EBA2005B4BBE /* Message.plist */; };
+		1496B7762154EC05005B4BBE /* SQDiscoveryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1496B7752154EC05005B4BBE /* SQDiscoveryItem.m */; };
+		1496B7792154EC1B005B4BBE /* SQDiscoveryHeaderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1496B7782154EC1B005B4BBE /* SQDiscoveryHeaderItem.m */; };
+		1496B77C2154EC28005B4BBE /* SQDiscoveryThemeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1496B77B2154EC28005B4BBE /* SQDiscoveryThemeItem.m */; };
+		1496B7802154EEEF005B4BBE /* SQDiscoveryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1496B77E2154EEEF005B4BBE /* SQDiscoveryCell.m */; };
+		1496B7812154EEEF005B4BBE /* SQDiscoveryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1496B77F2154EEEF005B4BBE /* SQDiscoveryCell.xib */; };
 		14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */; };
 		14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A48B2140E7C400A6C233 /* ScrollViewController.m */; };
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
@@ -821,6 +827,16 @@
 		14805D6121536C7400CF1255 /* SQHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeCell.h; sourceTree = "<group>"; };
 		14805D6221536C7400CF1255 /* SQHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeCell.m; sourceTree = "<group>"; };
 		14805D6321536C7400CF1255 /* SQHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQHomeCell.xib; sourceTree = "<group>"; };
+		1496B7722154EBA2005B4BBE /* Message.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Message.plist; sourceTree = "<group>"; };
+		1496B7742154EC05005B4BBE /* SQDiscoveryItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQDiscoveryItem.h; sourceTree = "<group>"; };
+		1496B7752154EC05005B4BBE /* SQDiscoveryItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQDiscoveryItem.m; sourceTree = "<group>"; };
+		1496B7772154EC1B005B4BBE /* SQDiscoveryHeaderItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQDiscoveryHeaderItem.h; sourceTree = "<group>"; };
+		1496B7782154EC1B005B4BBE /* SQDiscoveryHeaderItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQDiscoveryHeaderItem.m; sourceTree = "<group>"; };
+		1496B77A2154EC28005B4BBE /* SQDiscoveryThemeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQDiscoveryThemeItem.h; sourceTree = "<group>"; };
+		1496B77B2154EC28005B4BBE /* SQDiscoveryThemeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQDiscoveryThemeItem.m; sourceTree = "<group>"; };
+		1496B77D2154EEEF005B4BBE /* SQDiscoveryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQDiscoveryCell.h; sourceTree = "<group>"; };
+		1496B77E2154EEEF005B4BBE /* SQDiscoveryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQDiscoveryCell.m; sourceTree = "<group>"; };
+		1496B77F2154EEEF005B4BBE /* SQDiscoveryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQDiscoveryCell.xib; sourceTree = "<group>"; };
 		14A3A4862140D96E00A6C233 /* UIImage+Resizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		14A3A4872140D96E00A6C233 /* UIImage+Resizing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		14A3A48A2140E7C400A6C233 /* ScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
@@ -1449,6 +1465,12 @@
 		1454E04821524811002F44F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1496B7742154EC05005B4BBE /* SQDiscoveryItem.h */,
+				1496B7752154EC05005B4BBE /* SQDiscoveryItem.m */,
+				1496B7772154EC1B005B4BBE /* SQDiscoveryHeaderItem.h */,
+				1496B7782154EC1B005B4BBE /* SQDiscoveryHeaderItem.m */,
+				1496B77A2154EC28005B4BBE /* SQDiscoveryThemeItem.h */,
+				1496B77B2154EC28005B4BBE /* SQDiscoveryThemeItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1456,6 +1478,9 @@
 		1454E04921524811002F44F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1496B77D2154EEEF005B4BBE /* SQDiscoveryCell.h */,
+				1496B77E2154EEEF005B4BBE /* SQDiscoveryCell.m */,
+				1496B77F2154EEEF005B4BBE /* SQDiscoveryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1696,6 +1721,7 @@
 		14805D562153683300CF1255 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1496B7722154EBA2005B4BBE /* Message.plist */,
 				14805D572153683300CF1255 /* HomeDatas.plist */,
 			);
 			path = "Supporting Files";
@@ -2039,6 +2065,7 @@
 				146AE854214234A9000D6E58 /* tableview.plist in Resources */,
 				1407CD6C213FB62A00A3FC77 /* Layer 112.jpg in Resources */,
 				1407CE30213FB62A00A3FC77 /* Layer 257.jpg in Resources */,
+				1496B7812154EEEF005B4BBE /* SQDiscoveryCell.xib in Resources */,
 				1407CDC5213FB62A00A3FC77 /* Layer 41.jpg in Resources */,
 				1407CE32213FB62A00A3FC77 /* Layer 10.jpg in Resources */,
 				1407CD85213FB62A00A3FC77 /* Layer 44.jpg in Resources */,
@@ -2046,6 +2073,7 @@
 				1407CD73213FB62A00A3FC77 /* Layer 265.jpg in Resources */,
 				1407CD74213FB62A00A3FC77 /* Layer 259.jpg in Resources */,
 				1407CD82213FB62A00A3FC77 /* Layer 175.jpg in Resources */,
+				1496B7732154EBA2005B4BBE /* Message.plist in Resources */,
 				1407CE1B213FB62A00A3FC77 /* Layer 48.jpg in Resources */,
 				143AF90821538CDF0047BB79 /* SQShareView.xib in Resources */,
 				1407CE14213FB62A00A3FC77 /* Layer 145.jpg in Resources */,
@@ -2271,6 +2299,7 @@
 				1454DFE5215219E5002F44F1 /* ContentView.m in Sources */,
 				1418AAC32148EA0E00CACDC3 /* UIViewController+Navigation.m in Sources */,
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
+				1496B7792154EC1B005B4BBE /* SQDiscoveryHeaderItem.m in Sources */,
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
 				14E945C82154D18700838252 /* SQCityCell.m in Sources */,
@@ -2308,6 +2337,7 @@
 				1459BFA5214F49B200F9AA58 /* LockView.m in Sources */,
 				14F90641214A2EE300D6E141 /* PanViewController.m in Sources */,
 				146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */,
+				1496B7802154EEEF005B4BBE /* SQDiscoveryCell.m in Sources */,
 				14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */,
 				146AE85E2142B143000D6E58 /* TableViewController3.m in Sources */,
 				14F90644214A3D3C00D6E141 /* ViewController.m in Sources */,
@@ -2315,6 +2345,7 @@
 				1454E05821524811002F44F1 /* DemoController.m in Sources */,
 				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
+				1496B7762154EC05005B4BBE /* SQDiscoveryItem.m in Sources */,
 				14805D51215357CD00CF1255 /* SQNavigationController.m in Sources */,
 				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
 				14805D3F2153412500CF1255 /* SQSecondaryViewController.m in Sources */,
@@ -2323,6 +2354,7 @@
 				141D7F8D21453248009A9443 /* PickerViewController.m in Sources */,
 				144BD38A21493A620096EA95 /* Window.m in Sources */,
 				140DEBFA21463AF8009DB0EF /* BirthdayTextField.m in Sources */,
+				1496B77C2154EC28005B4BBE /* SQDiscoveryThemeItem.m in Sources */,
 				1416735021537BD6007453B8 /* SQHomeDetailViewController.m in Sources */,
 				1418AACD2149079E00CACDC3 /* RootViewController.m in Sources */,
 				14805D422153455500CF1255 /* SQHomeViewController.m in Sources */,
