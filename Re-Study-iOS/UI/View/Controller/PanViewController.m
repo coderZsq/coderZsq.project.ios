@@ -22,7 +22,7 @@
     [self positionWithOffset:translation.x];
     if (sender.state == UIGestureRecognizerStateEnded) {
         if (self.mainView.frame.origin.x > [UIScreen mainScreen].bounds.size.width * .5) {
-            CGFloat offset = [UIScreen mainScreen].bounds.size.width * .8 - self.mainView.frame.origin.x;
+            CGFloat offset = [UIScreen mainScreen].bounds.size.width * (self.ratio ?self.ratio :.8) - self.mainView.frame.origin.x;
             [UIView animateWithDuration:.25 animations:^{
                 [self positionWithOffset:offset];
             }];
@@ -36,9 +36,9 @@
 - (void)pan {
     self.pan = YES;
     [UIView animateWithDuration:.25 animations:^{
-        [self positionWithOffset:[UIScreen mainScreen].bounds.size.width * .8];
+        [self positionWithOffset:[UIScreen mainScreen].bounds.size.width * (self.ratio ?self.ratio :.8)];
         CGRect frame = self.mainView.frame;
-        frame.origin.x = [UIScreen mainScreen].bounds.size.width * .8;
+        frame.origin.x = [UIScreen mainScreen].bounds.size.width * (self.ratio ?self.ratio :.8);
         self.mainView.frame = frame;
     }];
 }
@@ -58,9 +58,9 @@
     if (self.mainView.frame.origin.x <= 0) {
         self.mainView.frame = self.view.bounds;
     }
-    if (self.mainView.frame.origin.x >= [UIScreen mainScreen].bounds.size.width * .8) {
+    if (self.mainView.frame.origin.x >= [UIScreen mainScreen].bounds.size.width * (self.ratio ?self.ratio :.8)) {
         CGRect frame = self.mainView.frame;
-        frame.origin.x = [UIScreen mainScreen].bounds.size.width * .8;
+        frame.origin.x = [UIScreen mainScreen].bounds.size.width * (self.ratio ? self.ratio :.8);
         self.mainView.frame = frame;
     }
     CGFloat scale = 1 - (self.mainView.frame.origin.x * .3 / [UIScreen mainScreen].bounds.size.width);
@@ -71,6 +71,7 @@
 - (void)setMainViewController:(UIViewController *)mainViewController {
     if (!_mainView) {
         _mainView = mainViewController.view;
+        _mainView.backgroundColor = BackgroundColor;
         [self.view addSubview:_mainView];
         [_mainView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);

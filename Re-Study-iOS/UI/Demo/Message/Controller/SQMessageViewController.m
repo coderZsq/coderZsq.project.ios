@@ -9,80 +9,58 @@
 #import "SQMessageViewController.h"
 
 @interface SQMessageViewController ()
-
+@property (nonatomic, weak) UIView * nearbyView;
 @end
 
 @implementation SQMessageViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.title = @"消息";
+- (UIView *)nearbyView {
+    
+    if (!_nearbyView) {
+        UIView * nearbyView = [[UIView alloc]initWithFrame:self.view.bounds];
+        UIImageView * imageView = [[UIImageView alloc]initWithFrame:nearbyView.bounds];
+        imageView.image = [UIImage imageNamed:@"sq_navbg"];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [nearbyView addSubview:imageView];
+        [self.view addSubview:nearbyView];
+        _nearbyView = nearbyView;
+    }
+    return _nearbyView;
 }
 
-#pragma mark - Table view data source
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"Message";
+    UISegmentedControl * segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"Recommend", @"Nearby"]];
+    segmentedControl.selectedSegmentIndex = 0;
+//    segmentedControl.width =
+//    segmentedControl setTitleTextAttributes:<#(nullable NSDictionary<NSAttributedStringKey,id> *)#> forState:<#(UIControlState)#>
+    [segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.titleView = segmentedControl;
+}
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (void)segmentedControlValueChanged:(UISegmentedControl *)sender {
+    self.nearbyView.hidden = !sender.selectedSegmentIndex;
+    self.tableView.scrollEnabled = self.nearbyView.hidden;
+    self.tableView.contentOffset = CGPointZero;
+    CATransition  * animation = [CATransition animation];
+    animation.type = @"oglFlip";
+    animation.subtype = self.nearbyView.hidden ? @"fromLeft" : @"fromRight";
+    animation.duration = .5;
+    [self.view.layer addAnimation:animation forKey:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 20;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"identifier"];
+    }
+    cell.textLabel.text = @"https://coderZsq.github.io";
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -45,7 +45,7 @@
     SQSecondaryViewController * secondaryViewController = [[UIStoryboard storyboardWithName:@"SQSecondaryViewController" bundle:nil] instantiateInitialViewController];
     secondaryViewController.delegate = self;
     self.secondaryViewController = secondaryViewController;
-    
+    self.ratio = .55;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pan) name:@"pan" object:nil];
 }
 
@@ -57,6 +57,10 @@
     [self.mainViewController.view addSubview:curVc.view];
 #endif
     self.tabbarVc.selectedIndex = currentButtonIndex;
+    [self unPan];
+}
+
+- (void)secondaryViewControllerDidClickedCityButton:(SQSecondaryViewController *)secondaryViewController {
     [self unPan];
 }
 

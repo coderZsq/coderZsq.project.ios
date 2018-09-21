@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>color</key>
-		<string>9778f0</string>
+		<string>f8f8f8</string>
 		<key>tag_name</key>
 		<string>周末必去活动</string>
 		<key>section_count</key>
@@ -15,7 +15,7 @@
 				<key>section_title</key>
 				<string>童年女神樱桃小丸子25周年特展</string>
 				<key>imageURL</key>
-				<string>001</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>23</string>
 				<key>poi_name</key>
@@ -25,7 +25,7 @@
 				<key>section_title</key>
 				<string>夏日相约斑马周末市集</string>
 				<key>imageURL</key>
-				<string>002</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>333</string>
 				<key>poi_name</key>
@@ -35,7 +35,7 @@
 				<key>section_title</key>
 				<string>百分百巴黎的建筑学</string>
 				<key>imageURL</key>
-				<string>003</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>246</string>
 				<key>poi_name</key>
@@ -45,7 +45,7 @@
 				<key>section_title</key>
 				<string>穿越时空去和白雪公主玩耍</string>
 				<key>imageURL</key>
-				<string>004</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>443</string>
 				<key>poi_name</key>
@@ -55,7 +55,7 @@
 	</dict>
 	<dict>
 		<key>color</key>
-		<string>36d4a2</string>
+		<string>f8f8f8</string>
 		<key>tag_name</key>
 		<string>新开张</string>
 		<key>section_count</key>
@@ -66,7 +66,7 @@
 				<key>section_title</key>
 				<string>五道口最地道的宁夏酿皮肉夹馍</string>
 				<key>imageURL</key>
-				<string>005</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>254</string>
 				<key>poi_name</key>
@@ -76,7 +76,7 @@
 				<key>section_title</key>
 				<string>慢火细炖8小时的精致牛肉浓汤面</string>
 				<key>imageURL</key>
-				<string>006</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>274</string>
 				<key>poi_name</key>
@@ -86,7 +86,7 @@
 				<key>section_title</key>
 				<string>给你个预兆邂逅一杯好咖啡</string>
 				<key>imageURL</key>
-				<string>007</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>1156</string>
 				<key>poi_name</key>
@@ -96,7 +96,7 @@
 	</dict>
 	<dict>
 		<key>color</key>
-		<string>fc6c54</string>
+		<string>f8f8f8</string>
 		<key>tag_name</key>
 		<string>美妙下午茶</string>
 		<key>section_count</key>
@@ -107,7 +107,7 @@
 				<key>section_title</key>
 				<string>复古工业风的蛋糕后花园</string>
 				<key>imageURL</key>
-				<string>008</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>23</string>
 				<key>poi_name</key>
@@ -117,7 +117,7 @@
 				<key>section_title</key>
 				<string>798露台上的摩登芝士</string>
 				<key>imageURL</key>
-				<string>009</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>102</string>
 				<key>poi_name</key>
@@ -127,7 +127,7 @@
 				<key>section_title</key>
 				<string>像王一样用餐考究的下午茶</string>
 				<key>imageURL</key>
-				<string>010</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>246</string>
 				<key>poi_name</key>
@@ -137,7 +137,7 @@
 				<key>section_title</key>
 				<string>关于爱与梦想的杯子蛋糕家</string>
 				<key>imageURL</key>
-				<string>011</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>981</string>
 				<key>poi_name</key>
@@ -147,7 +147,7 @@
 				<key>section_title</key>
 				<string>全职妈妈的爱心私家下午茶点</string>
 				<key>imageURL</key>
-				<string>012</string>
+				<string>Avatar</string>
 				<key>fav_count</key>
 				<string>436</string>
 				<key>poi_name</key>

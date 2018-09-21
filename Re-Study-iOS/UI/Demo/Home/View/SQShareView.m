@@ -13,10 +13,12 @@
 
 + (instancetype)shareView {
     SQShareView * shareView = [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
-    CGRect frame = shareView.frame;
-    frame.size.width = [UIScreen mainScreen].bounds.size.width;
-    frame.origin.y = [UIScreen mainScreen].bounds.size.height;
-    shareView.frame = frame;
+//    CGRect frame = shareView.frame;
+//    frame.size.width = [UIScreen mainScreen].bounds.size.width;
+//    frame.origin.y = [UIScreen mainScreen].bounds.size.height;
+//    shareView.frame = frame;
+    shareView.width = ScreenWidth;
+    shareView.y = ScreenHeight;
     [[UIApplication sharedApplication].keyWindow addSubview:shareView];
     [UIView animateWithDuration:.25 animations:^{
         CGRect frame = shareView.frame;

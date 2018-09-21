@@ -36,6 +36,10 @@ NSLog(@"%@ %s", [self class], __func__);\
 #define TouchTest TouchBeganTest TouchEndTest
 #define Log NSLog(@"%s", __func__);
 
+#import "UIView+SQFrame.h"
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
 #endif
 
 #endif /* main_pch */

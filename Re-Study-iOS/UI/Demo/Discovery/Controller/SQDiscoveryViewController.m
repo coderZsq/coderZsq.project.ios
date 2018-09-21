@@ -14,19 +14,15 @@
 
 @implementation SQDiscoveryViewController
 
+- (instancetype)init {
+    UICollectionViewFlowLayout * flowLayout = [UICollectionViewFlowLayout new];
+    return [super initWithCollectionViewLayout:flowLayout];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"发现";
+    self.title = @"Discovery";
+    self.collectionView.backgroundColor = [UIColor blueColor];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

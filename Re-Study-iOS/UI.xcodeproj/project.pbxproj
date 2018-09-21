@@ -375,7 +375,6 @@
 		14805D51215357CD00CF1255 /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D50215357CD00CF1255 /* SQNavigationController.m */; };
 		14805D542153629A00CF1255 /* UIImage+SQImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D532153629A00CF1255 /* UIImage+SQImage.m */; };
 		14805D592153683300CF1255 /* HomeDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14805D572153683300CF1255 /* HomeDatas.plist */; };
-		14805D5A2153683300CF1255 /* message.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14805D582153683300CF1255 /* message.plist */; };
 		14805D5D2153689000CF1255 /* SQHomeCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D5C2153689000CF1255 /* SQHomeCellItem.m */; };
 		14805D60215368DE00CF1255 /* SQSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D5F215368DE00CF1255 /* SQSectionItem.m */; };
 		14805D6421536C7400CF1255 /* SQHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14805D6221536C7400CF1255 /* SQHomeCell.m */; };
@@ -385,6 +384,9 @@
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
 		14A3A49421411A0100A6C233 /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A3A49321411A0100A6C233 /* PageView.xib */; };
 		14A5DBC421402EF10006FB1F /* __View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A5DBC321402EF10006FB1F /* __View.xib */; };
+		14E945C02154842D00838252 /* UIView+SQFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945BF2154842D00838252 /* UIView+SQFrame.m */; };
+		14E945C52154C88D00838252 /* SQCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945C42154C88D00838252 /* SQCityButton.m */; };
+		14E945C82154D18700838252 /* SQCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945C72154D18700838252 /* SQCityCell.m */; };
 		14EB4F74213F75D20082B143 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB4F73213F75D20082B143 /* AppDelegate.m */; };
 		14EB4F7A213F75D20082B143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F78213F75D20082B143 /* Main.storyboard */; };
 		14EB4F7F213F75D30082B143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB4F7D213F75D30082B143 /* LaunchScreen.storyboard */; };
@@ -812,7 +814,6 @@
 		14805D522153629A00CF1255 /* UIImage+SQImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SQImage.h"; sourceTree = "<group>"; };
 		14805D532153629A00CF1255 /* UIImage+SQImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQImage.m"; sourceTree = "<group>"; };
 		14805D572153683300CF1255 /* HomeDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeDatas.plist; sourceTree = "<group>"; };
-		14805D582153683300CF1255 /* message.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = message.plist; sourceTree = "<group>"; };
 		14805D5B2153689000CF1255 /* SQHomeCellItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeCellItem.h; sourceTree = "<group>"; };
 		14805D5C2153689000CF1255 /* SQHomeCellItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeCellItem.m; sourceTree = "<group>"; };
 		14805D5E215368DE00CF1255 /* SQSectionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSectionItem.h; sourceTree = "<group>"; };
@@ -828,6 +829,12 @@
 		14A3A490214119DE00A6C233 /* PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageView.m; sourceTree = "<group>"; };
 		14A3A49321411A0100A6C233 /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
 		14A5DBC321402EF10006FB1F /* __View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = __View.xib; sourceTree = "<group>"; };
+		14E945BE2154842D00838252 /* UIView+SQFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SQFrame.h"; sourceTree = "<group>"; };
+		14E945BF2154842D00838252 /* UIView+SQFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQFrame.m"; sourceTree = "<group>"; };
+		14E945C32154C88D00838252 /* SQCityButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCityButton.h; sourceTree = "<group>"; };
+		14E945C42154C88D00838252 /* SQCityButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQCityButton.m; sourceTree = "<group>"; };
+		14E945C62154D18700838252 /* SQCityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCityCell.h; sourceTree = "<group>"; };
+		14E945C72154D18700838252 /* SQCityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQCityCell.m; sourceTree = "<group>"; };
 		14EB4F6F213F75D20082B143 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB4F72213F75D20082B143 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14EB4F73213F75D20082B143 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1491,6 +1498,10 @@
 				14805D3821533C6100CF1255 /* SQSecondaryViewController.storyboard */,
 				14805D3A2153405900CF1255 /* SQMenuButton.h */,
 				14805D3B2153405900CF1255 /* SQMenuButton.m */,
+				14E945C32154C88D00838252 /* SQCityButton.h */,
+				14E945C42154C88D00838252 /* SQCityButton.m */,
+				14E945C62154D18700838252 /* SQCityCell.h */,
+				14E945C72154D18700838252 /* SQCityCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1676,6 +1687,8 @@
 				145C2C6F21537A46003B203D /* UIColor+SQExtension.m */,
 				14805D522153629A00CF1255 /* UIImage+SQImage.h */,
 				14805D532153629A00CF1255 /* UIImage+SQImage.m */,
+				14E945BE2154842D00838252 /* UIView+SQFrame.h */,
+				14E945BF2154842D00838252 /* UIView+SQFrame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1684,7 +1697,6 @@
 			isa = PBXGroup;
 			children = (
 				14805D572153683300CF1255 /* HomeDatas.plist */,
-				14805D582153683300CF1255 /* message.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -2006,7 +2018,6 @@
 				1407CD91213FB62A00A3FC77 /* Layer 52.jpg in Resources */,
 				1407CDD1213FB62A00A3FC77 /* Layer 196.jpg in Resources */,
 				1407CE1E213FB62A00A3FC77 /* Layer 283.jpg in Resources */,
-				14805D5A2153683300CF1255 /* message.plist in Resources */,
 				140DEBFF21464121009DB0EF /* pickerview3.plist in Resources */,
 				1407CDEA213FB62A00A3FC77 /* Layer 157.jpg in Resources */,
 				140DEBEF21461466009DB0EF /* pickerview2.plist in Resources */,
@@ -2262,6 +2273,7 @@
 				14A3A4882140D96E00A6C233 /* UIImage+Resizing.m in Sources */,
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
+				14E945C82154D18700838252 /* SQCityCell.m in Sources */,
 				14805D6421536C7400CF1255 /* SQHomeCell.m in Sources */,
 				1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */,
 				14805D3C2153405900CF1255 /* SQMenuButton.m in Sources */,
@@ -2273,11 +2285,13 @@
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
 				1454DFE8215222AC002F44F1 /* BadgeValueButton.m in Sources */,
 				14F3A1E32150CB6600EA6A42 /* WheelView.m in Sources */,
+				14E945C52154C88D00838252 /* SQCityButton.m in Sources */,
 				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
 				1459BFA8214F970100F9AA58 /* LayerController.m in Sources */,
 				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,
 				14A3A48C2140E7C400A6C233 /* ScrollViewController.m in Sources */,
 				141F093B2151FA5200779F00 /* ReplicatorView.m in Sources */,
+				14E945C02154842D00838252 /* UIView+SQFrame.m in Sources */,
 				1475F46B214792F700237FC6 /* ContactModel.m in Sources */,
 				145C2C6C2153753C003B203D /* SQSectionView.m in Sources */,
 				14805D48215345A700CF1255 /* SQMessageViewController.m in Sources */,

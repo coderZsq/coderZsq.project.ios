@@ -18,116 +18,115 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="cF4-i1-S66">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chw-MH-DNT">
-                                <rect key="frame" x="16" y="48" width="158" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="城市" image="city_down">
-                                    <color key="titleColor" red="0.58952470362227138" green="0.96235281229019165" blue="0.90387982322026827" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ird-PN-7xB" customClass="SQMenuButton">
+                                <rect key="frame" x="30" y="124" width="146.5" height="44"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ird-PN-7xB" customClass="SQMenuButton">
-                                <rect key="frame" x="31" y="109" width="185" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="home"/>
-                                <state key="selected" image="homeSeletced"/>
                                 <connections>
                                     <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="oGB-x4-06f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hL-39-w7c" customClass="SQMenuButton">
-                                <rect key="frame" x="31" y="171" width="185" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="found"/>
-                                <state key="selected" image="foundSelected"/>
-                                <connections>
-                                    <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="I9e-jo-Eta"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcS-zv-uuU">
-                                <rect key="frame" x="18" y="378" width="194" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="weixin"/>
-                                <state key="selected" image="foundSelected"/>
-                                <state key="highlighted" image="weixinH"/>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOW-UT-lPl" customClass="SQMenuButton">
-                                <rect key="frame" x="22" y="465" width="185" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="message"/>
-                                <state key="selected" image="messageSelected"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOW-UT-lPl" customClass="SQMenuButton">
+                                <rect key="frame" x="30" y="212" width="146.5" height="44"/>
+                                <state key="normal" title="Message">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="vLK-3j-5kC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-q0-Xqp">
-                                <rect key="frame" x="18" y="316" width="194" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="sina"/>
-                                <state key="selected" image="foundSelected"/>
-                                <state key="highlighted" image="sinaH"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5x-Ox-Vgh" customClass="SQMenuButton">
-                                <rect key="frame" x="14" y="260" width="202" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="unLogin"/>
-                                <state key="selected" image="foundSelected"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackLine" translatesAutoresizingMaskIntoConstraints="NO" id="TtN-YF-Dig">
-                                <rect key="frame" x="12" y="225" width="166" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackLine" translatesAutoresizingMaskIntoConstraints="NO" id="IeT-Td-VK5">
-                                <rect key="frame" x="12" y="432" width="166" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wD-L6-5gI" customClass="SQMenuButton">
-                                <rect key="frame" x="16" y="527" width="185" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seting"/>
-                                <state key="selected" image="setingSelected"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wD-L6-5gI" customClass="SQMenuButton">
+                                <rect key="frame" x="30" y="256" width="146.5" height="44"/>
+                                <state key="normal" title="Setting">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="oyy-sf-RG9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hL-39-w7c" customClass="SQMenuButton">
+                                <rect key="frame" x="30" y="168" width="146.5" height="44"/>
+                                <state key="normal" title="Discovery">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="I9e-jo-Eta"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nb-Me-RS4">
+                                <rect key="frame" x="30" y="300" width="146.5" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="exitButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="I9A-no-7a1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chw-MH-DNT" customClass="SQCityButton">
+                                <rect key="frame" x="30" y="80" width="146.5" height="44"/>
+                                <color key="backgroundColor" red="0.90129945937752121" green="0.90129945937752121" blue="0.90129945937752121" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="eIc-HY-edJ"/>
+                                </constraints>
+                                <state key="normal" title="City" image="sq_navbg">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cityButtonClick:" destination="Bcm-Hd-Joh" eventType="touchUpInside" id="6A3-2H-n41"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F9X-cg-Ncl">
+                                <rect key="frame" x="30" y="124" width="146.5" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="G5e-0C-KSu"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cF4-i1-S66" firstAttribute="leading" secondItem="Jtb-fw-Nvt" secondAttribute="leading" id="IKD-Od-MB2"/>
-                            <constraint firstAttribute="trailing" secondItem="cF4-i1-S66" secondAttribute="trailing" id="rhR-Mj-yg1"/>
-                            <constraint firstItem="cF4-i1-S66" firstAttribute="top" secondItem="Jtb-fw-Nvt" secondAttribute="top" id="woy-9X-Xgm"/>
-                            <constraint firstAttribute="bottom" secondItem="cF4-i1-S66" secondAttribute="bottom" id="xil-Kt-gNu"/>
+                            <constraint firstItem="1nb-Me-RS4" firstAttribute="top" secondItem="8wD-L6-5gI" secondAttribute="bottom" id="63A-9e-UUc"/>
+                            <constraint firstItem="8wD-L6-5gI" firstAttribute="trailing" secondItem="chw-MH-DNT" secondAttribute="trailing" id="8xN-H8-Stn"/>
+                            <constraint firstItem="2hL-39-w7c" firstAttribute="leading" secondItem="chw-MH-DNT" secondAttribute="leading" id="DWE-Gm-xRo"/>
+                            <constraint firstItem="DOW-UT-lPl" firstAttribute="height" secondItem="chw-MH-DNT" secondAttribute="height" id="GH1-rA-hvI"/>
+                            <constraint firstItem="ird-PN-7xB" firstAttribute="height" secondItem="chw-MH-DNT" secondAttribute="height" id="JAK-Kq-7mC"/>
+                            <constraint firstItem="chw-MH-DNT" firstAttribute="leading" secondItem="20G-ba-TWs" secondAttribute="leading" constant="30" id="KTK-87-ZJe"/>
+                            <constraint firstItem="F9X-cg-Ncl" firstAttribute="top" secondItem="chw-MH-DNT" secondAttribute="bottom" id="Nym-5i-eeO"/>
+                            <constraint firstItem="chw-MH-DNT" firstAttribute="width" secondItem="Jtb-fw-Nvt" secondAttribute="width" multiplier="0.55" constant="-60" id="RqM-6Q-k2m"/>
+                            <constraint firstItem="8wD-L6-5gI" firstAttribute="leading" secondItem="chw-MH-DNT" secondAttribute="leading" id="S2y-dq-rJg"/>
+                            <constraint firstItem="2hL-39-w7c" firstAttribute="height" secondItem="chw-MH-DNT" secondAttribute="height" id="T3G-kV-0QP"/>
+                            <constraint firstItem="DOW-UT-lPl" firstAttribute="trailing" secondItem="chw-MH-DNT" secondAttribute="trailing" id="TVG-PF-930"/>
+                            <constraint firstItem="1nb-Me-RS4" firstAttribute="leading" secondItem="chw-MH-DNT" secondAttribute="leading" id="Vhn-pL-Eph"/>
+                            <constraint firstItem="DOW-UT-lPl" firstAttribute="leading" secondItem="chw-MH-DNT" secondAttribute="leading" id="Xvu-gx-eIC"/>
+                            <constraint firstItem="chw-MH-DNT" firstAttribute="top" secondItem="20G-ba-TWs" secondAttribute="top" constant="60" id="alY-n6-Waf"/>
+                            <constraint firstItem="DOW-UT-lPl" firstAttribute="top" secondItem="2hL-39-w7c" secondAttribute="bottom" id="c8J-ZF-Bxc"/>
+                            <constraint firstItem="2hL-39-w7c" firstAttribute="top" secondItem="ird-PN-7xB" secondAttribute="bottom" id="g8K-AJ-1Oi"/>
+                            <constraint firstItem="1nb-Me-RS4" firstAttribute="height" secondItem="chw-MH-DNT" secondAttribute="height" id="hm5-iA-ert"/>
+                            <constraint firstItem="8wD-L6-5gI" firstAttribute="height" secondItem="chw-MH-DNT" secondAttribute="height" id="iUV-5w-yoi"/>
+                            <constraint firstItem="8wD-L6-5gI" firstAttribute="top" secondItem="DOW-UT-lPl" secondAttribute="bottom" id="ivl-0p-RKF"/>
+                            <constraint firstItem="1nb-Me-RS4" firstAttribute="trailing" secondItem="chw-MH-DNT" secondAttribute="trailing" id="jms-jL-GkA"/>
+                            <constraint firstItem="F9X-cg-Ncl" firstAttribute="trailing" secondItem="chw-MH-DNT" secondAttribute="trailing" id="kd1-04-Goh"/>
+                            <constraint firstItem="F9X-cg-Ncl" firstAttribute="leading" secondItem="chw-MH-DNT" secondAttribute="leading" id="krP-He-L4O"/>
+                            <constraint firstItem="ird-PN-7xB" firstAttribute="trailing" secondItem="chw-MH-DNT" secondAttribute="trailing" id="sXZ-JA-63T"/>
+                            <constraint firstItem="ird-PN-7xB" firstAttribute="top" secondItem="F9X-cg-Ncl" secondAttribute="bottom" id="vps-jy-mUL"/>
+                            <constraint firstItem="2hL-39-w7c" firstAttribute="trailing" secondItem="chw-MH-DNT" secondAttribute="trailing" id="wCk-Ix-C9q"/>
+                            <constraint firstItem="ird-PN-7xB" firstAttribute="leading" secondItem="chw-MH-DNT" secondAttribute="leading" id="xNf-Y5-dKf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="20G-ba-TWs"/>
                     </view>
                     <connections>
+                        <outlet property="cityButton" destination="chw-MH-DNT" id="kbb-7x-hYu"/>
+                        <outlet property="heightConstraint" destination="G5e-0C-KSu" id="okK-SL-QhK"/>
                         <outlet property="preSelectedButton" destination="ird-PN-7xB" id="wwD-XM-HhJ"/>
+                        <outlet property="tableView" destination="F9X-cg-Ncl" id="BOk-7d-saE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0k-Ku-gdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="109.59999999999999" y="89.505247376311857"/>
+            <point key="canvasLocation" x="-314.39999999999998" y="-62.518740629685162"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bgImage" width="194" height="186"/>
-        <image name="blackLine" width="258" height="24"/>
-        <image name="city_down" width="16" height="9"/>
-        <image name="found" width="185" height="54"/>
-        <image name="foundSelected" width="185" height="54"/>
-        <image name="home" width="185" height="54"/>
-        <image name="homeSeletced" width="185" height="54"/>
-        <image name="message" width="185" height="54"/>
-        <image name="messageSelected" width="185" height="54"/>
-        <image name="seting" width="185" height="54"/>
-        <image name="setingSelected" width="185" height="54"/>
-        <image name="sina" width="194" height="51"/>
-        <image name="sinaH" width="194" height="51"/>
-        <image name="unLogin" width="202" height="50"/>
-        <image name="weixin" width="194" height="51"/>
-        <image name="weixinH" width="194" height="51"/>
+        <image name="sq_navbg" width="5" height="6"/>
     </resources>
 </document>

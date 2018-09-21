@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class SQSecondaryViewController;
 @protocol SQSecondaryViewControllerDelegate <NSObject>
 - (void)secondaryViewController:(SQSecondaryViewController *)secondaryViewController currentButtonIndex:(NSInteger)currentButtonIndex preButtonIndex:(NSInteger)preButtonIndex;
+- (void)secondaryViewControllerDidClickedCityButton:(SQSecondaryViewController *)secondaryViewController;
 @end
 
 @interface SQSecondaryViewController : UIViewController

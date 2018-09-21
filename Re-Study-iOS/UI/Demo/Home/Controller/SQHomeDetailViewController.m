@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = BackgroundColor;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageOriginalWithNamed:@"share"] style:0 target:self action:@selector(shareBarButtonClick:)];
+    self.title = @"HomeDetail";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Share" style:0 target:self action:@selector(shareBarButtonClick:)];
 }
 
 - (void)shareBarButtonClick:(UIBarButtonItem *)sender {

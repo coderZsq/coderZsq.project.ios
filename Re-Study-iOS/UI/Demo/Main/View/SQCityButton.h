@@ -1,8 +1,8 @@
 //
-//  SQDiscoveryViewController.h
+//  SQCityButton.h
 //  UI
 //
-//  Created by 朱双泉 on 2018/9/20.
+//  Created by 朱双泉 on 2018/9/21.
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQDiscoveryViewController : UICollectionViewController
+@interface SQCityButton : UIButton
 
 @end
 

@@ -27,16 +27,24 @@
     return _dataSource;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"首页";
-    self.tableView.rowHeight = 161;
+    self.title = @"Home";
+    self.tableView.rowHeight = 80;
 //    self.tableView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"bgImage"].CGImage);
     self.tableView.backgroundColor = BackgroundColor;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SQHomeCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SQHomeCell class])];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityChanged:) name:@"cityChanged" object:nil];
 }
 
-#pragma mark - Table view data source
+- (void)cityChanged:(NSNotification *)sender {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:sender.object style:0 target:nil action:nil];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSource.count;
@@ -68,7 +76,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44;
+    return 25;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

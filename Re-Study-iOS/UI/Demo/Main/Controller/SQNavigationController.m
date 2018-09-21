@@ -20,11 +20,14 @@
     dispatch_once(&onceToken, ^{
 //        UINavigationBar * bar = [UINavigationBar appearance];
         UINavigationBar * bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[self class]]];
-        UIImage * image = [UIImage imageNamed:@"navBg"];
+        UIImage * image = [UIImage imageNamed:@"sq_navbg"];
         [bar setBackgroundImage:image forBarMetrics:(UIBarMetricsDefault)];
         NSDictionary * attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
                                       NSFontAttributeName : [UIFont boldSystemFontOfSize:20.]};
         [bar setTitleTextAttributes:attributes];
+        bar.tintColor = [UIColor whiteColor];
+//        UIBarButtonItem * item = [UIBarButtonItem appearance];
+//        [item setTintColor:[UIColor whiteColor]];
         UIImageView * imageView = [UIImageView new];
         imageView.frame = CGRectMake(0, -[[UIApplication sharedApplication] statusBarFrame].size.height, [UIScreen mainScreen].bounds.size.width, [[UIApplication sharedApplication] statusBarFrame].size.height);
         imageView.image = image;

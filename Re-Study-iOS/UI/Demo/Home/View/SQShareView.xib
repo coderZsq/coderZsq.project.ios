@@ -13,37 +13,37 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SQShareView">
-            <rect key="frame" x="0.0" y="0.0" width="423" height="226"/>
+            <rect key="frame" x="0.0" y="0.0" width="423" height="131"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrV-oj-b4c">
-                    <rect key="frame" x="10" y="10" width="403" height="153"/>
+                    <rect key="frame" x="30" y="10" width="363" height="121"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MvI-cL-114">
-                            <rect key="frame" x="0.0" y="0.0" width="403" height="153"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MvI-cL-114">
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="121"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pP-mJ-MPo">
-                                    <rect key="frame" x="0.0" y="0.0" width="127.5" height="153"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="101" height="121"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_pyq" translatesAutoresizingMaskIntoConstraints="NO" id="KUB-A8-YS2">
-                                            <rect key="frame" x="10" y="10" width="107.5" height="107.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_friends" translatesAutoresizingMaskIntoConstraints="NO" id="KUB-A8-YS2">
+                                            <rect key="frame" x="15" y="10" width="71" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="KUB-A8-YS2" secondAttribute="height" id="PiY-eh-PwV"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="朋友圈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U08-au-uaY">
-                                            <rect key="frame" x="0.0" y="117.5" width="127.5" height="35.5"/>
+                                            <rect key="frame" x="0.0" y="81" width="101" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="U08-au-uaY" secondAttribute="bottom" id="DWP-yZ-mpB"/>
-                                        <constraint firstItem="KUB-A8-YS2" firstAttribute="leading" secondItem="7pP-mJ-MPo" secondAttribute="leading" constant="10" id="Gf2-CI-pZx"/>
+                                        <constraint firstItem="KUB-A8-YS2" firstAttribute="leading" secondItem="7pP-mJ-MPo" secondAttribute="leading" constant="15" id="Gf2-CI-pZx"/>
                                         <constraint firstAttribute="width" secondItem="7pP-mJ-MPo" secondAttribute="height" multiplier="1:1.2" id="L1b-3a-oMt"/>
-                                        <constraint firstAttribute="trailing" secondItem="KUB-A8-YS2" secondAttribute="trailing" constant="10" id="TFs-e8-33g"/>
+                                        <constraint firstAttribute="trailing" secondItem="KUB-A8-YS2" secondAttribute="trailing" constant="15" id="TFs-e8-33g"/>
                                         <constraint firstItem="U08-au-uaY" firstAttribute="top" secondItem="KUB-A8-YS2" secondAttribute="bottom" id="THc-lD-i05"/>
                                         <constraint firstItem="U08-au-uaY" firstAttribute="leading" secondItem="7pP-mJ-MPo" secondAttribute="leading" id="Twk-xV-RSr"/>
                                         <constraint firstAttribute="trailing" secondItem="U08-au-uaY" secondAttribute="trailing" id="Wxt-rT-0pl"/>
@@ -51,18 +51,18 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXc-CO-sHl">
-                                    <rect key="frame" x="137.5" y="0.0" width="128" height="153"/>
+                                    <rect key="frame" x="131" y="0.0" width="101" height="121"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_wx" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-KL-7gH">
-                                            <rect key="frame" x="10" y="10" width="108" height="107.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_qq" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-KL-7gH">
+                                            <rect key="frame" x="15" y="10" width="71" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="7tC-KL-7gH" secondAttribute="height" id="RVV-O8-PrA"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08b-ub-dyM">
-                                            <rect key="frame" x="0.0" y="117.5" width="128" height="35.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08b-ub-dyM">
+                                            <rect key="frame" x="0.0" y="81" width="101" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -72,34 +72,34 @@
                                         <constraint firstItem="08b-ub-dyM" firstAttribute="top" secondItem="7tC-KL-7gH" secondAttribute="bottom" id="EeJ-pN-HmM"/>
                                         <constraint firstItem="7tC-KL-7gH" firstAttribute="top" secondItem="NXc-CO-sHl" secondAttribute="top" constant="10" id="N3d-0a-oRj"/>
                                         <constraint firstAttribute="bottom" secondItem="08b-ub-dyM" secondAttribute="bottom" id="NQW-hw-2hq"/>
-                                        <constraint firstAttribute="trailing" secondItem="7tC-KL-7gH" secondAttribute="trailing" constant="10" id="OHb-3F-WED"/>
+                                        <constraint firstAttribute="trailing" secondItem="7tC-KL-7gH" secondAttribute="trailing" constant="15" id="OHb-3F-WED"/>
                                         <constraint firstItem="08b-ub-dyM" firstAttribute="leading" secondItem="NXc-CO-sHl" secondAttribute="leading" id="hr5-4E-NFJ"/>
-                                        <constraint firstItem="7tC-KL-7gH" firstAttribute="leading" secondItem="NXc-CO-sHl" secondAttribute="leading" constant="10" id="poY-OZ-v0k"/>
+                                        <constraint firstItem="7tC-KL-7gH" firstAttribute="leading" secondItem="NXc-CO-sHl" secondAttribute="leading" constant="15" id="poY-OZ-v0k"/>
                                         <constraint firstAttribute="trailing" secondItem="08b-ub-dyM" secondAttribute="trailing" id="wSa-7q-VZV"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5Q-QM-1o8">
-                                    <rect key="frame" x="275.5" y="0.0" width="127.5" height="153"/>
+                                    <rect key="frame" x="262" y="0.0" width="101" height="121"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_wb" translatesAutoresizingMaskIntoConstraints="NO" id="Wl4-hG-TYE">
-                                            <rect key="frame" x="10" y="10" width="107.5" height="107.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_weibo" translatesAutoresizingMaskIntoConstraints="NO" id="Wl4-hG-TYE">
+                                            <rect key="frame" x="15" y="10" width="71" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Wl4-hG-TYE" secondAttribute="height" id="JWS-fO-ynN"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwu-dO-VQI">
-                                            <rect key="frame" x="0.0" y="117.5" width="127.5" height="35.5"/>
+                                            <rect key="frame" x="0.0" y="81" width="101" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="cwu-dO-VQI" secondAttribute="bottom" id="ALa-Hg-SU7"/>
-                                        <constraint firstAttribute="trailing" secondItem="Wl4-hG-TYE" secondAttribute="trailing" constant="10" id="B2q-gl-lYp"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wl4-hG-TYE" secondAttribute="trailing" constant="15" id="B2q-gl-lYp"/>
                                         <constraint firstItem="Wl4-hG-TYE" firstAttribute="top" secondItem="e5Q-QM-1o8" secondAttribute="top" constant="10" id="HnE-O7-lSS"/>
-                                        <constraint firstItem="Wl4-hG-TYE" firstAttribute="leading" secondItem="e5Q-QM-1o8" secondAttribute="leading" constant="10" id="fGu-ZU-3ak"/>
+                                        <constraint firstItem="Wl4-hG-TYE" firstAttribute="leading" secondItem="e5Q-QM-1o8" secondAttribute="leading" constant="15" id="fGu-ZU-3ak"/>
                                         <constraint firstItem="cwu-dO-VQI" firstAttribute="leading" secondItem="e5Q-QM-1o8" secondAttribute="leading" id="gUQ-oS-kgI"/>
                                         <constraint firstItem="cwu-dO-VQI" firstAttribute="top" secondItem="Wl4-hG-TYE" secondAttribute="bottom" id="h1C-zn-CSw"/>
                                         <constraint firstAttribute="trailing" secondItem="cwu-dO-VQI" secondAttribute="trailing" id="kPl-5a-Unz"/>
@@ -114,30 +114,21 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XF7-f0-ep8">
-                    <rect key="frame" x="111" y="173" width="201" height="45"/>
-                    <state key="normal" title="取消" backgroundImage="signin">
-                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="SrV-oj-b4c" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="5gH-Jr-qrI"/>
-                <constraint firstItem="SrV-oj-b4c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="FzO-07-pCY"/>
-                <constraint firstItem="XF7-f0-ep8" firstAttribute="top" secondItem="SrV-oj-b4c" secondAttribute="bottom" constant="10" id="NRv-dH-eCm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SrV-oj-b4c" secondAttribute="trailing" constant="10" id="Rxk-yv-uI0"/>
-                <constraint firstItem="XF7-f0-ep8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WDr-eV-fRN"/>
+                <constraint firstItem="SrV-oj-b4c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="FzO-07-pCY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SrV-oj-b4c" secondAttribute="trailing" constant="30" id="Rxk-yv-uI0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="4" y="47.676161919040482"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="65.217391304347828"/>
         </view>
     </objects>
     <resources>
-        <image name="share_pyq" width="70" height="70"/>
-        <image name="share_wb" width="70" height="70"/>
-        <image name="share_wx" width="70" height="70"/>
-        <image name="signin" width="201" height="45"/>
+        <image name="icon_friends" width="53" height="53"/>
+        <image name="icon_qq" width="53" height="53"/>
+        <image name="icon_weibo" width="53" height="53"/>
     </resources>
 </document>
