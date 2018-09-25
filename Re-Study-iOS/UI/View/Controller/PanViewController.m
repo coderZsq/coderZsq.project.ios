@@ -8,6 +8,7 @@
 
 #import "PanViewController.h"
 #import <Masonry.h>
+#import "SQSaveTool.h"
 
 @interface PanViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) UIView * mainView;
@@ -109,7 +110,7 @@
 - (void)setFeatureViewController:(UIViewController *)featureViewController {
     
     NSString * version = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
-    NSString * preVersion = [[NSUserDefaults standardUserDefaults]objectForKey:@"kVersion"];
+    NSString * preVersion = [SQSaveTool objectForKey:@"kVersion"];
     if ([version isEqualToString:preVersion]) return;
     
     _featureViewController = featureViewController;
@@ -118,7 +119,7 @@
         make.edges.equalTo(self.view);
     }];
     [self addChildViewController:featureViewController];
-    [[NSUserDefaults standardUserDefaults]setObject:version forKey:@"kVersion"];
+    [SQSaveTool setObject:version forKey:@"kVersion"];
 }
 
 - (void)viewWillLayoutSubviews {

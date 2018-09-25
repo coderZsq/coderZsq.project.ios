@@ -7,82 +7,90 @@
 //
 
 #import "SQSettingViewController.h"
+#import "SQSettingRowItem.h"
+#import "SQSettingGroupItem.h"
 
 @interface SQSettingViewController ()
-
+@property (nonatomic, strong) NSMutableArray * dataSource;
 @end
 
 @implementation SQSettingViewController
 
+- (instancetype)initWithStyle:(UITableViewStyle)style {
+    return [super initWithStyle:UITableViewStyleGrouped];
+}
+
+- (NSMutableArray *)dataSource {
+    
+    if (!_dataSource) {
+        _dataSource = @[].mutableCopy;
+    }
+    return _dataSource;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Setting";
+    
+    for (NSInteger i = 0; i < arc4random_uniform(5) + 1; i++) {
+        NSMutableArray * rowItems = @[].mutableCopy;
+        for (NSInteger j = 0; j < arc4random_uniform(5) + 1; j++) {
+            SQSettingRowItem * rowItem = [SQSettingRowItem itemWithImage:[UIImage imageNamed:@"Avatar"] title:[NSString stringWithFormat:@"Castie! - %li - %li", i, j]];
+            rowItem.rowType = (i + j) % 2 ? SQRowTypeArrow : SQRowTypeSwitch;
+            if (rowItem.rowType == SQRowTypeArrow) {
+                rowItem.destinationClass = [SQSettingViewController class];
+            }
+            [rowItems addObject:rowItem];
+        }
+        SQSettingGroupItem * groupItem = [SQSettingGroupItem itemWithRowItems:rowItems];
+        groupItem.headerTitle = [NSString stringWithFormat:@"group - %li", i];
+        groupItem.footerTitle = [NSString stringWithFormat:@"group - %li", i];
+        [self.dataSource addObject:groupItem];
+    }
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return self.dataSource.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    SQSettingGroupItem * item = self.dataSource[section];
+    return item.rowItems.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    SQSettingGroupItem * item = self.dataSource[indexPath.section];
+    SQSettingRowItem * rowItem = item.rowItems[indexPath.row];
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"identifier"];
+    }
+    cell.imageView.image = rowItem.image;
+    cell.textLabel.text = rowItem.title;
+    if (rowItem.rowType == SQRowTypeArrow) {
+        cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"arrow_right"]];
+    } else if (rowItem.rowType == SQRowTypeSwitch) {
+        cell.accessoryView = [UISwitch new];
+    }
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    SQSettingGroupItem * item = self.dataSource[section];
+    return item.headerTitle;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    SQSettingGroupItem * item = self.dataSource[section];
+    return item.footerTitle;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SQSettingGroupItem * item = self.dataSource[indexPath.section];
+    SQSettingRowItem * rowItem = item.rowItems[indexPath.row];
+    if (rowItem.destinationClass) {
+        [self.navigationController pushViewController:[rowItem.destinationClass new] animated:YES];
+    }
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
