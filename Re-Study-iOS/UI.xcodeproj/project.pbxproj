@@ -333,6 +333,9 @@
 		141D7F9121453FFB009A9443 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F9021453FFB009A9443 /* PickerViewController.storyboard */; };
 		141D7F94214552E8009A9443 /* pickerview.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141D7F93214552E7009A9443 /* pickerview.plist */; };
 		141F093B2151FA5200779F00 /* ReplicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141F093A2151FA5200779F00 /* ReplicatorView.m */; };
+		142430BD2159DA0300ADA15E /* SQDiscoveryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142430BB2159DA0300ADA15E /* SQDiscoveryHeaderView.m */; };
+		142430BE2159DA0300ADA15E /* SQDiscoveryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142430BC2159DA0300ADA15E /* SQDiscoveryHeaderView.xib */; };
+		142430C12159E11700ADA15E /* SQNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142430C02159E11700ADA15E /* SQNewFeatureViewController.m */; };
 		142583DD21411FCF0043B11B /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 142583DC21411FCF0043B11B /* Proxy.m */; };
 		142A2D392143840C00435F95 /* tableview4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 142A2D382143840C00435F95 /* tableview4.plist */; };
 		143AF90621538CD20047BB79 /* SQShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 143AF90521538CD20047BB79 /* SQShareView.m */; };
@@ -748,6 +751,11 @@
 		141D7F93214552E7009A9443 /* pickerview.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pickerview.plist; sourceTree = "<group>"; };
 		141F09392151FA5200779F00 /* ReplicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplicatorView.h; sourceTree = "<group>"; };
 		141F093A2151FA5200779F00 /* ReplicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplicatorView.m; sourceTree = "<group>"; };
+		142430BA2159DA0300ADA15E /* SQDiscoveryHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQDiscoveryHeaderView.h; sourceTree = "<group>"; };
+		142430BB2159DA0300ADA15E /* SQDiscoveryHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQDiscoveryHeaderView.m; sourceTree = "<group>"; };
+		142430BC2159DA0300ADA15E /* SQDiscoveryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQDiscoveryHeaderView.xib; sourceTree = "<group>"; };
+		142430BF2159E11700ADA15E /* SQNewFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQNewFeatureViewController.h; sourceTree = "<group>"; };
+		142430C02159E11700ADA15E /* SQNewFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQNewFeatureViewController.m; sourceTree = "<group>"; };
 		142583DB21411FCF0043B11B /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		142583DC21411FCF0043B11B /* Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Proxy.m; sourceTree = "<group>"; };
 		142A2D382143840C00435F95 /* tableview4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tableview4.plist; sourceTree = "<group>"; };
@@ -1481,6 +1489,9 @@
 				1496B77D2154EEEF005B4BBE /* SQDiscoveryCell.h */,
 				1496B77E2154EEEF005B4BBE /* SQDiscoveryCell.m */,
 				1496B77F2154EEEF005B4BBE /* SQDiscoveryCell.xib */,
+				142430BA2159DA0300ADA15E /* SQDiscoveryHeaderView.h */,
+				142430BB2159DA0300ADA15E /* SQDiscoveryHeaderView.m */,
+				142430BC2159DA0300ADA15E /* SQDiscoveryHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1506,6 +1517,8 @@
 				14805D4D2153509D00CF1255 /* SQTabBarController.m */,
 				14805D4F215357CD00CF1255 /* SQNavigationController.h */,
 				14805D50215357CD00CF1255 /* SQNavigationController.m */,
+				142430BF2159E11700ADA15E /* SQNewFeatureViewController.h */,
+				142430C02159E11700ADA15E /* SQNewFeatureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2136,6 +2149,7 @@
 				1407CD96213FB62A00A3FC77 /* Layer 176.jpg in Resources */,
 				1407CD36213FB62A00A3FC77 /* Layer 261.jpg in Resources */,
 				1407CE43213FB62A00A3FC77 /* Layer 246.jpg in Resources */,
+				142430BE2159DA0300ADA15E /* SQDiscoveryHeaderView.xib in Resources */,
 				1407CDA5213FB62A00A3FC77 /* Layer 94.jpg in Resources */,
 				14805D3921533C6100CF1255 /* SQSecondaryViewController.storyboard in Resources */,
 				1407CE19213FB62A00A3FC77 /* Layer 60.jpg in Resources */,
@@ -2315,6 +2329,7 @@
 				1454DFE8215222AC002F44F1 /* BadgeValueButton.m in Sources */,
 				14F3A1E32150CB6600EA6A42 /* WheelView.m in Sources */,
 				14E945C52154C88D00838252 /* SQCityButton.m in Sources */,
+				142430C12159E11700ADA15E /* SQNewFeatureViewController.m in Sources */,
 				140DEC0E21466852009DB0EF /* NavigationViewController.m in Sources */,
 				1459BFA8214F970100F9AA58 /* LayerController.m in Sources */,
 				140DEC0221464CF0009DB0EF /* UITextField+DefaultText.m in Sources */,
@@ -2346,6 +2361,7 @@
 				140DEBFD21463F0F009DB0EF /* CityTextField.m in Sources */,
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
 				1496B7762154EC05005B4BBE /* SQDiscoveryItem.m in Sources */,
+				142430BD2159DA0300ADA15E /* SQDiscoveryHeaderView.m in Sources */,
 				14805D51215357CD00CF1255 /* SQNavigationController.m in Sources */,
 				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
 				14805D3F2153412500CF1255 /* SQSecondaryViewController.m in Sources */,

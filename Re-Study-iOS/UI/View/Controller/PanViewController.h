@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) UIViewController * mainViewController;
 @property (nonatomic, weak) UIViewController * secondaryViewController;
+@property (nonatomic, weak) UIViewController * featureViewController;
 @property (nonatomic, assign) CGFloat ratio;
 
 - (void)pan;

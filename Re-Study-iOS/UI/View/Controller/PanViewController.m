@@ -106,6 +106,21 @@
     }
 }
 
+- (void)setFeatureViewController:(UIViewController *)featureViewController {
+    
+    NSString * version = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+    NSString * preVersion = [[NSUserDefaults standardUserDefaults]objectForKey:@"kVersion"];
+    if ([version isEqualToString:preVersion]) return;
+    
+    _featureViewController = featureViewController;
+    [self.view insertSubview:featureViewController.view aboveSubview:_mainView];
+    [featureViewController.view mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    [self addChildViewController:featureViewController];
+    [[NSUserDefaults standardUserDefaults]setObject:version forKey:@"kVersion"];
+}
+
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.mainView.transform = CGAffineTransformIdentity;

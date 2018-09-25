@@ -13,6 +13,7 @@
 #import "SQMessageViewController.h"
 #import "SQSettingViewController.h"
 #import "SQTabBarController.h"
+#import "SQNewFeatureViewController.h"
 
 @interface DemoController () <SQSecondaryViewControllerDelegate>
 @property (nonatomic, weak) SQTabBarController * tabbarVc;
@@ -26,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 #if 0
     UIViewController * mainViewController = [UIViewController new];
     NSArray * childClassArrayI = @[@"SQHomeViewController",
@@ -45,6 +47,8 @@
     SQSecondaryViewController * secondaryViewController = [[UIStoryboard storyboardWithName:@"SQSecondaryViewController" bundle:nil] instantiateInitialViewController];
     secondaryViewController.delegate = self;
     self.secondaryViewController = secondaryViewController;
+    SQNewFeatureViewController * newFeatureViewController = [SQNewFeatureViewController new];
+    self.featureViewController = newFeatureViewController;
     self.ratio = .55;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pan) name:@"pan" object:nil];
 }
