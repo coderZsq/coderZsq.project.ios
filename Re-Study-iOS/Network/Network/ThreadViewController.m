@@ -42,6 +42,10 @@
                         @"GCD - sync_concurrent - excute",
                         @"GCD - sync_serial - excute",
                         @"GCD - async_main - excute",
+                        @"GCD - gcd_communication - excute",
+                        @"GCD - gcd_once - excute",
+                        @"GCD - gcd_after - excute",
+                        @"GCD - gcd_apply - excute",
 ];
     }
     return _dataSource;
@@ -97,6 +101,66 @@ void *run (void * param) {
     NSLog(@"%i", [currentThread isMainThread]);
     
     //    self.lock = [NSObject new];
+}
+
+- (void)gcd_apply {
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    //mainqueue 死锁 serial == for loop
+    dispatch_apply(10, queue, ^(size_t i) {
+        NSLog(@"%@ - %li", [NSThread currentThread], i);
+    });
+    
+    __block NSString * path = @"/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/Re-Study-iOS/Network/Network/Base.lproj";
+    __block NSString * toPath = @"/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/Re-Study-iOS/Network/Network/gcd_apply";
+    NSArray * subPaths = [[NSFileManager defaultManager]subpathsAtPath:path];
+#if 0
+    for (int i = 0; i < subPaths.count; i++) {
+        path = [path stringByAppendingPathComponent:subPaths[i]];
+        toPath = [toPath stringByAppendingPathComponent:subPaths[i]];
+        [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:nil];
+        NSLog(@"%@ - %@", subPaths[i], [NSThread currentThread]);
+    }
+#endif
+    dispatch_apply(subPaths.count, dispatch_get_global_queue(0, 0), ^(size_t i) {
+        path = [path stringByAppendingPathComponent:subPaths[i]];
+        toPath = [toPath stringByAppendingPathComponent:subPaths[i]];
+        [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:nil];
+        NSLog(@"%@ - %@", subPaths[i], [NSThread currentThread]);
+    });
+}
+
+- (void)gcd_after {
+//    [self performSelector:<#(nonnull SEL)#> withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#>]
+//    [NSTimer scheduledTimerWithTimeInterval:<#(NSTimeInterval)#> repeats:<#(BOOL)#> block:<#^(NSTimer * _Nonnull timer)block#>]
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2. * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"delay");
+    });
+}
+
+- (void)gcd_once {
+    static dispatch_once_t onceToken;
+    NSLog(@"%zd", onceToken);
+    dispatch_once(&onceToken, ^{
+        NSLog(@"once");
+    });
+}
+
+- (void)gcd_communication {
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_async(queue, ^{
+        NSURL * url = [NSURL URLWithString:@"https://avatars2.githubusercontent.com/u/19483268?s=400&u=97869a443baab2820618a8a575cee677b80849c7&v=4"];
+        NSDate * start = [NSDate date];
+        CFTimeInterval start_cf = CFAbsoluteTimeGetCurrent();
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        NSDate * end = [NSDate date];
+        CFTimeInterval end_cf = CFAbsoluteTimeGetCurrent();
+        NSLog(@"%f", [end timeIntervalSinceDate:start]);
+        NSLog(@"%f cf", end_cf - start_cf);
+        self.image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
 }
 
 - (void)sync_main {
@@ -262,11 +326,7 @@ void *run (void * param) {
         cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"identifier"];
     }
     cell.textLabel.text = self.dataSource[indexPath.row];
-    if ([self.dataSource[indexPath.row] rangeOfString:@"thread_communication"].location != NSNotFound) {
-        cell.imageView.image = self.image;
-    } else {
-        cell.imageView.image = nil;
-    }
+    cell.imageView.image = self.image;
     return cell;
 }
 
@@ -299,6 +359,22 @@ void *run (void * param) {
     }
     if ([title rangeOfString:@"async_main"].location != NSNotFound) {
         [self async_main];
+        return;
+    }
+    if ([title rangeOfString:@"gcd_communication"].location != NSNotFound) {
+        [self gcd_communication];
+        return;
+    }
+    if ([title rangeOfString:@"gcd_once"].location != NSNotFound) {
+        [self gcd_once];
+        return;
+    }
+    if ([title rangeOfString:@"gcd_after"].location != NSNotFound) {
+        [self gcd_after];
+        return;
+    }
+    if ([title rangeOfString:@"gcd_apply"].location != NSNotFound) {
+        [self gcd_apply];
         return;
     }
 }
