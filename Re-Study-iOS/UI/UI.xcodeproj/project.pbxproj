@@ -353,7 +353,6 @@
 		1459BFAC214F973300F9AA58 /* LayerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459BFAB214F973300F9AA58 /* LayerController.storyboard */; };
 		145C2C6C2153753C003B203D /* SQSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145C2C6B2153753C003B203D /* SQSectionView.m */; };
 		145C2C6E2153754E003B203D /* SQSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145C2C6D2153754E003B203D /* SQSectionView.xib */; };
-		145C2C7121537A46003B203D /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 145C2C6F21537A46003B203D /* UIColor+SQExtension.m */; };
 		1460EAE4215A2AEE003065DF /* SQSaveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460EAE3215A2AEE003065DF /* SQSaveTool.m */; };
 		1461DB5E213FD58300D938DC /* basiccontrol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1461DB5D213FD58300D938DC /* basiccontrol.plist */; };
 		146472BB2143714F006D9B78 /* TableViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 146472BA2143714F006D9B78 /* TableViewController4.m */; };
@@ -401,6 +400,7 @@
 		14AC51CE215B2B9500DF771C /* SQSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51CD215B2B9500DF771C /* SQSettingCell.m */; };
 		14AC51D1215B394300DF771C /* SQUpdateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51D0215B394300DF771C /* SQUpdateCell.m */; };
 		14AC51D3215B396900DF771C /* SQUpdateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51D2215B396900DF771C /* SQUpdateCell.xib */; };
+		14AC51D6215B3F9800DF771C /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51D5215B3F9800DF771C /* UIColor+SQExtension.m */; };
 		14E945C02154842D00838252 /* UIView+SQFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945BF2154842D00838252 /* UIView+SQFrame.m */; };
 		14E945C52154C88D00838252 /* SQCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945C42154C88D00838252 /* SQCityButton.m */; };
 		14E945C82154D18700838252 /* SQCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945C72154D18700838252 /* SQCityCell.m */; };
@@ -792,8 +792,6 @@
 		145C2C6A2153753C003B203D /* SQSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSectionView.h; sourceTree = "<group>"; };
 		145C2C6B2153753C003B203D /* SQSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSectionView.m; sourceTree = "<group>"; };
 		145C2C6D2153754E003B203D /* SQSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQSectionView.xib; sourceTree = "<group>"; };
-		145C2C6F21537A46003B203D /* UIColor+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SQExtension.m"; path = "../../../../../SQLifestyle/SQExtension/UIColor+SQExtension.m"; sourceTree = "<group>"; };
-		145C2C7021537A46003B203D /* UIColor+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SQExtension.h"; path = "../../../../../SQLifestyle/SQExtension/UIColor+SQExtension.h"; sourceTree = "<group>"; };
 		1460EAE2215A2AEE003065DF /* SQSaveTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSaveTool.h; sourceTree = "<group>"; };
 		1460EAE3215A2AEE003065DF /* SQSaveTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSaveTool.m; sourceTree = "<group>"; };
 		1461DB5D213FD58300D938DC /* basiccontrol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = basiccontrol.plist; sourceTree = "<group>"; };
@@ -876,6 +874,8 @@
 		14AC51CF215B394300DF771C /* SQUpdateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQUpdateCell.h; sourceTree = "<group>"; };
 		14AC51D0215B394300DF771C /* SQUpdateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQUpdateCell.m; sourceTree = "<group>"; };
 		14AC51D2215B396900DF771C /* SQUpdateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQUpdateCell.xib; sourceTree = "<group>"; };
+		14AC51D4215B3F9800DF771C /* UIColor+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SQExtension.h"; sourceTree = "<group>"; };
+		14AC51D5215B3F9800DF771C /* UIColor+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SQExtension.m"; sourceTree = "<group>"; };
 		14E945BE2154842D00838252 /* UIView+SQFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SQFrame.h"; sourceTree = "<group>"; };
 		14E945BF2154842D00838252 /* UIView+SQFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQFrame.m"; sourceTree = "<group>"; };
 		14E945C32154C88D00838252 /* SQCityButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCityButton.h; sourceTree = "<group>"; };
@@ -1767,8 +1767,8 @@
 		14805D55215362A100CF1255 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				145C2C7021537A46003B203D /* UIColor+SQExtension.h */,
-				145C2C6F21537A46003B203D /* UIColor+SQExtension.m */,
+				14AC51D4215B3F9800DF771C /* UIColor+SQExtension.h */,
+				14AC51D5215B3F9800DF771C /* UIColor+SQExtension.m */,
 				14805D522153629A00CF1255 /* UIImage+SQImage.h */,
 				14805D532153629A00CF1255 /* UIImage+SQImage.m */,
 				14E945BE2154842D00838252 /* UIView+SQFrame.h */,
@@ -2397,7 +2397,6 @@
 				14F90647214A4F6700D6E141 /* DrawView.m in Sources */,
 				146472BB2143714F006D9B78 /* TableViewController4.m in Sources */,
 				1460EAE4215A2AEE003065DF /* SQSaveTool.m in Sources */,
-				145C2C7121537A46003B203D /* UIColor+SQExtension.m in Sources */,
 				14AC51CB215B279000DF771C /* SQSettingSwitchItem.m in Sources */,
 				1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */,
 				14805D4B215345E000CF1255 /* SQSettingViewController.m in Sources */,
@@ -2415,6 +2414,7 @@
 				140DEBED21461146009DB0EF /* CountryTextField.m in Sources */,
 				1496B7762154EC05005B4BBE /* SQDiscoveryItem.m in Sources */,
 				142430BD2159DA0300ADA15E /* SQDiscoveryHeaderView.m in Sources */,
+				14AC51D6215B3F9800DF771C /* UIColor+SQExtension.m in Sources */,
 				1497E3B4215A2EF8005F003C /* SQSettingRowItem.m in Sources */,
 				14805D51215357CD00CF1255 /* SQNavigationController.m in Sources */,
 				1418AAC62148F6EE00CACDC3 /* TabBarController.m in Sources */,
