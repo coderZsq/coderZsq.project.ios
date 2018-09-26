@@ -396,6 +396,11 @@
 		14A3A491214119DE00A6C233 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3A490214119DE00A6C233 /* PageView.m */; };
 		14A3A49421411A0100A6C233 /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A3A49321411A0100A6C233 /* PageView.xib */; };
 		14A5DBC421402EF10006FB1F /* __View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A5DBC321402EF10006FB1F /* __View.xib */; };
+		14AC51C8215B275800DF771C /* SQSettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51C7215B275800DF771C /* SQSettingArrowItem.m */; };
+		14AC51CB215B279000DF771C /* SQSettingSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51CA215B279000DF771C /* SQSettingSwitchItem.m */; };
+		14AC51CE215B2B9500DF771C /* SQSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51CD215B2B9500DF771C /* SQSettingCell.m */; };
+		14AC51D1215B394300DF771C /* SQUpdateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51D0215B394300DF771C /* SQUpdateCell.m */; };
+		14AC51D3215B396900DF771C /* SQUpdateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51D2215B396900DF771C /* SQUpdateCell.xib */; };
 		14E945C02154842D00838252 /* UIView+SQFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945BF2154842D00838252 /* UIView+SQFrame.m */; };
 		14E945C52154C88D00838252 /* SQCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945C42154C88D00838252 /* SQCityButton.m */; };
 		14E945C82154D18700838252 /* SQCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E945C72154D18700838252 /* SQCityCell.m */; };
@@ -862,6 +867,15 @@
 		14A3A490214119DE00A6C233 /* PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageView.m; sourceTree = "<group>"; };
 		14A3A49321411A0100A6C233 /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
 		14A5DBC321402EF10006FB1F /* __View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = __View.xib; sourceTree = "<group>"; };
+		14AC51C6215B275800DF771C /* SQSettingArrowItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSettingArrowItem.h; sourceTree = "<group>"; };
+		14AC51C7215B275800DF771C /* SQSettingArrowItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSettingArrowItem.m; sourceTree = "<group>"; };
+		14AC51C9215B279000DF771C /* SQSettingSwitchItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSettingSwitchItem.h; sourceTree = "<group>"; };
+		14AC51CA215B279000DF771C /* SQSettingSwitchItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSettingSwitchItem.m; sourceTree = "<group>"; };
+		14AC51CC215B2B9500DF771C /* SQSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSettingCell.h; sourceTree = "<group>"; };
+		14AC51CD215B2B9500DF771C /* SQSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSettingCell.m; sourceTree = "<group>"; };
+		14AC51CF215B394300DF771C /* SQUpdateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQUpdateCell.h; sourceTree = "<group>"; };
+		14AC51D0215B394300DF771C /* SQUpdateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQUpdateCell.m; sourceTree = "<group>"; };
+		14AC51D2215B396900DF771C /* SQUpdateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQUpdateCell.xib; sourceTree = "<group>"; };
 		14E945BE2154842D00838252 /* UIView+SQFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SQFrame.h"; sourceTree = "<group>"; };
 		14E945BF2154842D00838252 /* UIView+SQFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQFrame.m"; sourceTree = "<group>"; };
 		14E945C32154C88D00838252 /* SQCityButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCityButton.h; sourceTree = "<group>"; };
@@ -1454,6 +1468,10 @@
 				1497E3B3215A2EF8005F003C /* SQSettingRowItem.m */,
 				14A31F7D215A3293008D1A43 /* SQSettingGroupItem.h */,
 				14A31F7E215A3293008D1A43 /* SQSettingGroupItem.m */,
+				14AC51C6215B275800DF771C /* SQSettingArrowItem.h */,
+				14AC51C7215B275800DF771C /* SQSettingArrowItem.m */,
+				14AC51C9215B279000DF771C /* SQSettingSwitchItem.h */,
+				14AC51CA215B279000DF771C /* SQSettingSwitchItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1461,6 +1479,8 @@
 		1454E04521524811002F44F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14AC51CC215B2B9500DF771C /* SQSettingCell.h */,
+				14AC51CD215B2B9500DF771C /* SQSettingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1638,6 +1658,9 @@
 		1454E05721524811002F44F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14AC51CF215B394300DF771C /* SQUpdateCell.h */,
+				14AC51D0215B394300DF771C /* SQUpdateCell.m */,
+				14AC51D2215B396900DF771C /* SQUpdateCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2055,6 +2078,7 @@
 				1407CDF6213FB62A00A3FC77 /* Layer 225.jpg in Resources */,
 				1459BFA2214F461F00F9AA58 /* SecondaryViewController.storyboard in Resources */,
 				1407CE28213FB62A00A3FC77 /* Layer 12.jpg in Resources */,
+				14AC51D3215B396900DF771C /* SQUpdateCell.xib in Resources */,
 				1407CD3D213FB62A00A3FC77 /* Layer 300.jpg in Resources */,
 				1407CD7D213FB62A00A3FC77 /* Layer 174.jpg in Resources */,
 				1407CDA2213FB62A00A3FC77 /* Layer 210.jpg in Resources */,
@@ -2340,6 +2364,7 @@
 				14A3A491214119DE00A6C233 /* PageView.m in Sources */,
 				140DEC06214665E1009DB0EF /* NavigationController.m in Sources */,
 				14E945C82154D18700838252 /* SQCityCell.m in Sources */,
+				14AC51CE215B2B9500DF771C /* SQSettingCell.m in Sources */,
 				14805D6421536C7400CF1255 /* SQHomeCell.m in Sources */,
 				1418AAB92148C98700CACDC3 /* UIImage+Color.m in Sources */,
 				14805D3C2153405900CF1255 /* SQMenuButton.m in Sources */,
@@ -2348,6 +2373,7 @@
 				144B2302214B99FF0090A3E2 /* UIImage+CircleBorder.m in Sources */,
 				1418AAD02149080000CACDC3 /* MainViewController.m in Sources */,
 				146AE850214220AE000D6E58 /* TableViewController.m in Sources */,
+				14AC51D1215B394300DF771C /* SQUpdateCell.m in Sources */,
 				142583DD21411FCF0043B11B /* Proxy.m in Sources */,
 				1454DFE8215222AC002F44F1 /* BadgeValueButton.m in Sources */,
 				14F3A1E32150CB6600EA6A42 /* WheelView.m in Sources */,
@@ -2372,8 +2398,10 @@
 				146472BB2143714F006D9B78 /* TableViewController4.m in Sources */,
 				1460EAE4215A2AEE003065DF /* SQSaveTool.m in Sources */,
 				145C2C7121537A46003B203D /* UIColor+SQExtension.m in Sources */,
+				14AC51CB215B279000DF771C /* SQSettingSwitchItem.m in Sources */,
 				1475F46821478FF300237FC6 /* NavigationViewController3.m in Sources */,
 				14805D4B215345E000CF1255 /* SQSettingViewController.m in Sources */,
+				14AC51C8215B275800DF771C /* SQSettingArrowItem.m in Sources */,
 				1459BFA5214F49B200F9AA58 /* LockView.m in Sources */,
 				14F90641214A2EE300D6E141 /* PanViewController.m in Sources */,
 				146AE85821423B3F000D6E58 /* TableViewController2.m in Sources */,

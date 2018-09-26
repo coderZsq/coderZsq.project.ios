@@ -10,17 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum : NSUInteger {
-    SQRowTypeArrow,
-    SQRowTypeSwitch,
-} SQRowType;
+//typedef enum : NSUInteger {
+//    SQRowTypeArrow,
+//    SQRowTypeSwitch,
+//} SQRowType;
 
 @interface SQSettingRowItem : NSObject
 
 @property (nonatomic, strong) UIImage * image;
-@property (nonatomic, strong) NSString * title;
-@property (nonatomic, assign) SQRowType rowType;
-@property (nonatomic, assign) Class destinationClass;
+@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * subTitle;
+//@property (nonatomic, assign) SQRowType rowType;
 
 + (instancetype)itemWithImage:(UIImage *)image title:(NSString *)title;
 

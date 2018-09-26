@@ -11,7 +11,7 @@
 @implementation SQSettingRowItem
 
 + (instancetype)itemWithImage:(UIImage *)image title:(NSString *)title {
-    SQSettingRowItem * item = [SQSettingRowItem new];
+    SQSettingRowItem * item = [NSClassFromString(NSStringFromClass(self)) new];
     item.image = image;
     item.title = title;
     return item;
