@@ -1,3 +1,22 @@
-PODFILE CHECKSUM: 907ef039c5ecb953e553b0cd68e7af3e186439b3
+PODS:
+  - MJExtension (3.0.13)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+
+DEPENDENCIES:
+  - MJExtension
+  - SDWebImage
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MJExtension
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+
+PODFILE CHECKSUM: adc169abf0d5b71599d11e806bf0a608cedfb867
 
 COCOAPODS: 1.5.3

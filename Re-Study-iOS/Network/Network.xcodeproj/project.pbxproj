@@ -15,6 +15,9 @@
 		14AC51F3215B407300DF771C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51F2215B407300DF771C /* main.m */; };
 		14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51FA215B50D200DF771C /* ThreadViewController.m */; };
 		14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51FC215B529700DF771C /* ThreadViewController.storyboard */; };
+		14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */; };
+		14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */; };
+		14FBE76B215CC36D0009A98B /* webimage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FBE76A215CC36D0009A98B /* webimage.plist */; };
 		7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC29FCBEBDD7E089E507B280 /* libPods-Network.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,10 @@
 		14AC51F9215B50D200DF771C /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		14AC51FA215B50D200DF771C /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
 		14AC51FC215B529700DF771C /* ThreadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThreadViewController.storyboard; sourceTree = "<group>"; };
+		14D0BD8A215CBEC500620AF8 /* WebImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebImageViewController.h; sourceTree = "<group>"; };
+		14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebImageViewController.m; sourceTree = "<group>"; };
+		14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebImageViewController.storyboard; sourceTree = "<group>"; };
+		14FBE76A215CC36D0009A98B /* webimage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webimage.plist; sourceTree = "<group>"; };
 		3BD7389507683D3E083D3AFF /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B6E1CFDED76A020618F6B6 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
 		EC29FCBEBDD7E089E507B280 /* libPods-Network.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Network.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				14D0BD87215C68B500620AF8 /* Thread */,
+				14D0BD8D215CBECC00620AF8 /* WebImage */,
 				14AC51E3215B407100DF771C /* AppDelegate.h */,
 				14AC51E4215B407100DF771C /* AppDelegate.m */,
 				14AC51E6215B407100DF771C /* ViewController.h */,
@@ -101,6 +109,17 @@
 				14AC51FC215B529700DF771C /* ThreadViewController.storyboard */,
 			);
 			path = Thread;
+			sourceTree = "<group>";
+		};
+		14D0BD8D215CBECC00620AF8 /* WebImage */ = {
+			isa = PBXGroup;
+			children = (
+				14D0BD8A215CBEC500620AF8 /* WebImageViewController.h */,
+				14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */,
+				14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */,
+				14FBE76A215CC36D0009A98B /* webimage.plist */,
+			);
+			path = WebImage;
 			sourceTree = "<group>";
 		};
 		CBE33F15B0177C679E7C59B2 /* Frameworks */ = {
@@ -172,6 +191,8 @@
 				14AC51F0215B407300DF771C /* LaunchScreen.storyboard in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
+				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
+				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
 				14AC51EB215B407100DF771C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +229,7 @@
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,
+				14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

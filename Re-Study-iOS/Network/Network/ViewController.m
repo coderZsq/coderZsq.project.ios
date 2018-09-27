@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "ThreadViewController.h"
+#import "Thread/ThreadViewController.h"
+#import "WebImage/WebImageViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -18,7 +19,8 @@
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = @[[ThreadViewController class]];
+        _dataSource = @[[ThreadViewController class],
+                        [WebImageViewController class]];
     }
     return _dataSource;
 }

@@ -9,8 +9,26 @@
 #import "ThreadViewController.h"
 #import <pthread.h>
 
-@interface Singleton : NSObject <NSCopying, NSMutableCopying>  @end
+@interface Operation : NSOperation @end
+@implementation Operation
 
+- (void)main {
+    for (int i = 0; i < 10000; i++) {
+        NSLog(@"Operation - 1 - %@", [NSThread currentThread]);
+    }
+    if (self.isCancelled) return;
+    for (int i = 0; i < 10000; i++) {
+        NSLog(@"Operation - 2 - %@", [NSThread currentThread]);
+    }
+    if (self.isCancelled) return;
+    for (int i = 0; i < 10000; i++) {
+        NSLog(@"Operation - 3 - %@", [NSThread currentThread]);
+    }
+}
+
+@end
+
+@interface Singleton : NSObject <NSCopying, NSMutableCopying>  @end
 @implementation Singleton
 
 + (instancetype)sharedSingleton {
@@ -47,6 +65,10 @@ static Singleton * _instance;
 @interface Thread : NSThread @end
 @implementation Thread
 
+- (void)main {
+    NSLog(@"Thread - %@", [NSThread currentThread]);
+}
+
 - (void)dealloc {
     NSLog(@"%s", __func__);
 }
@@ -64,6 +86,8 @@ static Singleton * _instance;
 @property (nonatomic, strong) UIImage * image;
 @property (nonatomic, strong) UIImage * image1;
 @property (nonatomic, strong) UIImage * image2;
+
+@property (nonatomic, strong) NSOperationQueue * queue;
 
 @end
 
@@ -84,43 +108,12 @@ static Singleton * _instance;
                         @"GCD - gcd_after - excute",
                         @"GCD - gcd_apply - excute",
                         @"GCD - gcd_barrier - excute",
-                        @"GCD - gcd_group - excute"];
+                        @"GCD - gcd_group - excute",
+                        @"NSOperation - op_queue - excuate",
+                        @"NSOperation - op_dependency - excuate",
+                        @"NSOperation - op_communication - excuate"];
     }
     return _dataSource;
-}
-
-- (IBAction)pthread {
-    pthread_t thread = nil;
-    pthread_create(&thread, NULL, run, NULL);
-}
-
-void *run (void * param) {
-    //    for (int i = 0; i < 10000000; ++i) {
-    NSLog(@"%@", [NSThread currentThread]);
-    //    }
-    return NULL;
-}
-
-- (IBAction)nsthread {
-    
-    NSThread * thread = [[Thread alloc]initWithTarget:self selector:@selector(run) object:nil];
-    thread.name = @"thread - 01";
-    thread.threadPriority = 1.;
-    [thread start];
-#if 0
-    [NSThread detachNewThreadSelector:@selector(run) toTarget:self withObject:nil];
-    [self performSelectorInBackground:@selector(run) withObject:nil];
-#endif
-}
-
-- (void)run {
-    NSLog(@"%@ start", [NSThread currentThread]);
-    [NSThread sleepForTimeInterval:1.];
-    [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:2.]];
-    //    [NSThread sleepUntilDate:[NSDate distantFuture]];
-    [NSThread exit];
-    //    return;
-    NSLog(@"%@ end", [NSThread currentThread]);
 }
 
 - (void)viewDidLoad {
@@ -139,6 +132,110 @@ void *run (void * param) {
     NSLog(@"%i", [currentThread isMainThread]);
     
     //    self.lock = [NSObject new];
+    
+    UIBarButtonItem * item1 = [[UIBarButtonItem alloc]initWithTitle:@"suspend" style:(UIBarButtonItemStylePlain) target:self action:@selector(op_suspend)];
+    UIBarButtonItem * item2 = [[UIBarButtonItem alloc]initWithTitle:@"resume" style:(UIBarButtonItemStylePlain) target:self action:@selector(op_resume)];
+    UIBarButtonItem * item3 = [[UIBarButtonItem alloc]initWithTitle:@"cancel" style:(UIBarButtonItemStylePlain) target:self action:@selector(op_cancel)];
+    self.navigationItem.rightBarButtonItems = @[item3, item2, item1];
+}
+
+- (void)op_communication {
+    NSOperationQueue * queue = [NSOperationQueue new];
+    NSBlockOperation * op = [NSBlockOperation blockOperationWithBlock:^{
+        NSURL * url = [NSURL URLWithString:@"https://avatars2.githubusercontent.com/u/19483268?s=400&u=97869a443baab2820618a8a575cee677b80849c7&v=4"];
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        self.image = [UIImage imageWithData:data];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.tableView reloadData];
+        }];
+    }];
+//    [op addObserver:self forKeyPath:@"isCancelled" options:NSKeyValueObservingOptionNew context:nil];
+    [queue addOperation:op];
+}
+
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+//    
+//}
+
+- (void)op_dependency {
+    NSOperationQueue * queue = [NSOperationQueue new];
+    NSOperationQueue * queue2 = [NSOperationQueue new];
+    NSBlockOperation * op1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"1 - %@", [NSThread currentThread]);
+    }];
+    NSBlockOperation * op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"2 - %@", [NSThread currentThread]);
+    }];
+    NSBlockOperation * op3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"3 - %@", [NSThread currentThread]);
+    }];
+    NSBlockOperation * op4 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"4 - %@", [NSThread currentThread]);
+    }];
+    
+    [op1 addDependency:op2];
+    [op2 addDependency:op3];
+    [op3 addDependency:op4];
+    
+    [queue addOperation:op1];
+    [queue2 addOperation:op2];
+    [queue addOperation:op3];
+    [queue2 addOperation:op4];
+}
+
+- (void)op_suspend {
+    self.queue.suspended = YES;
+}
+
+- (void)op_resume {
+    self.queue.suspended = NO;
+}
+
+- (void)op_cancel {
+    [self.queue cancelAllOperations];
+}
+
+- (void)op_queue {
+    
+    NSOperationQueue * queue = [NSOperationQueue new];
+    queue.maxConcurrentOperationCount = 1;
+    
+    NSInvocationOperation * op1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(download1) object:nil];
+    //    [op1 start]; //main thread
+    
+    NSBlockOperation * op2 = [NSBlockOperation blockOperationWithBlock:^{
+        for (int i = 0; i < 10000; i++) {
+            NSLog(@"2 - %@ - %i", [NSThread currentThread], i);
+        }
+    }];
+    [op2 addExecutionBlock:^{ //sub thread
+        NSLog(@"3 - %@", [NSThread currentThread]);
+    }];
+    [op2 addExecutionBlock:^{ //sub thread
+        NSLog(@"4 - %@", [NSThread currentThread]);
+    }];
+    
+    op2.completionBlock = ^{
+        NSLog(@"op2 - done");
+    };
+    //    [op2 start];
+    
+    Operation * op3 = [Operation new];
+    [[Thread new] start];
+
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperationWithBlock:^{
+        for (int i = 0; i < 10000; i++) {
+            NSLog(@"5 - %@ - %i", [NSThread currentThread], i);
+        }
+    }];
+    [queue addOperation:op3];
+    self.queue = queue;
+}
+
+- (void)download1 {
+    NSLog(@"1 - %@", [NSThread currentThread]);
 }
 
 - (void)gcd_group {
@@ -162,11 +259,11 @@ void *run (void * param) {
         NSData * data = [NSData dataWithContentsOfURL:url];
         UIImage * image = [UIImage imageWithData:data];
         self.image2 = image;
-
+        
     });
     
     dispatch_async_f(queue, NULL, group_run);
-
+    
     dispatch_group_async(group, queue, ^{
         NSLog(@"3 - %@", [NSThread currentThread]);
     });
@@ -428,6 +525,40 @@ void group_run(void * param) {NSLog(@"2 - %@", [NSThread currentThread]);}
     [self.thread3 start];
 }
 
+- (IBAction)nsthread {
+    
+    NSThread * thread = [[Thread alloc]initWithTarget:self selector:@selector(run) object:nil];
+    thread.name = @"thread - 01";
+    thread.threadPriority = 1.;
+    [thread start];
+#if 0
+    [NSThread detachNewThreadSelector:@selector(run) toTarget:self withObject:nil];
+    [self performSelectorInBackground:@selector(run) withObject:nil];
+#endif
+}
+
+- (void)run {
+    NSLog(@"%@ start", [NSThread currentThread]);
+    [NSThread sleepForTimeInterval:1.];
+    [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:2.]];
+    //    [NSThread sleepUntilDate:[NSDate distantFuture]];
+    [NSThread exit];
+    //    return;
+    NSLog(@"%@ end", [NSThread currentThread]);
+}
+
+- (IBAction)pthread {
+    pthread_t thread = nil;
+    pthread_create(&thread, NULL, run, NULL);
+}
+
+void *run (void * param) {
+    //    for (int i = 0; i < 10000000; ++i) {
+    NSLog(@"%@", [NSThread currentThread]);
+    //    }
+    return NULL;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource.count;
 }
@@ -450,5 +581,26 @@ void group_run(void * param) {NSLog(@"2 - %@", [NSThread currentThread]);}
     [self performSelector:NSSelectorFromString([self.dataSource[indexPath.row] componentsSeparatedByString:@" - "][1])];
 #pragma clang diagnostic pop
 }
+#if 0
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self.dataSource[indexPath.row] componentsSeparatedByString:@" - "][1] isEqualToString:@"op_queue"];
+}
 
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewRowAction * action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"cancel" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        self.queue.suspended = YES;
+    }];
+    action.backgroundColor = [UIColor darkGrayColor];
+    UITableViewRowAction * action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"resume" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        self.queue.suspended = NO;
+    }];
+    action2.backgroundColor = [UIColor darkGrayColor];
+    UITableViewRowAction * action3 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"suspend" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self.queue cancelAllOperations];
+    }];
+    action3.backgroundColor = [UIColor darkGrayColor];
+    return @[action, action2, action3];
+}
+#endif
 @end
