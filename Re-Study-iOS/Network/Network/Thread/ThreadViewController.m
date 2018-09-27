@@ -46,7 +46,7 @@
                         @"GCD - gcd_once - excute",
                         @"GCD - gcd_after - excute",
                         @"GCD - gcd_apply - excute",
-];
+                        @"GCD - gcd_barrier - excute"];
     }
     return _dataSource;
 }
@@ -109,24 +109,23 @@ void *run (void * param) {
     dispatch_apply(10, queue, ^(size_t i) {
         NSLog(@"%@ - %li", [NSThread currentThread], i);
     });
-    
+#if 0
     __block NSString * path = @"/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/Re-Study-iOS/Network/Network/Base.lproj";
     __block NSString * toPath = @"/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/Re-Study-iOS/Network/Network/gcd_apply";
     NSArray * subPaths = [[NSFileManager defaultManager]subpathsAtPath:path];
-#if 0
     for (int i = 0; i < subPaths.count; i++) {
         path = [path stringByAppendingPathComponent:subPaths[i]];
         toPath = [toPath stringByAppendingPathComponent:subPaths[i]];
         [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:nil];
         NSLog(@"%@ - %@", subPaths[i], [NSThread currentThread]);
     }
-#endif
     dispatch_apply(subPaths.count, dispatch_get_global_queue(0, 0), ^(size_t i) {
         path = [path stringByAppendingPathComponent:subPaths[i]];
         toPath = [toPath stringByAppendingPathComponent:subPaths[i]];
         [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:nil];
         NSLog(@"%@ - %@", subPaths[i], [NSThread currentThread]);
     });
+#endif
 }
 
 - (void)gcd_after {
@@ -164,7 +163,7 @@ void *run (void * param) {
 }
 
 - (void)sync_main {
-    //死锁
+    //deadlock on main thread
     dispatch_queue_t queue = dispatch_get_main_queue();
     dispatch_sync(queue, ^{
         NSLog(@"1 - %@", [NSThread currentThread]);
@@ -332,51 +331,11 @@ void *run (void * param) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSString * title = self.dataSource[indexPath.row];
-    if ([title rangeOfString:@"thread_safe"].location != NSNotFound) {
-        [self thread_safe];
-        return;
-    }
-    if ([title rangeOfString:@"thread_communication"].location != NSNotFound) {
-        [self thread_communication];
-        return;
-    }
-    if ([title rangeOfString:@"async_concurrent"].location != NSNotFound) {
-        [self async_concurrent];
-        return;
-    }
-    if ([title rangeOfString:@"async_serial"].location != NSNotFound) {
-        [self async_serial];
-        return;
-    }
-    if ([title rangeOfString:@"sync_concurrent"].location != NSNotFound) {
-        [self sync_concurrent];
-        return;
-    }
-    if ([title rangeOfString:@"sync_serial"].location != NSNotFound) {
-        [self sync_serial];
-        return;
-    }
-    if ([title rangeOfString:@"async_main"].location != NSNotFound) {
-        [self async_main];
-        return;
-    }
-    if ([title rangeOfString:@"gcd_communication"].location != NSNotFound) {
-        [self gcd_communication];
-        return;
-    }
-    if ([title rangeOfString:@"gcd_once"].location != NSNotFound) {
-        [self gcd_once];
-        return;
-    }
-    if ([title rangeOfString:@"gcd_after"].location != NSNotFound) {
-        [self gcd_after];
-        return;
-    }
-    if ([title rangeOfString:@"gcd_apply"].location != NSNotFound) {
-        [self gcd_apply];
-        return;
-    }
+    NSLog(@">>>>>>");
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [self performSelector:NSSelectorFromString([self.dataSource[indexPath.row] componentsSeparatedByString:@" - "][1])];
+#pragma clang diagnostic pop
 }
 
 @end
