@@ -9,6 +9,41 @@
 #import "ThreadViewController.h"
 #import <pthread.h>
 
+@interface Singleton : NSObject <NSCopying, NSMutableCopying>  @end
+
+@implementation Singleton
+
++ (instancetype)sharedSingleton {
+    return [self new];
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return _instance;
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone {
+    return _instance;
+}
+
+static Singleton * _instance;
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+#if 0
+    @synchronized (self) {
+        if (_instance == nil) {
+            _instance = [super allocWithZone:zone];
+        }
+    }
+#endif
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    return _instance;
+}
+
+@end
+
 @interface Thread : NSThread @end
 @implementation Thread
 
@@ -27,6 +62,8 @@
 //@property (nonatomic, strong) NSObject * lock;
 
 @property (nonatomic, strong) UIImage * image;
+@property (nonatomic, strong) UIImage * image1;
+@property (nonatomic, strong) UIImage * image2;
 
 @end
 
@@ -46,7 +83,8 @@
                         @"GCD - gcd_once - excute",
                         @"GCD - gcd_after - excute",
                         @"GCD - gcd_apply - excute",
-                        @"GCD - gcd_barrier - excute"];
+                        @"GCD - gcd_barrier - excute",
+                        @"GCD - gcd_group - excute"];
     }
     return _dataSource;
 }
@@ -103,9 +141,84 @@ void *run (void * param) {
     //    self.lock = [NSObject new];
 }
 
+- (void)gcd_group {
+    dispatch_queue_t queue = dispatch_queue_create("Test", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue2 = dispatch_queue_create("Test", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        NSLog(@"0 - %@", [NSThread currentThread]);
+        NSURL * url = [NSURL URLWithString:@"https://avatars2.githubusercontent.com/u/19483268?s=400&u=97869a443baab2820618a8a575cee677b80849c7&v=4"];
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        UIImage * image = [UIImage imageWithData:data];
+        self.image1 = image;
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_async(group, queue2, ^{
+        NSLog(@"1 - %@", [NSThread currentThread]);
+        NSURL * url = [NSURL URLWithString:@"https://avatars2.githubusercontent.com/u/19483268?s=400&u=97869a443baab2820618a8a575cee677b80849c7&v=4"];
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        UIImage * image = [UIImage imageWithData:data];
+        self.image2 = image;
+
+    });
+    
+    dispatch_async_f(queue, NULL, group_run);
+
+    dispatch_group_async(group, queue, ^{
+        NSLog(@"3 - %@", [NSThread currentThread]);
+    });
+    dispatch_group_async(group, queue2, ^{
+        NSLog(@"4 - %@", [NSThread currentThread]);
+    });
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"group - %@", [NSThread currentThread]);
+        UIGraphicsBeginImageContext(CGSizeMake(300, 300));
+        [self.image1 drawInRect:CGRectMake(0, 0, 150, 300)];
+        [self.image2 drawInRect:CGRectMake(150, 0, 150, 300)];
+        UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.image = image;
+        //        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        //        });
+    });
+    
+#if 0
+    dispatch_barrier_async(dispatch_get_main_queue(), ^{
+        NSLog(@"barrier - %@", [NSThread currentThread]);
+    });
+#endif
+}
+
+void group_run(void * param) {NSLog(@"2 - %@", [NSThread currentThread]);}
+
+- (void)gcd_barrier {
+    dispatch_queue_t queue = dispatch_queue_create("Test", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        NSLog(@"1 - %@", [NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"2 - %@", [NSThread currentThread]);
+    });
+    //do not use global queue in barrier!
+    dispatch_barrier_async(queue, ^{
+        NSLog(@"barrier - %@", [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"3 - %@", [NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"4 - %@", [NSThread currentThread]);
+    });
+}
+
 - (void)gcd_apply {
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
-    //mainqueue 死锁 serial == for loop
+    //on main queue will be deadlock! use serial equal to for loop
     dispatch_apply(10, queue, ^(size_t i) {
         NSLog(@"%@ - %li", [NSThread currentThread], i);
     });
@@ -129,8 +242,8 @@ void *run (void * param) {
 }
 
 - (void)gcd_after {
-//    [self performSelector:<#(nonnull SEL)#> withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#>]
-//    [NSTimer scheduledTimerWithTimeInterval:<#(NSTimeInterval)#> repeats:<#(BOOL)#> block:<#^(NSTimer * _Nonnull timer)block#>]
+    //    [self performSelector:<#(nonnull SEL)#> withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#>]
+    //    [NSTimer scheduledTimerWithTimeInterval:<#(NSTimeInterval)#> repeats:<#(BOOL)#> block:<#^(NSTimer * _Nonnull timer)block#>]
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2. * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
         NSLog(@"delay");
     });
@@ -244,7 +357,7 @@ void *run (void * param) {
 }
 
 - (void)async_concurrent {
-//    dispatch_queue_t queue = dispatch_queue_create("com.coderZsq.www.DownloadQueue", DISPATCH_QUEUE_CONCURRENT);
+    //    dispatch_queue_t queue = dispatch_queue_create("com.coderZsq.www.DownloadQueue", DISPATCH_QUEUE_CONCURRENT);
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     dispatch_async(queue, ^{
         NSLog(@"1 - %@", [NSThread currentThread]);
