@@ -88,7 +88,7 @@ static Singleton * _instance;
 @property (nonatomic, strong) UIImage * image2;
 
 @property (nonatomic, strong) NSOperationQueue * queue;
-
+@property (nonatomic, strong) dispatch_source_t timer;
 @end
 
 @implementation ThreadViewController
@@ -109,6 +109,7 @@ static Singleton * _instance;
                         @"GCD - gcd_apply - excute",
                         @"GCD - gcd_barrier - excute",
                         @"GCD - gcd_group - excute",
+                        @"GCD - gcd_timer - excute",
                         @"NSOperation - op_queue - excuate",
                         @"NSOperation - op_dependency - excuate",
                         @"NSOperation - op_communication - excuate"];
@@ -236,6 +237,17 @@ static Singleton * _instance;
 
 - (void)download1 {
     NSLog(@"1 - %@", [NSThread currentThread]);
+}
+
+- (void)gcd_timer {
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2. * NSEC_PER_SEC, .0 * NSEC_PER_SEC);
+    static NSInteger count = 0;
+    dispatch_source_set_event_handler(timer, ^{
+        NSLog(@"%li", ++count);
+    });
+    dispatch_resume(timer);
+    self.timer = timer;
 }
 
 - (void)gcd_group {
