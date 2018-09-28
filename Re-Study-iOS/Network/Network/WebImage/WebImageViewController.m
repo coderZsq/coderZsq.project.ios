@@ -101,7 +101,7 @@
     //    [[NSRunLoop currentRunLoop]addTimer:timer forMode:UITrackingRunLoopMode];
     [[NSRunLoop currentRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
 #endif
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    NSThread * thread = [[NSThread alloc]initWithBlock:^{
         NSRunLoop * newThreadRunLoop = [NSRunLoop currentRunLoop];
         NSLog(@"%@", newThreadRunLoop);
         NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:1. repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -110,9 +110,43 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5. * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [timer invalidate];
         });
+        CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+            switch (activity) {
+                case kCFRunLoopEntry:
+                    NSLog(@"kCFRunLoopEntry");
+                    break;
+                case kCFRunLoopBeforeTimers:
+                    NSLog(@"kCFRunLoopBeforeTimers");
+                    break;
+                case kCFRunLoopBeforeSources:
+                    NSLog(@"kCFRunLoopBeforeSources");
+                    break;
+                case kCFRunLoopBeforeWaiting:
+                    NSLog(@"kCFRunLoopBeforeWaiting");
+                    break;
+                case kCFRunLoopAfterWaiting:
+                    NSLog(@"kCFRunLoopAfterWaiting");
+                    break;
+                case kCFRunLoopExit:
+                    NSLog(@"kCFRunLoopExit");
+                    break;
+                default:
+                    break;
+            }
+        });
+        CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
+//        [[NSRunLoop currentRunLoop]addPort:[NSPort port] forMode:kCFRunLoopCommonModes];
         [[NSRunLoop currentRunLoop] addTimer:timer forMode:UITrackingRunLoopMode];
-        [[NSRunLoop currentRunLoop] run];
-    });
+        //        [[NSRunLoop currentRunLoop] run];
+        [[NSRunLoop currentRunLoop]runUntilDate:[NSDate dateWithTimeIntervalSinceNow:5.]];
+    }];
+    [thread start];
+
+    [self performSelector:@selector(subthreadTask:) onThread:thread withObject:@"sub thread" waitUntilDone:NO];
+}
+
+- (void)subthreadTask:(NSString *)param {
+    NSLog(@"%@ - %@", param, [NSThread currentThread]);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
