@@ -24,7 +24,8 @@
                         @"NSURLConnection - post_request - excute",
                         @"NSURLSession - session_get_request - excute",
                         @"NSURLSession - session_post_request - excute",
-                        @"NSURLSession - session_request_delegate - excute"];
+                        @"NSURLSession - session_request_delegate - excute",
+                        @"NSURLSession - session_serialization - excute"];
     }
     return _dataSource;
 }
@@ -32,6 +33,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"NetWork";
+}
+
+- (void)session_serialization {
+    [[[NSURLSession sharedSession]dataTaskWithURL:[NSURL URLWithString:@"http://localhost:8090/fetchMockData"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        //        @[[NSNull null]];
+        id obj = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        NSLog(@"%@ - %@", [obj class], obj);
+    }] resume];
+    
+    NSData * data = [NSJSONSerialization dataWithJSONObject:@{@"username" : @"Castie!"} options:0 error:nil];
+    NSLog(@"%@", [[NSString alloc]initWithData:data encoding:(NSUTF8StringEncoding)]);
+    
+    if (![NSJSONSerialization isValidJSONObject:@"Castie!"])
+        NSLog(@"not valid string!");
 }
 
 - (void)session_request_delegate {
