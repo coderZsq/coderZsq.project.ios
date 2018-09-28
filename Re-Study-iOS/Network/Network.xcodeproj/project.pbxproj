@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */; };
+		148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */; };
 		14AC51E5215B407100DF771C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51E4215B407100DF771C /* AppDelegate.m */; };
 		14AC51E8215B407100DF771C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51E7215B407100DF771C /* ViewController.m */; };
 		14AC51EB215B407100DF771C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51E9215B407100DF771C /* Main.storyboard */; };
@@ -22,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		148D5848215E0CEB0012BDB8 /* NetWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkViewController.h; sourceTree = "<group>"; };
+		148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkViewController.m; sourceTree = "<group>"; };
+		148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NetWorkViewController.storyboard; sourceTree = "<group>"; };
 		14AC51E0215B407100DF771C /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AC51E3215B407100DF771C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14AC51E4215B407100DF771C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,6 +70,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		148D584B215E0CF20012BDB8 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				148D5848215E0CEB0012BDB8 /* NetWorkViewController.h */,
+				148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */,
+				148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		14AC51D7215B407100DF771C = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,7 @@
 			children = (
 				14D0BD87215C68B500620AF8 /* Thread */,
 				14D0BD8D215CBECC00620AF8 /* WebImage */,
+				148D584B215E0CF20012BDB8 /* NetWork */,
 				14AC51E3215B407100DF771C /* AppDelegate.h */,
 				14AC51E4215B407100DF771C /* AppDelegate.m */,
 				14AC51E6215B407100DF771C /* ViewController.h */,
@@ -188,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */,
 				14AC51F0215B407300DF771C /* LaunchScreen.storyboard in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
@@ -226,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */,
+				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,

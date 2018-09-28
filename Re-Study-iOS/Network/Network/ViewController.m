@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Thread/ThreadViewController.h"
 #import "WebImage/WebImageViewController.h"
+#import "NetWork/NetWorkViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -19,8 +20,11 @@
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = @[[ThreadViewController class],
-                        [WebImageViewController class]];
+        _dataSource = @[@{@"classes" : @[[ThreadViewController class],
+                                         [WebImageViewController class],
+                                         [NetWorkViewController class]],
+                          @"titleheader" : @"multi-thread & networking",
+                          @"titlefooter" : @"Some examples of multi-thread & networking learning."}];
     }
     return _dataSource;
 }
@@ -30,8 +34,12 @@
 
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSource.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.dataSource[section][@"classes"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -40,12 +48,20 @@
         cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"identifier"];
         cell.imageView.image = [UIImage imageNamed:@"Mark"];
     }
-    cell.textLabel.text = NSStringFromClass(self.dataSource[indexPath.row]);
+    cell.textLabel.text = NSStringFromClass(self.dataSource[indexPath.section][@"classes"][indexPath.row]);
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:NSStringFromClass(self.dataSource[indexPath.row]) bundle:nil]instantiateInitialViewController] animated:YES];
+    [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:NSStringFromClass(self.dataSource[indexPath.section][@"classes"][indexPath.row]) bundle:nil]instantiateInitialViewController] animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.dataSource[section][@"titleheader"];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    return self.dataSource[section][@"titlefooter"];
 }
 
 @end
