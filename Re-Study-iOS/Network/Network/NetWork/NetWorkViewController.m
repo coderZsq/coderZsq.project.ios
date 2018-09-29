@@ -8,9 +8,11 @@
 
 #import "NetWorkViewController.h"
 
-@interface NetWorkViewController () <NSURLConnectionDataDelegate, NSURLSessionDataDelegate>
+@interface NetWorkViewController () <NSURLConnectionDataDelegate, NSURLSessionDataDelegate, NSXMLParserDelegate>
 @property (nonatomic, copy) NSArray * dataSource;
 @property (nonatomic, strong) NSMutableData * data;
+@property (nonatomic, assign) NSInteger totalSize;
+@property (nonatomic, assign) NSInteger currentSize;
 @end
 
 @implementation NetWorkViewController
@@ -25,7 +27,8 @@
                         @"NSURLSession - session_get_request - excute",
                         @"NSURLSession - session_post_request - excute",
                         @"NSURLSession - session_request_delegate - excute",
-                        @"NSURLSession - session_serialization - excute"];
+                        @"NSURLSession - session_serialization - excute",
+                        @"NSURLSession - session_data_task - excute"];
     }
     return _dataSource;
 }
@@ -33,6 +36,78 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"NetWork";
+    
+//    [self xml_parser];
+}
+
+- (void)session_data_task {
+#if 0
+    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://localhost:8090/image"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        UIImage * image = [UIImage imageWithData:data];
+        NSLog(@"%@", image);
+    }]resume];
+#endif
+    
+    NSURL * url = [NSURL URLWithString:@"http://localhost:8090/video"];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    NSURLSession * session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask * task = [session dataTaskWithRequest:request];
+    [task resume];
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
+    NSLog(@"%s", __func__);
+    NSLog(@"%@", [NSThread currentThread]);
+    self.data = [NSMutableData data];
+    self.totalSize = response.expectedContentLength;
+    completionHandler(NSURLSessionResponseAllow);
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    NSLog(@"%s", __func__);
+    [self.data appendData:data];
+    self.currentSize += data.length;
+    NSLog(@"%li - %li", self.currentSize, self.totalSize);
+    NSLog(@"%f", 1. * self.currentSize / self.totalSize);
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    NSLog(@"%s", __func__);
+    NSLog(@"%@", [[NSString alloc]initWithData:self.data encoding:(NSUTF8StringEncoding)]);
+    
+    NSString * filename = [task response].suggestedFilename;
+    NSString * cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString * fullPath = [cache stringByAppendingPathComponent:filename];
+    [self.data writeToFile:fullPath atomically:YES];
+    NSLog(@"%@", fullPath);
+}
+- (void)xml_parser {
+    NSData * data = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"webimage.xml" ofType:nil]];
+    NSXMLParser * parser = [[NSXMLParser alloc]initWithData:data];
+    parser.delegate = self;
+    [parser parse];
+}
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+    NSLog(@"%s", __func__);
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+    NSLog(@"%s", __func__);
+    NSLog(@"%@", elementName);
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    NSLog(@"%s", __func__);
+    NSLog(@"%@", string);
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    NSLog(@"%s", __func__);
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    NSLog(@"%s", __func__);
 }
 
 - (void)session_serialization {
@@ -47,6 +122,14 @@
     
     if (![NSJSONSerialization isValidJSONObject:@"Castie!"])
         NSLog(@"not valid string!");
+#if 0
+    NSArray * array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"webimage.plist" ofType:nil]];
+    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
+    [jsonData writeToFile:@"/Users/zhushuangquan/Desktop/webimage.json" atomically:YES];
+#endif
+    NSData * jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"webimage.json" ofType:nil]];
+    NSArray * array = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+    NSLog(@"%@", array);
 }
 
 - (void)session_request_delegate {
@@ -56,7 +139,7 @@
     NSURLSessionDataTask * task = [session dataTaskWithRequest:request];
     [task resume];
 }
-
+# if 0
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
     NSLog(@"%s", __func__);
     NSLog(@"%@", [NSThread currentThread]);
@@ -72,8 +155,14 @@
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     NSLog(@"%s", __func__);
     NSLog(@"%@", [[NSString alloc]initWithData:self.data encoding:(NSUTF8StringEncoding)]);
+    
+    NSString * filename = [task response].suggestedFilename;
+    NSString * cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString * fullPath = [cache stringByAppendingPathComponent:filename];
+    [self.data writeToFile:fullPath atomically:YES];
+    NSLog(@"%@", fullPath);
 }
-
+#endif
 - (void)session_post_request {
     NSURL * url = [NSURL URLWithString:@"http://localhost:8090/post"];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
@@ -87,7 +176,6 @@
     }];
     [task resume];
 }
-
 
 - (void)session_get_request {
     NSURL * url = [NSURL URLWithString:@"http://localhost:8090/get"];

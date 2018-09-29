@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */; };
 		148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */; };
+		148D58AB215F197B0012BDB8 /* webimage.json in Resources */ = {isa = PBXBuildFile; fileRef = 148D58AA215F197B0012BDB8 /* webimage.json */; };
+		148D58AD215F266F0012BDB8 /* webimage.xml in Resources */ = {isa = PBXBuildFile; fileRef = 148D58AC215F266F0012BDB8 /* webimage.xml */; };
 		14AC51E5215B407100DF771C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51E4215B407100DF771C /* AppDelegate.m */; };
 		14AC51E8215B407100DF771C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51E7215B407100DF771C /* ViewController.m */; };
 		14AC51EB215B407100DF771C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51E9215B407100DF771C /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		148D5848215E0CEB0012BDB8 /* NetWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkViewController.h; sourceTree = "<group>"; };
 		148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkViewController.m; sourceTree = "<group>"; };
 		148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NetWorkViewController.storyboard; sourceTree = "<group>"; };
+		148D58AA215F197B0012BDB8 /* webimage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = webimage.json; sourceTree = "<group>"; };
+		148D58AC215F266F0012BDB8 /* webimage.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = webimage.xml; sourceTree = "<group>"; };
 		14AC51E0215B407100DF771C /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AC51E3215B407100DF771C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14AC51E4215B407100DF771C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */,
 				14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */,
 				14FBE76A215CC36D0009A98B /* webimage.plist */,
+				148D58AA215F197B0012BDB8 /* webimage.json */,
+				148D58AC215F266F0012BDB8 /* webimage.xml */,
 			);
 			path = WebImage;
 			sourceTree = "<group>";
@@ -205,11 +211,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */,
+				148D58AD215F266F0012BDB8 /* webimage.xml in Resources */,
 				14AC51F0215B407300DF771C /* LaunchScreen.storyboard in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
 				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
+				148D58AB215F197B0012BDB8 /* webimage.json in Resources */,
 				14AC51EB215B407100DF771C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

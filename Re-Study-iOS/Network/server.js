@@ -34,8 +34,26 @@ http.createServer((req, res) => {
         }));
     }
 
+    if (decodeURI(req.url).indexOf("/video") != -1) {
+        let path = __dirname + '/Network/Network/network.mp4';
+        fs.readFile(path, 'binary', (err, file) => {
+            if (err) {
+                console.log(err);
+                return;
+            } else {
+                res.writeHead(200, {
+                    'Content-Type': 'video/mpeg4',
+                    'Content-Length': 4206841
+                });
+                res.write(file, 'binary');
+                res.end();
+                return;
+            }
+        })
+    }
+
     if (decodeURI(req.url).indexOf("/image") != -1) {
-        let path = __dirname + '/contents/Castie!.jpg';
+        let path = __dirname + '/Network/Network/network.jpg';
         fs.readFile(path, 'binary', (err, file) => {
             if (err) {
                 console.log(err);
