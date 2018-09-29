@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hDA-MS-cBv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Download View Controller-->
+        <scene sceneID="j2f-aJ-DTV">
+            <objects>
+                <viewController id="hDA-MS-cBv" customClass="DownloadViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8T-gB-L9L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7nC-xT-yM9">
+                                <rect key="frame" x="36" y="60" width="303" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmy-Wj-tp1">
+                                <rect key="frame" x="36" y="72" width="76" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonClick:" destination="hDA-MS-cBv" eventType="touchUpInside" id="mwt-Of-ijH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-8Z-Cn1">
+                                <rect key="frame" x="112" y="72" width="75.5" height="30"/>
+                                <state key="normal" title="Suspend"/>
+                                <connections>
+                                    <action selector="suspendButtonClick:" destination="hDA-MS-cBv" eventType="touchUpInside" id="mWv-vp-feJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN6-AV-lc5">
+                                <rect key="frame" x="263.5" y="72" width="75.5" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonClick:" destination="hDA-MS-cBv" eventType="touchUpInside" id="JTd-X8-8My"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-9U-JTw">
+                                <rect key="frame" x="187.5" y="72" width="76" height="30"/>
+                                <state key="normal" title="Resume"/>
+                                <connections>
+                                    <action selector="resumeButtonClick:" destination="hDA-MS-cBv" eventType="touchUpInside" id="aEt-Zf-MBx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7nC-xT-yM9" firstAttribute="leading" secondItem="E8T-gB-L9L" secondAttribute="leadingMargin" constant="20" id="1bX-c7-Wb5"/>
+                            <constraint firstItem="bN6-AV-lc5" firstAttribute="width" secondItem="7nC-xT-yM9" secondAttribute="width" multiplier="0.25" id="2hN-hp-YrQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7nC-xT-yM9" secondAttribute="trailing" constant="20" id="8vg-pF-cbN"/>
+                            <constraint firstItem="BFr-8Z-Cn1" firstAttribute="width" secondItem="h2W-9U-JTw" secondAttribute="width" id="DGz-X9-2zH"/>
+                            <constraint firstItem="h2W-9U-JTw" firstAttribute="leading" secondItem="BFr-8Z-Cn1" secondAttribute="trailing" id="H3I-Aq-wgF"/>
+                            <constraint firstItem="h2W-9U-JTw" firstAttribute="width" secondItem="bN6-AV-lc5" secondAttribute="width" id="HBo-ae-Cvj"/>
+                            <constraint firstItem="bN6-AV-lc5" firstAttribute="top" secondItem="7nC-xT-yM9" secondAttribute="bottom" constant="10" id="Jin-Ea-Xe4"/>
+                            <constraint firstItem="Bmy-Wj-tp1" firstAttribute="width" secondItem="BFr-8Z-Cn1" secondAttribute="width" id="N45-Xr-yX2"/>
+                            <constraint firstItem="BFr-8Z-Cn1" firstAttribute="leading" secondItem="Bmy-Wj-tp1" secondAttribute="trailing" id="TvB-SR-Aj9"/>
+                            <constraint firstItem="bN6-AV-lc5" firstAttribute="trailing" secondItem="7nC-xT-yM9" secondAttribute="trailing" id="Umj-ze-0so"/>
+                            <constraint firstItem="Bmy-Wj-tp1" firstAttribute="top" secondItem="BFr-8Z-Cn1" secondAttribute="top" id="ept-Kr-Tus"/>
+                            <constraint firstItem="bN6-AV-lc5" firstAttribute="leading" secondItem="h2W-9U-JTw" secondAttribute="trailing" id="pHO-pG-lJm"/>
+                            <constraint firstItem="7nC-xT-yM9" firstAttribute="top" secondItem="vGb-SD-BnJ" secondAttribute="top" constant="40" id="uEf-g9-YuW"/>
+                            <constraint firstItem="BFr-8Z-Cn1" firstAttribute="top" secondItem="h2W-9U-JTw" secondAttribute="top" id="yc5-s5-Xjx"/>
+                            <constraint firstItem="h2W-9U-JTw" firstAttribute="top" secondItem="bN6-AV-lc5" secondAttribute="top" id="zeX-jh-qbT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vGb-SD-BnJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="7nC-xT-yM9" id="Z9f-uA-d6J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPQ-jB-d13" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="214.54272863568218"/>
+        </scene>
+    </scenes>
+</document>

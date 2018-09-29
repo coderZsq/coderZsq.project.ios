@@ -10,6 +10,7 @@
 #import "Thread/ThreadViewController.h"
 #import "WebImage/WebImageViewController.h"
 #import "NetWork/NetWorkViewController.h"
+#import "Download/DownloadViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -22,7 +23,8 @@
     if (!_dataSource) {
         _dataSource = @[@{@"classes" : @[[ThreadViewController class],
                                          [WebImageViewController class],
-                                         [NetWorkViewController class]],
+                                         [NetWorkViewController class],
+                                         [DownloadViewController class]],
                           @"titleheader" : @"multi-thread & networking",
                           @"titlefooter" : @"Some examples of multi-thread & networking learning."}];
     }

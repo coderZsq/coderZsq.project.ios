@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSMutableData * data;
 @property (nonatomic, assign) NSInteger totalSize;
 @property (nonatomic, assign) NSInteger currentSize;
+@property (nonatomic, strong) NSFileHandle * handle;
 @end
 
 @implementation NetWorkViewController
@@ -56,31 +57,30 @@
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
-    NSLog(@"%s", __func__);
-    NSLog(@"%@", [NSThread currentThread]);
-    self.data = [NSMutableData data];
+    
     self.totalSize = response.expectedContentLength;
+    
+    NSString * fileName = [response suggestedFilename];
+    NSString * cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject];
+    NSString * fullPath = [cache stringByAppendingPathComponent:fileName];
+    NSLog(@"%@", fullPath);
+    [[NSFileManager defaultManager] createFileAtPath:fullPath contents:nil attributes:nil];
+    self.handle = [NSFileHandle fileHandleForWritingAtPath:fullPath];
+    
     completionHandler(NSURLSessionResponseAllow);
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     NSLog(@"%s", __func__);
-    [self.data appendData:data];
     self.currentSize += data.length;
-    NSLog(@"%li - %li", self.currentSize, self.totalSize);
-    NSLog(@"%f", 1. * self.currentSize / self.totalSize);
+    [self.handle writeData:data];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     NSLog(@"%s", __func__);
-    NSLog(@"%@", [[NSString alloc]initWithData:self.data encoding:(NSUTF8StringEncoding)]);
-    
-    NSString * filename = [task response].suggestedFilename;
-    NSString * cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    NSString * fullPath = [cache stringByAppendingPathComponent:filename];
-    [self.data writeToFile:fullPath atomically:YES];
-    NSLog(@"%@", fullPath);
+    [self.handle closeFile];
 }
+
 - (void)xml_parser {
     NSData * data = [[NSData alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"webimage.xml" ofType:nil]];
     NSXMLParser * parser = [[NSXMLParser alloc]initWithData:data];
@@ -144,12 +144,16 @@
     NSLog(@"%s", __func__);
     NSLog(@"%@", [NSThread currentThread]);
     self.data = [NSMutableData data];
+    self.totalSize = response.expectedContentLength;
     completionHandler(NSURLSessionResponseAllow);
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     NSLog(@"%s", __func__);
     [self.data appendData:data];
+    self.currentSize += data.length;
+    NSLog(@"%li - %li", self.currentSize, self.totalSize);
+    NSLog(@"%f", 1. * self.currentSize / self.totalSize);
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
