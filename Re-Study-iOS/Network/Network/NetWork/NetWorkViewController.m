@@ -7,8 +7,12 @@
 //
 
 #import "NetWorkViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface NetWorkViewController () <NSURLConnectionDataDelegate, NSURLSessionDataDelegate, NSXMLParserDelegate>
+#define kBoundary @"----WebKitFormBoundaryATJp9y6FGSNtJKNW"
+#define kEnter [@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]
+
+@interface NetWorkViewController () <NSURLConnectionDataDelegate, NSURLSessionDataDelegate, NSXMLParserDelegate, NSURLSessionDataDelegate>
 @property (nonatomic, copy) NSArray * dataSource;
 @property (nonatomic, strong) NSMutableData * data;
 @property (nonatomic, assign) NSInteger totalSize;
@@ -29,7 +33,8 @@
                         @"NSURLSession - session_post_request - excute",
                         @"NSURLSession - session_request_delegate - excute",
                         @"NSURLSession - session_serialization - excute",
-                        @"NSURLSession - session_data_task - excute"];
+                        @"NSURLSession - session_download - excute",
+                        @"NSURLSession - session_upload - excute"];
     }
     return _dataSource;
 }
@@ -41,7 +46,59 @@
 //    [self xml_parser];
 }
 
-- (void)session_data_task {
+- (void)session_upload {
+    NSURL * url = [NSURL URLWithString:@"http://localhost:8090/post"];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", kBoundary] forHTTPHeaderField:@"Content-Type"];
+    NSURLSessionConfiguration * conf = [NSURLSessionConfiguration defaultSessionConfiguration];
+    conf.allowsCellularAccess = YES;
+    conf.timeoutIntervalForRequest = 15;
+    NSURLSession * session = [NSURLSession sessionWithConfiguration:conf delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+#if 0
+    NSURLSessionUploadTask * task = [session uploadTaskWithRequest:request fromData:nil completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@", response.MIMEType); // application/octet-stream
+        NSLog(@"%@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    }];
+#endif
+    NSURLSessionUploadTask * task = [session uploadTaskWithStreamedRequest:request];
+    [task resume];
+}
+
+- (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    NSLog(@"%f", 1. * totalBytesWritten / totalBytesExpectedToWrite);
+}
+
+- (NSData *)bodyData {
+    NSMutableData * data = [NSMutableData data];
+    [data appendData:[[NSString stringWithFormat:@"--%@", kBoundary]
+                      dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:kEnter];
+    [data appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"Castie!.png\"" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:kEnter];
+    [data appendData:[@"Content-Type: image/png" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:kEnter];
+    [data appendData:kEnter];
+    NSData * imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Avatar"]);
+    [data appendData:imageData];
+    [data appendData:kEnter];
+    
+    [data appendData:[[NSString stringWithFormat:@"--%@", kBoundary]
+                      dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:kEnter];
+    [data appendData:[@"Content-Disposition: form-data; name=\"username\"" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:kEnter];
+    [data appendData:kEnter];
+    [data appendData:[@"abcdf" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:kEnter];
+    
+    [data appendData:[[NSString stringWithFormat:@"--%@--", kBoundary]
+                      dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return data;
+}
+
+- (void)session_download {
 #if 0
     [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://localhost:8090/image"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         UIImage * image = [UIImage imageWithData:data];
