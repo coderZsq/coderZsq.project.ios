@@ -29,6 +29,11 @@
 		14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53A216096DC009B7C6C /* RSACryptor.m */; };
 		14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53C216096DC009B7C6C /* NSString+Hash.m */; };
 		14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53D216096DC009B7C6C /* EncryptionTools.m */; };
+		14D5F5472160B1A0009B7C6C /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = 14D5F5422160B19F009B7C6C /* private.pem */; };
+		14D5F5482160B1A0009B7C6C /* p.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 14D5F5432160B19F009B7C6C /* p.p12 */; };
+		14D5F5492160B1A0009B7C6C /* rsacert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 14D5F5442160B1A0009B7C6C /* rsacert.crt */; };
+		14D5F54A2160B1A0009B7C6C /* rsacert.csr in Resources */ = {isa = PBXBuildFile; fileRef = 14D5F5452160B1A0009B7C6C /* rsacert.csr */; };
+		14D5F54B2160B1A0009B7C6C /* rsacert.der in Resources */ = {isa = PBXBuildFile; fileRef = 14D5F5462160B1A0009B7C6C /* rsacert.der */; };
 		14FBE76B215CC36D0009A98B /* webimage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FBE76A215CC36D0009A98B /* webimage.plist */; };
 		7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC29FCBEBDD7E089E507B280 /* libPods-Network.a */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,11 @@
 		14D5F53C216096DC009B7C6C /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		14D5F53D216096DC009B7C6C /* EncryptionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTools.m; sourceTree = "<group>"; };
 		14D5F53E216096DC009B7C6C /* EncryptionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTools.h; sourceTree = "<group>"; };
+		14D5F5422160B19F009B7C6C /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.pem; sourceTree = "<group>"; };
+		14D5F5432160B19F009B7C6C /* p.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p.p12; sourceTree = "<group>"; };
+		14D5F5442160B1A0009B7C6C /* rsacert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.crt; sourceTree = "<group>"; };
+		14D5F5452160B1A0009B7C6C /* rsacert.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.csr; sourceTree = "<group>"; };
+		14D5F5462160B1A0009B7C6C /* rsacert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsacert.der; sourceTree = "<group>"; };
 		14FBE76A215CC36D0009A98B /* webimage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webimage.plist; sourceTree = "<group>"; };
 		3BD7389507683D3E083D3AFF /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B6E1CFDED76A020618F6B6 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +200,11 @@
 				14D5F53C216096DC009B7C6C /* NSString+Hash.m */,
 				14D5F539216096DC009B7C6C /* RSACryptor.h */,
 				14D5F53A216096DC009B7C6C /* RSACryptor.m */,
+				14D5F5422160B19F009B7C6C /* private.pem */,
+				14D5F5452160B1A0009B7C6C /* rsacert.csr */,
+				14D5F5442160B1A0009B7C6C /* rsacert.crt */,
+				14D5F5462160B1A0009B7C6C /* rsacert.der */,
+				14D5F5432160B19F009B7C6C /* p.p12 */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -262,14 +277,19 @@
 			files = (
 				148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */,
 				148D58AD215F266F0012BDB8 /* webimage.xml in Resources */,
+				14D5F5482160B1A0009B7C6C /* p.p12 in Resources */,
 				14AC51F0215B407300DF771C /* LaunchScreen.storyboard in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
 				148D58B7215F3A710012BDB8 /* DownloadViewController.storyboard in Resources */,
 				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
+				14D5F54B2160B1A0009B7C6C /* rsacert.der in Resources */,
+				14D5F5492160B1A0009B7C6C /* rsacert.crt in Resources */,
 				14D5F538216080AA009B7C6C /* SecurityViewController.storyboard in Resources */,
+				14D5F54A2160B1A0009B7C6C /* rsacert.csr in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
 				148D58AB215F197B0012BDB8 /* webimage.json in Resources */,
+				14D5F5472160B1A0009B7C6C /* private.pem in Resources */,
 				14AC51EB215B407100DF771C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

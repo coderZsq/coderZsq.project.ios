@@ -9,6 +9,7 @@
 #import "SecurityViewController.h"
 #import "NSString+Hash.h"
 #import "EncryptionTools.h"
+#import "RSACryptor.h"
 
 @interface SecurityViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -19,13 +20,38 @@
 - (NSArray *)dataSource {
     
     if (!_dataSource) {
-        _dataSource = @[@"base64 - excute",
-                        @"md5 - excute",
-                        @"aes_ecb - excute",
-                        @"aes_cbc - excute",
-                        @"des_ecb - excute"];
+        _dataSource = @[@"Encryption - base64 - excute",
+                        @"Encryption - md5 - excute",
+                        @"Encryption - aes_ecb - excute",
+                        @"Encryption - aes_cbc - excute",
+                        @"Encryption - des_ecb - excute",
+                        @"Encryption - des_cbc - excute",
+                        @"Encryption - rsa - excute"];
     }
     return _dataSource;
+}
+
+- (void)rsa {
+    // $ openssl genrsa -out private.pem 1024
+    // $ openssl req -new -key private.pem -out rsacert.csr
+    // $ openssl x509 -req -days 3650 -in rsacert.csr -signkey private.pem -out rsacert.crt
+    // $ openssl x509 -outform der -in rsacert.crt -out rsacert.der
+    // $ openssl pkcs12 -export -out p.p12 -inkey private.pem -in rsacert.crt
+#if 0
+    [[RSACryptor sharedRSACryptor] loadPublicKey:[[NSBundle mainBundle]pathForResource:@"rsacert.der" ofType:nil]];
+    NSData * data = [[RSACryptor sharedRSACryptor] encryptData:[@"Castie!" dataUsingEncoding:NSUTF8StringEncoding]];
+    NSLog(@"%@", [data base64EncodedStringWithOptions:0]);
+    [[RSACryptor sharedRSACryptor]loadPrivateKey:[[NSBundle mainBundle] pathForResource:@"p.p12" ofType:nil] password:@"......"];
+    NSLog(@"%@", [[NSString alloc]initWithData:[[RSACryptor sharedRSACryptor] decryptData:data] encoding:NSUTF8StringEncoding]);
+#endif
+}
+
+- (void)des_cbc {
+    [EncryptionTools sharedEncryptionTools].algorithm = kCCAlgorithmDES;
+    uint8_t iv[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+    NSData * data = [[NSData alloc]initWithBytes:iv length:sizeof(iv)];
+    NSLog(@"%@", [[EncryptionTools sharedEncryptionTools] encryptString:@"Castiel" keyString:@"abc" iv:data]);
+    NSLog(@"%@", [[EncryptionTools sharedEncryptionTools] decryptString:@"lbN/n1sCaR4=" keyString:@"abc" iv:data]);
 }
 
 - (void)des_ecb {
@@ -98,7 +124,7 @@
     NSLog(@">>>>>>");
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    [self performSelector:NSSelectorFromString([self.dataSource[indexPath.row] componentsSeparatedByString:@" - "][0])];
+    [self performSelector:NSSelectorFromString([self.dataSource[indexPath.row] componentsSeparatedByString:@" - "][1])];
 #pragma clang diagnostic pop
 }
 
