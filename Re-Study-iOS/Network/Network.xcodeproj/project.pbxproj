@@ -12,6 +12,9 @@
 		14655D6E2160F4B0009133E2 /* rsacert.der in Resources */ = {isa = PBXBuildFile; fileRef = 14655D692160F4B0009133E2 /* rsacert.der */; };
 		14655D6F2160F4B0009133E2 /* rsacert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 14655D6A2160F4B0009133E2 /* rsacert.crt */; };
 		14655D702160F4B0009133E2 /* p.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 14655D6B2160F4B0009133E2 /* p.p12 */; };
+		14655D732160FEA9009133E2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14655D722160FEA9009133E2 /* WebViewController.m */; };
+		14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14655D752160FECD009133E2 /* WebViewController.storyboard */; };
+		14655D7A21610C04009133E2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14655D7921610C04009133E2 /* WebKit.framework */; };
 		148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */; };
 		148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */; };
 		148D58AB215F197B0012BDB8 /* webimage.json in Resources */ = {isa = PBXBuildFile; fileRef = 148D58AA215F197B0012BDB8 /* webimage.json */; };
@@ -44,6 +47,10 @@
 		14655D692160F4B0009133E2 /* rsacert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsacert.der; sourceTree = "<group>"; };
 		14655D6A2160F4B0009133E2 /* rsacert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.crt; sourceTree = "<group>"; };
 		14655D6B2160F4B0009133E2 /* p.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p.p12; sourceTree = "<group>"; };
+		14655D712160FEA9009133E2 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		14655D722160FEA9009133E2 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		14655D752160FECD009133E2 /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
+		14655D7921610C04009133E2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		148D5848215E0CEB0012BDB8 /* NetWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkViewController.h; sourceTree = "<group>"; };
 		148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkViewController.m; sourceTree = "<group>"; };
 		148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NetWorkViewController.storyboard; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14655D7A21610C04009133E2 /* WebKit.framework in Frameworks */,
 				7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14655D742160FEAE009133E2 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				14655D712160FEA9009133E2 /* WebViewController.h */,
+				14655D722160FEA9009133E2 /* WebViewController.m */,
+				14655D752160FECD009133E2 /* WebViewController.storyboard */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		14788D40BFE85A2F187AF6A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +170,7 @@
 				148D584B215E0CF20012BDB8 /* NetWork */,
 				148D58B3215F390B0012BDB8 /* Download */,
 				14D5F53621607FEF009B7C6C /* Security */,
+				14655D742160FEAE009133E2 /* WebView */,
 				14AC51E3215B407100DF771C /* AppDelegate.h */,
 				14AC51E4215B407100DF771C /* AppDelegate.m */,
 				14AC51E6215B407100DF771C /* ViewController.h */,
@@ -212,6 +231,7 @@
 		CBE33F15B0177C679E7C59B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14655D7921610C04009133E2 /* WebKit.framework */,
 				EC29FCBEBDD7E089E507B280 /* libPods-Network.a */,
 			);
 			name = Frameworks;
@@ -281,6 +301,7 @@
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */,
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
+				14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */,
 				14655D702160F4B0009133E2 /* p.p12 in Resources */,
 				148D58B7215F3A710012BDB8 /* DownloadViewController.storyboard in Resources */,
 				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
@@ -328,6 +349,7 @@
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
 				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
 				14D5F53521607FE3009B7C6C /* SecurityViewController.m in Sources */,
+				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */,

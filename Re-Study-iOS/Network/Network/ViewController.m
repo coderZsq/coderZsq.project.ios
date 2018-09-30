@@ -12,6 +12,7 @@
 #import "NetWork/NetWorkViewController.h"
 #import "Download/DownloadViewController.h"
 #import "Security/SecurityViewController.h"
+#import "WebView/WebViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -28,7 +29,8 @@
                           @"titlefooter" : @"Some examples of multi-thread learning."},
                         @{@"classes" : @[[NetWorkViewController class],
                                          [DownloadViewController class],
-                                         [SecurityViewController class]],
+                                         [SecurityViewController class],
+                                         [WebViewController class]],
                           @"titleheader" : @"networking",
                           @"titlefooter" : @"Some examples of networking learning."}];
     }

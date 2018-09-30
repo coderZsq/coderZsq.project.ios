@@ -10,8 +10,9 @@
 #import "NSString+Hash.h"
 #import "EncryptionTools.h"
 #import "RSACryptor.h"
+#import <AFNetworking.h>
 
-@interface SecurityViewController ()
+@interface SecurityViewController () <NSURLSessionDataDelegate>
 @property (nonatomic, copy) NSArray * dataSource;
 @end
 
@@ -26,9 +27,47 @@
                         @"Encryption - aes_cbc - excute",
                         @"Encryption - des_ecb - excute",
                         @"Encryption - des_cbc - excute",
-                        @"Encryption - rsa - excute"];
+                        @"Encryption - rsa - excute",
+                        @"Encryption - session_https - excute",
+                        @"Encryption - afn_https - excute"];
     }
     return _dataSource;
+}
+
+- (void)afn_https {
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    manager.securityPolicy.validatesDomainName = NO;
+    [manager GET:@"https://kyfw.12306.cn/otn" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)session_https {
+    NSURL * url = [NSURL URLWithString:@"https://kyfw.12306.cn/otn"];
+    NSURLSession * session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    }]resume] ;
+}
+
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
+    NSLog(@"%@", challenge.protectionSpace);
+#if 0
+    typedef NS_ENUM(NSInteger, NSURLSessionAuthChallengeDisposition) {
+        NSURLSessionAuthChallengeUseCredential = 0,                                       /* Use the specified credential, which may be nil */
+        NSURLSessionAuthChallengePerformDefaultHandling = 1,                              /* Default handling for the challenge - as if this delegate were not implemented; the credential parameter is ignored. */
+        NSURLSessionAuthChallengeCancelAuthenticationChallenge = 2,                       /* The entire request will be canceled; the credential parameter is ignored. */
+        NSURLSessionAuthChallengeRejectProtectionSpace = 3,                               /* This challenge is rejected and the next authentication protection space should be tried; the credential parameter is ignored. */
+    } NS_ENUM_AVAILABLE(NSURLSESSION_AVAILABLE, 7_0);
+#endif
+    if (![challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        return;
+    }
+    completionHandler(NSURLSessionAuthChallengeUseCredential, [[NSURLCredential alloc]initWithTrust:challenge.protectionSpace.serverTrust]);
 }
 
 - (void)rsa {

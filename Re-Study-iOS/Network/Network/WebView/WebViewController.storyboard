@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yOH-rb-5gY">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="Fbh-9H-pbo">
+            <objects>
+                <viewController id="yOH-rb-5gY" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0nM-M0-j46">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Teo-fh-AZV">
+                                <rect key="frame" x="0.0" y="20" width="375" height="283.5"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sM-Mj-Jw8">
+                                <rect key="frame" x="0.0" y="303.5" width="375" height="363.5"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Teo-fh-AZV" firstAttribute="trailing" secondItem="2F8-Gz-QVb" secondAttribute="trailing" id="4sR-GF-34w"/>
+                            <constraint firstItem="2F8-Gz-QVb" firstAttribute="trailing" secondItem="2sM-Mj-Jw8" secondAttribute="trailing" id="6vt-Lx-k2E"/>
+                            <constraint firstItem="2sM-Mj-Jw8" firstAttribute="top" secondItem="Teo-fh-AZV" secondAttribute="bottom" id="8Rz-wO-KxJ"/>
+                            <constraint firstItem="Teo-fh-AZV" firstAttribute="leading" secondItem="2F8-Gz-QVb" secondAttribute="leading" id="AvA-zq-0eK"/>
+                            <constraint firstItem="Teo-fh-AZV" firstAttribute="height" secondItem="0nM-M0-j46" secondAttribute="height" multiplier="0.5" constant="-50" id="bTc-hV-Ggm"/>
+                            <constraint firstItem="Teo-fh-AZV" firstAttribute="top" secondItem="2F8-Gz-QVb" secondAttribute="top" id="lrS-r8-kQY"/>
+                            <constraint firstAttribute="bottom" secondItem="2sM-Mj-Jw8" secondAttribute="bottom" id="mTo-1e-5wa"/>
+                            <constraint firstItem="2sM-Mj-Jw8" firstAttribute="leading" secondItem="2F8-Gz-QVb" secondAttribute="leading" id="qw5-b1-wr2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2F8-Gz-QVb"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Teo-fh-AZV" id="uiC-98-8Dq"/>
+                        <outlet property="wkWebView" destination="2sM-Mj-Jw8" id="utm-Xr-4D9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LR9-sH-qKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274.39999999999998" y="135.38230884557723"/>
+        </scene>
+    </scenes>
+</document>
