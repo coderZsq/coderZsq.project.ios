@@ -37,13 +37,12 @@
     // $ openssl x509 -req -days 3650 -in rsacert.csr -signkey private.pem -out rsacert.crt
     // $ openssl x509 -outform der -in rsacert.crt -out rsacert.der
     // $ openssl pkcs12 -export -out p.p12 -inkey private.pem -in rsacert.crt
-#if 0
+    
     [[RSACryptor sharedRSACryptor] loadPublicKey:[[NSBundle mainBundle]pathForResource:@"rsacert.der" ofType:nil]];
     NSData * data = [[RSACryptor sharedRSACryptor] encryptData:[@"Castie!" dataUsingEncoding:NSUTF8StringEncoding]];
     NSLog(@"%@", [data base64EncodedStringWithOptions:0]);
-    [[RSACryptor sharedRSACryptor]loadPrivateKey:[[NSBundle mainBundle] pathForResource:@"p.p12" ofType:nil] password:@"......"];
+    [[RSACryptor sharedRSACryptor]loadPrivateKey:[[NSBundle mainBundle] pathForResource:@"p.p12" ofType:nil] password:@"666666"];
     NSLog(@"%@", [[NSString alloc]initWithData:[[RSACryptor sharedRSACryptor] decryptData:data] encoding:NSUTF8StringEncoding]);
-#endif
 }
 
 - (void)des_cbc {
