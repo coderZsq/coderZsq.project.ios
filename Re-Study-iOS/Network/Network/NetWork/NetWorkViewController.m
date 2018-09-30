@@ -9,8 +9,8 @@
 #import "NetWorkViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-#define kBoundary @"----WebKitFormBoundaryATJp9y6FGSNtJKNW"
-#define kEnter [@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]
+#define Kboundary @"----WebKitFormBoundaryATJp9y6FGSNtJKNW"
+#define KnewLine [@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]
 
 @interface NetWorkViewController () <NSURLConnectionDataDelegate, NSURLSessionDataDelegate, NSXMLParserDelegate, NSURLSessionDataDelegate>
 @property (nonatomic, copy) NSArray * dataSource;
@@ -43,57 +43,59 @@
     [super viewDidLoad];
     self.title = @"NetWork";
     
-//    [self xml_parser];
+    //    [self xml_parser];
 }
 
 - (void)session_upload {
-    NSURL * url = [NSURL URLWithString:@"http://localhost:8090/post"];
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
-    request.HTTPMethod = @"POST";
-    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", kBoundary] forHTTPHeaderField:@"Content-Type"];
-    NSURLSessionConfiguration * conf = [NSURLSessionConfiguration defaultSessionConfiguration];
-    conf.allowsCellularAccess = YES;
-    conf.timeoutIntervalForRequest = 15;
-    NSURLSession * session = [NSURLSession sessionWithConfiguration:conf delegate:self delegateQueue:[NSOperationQueue mainQueue]];
 #if 0
-    NSURLSessionUploadTask * task = [session uploadTaskWithRequest:request fromData:nil completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"%@", response.MIMEType); // application/octet-stream
-        NSLog(@"%@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8090/post"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",Kboundary] forHTTPHeaderField:@"Content-Type"];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:[self bodyData] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
     }];
+    [uploadTask resume];
 #endif
-    NSURLSessionUploadTask * task = [session uploadTaskWithStreamedRequest:request];
-    [task resume];
+    
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8090/post"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",Kboundary] forHTTPHeaderField:@"Content-Type"];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:[self bodyData] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    }];
+    [uploadTask resume];
 }
 
-- (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
-    NSLog(@"%f", 1. * totalBytesWritten / totalBytesExpectedToWrite);
+-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
+    NSLog(@"%f",1.0 * totalBytesSent / totalBytesExpectedToSend);
 }
 
 - (NSData *)bodyData {
-    NSMutableData * data = [NSMutableData data];
-    [data appendData:[[NSString stringWithFormat:@"--%@", kBoundary]
-                      dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:kEnter];
+    NSMutableData *data = [NSMutableData data];
+    [data appendData:[[NSString stringWithFormat:@"--%@",Kboundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:KnewLine];
     [data appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"Castie!.png\"" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:kEnter];
+    [data appendData:KnewLine];
     [data appendData:[@"Content-Type: image/png" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:kEnter];
-    [data appendData:kEnter];
-    NSData * imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Avatar"]);
+    [data appendData:KnewLine];
+    [data appendData:KnewLine];
+    NSData * imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Mark"]);
     [data appendData:imageData];
-    [data appendData:kEnter];
+    [data appendData:KnewLine];
     
-    [data appendData:[[NSString stringWithFormat:@"--%@", kBoundary]
-                      dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:kEnter];
+    [data appendData:[[NSString stringWithFormat:@"--%@",Kboundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:KnewLine];
     [data appendData:[@"Content-Disposition: form-data; name=\"username\"" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:kEnter];
-    [data appendData:kEnter];
-    [data appendData:[@"abcdf" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:kEnter];
+    [data appendData:KnewLine];
+    [data appendData:KnewLine];
+    [data appendData:[@"abcdef" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:KnewLine];
     
-    [data appendData:[[NSString stringWithFormat:@"--%@--", kBoundary]
-                      dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[[NSString stringWithFormat:@"--%@--",Kboundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
     return data;
 }

@@ -6,6 +6,9 @@ target 'Network' do
   # use_frameworks!
   pod 'SDWebImage'
   pod 'MJExtension'
+  pod 'SSZipArchive'
+  pod 'AFNetworking'
+  
   # Pods for Network
 
 end

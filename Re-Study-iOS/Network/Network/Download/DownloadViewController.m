@@ -7,11 +7,13 @@
 //
 
 #import "DownloadViewController.h"
+#import <SSZipArchive.h>
+#import <AFNetworking.h>
 
 #define kPath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject] stringByAppendingPathComponent:@"Castie!.gif"]
 #define kSize [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject] stringByAppendingPathComponent:@"Castie!.size"]
 
-@interface DownloadViewController () <NSURLSessionDataDelegate, NSURLSessionDownloadDelegate>
+@interface DownloadViewController () <NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSXMLParserDelegate>
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @property (nonatomic, assign) NSInteger totalSize;
 @property (nonatomic, assign) NSInteger currentSize;
@@ -133,21 +135,127 @@
     if (self.totalSize != 0) {
         self.progressView.progress = 1. * self.currentSize / self.totalSize;
     }
+    [self afn_reachability];
+}
+
+- (void)afn_reachability {
+    AFNetworkReachabilityManager * manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"AFNetworkReachabilityStatusUnknown");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"AFNetworkReachabilityStatusNotReachable");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"AFNetworkReachabilityStatusReachableViaWWAN");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"AFNetworkReachabilityStatusReachableViaWiFi");
+                break;
+        }
+    }];
+    [manager startMonitoring];
+}
+
+- (void)afn_http_parser {
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:@"https://www.baidu.com" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)afn_xml_parser {
+    NSURL * url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"webimage" ofType:@"xml"]];
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    [manager GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        NSXMLParser * parser = (NSXMLParser *)responseObject;
+        parser.delegate = self;
+        [parser parse];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)afn_upload {
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    [manager POST:@"http://localhost:8090/post" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSData * data = UIImagePNGRepresentation([UIImage imageNamed:@"Mark"]);
+        //        [formData appendPartWithFileURL:<#(nonnull NSURL *)#> name:<#(nonnull NSString *)#> fileName:<#(nonnull NSString *)#> mimeType:<#(nonnull NSString *)#> error:<#(NSError *__autoreleasing  _Nullable * _Nullable)#>]
+        [formData appendPartWithFileData:data name:@"file" fileName:@".png" mimeType:@"image/png"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"%f", 1. * uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)afn_download {
+    NSURL * url = [NSURL URLWithString:@"https://github.com/coderZsq/coderZsq.project.ios/blob/master/SQPerformance/contents/step2.gif?raw=true"];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    [[manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"%f", 1. * downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        NSString * fullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:response.suggestedFilename];
+        NSLog(@"%@", targetPath);
+        NSLog(@"%@", fullPath);
+        return [NSURL URLWithString:fullPath];
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        NSLog(@"%@", filePath);
+    }] resume];
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
+    NSLog(@"%@ - %@", elementName, attributeDict);
+}
+
+- (void)afn_post {
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    [manager POST:@"http://localhost:8090/post" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@ - %@", [responseObject class], responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)afn_get {
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    [manager GET:@"http://localhost:8090/get" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@ - %@", [responseObject class], responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)zip {
+    //    [SSZipArchive createZipFileAtPath:<#(nonnull NSString *)#> withFilesAtPaths:<#(nonnull NSArray *)#>]
+    //    [SSZipArchive createZipFileAtPath:<#(nonnull NSString *)#> withContentsOfDirectory:<#(nonnull NSString *)#>]
+    
+    //    [SSZipArchive unzipFileAtPath:<#(nonnull NSString *)#> toDestination:<#(nonnull NSString *)#>]
 }
 
 - (IBAction)startButtonClick:(UIButton *)sender {
-//    [self.dataTask resume];
+    //    [self.dataTask resume];
     [self.downloadTask resume];
 }
 
 - (IBAction)suspendButtonClick:(UIButton *)sender {
-//    [self.dataTask suspend];
+    //    [self.dataTask suspend];
     [self.downloadTask suspend];
 }
 
 - (IBAction)cancelButtonClick:(UIButton *)sender {
-//    [self.dataTask cancel];
-//    [self.downloadTask cancel];
+    //    [self.dataTask cancel];
+    //    [self.downloadTask cancel];
     [self.downloadTask cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
         self.resumeData = resumeData;
     }];
@@ -158,7 +266,7 @@
 }
 
 - (IBAction)resumeButtonClick:(UIButton *)sender {
-//    [self.dataTask resume];
+    //    [self.dataTask resume];
     if (self.resumeData) {
         self.downloadTask = [self.session downloadTaskWithResumeData:self.resumeData];
         self.resumeData = nil;
