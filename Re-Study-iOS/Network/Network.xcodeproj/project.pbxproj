@@ -24,6 +24,11 @@
 		14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */; };
 		14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */; };
 		14D5F532215F7CC2009B7C6C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F531215F7CC2009B7C6C /* Foundation+Log.m */; };
+		14D5F53521607FE3009B7C6C /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53421607FE3009B7C6C /* SecurityViewController.m */; };
+		14D5F538216080AA009B7C6C /* SecurityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D5F537216080AA009B7C6C /* SecurityViewController.storyboard */; };
+		14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53A216096DC009B7C6C /* RSACryptor.m */; };
+		14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53C216096DC009B7C6C /* NSString+Hash.m */; };
+		14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53D216096DC009B7C6C /* EncryptionTools.m */; };
 		14FBE76B215CC36D0009A98B /* webimage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FBE76A215CC36D0009A98B /* webimage.plist */; };
 		7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC29FCBEBDD7E089E507B280 /* libPods-Network.a */; };
 /* End PBXBuildFile section */
@@ -54,6 +59,15 @@
 		14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebImageViewController.m; sourceTree = "<group>"; };
 		14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebImageViewController.storyboard; sourceTree = "<group>"; };
 		14D5F531215F7CC2009B7C6C /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		14D5F53321607FE3009B7C6C /* SecurityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecurityViewController.h; sourceTree = "<group>"; };
+		14D5F53421607FE3009B7C6C /* SecurityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecurityViewController.m; sourceTree = "<group>"; };
+		14D5F537216080AA009B7C6C /* SecurityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecurityViewController.storyboard; sourceTree = "<group>"; };
+		14D5F539216096DC009B7C6C /* RSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSACryptor.h; sourceTree = "<group>"; };
+		14D5F53A216096DC009B7C6C /* RSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSACryptor.m; sourceTree = "<group>"; };
+		14D5F53B216096DC009B7C6C /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		14D5F53C216096DC009B7C6C /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		14D5F53D216096DC009B7C6C /* EncryptionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTools.m; sourceTree = "<group>"; };
+		14D5F53E216096DC009B7C6C /* EncryptionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTools.h; sourceTree = "<group>"; };
 		14FBE76A215CC36D0009A98B /* webimage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webimage.plist; sourceTree = "<group>"; };
 		3BD7389507683D3E083D3AFF /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B6E1CFDED76A020618F6B6 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +111,7 @@
 				148D58B8215F3A850012BDB8 /* DownloadViewController.h */,
 				148D58B9215F3A850012BDB8 /* DownloadViewController.m */,
 				148D58B6215F3A710012BDB8 /* DownloadViewController.storyboard */,
+				14D5F531215F7CC2009B7C6C /* Foundation+Log.m */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -126,11 +141,11 @@
 				14D0BD8D215CBECC00620AF8 /* WebImage */,
 				148D584B215E0CF20012BDB8 /* NetWork */,
 				148D58B3215F390B0012BDB8 /* Download */,
+				14D5F53621607FEF009B7C6C /* Security */,
 				14AC51E3215B407100DF771C /* AppDelegate.h */,
 				14AC51E4215B407100DF771C /* AppDelegate.m */,
 				14AC51E6215B407100DF771C /* ViewController.h */,
 				14AC51E7215B407100DF771C /* ViewController.m */,
-				14D5F531215F7CC2009B7C6C /* Foundation+Log.m */,
 				14AC51E9215B407100DF771C /* Main.storyboard */,
 				14AC51EC215B407300DF771C /* Assets.xcassets */,
 				14AC51EE215B407300DF771C /* LaunchScreen.storyboard */,
@@ -161,6 +176,22 @@
 				148D58AC215F266F0012BDB8 /* webimage.xml */,
 			);
 			path = WebImage;
+			sourceTree = "<group>";
+		};
+		14D5F53621607FEF009B7C6C /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				14D5F53321607FE3009B7C6C /* SecurityViewController.h */,
+				14D5F53421607FE3009B7C6C /* SecurityViewController.m */,
+				14D5F537216080AA009B7C6C /* SecurityViewController.storyboard */,
+				14D5F53E216096DC009B7C6C /* EncryptionTools.h */,
+				14D5F53D216096DC009B7C6C /* EncryptionTools.m */,
+				14D5F53B216096DC009B7C6C /* NSString+Hash.h */,
+				14D5F53C216096DC009B7C6C /* NSString+Hash.m */,
+				14D5F539216096DC009B7C6C /* RSACryptor.h */,
+				14D5F53A216096DC009B7C6C /* RSACryptor.m */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 		CBE33F15B0177C679E7C59B2 /* Frameworks */ = {
@@ -236,6 +267,7 @@
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
 				148D58B7215F3A710012BDB8 /* DownloadViewController.storyboard in Resources */,
 				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
+				14D5F538216080AA009B7C6C /* SecurityViewController.storyboard in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
 				148D58AB215F197B0012BDB8 /* webimage.json in Resources */,
 				14AC51EB215B407100DF771C /* Main.storyboard in Resources */,
@@ -270,11 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */,
 				14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */,
 				148D58BA215F3A850012BDB8 /* DownloadViewController.m in Sources */,
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
+				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
+				14D5F53521607FE3009B7C6C /* SecurityViewController.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
+				14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,
 				14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */,
 				14D5F532215F7CC2009B7C6C /* Foundation+Log.m in Sources */,
