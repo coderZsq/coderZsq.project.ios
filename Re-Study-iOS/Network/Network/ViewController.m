@@ -72,4 +72,44 @@
     return self.dataSource[section][@"titlefooter"];
 }
 
+/*
+ $ svn checkout http:...... --username=... --password=...
+ $ svn status
+ $ svn add ... | *
+ $ svn commit -m "..."
+ */
+
+/*
+ $ svn remove ...
+ $ svn commit -m "..." ...?
+ */
+
+/*
+ $ svn update
+ $ svn log
+ */
+
+/*
+ p | df | mc | tc
+ $ svn resolved ...
+ $ svn commit -m "..." ...?
+ */
+
+/*
+ $ svn revert ...
+ 
+ $ svn update -r..
+ $ svn update
+ $ svn merge -r..:-r.. ...
+ $ svn commit -m "..." ...?
+ */
+
+/*
+ checkout -> co
+ status -> st
+ commit -> ci
+ remove -> rm
+ update -> up
+ */
+
 @end
