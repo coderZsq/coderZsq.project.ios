@@ -118,4 +118,64 @@
  update -> up
  */
 
+/*
+ $ git init
+ $ git config user.name "..."
+ $ git config user.email"..."
+ $ git config --global user.name "..."
+ $ git config --global user.email"..."
+ */
+
+/*
+ $ git status
+ $ git add ... | . //stage
+ $ git commit -m "..." //local branch
+ */
+
+/*
+ $ git config alias.st "status"
+ $ git config alias.ci "commit -m"
+ $ git config --global alias.ci "commit -m"
+*/
+
+/*
+ $ git rm ...
+ $ git commit -m "..."
+ */
+
+/*
+ $ git log
+ $ git reflog
+ */
+
+/*
+ $ git reset --hard HEAD
+ $ git reset --hard HEAD^
+ $ git reset --hard ... (pre 5)
+ */
+
+/*
+ $ git --bare init
+ $ git clone ...
+ $ touch .gitignore
+ $ git add.gitignore
+ $ git commit -m "..."
+ $ git push
+ */
+
+/*
+ $ ssh-keygen -t rsa -b 4096 -C "...@..."
+    .ssh/rsa.pub ->
+ */
+
+/*
+ $ sudo gem update --system
+ $ sudo gem install cocoapods
+ $ pod setup
+ $ pod --version
+ $ pod init
+ $ pod install
+ $ pod update --no-repo-update
+ */
+
 @end
