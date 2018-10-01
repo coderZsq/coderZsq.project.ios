@@ -105,6 +105,12 @@
  */
 
 /*
+ branches/
+ tags/
+ trunk/
+ */
+
+/*
  checkout -> co
  status -> st
  commit -> ci
