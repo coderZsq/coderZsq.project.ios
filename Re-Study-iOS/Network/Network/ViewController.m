@@ -13,6 +13,7 @@
 #import "Download/DownloadViewController.h"
 #import "Security/SecurityViewController.h"
 #import "WebView/WebViewController.h"
+#import "Project/ProjectViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, copy) NSArray * dataSource;
@@ -32,7 +33,10 @@
                                          [SecurityViewController class],
                                          [WebViewController class]],
                           @"titleheader" : @"networking",
-                          @"titlefooter" : @"Some examples of networking learning."}];
+                          @"titlefooter" : @"Some examples of networking learning."},
+                        @{@"classes" : @[[ProjectViewController class]],
+                          @"titleheader" : @"project",
+                          @"titlefooter" : @"A comprehensive exercise of advanced net working project."}];
     }
     return _dataSource;
 }
@@ -61,6 +65,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.dataSource[indexPath.section][@"classes"][indexPath.row] == [ProjectViewController class]) {
+        [self presentViewController:[ProjectViewController new] animated:YES completion:nil];
+        return;
+    }
     [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:NSStringFromClass(self.dataSource[indexPath.section][@"classes"][indexPath.row]) bundle:nil]instantiateInitialViewController] animated:YES];
 }
 

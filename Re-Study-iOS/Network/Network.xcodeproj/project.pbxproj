@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46B1216F223500D3EBA8 /* ProjectViewController.m */; };
+		140A46D0216F2AA100D3EBA8 /* SQEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46CF216F2AA100D3EBA8 /* SQEssenceViewController.m */; };
+		140A46D3216F2AB900D3EBA8 /* SQFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46D2216F2AB900D3EBA8 /* SQFriendTrendsViewController.m */; };
+		140A46D9216F2AD500D3EBA8 /* SQMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46D8216F2AD500D3EBA8 /* SQMeViewController.m */; };
+		140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46DB216F2B2100D3EBA8 /* SQNewViewController.m */; };
+		140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46DE216F2B3600D3EBA8 /* SQPublishViewController.m */; };
+		140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46E1216F35F800D3EBA8 /* UIImage+Render.m */; };
 		14655D6C2160F4B0009133E2 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = 14655D672160F4AF009133E2 /* private.pem */; };
 		14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */ = {isa = PBXBuildFile; fileRef = 14655D682160F4B0009133E2 /* rsacert.csr */; };
 		14655D6E2160F4B0009133E2 /* rsacert.der in Resources */ = {isa = PBXBuildFile; fileRef = 14655D692160F4B0009133E2 /* rsacert.der */; };
@@ -15,6 +22,7 @@
 		14655D732160FEA9009133E2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14655D722160FEA9009133E2 /* WebViewController.m */; };
 		14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14655D752160FECD009133E2 /* WebViewController.storyboard */; };
 		14655D7A21610C04009133E2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14655D7921610C04009133E2 /* WebKit.framework */; };
+		148BC503216F45E100F9E1BE /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */; };
 		148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */; };
 		148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */; };
 		148D58AB215F197B0012BDB8 /* webimage.json in Resources */ = {isa = PBXBuildFile; fileRef = 148D58AA215F197B0012BDB8 /* webimage.json */; };
@@ -42,6 +50,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140A46B0216F223500D3EBA8 /* ProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
+		140A46B1216F223500D3EBA8 /* ProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
+		140A46CE216F2AA100D3EBA8 /* SQEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQEssenceViewController.h; sourceTree = "<group>"; };
+		140A46CF216F2AA100D3EBA8 /* SQEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQEssenceViewController.m; sourceTree = "<group>"; };
+		140A46D1216F2AB900D3EBA8 /* SQFriendTrendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFriendTrendsViewController.h; sourceTree = "<group>"; };
+		140A46D2216F2AB900D3EBA8 /* SQFriendTrendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFriendTrendsViewController.m; sourceTree = "<group>"; };
+		140A46D7216F2AD500D3EBA8 /* SQMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQMeViewController.h; sourceTree = "<group>"; };
+		140A46D8216F2AD500D3EBA8 /* SQMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMeViewController.m; sourceTree = "<group>"; };
+		140A46DA216F2B2100D3EBA8 /* SQNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQNewViewController.h; sourceTree = "<group>"; };
+		140A46DB216F2B2100D3EBA8 /* SQNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQNewViewController.m; sourceTree = "<group>"; };
+		140A46DD216F2B3600D3EBA8 /* SQPublishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQPublishViewController.h; sourceTree = "<group>"; };
+		140A46DE216F2B3600D3EBA8 /* SQPublishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQPublishViewController.m; sourceTree = "<group>"; };
+		140A46E0216F35F800D3EBA8 /* UIImage+Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Render.h"; sourceTree = "<group>"; };
+		140A46E1216F35F800D3EBA8 /* UIImage+Render.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Render.m"; sourceTree = "<group>"; };
 		14655D672160F4AF009133E2 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.pem; sourceTree = "<group>"; };
 		14655D682160F4B0009133E2 /* rsacert.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.csr; sourceTree = "<group>"; };
 		14655D692160F4B0009133E2 /* rsacert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsacert.der; sourceTree = "<group>"; };
@@ -51,6 +73,9 @@
 		14655D722160FEA9009133E2 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		14655D752160FECD009133E2 /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		14655D7921610C04009133E2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		148BC501216F45E100F9E1BE /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
+		148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
+		148BC504216F4C7B00F9E1BE /* Network.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.pch; sourceTree = "<group>"; };
 		148D5848215E0CEB0012BDB8 /* NetWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkViewController.h; sourceTree = "<group>"; };
 		148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkViewController.m; sourceTree = "<group>"; };
 		148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NetWorkViewController.storyboard; sourceTree = "<group>"; };
@@ -104,6 +129,206 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140A46B3216F223900D3EBA8 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				140A46CA216F29D300D3EBA8 /* Essence */,
+				140A46C6216F29D300D3EBA8 /* FriendTrends */,
+				140A46BA216F29D200D3EBA8 /* Me */,
+				140A46BE216F29D200D3EBA8 /* New */,
+				140A46B6216F29D200D3EBA8 /* Publish */,
+				140A46E3216F363800D3EBA8 /* Other */,
+				140A46B0216F223500D3EBA8 /* ProjectViewController.h */,
+				140A46B1216F223500D3EBA8 /* ProjectViewController.m */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		140A46B6216F29D200D3EBA8 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				140A46B7216F29D200D3EBA8 /* Controller */,
+				140A46B8216F29D200D3EBA8 /* Model */,
+				140A46B9216F29D200D3EBA8 /* View */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		140A46B7216F29D200D3EBA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				140A46DD216F2B3600D3EBA8 /* SQPublishViewController.h */,
+				140A46DE216F2B3600D3EBA8 /* SQPublishViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		140A46B8216F29D200D3EBA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		140A46B9216F29D200D3EBA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		140A46BA216F29D200D3EBA8 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				140A46BB216F29D200D3EBA8 /* Controller */,
+				140A46BC216F29D200D3EBA8 /* Model */,
+				140A46BD216F29D200D3EBA8 /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		140A46BB216F29D200D3EBA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				140A46D7216F2AD500D3EBA8 /* SQMeViewController.h */,
+				140A46D8216F2AD500D3EBA8 /* SQMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		140A46BC216F29D200D3EBA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		140A46BD216F29D200D3EBA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		140A46BE216F29D200D3EBA8 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				140A46BF216F29D200D3EBA8 /* Controller */,
+				140A46C0216F29D200D3EBA8 /* Model */,
+				140A46C1216F29D200D3EBA8 /* View */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		140A46BF216F29D200D3EBA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				140A46DA216F2B2100D3EBA8 /* SQNewViewController.h */,
+				140A46DB216F2B2100D3EBA8 /* SQNewViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		140A46C0216F29D200D3EBA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		140A46C1216F29D200D3EBA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		140A46C6216F29D300D3EBA8 /* FriendTrends */ = {
+			isa = PBXGroup;
+			children = (
+				140A46C7216F29D300D3EBA8 /* Controller */,
+				140A46C8216F29D300D3EBA8 /* Model */,
+				140A46C9216F29D300D3EBA8 /* View */,
+			);
+			path = FriendTrends;
+			sourceTree = "<group>";
+		};
+		140A46C7216F29D300D3EBA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				140A46D1216F2AB900D3EBA8 /* SQFriendTrendsViewController.h */,
+				140A46D2216F2AB900D3EBA8 /* SQFriendTrendsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		140A46C8216F29D300D3EBA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		140A46C9216F29D300D3EBA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		140A46CA216F29D300D3EBA8 /* Essence */ = {
+			isa = PBXGroup;
+			children = (
+				140A46CB216F29D300D3EBA8 /* Controller */,
+				140A46CC216F29D300D3EBA8 /* Model */,
+				140A46CD216F29D300D3EBA8 /* View */,
+			);
+			path = Essence;
+			sourceTree = "<group>";
+		};
+		140A46CB216F29D300D3EBA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				140A46CE216F2AA100D3EBA8 /* SQEssenceViewController.h */,
+				140A46CF216F2AA100D3EBA8 /* SQEssenceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		140A46CC216F29D300D3EBA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		140A46CD216F29D300D3EBA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		140A46E3216F363800D3EBA8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				140A46E4216F364B00D3EBA8 /* Category */,
+				148BC504216F4C7B00F9E1BE /* Network.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		140A46E4216F364B00D3EBA8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				140A46E0216F35F800D3EBA8 /* UIImage+Render.h */,
+				140A46E1216F35F800D3EBA8 /* UIImage+Render.m */,
+				148BC501216F45E100F9E1BE /* UIBarButtonItem+Item.h */,
+				148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		14655D742160FEAE009133E2 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +396,7 @@
 				148D58B3215F390B0012BDB8 /* Download */,
 				14D5F53621607FEF009B7C6C /* Security */,
 				14655D742160FEAE009133E2 /* WebView */,
+				140A46B3216F223900D3EBA8 /* Project */,
 				14AC51E3215B407100DF771C /* AppDelegate.h */,
 				14AC51E4215B407100DF771C /* AppDelegate.m */,
 				14AC51E6215B407100DF771C /* ViewController.h */,
@@ -264,6 +490,7 @@
 		14AC51D8215B407100DF771C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SQ;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Castie!";
 				TargetAttributes = {
@@ -343,18 +570,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140A46D9216F2AD500D3EBA8 /* SQMeViewController.m in Sources */,
 				14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */,
 				14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */,
 				148D58BA215F3A850012BDB8 /* DownloadViewController.m in Sources */,
+				140A46D0216F2AA100D3EBA8 /* SQEssenceViewController.m in Sources */,
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
 				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
+				140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */,
 				14D5F53521607FE3009B7C6C /* SecurityViewController.m in Sources */,
+				140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */,
+				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
 				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
+				140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
+				140A46D3216F2AB900D3EBA8 /* SQFriendTrendsViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,
 				14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */,
+				148BC503216F45E100F9E1BE /* UIBarButtonItem+Item.m in Sources */,
 				14D5F532215F7CC2009B7C6C /* Foundation+Log.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = Network/Project/Other/Network.pch;
 				INFOPLIST_FILE = Network/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,6 +752,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = Network/Project/Other/Network.pch;
 				INFOPLIST_FILE = Network/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
