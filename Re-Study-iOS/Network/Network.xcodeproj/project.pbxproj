@@ -46,6 +46,21 @@
 		14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53C216096DC009B7C6C /* NSString+Hash.m */; };
 		14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53D216096DC009B7C6C /* EncryptionTools.m */; };
 		14FBE76B215CC36D0009A98B /* webimage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FBE76A215CC36D0009A98B /* webimage.plist */; };
+		14FF2C852170519600AA000E /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C822170519600AA000E /* SQNavigationController.m */; };
+		14FF2C8C217051B500AA000E /* SQSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C8B217051B500AA000E /* SQSettingViewController.m */; };
+		14FF2C8F217055DE00AA000E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C8E217055DE00AA000E /* UIView+Frame.m */; };
+		14FF2C922170588000AA000E /* SQNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C912170588000AA000E /* SQNavigationBar.m */; };
+		14FF2C9521705CF000AA000E /* SQBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C9421705CF000AA000E /* SQBackView.m */; };
+		14FF2CA1217074B700AA000E /* SQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2CA0217074B700AA000E /* SQTabBarController.m */; };
+		14FF2CAA2170778900AA000E /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA32170778900AA000E /* LaunchImage@2x.png */; };
+		14FF2CAB2170778900AA000E /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA42170778900AA000E /* LaunchImage-568h@2x.png */; };
+		14FF2CAC2170778900AA000E /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA52170778900AA000E /* LaunchImage-800-667h@2x.png */; };
+		14FF2CAD2170778900AA000E /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA62170778900AA000E /* LaunchImage-800-Portrait-736h@3x.png */; };
+		14FF2CAE2170778900AA000E /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA72170778900AA000E /* LaunchImage-700@2x.png */; };
+		14FF2CAF2170778900AA000E /* LaunchImage-700-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA82170778900AA000E /* LaunchImage-700-568h@2x.png */; };
+		14FF2CB02170778900AA000E /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA92170778900AA000E /* LaunchImage.png */; };
+		14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2CB22170792600AA000E /* SQAdViewController.m */; };
+		14FF2CB721707A8D00AA000E /* SQAdViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CB621707A8D00AA000E /* SQAdViewController.storyboard */; };
 		7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC29FCBEBDD7E089E507B280 /* libPods-Network.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +126,28 @@
 		14D5F53D216096DC009B7C6C /* EncryptionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTools.m; sourceTree = "<group>"; };
 		14D5F53E216096DC009B7C6C /* EncryptionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTools.h; sourceTree = "<group>"; };
 		14FBE76A215CC36D0009A98B /* webimage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webimage.plist; sourceTree = "<group>"; };
+		14FF2C812170519600AA000E /* SQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNavigationController.h; sourceTree = "<group>"; };
+		14FF2C822170519600AA000E /* SQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNavigationController.m; sourceTree = "<group>"; };
+		14FF2C8A217051B500AA000E /* SQSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSettingViewController.h; sourceTree = "<group>"; };
+		14FF2C8B217051B500AA000E /* SQSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSettingViewController.m; sourceTree = "<group>"; };
+		14FF2C8D217055DE00AA000E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		14FF2C8E217055DE00AA000E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		14FF2C902170588000AA000E /* SQNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQNavigationBar.h; sourceTree = "<group>"; };
+		14FF2C912170588000AA000E /* SQNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQNavigationBar.m; sourceTree = "<group>"; };
+		14FF2C9321705CF000AA000E /* SQBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQBackView.h; sourceTree = "<group>"; };
+		14FF2C9421705CF000AA000E /* SQBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQBackView.m; sourceTree = "<group>"; };
+		14FF2C9F217074B700AA000E /* SQTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTabBarController.h; sourceTree = "<group>"; };
+		14FF2CA0217074B700AA000E /* SQTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTabBarController.m; sourceTree = "<group>"; };
+		14FF2CA32170778900AA000E /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		14FF2CA42170778900AA000E /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
+		14FF2CA52170778900AA000E /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
+		14FF2CA62170778900AA000E /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		14FF2CA72170778900AA000E /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
+		14FF2CA82170778900AA000E /* LaunchImage-700-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700-568h@2x.png"; sourceTree = "<group>"; };
+		14FF2CA92170778900AA000E /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		14FF2CB12170792600AA000E /* SQAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAdViewController.h; sourceTree = "<group>"; };
+		14FF2CB22170792600AA000E /* SQAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAdViewController.m; sourceTree = "<group>"; };
+		14FF2CB621707A8D00AA000E /* SQAdViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQAdViewController.storyboard; sourceTree = "<group>"; };
 		3BD7389507683D3E083D3AFF /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B6E1CFDED76A020618F6B6 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
 		EC29FCBEBDD7E089E507B280 /* libPods-Network.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Network.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,12 +169,16 @@
 		140A46B3216F223900D3EBA8 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				14FF2C962170714700AA000E /* Ad */,
 				140A46CA216F29D300D3EBA8 /* Essence */,
-				140A46C6216F29D300D3EBA8 /* FriendTrends */,
-				140A46BA216F29D200D3EBA8 /* Me */,
 				140A46BE216F29D200D3EBA8 /* New */,
 				140A46B6216F29D200D3EBA8 /* Publish */,
+				140A46C6216F29D300D3EBA8 /* FriendTrends */,
+				140A46BA216F29D200D3EBA8 /* Me */,
+				14FF2C86217051A100AA000E /* Setting */,
+				14FF2C7F2170519600AA000E /* Main */,
 				140A46E3216F363800D3EBA8 /* Other */,
+				14FF2CA22170778900AA000E /* LaunchImage */,
 				140A46B0216F223500D3EBA8 /* ProjectViewController.h */,
 				140A46B1216F223500D3EBA8 /* ProjectViewController.m */,
 			);
@@ -321,6 +362,8 @@
 		140A46E4216F364B00D3EBA8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				14FF2C8D217055DE00AA000E /* UIView+Frame.h */,
+				14FF2C8E217055DE00AA000E /* UIView+Frame.m */,
 				140A46E0216F35F800D3EBA8 /* UIImage+Render.h */,
 				140A46E1216F35F800D3EBA8 /* UIImage+Render.m */,
 				148BC501216F45E100F9E1BE /* UIBarButtonItem+Item.h */,
@@ -454,6 +497,126 @@
 			path = Security;
 			sourceTree = "<group>";
 		};
+		14FF2C7F2170519600AA000E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2C802170519600AA000E /* Controller */,
+				14FF2C832170519600AA000E /* Model */,
+				14FF2C842170519600AA000E /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		14FF2C802170519600AA000E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2C9F217074B700AA000E /* SQTabBarController.h */,
+				14FF2CA0217074B700AA000E /* SQTabBarController.m */,
+				14FF2C812170519600AA000E /* SQNavigationController.h */,
+				14FF2C822170519600AA000E /* SQNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14FF2C832170519600AA000E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14FF2C842170519600AA000E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2C902170588000AA000E /* SQNavigationBar.h */,
+				14FF2C912170588000AA000E /* SQNavigationBar.m */,
+				14FF2C9321705CF000AA000E /* SQBackView.h */,
+				14FF2C9421705CF000AA000E /* SQBackView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14FF2C86217051A100AA000E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2C87217051A100AA000E /* Controller */,
+				14FF2C88217051A100AA000E /* Model */,
+				14FF2C89217051A100AA000E /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		14FF2C87217051A100AA000E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2C8A217051B500AA000E /* SQSettingViewController.h */,
+				14FF2C8B217051B500AA000E /* SQSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14FF2C88217051A100AA000E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14FF2C89217051A100AA000E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14FF2C962170714700AA000E /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2C972170714700AA000E /* Controller */,
+				14FF2C982170714700AA000E /* Model */,
+				14FF2C992170714700AA000E /* View */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
+		14FF2C972170714700AA000E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2CB12170792600AA000E /* SQAdViewController.h */,
+				14FF2CB22170792600AA000E /* SQAdViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14FF2C982170714700AA000E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14FF2C992170714700AA000E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2CB621707A8D00AA000E /* SQAdViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14FF2CA22170778900AA000E /* LaunchImage */ = {
+			isa = PBXGroup;
+			children = (
+				14FF2CA32170778900AA000E /* LaunchImage@2x.png */,
+				14FF2CA42170778900AA000E /* LaunchImage-568h@2x.png */,
+				14FF2CA52170778900AA000E /* LaunchImage-800-667h@2x.png */,
+				14FF2CA62170778900AA000E /* LaunchImage-800-Portrait-736h@3x.png */,
+				14FF2CA72170778900AA000E /* LaunchImage-700@2x.png */,
+				14FF2CA82170778900AA000E /* LaunchImage-700-568h@2x.png */,
+				14FF2CA92170778900AA000E /* LaunchImage.png */,
+			);
+			path = LaunchImage;
+			sourceTree = "<group>";
+		};
 		CBE33F15B0177C679E7C59B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,20 +687,28 @@
 			files = (
 				148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */,
 				148D58AD215F266F0012BDB8 /* webimage.xml in Resources */,
+				14FF2CAF2170778900AA000E /* LaunchImage-700-568h@2x.png in Resources */,
+				14FF2CAB2170778900AA000E /* LaunchImage-568h@2x.png in Resources */,
 				14AC51F0215B407300DF771C /* LaunchScreen.storyboard in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */,
+				14FF2CAE2170778900AA000E /* LaunchImage-700@2x.png in Resources */,
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
+				14FF2CAA2170778900AA000E /* LaunchImage@2x.png in Resources */,
 				14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */,
 				14655D702160F4B0009133E2 /* p.p12 in Resources */,
 				148D58B7215F3A710012BDB8 /* DownloadViewController.storyboard in Resources */,
 				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
+				14FF2CB721707A8D00AA000E /* SQAdViewController.storyboard in Resources */,
 				14655D6E2160F4B0009133E2 /* rsacert.der in Resources */,
 				14D5F538216080AA009B7C6C /* SecurityViewController.storyboard in Resources */,
 				14655D6F2160F4B0009133E2 /* rsacert.crt in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
 				148D58AB215F197B0012BDB8 /* webimage.json in Resources */,
+				14FF2CAD2170778900AA000E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
+				14FF2CB02170778900AA000E /* LaunchImage.png in Resources */,
 				14655D6C2160F4B0009133E2 /* private.pem in Resources */,
+				14FF2CAC2170778900AA000E /* LaunchImage-800-667h@2x.png in Resources */,
 				14AC51EB215B407100DF771C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,13 +744,19 @@
 				140A46D9216F2AD500D3EBA8 /* SQMeViewController.m in Sources */,
 				14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */,
 				14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */,
+				14FF2CA1217074B700AA000E /* SQTabBarController.m in Sources */,
 				148D58BA215F3A850012BDB8 /* DownloadViewController.m in Sources */,
+				14FF2C8C217051B500AA000E /* SQSettingViewController.m in Sources */,
 				140A46D0216F2AA100D3EBA8 /* SQEssenceViewController.m in Sources */,
+				14FF2C8F217055DE00AA000E /* UIView+Frame.m in Sources */,
+				14FF2C9521705CF000AA000E /* SQBackView.m in Sources */,
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
 				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
 				140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */,
 				14D5F53521607FE3009B7C6C /* SecurityViewController.m in Sources */,
+				14FF2C922170588000AA000E /* SQNavigationBar.m in Sources */,
 				140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */,
+				14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */,
 				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
 				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
 				140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */,
@@ -587,6 +764,7 @@
 				140A46D3216F2AB900D3EBA8 /* SQFriendTrendsViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */,
+				14FF2C852170519600AA000E /* SQNavigationController.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,
 				14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */,
 				148BC503216F45E100F9E1BE /* UIBarButtonItem+Item.m in Sources */,

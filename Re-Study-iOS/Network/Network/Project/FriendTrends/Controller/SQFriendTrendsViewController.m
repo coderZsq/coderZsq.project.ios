@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"FriendTrends";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"friendsRecommentIcon"] highlightImage:[UIImage imageNamed:@"friendsRecommentIcon-click"] target:nil action:nil];
+//    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:20]};
 }
 
 @end

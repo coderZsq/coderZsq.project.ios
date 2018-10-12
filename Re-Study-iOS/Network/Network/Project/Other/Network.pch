@@ -12,13 +12,12 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "UIBarButtonItem+Item.h"
+#import "UIView+Frame.h"
 
 #ifdef DEBUG
 #define NSLog(...) NSLog(__VA_ARGS__)
 #else
 #define NSLog(...)
 #endif
-
-#define Log NSLog(@"%s", __func__);
 
 #endif /* Network_pch */

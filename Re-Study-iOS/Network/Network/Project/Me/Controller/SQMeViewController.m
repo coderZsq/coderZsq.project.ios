@@ -7,6 +7,7 @@
 //
 
 #import "SQMeViewController.h"
+#import "SQSettingViewController.h"
 
 @interface SQMeViewController ()
 
@@ -17,11 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Me";
-    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-setting-icon"] highlightImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:nil action:nil], [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-moon-icon"] selectImage:[UIImage imageNamed:@"mine-moon-icon-click"] target:self action:@selector(moonBarButtonClick:)]];
+    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-setting-icon"] highlightImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(settingBarButtonClick:)], [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-moon-icon"] selectImage:[UIImage imageNamed:@"mine-moon-icon-click"] target:self action:@selector(moonBarButtonClick:)]];
 }
 
 - (void)moonBarButtonClick:(UIButton *)sender {
     sender.selected = !sender.selected;
+}
+
+- (void)settingBarButtonClick:(UIButton *)sender {
+    [self.navigationController pushViewController:[SQSettingViewController new] animated:YES];
 }
 
 @end

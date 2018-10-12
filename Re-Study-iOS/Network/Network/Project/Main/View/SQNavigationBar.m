@@ -7,15 +7,18 @@
 //
 
 #import "SQNavigationBar.h"
+#import "SQBackView.h"
 
 @implementation SQNavigationBar
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    for (UIView * view in self.subviews) {
+        NSLog(@"%@", view);
+        if ([view isKindOfClass:[SQBackView class]]) {
+            view.x = 0;
+        }
+    }
 }
-*/
 
 @end

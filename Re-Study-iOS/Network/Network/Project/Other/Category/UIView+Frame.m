@@ -6,7 +6,7 @@
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import "UIView+SQFrame.h"
+#import "UIView+Frame.h"
 
 @implementation UIView (Frame)
 

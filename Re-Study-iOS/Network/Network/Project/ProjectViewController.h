@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProjectViewController : UITabBarController
+@interface ProjectViewController : UIViewController
 
 @end
 
