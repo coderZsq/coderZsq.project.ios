@@ -25,16 +25,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBz-9J-hBL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBz-9J-hBL">
                                 <rect key="frame" x="305" y="20" width="60" height="25"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="sSF-F8-A70"/>
                                     <constraint firstAttribute="height" constant="25" id="tmf-3W-jHD"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Skip (3)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipButtonClick:" destination="jYA-nX-OHz" eventType="touchUpInside" id="HW0-Qc-bnQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97226215500000002" green="0.96756523640000003" blue="0.97695907360000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -52,6 +56,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3iY-Km-pGN"/>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="gtQ-8F-LhG" id="twP-id-4yU"/>
+                        <outlet property="skipButton" destination="BBz-9J-hBL" id="kwT-Z4-PsV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oa-N9-Ii0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

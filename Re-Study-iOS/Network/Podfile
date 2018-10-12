@@ -8,6 +8,7 @@ target 'Network' do
   pod 'MJExtension'
   pod 'SSZipArchive'
   pod 'AFNetworking'
+  pod 'Aspects'
   
   # Pods for Network
 

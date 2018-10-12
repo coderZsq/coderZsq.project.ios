@@ -7,7 +7,6 @@
 //
 
 #import "ProjectViewController.h"
-#import "Main/Controller/SQTabBarController.h"
 
 @interface ProjectViewController ()
 @property (nonatomic, strong) UIViewController * rootViewController;
@@ -30,12 +29,6 @@
 
 - (void)setRootViewController:(UIViewController *)rootViewController {
     _rootViewController = rootViewController;
-    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj performSelector:@selector(removeFromSuperview)];
-    }];
-    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj performSelector:@selector(removeFromParentViewController)];
-    }];
     [self.view addSubview:rootViewController.view];
     [self addChildViewController:rootViewController];
 }

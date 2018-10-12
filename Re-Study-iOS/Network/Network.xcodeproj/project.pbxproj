@@ -22,6 +22,7 @@
 		14655D732160FEA9009133E2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14655D722160FEA9009133E2 /* WebViewController.m */; };
 		14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14655D752160FECD009133E2 /* WebViewController.storyboard */; };
 		14655D7A21610C04009133E2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14655D7921610C04009133E2 /* WebKit.framework */; };
+		14663C7A217099D9005597A2 /* SQAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14663C79217099D9005597A2 /* SQAdItem.m */; };
 		148BC503216F45E100F9E1BE /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */; };
 		148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */; };
 		148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */; };
@@ -61,6 +62,7 @@
 		14FF2CB02170778900AA000E /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CA92170778900AA000E /* LaunchImage.png */; };
 		14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2CB22170792600AA000E /* SQAdViewController.m */; };
 		14FF2CB721707A8D00AA000E /* SQAdViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CB621707A8D00AA000E /* SQAdViewController.storyboard */; };
+		14FF2CBA2170940500AA000E /* AFJSONResponseSerializer+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2CB92170940500AA000E /* AFJSONResponseSerializer+Hook.m */; };
 		7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC29FCBEBDD7E089E507B280 /* libPods-Network.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		14655D722160FEA9009133E2 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		14655D752160FECD009133E2 /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		14655D7921610C04009133E2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		14663C78217099D9005597A2 /* SQAdItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAdItem.h; sourceTree = "<group>"; };
+		14663C79217099D9005597A2 /* SQAdItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAdItem.m; sourceTree = "<group>"; };
 		148BC501216F45E100F9E1BE /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
 		148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
 		148BC504216F4C7B00F9E1BE /* Network.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.pch; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 		14FF2CB12170792600AA000E /* SQAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAdViewController.h; sourceTree = "<group>"; };
 		14FF2CB22170792600AA000E /* SQAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAdViewController.m; sourceTree = "<group>"; };
 		14FF2CB621707A8D00AA000E /* SQAdViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQAdViewController.storyboard; sourceTree = "<group>"; };
+		14FF2CB82170940500AA000E /* AFJSONResponseSerializer+Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFJSONResponseSerializer+Hook.h"; sourceTree = "<group>"; };
+		14FF2CB92170940500AA000E /* AFJSONResponseSerializer+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFJSONResponseSerializer+Hook.m"; sourceTree = "<group>"; };
 		3BD7389507683D3E083D3AFF /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B6E1CFDED76A020618F6B6 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
 		EC29FCBEBDD7E089E507B280 /* libPods-Network.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Network.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -368,6 +374,8 @@
 				140A46E1216F35F800D3EBA8 /* UIImage+Render.m */,
 				148BC501216F45E100F9E1BE /* UIBarButtonItem+Item.h */,
 				148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */,
+				14FF2CB82170940500AA000E /* AFJSONResponseSerializer+Hook.h */,
+				14FF2CB92170940500AA000E /* AFJSONResponseSerializer+Hook.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -591,6 +599,8 @@
 		14FF2C982170714700AA000E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14663C78217099D9005597A2 /* SQAdItem.h */,
+				14663C79217099D9005597A2 /* SQAdItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -747,6 +757,8 @@
 				14FF2CA1217074B700AA000E /* SQTabBarController.m in Sources */,
 				148D58BA215F3A850012BDB8 /* DownloadViewController.m in Sources */,
 				14FF2C8C217051B500AA000E /* SQSettingViewController.m in Sources */,
+				14FF2CBA2170940500AA000E /* AFJSONResponseSerializer+Hook.m in Sources */,
+				14663C7A217099D9005597A2 /* SQAdItem.m in Sources */,
 				140A46D0216F2AA100D3EBA8 /* SQEssenceViewController.m in Sources */,
 				14FF2C8F217055DE00AA000E /* UIView+Frame.m in Sources */,
 				14FF2C9521705CF000AA000E /* SQBackView.m in Sources */,
