@@ -14,6 +14,8 @@
 #import "UIBarButtonItem+Item.h"
 #import "UIView+Frame.h"
 
+#define BaseURL @"http://api.budejie.com/api/api_open.php"
+
 #ifdef DEBUG
 #define NSLog(...) NSLog(__VA_ARGS__)
 #else

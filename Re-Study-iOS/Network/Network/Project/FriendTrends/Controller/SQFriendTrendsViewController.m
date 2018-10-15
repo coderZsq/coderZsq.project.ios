@@ -21,4 +21,8 @@
 //    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:20]};
 }
 
+- (IBAction)loginButtonClick:(UIButton *)sender {
+    [self presentViewController:[[UIStoryboard storyboardWithName:@"SQLoginViewController" bundle:nil] instantiateInitialViewController] animated:YES completion:nil];
+}
+
 @end

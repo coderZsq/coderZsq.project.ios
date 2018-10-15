@@ -7,6 +7,7 @@
 //
 
 #import "SQNewViewController.h"
+#import "SQSubTagViewController.h"
 
 @interface SQNewViewController ()
 
@@ -17,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"MainTagSubIcon"] highlightImage:[UIImage imageNamed:@"MainTagSubIconClick"] target:nil action:nil];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"MainTagSubIcon"] highlightImage:[UIImage imageNamed:@"MainTagSubIconClick"] target:self action:@selector(subTagBarButtonClick:)];
+}
+
+- (void)subTagBarButtonClick:(UIButton *)sender {
+    [self.navigationController pushViewController:[SQSubTagViewController new] animated:YES];
 }
 
 @end

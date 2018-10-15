@@ -32,7 +32,7 @@
         NSDictionary * ad = [responseObject[@"ad"] firstObject];
         SQAdItem * item = [SQAdItem mj_objectWithKeyValues:ad];
         UIImageView * imageView = [UIImageView new];
-        imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width / item.w * item.h);
+        imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, item.w ? [UIScreen mainScreen].bounds.size.width / item.w * item.h : 0);
         [imageView sd_setImageWithURL:[NSURL URLWithString:item.w_picurl]];
         [self.contentView addSubview:imageView];
         self.item = item;

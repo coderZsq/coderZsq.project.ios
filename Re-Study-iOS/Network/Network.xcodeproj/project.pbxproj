@@ -63,6 +63,15 @@
 		14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2CB22170792600AA000E /* SQAdViewController.m */; };
 		14FF2CB721707A8D00AA000E /* SQAdViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FF2CB621707A8D00AA000E /* SQAdViewController.storyboard */; };
 		14FF2CBA2170940500AA000E /* AFJSONResponseSerializer+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2CB92170940500AA000E /* AFJSONResponseSerializer+Hook.m */; };
+		14FF489E217430C80021E869 /* SQSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF489D217430C80021E869 /* SQSubTagViewController.m */; };
+		14FF48A12174330C0021E869 /* SQSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF48A02174330C0021E869 /* SQSubTagItem.m */; };
+		14FF48A52174382D0021E869 /* SQSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF48A32174382D0021E869 /* SQSubTagCell.m */; };
+		14FF48A62174382D0021E869 /* SQSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FF48A42174382D0021E869 /* SQSubTagCell.xib */; };
+		14FF48A8217466080021E869 /* SQFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FF48A7217466080021E869 /* SQFriendTrendsViewController.xib */; };
+		14FF48AB2174682B0021E869 /* SQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF48AA2174682B0021E869 /* SQLoginViewController.m */; };
+		14FF48AD2174683E0021E869 /* SQLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FF48AC2174683E0021E869 /* SQLoginViewController.storyboard */; };
+		14FF48B021746D8F0021E869 /* SQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF48AF21746D8F0021E869 /* SQLoginRegisterView.m */; };
+		14FF48B221746D970021E869 /* SQLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FF48B121746D970021E869 /* SQLoginRegisterView.xib */; };
 		7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC29FCBEBDD7E089E507B280 /* libPods-Network.a */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +163,20 @@
 		14FF2CB621707A8D00AA000E /* SQAdViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQAdViewController.storyboard; sourceTree = "<group>"; };
 		14FF2CB82170940500AA000E /* AFJSONResponseSerializer+Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFJSONResponseSerializer+Hook.h"; sourceTree = "<group>"; };
 		14FF2CB92170940500AA000E /* AFJSONResponseSerializer+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFJSONResponseSerializer+Hook.m"; sourceTree = "<group>"; };
+		14FF489C217430C80021E869 /* SQSubTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSubTagViewController.h; sourceTree = "<group>"; };
+		14FF489D217430C80021E869 /* SQSubTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSubTagViewController.m; sourceTree = "<group>"; };
+		14FF489F2174330C0021E869 /* SQSubTagItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSubTagItem.h; sourceTree = "<group>"; };
+		14FF48A02174330C0021E869 /* SQSubTagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSubTagItem.m; sourceTree = "<group>"; };
+		14FF48A22174382D0021E869 /* SQSubTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSubTagCell.h; sourceTree = "<group>"; };
+		14FF48A32174382D0021E869 /* SQSubTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSubTagCell.m; sourceTree = "<group>"; };
+		14FF48A42174382D0021E869 /* SQSubTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQSubTagCell.xib; sourceTree = "<group>"; };
+		14FF48A7217466080021E869 /* SQFriendTrendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQFriendTrendsViewController.xib; sourceTree = "<group>"; };
+		14FF48A92174682B0021E869 /* SQLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginViewController.h; sourceTree = "<group>"; };
+		14FF48AA2174682B0021E869 /* SQLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginViewController.m; sourceTree = "<group>"; };
+		14FF48AC2174683E0021E869 /* SQLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQLoginViewController.storyboard; sourceTree = "<group>"; };
+		14FF48AE21746D8F0021E869 /* SQLoginRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginRegisterView.h; sourceTree = "<group>"; };
+		14FF48AF21746D8F0021E869 /* SQLoginRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginRegisterView.m; sourceTree = "<group>"; };
+		14FF48B121746D970021E869 /* SQLoginRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQLoginRegisterView.xib; sourceTree = "<group>"; };
 		3BD7389507683D3E083D3AFF /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B6E1CFDED76A020618F6B6 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
 		EC29FCBEBDD7E089E507B280 /* libPods-Network.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Network.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +295,8 @@
 			children = (
 				140A46DA216F2B2100D3EBA8 /* SQNewViewController.h */,
 				140A46DB216F2B2100D3EBA8 /* SQNewViewController.m */,
+				14FF489C217430C80021E869 /* SQSubTagViewController.h */,
+				14FF489D217430C80021E869 /* SQSubTagViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +304,8 @@
 		140A46C0216F29D200D3EBA8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14FF489F2174330C0021E869 /* SQSubTagItem.h */,
+				14FF48A02174330C0021E869 /* SQSubTagItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,6 +313,9 @@
 		140A46C1216F29D200D3EBA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14FF48A22174382D0021E869 /* SQSubTagCell.h */,
+				14FF48A32174382D0021E869 /* SQSubTagCell.m */,
+				14FF48A42174382D0021E869 /* SQSubTagCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +335,8 @@
 			children = (
 				140A46D1216F2AB900D3EBA8 /* SQFriendTrendsViewController.h */,
 				140A46D2216F2AB900D3EBA8 /* SQFriendTrendsViewController.m */,
+				14FF48A92174682B0021E869 /* SQLoginViewController.h */,
+				14FF48AA2174682B0021E869 /* SQLoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -319,6 +351,11 @@
 		140A46C9216F29D300D3EBA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14FF48A7217466080021E869 /* SQFriendTrendsViewController.xib */,
+				14FF48AC2174683E0021E869 /* SQLoginViewController.storyboard */,
+				14FF48AE21746D8F0021E869 /* SQLoginRegisterView.h */,
+				14FF48AF21746D8F0021E869 /* SQLoginRegisterView.m */,
+				14FF48B121746D970021E869 /* SQLoginRegisterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -647,6 +684,7 @@
 				14AC51DC215B407100DF771C /* Sources */,
 				14AC51DD215B407100DF771C /* Frameworks */,
 				14AC51DE215B407100DF771C /* Resources */,
+				2BCF49E767F5A4BDA02D4875 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -697,9 +735,11 @@
 			files = (
 				148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */,
 				148D58AD215F266F0012BDB8 /* webimage.xml in Resources */,
+				14FF48AD2174683E0021E869 /* SQLoginViewController.storyboard in Resources */,
 				14FF2CAF2170778900AA000E /* LaunchImage-700-568h@2x.png in Resources */,
 				14FF2CAB2170778900AA000E /* LaunchImage-568h@2x.png in Resources */,
 				14AC51F0215B407300DF771C /* LaunchScreen.storyboard in Resources */,
+				14FF48B221746D970021E869 /* SQLoginRegisterView.xib in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */,
 				14FF2CAE2170778900AA000E /* LaunchImage-700@2x.png in Resources */,
@@ -714,12 +754,14 @@
 				14D5F538216080AA009B7C6C /* SecurityViewController.storyboard in Resources */,
 				14655D6F2160F4B0009133E2 /* rsacert.crt in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
+				14FF48A62174382D0021E869 /* SQSubTagCell.xib in Resources */,
 				148D58AB215F197B0012BDB8 /* webimage.json in Resources */,
 				14FF2CAD2170778900AA000E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				14FF2CB02170778900AA000E /* LaunchImage.png in Resources */,
 				14655D6C2160F4B0009133E2 /* private.pem in Resources */,
 				14FF2CAC2170778900AA000E /* LaunchImage-800-667h@2x.png in Resources */,
 				14AC51EB215B407100DF771C /* Main.storyboard in Resources */,
+				14FF48A8217466080021E869 /* SQFriendTrendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +786,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2BCF49E767F5A4BDA02D4875 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Network/Pods-Network-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Network/Pods-Network-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -752,7 +812,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				140A46D9216F2AD500D3EBA8 /* SQMeViewController.m in Sources */,
+				14FF48A52174382D0021E869 /* SQSubTagCell.m in Sources */,
 				14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */,
+				14FF48A12174330C0021E869 /* SQSubTagItem.m in Sources */,
 				14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */,
 				14FF2CA1217074B700AA000E /* SQTabBarController.m in Sources */,
 				148D58BA215F3A850012BDB8 /* DownloadViewController.m in Sources */,
@@ -765,7 +827,9 @@
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
 				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
 				140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */,
+				14FF48AB2174682B0021E869 /* SQLoginViewController.m in Sources */,
 				14D5F53521607FE3009B7C6C /* SecurityViewController.m in Sources */,
+				14FF48B021746D8F0021E869 /* SQLoginRegisterView.m in Sources */,
 				14FF2C922170588000AA000E /* SQNavigationBar.m in Sources */,
 				140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */,
 				14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */,
@@ -774,6 +838,7 @@
 				140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				140A46D3216F2AB900D3EBA8 /* SQFriendTrendsViewController.m in Sources */,
+				14FF489E217430C80021E869 /* SQSubTagViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */,
 				14FF2C852170519600AA000E /* SQNavigationController.m in Sources */,
