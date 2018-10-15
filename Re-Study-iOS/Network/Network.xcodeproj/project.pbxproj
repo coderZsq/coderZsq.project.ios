@@ -25,6 +25,10 @@
 		14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14655D752160FECD009133E2 /* WebViewController.storyboard */; };
 		14655D7A21610C04009133E2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14655D7921610C04009133E2 /* WebKit.framework */; };
 		14663C7A217099D9005597A2 /* SQAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14663C79217099D9005597A2 /* SQAdItem.m */; };
+		147CFDF92174877500FCCFFD /* SQMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CFDF82174877500FCCFFD /* SQMeViewController.storyboard */; };
+		147CFDFD21748BE400FCCFFD /* SQSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 147CFDFB21748BE400FCCFFD /* SQSquareCell.m */; };
+		147CFDFE21748BE400FCCFFD /* SQSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147CFDFC21748BE400FCCFFD /* SQSquareCell.xib */; };
+		147CFE01217491D000FCCFFD /* SQSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 147CFE00217491D000FCCFFD /* SQSquareItem.m */; };
 		148BC503216F45E100F9E1BE /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */; };
 		148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148D5849215E0CEB0012BDB8 /* NetWorkViewController.m */; };
 		148D584D215E0D290012BDB8 /* NetWorkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D584C215E0D290012BDB8 /* NetWorkViewController.storyboard */; };
@@ -109,6 +113,12 @@
 		14655D7921610C04009133E2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		14663C78217099D9005597A2 /* SQAdItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAdItem.h; sourceTree = "<group>"; };
 		14663C79217099D9005597A2 /* SQAdItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAdItem.m; sourceTree = "<group>"; };
+		147CFDF82174877500FCCFFD /* SQMeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQMeViewController.storyboard; sourceTree = "<group>"; };
+		147CFDFA21748BE400FCCFFD /* SQSquareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSquareCell.h; sourceTree = "<group>"; };
+		147CFDFB21748BE400FCCFFD /* SQSquareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSquareCell.m; sourceTree = "<group>"; };
+		147CFDFC21748BE400FCCFFD /* SQSquareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQSquareCell.xib; sourceTree = "<group>"; };
+		147CFDFF217491D000FCCFFD /* SQSquareItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSquareItem.h; sourceTree = "<group>"; };
+		147CFE00217491D000FCCFFD /* SQSquareItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSquareItem.m; sourceTree = "<group>"; };
 		148BC501216F45E100F9E1BE /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
 		148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
 		148BC504216F4C7B00F9E1BE /* Network.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.pch; sourceTree = "<group>"; };
@@ -281,6 +291,8 @@
 		140A46BC216F29D200D3EBA8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				147CFDFF217491D000FCCFFD /* SQSquareItem.h */,
+				147CFE00217491D000FCCFFD /* SQSquareItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +300,10 @@
 		140A46BD216F29D200D3EBA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				147CFDF82174877500FCCFFD /* SQMeViewController.storyboard */,
+				147CFDFA21748BE400FCCFFD /* SQSquareCell.h */,
+				147CFDFB21748BE400FCCFFD /* SQSquareCell.m */,
+				147CFDFC21748BE400FCCFFD /* SQSquareCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -766,12 +782,14 @@
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
 				14FF2CAA2170778900AA000E /* LaunchImage@2x.png in Resources */,
 				14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */,
+				147CFDFE21748BE400FCCFFD /* SQSquareCell.xib in Resources */,
 				14655D702160F4B0009133E2 /* p.p12 in Resources */,
 				148D58B7215F3A710012BDB8 /* DownloadViewController.storyboard in Resources */,
 				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
 				14FF2CB721707A8D00AA000E /* SQAdViewController.storyboard in Resources */,
 				14655D6E2160F4B0009133E2 /* rsacert.der in Resources */,
 				14D5F538216080AA009B7C6C /* SecurityViewController.storyboard in Resources */,
+				147CFDF92174877500FCCFFD /* SQMeViewController.storyboard in Resources */,
 				14655D6F2160F4B0009133E2 /* rsacert.crt in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
 				14FF48A62174382D0021E869 /* SQSubTagCell.xib in Resources */,
@@ -845,6 +863,7 @@
 				14FF2C8F217055DE00AA000E /* UIView+Frame.m in Sources */,
 				14FF2C9521705CF000AA000E /* SQBackView.m in Sources */,
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
+				147CFDFD21748BE400FCCFFD /* SQSquareCell.m in Sources */,
 				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
 				140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */,
 				14FF48AB2174682B0021E869 /* SQLoginViewController.m in Sources */,
@@ -866,6 +885,7 @@
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */,
 				14FF2C852170519600AA000E /* SQNavigationController.m in Sources */,
+				147CFE01217491D000FCCFFD /* SQSquareItem.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,
 				14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */,
 				148BC503216F45E100F9E1BE /* UIBarButtonItem+Item.m in Sources */,

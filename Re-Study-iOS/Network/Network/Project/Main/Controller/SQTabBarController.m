@@ -58,7 +58,17 @@
                vc.tabBarItem.enabled = NO;
                [self addChildViewController:vc];
            } else {
-               SQNavigationController * nav = [[SQNavigationController alloc]initWithRootViewController:[obj new]];
+               UIViewController * vc = nil;
+               UIStoryboard * sb = nil;
+               @try {
+                   sb = [UIStoryboard storyboardWithName:NSStringFromClass(obj) bundle:nil];
+               } @catch (NSException *exception)  {
+                   NSLog(@"%@", exception);
+               } @finally {
+                   if (sb) vc = [sb instantiateInitialViewController];
+                   else vc = [obj new];
+               }
+               SQNavigationController * nav = [[SQNavigationController alloc]initWithRootViewController:vc];
                nav.tabBarItem.title = [[[NSStringFromClass(obj) componentsSeparatedByString:@"ViewController"]firstObject] substringFromIndex:2];
                nav.tabBarItem.image = [[UIImage imageNamed:[NSString stringWithFormat:@"tabBar_%@%@_icon", [[nav.tabBarItem.title substringToIndex:1] lowercaseString], [nav.tabBarItem.title substringFromIndex:1]]] originalRender];
                nav.tabBarItem.selectedImage = [[UIImage imageNamed:[NSString stringWithFormat:@"tabBar_%@%@_click_icon", [[nav.tabBarItem.title substringToIndex:1] lowercaseString], [nav.tabBarItem.title substringFromIndex:1]]] originalRender];
