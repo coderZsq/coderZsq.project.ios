@@ -14,6 +14,8 @@
 		140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46DB216F2B2100D3EBA8 /* SQNewViewController.m */; };
 		140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46DE216F2B3600D3EBA8 /* SQPublishViewController.m */; };
 		140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46E1216F35F800D3EBA8 /* UIImage+Render.m */; };
+		141552482174850F00B2EDA6 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 141552472174850F00B2EDA6 /* UITextField+Placeholder.m */; };
+		1431C64221747E700087114F /* SQLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431C64121747E700087114F /* SQLoginTextField.m */; };
 		14655D6C2160F4B0009133E2 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = 14655D672160F4AF009133E2 /* private.pem */; };
 		14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */ = {isa = PBXBuildFile; fileRef = 14655D682160F4B0009133E2 /* rsacert.csr */; };
 		14655D6E2160F4B0009133E2 /* rsacert.der in Resources */ = {isa = PBXBuildFile; fileRef = 14655D692160F4B0009133E2 /* rsacert.der */; };
@@ -72,6 +74,8 @@
 		14FF48AD2174683E0021E869 /* SQLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FF48AC2174683E0021E869 /* SQLoginViewController.storyboard */; };
 		14FF48B021746D8F0021E869 /* SQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF48AF21746D8F0021E869 /* SQLoginRegisterView.m */; };
 		14FF48B221746D970021E869 /* SQLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FF48B121746D970021E869 /* SQLoginRegisterView.xib */; };
+		14FF48B5217478820021E869 /* SQFastLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF48B4217478820021E869 /* SQFastLoginViewController.m */; };
+		14FF48B821747BDB0021E869 /* SQFastLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF48B721747BDB0021E869 /* SQFastLoginButton.m */; };
 		7023E5AA1097E03E0013DD6D /* libPods-Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC29FCBEBDD7E089E507B280 /* libPods-Network.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +94,10 @@
 		140A46DE216F2B3600D3EBA8 /* SQPublishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQPublishViewController.m; sourceTree = "<group>"; };
 		140A46E0216F35F800D3EBA8 /* UIImage+Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Render.h"; sourceTree = "<group>"; };
 		140A46E1216F35F800D3EBA8 /* UIImage+Render.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Render.m"; sourceTree = "<group>"; };
+		141552462174850F00B2EDA6 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
+		141552472174850F00B2EDA6 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
+		1431C64021747E700087114F /* SQLoginTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginTextField.h; sourceTree = "<group>"; };
+		1431C64121747E700087114F /* SQLoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginTextField.m; sourceTree = "<group>"; };
 		14655D672160F4AF009133E2 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.pem; sourceTree = "<group>"; };
 		14655D682160F4B0009133E2 /* rsacert.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.csr; sourceTree = "<group>"; };
 		14655D692160F4B0009133E2 /* rsacert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsacert.der; sourceTree = "<group>"; };
@@ -177,6 +185,10 @@
 		14FF48AE21746D8F0021E869 /* SQLoginRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginRegisterView.h; sourceTree = "<group>"; };
 		14FF48AF21746D8F0021E869 /* SQLoginRegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginRegisterView.m; sourceTree = "<group>"; };
 		14FF48B121746D970021E869 /* SQLoginRegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQLoginRegisterView.xib; sourceTree = "<group>"; };
+		14FF48B3217478820021E869 /* SQFastLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFastLoginViewController.h; sourceTree = "<group>"; };
+		14FF48B4217478820021E869 /* SQFastLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFastLoginViewController.m; sourceTree = "<group>"; };
+		14FF48B621747BDB0021E869 /* SQFastLoginButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFastLoginButton.h; sourceTree = "<group>"; };
+		14FF48B721747BDB0021E869 /* SQFastLoginButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFastLoginButton.m; sourceTree = "<group>"; };
 		3BD7389507683D3E083D3AFF /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B6E1CFDED76A020618F6B6 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
 		EC29FCBEBDD7E089E507B280 /* libPods-Network.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Network.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +349,8 @@
 				140A46D2216F2AB900D3EBA8 /* SQFriendTrendsViewController.m */,
 				14FF48A92174682B0021E869 /* SQLoginViewController.h */,
 				14FF48AA2174682B0021E869 /* SQLoginViewController.m */,
+				14FF48B3217478820021E869 /* SQFastLoginViewController.h */,
+				14FF48B4217478820021E869 /* SQFastLoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -356,6 +370,10 @@
 				14FF48AE21746D8F0021E869 /* SQLoginRegisterView.h */,
 				14FF48AF21746D8F0021E869 /* SQLoginRegisterView.m */,
 				14FF48B121746D970021E869 /* SQLoginRegisterView.xib */,
+				14FF48B621747BDB0021E869 /* SQFastLoginButton.h */,
+				14FF48B721747BDB0021E869 /* SQFastLoginButton.m */,
+				1431C64021747E700087114F /* SQLoginTextField.h */,
+				1431C64121747E700087114F /* SQLoginTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -413,6 +431,8 @@
 				148BC502216F45E100F9E1BE /* UIBarButtonItem+Item.m */,
 				14FF2CB82170940500AA000E /* AFJSONResponseSerializer+Hook.h */,
 				14FF2CB92170940500AA000E /* AFJSONResponseSerializer+Hook.m */,
+				141552462174850F00B2EDA6 /* UITextField+Placeholder.h */,
+				141552472174850F00B2EDA6 /* UITextField+Placeholder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -828,13 +848,17 @@
 				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
 				140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */,
 				14FF48AB2174682B0021E869 /* SQLoginViewController.m in Sources */,
+				1431C64221747E700087114F /* SQLoginTextField.m in Sources */,
+				141552482174850F00B2EDA6 /* UITextField+Placeholder.m in Sources */,
 				14D5F53521607FE3009B7C6C /* SecurityViewController.m in Sources */,
 				14FF48B021746D8F0021E869 /* SQLoginRegisterView.m in Sources */,
 				14FF2C922170588000AA000E /* SQNavigationBar.m in Sources */,
+				14FF48B821747BDB0021E869 /* SQFastLoginButton.m in Sources */,
 				140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */,
 				14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */,
 				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
 				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
+				14FF48B5217478820021E869 /* SQFastLoginViewController.m in Sources */,
 				140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				140A46D3216F2AB900D3EBA8 /* SQFriendTrendsViewController.m in Sources */,

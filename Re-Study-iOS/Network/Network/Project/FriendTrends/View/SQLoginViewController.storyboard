@@ -60,29 +60,32 @@
                                     <constraint firstAttribute="height" constant="200" id="XSU-WU-KjG"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSq-eZ-HXA">
-                                <rect key="frame" x="0.0" y="457" width="375" height="210"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Div-4g-cAM">
+                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="VBg-fK-LR3"/>
+                                    <constraint firstAttribute="height" constant="150" id="E5j-6Y-Vwz"/>
                                 </constraints>
-                            </view>
+                                <connections>
+                                    <segue destination="m4x-gg-fLs" kind="embed" id="uNo-mF-vUS"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uFr-Ej-Zcx" firstAttribute="trailing" secondItem="Div-4g-cAM" secondAttribute="trailing" id="2wL-Jw-iuN"/>
                             <constraint firstItem="Zf3-sa-Mt7" firstAttribute="top" secondItem="AjT-lc-IX2" secondAttribute="bottom" constant="30" id="3VI-RJ-5xc"/>
-                            <constraint firstItem="pSq-eZ-HXA" firstAttribute="leading" secondItem="uFr-Ej-Zcx" secondAttribute="leading" id="9oF-Un-ng2"/>
                             <constraint firstItem="AjT-lc-IX2" firstAttribute="leading" secondItem="kL3-P7-MCw" secondAttribute="leading" id="EZW-sa-nUF"/>
                             <constraint firstItem="uFr-Ej-Zcx" firstAttribute="trailing" secondItem="AjT-lc-IX2" secondAttribute="trailing" id="EpW-j7-eia"/>
-                            <constraint firstItem="uFr-Ej-Zcx" firstAttribute="bottom" secondItem="pSq-eZ-HXA" secondAttribute="bottom" id="IJI-i9-S4T"/>
                             <constraint firstItem="Zf3-sa-Mt7" firstAttribute="leading" secondItem="uFr-Ej-Zcx" secondAttribute="leading" id="QO6-qu-1We"/>
-                            <constraint firstItem="uFr-Ej-Zcx" firstAttribute="trailing" secondItem="pSq-eZ-HXA" secondAttribute="trailing" id="Tgl-5G-Hfh"/>
                             <constraint firstAttribute="bottom" secondItem="vLO-CM-V9a" secondAttribute="bottom" id="VdF-81-Bc4"/>
                             <constraint firstAttribute="trailing" secondItem="vLO-CM-V9a" secondAttribute="trailing" id="YPY-Ls-fm4"/>
+                            <constraint firstItem="uFr-Ej-Zcx" firstAttribute="bottom" secondItem="Div-4g-cAM" secondAttribute="bottom" id="aEe-9u-d2q"/>
                             <constraint firstItem="AjT-lc-IX2" firstAttribute="top" secondItem="uFr-Ej-Zcx" secondAttribute="top" id="egx-MO-FG8"/>
                             <constraint firstItem="vLO-CM-V9a" firstAttribute="top" secondItem="kL3-P7-MCw" secondAttribute="top" id="gWD-2h-1np"/>
                             <constraint firstItem="Zf3-sa-Mt7" firstAttribute="width" secondItem="vLO-CM-V9a" secondAttribute="width" multiplier="2" id="hbA-4D-TAN"/>
                             <constraint firstItem="vLO-CM-V9a" firstAttribute="leading" secondItem="kL3-P7-MCw" secondAttribute="leading" id="kXB-z4-leX"/>
+                            <constraint firstItem="Div-4g-cAM" firstAttribute="leading" secondItem="uFr-Ej-Zcx" secondAttribute="leading" id="n54-tB-I73"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uFr-Ej-Zcx"/>
                     </view>
@@ -95,9 +98,92 @@
             </objects>
             <point key="canvasLocation" x="-36" y="148"/>
         </scene>
+        <!--Fast Login View Controller-->
+        <scene sceneID="eJ6-p2-6zM">
+            <objects>
+                <viewController id="m4x-gg-fLs" customClass="SQFastLoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rpO-Ko-igg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knI-nq-ET6" customClass="SQFastLoginButton">
+                                <rect key="frame" x="0.0" y="25" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="knI-nq-ET6" secondAttribute="height" id="Ibs-qq-lV4"/>
+                                </constraints>
+                                <state key="normal" title="QQ登录" image="login_QQ_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYs-qR-03I" customClass="SQFastLoginButton">
+                                <rect key="frame" x="125" y="25" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IYs-qR-03I" secondAttribute="height" id="zZK-W3-tIe"/>
+                                </constraints>
+                                <state key="normal" title="微博登录" image="login_sina_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv5-Cx-gwg" customClass="SQFastLoginButton">
+                                <rect key="frame" x="250" y="25" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lv5-Cx-gwg" secondAttribute="height" id="x0h-Wn-A7W"/>
+                                </constraints>
+                                <state key="normal" title="腾讯登录" image="login_tecent_icon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快速登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKc-65-NDM">
+                                <rect key="frame" x="153" y="0.0" width="57.5" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_left_line" translatesAutoresizingMaskIntoConstraints="NO" id="ZXe-xO-Bdq">
+                                <rect key="frame" x="0.0" y="0.0" width="153" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="1yW-ud-lQn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" verticalHuggingPriority="251" image="login_register_right_line" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-7r-Klt">
+                                <rect key="frame" x="210.5" y="0.0" width="164.5" height="25"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IYs-qR-03I" firstAttribute="width" secondItem="IYs-qR-03I" secondAttribute="height" id="1LA-HU-79O"/>
+                            <constraint firstItem="iKc-65-NDM" firstAttribute="leading" secondItem="ZXe-xO-Bdq" secondAttribute="trailing" id="63G-2J-Am6"/>
+                            <constraint firstItem="IYs-qR-03I" firstAttribute="top" secondItem="iKc-65-NDM" secondAttribute="bottom" id="Av7-nK-qWX"/>
+                            <constraint firstItem="ZXe-xO-Bdq" firstAttribute="top" secondItem="rpO-Ko-igg" secondAttribute="top" id="BBg-L4-Gos"/>
+                            <constraint firstItem="ZXe-xO-Bdq" firstAttribute="leading" secondItem="knI-nq-ET6" secondAttribute="leading" id="CXo-p2-FDc"/>
+                            <constraint firstItem="ZXe-xO-Bdq" firstAttribute="top" secondItem="rpO-Ko-igg" secondAttribute="topMargin" id="CrN-7Z-GYH"/>
+                            <constraint firstItem="IYs-qR-03I" firstAttribute="bottom" secondItem="rpO-Ko-igg" secondAttribute="bottomMargin" id="K6w-rF-Ane"/>
+                            <constraint firstItem="lv5-Cx-gwg" firstAttribute="leading" secondItem="IYs-qR-03I" secondAttribute="trailing" id="LOQ-aO-ge2"/>
+                            <constraint firstAttribute="bottom" secondItem="lv5-Cx-gwg" secondAttribute="bottom" id="Ngq-YN-Cee"/>
+                            <constraint firstAttribute="trailing" secondItem="hNx-7r-Klt" secondAttribute="trailing" id="SxW-Gq-rfR"/>
+                            <constraint firstItem="hNx-7r-Klt" firstAttribute="top" secondItem="rpO-Ko-igg" secondAttribute="top" id="TGZ-MI-dkQ"/>
+                            <constraint firstItem="lv5-Cx-gwg" firstAttribute="width" secondItem="lv5-Cx-gwg" secondAttribute="height" id="WSd-KC-q2O"/>
+                            <constraint firstItem="IYs-qR-03I" firstAttribute="leading" secondItem="knI-nq-ET6" secondAttribute="trailing" id="Wve-j7-ZqR"/>
+                            <constraint firstItem="lv5-Cx-gwg" firstAttribute="width" secondItem="lv5-Cx-gwg" secondAttribute="height" id="Wz7-hN-s8S"/>
+                            <constraint firstItem="knI-nq-ET6" firstAttribute="top" secondItem="ZXe-xO-Bdq" secondAttribute="bottom" id="Xjq-3q-TgH"/>
+                            <constraint firstItem="knI-nq-ET6" firstAttribute="width" secondItem="rpO-Ko-igg" secondAttribute="width" multiplier="1:3" id="d8h-ix-zIL"/>
+                            <constraint firstItem="lv5-Cx-gwg" firstAttribute="width" secondItem="IYs-qR-03I" secondAttribute="width" id="dxo-gE-v8V"/>
+                            <constraint firstItem="lv5-Cx-gwg" firstAttribute="top" secondItem="hNx-7r-Klt" secondAttribute="bottom" id="ekz-kZ-dpe"/>
+                            <constraint firstItem="ZXe-xO-Bdq" firstAttribute="leading" secondItem="rpO-Ko-igg" secondAttribute="leading" id="f8k-hq-aSg"/>
+                            <constraint firstItem="IYs-qR-03I" firstAttribute="width" secondItem="knI-nq-ET6" secondAttribute="width" id="kLt-3h-rmN"/>
+                            <constraint firstItem="knI-nq-ET6" firstAttribute="top" secondItem="ZXe-xO-Bdq" secondAttribute="bottom" id="sTz-cu-XBg"/>
+                            <constraint firstAttribute="bottom" secondItem="knI-nq-ET6" secondAttribute="bottom" id="shF-xY-9Vc"/>
+                            <constraint firstItem="iKc-65-NDM" firstAttribute="top" secondItem="rpO-Ko-igg" secondAttribute="topMargin" id="ttS-py-mX8"/>
+                            <constraint firstItem="hNx-7r-Klt" firstAttribute="leading" secondItem="iKc-65-NDM" secondAttribute="trailing" id="yZK-hQ-5YH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAA-gv-F9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="614.392803598201"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="login_QQ_icon" width="70" height="70"/>
         <image name="login_close_icon" width="16" height="16"/>
         <image name="login_register_background" width="320" height="568"/>
+        <image name="login_register_left_line" width="103" height="0.5"/>
+        <image name="login_register_right_line" width="103" height="0.5"/>
+        <image name="login_sina_icon" width="70" height="70"/>
+        <image name="login_tecent_icon" width="70" height="70"/>
     </resources>
 </document>
