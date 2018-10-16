@@ -37,17 +37,21 @@
 }
 
 + (void)removeDirectoryPath:(NSString *)directoryPath completion:(nonnull void (^)(void))completion{
-    NSFileManager * manager = [NSFileManager defaultManager];
-    BOOL isDirectory;
-    BOOL isExist = [manager fileExistsAtPath:directoryPath isDirectory:&isDirectory];
-    if (!isExist || !isDirectory) {
-        @throw [NSException exceptionWithName:@"FileError" reason:@"directoryPath is not exist or is not directory" userInfo:nil];
-    }
-    [manager removeItemAtPath:directoryPath error:nil];
-    [manager createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
-    if (completion) {
-        completion();
-    }
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSFileManager * manager = [NSFileManager defaultManager];
+        BOOL isDirectory;
+        BOOL isExist = [manager fileExistsAtPath:directoryPath isDirectory:&isDirectory];
+        if (!isExist || !isDirectory) {
+            @throw [NSException exceptionWithName:@"FileError" reason:@"directoryPath is not exist or is not directory" userInfo:nil];
+        }
+        [manager removeItemAtPath:directoryPath error:nil];
+        [manager createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion();
+            });
+        }
+    });
 }
 
 + (void)directorySizeString:(NSString *)directoryPath completion:(void(^)(NSString *sizeString))completion {
