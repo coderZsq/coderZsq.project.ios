@@ -12,9 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SQFileManager : NSObject
 
-+ (NSInteger)getDirectorySize:(NSString *)directoryPath;
-+ (void)removeDirectoryPath:(NSString *)directoryPath;
-+ (NSString *)directorySizeString:(NSString *)directoryPath;
++ (void)directorySizeString:(NSString *)directoryPath completion:(void(^)(NSString *sizeString))completion;
++ (void)removeDirectoryPath:(NSString *)directoryPath completion:(void(^)(void))completion;
 
 @end
 
