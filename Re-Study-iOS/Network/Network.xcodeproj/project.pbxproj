@@ -46,6 +46,7 @@
 		14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51FC215B529700DF771C /* ThreadViewController.storyboard */; };
 		14C6F41721758B7A009BBB91 /* SQWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C6F41521758B7A009BBB91 /* SQWebViewController.m */; };
 		14C6F41821758B7A009BBB91 /* SQWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6F41621758B7A009BBB91 /* SQWebViewController.xib */; };
+		14C6F41D2175D0E6009BBB91 /* SQFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C6F41C2175D0E6009BBB91 /* SQFileManager.m */; };
 		14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */; };
 		14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */; };
 		14D5F532215F7CC2009B7C6C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F531215F7CC2009B7C6C /* Foundation+Log.m */; };
@@ -148,6 +149,8 @@
 		14C6F41421758B7A009BBB91 /* SQWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQWebViewController.h; sourceTree = "<group>"; };
 		14C6F41521758B7A009BBB91 /* SQWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQWebViewController.m; sourceTree = "<group>"; };
 		14C6F41621758B7A009BBB91 /* SQWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQWebViewController.xib; sourceTree = "<group>"; };
+		14C6F41B2175D0E6009BBB91 /* SQFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFileManager.h; sourceTree = "<group>"; };
+		14C6F41C2175D0E6009BBB91 /* SQFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFileManager.m; sourceTree = "<group>"; };
 		14D0BD8A215CBEC500620AF8 /* WebImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebImageViewController.h; sourceTree = "<group>"; };
 		14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebImageViewController.m; sourceTree = "<group>"; };
 		14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebImageViewController.storyboard; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				14FF2C86217051A100AA000E /* Setting */,
 				14FF2C7F2170519600AA000E /* Main */,
 				140A46E3216F363800D3EBA8 /* Other */,
+				14C6F4192175D0CF009BBB91 /* Utils */,
 				14FF2CA22170778900AA000E /* LaunchImage */,
 				140A46B0216F223500D3EBA8 /* ProjectViewController.h */,
 				140A46B1216F223500D3EBA8 /* ProjectViewController.m */,
@@ -540,6 +544,23 @@
 				14AC51F2215B407300DF771C /* main.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		14C6F4192175D0CF009BBB91 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				14C6F41A2175D0CF009BBB91 /* File */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		14C6F41A2175D0CF009BBB91 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				14C6F41B2175D0E6009BBB91 /* SQFileManager.h */,
+				14C6F41C2175D0E6009BBB91 /* SQFileManager.m */,
+			);
+			path = File;
 			sourceTree = "<group>";
 		};
 		14D0BD87215C68B500620AF8 /* Thread */ = {
@@ -894,6 +915,7 @@
 				14FF489E217430C80021E869 /* SQSubTagViewController.m in Sources */,
 				14AC51F3215B407300DF771C /* main.m in Sources */,
 				14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */,
+				14C6F41D2175D0E6009BBB91 /* SQFileManager.m in Sources */,
 				14FF2C852170519600AA000E /* SQNavigationController.m in Sources */,
 				147CFE01217491D000FCCFFD /* SQSquareItem.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,

@@ -7,6 +7,10 @@
 //
 
 #import "SQSettingViewController.h"
+#import <SDImageCache.h>
+#import "SQFileManager.h"
+
+#define CachePath NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
 
 @interface SQSettingViewController ()
 
@@ -34,9 +38,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
-    
-    cell.textLabel.text = @"Clear Memory";
+//    NSInteger cacheSize = [SDImageCache sharedImageCache].getSize;
+    cell.textLabel.text = [SQFileManager directorySizeString:CachePath];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+    [SQFileManager removeDirectoryPath:CachePath];
+    [self.tableView reloadData];
 }
 
 @end
