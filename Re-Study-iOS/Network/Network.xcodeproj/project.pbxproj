@@ -44,6 +44,8 @@
 		14AC51F3215B407300DF771C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51F2215B407300DF771C /* main.m */; };
 		14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51FA215B50D200DF771C /* ThreadViewController.m */; };
 		14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51FC215B529700DF771C /* ThreadViewController.storyboard */; };
+		14C6F41721758B7A009BBB91 /* SQWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C6F41521758B7A009BBB91 /* SQWebViewController.m */; };
+		14C6F41821758B7A009BBB91 /* SQWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6F41621758B7A009BBB91 /* SQWebViewController.xib */; };
 		14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */; };
 		14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */; };
 		14D5F532215F7CC2009B7C6C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F531215F7CC2009B7C6C /* Foundation+Log.m */; };
@@ -143,6 +145,9 @@
 		14AC51F9215B50D200DF771C /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		14AC51FA215B50D200DF771C /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
 		14AC51FC215B529700DF771C /* ThreadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThreadViewController.storyboard; sourceTree = "<group>"; };
+		14C6F41421758B7A009BBB91 /* SQWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQWebViewController.h; sourceTree = "<group>"; };
+		14C6F41521758B7A009BBB91 /* SQWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQWebViewController.m; sourceTree = "<group>"; };
+		14C6F41621758B7A009BBB91 /* SQWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQWebViewController.xib; sourceTree = "<group>"; };
 		14D0BD8A215CBEC500620AF8 /* WebImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebImageViewController.h; sourceTree = "<group>"; };
 		14D0BD8B215CBEC500620AF8 /* WebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebImageViewController.m; sourceTree = "<group>"; };
 		14D0BD8F215CBEFD00620AF8 /* WebImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebImageViewController.storyboard; sourceTree = "<group>"; };
@@ -284,6 +289,8 @@
 			children = (
 				140A46D7216F2AD500D3EBA8 /* SQMeViewController.h */,
 				140A46D8216F2AD500D3EBA8 /* SQMeViewController.m */,
+				14C6F41421758B7A009BBB91 /* SQWebViewController.h */,
+				14C6F41521758B7A009BBB91 /* SQWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -304,6 +311,7 @@
 				147CFDFA21748BE400FCCFFD /* SQSquareCell.h */,
 				147CFDFB21748BE400FCCFFD /* SQSquareCell.m */,
 				147CFDFC21748BE400FCCFFD /* SQSquareCell.xib */,
+				14C6F41621758B7A009BBB91 /* SQWebViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -778,6 +786,7 @@
 				14FF48B221746D970021E869 /* SQLoginRegisterView.xib in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
 				14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */,
+				14C6F41821758B7A009BBB91 /* SQWebViewController.xib in Resources */,
 				14FF2CAE2170778900AA000E /* LaunchImage-700@2x.png in Resources */,
 				14AC51ED215B407300DF771C /* Assets.xcassets in Resources */,
 				14FF2CAA2170778900AA000E /* LaunchImage@2x.png in Resources */,
@@ -878,6 +887,7 @@
 				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
 				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
 				14FF48B5217478820021E869 /* SQFastLoginViewController.m in Sources */,
+				14C6F41721758B7A009BBB91 /* SQWebViewController.m in Sources */,
 				140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				140A46D3216F2AB900D3EBA8 /* SQFriendTrendsViewController.m in Sources */,
