@@ -6,11 +6,11 @@
 //  Copyright © 2018 Castie!. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SQBaseTabViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQEssenceViewController : UIViewController
+@interface SQEssenceViewController : SQBaseTabViewController
 
 @end
 

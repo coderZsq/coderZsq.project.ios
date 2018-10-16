@@ -15,6 +15,10 @@
 		140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46DE216F2B3600D3EBA8 /* SQPublishViewController.m */; };
 		140A46E2216F35F800D3EBA8 /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A46E1216F35F800D3EBA8 /* UIImage+Render.m */; };
 		141552482174850F00B2EDA6 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 141552472174850F00B2EDA6 /* UITextField+Placeholder.m */; };
+		142C92AE217616B000AE930B /* SQBaseTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C92AD217616B000AE930B /* SQBaseTabViewController.m */; };
+		142C92B12176209D00AE930B /* SQTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C92B02176209D00AE930B /* SQTopicCell.m */; };
+		142C92B4217621CC00AE930B /* SQTopTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C92B3217621CC00AE930B /* SQTopTopicView.m */; };
+		142C92B92176222200AE930B /* SQTopTopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142C92B82176222200AE930B /* SQTopTopicView.xib */; };
 		1431C64221747E700087114F /* SQLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431C64121747E700087114F /* SQLoginTextField.m */; };
 		14655D6C2160F4B0009133E2 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = 14655D672160F4AF009133E2 /* private.pem */; };
 		14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */ = {isa = PBXBuildFile; fileRef = 14655D682160F4B0009133E2 /* rsacert.csr */; };
@@ -108,6 +112,13 @@
 		140A46E1216F35F800D3EBA8 /* UIImage+Render.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Render.m"; sourceTree = "<group>"; };
 		141552462174850F00B2EDA6 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
 		141552472174850F00B2EDA6 /* UITextField+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
+		142C92AC217616B000AE930B /* SQBaseTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQBaseTabViewController.h; sourceTree = "<group>"; };
+		142C92AD217616B000AE930B /* SQBaseTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQBaseTabViewController.m; sourceTree = "<group>"; };
+		142C92AF2176209D00AE930B /* SQTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTopicCell.h; sourceTree = "<group>"; };
+		142C92B02176209D00AE930B /* SQTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTopicCell.m; sourceTree = "<group>"; };
+		142C92B2217621CC00AE930B /* SQTopTopicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTopTopicView.h; sourceTree = "<group>"; };
+		142C92B3217621CC00AE930B /* SQTopTopicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTopTopicView.m; sourceTree = "<group>"; };
+		142C92B82176222200AE930B /* SQTopTopicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQTopTopicView.xib; sourceTree = "<group>"; };
 		1431C64021747E700087114F /* SQLoginTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginTextField.h; sourceTree = "<group>"; };
 		1431C64121747E700087114F /* SQLoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginTextField.m; sourceTree = "<group>"; };
 		14655D672160F4AF009133E2 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.pem; sourceTree = "<group>"; };
@@ -251,6 +262,7 @@
 				140A46BA216F29D200D3EBA8 /* Me */,
 				14FF2C86217051A100AA000E /* Setting */,
 				14FF2C7F2170519600AA000E /* Main */,
+				142C92AB2176166C00AE930B /* Base */,
 				140A46E3216F363800D3EBA8 /* Other */,
 				14C6F4192175D0CF009BBB91 /* Utils */,
 				14FF2CA22170778900AA000E /* LaunchImage */,
@@ -451,6 +463,9 @@
 		140A46CD216F29D300D3EBA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				142C92B5217621D000AE930B /* CellChildView */,
+				142C92AF2176209D00AE930B /* SQTopicCell.h */,
+				142C92B02176209D00AE930B /* SQTopicCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -479,6 +494,25 @@
 				141552472174850F00B2EDA6 /* UITextField+Placeholder.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		142C92AB2176166C00AE930B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				142C92AC217616B000AE930B /* SQBaseTabViewController.h */,
+				142C92AD217616B000AE930B /* SQBaseTabViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		142C92B5217621D000AE930B /* CellChildView */ = {
+			isa = PBXGroup;
+			children = (
+				142C92B2217621CC00AE930B /* SQTopTopicView.h */,
+				142C92B3217621CC00AE930B /* SQTopTopicView.m */,
+				142C92B82176222200AE930B /* SQTopTopicView.xib */,
+			);
+			path = CellChildView;
 			sourceTree = "<group>";
 		};
 		14655D742160FEAE009133E2 /* WebView */ = {
@@ -853,6 +887,7 @@
 				14655D6E2160F4B0009133E2 /* rsacert.der in Resources */,
 				14D5F538216080AA009B7C6C /* SecurityViewController.storyboard in Resources */,
 				147CFDF92174877500FCCFFD /* SQMeViewController.storyboard in Resources */,
+				142C92B92176222200AE930B /* SQTopTopicView.xib in Resources */,
 				14655D6F2160F4B0009133E2 /* rsacert.crt in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
 				14FF48A62174382D0021E869 /* SQSubTagCell.xib in Resources */,
@@ -917,6 +952,7 @@
 				14FF48A52174382D0021E869 /* SQSubTagCell.m in Sources */,
 				14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */,
 				14FF48A12174330C0021E869 /* SQSubTagItem.m in Sources */,
+				142C92B12176209D00AE930B /* SQTopicCell.m in Sources */,
 				14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */,
 				14FF2CA1217074B700AA000E /* SQTabBarController.m in Sources */,
 				148D58BA215F3A850012BDB8 /* DownloadViewController.m in Sources */,
@@ -942,6 +978,7 @@
 				140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */,
 				14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */,
 				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
+				142C92AE217616B000AE930B /* SQBaseTabViewController.m in Sources */,
 				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
 				14FF48B5217478820021E869 /* SQFastLoginViewController.m in Sources */,
 				14C6F41721758B7A009BBB91 /* SQWebViewController.m in Sources */,
@@ -955,6 +992,7 @@
 				14C6F41D2175D0E6009BBB91 /* SQFileManager.m in Sources */,
 				14C6F42F2175E7D0009BBB91 /* SQTextViewController.m in Sources */,
 				14FF2C852170519600AA000E /* SQNavigationController.m in Sources */,
+				142C92B4217621CC00AE930B /* SQTopTopicView.m in Sources */,
 				147CFE01217491D000FCCFFD /* SQSquareItem.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,
 				14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */,

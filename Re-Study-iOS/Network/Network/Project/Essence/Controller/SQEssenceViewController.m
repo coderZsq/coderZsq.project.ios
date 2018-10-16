@@ -7,15 +7,13 @@
 //
 
 #import "SQEssenceViewController.h"
-#import "ChildViewController/SQAllViewController.h"
-#import "ChildViewController/SQVideoViewController.h"
-#import "ChildViewController/SQVoiceViewController.h"
-#import "ChildViewController/SQPictureViewController.h"
-#import "ChildViewController/SQTextViewController.h"
-#define Top ([[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)
+#import "SQAllViewController.h"
+#import "SQVideoViewController.h"
+#import "SQVoiceViewController.h"
+#import "SQPictureViewController.h"
+#import "SQTextViewController.h"
 
 @interface SQEssenceViewController ()
-
 @end
 
 @implementation SQEssenceViewController
@@ -23,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavBar];
-    [self setupButtonContainerView];
-    [self setupTopTitleView];
     [self setupAllChildViewController];
 }
 
@@ -44,18 +40,6 @@
     SQTextViewController * textVc = [SQTextViewController new];
     textVc.title = @"段子";
     [self addChildViewController:textVc];
-}
-
-- (void)setupButtonContainerView {
-    UICollectionViewFlowLayout * layout = [UICollectionViewFlowLayout new];
-    UICollectionView * collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
-    [self.view addSubview:collectionView];
-}
-
-- (void)setupTopTitleView {
-    UIScrollView * scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, Top, self.view.width, 35)];
-    scrollView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:scrollView];
 }
 
 - (void)setupNavBar {

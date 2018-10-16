@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SQTopTopicView">
+            <rect key="frame" x="0.0" y="0.0" width="331" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IeF-tn-xda">
+                    <rect key="frame" x="10" y="10" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="7MA-L6-cpF"/>
+                        <constraint firstAttribute="width" constant="35" id="pAY-LS-PF2"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEs-de-Ac7">
+                    <rect key="frame" x="55" y="10" width="39.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-pJ-y1r">
+                    <rect key="frame" x="55" y="27" width="37.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KA-Ft-m6d">
+                    <rect key="frame" x="301" y="10" width="20" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="6Js-yS-JfB"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="cellmorebtnnormal"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPh-yA-oOu">
+                    <rect key="frame" x="10" y="55" width="311" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kEs-de-Ac7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="4Cw-s7-4gz"/>
+                <constraint firstItem="kEs-de-Ac7" firstAttribute="leading" secondItem="IeF-tn-xda" secondAttribute="trailing" constant="10" id="5AI-15-PS1"/>
+                <constraint firstItem="CPh-yA-oOu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="HVx-6D-2Xo"/>
+                <constraint firstItem="IeF-tn-xda" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="IzF-gP-gwb"/>
+                <constraint firstItem="CPh-yA-oOu" firstAttribute="top" secondItem="IeF-tn-xda" secondAttribute="bottom" constant="10" id="KDF-Z9-u3g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CPh-yA-oOu" secondAttribute="trailing" constant="10" id="R5B-gU-Em1"/>
+                <constraint firstItem="pqw-pJ-y1r" firstAttribute="leading" secondItem="IeF-tn-xda" secondAttribute="trailing" constant="10" id="VFB-1W-H8V"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3KA-Ft-m6d" secondAttribute="trailing" constant="10" id="Wjr-TA-wQr"/>
+                <constraint firstItem="pqw-pJ-y1r" firstAttribute="bottom" secondItem="IeF-tn-xda" secondAttribute="bottom" id="cAV-hV-Brq"/>
+                <constraint firstItem="3KA-Ft-m6d" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="gih-iB-6qB"/>
+                <constraint firstItem="IeF-tn-xda" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="li3-OZ-1uj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-199.19999999999999" y="4.0479760119940034"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cellmorebtnnormal" width="24" height="20"/>
+    </resources>
+</document>
