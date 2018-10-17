@@ -56,7 +56,7 @@
 
 + (void)directorySizeString:(NSString *)directoryPath completion:(void(^)(NSString *sizeString))completion {
     [SQFileManager getDirectorySize:directoryPath completion:^(NSInteger totalSize){
-        NSString * text = @"Clear Memory";
+        NSString * text = @"清理缓存";
         if (totalSize > 1000 * 1000) {
             text = [NSString stringWithFormat:@"%@(%.1fMB)", text, totalSize / 1000. / 1000.];
         } else if (totalSize > 1000) {
