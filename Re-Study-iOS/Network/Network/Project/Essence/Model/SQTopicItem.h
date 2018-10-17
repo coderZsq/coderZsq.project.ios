@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SQCommentItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,6 +39,9 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) NSString * voiceuri;
 @property (nonatomic, assign) NSInteger voicetime;
+
+@property (nonatomic, strong) NSArray * top_cmt;
+@property (nonatomic, strong) SQCommentItem * topComment;
 
 @end
 

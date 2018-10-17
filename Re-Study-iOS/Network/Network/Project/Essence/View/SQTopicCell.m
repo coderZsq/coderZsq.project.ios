@@ -25,6 +25,9 @@
         SQVoiceTopicView * voiceView = [SQVoiceTopicView viewForXib];
         [self.contentView addSubview:voiceView];
         _voiceView = voiceView;
+        SQCommentView * commentView = [SQCommentView viewForXib];
+        [self.contentView addSubview:commentView];
+        _commentView = commentView;
     }
     return self;
 }

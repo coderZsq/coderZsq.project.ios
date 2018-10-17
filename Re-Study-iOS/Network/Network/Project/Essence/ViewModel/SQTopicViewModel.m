@@ -22,6 +22,7 @@
     CGFloat textH = [item.text boundingRectWithSize:CGSizeMake(textW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading  attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17]} context:nil].size.height;
     CGFloat topH = textY + textH;
     self.topViewFrame = CGRectMake(topX, topY, topW, topH);
+    self.cellH = CGRectGetMaxY(self.topViewFrame) + margin;
     if (item.type != SQTopicItemTypeText) {
         CGFloat middleX = margin;
         CGFloat middleY = CGRectGetMaxY(self.topViewFrame) + margin;
@@ -32,8 +33,20 @@
             item.is_bigPicture = YES;
         }
         self.middleViewFrame = CGRectMake(middleX, middleY, middleW, middleH);
+        self.cellH = CGRectGetMaxY(self.middleViewFrame) + margin;
     }
-    self.cellH = CGRectGetMaxY(self.middleViewFrame) + margin;
+    if (item.topComment) {
+        CGFloat commentX = 0;
+        CGFloat commentY = self.cellH;
+        CGFloat commentW = [UIScreen mainScreen].bounds.size.width;
+        CGFloat commentH = 43;
+        if (item.topComment.content.length) {
+            CGFloat textH = [item.topComment.totalContent boundingRectWithSize:CGSizeMake(textW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading  attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17]} context:nil].size.height;
+            commentH = 21 + textH;
+        }
+        self.commentViewFrame = CGRectMake(commentX, commentY, commentW, commentH);
+        self.cellH = CGRectGetMaxY(self.commentViewFrame) + margin;
+    }
 }
 
 @end

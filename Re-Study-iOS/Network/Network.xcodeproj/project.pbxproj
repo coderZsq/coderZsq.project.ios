@@ -20,6 +20,10 @@
 		142C92B4217621CC00AE930B /* SQTopTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C92B3217621CC00AE930B /* SQTopTopicView.m */; };
 		142C92B92176222200AE930B /* SQTopTopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142C92B82176222200AE930B /* SQTopTopicView.xib */; };
 		1431C64221747E700087114F /* SQLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431C64121747E700087114F /* SQLoginTextField.m */; };
+		1447273721772217002C2E7C /* SQCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1447273621772217002C2E7C /* SQCommentView.m */; };
+		1447273921772220002C2E7C /* SQCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1447273821772220002C2E7C /* SQCommentView.xib */; };
+		1447273C21772CE9002C2E7C /* SQCommentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1447273B21772CE9002C2E7C /* SQCommentItem.m */; };
+		1447273F21772DEB002C2E7C /* SQUserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1447273E21772DEB002C2E7C /* SQUserItem.m */; };
 		14655D6C2160F4B0009133E2 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = 14655D672160F4AF009133E2 /* private.pem */; };
 		14655D6D2160F4B0009133E2 /* rsacert.csr in Resources */ = {isa = PBXBuildFile; fileRef = 14655D682160F4B0009133E2 /* rsacert.csr */; };
 		14655D6E2160F4B0009133E2 /* rsacert.der in Resources */ = {isa = PBXBuildFile; fileRef = 14655D692160F4B0009133E2 /* rsacert.der */; };
@@ -49,6 +53,7 @@
 		149BB97021770AA900056B02 /* SQVoiceTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149BB96F21770AA900056B02 /* SQVoiceTopicView.m */; };
 		149BB97221770ABD00056B02 /* SQVideoTopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149BB97121770ABD00056B02 /* SQVideoTopicView.xib */; };
 		149BB9742177130800056B02 /* SQVoiceTopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149BB9732177130800056B02 /* SQVoiceTopicView.xib */; };
+		149BB97721771A2800056B02 /* UIImage+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 149BB97621771A2800056B02 /* UIImage+Hook.m */; };
 		14AC51E5215B407100DF771C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51E4215B407100DF771C /* AppDelegate.m */; };
 		14AC51E8215B407100DF771C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51E7215B407100DF771C /* ViewController.m */; };
 		14AC51EB215B407100DF771C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51E9215B407100DF771C /* Main.storyboard */; };
@@ -130,6 +135,13 @@
 		142C92B82176222200AE930B /* SQTopTopicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQTopTopicView.xib; sourceTree = "<group>"; };
 		1431C64021747E700087114F /* SQLoginTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginTextField.h; sourceTree = "<group>"; };
 		1431C64121747E700087114F /* SQLoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginTextField.m; sourceTree = "<group>"; };
+		1447273521772217002C2E7C /* SQCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCommentView.h; sourceTree = "<group>"; };
+		1447273621772217002C2E7C /* SQCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQCommentView.m; sourceTree = "<group>"; };
+		1447273821772220002C2E7C /* SQCommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQCommentView.xib; sourceTree = "<group>"; };
+		1447273A21772CE9002C2E7C /* SQCommentItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQCommentItem.h; sourceTree = "<group>"; };
+		1447273B21772CE9002C2E7C /* SQCommentItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQCommentItem.m; sourceTree = "<group>"; };
+		1447273D21772DEB002C2E7C /* SQUserItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQUserItem.h; sourceTree = "<group>"; };
+		1447273E21772DEB002C2E7C /* SQUserItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQUserItem.m; sourceTree = "<group>"; };
 		14655D672160F4AF009133E2 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.pem; sourceTree = "<group>"; };
 		14655D682160F4B0009133E2 /* rsacert.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsacert.csr; sourceTree = "<group>"; };
 		14655D692160F4B0009133E2 /* rsacert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsacert.der; sourceTree = "<group>"; };
@@ -173,6 +185,8 @@
 		149BB96F21770AA900056B02 /* SQVoiceTopicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQVoiceTopicView.m; sourceTree = "<group>"; };
 		149BB97121770ABD00056B02 /* SQVideoTopicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQVideoTopicView.xib; sourceTree = "<group>"; };
 		149BB9732177130800056B02 /* SQVoiceTopicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQVoiceTopicView.xib; sourceTree = "<group>"; };
+		149BB97521771A2800056B02 /* UIImage+Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Hook.h"; sourceTree = "<group>"; };
+		149BB97621771A2800056B02 /* UIImage+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Hook.m"; sourceTree = "<group>"; };
 		14AC51E0215B407100DF771C /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AC51E3215B407100DF771C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14AC51E4215B407100DF771C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -483,6 +497,10 @@
 			children = (
 				149BB95C2176E89E00056B02 /* SQTopicItem.h */,
 				149BB95D2176E89E00056B02 /* SQTopicItem.m */,
+				1447273A21772CE9002C2E7C /* SQCommentItem.h */,
+				1447273B21772CE9002C2E7C /* SQCommentItem.m */,
+				1447273D21772DEB002C2E7C /* SQUserItem.h */,
+				1447273E21772DEB002C2E7C /* SQUserItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -519,6 +537,8 @@
 				14FF2CB92170940500AA000E /* AFJSONResponseSerializer+Hook.m */,
 				141552462174850F00B2EDA6 /* UITextField+Placeholder.h */,
 				141552472174850F00B2EDA6 /* UITextField+Placeholder.m */,
+				149BB97521771A2800056B02 /* UIImage+Hook.h */,
+				149BB97621771A2800056B02 /* UIImage+Hook.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -549,6 +569,9 @@
 				149BB96E21770AA900056B02 /* SQVoiceTopicView.h */,
 				149BB96F21770AA900056B02 /* SQVoiceTopicView.m */,
 				149BB9732177130800056B02 /* SQVoiceTopicView.xib */,
+				1447273521772217002C2E7C /* SQCommentView.h */,
+				1447273621772217002C2E7C /* SQCommentView.m */,
+				1447273821772220002C2E7C /* SQCommentView.xib */,
 			);
 			path = CellChildView;
 			sourceTree = "<group>";
@@ -939,6 +962,7 @@
 				147CFDF92174877500FCCFFD /* SQMeViewController.storyboard in Resources */,
 				142C92B92176222200AE930B /* SQTopTopicView.xib in Resources */,
 				14655D6F2160F4B0009133E2 /* rsacert.crt in Resources */,
+				1447273921772220002C2E7C /* SQCommentView.xib in Resources */,
 				14FBE76B215CC36D0009A98B /* webimage.plist in Resources */,
 				14FF48A62174382D0021E869 /* SQSubTagCell.xib in Resources */,
 				148D58AB215F197B0012BDB8 /* webimage.json in Resources */,
@@ -1014,8 +1038,10 @@
 				14FF2C8F217055DE00AA000E /* UIView+Frame.m in Sources */,
 				14C6F4202175E77E009BBB91 /* SQAllViewController.m in Sources */,
 				14FF2C9521705CF000AA000E /* SQBackView.m in Sources */,
+				1447273721772217002C2E7C /* SQCommentView.m in Sources */,
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
 				149BB96D21770A9700056B02 /* SQVideoTopicView.m in Sources */,
+				1447273C21772CE9002C2E7C /* SQCommentItem.m in Sources */,
 				149BB9652176F61700056B02 /* SQPictureTopicView.m in Sources */,
 				147CFDFD21748BE400FCCFFD /* SQSquareCell.m in Sources */,
 				14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */,
@@ -1031,10 +1057,12 @@
 				14FF2C922170588000AA000E /* SQNavigationBar.m in Sources */,
 				14FF48B821747BDB0021E869 /* SQFastLoginButton.m in Sources */,
 				140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */,
+				149BB97721771A2800056B02 /* UIImage+Hook.m in Sources */,
 				14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */,
 				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
 				142C92AE217616B000AE930B /* SQBaseTabViewController.m in Sources */,
 				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
+				1447273F21772DEB002C2E7C /* SQUserItem.m in Sources */,
 				14FF48B5217478820021E869 /* SQFastLoginViewController.m in Sources */,
 				14C6F41721758B7A009BBB91 /* SQWebViewController.m in Sources */,
 				140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */,

@@ -36,8 +36,9 @@
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(SQTopicItemTypeVoice);
+    parameters[@"type"] = @(SQTopicItemTypeAll);
     [manager GET:BaseURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
         NSArray * topics = [SQTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         for (SQTopicItem * item in topics) {
             SQTopicViewModel * vm = [SQTopicViewModel new];
@@ -112,6 +113,22 @@
         cell.videoView.hidden = YES;
         cell.pictureView.hidden = YES;
         cell.voiceView.hidden = YES;
+    }
+    if (vm.item.topComment) {
+        cell.commentView.hidden = NO;
+        cell.commentView.frame = vm.commentViewFrame;
+        if (vm.item.topComment.content.length) {
+            cell.commentView.voiceView.hidden = YES;
+            cell.commentView.totalLabel.hidden = NO;
+            cell.commentView.totalLabel.text = vm.item.topComment.totalContent;
+        } else {
+            cell.commentView.voiceView.hidden = NO;
+            cell.commentView.totalLabel.hidden = YES;
+            cell.commentView.nameLabel.text = vm.item.topComment.user.username;
+            [cell.commentView.voiceButton setTitle:vm.item.topComment.voicetime forState:UIControlStateNormal];
+        }
+    } else {
+        cell.commentView.hidden = YES;
     }
     return cell;
 }
