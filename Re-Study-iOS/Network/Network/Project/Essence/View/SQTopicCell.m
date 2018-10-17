@@ -7,7 +7,6 @@
 //
 
 #import "SQTopicCell.h"
-#import "SQTopTopicView.h"
 
 @implementation SQTopicCell
 
@@ -16,6 +15,16 @@
                     reuseIdentifier:reuseIdentifier]) {
         SQTopTopicView * topView = [SQTopTopicView viewForXib];
         [self.contentView addSubview:topView];
+        _topView = topView;
+        SQPictureTopicView * pictureView = [SQPictureTopicView viewForXib];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+        SQVideoTopicView * videoView = [SQVideoTopicView viewForXib];
+        [self.contentView addSubview:videoView];
+        _videoView = videoView;
+        SQVoiceTopicView * voiceView = [SQVoiceTopicView viewForXib];
+        [self.contentView addSubview:voiceView];
+        _voiceView = voiceView;
     }
     return self;
 }

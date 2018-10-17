@@ -64,6 +64,12 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="iconImageView" destination="IeF-tn-xda" id="lmd-wH-Zj1"/>
+                <outlet property="nameLabel" destination="kEs-de-Ac7" id="L1H-xc-Hkq"/>
+                <outlet property="textLabel" destination="CPh-yA-oOu" id="EqB-D7-aTp"/>
+                <outlet property="timeLabel" destination="pqw-pJ-y1r" id="6zT-gL-RAc"/>
+            </connections>
             <point key="canvasLocation" x="-199.19999999999999" y="4.0479760119940034"/>
         </view>
     </objects>

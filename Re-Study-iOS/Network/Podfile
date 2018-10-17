@@ -9,7 +9,7 @@ target 'Network' do
   pod 'SSZipArchive'
   pod 'AFNetworking'
   pod 'SVProgressHUD'
-  
+  pod 'DACircularProgress'
   # Pods for Network
 
 end
