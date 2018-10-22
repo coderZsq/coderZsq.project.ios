@@ -47,6 +47,12 @@
         self.commentViewFrame = CGRectMake(commentX, commentY, commentW, commentH);
         self.cellH = CGRectGetMaxY(self.commentViewFrame) + margin;
     }
+    CGFloat bottomX = 0;
+    CGFloat bottomY = self.cellH;
+    CGFloat bottomW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat bottomH = 35;
+    self.bottomViewFrame = CGRectMake(bottomX, bottomY, bottomW, bottomH);
+    self.cellH = CGRectGetMaxY(self.bottomViewFrame) + margin;
 }
 
 @end

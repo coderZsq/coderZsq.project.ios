@@ -43,6 +43,11 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSArray * top_cmt;
 @property (nonatomic, strong) SQCommentItem * topComment;
 
+@property (nonatomic, assign) CGFloat cai;
+@property (nonatomic, assign) CGFloat ding;
+@property (nonatomic, assign) CGFloat comment;
+@property (nonatomic, assign) CGFloat repost;
+
 @end
 
 NS_ASSUME_NONNULL_END

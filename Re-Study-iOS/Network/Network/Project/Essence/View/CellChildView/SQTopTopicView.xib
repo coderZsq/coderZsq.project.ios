@@ -40,6 +40,9 @@
                         <constraint firstAttribute="width" constant="20" id="6Js-yS-JfB"/>
                     </constraints>
                     <state key="normal" title="Button" image="cellmorebtnnormal"/>
+                    <connections>
+                        <action selector="moreButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="6oz-hg-1j2"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPh-yA-oOu">
                     <rect key="frame" x="10" y="55" width="311" height="20.5"/>

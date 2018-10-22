@@ -12,6 +12,7 @@
 #import "SQVideoTopicView.h"
 #import "SQVoiceTopicView.h"
 #import "SQCommentView.h"
+#import "SQBottomView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) SQVideoTopicView * videoView;
 @property (nonatomic, weak) SQVoiceTopicView * voiceView;
 @property (nonatomic, weak) SQCommentView * commentView;
+@property (nonatomic, weak) SQBottomView * bottomView;
 @end
 
 NS_ASSUME_NONNULL_END

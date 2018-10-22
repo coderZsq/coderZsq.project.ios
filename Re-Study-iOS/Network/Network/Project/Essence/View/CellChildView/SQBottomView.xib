@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SQBottomView">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ES1-vO-fQD">
+                    <rect key="frame" x="0.0" y="0.0" width="377" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvp-jd-NYg">
+                            <rect key="frame" x="0.0" y="9" width="94.5" height="22"/>
+                            <state key="normal" title="Button" image="mainCellDing">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psE-qb-Sye">
+                            <rect key="frame" x="94.5" y="9" width="94" height="22"/>
+                            <state key="normal" title="Button" image="mainCellCai">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPP-Mp-QDw">
+                            <rect key="frame" x="188.5" y="9" width="94.5" height="22"/>
+                            <state key="normal" title="Button" image="mainCellShare">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfM-v1-fg4">
+                            <rect key="frame" x="283" y="9" width="94" height="22"/>
+                            <state key="normal" title="Button" image="mainCellComment">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ES1-vO-fQD" secondAttribute="bottom" id="M27-Fp-JSL"/>
+                <constraint firstItem="ES1-vO-fQD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="o49-NV-5bM"/>
+                <constraint firstItem="ES1-vO-fQD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vhh-Tm-qPn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ES1-vO-fQD" secondAttribute="trailing" id="wbF-rx-FYE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="caiButton" destination="psE-qb-Sye" id="00S-dS-acm"/>
+                <outlet property="commentButton" destination="HfM-v1-fg4" id="LW8-db-o0Q"/>
+                <outlet property="dingButton" destination="Nvp-jd-NYg" id="RNZ-fv-tsb"/>
+                <outlet property="shareButton" destination="vPP-Mp-QDw" id="zSc-8A-wcu"/>
+            </connections>
+            <point key="canvasLocation" x="112.8" y="40.479760119940032"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mainCellCai" width="20" height="20"/>
+        <image name="mainCellComment" width="20" height="20"/>
+        <image name="mainCellDing" width="20" height="20"/>
+        <image name="mainCellShare" width="20" height="20"/>
+    </resources>
+</document>

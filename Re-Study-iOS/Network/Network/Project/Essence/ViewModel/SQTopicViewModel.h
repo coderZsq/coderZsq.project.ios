@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGRect topViewFrame;
 @property (nonatomic, assign) CGRect middleViewFrame;
 @property (nonatomic, assign) CGRect commentViewFrame;
+@property (nonatomic, assign) CGRect bottomViewFrame;
 @property (nonatomic, assign) CGFloat cellH;
 
 @end

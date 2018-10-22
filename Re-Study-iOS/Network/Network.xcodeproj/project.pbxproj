@@ -62,6 +62,9 @@
 		14AC51F3215B407300DF771C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51F2215B407300DF771C /* main.m */; };
 		14AC51FB215B50D200DF771C /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC51FA215B50D200DF771C /* ThreadViewController.m */; };
 		14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AC51FC215B529700DF771C /* ThreadViewController.storyboard */; };
+		14BB8AC8217DA280004AC953 /* SQBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB8AC7217DA280004AC953 /* SQBottomView.m */; };
+		14BB8ACA217DA2BD004AC953 /* SQBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14BB8AC9217DA2BD004AC953 /* SQBottomView.xib */; };
+		14BB8ACD217DB221004AC953 /* NSDate+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB8ACC217DB221004AC953 /* NSDate+Date.m */; };
 		14C6F41721758B7A009BBB91 /* SQWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C6F41521758B7A009BBB91 /* SQWebViewController.m */; };
 		14C6F41821758B7A009BBB91 /* SQWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6F41621758B7A009BBB91 /* SQWebViewController.xib */; };
 		14C6F41D2175D0E6009BBB91 /* SQFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C6F41C2175D0E6009BBB91 /* SQFileManager.m */; };
@@ -200,6 +203,11 @@
 		14AC51F9215B50D200DF771C /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		14AC51FA215B50D200DF771C /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
 		14AC51FC215B529700DF771C /* ThreadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThreadViewController.storyboard; sourceTree = "<group>"; };
+		14BB8AC6217DA280004AC953 /* SQBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQBottomView.h; sourceTree = "<group>"; };
+		14BB8AC7217DA280004AC953 /* SQBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQBottomView.m; sourceTree = "<group>"; };
+		14BB8AC9217DA2BD004AC953 /* SQBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQBottomView.xib; sourceTree = "<group>"; };
+		14BB8ACB217DB221004AC953 /* NSDate+Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Date.h"; sourceTree = "<group>"; };
+		14BB8ACC217DB221004AC953 /* NSDate+Date.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Date.m"; sourceTree = "<group>"; };
 		14C6F41421758B7A009BBB91 /* SQWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQWebViewController.h; sourceTree = "<group>"; };
 		14C6F41521758B7A009BBB91 /* SQWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQWebViewController.m; sourceTree = "<group>"; };
 		14C6F41621758B7A009BBB91 /* SQWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQWebViewController.xib; sourceTree = "<group>"; };
@@ -539,6 +547,8 @@
 				141552472174850F00B2EDA6 /* UITextField+Placeholder.m */,
 				149BB97521771A2800056B02 /* UIImage+Hook.h */,
 				149BB97621771A2800056B02 /* UIImage+Hook.m */,
+				14BB8ACB217DB221004AC953 /* NSDate+Date.h */,
+				14BB8ACC217DB221004AC953 /* NSDate+Date.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -572,6 +582,9 @@
 				1447273521772217002C2E7C /* SQCommentView.h */,
 				1447273621772217002C2E7C /* SQCommentView.m */,
 				1447273821772220002C2E7C /* SQCommentView.xib */,
+				14BB8AC6217DA280004AC953 /* SQBottomView.h */,
+				14BB8AC7217DA280004AC953 /* SQBottomView.m */,
+				14BB8AC9217DA2BD004AC953 /* SQBottomView.xib */,
 			);
 			path = CellChildView;
 			sourceTree = "<group>";
@@ -940,6 +953,7 @@
 				14FF48AD2174683E0021E869 /* SQLoginViewController.storyboard in Resources */,
 				14FF2CAF2170778900AA000E /* LaunchImage-700-568h@2x.png in Resources */,
 				14FF2CAB2170778900AA000E /* LaunchImage-568h@2x.png in Resources */,
+				14BB8ACA217DA2BD004AC953 /* SQBottomView.xib in Resources */,
 				14AC51F0215B407300DF771C /* LaunchScreen.storyboard in Resources */,
 				14FF48B221746D970021E869 /* SQLoginRegisterView.xib in Resources */,
 				14AC51FD215B529700DF771C /* ThreadViewController.storyboard in Resources */,
@@ -1058,6 +1072,7 @@
 				14FF48B821747BDB0021E869 /* SQFastLoginButton.m in Sources */,
 				140A46DF216F2B3600D3EBA8 /* SQPublishViewController.m in Sources */,
 				149BB97721771A2800056B02 /* UIImage+Hook.m in Sources */,
+				14BB8AC8217DA280004AC953 /* SQBottomView.m in Sources */,
 				14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */,
 				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
 				142C92AE217616B000AE930B /* SQBaseTabViewController.m in Sources */,
@@ -1067,6 +1082,7 @@
 				14C6F41721758B7A009BBB91 /* SQWebViewController.m in Sources */,
 				140A46DC216F2B2100D3EBA8 /* SQNewViewController.m in Sources */,
 				14C6F4232175E78F009BBB91 /* SQVideoViewController.m in Sources */,
+				14BB8ACD217DB221004AC953 /* NSDate+Date.m in Sources */,
 				14AC51E8215B407100DF771C /* ViewController.m in Sources */,
 				140A46D3216F2AB900D3EBA8 /* SQFriendTrendsViewController.m in Sources */,
 				149BB9612176F07000056B02 /* SQTopicViewModel.m in Sources */,
