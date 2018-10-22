@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
 @property (weak, nonatomic) IBOutlet UIButton *seeBigButton;
 @property (weak, nonatomic) IBOutlet DALabeledCircularProgressView *progressView;
+@property (nonatomic, copy) void(^imageTouchBegin)(void);
 @end
 
 NS_ASSUME_NONNULL_END

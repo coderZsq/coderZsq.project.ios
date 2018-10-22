@@ -18,4 +18,10 @@
     self.progressView.roundedCorners = 5;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.imageTouchBegin) {
+        self.imageTouchBegin();
+    }
+}
+
 @end

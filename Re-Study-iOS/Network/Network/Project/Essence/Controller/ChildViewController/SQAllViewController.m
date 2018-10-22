@@ -14,6 +14,7 @@
 #import <MJExtension.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NSDate+Date.h"
+#import "SQSeeBigPictureViewController.h"
 
 @interface SQAllViewController ()
 @property (nonatomic, strong) NSMutableArray * dataSource;
@@ -89,6 +90,14 @@
     cell.topView.textLabel.text = vm.item.text;
     if (vm.item.type == SQTopicItemTypePicture) {
         cell.pictureView.frame = vm.middleViewFrame;
+        cell.pictureView.imageTouchBegin = ^{
+            SQSeeBigPictureViewController * vc = [SQSeeBigPictureViewController new];
+            vc.image0 = vm.item.image0;
+            vc.width = vm.item.width;
+            vc.height = vm.item.height;
+            vc.is_bigPicture = vm.item.is_bigPicture;
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+        };
         cell.videoView.hidden = YES;
         cell.pictureView.hidden = NO;
         cell.voiceView.hidden = YES;

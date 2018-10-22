@@ -81,6 +81,8 @@
 		14D5F53F216096DC009B7C6C /* RSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53A216096DC009B7C6C /* RSACryptor.m */; };
 		14D5F540216096DC009B7C6C /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53C216096DC009B7C6C /* NSString+Hash.m */; };
 		14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53D216096DC009B7C6C /* EncryptionTools.m */; };
+		14DBCA16217DB7D800C9D643 /* SQSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DBCA14217DB7D800C9D643 /* SQSeeBigPictureViewController.m */; };
+		14DBCA17217DB7D800C9D643 /* SQSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DBCA15217DB7D800C9D643 /* SQSeeBigPictureViewController.xib */; };
 		14FBE76B215CC36D0009A98B /* webimage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FBE76A215CC36D0009A98B /* webimage.plist */; };
 		14FF2C852170519600AA000E /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C822170519600AA000E /* SQNavigationController.m */; };
 		14FF2C8C217051B500AA000E /* SQSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C8B217051B500AA000E /* SQSettingViewController.m */; };
@@ -236,6 +238,9 @@
 		14D5F53C216096DC009B7C6C /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		14D5F53D216096DC009B7C6C /* EncryptionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTools.m; sourceTree = "<group>"; };
 		14D5F53E216096DC009B7C6C /* EncryptionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTools.h; sourceTree = "<group>"; };
+		14DBCA13217DB7D800C9D643 /* SQSeeBigPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSeeBigPictureViewController.h; sourceTree = "<group>"; };
+		14DBCA14217DB7D800C9D643 /* SQSeeBigPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSeeBigPictureViewController.m; sourceTree = "<group>"; };
+		14DBCA15217DB7D800C9D643 /* SQSeeBigPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQSeeBigPictureViewController.xib; sourceTree = "<group>"; };
 		14FBE76A215CC36D0009A98B /* webimage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webimage.plist; sourceTree = "<group>"; };
 		14FF2C812170519600AA000E /* SQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNavigationController.h; sourceTree = "<group>"; };
 		14FF2C822170519600AA000E /* SQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNavigationController.m; sourceTree = "<group>"; };
@@ -496,6 +501,8 @@
 				14C6F4302175E7D6009BBB91 /* ChildViewController */,
 				140A46CE216F2AA100D3EBA8 /* SQEssenceViewController.h */,
 				140A46CF216F2AA100D3EBA8 /* SQEssenceViewController.m */,
+				14DBCA13217DB7D800C9D643 /* SQSeeBigPictureViewController.h */,
+				14DBCA14217DB7D800C9D643 /* SQSeeBigPictureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -516,6 +523,7 @@
 		140A46CD216F29D300D3EBA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14DBCA15217DB7D800C9D643 /* SQSeeBigPictureViewController.xib */,
 				142C92B5217621D000AE930B /* CellChildView */,
 				142C92AF2176209D00AE930B /* SQTopicCell.h */,
 				142C92B02176209D00AE930B /* SQTopicCell.m */,
@@ -966,6 +974,7 @@
 				14FF2CAA2170778900AA000E /* LaunchImage@2x.png in Resources */,
 				14655D762160FECD009133E2 /* WebViewController.storyboard in Resources */,
 				147CFDFE21748BE400FCCFFD /* SQSquareCell.xib in Resources */,
+				14DBCA17217DB7D800C9D643 /* SQSeeBigPictureViewController.xib in Resources */,
 				149BB9742177130800056B02 /* SQVoiceTopicView.xib in Resources */,
 				14655D702160F4B0009133E2 /* p.p12 in Resources */,
 				148D58B7215F3A710012BDB8 /* DownloadViewController.storyboard in Resources */,
@@ -1075,6 +1084,7 @@
 				14BB8AC8217DA280004AC953 /* SQBottomView.m in Sources */,
 				14FF2CB42170792600AA000E /* SQAdViewController.m in Sources */,
 				140A46B2216F223500D3EBA8 /* ProjectViewController.m in Sources */,
+				14DBCA16217DB7D800C9D643 /* SQSeeBigPictureViewController.m in Sources */,
 				142C92AE217616B000AE930B /* SQBaseTabViewController.m in Sources */,
 				14655D732160FEA9009133E2 /* WebViewController.m in Sources */,
 				1447273F21772DEB002C2E7C /* SQUserItem.m in Sources */,
