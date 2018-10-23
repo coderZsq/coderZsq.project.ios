@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.95 alpha:1.]];
     [self.tableView registerClass:[SQTopicCell class] forCellReuseIdentifier:@"reuseIdentifier"];
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
