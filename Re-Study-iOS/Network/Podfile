@@ -10,6 +10,7 @@ target 'Network' do
   pod 'AFNetworking'
   pod 'SVProgressHUD'
   pod 'DACircularProgress'
+  pod 'MJRefresh'
   # Pods for Network
 
 end

@@ -83,6 +83,11 @@
 		14D5F541216096DC009B7C6C /* EncryptionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5F53D216096DC009B7C6C /* EncryptionTools.m */; };
 		14DBCA16217DB7D800C9D643 /* SQSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DBCA14217DB7D800C9D643 /* SQSeeBigPictureViewController.m */; };
 		14DBCA17217DB7D800C9D643 /* SQSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DBCA15217DB7D800C9D643 /* SQSeeBigPictureViewController.xib */; };
+		14E299842186C790006AA804 /* SQPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E299832186C790006AA804 /* SQPhotoManager.m */; };
+		14E71E552186D0B900FEA95A /* SQFootRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E71E542186D0B900FEA95A /* SQFootRefreshView.m */; };
+		14E71E572186D0CC00FEA95A /* SQFootRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E71E562186D0CC00FEA95A /* SQFootRefreshView.xib */; };
+		14E71E5A2186DB6B00FEA95A /* SQHeadRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E71E592186DB6B00FEA95A /* SQHeadRefreshView.m */; };
+		14E71E5C2186DB7800FEA95A /* SQHeadRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E71E5B2186DB7800FEA95A /* SQHeadRefreshView.xib */; };
 		14FBE76B215CC36D0009A98B /* webimage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FBE76A215CC36D0009A98B /* webimage.plist */; };
 		14FF2C852170519600AA000E /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C822170519600AA000E /* SQNavigationController.m */; };
 		14FF2C8C217051B500AA000E /* SQSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF2C8B217051B500AA000E /* SQSettingViewController.m */; };
@@ -241,6 +246,14 @@
 		14DBCA13217DB7D800C9D643 /* SQSeeBigPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSeeBigPictureViewController.h; sourceTree = "<group>"; };
 		14DBCA14217DB7D800C9D643 /* SQSeeBigPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSeeBigPictureViewController.m; sourceTree = "<group>"; };
 		14DBCA15217DB7D800C9D643 /* SQSeeBigPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQSeeBigPictureViewController.xib; sourceTree = "<group>"; };
+		14E299822186C790006AA804 /* SQPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQPhotoManager.h; sourceTree = "<group>"; };
+		14E299832186C790006AA804 /* SQPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQPhotoManager.m; sourceTree = "<group>"; };
+		14E71E532186D0B900FEA95A /* SQFootRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQFootRefreshView.h; sourceTree = "<group>"; };
+		14E71E542186D0B900FEA95A /* SQFootRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQFootRefreshView.m; sourceTree = "<group>"; };
+		14E71E562186D0CC00FEA95A /* SQFootRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQFootRefreshView.xib; sourceTree = "<group>"; };
+		14E71E582186DB6B00FEA95A /* SQHeadRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHeadRefreshView.h; sourceTree = "<group>"; };
+		14E71E592186DB6B00FEA95A /* SQHeadRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHeadRefreshView.m; sourceTree = "<group>"; };
+		14E71E5B2186DB7800FEA95A /* SQHeadRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQHeadRefreshView.xib; sourceTree = "<group>"; };
 		14FBE76A215CC36D0009A98B /* webimage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = webimage.plist; sourceTree = "<group>"; };
 		14FF2C812170519600AA000E /* SQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNavigationController.h; sourceTree = "<group>"; };
 		14FF2C822170519600AA000E /* SQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNavigationController.m; sourceTree = "<group>"; };
@@ -527,6 +540,12 @@
 				142C92B5217621D000AE930B /* CellChildView */,
 				142C92AF2176209D00AE930B /* SQTopicCell.h */,
 				142C92B02176209D00AE930B /* SQTopicCell.m */,
+				14E71E532186D0B900FEA95A /* SQFootRefreshView.h */,
+				14E71E542186D0B900FEA95A /* SQFootRefreshView.m */,
+				14E71E562186D0CC00FEA95A /* SQFootRefreshView.xib */,
+				14E71E582186DB6B00FEA95A /* SQHeadRefreshView.h */,
+				14E71E592186DB6B00FEA95A /* SQHeadRefreshView.m */,
+				14E71E5B2186DB7800FEA95A /* SQHeadRefreshView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -691,6 +710,7 @@
 			isa = PBXGroup;
 			children = (
 				14C6F41A2175D0CF009BBB91 /* File */,
+				14E299852186C794006AA804 /* Photo */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -763,6 +783,15 @@
 				14655D6B2160F4B0009133E2 /* p.p12 */,
 			);
 			path = Security;
+			sourceTree = "<group>";
+		};
+		14E299852186C794006AA804 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				14E299822186C790006AA804 /* SQPhotoManager.h */,
+				14E299832186C790006AA804 /* SQPhotoManager.m */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		14FF2C7F2170519600AA000E /* Main */ = {
@@ -978,6 +1007,7 @@
 				149BB9742177130800056B02 /* SQVoiceTopicView.xib in Resources */,
 				14655D702160F4B0009133E2 /* p.p12 in Resources */,
 				148D58B7215F3A710012BDB8 /* DownloadViewController.storyboard in Resources */,
+				14E71E5C2186DB7800FEA95A /* SQHeadRefreshView.xib in Resources */,
 				14D0BD90215CBEFD00620AF8 /* WebImageViewController.storyboard in Resources */,
 				14FF2CB721707A8D00AA000E /* SQAdViewController.storyboard in Resources */,
 				14655D6E2160F4B0009133E2 /* rsacert.der in Resources */,
@@ -992,6 +1022,7 @@
 				14FF2CAD2170778900AA000E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				14FF2CB02170778900AA000E /* LaunchImage.png in Resources */,
 				14655D6C2160F4B0009133E2 /* private.pem in Resources */,
+				14E71E572186D0CC00FEA95A /* SQFootRefreshView.xib in Resources */,
 				14FF2CAC2170778900AA000E /* LaunchImage-800-667h@2x.png in Resources */,
 				14AC51EB215B407100DF771C /* Main.storyboard in Resources */,
 				14FF48A8217466080021E869 /* SQFriendTrendsViewController.xib in Resources */,
@@ -1026,10 +1057,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Network/Pods-Network-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1062,8 +1095,10 @@
 				14C6F4202175E77E009BBB91 /* SQAllViewController.m in Sources */,
 				14FF2C9521705CF000AA000E /* SQBackView.m in Sources */,
 				1447273721772217002C2E7C /* SQCommentView.m in Sources */,
+				14E71E552186D0B900FEA95A /* SQFootRefreshView.m in Sources */,
 				148D584A215E0CEB0012BDB8 /* NetWorkViewController.m in Sources */,
 				149BB96D21770A9700056B02 /* SQVideoTopicView.m in Sources */,
+				14E71E5A2186DB6B00FEA95A /* SQHeadRefreshView.m in Sources */,
 				1447273C21772CE9002C2E7C /* SQCommentItem.m in Sources */,
 				149BB9652176F61700056B02 /* SQPictureTopicView.m in Sources */,
 				147CFDFD21748BE400FCCFFD /* SQSquareCell.m in Sources */,
@@ -1103,6 +1138,7 @@
 				14C6F42F2175E7D0009BBB91 /* SQTextViewController.m in Sources */,
 				14FF2C852170519600AA000E /* SQNavigationController.m in Sources */,
 				142C92B4217621CC00AE930B /* SQTopTopicView.m in Sources */,
+				14E299842186C790006AA804 /* SQPhotoManager.m in Sources */,
 				147CFE01217491D000FCCFFD /* SQSquareItem.m in Sources */,
 				14AC51E5215B407100DF771C /* AppDelegate.m in Sources */,
 				14D0BD8C215CBEC500620AF8 /* WebImageViewController.m in Sources */,

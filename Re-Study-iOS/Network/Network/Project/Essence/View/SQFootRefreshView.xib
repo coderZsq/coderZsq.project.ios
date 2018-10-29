@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SQFootRefreshView">
+            <rect key="frame" x="0.0" y="0.0" width="324" height="42"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上拉加载更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzK-uv-g5n">
+                    <rect key="frame" x="119" y="12.5" width="86" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQi-tb-IQu">
+                    <rect key="frame" x="0.0" y="0.0" width="324" height="42"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在加载更多的数据..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wld-Fz-geq">
+                            <rect key="frame" x="91.5" y="12.5" width="141" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zCG-eq-D9N">
+                            <rect key="frame" x="61.5" y="11" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93812345946003517" green="0.93359146207133936" blue="0.94265545684873098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="zCG-eq-D9N" firstAttribute="centerY" secondItem="zQi-tb-IQu" secondAttribute="centerY" id="NRw-PV-SW1"/>
+                        <constraint firstItem="wld-Fz-geq" firstAttribute="centerX" secondItem="zQi-tb-IQu" secondAttribute="centerX" id="jst-Ii-chd"/>
+                        <constraint firstItem="wld-Fz-geq" firstAttribute="centerY" secondItem="zQi-tb-IQu" secondAttribute="centerY" id="xrV-q6-RnD"/>
+                        <constraint firstItem="wld-Fz-geq" firstAttribute="leading" secondItem="zCG-eq-D9N" secondAttribute="trailing" constant="10" id="zQd-Rj-928"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zQi-tb-IQu" secondAttribute="trailing" id="czo-y1-36y"/>
+                <constraint firstItem="hzK-uv-g5n" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lKP-s5-0AA"/>
+                <constraint firstItem="hzK-uv-g5n" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ocz-c1-b1F"/>
+                <constraint firstItem="zQi-tb-IQu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="x5w-hR-Lrp"/>
+                <constraint firstAttribute="bottom" secondItem="zQi-tb-IQu" secondAttribute="bottom" id="xSY-yG-mMX"/>
+                <constraint firstItem="zQi-tb-IQu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yNy-AF-7Rr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="refreshView" destination="zQi-tb-IQu" id="xme-k9-DSE"/>
+                <outlet property="titleLabel" destination="hzK-uv-g5n" id="oqs-RH-kEi"/>
+            </connections>
+            <point key="canvasLocation" x="59.200000000000003" y="20.689655172413794"/>
+        </view>
+    </objects>
+</document>

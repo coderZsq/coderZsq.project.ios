@@ -15,12 +15,29 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NSDate+Date.h"
 #import "SQSeeBigPictureViewController.h"
+#import "SQFootRefreshView.h"
+#import "SQHeadRefreshView.h"
+#import <MJRefresh.h>
 
 @interface SQAllViewController ()
 @property (nonatomic, strong) NSMutableArray * dataSource;
+@property (nonatomic, weak) SQFootRefreshView * footView;
+@property (nonatomic, weak) SQHeadRefreshView * headView;
+@property (nonatomic, copy) NSString * maxtime;
+@property (nonatomic, assign) UIEdgeInsets originalInset;
+@property (nonatomic, weak) AFHTTPSessionManager * manager;
 @end
 
 @implementation SQAllViewController
+
+- (AFHTTPSessionManager *)manager {
+    
+    if (!_manager) {
+        AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+        _manager = manager;
+    }
+    return _manager;
+}
 
 - (NSMutableArray *)dataSource {
     
@@ -34,20 +51,117 @@
     [super viewDidLoad];
     [self.tableView setBackgroundColor:[UIColor colorWithWhite:.95 alpha:1.]];
     [self.tableView registerClass:[SQTopicCell class] forCellReuseIdentifier:@"reuseIdentifier"];
-    
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    [self loadNewData];
+//    [self setupFootRefreshView];
+//    [self setupHeadRefreshView];
+    [self setupRefreshView];
+    self.originalInset = self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(30, 0, _footView.height, 0);
+}
+
+- (void)setupRefreshView {
+    MJRefreshNormalHeader * header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    header.automaticallyChangeAlpha = YES;
+    self.tableView.mj_header = header;
+    MJRefreshAutoNormalFooter * footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    footer.automaticallyHidden = YES;
+    self.tableView.mj_footer = footer;
+}
+
+- (void)setupHeadRefreshView {
+    SQHeadRefreshView * headView = [SQHeadRefreshView headView];
+    headView.y = -headView.height;
+    _headView = headView;
+    [self.tableView addSubview:headView];
+}
+
+- (void)setupFootRefreshView {
+    SQFootRefreshView * footView = [SQFootRefreshView footView];
+    footView.hidden = YES;
+    _footView = footView;
+    self.tableView.tableFooterView = footView;
+}
+
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+//    if (self.headView.isNeedLoad) {
+//        self.headView.isRefreshing = YES;
+//        [UIView animateWithDuration:.25 animations:^{
+//            self.tableView.contentInset = UIEdgeInsetsMake(self.originalInset.top + self.headView.height, 0, self.originalInset.bottom, 0);
+//        }];
+//        [self loadNewData];
+//        self.headView.isNeedLoad = NO;
+//    }
+//}
+
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    [self dealFootRefreshView];
+//    [self dealHeadRefreshView];
+//}
+
+- (void)dealHeadRefreshView {
+    CGFloat offsetY = self.tableView.contentOffset.y;
+    if (offsetY <= -(self.tableView.contentInset.top + _headView.height)) {
+        _headView.isNeedLoad = YES;
+    } else {
+        _headView.isNeedLoad = NO;
+    }
+}
+
+- (void)dealFootRefreshView {
+    if (self.dataSource.count == 0) return;
+    if (_footView.isRefreshing) return;
+    CGFloat offsetY = self.tableView.contentOffset.y;
+    if (offsetY >= self.tableView.contentSize.height + self.tableView.contentInset.bottom - [UIScreen mainScreen].bounds.size.height) {
+        _footView.isRefreshing = YES;
+        [self loadMoreData];
+    }
+}
+
+- (void)loadMoreData {
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
     parameters[@"type"] = @(SQTopicItemTypeAll);
-    [manager GET:BaseURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
+    parameters[@"maxtime"] = self.maxtime;
+    [self.manager GET:BaseURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.tableView.mj_footer endRefreshing];
+        self.footView.isRefreshing = NO;
+        self.maxtime = responseObject[@"info"][@"maxtime"];
         NSArray * topics = [SQTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         for (SQTopicItem * item in topics) {
             SQTopicViewModel * vm = [SQTopicViewModel new];
             vm.item = item;
             [self.dataSource addObject:vm];
         }
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)loadNewData {
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @(SQTopicItemTypeAll);
+    [self.manager GET:BaseURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        [self.tableView.mj_header endRefreshing];
+//        [UIView animateWithDuration:.25 animations:^{
+//            self.tableView.contentInset = self.originalInset;
+//        }];
+//        self.headView.isRefreshing = NO;
+//        self.footView.hidden = YES;
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        NSArray * topics = [SQTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        NSMutableArray * tempArr = @[].mutableCopy;
+        for (SQTopicItem * item in topics) {
+            SQTopicViewModel * vm = [SQTopicViewModel new];
+            vm.item = item;
+            [tempArr addObject:vm];
+        }
+        self.dataSource = tempArr;
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
