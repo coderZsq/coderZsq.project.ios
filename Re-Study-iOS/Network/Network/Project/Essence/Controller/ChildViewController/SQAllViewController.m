@@ -55,7 +55,7 @@
 //    [self setupFootRefreshView];
 //    [self setupHeadRefreshView];
     [self setupRefreshView];
-    self.originalInset = self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(30, 0, _footView.height, 0);
+    self.originalInset = self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(35, 0, _footView.height, 0);
 }
 
 - (void)setupRefreshView {
