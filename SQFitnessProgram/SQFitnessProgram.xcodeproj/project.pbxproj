@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1432493D21D8818C00DC6588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432493C21D8818C00DC6588 /* AppDelegate.m */; };
-		1432494021D8818C00DC6588 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432493F21D8818C00DC6588 /* ViewController.m */; };
 		1432494321D8818C00DC6588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1432494121D8818C00DC6588 /* Main.storyboard */; };
 		1432494521D8818D00DC6588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1432494421D8818D00DC6588 /* Assets.xcassets */; };
 		1432494821D8818D00DC6588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1432494621D8818D00DC6588 /* LaunchScreen.storyboard */; };
 		1432494B21D8818D00DC6588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432494A21D8818D00DC6588 /* main.m */; };
+		1432495321D8EB6E00DC6588 /* SQTrainingDateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432495221D8EB6E00DC6588 /* SQTrainingDateListViewController.m */; };
+		14C2849B21D8ED1500EFBDE6 /* SQBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2849A21D8ED1500EFBDE6 /* SQBaseTableViewController.m */; };
+		14C2849E21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */; };
 		14F737C1BE5A61E20983A7B6 /* libPods-SQFitnessProgram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5114C2562E9B50F1B2360F /* libPods-SQFitnessProgram.a */; };
 /* End PBXBuildFile section */
 
@@ -20,13 +22,17 @@
 		1432493821D8818C00DC6588 /* SQFitnessProgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQFitnessProgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1432493B21D8818C00DC6588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1432493C21D8818C00DC6588 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1432493E21D8818C00DC6588 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1432493F21D8818C00DC6588 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1432494221D8818C00DC6588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1432494421D8818D00DC6588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1432494721D8818D00DC6588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1432494921D8818D00DC6588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1432494A21D8818D00DC6588 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1432495121D8EB6E00DC6588 /* SQTrainingDateListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingDateListViewController.h; sourceTree = "<group>"; };
+		1432495221D8EB6E00DC6588 /* SQTrainingDateListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingDateListViewController.m; sourceTree = "<group>"; };
+		14C2849921D8ED1500EFBDE6 /* SQBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQBaseTableViewController.h; sourceTree = "<group>"; };
+		14C2849A21D8ED1500EFBDE6 /* SQBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQBaseTableViewController.m; sourceTree = "<group>"; };
+		14C2849C21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityViewController.h; sourceTree = "<group>"; };
+		14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityViewController.m; sourceTree = "<group>"; };
 		1AD59C508A9BE9A626EA0D68 /* Pods-SQFitnessProgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQFitnessProgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQFitnessProgram/Pods-SQFitnessProgram.release.xcconfig"; sourceTree = "<group>"; };
 		1BD95350F0D84018EA3F7E0D /* Pods-SQFitnessProgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQFitnessProgram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQFitnessProgram/Pods-SQFitnessProgram.debug.xcconfig"; sourceTree = "<group>"; };
 		7F5114C2562E9B50F1B2360F /* libPods-SQFitnessProgram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQFitnessProgram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,10 +80,9 @@
 		1432493A21D8818C00DC6588 /* SQFitnessProgram */ = {
 			isa = PBXGroup;
 			children = (
+				1432495421D8EBFF00DC6588 /* Classes */,
 				1432493B21D8818C00DC6588 /* AppDelegate.h */,
 				1432493C21D8818C00DC6588 /* AppDelegate.m */,
-				1432493E21D8818C00DC6588 /* ViewController.h */,
-				1432493F21D8818C00DC6588 /* ViewController.m */,
 				1432494121D8818C00DC6588 /* Main.storyboard */,
 				1432494421D8818D00DC6588 /* Assets.xcassets */,
 				1432494621D8818D00DC6588 /* LaunchScreen.storyboard */,
@@ -85,6 +90,43 @@
 				1432494A21D8818D00DC6588 /* main.m */,
 			);
 			path = SQFitnessProgram;
+			sourceTree = "<group>";
+		};
+		1432495421D8EBFF00DC6588 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				14C284A021D8FD8600EFBDE6 /* TrainingDate */,
+				14C284A121D8FD9700EFBDE6 /* TrainingCapacity */,
+				14C2849F21D8FD7900EFBDE6 /* Base */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		14C2849F21D8FD7900EFBDE6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				14C2849921D8ED1500EFBDE6 /* SQBaseTableViewController.h */,
+				14C2849A21D8ED1500EFBDE6 /* SQBaseTableViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		14C284A021D8FD8600EFBDE6 /* TrainingDate */ = {
+			isa = PBXGroup;
+			children = (
+				1432495121D8EB6E00DC6588 /* SQTrainingDateListViewController.h */,
+				1432495221D8EB6E00DC6588 /* SQTrainingDateListViewController.m */,
+			);
+			path = TrainingDate;
+			sourceTree = "<group>";
+		};
+		14C284A121D8FD9700EFBDE6 /* TrainingCapacity */ = {
+			isa = PBXGroup;
+			children = (
+				14C2849C21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.h */,
+				14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */,
+			);
+			path = TrainingCapacity;
 			sourceTree = "<group>";
 		};
 		62C34BFD4B308A2127207131 /* Frameworks */ = {
@@ -191,8 +233,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1432494021D8818C00DC6588 /* ViewController.m in Sources */,
+				14C2849B21D8ED1500EFBDE6 /* SQBaseTableViewController.m in Sources */,
 				1432494B21D8818D00DC6588 /* main.m in Sources */,
+				14C2849E21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m in Sources */,
+				1432495321D8EB6E00DC6588 /* SQTrainingDateListViewController.m in Sources */,
 				1432493D21D8818C00DC6588 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BMZP26248F;
 				INFOPLIST_FILE = SQFitnessProgram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,6 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BMZP26248F;
 				INFOPLIST_FILE = SQFitnessProgram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
