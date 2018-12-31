@@ -44,7 +44,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="FRu-nJ-bVE" kind="show" identifier="TrainCapacity" id="d9C-zE-yXA"/>
+                                    <segue destination="uFn-3c-nqS" kind="show" identifier="TrainCapacity" id="pex-DO-bfH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,34 +66,32 @@
             <point key="canvasLocation" x="894" y="-564"/>
         </scene>
         <!--Training Capacity View Controller-->
-        <scene sceneID="sel-a4-9f9">
+        <scene sceneID="jG4-X5-WRP">
             <objects>
-                <tableViewController id="FRu-nJ-bVE" customClass="SQTrainingCapacityViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1F8-a9-1mq">
+                <tableViewController id="uFn-3c-nqS" customClass="SQTrainingCapacityViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N4Q-JT-coJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5ic-0t-C21">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="N80-cT-eik" customClass="SQTrainingCapacityCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5ic-0t-C21" id="IyV-Yb-Aab">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N80-cT-eik" id="n8Q-1k-Scc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="FRu-nJ-bVE" id="n0S-kk-lhv"/>
-                            <outlet property="delegate" destination="FRu-nJ-bVE" id="Edu-Ox-wQz"/>
+                            <outlet property="dataSource" destination="uFn-3c-nqS" id="JWT-Pl-QgD"/>
+                            <outlet property="delegate" destination="uFn-3c-nqS" id="Ke7-vs-V47"/>
                         </connections>
                     </tableView>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IzO-2S-8m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mz3-2J-vN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="-564"/>
+            <point key="canvasLocation" x="1610" y="-564"/>
         </scene>
     </scenes>
 </document>
