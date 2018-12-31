@@ -18,8 +18,8 @@
 - (void)setupTextFieldBorder:(UIView *)contentView {
     [contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[UITextField class]]) {
-            obj.layer.borderColor = [UIColor lightGrayColor].CGColor;
-            obj.layer.borderWidth = 0.5;
+            obj.layer.borderColor = [UIColor blackColor].CGColor;
+            obj.layer.borderWidth = 0.3;
         } else if (obj.subviews.count) {
             [self setupTextFieldBorder:obj];
         }

@@ -19,6 +19,7 @@
 		1433B37621D9D254003B4573 /* SQTrainingCapacityHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1433B37521D9D254003B4573 /* SQTrainingCapacityHeaderView.xib */; };
 		1433B37921D9DA24003B4573 /* SQTrainingCapacityFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433B37821D9DA24003B4573 /* SQTrainingCapacityFooterView.m */; };
 		1433B37B21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1433B37A21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib */; };
+		1433B37E21D9DDB5003B4573 /* SQTrainingMusclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433B37D21D9DDB5003B4573 /* SQTrainingMusclesViewController.m */; };
 		14C2849B21D8ED1500EFBDE6 /* SQBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2849A21D8ED1500EFBDE6 /* SQBaseTableViewController.m */; };
 		14C2849E21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */; };
 		14F737C1BE5A61E20983A7B6 /* libPods-SQFitnessProgram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5114C2562E9B50F1B2360F /* libPods-SQFitnessProgram.a */; };
@@ -44,6 +45,8 @@
 		1433B37721D9DA24003B4573 /* SQTrainingCapacityFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityFooterView.h; sourceTree = "<group>"; };
 		1433B37821D9DA24003B4573 /* SQTrainingCapacityFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityFooterView.m; sourceTree = "<group>"; };
 		1433B37A21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQTrainingCapacityFooterView.xib; sourceTree = "<group>"; };
+		1433B37C21D9DDB5003B4573 /* SQTrainingMusclesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesViewController.h; sourceTree = "<group>"; };
+		1433B37D21D9DDB5003B4573 /* SQTrainingMusclesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingMusclesViewController.m; sourceTree = "<group>"; };
 		14C2849921D8ED1500EFBDE6 /* SQBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQBaseTableViewController.h; sourceTree = "<group>"; };
 		14C2849A21D8ED1500EFBDE6 /* SQBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQBaseTableViewController.m; sourceTree = "<group>"; };
 		14C2849C21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityViewController.h; sourceTree = "<group>"; };
@@ -110,11 +113,21 @@
 		1432495421D8EBFF00DC6588 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1433B37F21D9DDC5003B4573 /* TrainingMuscles */,
 				14C284A021D8FD8600EFBDE6 /* TrainingDate */,
 				14C284A121D8FD9700EFBDE6 /* TrainingCapacity */,
 				14C2849F21D8FD7900EFBDE6 /* Base */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		1433B37F21D9DDC5003B4573 /* TrainingMuscles */ = {
+			isa = PBXGroup;
+			children = (
+				1433B37C21D9DDB5003B4573 /* SQTrainingMusclesViewController.h */,
+				1433B37D21D9DDB5003B4573 /* SQTrainingMusclesViewController.m */,
+			);
+			path = TrainingMuscles;
 			sourceTree = "<group>";
 		};
 		14C2849F21D8FD7900EFBDE6 /* Base */ = {
@@ -267,6 +280,7 @@
 				1433B37421D9D24B003B4573 /* SQTrainingCapacityHeaderView.m in Sources */,
 				1433B37021D9C8F7003B4573 /* SQTrainingCapacityCell.m in Sources */,
 				1432495321D8EB6E00DC6588 /* SQTrainingDateListViewController.m in Sources */,
+				1433B37E21D9DDB5003B4573 /* SQTrainingMusclesViewController.m in Sources */,
 				1432493D21D8818C00DC6588 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

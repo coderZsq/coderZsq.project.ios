@@ -28,15 +28,25 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8H-aP-eu0">
+                    <rect key="frame" x="0.0" y="20.5" width="381" height="0.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.29999999999999999" id="JfL-Ab-psM"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7hn-GW-0UG" secondAttribute="trailing" id="H89-Jm-7Xg"/>
                 <constraint firstItem="7hn-GW-0UG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="PIp-uv-10W"/>
                 <constraint firstItem="7hn-GW-0UG" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.2" id="RBu-aI-3Ld"/>
+                <constraint firstItem="O8H-aP-eu0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="abq-T8-UYY"/>
+                <constraint firstAttribute="bottom" secondItem="O8H-aP-eu0" secondAttribute="bottom" id="bm1-R3-9DO"/>
                 <constraint firstItem="u1I-On-qPV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lXx-ZX-3wS"/>
                 <constraint firstItem="7hn-GW-0UG" firstAttribute="leading" secondItem="u1I-On-qPV" secondAttribute="trailing" id="qA9-jV-yEd"/>
                 <constraint firstItem="u1I-On-qPV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="ubG-gZ-OxX"/>
+                <constraint firstAttribute="trailing" secondItem="O8H-aP-eu0" secondAttribute="trailing" id="v3W-h0-Zto"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
