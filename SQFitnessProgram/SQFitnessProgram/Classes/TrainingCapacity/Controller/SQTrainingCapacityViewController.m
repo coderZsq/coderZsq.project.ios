@@ -12,7 +12,6 @@
 #import "SQTrainingCapacityFooterView.h"
 #import "SQTrainingCapacityModel.h"
 #import "SQTrainingCapacityCellPresenter.h"
-#import "SQTrainingCapacityOperationView.h"
 
 @interface SQTrainingCapacityViewController ()
 @property (nonatomic, strong) NSMutableArray * dataSource;
