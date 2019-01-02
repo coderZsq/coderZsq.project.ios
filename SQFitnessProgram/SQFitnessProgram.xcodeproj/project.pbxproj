@@ -190,13 +190,13 @@
 			path = TrainingMuscles;
 			sourceTree = "<group>";
 		};
-		145BDA3B21DCBA40008731C0 /* DataBase */ = {
+		145BDA3B21DCBA40008731C0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				145BDA3821DCBA39008731C0 /* SQTrainingCapacityDataBase.h */,
 				145BDA3921DCBA39008731C0 /* SQTrainingCapacityDataBase.m */,
 			);
-			path = DataBase;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		14C2849F21D8FD7900EFBDE6 /* Base */ = {
@@ -225,7 +225,7 @@
 				1424537621DC7C5E004E6183 /* Controller */,
 				1424537421DC7C46004E6183 /* Model */,
 				1424537521DC7C54004E6183 /* View */,
-				145BDA3B21DCBA40008731C0 /* DataBase */,
+				145BDA3B21DCBA40008731C0 /* Data */,
 			);
 			path = TrainingCapacity;
 			sourceTree = "<group>";
