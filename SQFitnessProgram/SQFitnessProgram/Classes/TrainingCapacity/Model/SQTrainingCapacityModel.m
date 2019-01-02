@@ -22,7 +22,7 @@
         NSMutableArray * rows = [NSMutableArray array];
         for (int i = 0; i < 5; i++) {
             SQTrainingCapacityRowModel * rowModel = [SQTrainingCapacityRowModel new];
-            rowModel.groups = 0;
+            rowModel.groups = 1;
             rowModel.times = 0;
             rowModel.weight = 0;
             [rows addObject:rowModel];

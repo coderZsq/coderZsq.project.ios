@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		140E0B1321DC8BC20070D958 /* SQTrainingCapacityNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityNotification.h; sourceTree = "<group>"; };
 		140E0B1421DC8BC20070D958 /* SQTrainingCapacityNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityNotification.m; sourceTree = "<group>"; };
+		140E0B1821DC9AAA0070D958 /* SQTrainingCapacityMuscleType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityMuscleType.h; sourceTree = "<group>"; };
 		1432493821D8818C00DC6588 /* SQFitnessProgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQFitnessProgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1432493B21D8818C00DC6588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1432493C21D8818C00DC6588 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 				14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */,
 				140E0B1321DC8BC20070D958 /* SQTrainingCapacityNotification.h */,
 				140E0B1421DC8BC20070D958 /* SQTrainingCapacityNotification.m */,
+				140E0B1821DC9AAA0070D958 /* SQTrainingCapacityMuscleType.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";

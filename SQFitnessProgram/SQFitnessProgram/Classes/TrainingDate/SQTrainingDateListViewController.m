@@ -58,6 +58,7 @@
     UIViewController * vc = segue.destinationViewController;
     NSString * title = [NSString stringWithFormat:@"Training Date: %@", sender ? sender.textLabel.text : traningDate];
     [vc setValue:title forKey:@"title"];
+    [vc setValue:@(self.type) forKey:@"type"];
 }
 
 @end

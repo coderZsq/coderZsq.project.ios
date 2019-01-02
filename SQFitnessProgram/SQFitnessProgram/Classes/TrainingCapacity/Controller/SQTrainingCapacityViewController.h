@@ -7,10 +7,13 @@
 //
 
 #import "SQBaseTableViewController.h"
+#import "SQTrainingCapacityMuscleType.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SQTrainingCapacityViewController : SQBaseTableViewController
+
+@property (nonatomic, assign) SQTrainingCapacityMuscleType type;
 
 @end
 

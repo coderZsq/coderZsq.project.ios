@@ -7,6 +7,7 @@
 //
 
 #import "SQTrainingMusclesViewController.h"
+#import "SQTrainingCapacityMuscleType.h"
 
 @interface SQTrainingMusclesViewController ()
 
@@ -29,6 +30,24 @@
     } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
         cell.textLabel.text = model;
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender  {
+    
+    UIViewController * vc = segue.destinationViewController;
+    SQTrainingCapacityMuscleType type = [[self muscleTypeDictionary][sender.textLabel.text] integerValue];
+    [vc setValue:@(type) forKey:@"type"];
+}
+
+- (NSDictionary *)muscleTypeDictionary {
+    return @{
+             @"Pectoral muscle" : @(SQTrainingCapacityMuscleTypePectoral),
+             @"Back muscle" : @(SQTrainingCapacityMuscleTypeBack),
+             @"Leg muscle" : @(SQTrainingCapacityMuscleTypeLeg),
+             @"Shoulder muscle" : @(SQTrainingCapacityMuscleTypeShoulder),
+             @"Arm muscle" : @(SQTrainingCapacityMuscleTypeArm),
+             @"Abdominal muscle" : @(SQTrainingCapacityMuscleTypeAbdominal)
+             };
 }
 
 @end

@@ -32,6 +32,11 @@
     return _dataSource;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"%ld", self.type);
+}
+
 - (void)setupUI {
     [self setRightBarButtonItem:(UIBarButtonSystemItemAdd) action:@selector(addTraningAction)];
     [self addTraningAction];
