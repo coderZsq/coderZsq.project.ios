@@ -83,6 +83,42 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1424537421DC7C46004E6183 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				144DE74421DC64DC002382BE /* SQTrainingCapacityCellPresenter.h */,
+				144DE74521DC64DC002382BE /* SQTrainingCapacityCellPresenter.m */,
+				14BDFFE521DC5A5400C52CEF /* SQTrainingCapacityModel.h */,
+				14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1424537521DC7C54004E6183 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1433B36D21D9C8F7003B4573 /* SQTrainingCapacityCell.h */,
+				1433B36E21D9C8F7003B4573 /* SQTrainingCapacityCell.m */,
+				1433B36F21D9C8F7003B4573 /* SQTrainingCapacityCell.xib */,
+				1433B37221D9D24B003B4573 /* SQTrainingCapacityHeaderView.h */,
+				1433B37321D9D24B003B4573 /* SQTrainingCapacityHeaderView.m */,
+				1433B37521D9D254003B4573 /* SQTrainingCapacityHeaderView.xib */,
+				1433B37721D9DA24003B4573 /* SQTrainingCapacityFooterView.h */,
+				1433B37821D9DA24003B4573 /* SQTrainingCapacityFooterView.m */,
+				1433B37A21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1424537621DC7C5E004E6183 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14C2849C21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.h */,
+				14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1432492F21D8818C00DC6588 = {
 			isa = PBXGroup;
 			children = (
@@ -157,21 +193,9 @@
 		14C284A121D8FD9700EFBDE6 /* TrainingCapacity */ = {
 			isa = PBXGroup;
 			children = (
-				14C2849C21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.h */,
-				14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */,
-				144DE74421DC64DC002382BE /* SQTrainingCapacityCellPresenter.h */,
-				144DE74521DC64DC002382BE /* SQTrainingCapacityCellPresenter.m */,
-				1433B36D21D9C8F7003B4573 /* SQTrainingCapacityCell.h */,
-				1433B36E21D9C8F7003B4573 /* SQTrainingCapacityCell.m */,
-				1433B36F21D9C8F7003B4573 /* SQTrainingCapacityCell.xib */,
-				1433B37221D9D24B003B4573 /* SQTrainingCapacityHeaderView.h */,
-				1433B37321D9D24B003B4573 /* SQTrainingCapacityHeaderView.m */,
-				1433B37521D9D254003B4573 /* SQTrainingCapacityHeaderView.xib */,
-				1433B37721D9DA24003B4573 /* SQTrainingCapacityFooterView.h */,
-				1433B37821D9DA24003B4573 /* SQTrainingCapacityFooterView.m */,
-				1433B37A21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib */,
-				14BDFFE521DC5A5400C52CEF /* SQTrainingCapacityModel.h */,
-				14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */,
+				1424537621DC7C5E004E6183 /* Controller */,
+				1424537421DC7C46004E6183 /* Model */,
+				1424537521DC7C54004E6183 /* View */,
 			);
 			path = TrainingCapacity;
 			sourceTree = "<group>";
