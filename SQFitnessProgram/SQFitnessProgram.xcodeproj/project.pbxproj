@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140E0B1521DC8BC20070D958 /* SQTrainingCapacityNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 140E0B1421DC8BC20070D958 /* SQTrainingCapacityNotification.m */; };
 		1432493D21D8818C00DC6588 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1432493C21D8818C00DC6588 /* AppDelegate.m */; };
 		1432494321D8818C00DC6588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1432494121D8818C00DC6588 /* Main.storyboard */; };
 		1432494521D8818D00DC6588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1432494421D8818D00DC6588 /* Assets.xcassets */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140E0B1321DC8BC20070D958 /* SQTrainingCapacityNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityNotification.h; sourceTree = "<group>"; };
+		140E0B1421DC8BC20070D958 /* SQTrainingCapacityNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityNotification.m; sourceTree = "<group>"; };
 		1432493821D8818C00DC6588 /* SQFitnessProgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQFitnessProgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1432493B21D8818C00DC6588 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1432493C21D8818C00DC6588 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				144DE74521DC64DC002382BE /* SQTrainingCapacityCellPresenter.m */,
 				14BDFFE521DC5A5400C52CEF /* SQTrainingCapacityModel.h */,
 				14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */,
+				140E0B1321DC8BC20070D958 /* SQTrainingCapacityNotification.h */,
+				140E0B1421DC8BC20070D958 /* SQTrainingCapacityNotification.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				1433B37021D9C8F7003B4573 /* SQTrainingCapacityCell.m in Sources */,
 				1432495321D8EB6E00DC6588 /* SQTrainingDateListViewController.m in Sources */,
 				14BDFFE721DC5A5400C52CEF /* SQTrainingCapacityModel.m in Sources */,
+				140E0B1521DC8BC20070D958 /* SQTrainingCapacityNotification.m in Sources */,
 				1433B37E21D9DDB5003B4573 /* SQTrainingMusclesViewController.m in Sources */,
 				144DE74621DC64DC002382BE /* SQTrainingCapacityCellPresenter.m in Sources */,
 				1432493D21D8818C00DC6588 /* AppDelegate.m in Sources */,
