@@ -10,6 +10,8 @@
 #import "SQTrainingCapacityCell.h"
 #import "SQTrainingCapacityHeaderView.h"
 #import "SQTrainingCapacityFooterView.h"
+#import "SQTrainingCapacityModel.h"
+#import "SQTrainingCapacityCellPresenter.h"
 
 @interface SQTrainingCapacityViewController ()
 @property (nonatomic, strong) NSMutableArray * dataSource;
@@ -30,17 +32,27 @@
     self.tableView.tableHeaderView = [SQTrainingCapacityHeaderView headerView];
     self.tableView.tableFooterView = [SQTrainingCapacityFooterView footerView];
     [self.tableView registerNib:[UINib nibWithNibName:@"SQTrainingCapacityCell" bundle:[NSBundle bundleForClass:self.class]] forCellReuseIdentifier:@"TrainingCapacity"];
+    __weak typeof(self) _self = self;
     [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingCapacity" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
         return 160;
     } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
-        
+        SQTrainingCapacityCell * c = (SQTrainingCapacityCell *)cell;
+        SQTrainingCapacityCellPresenter * p = (SQTrainingCapacityCellPresenter * )model;
+        p.model.action = [NSString stringWithFormat:@"%ld", [_self.dataSource indexOfObject:model] + 1];
+        [p bindToCell:c];
     }];
 }
 
+- (void)setupData {
+    
+}
+
 - (void)addTraningAction {
-    [self.dataSource addObject:@"1"];
+    SQTrainingCapacityCellPresenter * p = [SQTrainingCapacityCellPresenter new];
+    p.model = [SQTrainingCapacityModel new];
+    [self.dataSource addObject:p];
     [self.tableView reloadData];
 }
 

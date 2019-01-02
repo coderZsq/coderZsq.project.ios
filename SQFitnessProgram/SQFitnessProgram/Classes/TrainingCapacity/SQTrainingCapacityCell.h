@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SQTrainingCapacityCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UITextField *actionsTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *capacityTextField;
+
+@property (strong, nonatomic) IBOutletCollection(UIStackView) NSArray *rows;
+
 @end
 
 NS_ASSUME_NONNULL_END
