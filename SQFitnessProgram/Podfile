@@ -6,5 +6,6 @@ target 'SQFitnessProgram' do
   # use_frameworks!
 
   # Pods for SQFitnessProgram
+  pod 'SqliteComponent', :path => './SqliteComponent'
 
 end

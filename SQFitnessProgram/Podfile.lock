@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: c78c4ba5d74454cecf201328b25711f351797d63
+PODS:
+  - SqliteComponent (0.1.4)
+
+DEPENDENCIES:
+  - SqliteComponent (from `./SqliteComponent`)
+
+EXTERNAL SOURCES:
+  SqliteComponent:
+    :path: "./SqliteComponent"
+
+SPEC CHECKSUMS:
+  SqliteComponent: ee4d18fc4f57cee61c89c453476d99a77d9055ee
+
+PODFILE CHECKSUM: f96a8ed9ac03ebd1a3b44b0a2634d91907ae53fc
 
 COCOAPODS: 1.5.3

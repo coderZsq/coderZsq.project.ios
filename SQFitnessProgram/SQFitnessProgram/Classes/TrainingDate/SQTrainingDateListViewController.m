@@ -7,9 +7,12 @@
 //
 
 #import "SQTrainingDateListViewController.h"
+#import "SQTrainingDateListDataBase.h"
+#import "SQSqliteModelTool.h"
 
 @interface SQTrainingDateListViewController ()
 @property (nonatomic, strong) NSMutableArray * dataSource;
+@property (nonatomic, strong) SQTrainingDateListDataBase * dataBase;
 @end
 
 @implementation SQTrainingDateListViewController
@@ -21,6 +24,18 @@
     return _dataSource;
 }
 
+- (SQTrainingDateListDataBase *)dataBase {
+    if (!_dataBase) {
+        _dataBase = [SQTrainingDateListDataBase new];
+    }
+    return _dataBase;
+}
+
+- (void)setType:(SQTrainingCapacityMuscleType)type {
+    _type = type;
+    self.dataBase.type = type;
+}
+
 - (void)setupUI {
     self.title = @"Training Date";
     [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
@@ -30,6 +45,11 @@
     } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@", model];
     }];
+}
+
+- (void)setupData {
+    SQTrainingDateListDataBase * dataBase = [SQSqliteModelTool queryModels:self.dataBase.class columnName:@"type" relation:(ColumnNameToValueRelationTypeEqual) value:@(self.type) uid:nil].firstObject;
+    [self.dataSource addObjectsFromArray:dataBase.dateList];
 }
 
 - (IBAction)addTraningDate:(UIBarButtonItem *)sender {
@@ -47,6 +67,10 @@
     [self.dataSource addObject:[dateFormatter stringFromDate:date]];
     [self.tableView reloadData];
     [self performSegueWithIdentifier:@"TrainCapacity" sender:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.dataBase.dateList = self.dataSource;
+        [SQSqliteModelTool saveOrUpdateModel:self.dataBase uid:nil];
+    });
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender {

@@ -28,8 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];
     [self setupData];
+    [self setupUI];
 }
 
 - (void)setupUI {
