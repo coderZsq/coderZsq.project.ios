@@ -12,12 +12,17 @@
 #import "SQTrainingCapacityFooterView.h"
 #import "SQTrainingCapacityModel.h"
 #import "SQTrainingCapacityCellPresenter.h"
+#import "SQTrainingCapacityOperationView.h"
 
 @interface SQTrainingCapacityViewController ()
 @property (nonatomic, strong) NSMutableArray * dataSource;
 @end
 
 @implementation SQTrainingCapacityViewController
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (NSMutableArray *)dataSource {
     if (!_dataSource) {
@@ -46,7 +51,7 @@
 }
 
 - (void)setupData {
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)addTraningAction {
@@ -54,6 +59,14 @@
     p.model = [SQTrainingCapacityModel new];
     [self.dataSource addObject:p];
     [self.tableView reloadData];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.tableView endEditing:YES];
+}
+
+- (void)keyboardWillHide:(NSNotification *)sender {
+    
 }
 
 @end

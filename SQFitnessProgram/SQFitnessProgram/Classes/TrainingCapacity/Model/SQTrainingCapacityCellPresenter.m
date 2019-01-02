@@ -10,9 +10,14 @@
 #import "SQTrainingCapacityCell.h"
 #import "SQTrainingCapacityModel.h"
 
+@interface SQTrainingCapacityCellPresenter ()
+@property (nonatomic, strong) SQTrainingCapacityCell * cell;
+@end
+
 @implementation SQTrainingCapacityCellPresenter
 
 - (void)bindToCell:(SQTrainingCapacityCell *)cell {
+    self.cell = cell;
     cell.actionsTextField.text = self.model.action;
     for (int i = 0; i < cell.rows.count; i++) {
         UIStackView * sv = cell.rows[i];
