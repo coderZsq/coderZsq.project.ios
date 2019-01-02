@@ -11,9 +11,7 @@
 @implementation SQTrainingCapacityFooterView
 
 + (instancetype)footerView {
-    UIView * view = [[NSBundle bundleForClass:self]loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
-    view.frame = CGRectMake(0, 0, 0, 21);
-    return (SQTrainingCapacityFooterView *)view;
+    return [[NSBundle bundleForClass:self]loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
 }
 
 @end

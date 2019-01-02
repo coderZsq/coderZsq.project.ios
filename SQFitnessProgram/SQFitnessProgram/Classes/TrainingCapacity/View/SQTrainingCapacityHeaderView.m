@@ -11,9 +11,7 @@
 @implementation SQTrainingCapacityHeaderView
 
 + (instancetype)headerView {
-    UIView * view = [[NSBundle bundleForClass:self]loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
-    view.frame = CGRectMake(0, 0, 0, 21);
-    return (SQTrainingCapacityHeaderView *)view;
+    return [[NSBundle bundleForClass:self]loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
 }
 
 @end

@@ -10,6 +10,22 @@
 
 @implementation SQTrainingCapacityRowModel
 
+- (NSDictionary *)modelToDictionary {
+    return @{
+             @"groups" : @(self.groups),
+             @"times" : @(self.times),
+             @"weight" : @(self.weight)
+             };
+}
+
++ (instancetype)modelWithDictionary:(NSDictionary *)dictionary {
+    SQTrainingCapacityRowModel * rowModel = [SQTrainingCapacityRowModel new];
+    rowModel.groups = [dictionary[@"groups"] integerValue];
+    rowModel.times = [dictionary[@"times"] integerValue];
+    rowModel.weight = [dictionary[@"weight"] integerValue];
+    return rowModel;
+}
+
 @end
 
 @implementation SQTrainingCapacityModel
@@ -23,7 +39,7 @@
         for (int i = 0; i < 5; i++) {
             SQTrainingCapacityRowModel * rowModel = [SQTrainingCapacityRowModel new];
             rowModel.groups = 1;
-            rowModel.times = 0;
+            rowModel.times = 12;
             rowModel.weight = 0;
             [rows addObject:rowModel];
         }

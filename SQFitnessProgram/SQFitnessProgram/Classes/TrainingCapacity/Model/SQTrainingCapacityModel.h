@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSInteger weight;
 
+- (NSDictionary *)modelToDictionary;
+
++ (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
+
 @end
 
 @interface SQTrainingCapacityModel : NSObject
