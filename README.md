@@ -13,7 +13,6 @@
 
 ```
 $ pod install
-
 ```
 ##### Contents
 
