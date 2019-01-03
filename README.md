@@ -7,9 +7,7 @@
 
 ##### Get Started
 
-- First Just pod install 
-
-- Then Run
+- Just `pod install` then `run`.
 
 ```
 $ pod install
@@ -19,12 +17,6 @@ $ pod install
 - `SqliteComponent`
 	
 	- `Database framework` developed by `Castie!`.
-
-- `Design`
-	
-	-  The design of the `business logic` of the whole product..
-	
-	-  Layered code `architecture` design.
 
 ##### Display
 <img src="./SQFitnessProgram/contents/1.gif"><img src="./SQFitnessProgram/contents/2.gif">
