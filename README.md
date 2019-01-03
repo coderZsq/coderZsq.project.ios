@@ -21,7 +21,7 @@
 
 
 ##### Display
-<img src="./SQFitnessProgram/contents/1.gif"><img src="./SQFitnessProgram/contents/2.gif">
+<img src="./SQFitnessProgram/contents/01.gif"><img src="./SQFitnessProgram/contents/02.gif">
 
 <br/>
 
