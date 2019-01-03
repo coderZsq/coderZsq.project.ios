@@ -64,7 +64,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
-    [self.dataSource addObject:[dateFormatter stringFromDate:date]];
+    [self.dataSource insertObject:[dateFormatter stringFromDate:date] atIndex:0];
     [self.tableView reloadData];
     [self performSegueWithIdentifier:@"TrainCapacity" sender:nil];
     dispatch_async(dispatch_get_main_queue(), ^{
