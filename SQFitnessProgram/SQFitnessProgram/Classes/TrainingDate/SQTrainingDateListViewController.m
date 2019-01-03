@@ -58,7 +58,7 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:8]];
     NSString * traningDate = [dateFormatter stringFromDate:date];
-    if ([traningDate isEqualToString:self.dataSource.lastObject]) {
+    if ([traningDate isEqualToString:self.dataSource.firstObject]) {
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:nil message:@"Cannot add training repeatedly" preferredStyle:(UIAlertControllerStyleAlert)];
         [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];

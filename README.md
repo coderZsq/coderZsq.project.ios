@@ -1,5 +1,37 @@
 ## Inject inspirational into the project
 
+
+### SQFitnessProgram
+
+> The capacity-enhancing plan seen on youtube, with a demo written in code.
+
+##### Get Started
+
+- First Just pod install 
+
+- Then Run
+
+```
+$ pod install
+
+```
+##### Contents
+
+- `SqliteComponent`
+	
+	- `Database framework` developed by `Castie!`.
+
+- `Design`
+	
+	-  The design of the `business logic` of the whole product..
+	
+	-  Layered code `architecture` design.
+
+##### Display
+<img src="./SQFitnessProgram/contents/1.gif"><img src="./SQFitnessProgram/contents/2.gif">
+
+<br/>
+
 ### SQPerformance
 > Focus on performance optimization topics, Include `fluency-ui` technology
 
