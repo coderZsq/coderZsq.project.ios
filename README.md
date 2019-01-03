@@ -3,20 +3,22 @@
 
 ### SQFitnessProgram
 
-> The capacity-enhancing plan seen on youtube, with a demo written in code.
+> The capacity-training plan seen on youtube, with a app written in code.
 
 ##### Get Started
 
-- Just `pod install` then `run`.
+- `pod install` and `run`.
 
-```
-$ pod install
-```
 ##### Contents
 
-- `SqliteComponent`
-	
-	- `Database framework` developed by `Castie!`.
+- `SqliteComponent`	 >>>  `ORM Database framework` developed by `Castie!`
+- `Capacity training` for `different muscles`
+- `Record capacity training` for `each training day`
+- `Use` the `capacity training schedule` for `scientific muscle growth`
+- `Track` the `training capacity` of `each training session` to `achieve better results`
+- `The training capacity` of `each cycle` should `increase` by `3% ~ 5%`
+- `Make` your `training in the gym` more `planned` and `efficient`
+
 
 ##### Display
 <img src="./SQFitnessProgram/contents/1.gif"><img src="./SQFitnessProgram/contents/2.gif">
