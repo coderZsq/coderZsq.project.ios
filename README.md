@@ -25,6 +25,12 @@
 
 <br/>
 
+##### Article
+- [iOS 开发者如何突破那被限制的视野 / 2019 / 01](https://coderzsq.github.io/2019/01/iOS-%E5%BC%80%E5%8F%91%E8%80%85%E5%A6%82%E4%BD%95%E7%AA%81%E7%A0%B4%E9%82%A3%E8%A2%AB%E9%99%90%E5%88%B6%E7%9A%84%E8%A7%86%E9%87%8E/)
+
+<br/>
+
+
 ### SQPerformance
 > Focus on performance optimization topics, Include `fluency-ui` technology
 
@@ -44,9 +50,6 @@ $ node server.js
 - `Pre-decode` >>> perform image `decoding operations` on `asynchronous threads` to `reduce resource usage` of the main thread
 - `Pre-render` >>> `graphics rendering` in `asynchronous threads`, using the `CPU` for rendering operations, avoiding `GPU` `off-screen rendering` consumption
 - `Asynchronous drawing` >>> create a `graphics context` in an `asynchronous thread` and draw it into `layer.contents`
-
-##### Article
-- [iOS 开发者如何突破那被限制的视野 / 2019 / 01](https://coderzsq.github.io/2019/01/iOS-%E5%BC%80%E5%8F%91%E8%80%85%E5%A6%82%E4%BD%95%E7%AA%81%E7%A0%B4%E9%82%A3%E8%A2%AB%E9%99%90%E5%88%B6%E7%9A%84%E8%A7%86%E9%87%8E/)
 
 <br/>
 
