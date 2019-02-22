@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="175" id="KGk-i7-Jjw" customClass="SQTrainingCapacityCell">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="349" height="174.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLJ-MB-ren">
+                        <rect key="frame" x="0.0" y="0.0" width="70" height="174.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZe-KG-lX0">
+                        <rect key="frame" x="279" y="0.0" width="70" height="174.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-ez-olD">
+                        <rect key="frame" x="70" y="0.0" width="209" height="174.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgU-m7-Ey9">
+                                <rect key="frame" x="0.0" y="0.0" width="209" height="35"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1A7-qS-g3t" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0B3-LA-3ar" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="69.5" y="0.0" width="70" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3N-Aj-f1v" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="139.5" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0B3-LA-3ar" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="WX4-n5-4xJ"/>
+                                    <constraint firstItem="O3N-Aj-f1v" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="hQZ-iX-6u8"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xH9-Cl-LOl">
+                                <rect key="frame" x="0.0" y="35" width="209" height="35"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hTL-b9-rN3" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="67F-nN-Szl" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="69.5" y="0.0" width="70" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-sC-NGS" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="139.5" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwR-dv-hKV">
+                                <rect key="frame" x="0.0" y="70" width="209" height="34.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y9W-kk-8Kg" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="34.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0jM-Bh-Eex" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="69.5" y="0.0" width="70" height="34.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FxL-gV-Icc" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="139.5" y="0.0" width="69.5" height="34.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="b5n-lW-TJn">
+                                <rect key="frame" x="0.0" y="104.5" width="209" height="35"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVm-PA-LY8" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FFV-Cs-YJN" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="69.5" y="0.0" width="70" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dl2-dd-lXC" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="139.5" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X1b-xs-gKz">
+                                <rect key="frame" x="0.0" y="139.5" width="209" height="35"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CtN-dw-4kw" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-NC-QiZ" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="69.5" y="0.0" width="70" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-h4-G7c" customClass="SQTrainingCapacityTextField">
+                                        <rect key="frame" x="139.5" y="0.0" width="69.5" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0jM-Bh-Eex" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="03a-FO-cAs"/>
+                            <constraint firstItem="dl2-dd-lXC" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="A5c-VD-sHk"/>
+                            <constraint firstItem="67F-nN-Szl" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="ImF-kC-czH"/>
+                            <constraint firstItem="GVm-PA-LY8" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="LDb-1G-fGw"/>
+                            <constraint firstItem="hTL-b9-rN3" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="X4v-gY-sM6"/>
+                            <constraint firstItem="Y9W-kk-8Kg" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="Zzw-Ft-tkW"/>
+                            <constraint firstItem="CtN-dw-4kw" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="b6j-AL-FqW"/>
+                            <constraint firstItem="FFV-Cs-YJN" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="hxa-PL-rBd"/>
+                            <constraint firstItem="FxL-gV-Icc" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="jd3-jF-ae4"/>
+                            <constraint firstItem="QPe-NC-QiZ" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="lmC-ws-g9o"/>
+                            <constraint firstItem="IYe-h4-G7c" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="nPS-Ln-nve"/>
+                            <constraint firstItem="DOF-sC-NGS" firstAttribute="width" secondItem="1A7-qS-g3t" secondAttribute="width" id="yzj-a6-K8I"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ph1-ez-olD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="33U-oC-XgY"/>
+                    <constraint firstItem="XLJ-MB-ren" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CQx-4F-R2d"/>
+                    <constraint firstAttribute="bottom" secondItem="XLJ-MB-ren" secondAttribute="bottom" id="DR9-22-CIF"/>
+                    <constraint firstAttribute="bottom" secondItem="ph1-ez-olD" secondAttribute="bottom" id="Gwm-OT-zSG"/>
+                    <constraint firstItem="ph1-ez-olD" firstAttribute="leading" secondItem="XLJ-MB-ren" secondAttribute="trailing" id="Iji-oA-DeQ"/>
+                    <constraint firstItem="1A7-qS-g3t" firstAttribute="width" secondItem="XLJ-MB-ren" secondAttribute="width" id="Ngu-hq-N4v"/>
+                    <constraint firstItem="iZe-KG-lX0" firstAttribute="width" secondItem="XLJ-MB-ren" secondAttribute="width" id="QWX-PG-utf"/>
+                    <constraint firstAttribute="bottom" secondItem="iZe-KG-lX0" secondAttribute="bottom" id="Uri-4R-Ja2"/>
+                    <constraint firstItem="XLJ-MB-ren" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iIF-KT-9W9"/>
+                    <constraint firstItem="iZe-KG-lX0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jYA-R1-24U"/>
+                    <constraint firstItem="QPe-NC-QiZ" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.2" id="mRE-FG-0LV"/>
+                    <constraint firstItem="XLJ-MB-ren" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="os4-Rx-8cB"/>
+                    <constraint firstAttribute="trailing" secondItem="iZe-KG-lX0" secondAttribute="trailing" id="y0Y-gL-P1b"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="actionsTextField" destination="XLJ-MB-ren" id="uRU-BL-5az"/>
+                <outlet property="capacityTextField" destination="iZe-KG-lX0" id="pyu-ho-8AY"/>
+                <outletCollection property="rows" destination="xgU-m7-Ey9" id="xdM-m2-18d"/>
+                <outletCollection property="rows" destination="xH9-Cl-LOl" id="f0k-cf-9a9"/>
+                <outletCollection property="rows" destination="QwR-dv-hKV" id="6mA-Xe-Bkm"/>
+                <outletCollection property="rows" destination="b5n-lW-TJn" id="EBv-CF-Dei"/>
+                <outletCollection property="rows" destination="X1b-xs-gKz" id="G59-AW-lcJ"/>
+            </connections>
+            <point key="canvasLocation" x="-206" y="-146"/>
+        </tableViewCell>
+    </objects>
+</document>
