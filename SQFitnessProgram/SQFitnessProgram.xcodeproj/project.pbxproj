@@ -557,8 +557,8 @@
 		14E1855A221FF42500B2F03B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				14E1855B221FF42500B2F03B /* SQBaseTableViewController.m */,
 				14E1855C221FF42500B2F03B /* SQBaseTableViewController.h */,
+				14E1855B221FF42500B2F03B /* SQBaseTableViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";

@@ -7,7 +7,6 @@
 //
 
 #import "SQTrainingMusclesBuilder.h"
-#import "SQViper.h"
 #import "SQTrainingMusclesViewController.h"
 #import "SQTrainingMusclesPresenter.h"
 #import "SQTrainingMusclesInteractor.h"

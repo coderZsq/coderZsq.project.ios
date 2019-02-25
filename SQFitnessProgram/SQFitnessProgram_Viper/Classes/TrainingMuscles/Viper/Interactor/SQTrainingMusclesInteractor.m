@@ -19,7 +19,6 @@
 @implementation SQTrainingMusclesInteractor
 
 - (instancetype)initWithTrainingMusclesDataService:(id<SQTrainingMusclesDataService>)service {
-    
     if (self = [super init]) {
         _trainingMusclesDataService = service;
     }

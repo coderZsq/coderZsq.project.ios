@@ -7,6 +7,8 @@
 //
 
 #import "SQBaseTableViewController.h"
+#import "SQViperViewEventHandler.h"
+#import "UIViewController+SQViperRouter.h"
 
 @interface SQBaseTableViewController ()
 
@@ -15,9 +17,17 @@
 @property (nonatomic, copy) LoadCellHType loadCellH;
 @property (nonatomic, copy) BindType bind;
 
+@property (nonatomic, assign) BOOL appeared;
+@property (nonatomic, strong) id<SQViperViewEventHandler> eventHandler;
+@property (nonatomic, strong) id viewDataSource;
+
 @end
 
 @implementation SQBaseTableViewController
+
+- (UIViewController *)routeSource {
+    return self;
+}
 
 - (void)setupDataSource:(NSArray *)models loadCell:(LoadCellType)loadCell loadCellHeight:(LoadCellHType)loadCellHeight bind:(BindType)bind {
     self.loadCell = loadCell;
@@ -26,10 +36,46 @@
     self.models = models;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setupData];
-    [self setupUI];
+    if (self.appeared == NO) {
+        if ([self.eventHandler respondsToSelector:@selector(handleViewReady)]) {
+            [self.eventHandler handleViewReady];
+        }
+        [super viewDidLoad];
+        [self setupData];
+        [self setupUI];
+        self.appeared = YES;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([self.eventHandler respondsToSelector:@selector(handleViewWillAppear:)]) {
+        [self.eventHandler handleViewWillAppear:animated];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([self.eventHandler respondsToSelector:@selector(handleViewDidAppear:)]) {
+        [self.eventHandler handleViewDidAppear:animated];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([self.eventHandler respondsToSelector:@selector(handleViewDidDisappear:)]) {
+        [self.eventHandler handleViewDidDisappear:animated];
+    }
+    if (self.SQ_isRemoving == YES) {
+        if ([self.eventHandler respondsToSelector:@selector(handleViewRemoved)]) {
+            [self.eventHandler handleViewRemoved];
+        }
+    }
 }
 
 - (void)setupUI {
@@ -38,10 +84,6 @@
 
 - (void)setupData {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:@"reloadData" object:nil];
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)reloadData {

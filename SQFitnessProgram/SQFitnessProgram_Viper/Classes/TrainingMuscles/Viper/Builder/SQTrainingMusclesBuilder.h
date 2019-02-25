@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SQViperViewPrivate.h"
+#import "SQViperView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIViewController *)viewControllerWithTrainingMusclesDataService:(id<SQTrainingMusclesDataService>)service router:(id<SQViperRouter>)router;
 
-+ (void)buildView:(id<SQViperViewPrivate>)view trainingMusclesDataService:(id<SQTrainingMusclesDataService>)service router:(id<SQViperRouter>)router;
++ (void)buildView:(id<SQViperView>)view trainingMusclesDataService:(id<SQTrainingMusclesDataService>)service router:(id<SQViperRouter>)router;
 
 @end
 

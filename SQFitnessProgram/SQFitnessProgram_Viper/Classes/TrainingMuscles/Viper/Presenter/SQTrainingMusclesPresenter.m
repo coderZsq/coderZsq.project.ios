@@ -9,13 +9,13 @@
 #import "SQTrainingMusclesPresenter.h"
 #import "SQTrainingMusclesWireframeInput.h"
 #import "SQTrainingMusclesInteractorInput.h"
-#import "SQViperInteractor.h"
+#import "SQViperInteractorPrivate.h"
 
 @interface SQTrainingMusclesPresenter ()
 
 @property (nonatomic, strong) id<SQTrainingMusclesWireframeInput> wireframe;
-@property (nonatomic, weak) id<SQViperView> view;
-@property (nonatomic, strong) id<SQViperInteractor, SQTrainingMusclesInteractorInput> interactor;
+@property (nonatomic, weak) id<SQViperViewPrivate> view;
+@property (nonatomic, strong) id<SQViperInteractorPrivate, SQTrainingMusclesInteractorInput> interactor;
 
 @end
 
@@ -29,18 +29,23 @@
 }
 
 - (void)handleViewWillAppear:(BOOL)animated {
+    NSLog(@"%s", __func__);
 }
 
 - (void)handleViewDidAppear:(BOOL)animated {
+    NSLog(@"%s", __func__);
 }
 
 - (void)handleViewWillDisappear:(BOOL)animated {
+    NSLog(@"%s", __func__);
 }
 
 - (void)handleViewDidDisappear:(BOOL)animated {
+    NSLog(@"%s", __func__);
 }
 
 - (void)handleViewRemoved {
+    NSLog(@"%s", __func__);
 }
 
 - (void)handleDidSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SQViperView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +15,7 @@ typedef UITableViewCell *(^LoadCellType)(UITableView * tableView, NSIndexPath * 
 typedef CGFloat(^LoadCellHType)(id model);
 typedef void(^BindType)(UITableViewCell * cell, id model);
 
-@interface SQBaseTableViewController : UITableViewController
+@interface SQBaseTableViewController : UITableViewController<SQViperView>
 
 - (void)setupDataSource:(NSArray *)models
                loadCell:(LoadCellType)loadCell
