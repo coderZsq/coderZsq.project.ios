@@ -12,7 +12,7 @@
         <!--Training Date List View Controller-->
         <scene sceneID="veJ-jG-aGh">
             <objects>
-                <tableViewController id="Gje-jL-Lrt" customClass="SQTrainingDateListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SQTrainingDateListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gje-jL-Lrt" customClass="SQTrainingDateListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="im0-wc-wPc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Training Muscles View Controller-->
         <scene sceneID="yvq-41-DDe">
             <objects>
-                <tableViewController id="eU7-Cw-8Zz" customClass="SQTrainingMusclesViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SQTrainingMusclesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eU7-Cw-8Zz" customClass="SQTrainingMusclesViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7ke-Zy-4Hz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,9 +63,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Gje-jL-Lrt" kind="show" id="sjP-s9-stl"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

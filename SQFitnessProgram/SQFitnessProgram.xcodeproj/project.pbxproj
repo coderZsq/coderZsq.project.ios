@@ -21,13 +21,18 @@
 		1433B37921D9DA24003B4573 /* SQTrainingCapacityFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433B37821D9DA24003B4573 /* SQTrainingCapacityFooterView.m */; };
 		1433B37B21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1433B37A21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib */; };
 		1433B37E21D9DDB5003B4573 /* SQTrainingMusclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433B37D21D9DDB5003B4573 /* SQTrainingMusclesViewController.m */; };
+		143AA07E2223B90D00960EB8 /* SQTrainingMusclesWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 143AA07D2223B90D00960EB8 /* SQTrainingMusclesWireframe.m */; };
 		144DE74621DC64DC002382BE /* SQTrainingCapacityCellPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 144DE74521DC64DC002382BE /* SQTrainingCapacityCellPresenter.m */; };
 		145BDA3721DCB7FB008731C0 /* SQTrainingCapacityTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 145BDA3621DCB7FB008731C0 /* SQTrainingCapacityTextField.m */; };
 		145BDA3A21DCBA39008731C0 /* SQTrainingCapacityDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 145BDA3921DCBA39008731C0 /* SQTrainingCapacityDataBase.m */; };
 		146AE19921DCA86800EC395B /* SQTrainingDateListDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AE19821DCA86800EC395B /* SQTrainingDateListDataBase.m */; };
+		14851BE92223BEE900FF059B /* SQTrainingMusclesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 14851BE82223BEE900FF059B /* SQTrainingMusclesPresenter.m */; };
+		14851BEC2223BEFB00FF059B /* SQTrainingMusclesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14851BEB2223BEFB00FF059B /* SQTrainingMusclesInteractor.m */; };
 		14BDFFE721DC5A5400C52CEF /* SQTrainingCapacityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */; };
 		14C2849B21D8ED1500EFBDE6 /* SQBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2849A21D8ED1500EFBDE6 /* SQBaseTableViewController.m */; };
 		14C2849E21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */; };
+		14CBC6D82223E60A0053120E /* SQRouter+SQTrainingDateList.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CBC6D72223E60A0053120E /* SQRouter+SQTrainingDateList.m */; };
+		14CBC6DC2223E8CA0053120E /* SQTrainingDateListBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CBC6DB2223E8CA0053120E /* SQTrainingDateListBuilder.m */; };
 		14E18524221FF29F00B2F03B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E18523221FF29F00B2F03B /* AppDelegate.m */; };
 		14E1852A221FF29F00B2F03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E18528221FF29F00B2F03B /* Main.storyboard */; };
 		14E1852C221FF2A000B2F03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E1852B221FF2A000B2F03B /* Assets.xcassets */; };
@@ -51,6 +56,10 @@
 		14E1856C221FF42500B2F03B /* SQBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1855B221FF42500B2F03B /* SQBaseTableViewController.m */; };
 		14E1856F221FF53D00B2F03B /* SQTrainingMusclesBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1856E221FF53D00B2F03B /* SQTrainingMusclesBuilder.m */; };
 		14E18573221FF66B00B2F03B /* UIViewController+SQViperRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E18572221FF66B00B2F03B /* UIViewController+SQViperRouter.m */; };
+		14E23DE82223AFF600017A8B /* SQTrainingMusclesDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E23DE72223AFF600017A8B /* SQTrainingMusclesDataManager.m */; };
+		14E85A2122238C9A0054DE64 /* NSObject+SQViperAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E85A2022238C9A0054DE64 /* NSObject+SQViperAssembly.m */; };
+		14EF9F18222394F20000E780 /* UIApplication+SQViperRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF9F17222394F20000E780 /* UIApplication+SQViperRouter.m */; };
+		14EF9F1C2223959A0000E780 /* SQRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF9F1B2223959A0000E780 /* SQRouter.m */; };
 		14F737C1BE5A61E20983A7B6 /* libPods-SQFitnessProgram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5114C2562E9B50F1B2360F /* libPods-SQFitnessProgram.a */; };
 		B0C45F3B903774C23048CA8B /* libPods-SQFitnessProgram_Viper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A845B41EC1523A7F2DC0DFBD /* libPods-SQFitnessProgram_Viper.a */; };
 /* End PBXBuildFile section */
@@ -81,6 +90,9 @@
 		1433B37A21D9DA2D003B4573 /* SQTrainingCapacityFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQTrainingCapacityFooterView.xib; sourceTree = "<group>"; };
 		1433B37C21D9DDB5003B4573 /* SQTrainingMusclesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesViewController.h; sourceTree = "<group>"; };
 		1433B37D21D9DDB5003B4573 /* SQTrainingMusclesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingMusclesViewController.m; sourceTree = "<group>"; };
+		143AA07C2223B90D00960EB8 /* SQTrainingMusclesWireframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesWireframe.h; sourceTree = "<group>"; };
+		143AA07D2223B90D00960EB8 /* SQTrainingMusclesWireframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingMusclesWireframe.m; sourceTree = "<group>"; };
+		144569F02223B893009923F6 /* SQTrainingMusclesWireframeInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesWireframeInput.h; sourceTree = "<group>"; };
 		144DE74421DC64DC002382BE /* SQTrainingCapacityCellPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityCellPresenter.h; sourceTree = "<group>"; };
 		144DE74521DC64DC002382BE /* SQTrainingCapacityCellPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityCellPresenter.m; sourceTree = "<group>"; };
 		1454E288221FFB7A0053BECE /* SQViperPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViperPresenter.h; sourceTree = "<group>"; };
@@ -93,12 +105,26 @@
 		145BDA3921DCBA39008731C0 /* SQTrainingCapacityDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityDataBase.m; sourceTree = "<group>"; };
 		146AE19721DCA86800EC395B /* SQTrainingDateListDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingDateListDataBase.h; sourceTree = "<group>"; };
 		146AE19821DCA86800EC395B /* SQTrainingDateListDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingDateListDataBase.m; sourceTree = "<group>"; };
+		14851BE72223BEE900FF059B /* SQTrainingMusclesPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesPresenter.h; sourceTree = "<group>"; };
+		14851BE82223BEE900FF059B /* SQTrainingMusclesPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingMusclesPresenter.m; sourceTree = "<group>"; };
+		14851BEA2223BEFB00FF059B /* SQTrainingMusclesInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesInteractor.h; sourceTree = "<group>"; };
+		14851BEB2223BEFB00FF059B /* SQTrainingMusclesInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingMusclesInteractor.m; sourceTree = "<group>"; };
+		14851BEF2223C36000FF059B /* SQTrainingMusclesViewEventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesViewEventHandler.h; sourceTree = "<group>"; };
+		14851BF02223C67200FF059B /* SQTrainingMusclesInteractorInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesInteractorInput.h; sourceTree = "<group>"; };
+		14851BF12223C86C00FF059B /* SQTrainingMusclesDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesDataSource.h; sourceTree = "<group>"; };
+		14851BF42223E4B900FF059B /* SQTrainingMusclesRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesRouter.h; sourceTree = "<group>"; };
+		14A8CF1022239C5B000A397B /* SQTrainingMusclesDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesDataManager.h; sourceTree = "<group>"; };
 		14BDFFE521DC5A5400C52CEF /* SQTrainingCapacityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityModel.h; sourceTree = "<group>"; };
 		14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityModel.m; sourceTree = "<group>"; };
 		14C2849921D8ED1500EFBDE6 /* SQBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQBaseTableViewController.h; sourceTree = "<group>"; };
 		14C2849A21D8ED1500EFBDE6 /* SQBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQBaseTableViewController.m; sourceTree = "<group>"; };
 		14C2849C21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityViewController.h; sourceTree = "<group>"; };
 		14C2849D21D8FA9600EFBDE6 /* SQTrainingCapacityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityViewController.m; sourceTree = "<group>"; };
+		14C5BADF222387B800ED1B11 /* SQViperViewPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViperViewPrivate.h; sourceTree = "<group>"; };
+		14CBC6D62223E60A0053120E /* SQRouter+SQTrainingDateList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQRouter+SQTrainingDateList.h"; sourceTree = "<group>"; };
+		14CBC6D72223E60A0053120E /* SQRouter+SQTrainingDateList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SQRouter+SQTrainingDateList.m"; sourceTree = "<group>"; };
+		14CBC6DA2223E8CA0053120E /* SQTrainingDateListBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingDateListBuilder.h; sourceTree = "<group>"; };
+		14CBC6DB2223E8CA0053120E /* SQTrainingDateListBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingDateListBuilder.m; sourceTree = "<group>"; };
 		14E18520221FF29F00B2F03B /* SQFitnessProgram_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQFitnessProgram_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E18522221FF29F00B2F03B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14E18523221FF29F00B2F03B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +169,18 @@
 		14E18572221FF66B00B2F03B /* UIViewController+SQViperRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SQViperRouter.m"; sourceTree = "<group>"; };
 		14E18575221FF8DC00B2F03B /* SQViperViewEventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViperViewEventHandler.h; sourceTree = "<group>"; };
 		14E18578221FF9C700B2F03B /* SQViperView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViperView.h; sourceTree = "<group>"; };
+		14E23DE72223AFF600017A8B /* SQTrainingMusclesDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTrainingMusclesDataManager.m; sourceTree = "<group>"; };
+		14E23DE92223B34E00017A8B /* SQTrainingMusclesDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesDataService.h; sourceTree = "<group>"; };
+		14E85A1C222389E40054DE64 /* SQViperPresenterPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViperPresenterPrivate.h; sourceTree = "<group>"; };
+		14E85A1D22238B5A0054DE64 /* SQViperInteractorPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViperInteractorPrivate.h; sourceTree = "<group>"; };
+		14E85A1E22238BD80054DE64 /* SQViperWireframePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViperWireframePrivate.h; sourceTree = "<group>"; };
+		14E85A1F22238C9A0054DE64 /* NSObject+SQViperAssembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SQViperAssembly.h"; sourceTree = "<group>"; };
+		14E85A2022238C9A0054DE64 /* NSObject+SQViperAssembly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SQViperAssembly.m"; sourceTree = "<group>"; };
+		14E85A222223937A0054DE64 /* SQViper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQViper.h; sourceTree = "<group>"; };
+		14EF9F16222394F20000E780 /* UIApplication+SQViperRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SQViperRouter.h"; sourceTree = "<group>"; };
+		14EF9F17222394F20000E780 /* UIApplication+SQViperRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+SQViperRouter.m"; sourceTree = "<group>"; };
+		14EF9F1A2223959A0000E780 /* SQRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQRouter.h; sourceTree = "<group>"; };
+		14EF9F1B2223959A0000E780 /* SQRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQRouter.m; sourceTree = "<group>"; };
 		1AD59C508A9BE9A626EA0D68 /* Pods-SQFitnessProgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQFitnessProgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQFitnessProgram/Pods-SQFitnessProgram.release.xcconfig"; sourceTree = "<group>"; };
 		1BD95350F0D84018EA3F7E0D /* Pods-SQFitnessProgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQFitnessProgram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQFitnessProgram/Pods-SQFitnessProgram.debug.xcconfig"; sourceTree = "<group>"; };
 		4F1D4674C462B6030F2282F3 /* Pods-SQFitnessProgram_Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQFitnessProgram_Viper.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQFitnessProgram_Viper/Pods-SQFitnessProgram_Viper.release.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +315,17 @@
 			path = TrainingMuscles;
 			sourceTree = "<group>";
 		};
+		144569F12223B89A009923F6 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				14851BF42223E4B900FF059B /* SQTrainingMusclesRouter.h */,
+				144569F02223B893009923F6 /* SQTrainingMusclesWireframeInput.h */,
+				143AA07C2223B90D00960EB8 /* SQTrainingMusclesWireframe.h */,
+				143AA07D2223B90D00960EB8 /* SQTrainingMusclesWireframe.m */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
 		145BDA3B21DCBA40008731C0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +333,58 @@
 				145BDA3921DCBA39008731C0 /* SQTrainingCapacityDataBase.m */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		14851BED2223BF0000FF059B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				14851BE72223BEE900FF059B /* SQTrainingMusclesPresenter.h */,
+				14851BE82223BEE900FF059B /* SQTrainingMusclesPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		14851BEE2223BF0F00FF059B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				14851BF02223C67200FF059B /* SQTrainingMusclesInteractorInput.h */,
+				14851BEA2223BEFB00FF059B /* SQTrainingMusclesInteractor.h */,
+				14851BEB2223BEFB00FF059B /* SQTrainingMusclesInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		14A8CF09222397A6000A397B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14E23DE92223B34E00017A8B /* SQTrainingMusclesDataService.h */,
+				14851BF12223C86C00FF059B /* SQTrainingMusclesDataSource.h */,
+				14851BEF2223C36000FF059B /* SQTrainingMusclesViewEventHandler.h */,
+				14E18539221FF42500B2F03B /* SQTrainingMusclesViewController.h */,
+				14E18538221FF42500B2F03B /* SQTrainingMusclesViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14A8CF0F22239C22000A397B /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				14E18570221FF60400B2F03B /* Builder */,
+				14A8CF09222397A6000A397B /* View */,
+				14851BED2223BF0000FF059B /* Presenter */,
+				144569F12223B89A009923F6 /* Wireframe */,
+				14851BEE2223BF0F00FF059B /* Interactor */,
+			);
+			path = Viper;
+			sourceTree = "<group>";
+		};
+		14A8CF1322239C5F000A397B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				14A8CF1022239C5B000A397B /* SQTrainingMusclesDataManager.h */,
+				14E23DE72223AFF600017A8B /* SQTrainingMusclesDataManager.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		14C2849F21D8FD7900EFBDE6 /* Base */ = {
@@ -317,6 +418,33 @@
 			path = TrainingCapacity;
 			sourceTree = "<group>";
 		};
+		14CBC6D92223E6A10053120E /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				14CBC6D62223E60A0053120E /* SQRouter+SQTrainingDateList.h */,
+				14CBC6D72223E60A0053120E /* SQRouter+SQTrainingDateList.m */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		14CBC6DD2223E8D30053120E /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				14CBC6DA2223E8CA0053120E /* SQTrainingDateListBuilder.h */,
+				14CBC6DB2223E8CA0053120E /* SQTrainingDateListBuilder.m */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		14CBC6DE2223F1360053120E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14E18556221FF42500B2F03B /* SQTrainingDateListViewController.h */,
+				14E18559221FF42500B2F03B /* SQTrainingDateListViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		14E18521221FF29F00B2F03B /* SQFitnessProgram_Viper */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,9 +464,10 @@
 		14E18536221FF42500B2F03B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				14EF9F192223950D0000E780 /* Router */,
 				14E18537221FF42500B2F03B /* TrainingMuscles */,
-				14E1853A221FF42500B2F03B /* TrainingCapacity */,
 				14E18555221FF42500B2F03B /* TrainingDate */,
+				14E1853A221FF42500B2F03B /* TrainingCapacity */,
 				14E1855A221FF42500B2F03B /* Base */,
 			);
 			path = Classes;
@@ -347,9 +476,8 @@
 		14E18537221FF42500B2F03B /* TrainingMuscles */ = {
 			isa = PBXGroup;
 			children = (
-				14E18538221FF42500B2F03B /* SQTrainingMusclesViewController.m */,
-				14E18539221FF42500B2F03B /* SQTrainingMusclesViewController.h */,
-				14E18570221FF60400B2F03B /* Builder */,
+				14A8CF0F22239C22000A397B /* Viper */,
+				14A8CF1322239C5F000A397B /* Service */,
 			);
 			path = TrainingMuscles;
 			sourceTree = "<group>";
@@ -377,13 +505,13 @@
 		14E1853E221FF42500B2F03B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				14E1853F221FF42500B2F03B /* SQTrainingCapacityModel.m */,
-				14E18540221FF42500B2F03B /* SQTrainingCapacityCellPresenter.m */,
-				14E18541221FF42500B2F03B /* SQTrainingCapacityNotification.m */,
 				14E18542221FF42500B2F03B /* SQTrainingCapacityModel.h */,
-				14E18543221FF42500B2F03B /* SQTrainingCapacityMuscleType.h */,
+				14E1853F221FF42500B2F03B /* SQTrainingCapacityModel.m */,
 				14E18544221FF42500B2F03B /* SQTrainingCapacityCellPresenter.h */,
+				14E18540221FF42500B2F03B /* SQTrainingCapacityCellPresenter.m */,
 				14E18545221FF42500B2F03B /* SQTrainingCapacityNotification.h */,
+				14E18541221FF42500B2F03B /* SQTrainingCapacityNotification.m */,
+				14E18543221FF42500B2F03B /* SQTrainingCapacityMuscleType.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,10 +546,10 @@
 		14E18555221FF42500B2F03B /* TrainingDate */ = {
 			isa = PBXGroup;
 			children = (
-				14E18556221FF42500B2F03B /* SQTrainingDateListViewController.h */,
+				14CBC6DD2223E8D30053120E /* Builder */,
+				14CBC6DE2223F1360053120E /* View */,
 				14E18557221FF42500B2F03B /* SQTrainingDateListDataBase.m */,
 				14E18558221FF42500B2F03B /* SQTrainingDateListDataBase.h */,
-				14E18559221FF42500B2F03B /* SQTrainingDateListViewController.m */,
 			);
 			path = TrainingDate;
 			sourceTree = "<group>";
@@ -447,16 +575,35 @@
 		14E18574221FF67E00B2F03B /* SQViper */ = {
 			isa = PBXGroup;
 			children = (
+				14E85A222223937A0054DE64 /* SQViper.h */,
 				14E18575221FF8DC00B2F03B /* SQViperViewEventHandler.h */,
 				14E18578221FF9C700B2F03B /* SQViperView.h */,
 				1454E288221FFB7A0053BECE /* SQViperPresenter.h */,
 				1454E289221FFC350053BECE /* SQViperInteractor.h */,
 				1454E28A221FFCA40053BECE /* SQViperWireframe.h */,
 				1454E28B221FFD6C0053BECE /* SQViperRouter.h */,
+				14C5BADF222387B800ED1B11 /* SQViperViewPrivate.h */,
+				14E85A1C222389E40054DE64 /* SQViperPresenterPrivate.h */,
+				14E85A1D22238B5A0054DE64 /* SQViperInteractorPrivate.h */,
+				14E85A1E22238BD80054DE64 /* SQViperWireframePrivate.h */,
+				14E85A1F22238C9A0054DE64 /* NSObject+SQViperAssembly.h */,
+				14E85A2022238C9A0054DE64 /* NSObject+SQViperAssembly.m */,
 				14E18571221FF66B00B2F03B /* UIViewController+SQViperRouter.h */,
 				14E18572221FF66B00B2F03B /* UIViewController+SQViperRouter.m */,
 			);
 			path = SQViper;
+			sourceTree = "<group>";
+		};
+		14EF9F192223950D0000E780 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				14EF9F1A2223959A0000E780 /* SQRouter.h */,
+				14EF9F1B2223959A0000E780 /* SQRouter.m */,
+				14EF9F16222394F20000E780 /* UIApplication+SQViperRouter.h */,
+				14EF9F17222394F20000E780 /* UIApplication+SQViperRouter.m */,
+				14CBC6D92223E6A10053120E /* Adapter */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		62C34BFD4B308A2127207131 /* Frameworks */ = {
@@ -646,18 +793,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14851BE92223BEE900FF059B /* SQTrainingMusclesPresenter.m in Sources */,
+				14CBC6DC2223E8CA0053120E /* SQTrainingDateListBuilder.m in Sources */,
 				14E18532221FF2A000B2F03B /* main.m in Sources */,
+				14CBC6D82223E60A0053120E /* SQRouter+SQTrainingDateList.m in Sources */,
 				14E1855D221FF42500B2F03B /* SQTrainingMusclesViewController.m in Sources */,
 				14E18560221FF42500B2F03B /* SQTrainingCapacityCellPresenter.m in Sources */,
 				14E18563221FF42500B2F03B /* SQTrainingCapacityHeaderView.m in Sources */,
 				14E18573221FF66B00B2F03B /* UIViewController+SQViperRouter.m in Sources */,
+				14EF9F18222394F20000E780 /* UIApplication+SQViperRouter.m in Sources */,
+				14EF9F1C2223959A0000E780 /* SQRouter.m in Sources */,
 				14E1855F221FF42500B2F03B /* SQTrainingCapacityModel.m in Sources */,
+				14E23DE82223AFF600017A8B /* SQTrainingMusclesDataManager.m in Sources */,
 				14E1856C221FF42500B2F03B /* SQBaseTableViewController.m in Sources */,
 				14E18561221FF42500B2F03B /* SQTrainingCapacityNotification.m in Sources */,
 				14E1855E221FF42500B2F03B /* SQTrainingCapacityViewController.m in Sources */,
 				14E1856F221FF53D00B2F03B /* SQTrainingMusclesBuilder.m in Sources */,
 				14E18567221FF42500B2F03B /* SQTrainingCapacityFooterView.m in Sources */,
+				14851BEC2223BEFB00FF059B /* SQTrainingMusclesInteractor.m in Sources */,
 				14E18568221FF42500B2F03B /* SQTrainingCapacityCell.m in Sources */,
+				143AA07E2223B90D00960EB8 /* SQTrainingMusclesWireframe.m in Sources */,
+				14E85A2122238C9A0054DE64 /* NSObject+SQViperAssembly.m in Sources */,
 				14E1856A221FF42500B2F03B /* SQTrainingDateListDataBase.m in Sources */,
 				14E1856B221FF42500B2F03B /* SQTrainingDateListViewController.m in Sources */,
 				14E18566221FF42500B2F03B /* SQTrainingCapacityTextField.m in Sources */,

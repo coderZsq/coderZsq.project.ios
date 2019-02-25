@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "SQTrainingMusclesBuilder.h"
+#import "SQTrainingMusclesDataManager.h"
+#import "UIApplication+SQViperRouter.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    UIViewController *view = [navigationController.viewControllers firstObject];
+    [SQTrainingMusclesBuilder buildView:(id)view
+             trainingMusclesDataService:[SQTrainingMusclesDataManager sharedInstance]
+                                 router:(id)application.SQ_router];
+
     return YES;
 }
 

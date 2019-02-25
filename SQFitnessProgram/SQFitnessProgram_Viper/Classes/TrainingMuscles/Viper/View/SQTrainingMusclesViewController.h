@@ -7,10 +7,11 @@
 //
 
 #import "SQBaseTableViewController.h"
+#import "SQViperView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQTrainingMusclesViewController : SQBaseTableViewController
+@interface SQTrainingMusclesViewController : SQBaseTableViewController<SQViperView>
 
 @end
 

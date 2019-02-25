@@ -14,10 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)handleViewReady;
+
 - (void)handleViewRemoved;
+
 - (void)handleViewWillAppear:(BOOL)animated;
+
 - (void)handleViewDidAppear:(BOOL)animated;
+
 - (void)handleViewWillDisappear:(BOOL)animated;
+
 - (void)handleViewDidDisappear:(BOOL)animated;
 
 @end
