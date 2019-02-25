@@ -8,11 +8,11 @@
 
 #import "SQTrainingMusclesWireframe.h"
 #import "SQTrainingMusclesRouter.h"
-#import "SQViperView.h"
+#import "SQViperViewPrivate.h"
 
 @interface SQTrainingMusclesWireframe ()
 
-@property (nonatomic, weak) id<SQViperView> view;
+@property (nonatomic, weak) id<SQViperViewPrivate> view;
 @property (nonatomic, strong) id<SQTrainingMusclesRouter> router;
 
 @end
