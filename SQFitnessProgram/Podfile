@@ -15,6 +15,7 @@ target 'SQFitnessProgram_Viper' do
     # use_frameworks!
     
     # Pods for SQFitnessProgram
+    pod 'Viper', :path => './Viper'
     pod 'SqliteComponent', :path => './SqliteComponent'
     
 end
