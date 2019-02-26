@@ -7,7 +7,24 @@
 //
 
 #import "SQTrainingDateListInteractor.h"
+#import "SQTrainingDateListDataService.h"
+
+@interface SQTrainingDateListInteractor ()
+
+@property (nonatomic, strong) id<SQTrainingDateListDataService> trainingDateListDataService;
+
+@end
 
 @implementation SQTrainingDateListInteractor
+
+- (NSArray *)fetchDataSource {
+    return self.trainingDateListDataService.dataSource;
+}
+
+- (void)loadDataSource {
+    [self.trainingDateListDataService fetchDataSourceWithCompletion:^(NSArray * _Nonnull dataSource) {
+        
+    }];
+}
 
 @end

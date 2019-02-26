@@ -6,11 +6,11 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "SQViperInteractor.h"
+#import "SQTrainingDateListInteractorInput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQTrainingDateListInteractor : NSObject<SQViperInteractor>
+@interface SQTrainingDateListInteractor : NSObject<SQTrainingDateListInteractorInput>
 
 @property (nonatomic, weak) id dataSource;
 @property (nonatomic, weak) id eventHandler;

@@ -24,26 +24,14 @@
 }
 
 + (void)buildView:(id<SQViperViewPrivate>)view trainingMusclesDataService:(id<SQTrainingMusclesDataService>)service router:(id<SQViperRouter>)router {
-    
-    NSParameterAssert([view isKindOfClass:[SQTrainingMusclesViewController class]]);
-    NSParameterAssert(service);
-    
-    SQTrainingMusclesPresenter *presenter = [SQTrainingMusclesPresenter new];
-    SQTrainingMusclesInteractor *interactor = [[SQTrainingMusclesInteractor alloc]initWithTrainingMusclesDataService:service];
-    
-    interactor.eventHandler = presenter;
-    interactor.dataSource = presenter;
-    
+    id<SQViperPresenterPrivate> presenter = (id)[SQTrainingMusclesPresenter new];
+    id<SQViperInteractorPrivate> interactor = (id)[[SQTrainingMusclesInteractor alloc]initWithTrainingMusclesDataService:service];
     id<SQViperWireframePrivate> wireframe = (id)[SQTrainingMusclesWireframe new];
-    wireframe.view = view;
-    wireframe.router = router;
-    
-    [(id<SQViperPresenterPrivate>)presenter setView:view];
-    [(id<SQViperPresenterPrivate>)presenter setWireframe:wireframe];
-    [(id<SQViperPresenterPrivate>)presenter setInteractor:interactor];
-    
-    view.eventHandler = presenter;
-    view.viewDataSource = presenter;
+    [self assembleViperForView:view
+                     presenter:presenter
+                    interactor:interactor
+                     wireframe:wireframe
+                        router:router];
 }
 
 @end

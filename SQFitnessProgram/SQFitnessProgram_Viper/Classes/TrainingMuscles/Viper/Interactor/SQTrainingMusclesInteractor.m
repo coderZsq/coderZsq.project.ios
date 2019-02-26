@@ -9,10 +9,9 @@
 #import "SQTrainingMusclesInteractor.h"
 #import "SQTrainingMusclesDataService.h"
 
-@interface SQTrainingMusclesInteractor ()<SQViperInteractor>
+@interface SQTrainingMusclesInteractor ()
 
 @property (nonatomic, strong) id<SQTrainingMusclesDataService> trainingMusclesDataService;
-@property (nonatomic, strong) NSArray *data;
 
 @end
 
@@ -25,14 +24,14 @@
     return self;
 }
 
-- (void)loadDataSource {
-    [self.trainingMusclesDataService fetchDataSourceWithCompletion:^(NSArray * _Nonnull dataSource) {
-        self.data = dataSource;
-    }];
+- (NSArray *)fetchDataSource {
+    return self.trainingMusclesDataService.dataSource;
 }
 
-- (NSArray *)fetchDataSource {
-    return self.data.copy;
+- (void)loadDataSource {
+    [self.trainingMusclesDataService fetchDataSourceWithCompletion:^(NSArray * _Nonnull dataSource) {
+        
+    }];
 }
 
 @end

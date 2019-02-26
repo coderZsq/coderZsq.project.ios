@@ -7,6 +7,10 @@
 //
 
 #import "SQTrainingDateListViewController.h"
+#import "SQTrainingDateListViewEventHandler.h"
+#import "SQTrainingDateListDataSource.h"
+
+
 #import "SQTrainingDateListDataBase.h"
 #import "SQSqliteModelTool.h"
 
@@ -38,6 +42,7 @@
 
 - (void)setupUI {
     self.title = @"Training Date";
+//    [(id<SQTrainingDateListDataSource>)self.viewDataSource fetchDataSourceFromDB];
     [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingDate" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
@@ -53,6 +58,7 @@
 }
 
 - (IBAction)addTraningDate:(UIBarButtonItem *)sender {
+    [(id<SQTrainingDateListViewEventHandler>)self.eventHandler didTouchNavigationBarAddButton];
     NSDate * date = [NSDate date];
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];

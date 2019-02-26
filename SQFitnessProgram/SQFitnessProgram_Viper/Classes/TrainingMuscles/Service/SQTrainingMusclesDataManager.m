@@ -10,7 +10,7 @@
 
 @interface SQTrainingMusclesDataManager ()
 
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSArray *data;
 
 @end
 
@@ -25,17 +25,22 @@
     return shared;
 }
 
+- (NSArray *)dataSource {
+    return self.data.copy;
+}
+
 - (void)fetchDataSourceWithCompletion:(void (^)(NSArray * _Nonnull))completion {
     NSAssert([NSThread isMainThread], @"main thread only, otherwise use lock to make thread safety");
-    self.dataSource = @[@"Pectoral muscle",
-                        @"Back muscle",
-                        @"Leg muscle",
-                        @"Shoulder muscle",
-                        @"Arm muscle",
-                        @"Abdominal muscle"];
+    self.data = @[@"Pectoral muscle",
+                  @"Back muscle",
+                  @"Leg muscle",
+                  @"Shoulder muscle",
+                  @"Arm muscle",
+                  @"Abdominal muscle"];
     if (completion) {
-        completion(self.dataSource);
+        completion(self.data);
     }
 }
+
 
 @end

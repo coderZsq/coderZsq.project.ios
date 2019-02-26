@@ -11,10 +11,6 @@
 #import "SQTrainingDateListPresenter.h"
 #import "SQTrainingDateListInteractor.h"
 #import "SQTrainingDateListWireframe.h"
-#import "SQViperViewPrivate.h"
-#import "SQViperPresenterPrivate.h"
-#import "SQViperInteractorPrivate.h"
-#import "SQViperWireframePrivate.h"
 #import "NSObject+SQViperAssembly.h"
 
 @implementation SQTrainingDateListBuilder
@@ -22,6 +18,7 @@
 + (UIViewController *)viewControllerForTrainingDateListWithType:(SQTrainingCapacityMuscleType)type router:(id<SQViperRouter>)router {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle bundleForClass:self.class]];
     SQTrainingDateListViewController *view = [sb instantiateViewControllerWithIdentifier:@"SQTrainingDateListViewController"];
+    NSAssert([view isKindOfClass:[SQTrainingDateListViewController class]], nil);
     view.type = type;
     [self buildView:(id<SQViperViewPrivate>)view router:router];
     return view;

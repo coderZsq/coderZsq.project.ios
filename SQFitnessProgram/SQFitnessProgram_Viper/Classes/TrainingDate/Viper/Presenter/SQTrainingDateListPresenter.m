@@ -8,13 +8,13 @@
 
 #import "SQTrainingDateListPresenter.h"
 #import "SQViperViewPrivate.h"
-#import "SQViperInteractorPrivate.h"
+#import "SQTrainingDateListInteractorInput.h"
 #import "SQViperWireframePrivate.h"
 
 @interface SQTrainingDateListPresenter ()
 
 @property (nonatomic, weak) id<SQViperViewPrivate> view;
-@property (nonatomic, weak) id<SQViperInteractorPrivate> interactor;
+@property (nonatomic, weak) id<SQTrainingDateListInteractorInput> interactor;
 @property (nonatomic, weak) id<SQViperWireframePrivate> wireframe;
 
 @end
@@ -22,7 +22,7 @@
 @implementation SQTrainingDateListPresenter
 
 - (void)handleViewReady {
-    
+    [self.interactor loadDataSource];
 }
 
 - (void)handleViewWillAppear:(BOOL)animated {
@@ -45,5 +45,13 @@
     NSLog(@"%s", __func__);
 }
 
+
+- (void)didTouchNavigationBarAddButton {
+    
+}
+
+- (nonnull NSArray *)fetchDataSourceFromDB {
+    return [self.interactor fetchDataSource];
+}
 
 @end
