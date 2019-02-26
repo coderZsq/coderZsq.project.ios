@@ -7,12 +7,17 @@
 //
 
 #import "SQViperInteractor.h"
+#import "SQTrainingCapacityMuscleType.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SQTrainingDateListInteractorInput <NSObject, SQViperInteractor>
 
-- (void)loadDataSource;
+- (void)loadDataSourceWithType:(SQTrainingCapacityMuscleType)type;
+
+- (void)storeDataSourceWithType:(SQTrainingCapacityMuscleType)type
+                     dataSource:(NSArray *)dataSource
+                     completion:(void(^)(void))completion;
 
 - (NSArray *)fetchDataSource;
 

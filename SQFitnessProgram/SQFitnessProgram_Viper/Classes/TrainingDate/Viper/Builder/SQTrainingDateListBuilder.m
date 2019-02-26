@@ -11,6 +11,7 @@
 #import "SQTrainingDateListPresenter.h"
 #import "SQTrainingDateListInteractor.h"
 #import "SQTrainingDateListWireframe.h"
+#import "SQTrainingDateListDataManager.h"
 #import "NSObject+SQViperAssembly.h"
 
 @implementation SQTrainingDateListBuilder
@@ -20,13 +21,13 @@
     SQTrainingDateListViewController *view = [sb instantiateViewControllerWithIdentifier:@"SQTrainingDateListViewController"];
     NSAssert([view isKindOfClass:[SQTrainingDateListViewController class]], nil);
     view.type = type;
-    [self buildView:(id<SQViperViewPrivate>)view router:router];
+    [self buildView:(id<SQViperViewPrivate>)view trainingDateListDataService:[SQTrainingDateListDataManager new] router:router];
     return view;
 }
 
-+ (void)buildView:(id<SQViperViewPrivate>)view router:(id<SQViperRouter>)router {
++ (void)buildView:(id<SQViperViewPrivate>)view trainingDateListDataService:(id<SQTrainingDateListDataService>)service router:(id<SQViperRouter>)router {
     id<SQViperPresenterPrivate> presenter = (id)[SQTrainingDateListPresenter new];
-    id<SQViperInteractorPrivate> interactor = (id)[SQTrainingDateListInteractor new];
+    id<SQViperInteractorPrivate> interactor = [(id)[SQTrainingDateListInteractor alloc]initWithTrainingDateListDataService:service];
     id<SQViperWireframePrivate> wireframe = (id)[SQTrainingDateListWireframe new];
     [self assembleViperForView:view
                      presenter:presenter

@@ -6,13 +6,16 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SQViperView.h"
+#import "SQTrainingCapacityMuscleType.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingDateListViewProtocol <NSObject>
+@protocol SQTrainingDateListViewProtocol <NSObject, SQViperView>
 
-- (UITableView *)tableView;
+@property (nonatomic, assign) SQTrainingCapacityMuscleType type;
+
+- (void)setupUI;
 
 @end
 

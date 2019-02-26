@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SQTrainingCapacityMuscleType.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, strong) NSArray *dataSource;
 
-- (void)fetchDataSourceWithCompletion:(void(^)(NSArray *dataSource))completion;
+- (void)fetchDataSourceWithType:(SQTrainingCapacityMuscleType)type completion:(void(^)(NSArray *dataSource))completion;
+
+- (void)storeDataSourceWithType:(SQTrainingCapacityMuscleType)type dataSource:(nonnull NSArray *)dataSource completion:(nonnull void (^)(void))completion;
 
 @end
 

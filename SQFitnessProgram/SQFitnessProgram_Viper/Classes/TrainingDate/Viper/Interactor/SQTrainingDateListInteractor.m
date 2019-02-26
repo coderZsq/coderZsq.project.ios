@@ -17,13 +17,28 @@
 
 @implementation SQTrainingDateListInteractor
 
+- (instancetype)initWithTrainingDateListDataService:(id<SQTrainingDateListDataService>)service {
+    if (self = [super init]) {
+        _trainingDateListDataService = service;
+    }
+    return self;
+}
+
 - (NSArray *)fetchDataSource {
     return self.trainingDateListDataService.dataSource;
 }
 
-- (void)loadDataSource {
-    [self.trainingDateListDataService fetchDataSourceWithCompletion:^(NSArray * _Nonnull dataSource) {
+- (void)loadDataSourceWithType:(SQTrainingCapacityMuscleType)type {
+    [self.trainingDateListDataService fetchDataSourceWithType:type completion:^(NSArray * _Nonnull dataSource) {
         
+    }];
+}
+
+- (void)storeDataSourceWithType:(SQTrainingCapacityMuscleType)type dataSource:(NSArray *)dataSource completion:(void (^)(void))completion {
+    [self.trainingDateListDataService storeDataSourceWithType:type dataSource:dataSource completion:^{
+        if (completion) {
+            completion();
+        }
     }];
 }
 

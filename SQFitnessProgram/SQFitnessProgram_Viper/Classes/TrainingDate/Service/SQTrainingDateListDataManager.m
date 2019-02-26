@@ -31,6 +31,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _data = [NSMutableArray array];
         _dataBase = [SQTrainingDateListDataBase new];
     }
     return self;
@@ -40,14 +41,21 @@
     return self.data.copy;
 }
 
-- (void)fetchDataSourceWithCompletion:(nonnull void (^)(NSArray * _Nonnull))completion {
+- (void)fetchDataSourceWithType:(SQTrainingCapacityMuscleType)type completion:(void (^)(NSArray * _Nonnull))completion {
     NSAssert([NSThread isMainThread], @"main thread only, otherwise use lock to make thread safety");
-    NSArray *data = self.data;
-    if (!data) {
-        data = [NSMutableArray array];
-    }
+    SQTrainingDateListDataBase * dataBase = [SQSqliteModelTool queryModels:self.dataBase.class columnName:@"type" relation:(ColumnNameToValueRelationTypeEqual) value:@(type) uid:nil].firstObject;
+    [self.data addObjectsFromArray:dataBase.dateList];
     if (completion) {
-        completion(data);
+        completion(self.data);
+    }
+}
+
+- (void)storeDataSourceWithType:(SQTrainingCapacityMuscleType)type dataSource:(NSArray *)dataSource completion:(void (^)(void))completion {
+    self.dataBase.type = type;
+    self.dataBase.dateList = dataSource;
+    [SQSqliteModelTool saveOrUpdateModel:self.dataBase uid:nil];
+    if (completion) {
+        completion();
     }
 }
 

@@ -14,7 +14,7 @@
 
 - (void)setupUI {
     self.title = @"Training Muscle Group";
-    NSArray * dataSource = [(id<SQTrainingMusclesDataSource>)self.viewDataSource fetchDataSource];
+    NSArray *dataSource = [(id<SQTrainingMusclesDataSource>)self.viewDataSource fetchDataSource];
     [self setupDataSource:dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingMuscles" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
