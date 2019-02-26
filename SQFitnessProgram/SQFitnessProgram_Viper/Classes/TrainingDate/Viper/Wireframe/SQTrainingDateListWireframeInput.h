@@ -1,5 +1,5 @@
 //
-//  SQTrainingCapacityWireframeInput.h
+//  SQTrainingDateListWireframeInput.h
 //  SQFitnessProgram_Viper
 //
 //  Created by 朱双泉 on 2019/2/26.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingCapacityWireframeInput <NSObject, SQViperWireframePrivate>
+@protocol SQTrainingDateListWireframeInput <NSObject, SQViperWireframePrivate>
 
 - (void)pushTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type;
 

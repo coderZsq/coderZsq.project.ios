@@ -9,13 +9,13 @@
 #import "SQTrainingDateListPresenter.h"
 #import "SQTrainingDateListViewProtocol.h"
 #import "SQTrainingDateListInteractorInput.h"
-#import "SQTrainingCapacityWireframeInput.h"
+#import "SQTrainingDateListWireframeInput.h"
 
 @interface SQTrainingDateListPresenter ()
 
 @property (nonatomic, weak) id<SQTrainingDateListViewProtocol> view;
 @property (nonatomic, strong) id<SQTrainingDateListInteractorInput> interactor;
-@property (nonatomic, strong) id<SQTrainingCapacityWireframeInput> wireframe;
+@property (nonatomic, strong) id<SQTrainingDateListWireframeInput> wireframe;
 
 @end
 

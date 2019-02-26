@@ -8,11 +8,11 @@
 
 #import "SQViperWireframe.h"
 #import "SQTrainingCapacityMuscleType.h"
-#import "SQTrainingCapacityWireframeInput.h"
+#import "SQTrainingDateListWireframeInput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQTrainingDateListWireframe : NSObject<SQTrainingCapacityWireframeInput>
+@interface SQTrainingDateListWireframe : NSObject<SQTrainingDateListWireframeInput>
 
 - (void)pushTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type;
 

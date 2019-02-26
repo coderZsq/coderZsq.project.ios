@@ -105,7 +105,7 @@
 		1455A522222506E30041B63B /* SQTrainingDateListViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingDateListViewProtocol.h; sourceTree = "<group>"; };
 		1455A5232225270F0041B63B /* SQRouter+SQTrainingCapacity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQRouter+SQTrainingCapacity.h"; sourceTree = "<group>"; };
 		1455A5242225270F0041B63B /* SQRouter+SQTrainingCapacity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SQRouter+SQTrainingCapacity.m"; sourceTree = "<group>"; };
-		1455A52622252E9D0041B63B /* SQTrainingCapacityWireframeInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityWireframeInput.h; sourceTree = "<group>"; };
+		1455A52622252E9D0041B63B /* SQTrainingDateListWireframeInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingDateListWireframeInput.h; sourceTree = "<group>"; };
 		145BDA3521DCB7FB008731C0 /* SQTrainingCapacityTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityTextField.h; sourceTree = "<group>"; };
 		145BDA3621DCB7FB008731C0 /* SQTrainingCapacityTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityTextField.m; sourceTree = "<group>"; };
 		145BDA3821DCBA39008731C0 /* SQTrainingCapacityDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityDataBase.h; sourceTree = "<group>"; };
@@ -393,7 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				148691A82224E61C00210FE7 /* SQTrainingDateListRouter.h */,
-				1455A52622252E9D0041B63B /* SQTrainingCapacityWireframeInput.h */,
+				1455A52622252E9D0041B63B /* SQTrainingDateListWireframeInput.h */,
 				148691A02224DD2100210FE7 /* SQTrainingDateListWireframe.h */,
 				148691A12224DD2100210FE7 /* SQTrainingDateListWireframe.m */,
 			);
