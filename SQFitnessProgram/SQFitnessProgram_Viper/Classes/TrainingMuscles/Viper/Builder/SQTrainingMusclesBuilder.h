@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SQViperView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingMusclesDataService, SQViperRouter;
+@protocol SQViperRouter, SQViperView, SQTrainingMusclesDataService;
 
 @interface SQTrainingMusclesBuilder : NSObject
 

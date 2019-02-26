@@ -12,7 +12,7 @@
 @implementation SQRouter (SQTrainingDateList)
 
 + (UIViewController *)viewForTrainingDateListWithType:(SQTrainingCapacityMuscleType)type {
-    return [SQTrainingDateListBuilder viewControllerForTrainingDateListWithType:type];
+    return [SQTrainingDateListBuilder viewControllerForTrainingDateListWithType:type router:[self new]];
 }
 
 @end

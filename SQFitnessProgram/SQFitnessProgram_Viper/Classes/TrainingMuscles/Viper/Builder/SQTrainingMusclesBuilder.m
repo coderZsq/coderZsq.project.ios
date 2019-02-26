@@ -11,6 +11,7 @@
 #import "SQTrainingMusclesPresenter.h"
 #import "SQTrainingMusclesInteractor.h"
 #import "SQTrainingMusclesWireframe.h"
+#import "NSObject+SQViperAssembly.h"
 
 @implementation SQTrainingMusclesBuilder
 

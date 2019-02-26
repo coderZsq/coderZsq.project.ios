@@ -11,9 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol SQViperRouter;
+
 @interface SQTrainingDateListBuilder : NSObject
 
-+ (UIViewController *)viewControllerForTrainingDateListWithType:(SQTrainingCapacityMuscleType)type;
++ (UIViewController *)viewControllerForTrainingDateListWithType:(SQTrainingCapacityMuscleType)type router:(id<SQViperRouter>)router;
 
 @end
 

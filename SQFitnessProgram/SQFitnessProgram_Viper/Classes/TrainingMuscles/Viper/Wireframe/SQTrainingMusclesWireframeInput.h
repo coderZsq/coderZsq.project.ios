@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SQViperWireframe.h"
 #import "SQTrainingCapacityMuscleType.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingMusclesWireframeInput <NSObject>
+@protocol SQTrainingMusclesWireframeInput <NSObject, SQViperWireframe>
 
 - (void)pushTrainingDateListWithType:(SQTrainingCapacityMuscleType)type;
 

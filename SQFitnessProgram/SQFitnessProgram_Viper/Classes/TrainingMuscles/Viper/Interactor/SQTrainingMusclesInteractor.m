@@ -9,7 +9,7 @@
 #import "SQTrainingMusclesInteractor.h"
 #import "SQTrainingMusclesDataService.h"
 
-@interface SQTrainingMusclesInteractor ()<SQViperInteractorPrivate>
+@interface SQTrainingMusclesInteractor ()<SQViperInteractor>
 
 @property (nonatomic, strong) id<SQTrainingMusclesDataService> trainingMusclesDataService;
 @property (nonatomic, strong) NSArray *data;

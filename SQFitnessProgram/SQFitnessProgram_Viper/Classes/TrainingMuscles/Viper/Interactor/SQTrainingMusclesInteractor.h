@@ -6,14 +6,13 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "SQViperInteractor.h"
 #import "SQTrainingMusclesInteractorInput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SQTrainingMusclesDataService;
 
-@interface SQTrainingMusclesInteractor : NSObject<SQViperInteractor, SQTrainingMusclesInteractorInput>
+@interface SQTrainingMusclesInteractor : NSObject<SQTrainingMusclesInteractorInput>
 
 @property (nonatomic, weak) id dataSource;
 @property (nonatomic, weak) id eventHandler;

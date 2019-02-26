@@ -6,11 +6,11 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SQViperInteractor.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingMusclesInteractorInput <NSObject>
+@protocol SQTrainingMusclesInteractorInput <NSObject, SQViperInteractor>
 
 - (void)loadDataSource;
 

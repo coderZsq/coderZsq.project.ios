@@ -7,15 +7,15 @@
 //
 
 #import "SQTrainingMusclesPresenter.h"
-#import "SQTrainingMusclesWireframeInput.h"
 #import "SQTrainingMusclesInteractorInput.h"
-#import "SQViperInteractorPrivate.h"
+#import "SQTrainingMusclesWireframeInput.h"
+#import "SQViperView.h"
 
 @interface SQTrainingMusclesPresenter ()
 
+@property (nonatomic, weak) id<SQViperView> view;
+@property (nonatomic, strong) id<SQTrainingMusclesInteractorInput> interactor;
 @property (nonatomic, strong) id<SQTrainingMusclesWireframeInput> wireframe;
-@property (nonatomic, weak) id<SQViperViewPrivate> view;
-@property (nonatomic, strong) id<SQViperInteractorPrivate, SQTrainingMusclesInteractorInput> interactor;
 
 @end
 

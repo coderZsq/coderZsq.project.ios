@@ -7,19 +7,15 @@
 //
 
 #import "NSObject+SQViperAssembly.h"
-#import "SQViperViewPrivate.h"
-#import "SQViperPresenterPrivate.h"
-#import "SQViperInteractorPrivate.h"
-#import "SQViperWireframePrivate.h"
 
 @implementation NSObject (SQViperAssembly)
 
 + (void)assembleViperForView:(id<SQViperViewPrivate>)view presenter:(id<SQViperPresenterPrivate>)presenter interactor:(id<SQViperInteractorPrivate>)interactor wireframe:(id<SQViperWireframePrivate>)wireframe router:(id<SQViperRouter>)router {
     
-    NSParameterAssert([view conformsToProtocol:@protocol(SQViperViewPrivate)]);
-    NSParameterAssert([presenter conformsToProtocol:@protocol(SQViperPresenterPrivate)]);
-    NSParameterAssert([interactor conformsToProtocol:@protocol(SQViperInteractorPrivate)]);
-    NSParameterAssert([wireframe conformsToProtocol:@protocol(SQViperWireframePrivate)]);
+    NSParameterAssert([view conformsToProtocol:@protocol(SQViperView)]);
+    NSParameterAssert([presenter conformsToProtocol:@protocol(SQViperPresenter)]);
+    NSParameterAssert([interactor conformsToProtocol:@protocol(SQViperInteractor)]);
+    NSParameterAssert([wireframe conformsToProtocol:@protocol(SQViperWireframe)]);
     NSParameterAssert([router conformsToProtocol:@protocol(SQViperRouter)]);
     
     NSAssert3(interactor.eventHandler == nil, @"Interactor (%@)'s eventHandler (%@) already exists when assemble viper for new eventHandler", interactor, interactor.eventHandler, presenter);

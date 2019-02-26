@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SQViperViewPrivate.h"
+#import "SQViperPresenterPrivate.h"
+#import "SQViperInteractorPrivate.h"
+#import "SQViperWireframePrivate.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@protocol SQViperViewPrivate, SQViperPresenterPrivate, SQViperInteractorPrivate, SQViperWireframePrivate, SQViperRouter;
 
 @interface NSObject (SQViperAssembly)
 
