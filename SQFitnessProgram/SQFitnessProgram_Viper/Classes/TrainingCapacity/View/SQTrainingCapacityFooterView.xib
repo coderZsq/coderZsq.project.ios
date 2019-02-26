@@ -53,7 +53,7 @@
             <connections>
                 <outlet property="totalCapacityLabel" destination="7hn-GW-0UG" id="2gS-Cb-HWl"/>
             </connections>
-            <point key="canvasLocation" x="85.599999999999994" y="-112.89355322338831"/>
+            <point key="canvasLocation" x="85.599999999999994" y="371.06446776611699"/>
         </view>
     </objects>
 </document>
