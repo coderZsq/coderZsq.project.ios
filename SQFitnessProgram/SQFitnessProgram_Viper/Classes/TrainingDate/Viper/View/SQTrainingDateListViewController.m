@@ -32,16 +32,9 @@
     [(id<SQTrainingDateListViewEventHandler>)self.eventHandler didTouchNavigationBarAddButton];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender {
-    NSDate * date = [NSDate date];
-    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:8]];
-    NSString * traningDate = [dateFormatter stringFromDate:date];
-    UIViewController * vc = segue.destinationViewController;
-    NSString * title = [NSString stringWithFormat:@"Training Date: %@", sender ? sender.textLabel.text : traningDate];
-    [vc setValue:title forKey:@"title"];
-    [vc setValue:@(self.type) forKey:@"type"];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [(id<SQTrainingDateListViewEventHandler>)self.eventHandler handleDidSelectRowAtIndexPath:indexPath];
 }
 
 @end

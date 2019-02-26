@@ -53,6 +53,10 @@
     [self.wireframe pushTrainingDateListWithType:type];
 }
 
+- (NSArray *)fetchDataSource {
+    return [self.interactor fetchDataSource];
+}
+
 - (NSDictionary *)muscleTypeDictionary {
     return @{
              @"Pectoral muscle" : @(SQTrainingCapacityMuscleTypePectoral),
@@ -62,10 +66,6 @@
              @"Arm muscle" : @(SQTrainingCapacityMuscleTypeArm),
              @"Abdominal muscle" : @(SQTrainingCapacityMuscleTypeAbdominal)
              };
-}
-
-- (NSArray *)fetchDataSource {
-    return [self.interactor fetchDataSource];
 }
 
 @end

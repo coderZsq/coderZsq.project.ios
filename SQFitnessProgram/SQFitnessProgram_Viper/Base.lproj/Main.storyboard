@@ -25,9 +25,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BUo-Fi-9At" kind="show" identifier="TrainCapacity" id="jUz-dr-o6z"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

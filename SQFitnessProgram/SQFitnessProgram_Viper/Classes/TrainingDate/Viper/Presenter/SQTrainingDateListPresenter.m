@@ -9,13 +9,13 @@
 #import "SQTrainingDateListPresenter.h"
 #import "SQTrainingDateListViewProtocol.h"
 #import "SQTrainingDateListInteractorInput.h"
-#import "SQViperWireframePrivate.h"
+#import "SQTrainingCapacityWireframeInput.h"
 
 @interface SQTrainingDateListPresenter ()
 
 @property (nonatomic, weak) id<SQTrainingDateListViewProtocol> view;
 @property (nonatomic, strong) id<SQTrainingDateListInteractorInput> interactor;
-@property (nonatomic, strong) id<SQViperWireframePrivate> wireframe;
+@property (nonatomic, strong) id<SQTrainingCapacityWireframeInput> wireframe;
 
 @end
 
@@ -48,7 +48,6 @@
     NSLog(@"%s", __func__);
 }
 
-
 - (void)didTouchNavigationBarAddButton {
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -62,22 +61,33 @@
         [self.wireframe.router.class presentViewController:alert fromViewController:self.view.routeSource animated:YES completion:nil];
         return;
     }
+    NSString * title = [NSString stringWithFormat:@"Training Date: %@", self.traningDate];
+    [self.wireframe pushTrainingCapacityWithTitle:title type:self.view.type];
     [dataSource insertObject:[dateFormatter stringFromDate:date] atIndex:0];
     __weak typeof(self) _self = self;
     [self.interactor storeDataSourceWithType:self.view.type dataSource:dataSource completion:^{
         [_self.interactor loadDataSourceWithType:self.view.type];
         [_self.view setupUI];
     }];
-    
-//    [self performSegueWithIdentifier:@"TrainCapacity" sender:nil];
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        self.dataBase.dateList = self.dataSource;
-//        [SQSqliteModelTool saveOrUpdateModel:self.dataBase uid:nil];
-//    });
+}
+
+- (void)handleDidSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString * text = self.fetchDataSourceFromDB[indexPath.row];
+    NSString * title = [NSString stringWithFormat:@"Training Date: %@", text];
+    [self.wireframe pushTrainingCapacityWithTitle:title type:self.view.type];
 }
 
 - (nonnull NSArray *)fetchDataSourceFromDB {
     return [self.interactor fetchDataSource];
+}
+
+- (NSString *)traningDate {
+    NSDate * date = [NSDate date];
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:8]];
+    NSString * traningDate = [dateFormatter stringFromDate:date];
+    return traningDate;
 }
 
 @end

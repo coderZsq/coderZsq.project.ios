@@ -19,5 +19,9 @@
 
 @implementation SQTrainingDateListWireframe
 
+- (void)pushTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type {
+    UIViewController *trainingCapacityViewController = [[self.router class]viewForTrainingCapacityWithTitle:title type:type];
+    [[self.router class] pushViewController:trainingCapacityViewController fromViewController:self.view.routeSource animated:YES];
+}
 
 @end

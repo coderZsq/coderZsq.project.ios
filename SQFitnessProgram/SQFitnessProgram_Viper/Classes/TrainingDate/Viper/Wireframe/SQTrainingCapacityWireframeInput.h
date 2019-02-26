@@ -1,18 +1,18 @@
 //
-//  SQTrainingDateListWireframe.h
+//  SQTrainingCapacityWireframeInput.h
 //  SQFitnessProgram_Viper
 //
 //  Created by 朱双泉 on 2019/2/26.
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "SQViperWireframe.h"
+#import <UIKit/UIKit.h>
+#import "SQViperWireframePrivate.h"
 #import "SQTrainingCapacityMuscleType.h"
-#import "SQTrainingCapacityWireframeInput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQTrainingDateListWireframe : NSObject<SQTrainingCapacityWireframeInput>
+@protocol SQTrainingCapacityWireframeInput <NSObject, SQViperWireframePrivate>
 
 - (void)pushTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type;
 
