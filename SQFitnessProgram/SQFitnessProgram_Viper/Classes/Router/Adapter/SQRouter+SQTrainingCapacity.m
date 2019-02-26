@@ -7,15 +7,12 @@
 //
 
 #import "SQRouter+SQTrainingCapacity.h"
-#import "SQTrainingCapacityViewController.h"
+#import "SQTrainingCapacityBuilder.h"
 
 @implementation SQRouter (SQTrainingCapacity)
 
 + (UIViewController *)viewForTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type {
-    SQTrainingCapacityViewController * v = [SQTrainingCapacityViewController new];
-    v.title = title;
-    v.type = type;
-    return v;
+    return [SQTrainingCapacityBuilder viewControllerForTrainingCapacityWithTitle:title type:type router:[self new]];
 }
 
 @end

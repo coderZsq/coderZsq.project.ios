@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class SQRouter;
+
 @interface UIApplication (SQViperRouter)
 
 - (SQRouter *)SQ_router;
