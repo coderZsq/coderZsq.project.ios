@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) SQTrainingCapacityFooterView *footerView;
 
-- (void)setupTableView;
+- (void)fetchDataSource;
 
 - (void)setRightBarButtonItem:(UIBarButtonSystemItem)item target:(nullable id)target action:(nullable SEL)action;
 

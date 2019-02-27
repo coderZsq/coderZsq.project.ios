@@ -101,6 +101,7 @@
         [tempDataSource addObject:md];
     }
     self.dataBase.dataSource = tempDataSource;
+    self.data = dataSource.mutableCopy;
     [SQSqliteModelTool saveOrUpdateModel:self.dataBase uid:nil];
 }
 

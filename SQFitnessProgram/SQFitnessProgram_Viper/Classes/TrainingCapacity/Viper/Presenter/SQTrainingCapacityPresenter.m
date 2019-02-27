@@ -53,6 +53,14 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)handleCommitEditingAtIndexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *tempDataSource = self.fetchDataSourceFromDB.mutableCopy;
+    [tempDataSource removeObjectAtIndex:indexPath.row];
+    [self.interactor storeDataSourceWithTitle:self.view.title type:self.view.type dataSource:tempDataSource];
+    [self.view fetchDataSource];
+    [self.view.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
 - (NSString *)totalCapacity {
     return self.interactor.totalCapacity;
 }
@@ -63,7 +71,7 @@
 
 - (void)didTouchNavigationBarAddButton {
     [self.interactor addTrainingAction];
-    [self.view setupTableView];
+    [self.view.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.fetchDataSourceFromDB.count - 1 inSection:0]] withRowAnimation:(UITableViewRowAnimationLeft)];
 }
 
 - (void)keyboardWillShow:(NSNotification *)sender {

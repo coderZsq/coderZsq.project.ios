@@ -17,9 +17,15 @@
 
 @interface SQTrainingCapacityViewController ()
 
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
 @end
 
 @implementation SQTrainingCapacityViewController
+
+- (void)setupData {
+    _dataSource = [NSMutableArray array];
+}
 
 - (void)setupUI {
     [self setupRightBarButtonItem];
@@ -45,17 +51,24 @@
 }
 
 - (void)setupTableView {
-    NSArray *dataSource = [(id<SQTrainingCapacityDataSource>)self.viewDataSource fetchDataSourceFromDB];
-    [self setupDataSource:dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+    [self fetchDataSource];
+    __weak typeof (self) _self = self;
+    [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingCapacity" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
         return 160;
     } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
         SQTrainingCapacityCell * c = (SQTrainingCapacityCell *)cell;
         SQTrainingCapacityCellPresenter * p = (SQTrainingCapacityCellPresenter * )model;
-        p.model.action = [NSString stringWithFormat:@"%ld", [dataSource indexOfObject:model] + 1];
+        p.model.action = [NSString stringWithFormat:@"%ld", [_self.dataSource indexOfObject:model] + 1];
         [p bindToCell:c];
     }];
+}
+
+- (void)fetchDataSource {
+    NSArray *dataSource = [(id<SQTrainingCapacityDataSource>)self.viewDataSource fetchDataSourceFromDB];
+    [self.dataSource removeAllObjects];
+    [self.dataSource addObjectsFromArray:dataSource];
 }
 
 - (void)addTraningAction {
@@ -63,9 +76,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self.dataSource removeObjectAtIndex:indexPath.row];
-//    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    [self calculateTotalCapacity];
+    [(id<SQTrainingCapacityViewEventHandler>)self.eventHandler handleCommitEditingAtIndexPath:indexPath];
 }
 
 @end
