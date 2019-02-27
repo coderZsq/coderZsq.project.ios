@@ -18,6 +18,6 @@
 
 - (void)storeDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type dataSource:(nonnull NSArray *)dataSource completion:(nonnull void (^)(void))completion;
 
-- (void)addTrainingActionWithCompletion:(void(^)(void))completion;
+- (void)addTrainingAction;
 
 @end

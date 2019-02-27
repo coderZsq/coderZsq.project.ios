@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)storeDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type dataSource:(nonnull NSArray *)dataSource;
 
-- (void)addTrainingActionWithCompletion:(void(^)(void))completion;
+- (void)addTrainingAction;
 
 - (NSArray *)fetchDataSource;
 

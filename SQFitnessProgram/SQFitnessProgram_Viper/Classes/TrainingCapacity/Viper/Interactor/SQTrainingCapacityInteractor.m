@@ -45,12 +45,8 @@
     }];
 }
 
-- (void)addTrainingActionWithCompletion:(void (^)(void))completion {
-    [self.trainingCapacityDataService addTrainingActionWithCompletion:^{
-        if (completion) {
-            completion();
-        }
-    }];
+- (void)addTrainingAction {
+    [self.trainingCapacityDataService addTrainingAction];
 }
 
 @end

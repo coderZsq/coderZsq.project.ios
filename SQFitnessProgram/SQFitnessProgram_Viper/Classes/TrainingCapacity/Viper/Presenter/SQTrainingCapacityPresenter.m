@@ -62,10 +62,8 @@
 }
 
 - (void)didTouchNavigationBarAddButton {
-    __weak typeof(self) _self = self;
-    [self.interactor addTrainingActionWithCompletion:^{
-        [_self.view setupTableView];
-    }];
+    [self.interactor addTrainingAction];
+    [self.view setupTableView];
 }
 
 - (void)keyboardWillShow:(NSNotification *)sender {

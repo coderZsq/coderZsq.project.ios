@@ -55,7 +55,7 @@
     NSAssert([NSThread isMainThread], @"main thread only, otherwise use lock to make thread safety");
     SQTrainingCapacityDataBase * dataBase = [SQSqliteModelTool queryModels:self.dataBase.class columnName:@"key" relation:(ColumnNameToValueRelationTypeEqual) value:[NSString stringWithFormat:@"%ld-%@", type, title] uid:nil].firstObject;
     if (!dataBase) {
-        [self addTrainingActionWithCompletion:nil];
+        [self addTrainingAction];
         return;
     }
     NSMutableArray * dataSource = [NSMutableArray array];
@@ -104,13 +104,10 @@
     [SQSqliteModelTool saveOrUpdateModel:self.dataBase uid:nil];
 }
 
-- (void)addTrainingActionWithCompletion:(void(^)(void))completion {
+- (void)addTrainingAction {
     SQTrainingCapacityCellPresenter * p = [SQTrainingCapacityCellPresenter new];
     p.model = [SQTrainingCapacityModel new];
     [self.data addObject:p];
-    if (completion) {
-        completion();
-    }
 }
 
 @end
