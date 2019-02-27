@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SQTrainingCapacityDataSource <NSObject>
 
-@property (nonatomic, copy) NSString *totalCapacity;
+@property (nonatomic, readonly, copy) NSString *totalCapacity;
 
 - (NSArray *)fetchDataSourceFromDB;
 

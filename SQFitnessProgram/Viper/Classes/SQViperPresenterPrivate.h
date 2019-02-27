@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQViperWireframe, SQViperView, SQViperInteractor;
+@protocol SQViperView;
+@protocol SQViperInteractor;
+@protocol SQViperWireframe;
 
 @protocol SQViperPresenterPrivate <SQViperPresenter>
 

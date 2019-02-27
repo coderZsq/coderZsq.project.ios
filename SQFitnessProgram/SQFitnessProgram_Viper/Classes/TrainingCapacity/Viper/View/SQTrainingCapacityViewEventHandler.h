@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SQTrainingCapacityViewEventHandler <SQViperViewEventHandler>
 
+- (void)didTouchNavigationBarAddButton;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,14 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "SQTrainingCapacityMuscleType.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @protocol SQTrainingCapacityDataService <NSObject>
 
+@property (nonatomic, readonly, copy) NSString *totalCapacity;
 @property (nonatomic, readonly, strong) NSArray *dataSource;
 
-- (void)fetchDataSourceWithType:(SQTrainingCapacityMuscleType)type completion:(void(^)(NSArray *dataSource))completion;
+- (void)fetchDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type completion:(void(^)(NSArray *dataSource))completion;
+
+- (void)storeDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type dataSource:(nonnull NSArray *)dataSource completion:(nonnull void (^)(void))completion;
+
+- (void)addTrainingActionWithCompletion:(void(^)(void))completion;
 
 @end
-
-NS_ASSUME_NONNULL_END

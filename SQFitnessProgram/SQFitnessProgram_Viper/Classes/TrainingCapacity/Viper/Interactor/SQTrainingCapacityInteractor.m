@@ -7,11 +7,50 @@
 //
 
 #import "SQTrainingCapacityInteractor.h"
+#import "SQTrainingCapacityDataService.h"
+#import "SQTrainingCapacityInteractorDataSource.h"
+
+@interface SQTrainingCapacityInteractor ()
+
+@property (nonatomic, strong) id<SQTrainingCapacityDataService> trainingCapacityDataService;
+
+@end
 
 @implementation SQTrainingCapacityInteractor
 
-- (void)loadDataSourceWithType:(SQTrainingCapacityMuscleType)type {
-    
+- (instancetype)initWithTrainingCapacityDataService:(id<SQTrainingCapacityDataService>)service {
+    if (self = [super init]) {
+        _trainingCapacityDataService = service;
+    }
+    return self;
+}
+
+- (NSArray *)fetchDataSource {
+    return self.trainingCapacityDataService.dataSource;
+}
+
+- (NSString *)totalCapacity {
+    return self.trainingCapacityDataService.totalCapacity;
+}
+
+- (void)loadDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type {
+    [self.trainingCapacityDataService fetchDataSourceWithTitle:title type:type completion:^(NSArray * _Nonnull dataSource) {
+        
+    }];
+}
+
+- (void)storeDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type dataSource:(NSArray *)dataSource {
+    [self.trainingCapacityDataService storeDataSourceWithTitle:title type:type dataSource:dataSource completion:^{
+        
+    }];
+}
+
+- (void)addTrainingActionWithCompletion:(void (^)(void))completion {
+    [self.trainingCapacityDataService addTrainingActionWithCompletion:^{
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
 @end

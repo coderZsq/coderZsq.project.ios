@@ -11,6 +11,7 @@
 #import "SQTrainingCapacityPresenter.h"
 #import "SQTrainingCapacityInteractor.h"
 #import "SQTrainingCapacityWireframe.h"
+#import "SQTrainingCapacityDataManager.h"
 #import "NSObject+SQViperAssembly.h"
 
 @implementation SQTrainingCapacityBuilder
@@ -21,12 +22,13 @@
     NSAssert([view isKindOfClass:[SQTrainingCapacityViewController class]], nil);
     view.title = title;
     view.type = type;
+    [self buildView:(id<SQViperViewPrivate>)view trainingDateListDataService:[SQTrainingCapacityDataManager new] router:router];
     return view;
 }
 
-+ (void)buildView:(id<SQViperViewPrivate>)view router:(id<SQViperRouter>)router {
++ (void)buildView:(id<SQViperViewPrivate>)view trainingDateListDataService:(id<SQTrainingCapacityDataService>)service router:(id<SQViperRouter>)router {
     id<SQViperPresenterPrivate> presenter = (id)[SQTrainingCapacityPresenter new];
-    id<SQViperInteractorPrivate> interactor = (id)[SQTrainingCapacityInteractor new];
+    id<SQViperInteractorPrivate> interactor = [(id)[SQTrainingCapacityInteractor alloc]initWithTrainingCapacityDataService:service];
     id<SQViperWireframePrivate> wireframe = (id)[SQTrainingCapacityWireframe new];
     [self assembleViperForView:view
                      presenter:presenter

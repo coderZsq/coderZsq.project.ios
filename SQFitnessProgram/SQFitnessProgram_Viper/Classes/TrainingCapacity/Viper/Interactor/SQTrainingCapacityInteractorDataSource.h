@@ -1,5 +1,5 @@
 //
-//  SQTrainingCapacityWireframeInput.h
+//  SQTrainingCapacityInteractorDataSource.h
 //  SQFitnessProgram_Viper
 //
 //  Created by 朱双泉 on 2019/2/27.
@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SQViperWireframePrivate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingCapacityWireframeInput <SQViperWireframePrivate>
+@protocol SQTrainingCapacityInteractorDataSource <NSObject>
 
 @end
 

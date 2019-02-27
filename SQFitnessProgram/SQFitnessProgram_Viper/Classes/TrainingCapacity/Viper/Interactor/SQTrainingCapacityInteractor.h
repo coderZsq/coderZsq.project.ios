@@ -10,10 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol SQTrainingCapacityInteractorDataSource;
+@protocol SQTrainingCapacityInteractorEventHandler;
+@protocol SQTrainingCapacityDataService;
+
 @interface SQTrainingCapacityInteractor : NSObject<SQTrainingCapacityInteractorInput>
 
-@property (nonatomic, weak) id dataSource;
-@property (nonatomic, weak) id eventHandler;
+@property (nonatomic, weak) id<SQTrainingCapacityInteractorDataSource> dataSource;
+@property (nonatomic, weak) id<SQTrainingCapacityInteractorEventHandler> eventHandler;
+
+- (instancetype)initWithTrainingCapacityDataService:(id<SQTrainingCapacityDataService>)service NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

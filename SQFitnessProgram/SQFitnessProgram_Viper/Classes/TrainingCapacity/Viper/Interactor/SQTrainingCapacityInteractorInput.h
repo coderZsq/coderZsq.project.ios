@@ -13,7 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SQTrainingCapacityInteractorInput <SQViperInteractor>
 
-- (void)loadDataSourceWithType:(SQTrainingCapacityMuscleType)type;
+@property (nonatomic, readonly, copy) NSString *totalCapacity;
+
+- (void)loadDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type;
+
+- (void)storeDataSourceWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type dataSource:(nonnull NSArray *)dataSource;
+
+- (void)addTrainingActionWithCompletion:(void(^)(void))completion;
+
+- (NSArray *)fetchDataSource;
 
 @end
 

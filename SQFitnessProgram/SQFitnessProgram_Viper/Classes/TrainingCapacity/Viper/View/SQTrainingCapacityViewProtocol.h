@@ -6,16 +6,25 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SQViperView.h"
 #import "SQTrainingCapacityMuscleType.h"
+#import "SQTrainingCapacityFooterView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingCapacityViewProtocol <NSObject>
+@protocol SQTrainingCapacityViewProtocol <SQViperView>
 
 @property (nonatomic, copy) NSString *title;
 
 @property (nonatomic, assign) SQTrainingCapacityMuscleType type;
+
+@property (nonatomic, weak) UITableView *tableView;
+
+@property (nonatomic, weak) SQTrainingCapacityFooterView *footerView;
+
+- (void)setupTableView;
+
+- (void)setRightBarButtonItem:(UIBarButtonSystemItem)item target:(nullable id)target action:(nullable SEL)action;
 
 @end
 

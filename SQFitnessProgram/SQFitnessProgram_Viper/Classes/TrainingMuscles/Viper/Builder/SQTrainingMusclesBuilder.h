@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQViperRouter, SQViperView, SQTrainingMusclesDataService;
+@protocol SQViperRouter;
+@protocol SQViperView;
+@protocol SQTrainingMusclesDataService;
 
 @interface SQTrainingMusclesBuilder : NSObject
 

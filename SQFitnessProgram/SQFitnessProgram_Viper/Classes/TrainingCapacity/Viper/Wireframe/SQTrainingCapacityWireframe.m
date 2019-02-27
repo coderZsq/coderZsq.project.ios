@@ -7,6 +7,15 @@
 //
 
 #import "SQTrainingCapacityWireframe.h"
+#import "SQViperView.h"
+#import "SQViperRouter.h"
+
+@interface SQTrainingCapacityWireframe ()
+
+@property (nonatomic, weak) id<SQViperView> view;
+@property (nonatomic, strong) id<SQViperRouter> router;
+
+@end
 
 @implementation SQTrainingCapacityWireframe
 
