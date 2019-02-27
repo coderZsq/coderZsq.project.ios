@@ -15,10 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-- (void)fetchDataSourceWithType:(SQTrainingCapacityMuscleType)type completion:(void (^)(NSArray * _Nonnull))completion;
-
-- (void)storeDataSourceWithType:(SQTrainingCapacityMuscleType)type dataSource:(NSArray *)dataSource completion:(void (^)(void))completion;
-
 @end
 
 NS_ASSUME_NONNULL_END

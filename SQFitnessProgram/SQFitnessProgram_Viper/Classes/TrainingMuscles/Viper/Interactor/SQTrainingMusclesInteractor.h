@@ -17,8 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id dataSource;
 @property (nonatomic, weak) id eventHandler;
 
-- (void)loadDataSource;
-
 - (instancetype)initWithTrainingMusclesDataService:(id<SQTrainingMusclesDataService>)service NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;

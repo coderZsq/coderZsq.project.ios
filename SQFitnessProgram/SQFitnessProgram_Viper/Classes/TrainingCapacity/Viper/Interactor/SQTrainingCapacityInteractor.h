@@ -6,11 +6,14 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SQTrainingCapacityInteractorInput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQTrainingCapacityInteractor : NSObject
+@interface SQTrainingCapacityInteractor : NSObject<SQTrainingCapacityInteractorInput>
+
+@property (nonatomic, weak) id dataSource;
+@property (nonatomic, weak) id eventHandler;
 
 @end
 

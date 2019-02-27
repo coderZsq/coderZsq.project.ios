@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SQTrainingDateListWireframe : NSObject<SQTrainingDateListWireframeInput>
 
-- (void)pushTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type;
-
 @end
 
 NS_ASSUME_NONNULL_END

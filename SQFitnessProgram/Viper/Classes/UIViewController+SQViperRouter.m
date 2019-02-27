@@ -19,7 +19,7 @@
     UIViewController *destination = (UIViewController *)self;
     UIViewController *node = destination;
     while (node) {
-        if (node.isMovingToParentViewController ||
+        if (node.isMovingFromParentViewController ||
             (!node.parentViewController && !node.presentingViewController && ![node SQ_isAppRootViewController])) {
             return YES;
         } else if (node.isBeingDismissed) {

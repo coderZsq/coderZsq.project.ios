@@ -10,4 +10,8 @@
 
 @implementation SQTrainingCapacityInteractor
 
+- (void)loadDataSourceWithType:(SQTrainingCapacityMuscleType)type {
+    
+}
+
 @end

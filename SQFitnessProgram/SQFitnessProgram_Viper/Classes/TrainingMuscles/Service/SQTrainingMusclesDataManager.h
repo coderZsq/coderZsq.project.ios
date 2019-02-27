@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-- (void)fetchDataSourceWithCompletion:(void(^)(NSArray *dataSource))completion;
-
 @end
 
 NS_ASSUME_NONNULL_END

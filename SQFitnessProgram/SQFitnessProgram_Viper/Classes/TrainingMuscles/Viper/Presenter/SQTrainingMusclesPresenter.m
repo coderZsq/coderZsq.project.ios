@@ -25,6 +25,7 @@
     NSAssert(self.wireframe, @"Router should be initlized when view is ready.");
     NSAssert([self.view conformsToProtocol:@protocol(SQViperView)], @"Presenter should be attach to a view");
     NSAssert([self.interactor conformsToProtocol:@protocol(SQViperInteractor)], @"Interactor should be initlized when view is ready.");
+    NSLog(@"%s", __func__);
     [self.interactor loadDataSource];
 }
 
