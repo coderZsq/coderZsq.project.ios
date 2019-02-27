@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) SQTrainingCapacityMuscleType type;
 
-- (void)setupTableView;
+@property (nonatomic, weak) UITableView *tableView;
+
+- (void)fetchDataSource;
 
 @end
 

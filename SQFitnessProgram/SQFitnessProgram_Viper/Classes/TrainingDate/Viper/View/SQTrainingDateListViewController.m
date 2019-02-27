@@ -12,9 +12,15 @@
 
 @interface SQTrainingDateListViewController ()
 
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
 @end
 
 @implementation SQTrainingDateListViewController
+
+- (void)setupData {
+    _dataSource = [NSMutableArray array];
+}
 
 - (void)setupUI {
     self.title = @"Training Date";
@@ -22,14 +28,19 @@
 }
 
 - (void)setupTableView {
-    NSArray *dataSource = [(id<SQTrainingDateListDataSource>)self.viewDataSource fetchDataSourceFromDB];
-    [self setupDataSource:dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+    [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingDate" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
         return 44;
     } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@", model];
     }];
+}
+
+- (void)fetchDataSource {
+    NSArray *dataSource = [(id<SQTrainingDateListDataSource>)self.viewDataSource fetchDataSourceFromDB];
+    [self.dataSource removeAllObjects];
+    [self.dataSource addObjectsFromArray:dataSource];
 }
 
 - (IBAction)addTraningDate:(UIBarButtonItem *)sender {

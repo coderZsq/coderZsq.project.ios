@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSMutableArray *data;
 @property (nonatomic, strong) SQTrainingCapacityDataBase * dataBase;
+@property (nonatomic, assign) NSInteger action;
 
 @end
 
@@ -73,6 +74,7 @@
         }
         p.model.rows = rows;
         p.model.capacity = [d[@"capacity"] integerValue];
+        p.model.action = [NSString stringWithFormat:@"%ld", ++self.action];
         [dataSource addObject:p];
     }
     self.data = dataSource;
@@ -108,6 +110,7 @@
 - (void)addTrainingAction {
     SQTrainingCapacityCellPresenter * p = [SQTrainingCapacityCellPresenter new];
     p.model = [SQTrainingCapacityModel new];
+    p.model.action = [NSString stringWithFormat:@"%ld", ++self.action];
     [self.data addObject:p];
 }
 

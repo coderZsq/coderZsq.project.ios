@@ -27,6 +27,7 @@
     NSAssert([self.interactor conformsToProtocol:@protocol(SQViperInteractor)], @"Interactor should be initlized when view is ready.");
     NSLog(@"%s", __func__);
     [self.interactor loadDataSourceWithType:self.view.type];
+    [self.view fetchDataSource];
 }
 
 - (void)handleViewWillAppear:(BOOL)animated {
@@ -68,7 +69,8 @@
     __weak typeof(self) _self = self;
     [self.interactor storeDataSourceWithType:self.view.type dataSource:dataSource completion:^{
         [_self.interactor loadDataSourceWithType:self.view.type];
-        [_self.view setupTableView];
+        [_self.view fetchDataSource];
+        [_self.view.tableView reloadData];
     }];
 }
 

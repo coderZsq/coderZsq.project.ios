@@ -43,10 +43,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (self.appeared == NO) {
+        [self setupData];
         if ([self.eventHandler respondsToSelector:@selector(handleViewReady)]) {
             [self.eventHandler handleViewReady];
         }
-        [self setupData];
         [self setupUI];
         self.appeared = YES;
     }

@@ -29,6 +29,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [self.interactor loadDataSourceWithTitle:self.view.title type:self.view.type];
+    [self.view fetchDataSource];
 }
 
 - (void)handleViewWillAppear:(BOOL)animated {
@@ -59,6 +60,7 @@
     [self.interactor storeDataSourceWithTitle:self.view.title type:self.view.type dataSource:tempDataSource];
     [self.view fetchDataSource];
     [self.view.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    self.view.footerView.totalCapacityLabel.text = self.totalCapacity;
 }
 
 - (NSString *)totalCapacity {
@@ -66,11 +68,12 @@
 }
 
 - (NSArray *)fetchDataSourceFromDB {
-    return [self.interactor fetchDataSource];
+    return self.interactor.fetchDataSource;
 }
 
 - (void)didTouchNavigationBarAddButton {
     [self.interactor addTrainingAction];
+    [self.view fetchDataSource];
     [self.view.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.fetchDataSourceFromDB.count - 1 inSection:0]] withRowAnimation:(UITableViewRowAnimationLeft)];
 }
 

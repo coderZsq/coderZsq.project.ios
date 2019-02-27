@@ -10,7 +10,6 @@
 #import "SQTrainingCapacityCell.h"
 #import "SQTrainingCapacityHeaderView.h"
 #import "SQTrainingCapacityFooterView.h"
-#import "SQTrainingCapacityModel.h"
 #import "SQTrainingCapacityCellPresenter.h"
 #import "SQTrainingCapacityDataSource.h"
 #import "SQTrainingCapacityViewEventHandler.h"
@@ -51,8 +50,6 @@
 }
 
 - (void)setupTableView {
-    [self fetchDataSource];
-    __weak typeof (self) _self = self;
     [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingCapacity" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
@@ -60,7 +57,6 @@
     } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
         SQTrainingCapacityCell * c = (SQTrainingCapacityCell *)cell;
         SQTrainingCapacityCellPresenter * p = (SQTrainingCapacityCellPresenter * )model;
-        p.model.action = [NSString stringWithFormat:@"%ld", [_self.dataSource indexOfObject:model] + 1];
         [p bindToCell:c];
     }];
 }

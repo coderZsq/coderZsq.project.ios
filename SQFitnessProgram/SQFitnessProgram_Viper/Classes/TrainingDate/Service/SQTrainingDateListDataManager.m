@@ -44,6 +44,7 @@
 - (void)fetchDataSourceWithType:(SQTrainingCapacityMuscleType)type completion:(void (^)(NSArray * _Nonnull))completion {
     NSAssert([NSThread isMainThread], @"main thread only, otherwise use lock to make thread safety");
     SQTrainingDateListDataBase * dataBase = [SQSqliteModelTool queryModels:self.dataBase.class columnName:@"type" relation:(ColumnNameToValueRelationTypeEqual) value:@(type) uid:nil].firstObject;
+    [self.data removeAllObjects];
     [self.data addObjectsFromArray:dataBase.dateList];
     if (completion) {
         completion(self.data);
