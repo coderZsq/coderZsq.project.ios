@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingDateListInteractorInput <NSObject, SQViperInteractor>
+@protocol SQTrainingDateListInteractorInput <SQViperInteractor>
 
 - (void)loadDataSourceWithType:(SQTrainingCapacityMuscleType)type;
 

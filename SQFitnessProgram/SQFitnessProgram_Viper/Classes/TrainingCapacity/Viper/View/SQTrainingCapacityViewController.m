@@ -17,8 +17,10 @@
 #import "SQSqliteModelTool.h"
 
 @interface SQTrainingCapacityViewController ()
-@property (nonatomic, strong) NSMutableArray * dataSource;
+
 @property (nonatomic, copy) NSString * totalCapacity;
+
+@property (nonatomic, strong) NSMutableArray * dataSource;
 @property (nonatomic, strong) SQTrainingCapacityDataBase * dataBase;
 @property (nonatomic, weak) SQTrainingCapacityFooterView * footerView;
 @end
@@ -46,37 +48,6 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self saveData];
-}
-
-- (void)setupUI {
-    [self setRightBarButtonItem:(UIBarButtonSystemItemAdd) action:@selector(addTraningAction)];
-    [self setTableViewConfig];
-    __weak typeof(self) _self = self;
-    [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
-        return [tableView dequeueReusableCellWithIdentifier:@"TrainingCapacity" forIndexPath:indexPath];
-    } loadCellHeight:^CGFloat(id  _Nonnull model) {
-        return 160;
-    } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
-        SQTrainingCapacityCell * c = (SQTrainingCapacityCell *)cell;
-        SQTrainingCapacityCellPresenter * p = (SQTrainingCapacityCellPresenter * )model;
-        p.model.action = [NSString stringWithFormat:@"%ld", [_self.dataSource indexOfObject:model] + 1];
-        [p bindToCell:c];
-    }];
-}
-
-- (void)setTableViewConfig {
-    self.tableView.tableHeaderView = [SQTrainingCapacityHeaderView headerView];
-    SQTrainingCapacityFooterView * footerView = [SQTrainingCapacityFooterView footerView];
-    if (self.totalCapacity.length) {
-        footerView.totalCapacityLabel.text = self.totalCapacity;
-    }
-    self.tableView.tableFooterView = footerView;
-    self.footerView = footerView;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SQTrainingCapacityCell" bundle:[NSBundle bundleForClass:self.class]] forCellReuseIdentifier:@"TrainingCapacity"];
-}
-
-- (void)setRightBarButtonItem:(UIBarButtonSystemItem)item action:(nullable SEL)action {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:item target:self action:action];
 }
 
 - (void)setupData {
@@ -107,6 +78,45 @@
     }
     self.dataSource = dataSource;
     self.totalCapacity = [NSString stringWithFormat:@"%ld", totalCapacity];
+}
+
+- (void)setupUI {
+    [self setupRightBarButtonItem];
+    [self setupTableViewHeaderFooterView];
+    [self setupTableView];
+}
+
+- (void)setupRightBarButtonItem {
+    [self setRightBarButtonItem:(UIBarButtonSystemItemAdd) action:@selector(addTraningAction)];
+}
+
+- (void)setRightBarButtonItem:(UIBarButtonSystemItem)item action:(nullable SEL)action {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:item target:self action:action];
+}
+
+- (void)setupTableViewHeaderFooterView {
+    self.tableView.tableHeaderView = [SQTrainingCapacityHeaderView headerView];
+    SQTrainingCapacityFooterView * footerView = [SQTrainingCapacityFooterView footerView];
+    if (self.totalCapacity.length) {
+        footerView.totalCapacityLabel.text = self.totalCapacity;
+    }
+    self.tableView.tableFooterView = footerView;
+    self.footerView = footerView;
+    [self.tableView registerNib:[UINib nibWithNibName:@"SQTrainingCapacityCell" bundle:[NSBundle bundleForClass:self.class]] forCellReuseIdentifier:@"TrainingCapacity"];
+}
+
+- (void)setupTableView {
+    __weak typeof(self) _self = self;
+    [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+        return [tableView dequeueReusableCellWithIdentifier:@"TrainingCapacity" forIndexPath:indexPath];
+    } loadCellHeight:^CGFloat(id  _Nonnull model) {
+        return 160;
+    } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
+        SQTrainingCapacityCell * c = (SQTrainingCapacityCell *)cell;
+        SQTrainingCapacityCellPresenter * p = (SQTrainingCapacityCellPresenter * )model;
+        p.model.action = [NSString stringWithFormat:@"%ld", [_self.dataSource indexOfObject:model] + 1];
+        [p bindToCell:c];
+    }];
 }
 
 - (void)saveData {

@@ -141,6 +141,7 @@
 		1496CBF8222635B500AE6A3F /* SQTrainingCapacityDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityDataManager.h; sourceTree = "<group>"; };
 		1496CBF9222635B500AE6A3F /* SQTrainingCapacityDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityDataManager.m; sourceTree = "<group>"; };
 		1496CBFC222635CD00AE6A3F /* SQTrainingCapacityDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityDataService.h; sourceTree = "<group>"; };
+		1496CBFD22263BC800AE6A3F /* SQTrainingCapacityViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityViewProtocol.h; sourceTree = "<group>"; };
 		14A8CF1022239C5B000A397B /* SQTrainingMusclesDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesDataManager.h; sourceTree = "<group>"; };
 		14BDFFE521DC5A5400C52CEF /* SQTrainingCapacityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityModel.h; sourceTree = "<group>"; };
 		14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityModel.m; sourceTree = "<group>"; };
@@ -660,6 +661,7 @@
 			children = (
 				1496CBF422262E6400AE6A3F /* SQTrainingCapacityViewEventHandler.h */,
 				1496CBF522262E7D00AE6A3F /* SQTrainingCapacityDataSource.h */,
+				1496CBFD22263BC800AE6A3F /* SQTrainingCapacityViewProtocol.h */,
 				14E1853D221FF42500B2F03B /* SQTrainingCapacityViewController.h */,
 				14E1853C221FF42500B2F03B /* SQTrainingCapacityViewController.m */,
 				14E18548221FF42500B2F03B /* SQTrainingCapacityTextField.h */,

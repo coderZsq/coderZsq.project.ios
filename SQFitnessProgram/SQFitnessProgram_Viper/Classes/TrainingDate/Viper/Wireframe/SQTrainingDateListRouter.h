@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingDateListRouter <NSObject, SQViperRouter>
+@protocol SQTrainingDateListRouter <SQViperRouter>
 
 + (UIViewController *)viewForTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type;
 

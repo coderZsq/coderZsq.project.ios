@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingDateListWireframeInput <NSObject, SQViperWireframePrivate>
+@protocol SQTrainingDateListWireframeInput <SQViperWireframePrivate>
 
 - (void)pushTrainingCapacityWithTitle:(NSString *)title type:(SQTrainingCapacityMuscleType)type;
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingMusclesInteractorInput <NSObject, SQViperInteractor>
+@protocol SQTrainingMusclesInteractorInput <SQViperInteractor>
 
 - (void)loadDataSource;
 

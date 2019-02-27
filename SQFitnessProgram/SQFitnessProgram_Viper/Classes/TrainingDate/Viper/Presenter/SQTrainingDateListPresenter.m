@@ -68,7 +68,7 @@
     __weak typeof(self) _self = self;
     [self.interactor storeDataSourceWithType:self.view.type dataSource:dataSource completion:^{
         [_self.interactor loadDataSourceWithType:self.view.type];
-        [_self.view setupUI];
+        [_self.view setupTableView];
     }];
 }
 

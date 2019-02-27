@@ -18,6 +18,10 @@
 
 - (void)setupUI {
     self.title = @"Training Date";
+    [self setupTableView];
+}
+
+- (void)setupTableView {
     NSArray *dataSource = [(id<SQTrainingDateListDataSource>)self.viewDataSource fetchDataSourceFromDB];
     [self setupDataSource:dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingDate" forIndexPath:indexPath];

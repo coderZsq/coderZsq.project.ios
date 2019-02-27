@@ -6,11 +6,11 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SQViperViewEventHandler.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingCapacityViewEventHandler <NSObject>
+@protocol SQTrainingCapacityViewEventHandler <SQViperViewEventHandler>
 
 @end
 

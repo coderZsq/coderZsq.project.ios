@@ -11,11 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SQTrainingDateListViewProtocol <NSObject, SQViperView>
+@protocol SQTrainingDateListViewProtocol <SQViperView>
 
 @property (nonatomic, assign) SQTrainingCapacityMuscleType type;
 
-- (void)setupUI;
+- (void)setupTableView;
 
 @end
 
