@@ -8,7 +8,6 @@
 
 #import "SQTrainingCapacityInteractor.h"
 #import "SQTrainingCapacityDataService.h"
-#import "SQTrainingCapacityInteractorDataSource.h"
 
 @interface SQTrainingCapacityInteractor ()
 

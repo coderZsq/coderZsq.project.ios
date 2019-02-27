@@ -142,8 +142,6 @@
 		1496CBF9222635B500AE6A3F /* SQTrainingCapacityDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityDataManager.m; sourceTree = "<group>"; };
 		1496CBFC222635CD00AE6A3F /* SQTrainingCapacityDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityDataService.h; sourceTree = "<group>"; };
 		1496CBFD22263BC800AE6A3F /* SQTrainingCapacityViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityViewProtocol.h; sourceTree = "<group>"; };
-		1496CBFE2226510D00AE6A3F /* SQTrainingCapacityInteractorDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityInteractorDataSource.h; sourceTree = "<group>"; };
-		1496CBFF2226559B00AE6A3F /* SQTrainingCapacityInteractorEventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityInteractorEventHandler.h; sourceTree = "<group>"; };
 		14A8CF1022239C5B000A397B /* SQTrainingMusclesDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingMusclesDataManager.h; sourceTree = "<group>"; };
 		14BDFFE521DC5A5400C52CEF /* SQTrainingCapacityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTrainingCapacityModel.h; sourceTree = "<group>"; };
 		14BDFFE621DC5A5400C52CEF /* SQTrainingCapacityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTrainingCapacityModel.m; sourceTree = "<group>"; };
@@ -717,8 +715,6 @@
 		14F93ACA222571E9007297D2 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				1496CBFF2226559B00AE6A3F /* SQTrainingCapacityInteractorEventHandler.h */,
-				1496CBFE2226510D00AE6A3F /* SQTrainingCapacityInteractorDataSource.h */,
 				1496CBF62226321600AE6A3F /* SQTrainingCapacityInteractorInput.h */,
 				14F93AC7222571E5007297D2 /* SQTrainingCapacityInteractor.h */,
 				14F93AC8222571E5007297D2 /* SQTrainingCapacityInteractor.m */,

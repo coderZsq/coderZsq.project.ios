@@ -22,12 +22,14 @@
     _dataSource = [NSMutableArray array];
 }
 
-- (void)setupUI {
-    self.title = @"Training Date";
-    [self setupTableView];
+- (void)fetchDataSource {
+    NSArray *dataSource = [(id<SQTrainingDateListDataSource>)self.viewDataSource fetchDataSourceFromDB];
+    [self.dataSource removeAllObjects];
+    [self.dataSource addObjectsFromArray:dataSource];
 }
 
-- (void)setupTableView {
+- (void)setupUI {
+    self.title = @"Training Date";
     [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingDate" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
@@ -35,12 +37,6 @@
     } bind:^(UITableViewCell * _Nonnull cell, id  _Nonnull model) {
         cell.textLabel.text = [NSString stringWithFormat:@"%@", model];
     }];
-}
-
-- (void)fetchDataSource {
-    NSArray *dataSource = [(id<SQTrainingDateListDataSource>)self.viewDataSource fetchDataSourceFromDB];
-    [self.dataSource removeAllObjects];
-    [self.dataSource addObjectsFromArray:dataSource];
 }
 
 - (IBAction)addTraningDate:(UIBarButtonItem *)sender {

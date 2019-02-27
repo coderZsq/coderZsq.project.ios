@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SQTrainingCapacityViewProtocol <SQViperView>
 
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *title;
 
-@property (nonatomic, assign) SQTrainingCapacityMuscleType type;
+@property (nonatomic, readonly, assign) SQTrainingCapacityMuscleType type;
 
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, readonly, weak) UITableView *tableView;
 
-@property (nonatomic, weak) SQTrainingCapacityFooterView *footerView;
+@property (nonatomic, readonly, weak) SQTrainingCapacityFooterView *footerView;
 
 - (void)fetchDataSource;
 

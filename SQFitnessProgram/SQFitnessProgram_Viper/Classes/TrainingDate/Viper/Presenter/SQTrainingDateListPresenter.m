@@ -50,6 +50,12 @@
     NSLog(@"%s", __func__);
 }
 
+- (void)handleDidSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString * text = self.fetchDataSourceFromDB[indexPath.row];
+    NSString * title = [NSString stringWithFormat:@"Training Date: %@", text];
+    [self.wireframe pushTrainingCapacityWithTitle:title type:self.view.type];
+}
+
 - (void)didTouchNavigationBarAddButton {
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -72,12 +78,6 @@
         [_self.view fetchDataSource];
         [_self.view.tableView reloadData];
     }];
-}
-
-- (void)handleDidSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString * text = self.fetchDataSourceFromDB[indexPath.row];
-    NSString * title = [NSString stringWithFormat:@"Training Date: %@", text];
-    [self.wireframe pushTrainingCapacityWithTitle:title type:self.view.type];
 }
 
 - (nonnull NSArray *)fetchDataSourceFromDB {

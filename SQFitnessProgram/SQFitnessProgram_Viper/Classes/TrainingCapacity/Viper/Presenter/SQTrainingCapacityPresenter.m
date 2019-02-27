@@ -63,36 +63,33 @@
     self.view.footerView.totalCapacityLabel.text = self.totalCapacity;
 }
 
-- (NSString *)totalCapacity {
-    return self.interactor.totalCapacity;
-}
-
-- (NSArray *)fetchDataSourceFromDB {
-    return self.interactor.fetchDataSource;
-}
-
 - (void)didTouchNavigationBarAddButton {
     [self.interactor addTrainingAction];
     [self.view fetchDataSource];
     [self.view.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.fetchDataSourceFromDB.count - 1 inSection:0]] withRowAnimation:(UITableViewRowAnimationLeft)];
 }
 
-- (void)keyboardWillShow:(NSNotification *)sender {
-    [self.view setRightBarButtonItem:(UIBarButtonSystemItemDone) target:self action:@selector(doneAction)];
-}
-
-- (void)keyboardWillHide:(NSNotification *)sender {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-    [self.view setRightBarButtonItem:(UIBarButtonSystemItemAdd) target:self.view action:@selector(addTraningAction)];
-#pragma clang diagnostic pop
-}
-
-- (void)doneAction {
+- (void)didTouchNavigationBarDoneButton {
     [self.view.tableView endEditing:YES];
     [[NSNotificationCenter defaultCenter]postNotificationName:SQTrainingCapacityBindToModelNotification object:nil];
     self.view.footerView.totalCapacityLabel.text = self.totalCapacity;
     [self.view.tableView reloadData];
+}
+
+- (void)keyboardWillShow:(NSNotification *)sender {
+    [self.view setRightBarButtonItem:(UIBarButtonSystemItemDone) target:self action:@selector(didTouchNavigationBarDoneButton)];
+}
+
+- (void)keyboardWillHide:(NSNotification *)sender {
+    [self.view setRightBarButtonItem:(UIBarButtonSystemItemAdd) target:self action:@selector(didTouchNavigationBarAddButton)];
+}
+
+- (NSString *)totalCapacity {
+    return self.interactor.totalCapacity;
+}
+
+- (NSArray *)fetchDataSourceFromDB {
+    return self.interactor.fetchDataSource;
 }
 
 @end

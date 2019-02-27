@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol SQTrainingDateListViewProtocol <SQViperView>
 
-@property (nonatomic, assign) SQTrainingCapacityMuscleType type;
+@property (nonatomic, readonly, assign) SQTrainingCapacityMuscleType type;
 
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, readonly, weak) UITableView *tableView;
 
 - (void)fetchDataSource;
 

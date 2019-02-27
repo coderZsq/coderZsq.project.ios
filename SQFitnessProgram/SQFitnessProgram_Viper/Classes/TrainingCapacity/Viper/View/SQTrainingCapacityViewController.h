@@ -16,8 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) SQTrainingCapacityMuscleType type;
 
-@property (nonatomic, weak) SQTrainingCapacityFooterView * footerView;
-
 @end
 
 NS_ASSUME_NONNULL_END

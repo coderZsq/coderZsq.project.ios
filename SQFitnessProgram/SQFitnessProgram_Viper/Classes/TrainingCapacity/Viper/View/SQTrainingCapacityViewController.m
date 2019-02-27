@@ -17,6 +17,7 @@
 @interface SQTrainingCapacityViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, weak) SQTrainingCapacityFooterView * footerView;
 
 @end
 
@@ -26,9 +27,14 @@
     _dataSource = [NSMutableArray array];
 }
 
+- (void)fetchDataSource {
+    NSArray *dataSource = [(id<SQTrainingCapacityDataSource>)self.viewDataSource fetchDataSourceFromDB];
+    [self.dataSource removeAllObjects];
+    [self.dataSource addObjectsFromArray:dataSource];
+}
+
 - (void)setupUI {
     [self setupRightBarButtonItem];
-    [self setupTableViewContent];
     [self setupTableView];
 }
 
@@ -40,16 +46,13 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:item target:target action:action];
 }
 
-- (void)setupTableViewContent {
+- (void)setupTableView {
     self.tableView.tableHeaderView = [SQTrainingCapacityHeaderView headerView];
     SQTrainingCapacityFooterView * footerView = [SQTrainingCapacityFooterView footerView];
     footerView.totalCapacityLabel.text = [(id<SQTrainingCapacityDataSource>)self.viewDataSource totalCapacity];
     self.tableView.tableFooterView = footerView;
     self.footerView = footerView;
     [self.tableView registerNib:[UINib nibWithNibName:@"SQTrainingCapacityCell" bundle:[NSBundle bundleForClass:self.class]] forCellReuseIdentifier:@"TrainingCapacity"];
-}
-
-- (void)setupTableView {
     [self setupDataSource:self.dataSource loadCell:^UITableViewCell *(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
         return [tableView dequeueReusableCellWithIdentifier:@"TrainingCapacity" forIndexPath:indexPath];
     } loadCellHeight:^CGFloat(id  _Nonnull model) {
@@ -59,12 +62,6 @@
         SQTrainingCapacityCellPresenter * p = (SQTrainingCapacityCellPresenter * )model;
         [p bindToCell:c];
     }];
-}
-
-- (void)fetchDataSource {
-    NSArray *dataSource = [(id<SQTrainingCapacityDataSource>)self.viewDataSource fetchDataSourceFromDB];
-    [self.dataSource removeAllObjects];
-    [self.dataSource addObjectsFromArray:dataSource];
 }
 
 - (void)addTraningAction {
