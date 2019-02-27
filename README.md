@@ -12,6 +12,7 @@
 ##### Contents
 
 - `SqliteComponent`	 >>>  `ORM Database framework` developed by `Castie!`
+- `Viper architecture ` >>> `Architecture comparison` with `MVX`
 - `Capacity training` for `different muscles`
 - `Record capacity training` for `each training day`
 - `Use` the `capacity training schedule` for `scientific muscle growth`
