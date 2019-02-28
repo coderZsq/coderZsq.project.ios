@@ -74,7 +74,7 @@
     [dataSource insertObject:[dateFormatter stringFromDate:date] atIndex:0];
     __weak typeof(self) _self = self;
     [self.interactor storeDataSourceWithType:self.view.type dataSource:dataSource completion:^{
-        [_self.interactor loadDataSourceWithType:self.view.type];
+        [_self.interactor loadDataSourceWithType:_self.view.type];
         [_self.view fetchDataSource];
         [_self.view.tableView reloadData];
     }];
