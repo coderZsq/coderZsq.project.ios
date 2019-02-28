@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SQTrainingCapacityDataBase : NSObject
 
-@property (nonatomic, assign) NSString * key;
+@property (nonatomic, copy) NSString * key;
 
 @property (nonatomic, copy) NSString * date;
 
