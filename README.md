@@ -11,14 +11,14 @@
 
 ##### Contents
 
-- **SqliteComponent:** **ORM Database framework** developed by **Castie!**
-- **Viper architecture:** **Architecture comparison** with **MVX**
-- **Capacity training** for **different muscles**
-- **Record capacity training** for **each training day**
-- **Use** the **capacity training schedule** for **scientific muscle growth**
-- **Track** the **training capacity** of **each training session** to **achieve better results**
-- **The training capacity** of **each cycle** should **increase** by **3% ~ 5%**
-- **Make** your **training in the gym** more **planned** and **efficient**
+- **SqliteComponent:** **ORM Database framework** developed by **Castie!**.
+- **Viper architecture:** **Architecture comparison** with **MVX**.
+- **Capacity training** for **different muscles**.
+- **Record capacity training** for **each training day**.
+- **Use** the **capacity training schedule** for **scientific muscle growth**.
+- **Track** the **training capacity** of **each training session** to **achieve better results**.
+- **The training capacity** of **each cycle** should **increase** by **3% ~ 5%**.
+- **Make** your **training in the gym** more **planned** and **efficient**.
 
 
 ##### Display
@@ -49,9 +49,9 @@ $ node server.js
 ##### Contents
 - **Pre-layout:** when the **asynchronous thread** is started, the **typesetting processing** is performed while the network data is acquired.
 - **Reuse-pool:** design a universal **reuse pool** to reduce **memory consumption**. reference **UITableViewCell**.
-- **Pre-decod:e** perform image **decoding operations** on **asynchronous threads** to **reduce resource usage** of the main thread
-- **Pre-render:** **graphics rendering** in **asynchronous threads**, using the **CPU** for rendering operations, avoiding **GPU** **off-screen rendering** consumption
-- **Asynchronous drawing:** create a **graphics context** in an **asynchronous thread** and draw it into **layer.contents**
+- **Pre-decode:** perform image **decoding operations** on **asynchronous threads** to **reduce resource usage** of the main thread.
+- **Pre-render:** **graphics rendering** in **asynchronous threads**, using the **CPU** for rendering operations, avoiding **GPU** **off-screen rendering** consumption.
+- **Asynchronous drawing:** create a **graphics context** in an **asynchronous thread** and draw it into **layer.contents**.
 
 <br/>
 
@@ -79,9 +79,9 @@ Then you can see that is maintained at 60fps when launch the **asynchronous draw
 
 ##### Get Started
 
-- This project is base on the **RouterPattern** practice, So you need to clone [RouterPattern](https://github.com/coderZsq/coderZsq.practice.native/tree/master/RouterPattern) 
-- Then, you need a [node](https://nodejs.org/en/) server environment
-- Last, run the following command to launch server
+- This project is base on the **RouterPattern** practice, So you need to clone [RouterPattern](https://github.com/coderZsq/coderZsq.practice.native/tree/master/RouterPattern).
+- Then, you need a [node](https://nodejs.org/en/) server environment.
+- Last, run the following command to launch server.
 
 ```
 $ cd RouterPattern/server/RouterPattern
@@ -121,7 +121,7 @@ $ npm start
 - **SQExtension:** quickly build project infrastructure and **tools**.
 - **Infinite carousel:** the **easiest way** to achieve high performance infinite carousel.
 - **Custom transition:** achieve a full range of **custom transition mechanisms**.
-- **Gradient navigationbar:** analyze the implementation process and principle of the **gradient navigation bar** in all aspects
+- **Gradient navigationbar:** analyze the implementation process and principle of the **gradient navigation bar** in all aspects.
 
 
 ##### Display
