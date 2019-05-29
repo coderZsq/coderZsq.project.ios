@@ -7,18 +7,18 @@
 
 ##### Get Started
 
-- `pod install` and `run`.
+- **pod install** and **run**.
 
 ##### Contents
 
-- `SqliteComponent`	 >>>  `ORM Database framework` developed by `Castie!`
-- `Viper architecture ` >>> `Architecture comparison` with `MVX`
-- `Capacity training` for `different muscles`
-- `Record capacity training` for `each training day`
-- `Use` the `capacity training schedule` for `scientific muscle growth`
-- `Track` the `training capacity` of `each training session` to `achieve better results`
-- `The training capacity` of `each cycle` should `increase` by `3% ~ 5%`
-- `Make` your `training in the gym` more `planned` and `efficient`
+- **SqliteComponent:** **ORM Database framework** developed by **Castie!**
+- **Viper architecture:** **Architecture comparison** with **MVX**
+- **Capacity training** for **different muscles**
+- **Record capacity training** for **each training day**
+- **Use** the **capacity training schedule** for **scientific muscle growth**
+- **Track** the **training capacity** of **each training session** to **achieve better results**
+- **The training capacity** of **each cycle** should **increase** by **3% ~ 5%**
+- **Make** your **training in the gym** more **planned** and **efficient**
 
 
 ##### Display
@@ -34,7 +34,7 @@
 
 
 ### SQPerformance
-> Focus on performance optimization topics, Include `fluency-ui` technology
+> Focus on performance optimization topics, Include **fluency-ui** technology
 
 ##### Get Started
 
@@ -47,11 +47,11 @@ $ node server.js
 ```
 
 ##### Contents
-- `Pre-layout` >>> when the `asynchronous thread` is started, the `typesetting processing` is performed while the network data is acquired.
-- `Reuse-pool` >>> design a universal `reuse pool` to reduce `memory consumption`. reference `UITableViewCell`.
-- `Pre-decode` >>> perform image `decoding operations` on `asynchronous threads` to `reduce resource usage` of the main thread
-- `Pre-render` >>> `graphics rendering` in `asynchronous threads`, using the `CPU` for rendering operations, avoiding `GPU` `off-screen rendering` consumption
-- `Asynchronous drawing` >>> create a `graphics context` in an `asynchronous thread` and draw it into `layer.contents`
+- **Pre-layout:** when the **asynchronous thread** is started, the **typesetting processing** is performed while the network data is acquired.
+- **Reuse-pool:** design a universal **reuse pool** to reduce **memory consumption**. reference **UITableViewCell**.
+- **Pre-decod:e** perform image **decoding operations** on **asynchronous threads** to **reduce resource usage** of the main thread
+- **Pre-render:** **graphics rendering** in **asynchronous threads**, using the **CPU** for rendering operations, avoiding **GPU** **off-screen rendering** consumption
+- **Asynchronous drawing:** create a **graphics context** in an **asynchronous thread** and draw it into **layer.contents**
 
 <br/>
 
@@ -61,10 +61,10 @@ $ node server.js
 <img src="./SQPerformance/contents/step1.gif"><img src="./SQPerformance/contents/step2.gif">
 
 
-- `step1`: The left side is used `pre-layout`, `reusepool`, `pre-decode`, `pre-render`.
-- `step2`: The right side is used `pre-layout`, `reusepool`, `pre-decode`, `pre-render`, `asynchronous drawing`.
+- **step1**: The left side is used **pre-layout**, **reusepool**, **pre-decode**, **pre-render**.
+- **step2**: The right side is used **pre-layout**, **reusepool**, **pre-decode**, **pre-render**, **asynchronous drawing**.
 
-Then you can see that is maintained at 60fps when launch the `asynchronous drawing`.
+Then you can see that is maintained at 60fps when launch the **asynchronous drawing**.
 
 
 ##### Article
@@ -75,11 +75,11 @@ Then you can see that is maintained at 60fps when launch the `asynchronous drawi
 
 ### SQTemplate
 
-> Focus on generating template architecture files to speed up productivity & `code specification`
+> Focus on generating template architecture files to speed up productivity & **code specification**
 
 ##### Get Started
 
-- This project is base on the `RouterPattern` practice, So you need to clone [RouterPattern](https://github.com/coderZsq/coderZsq.practice.native/tree/master/RouterPattern) 
+- This project is base on the **RouterPattern** practice, So you need to clone [RouterPattern](https://github.com/coderZsq/coderZsq.practice.native/tree/master/RouterPattern) 
 - Then, you need a [node](https://nodejs.org/en/) server environment
 - Last, run the following command to launch server
 
@@ -89,19 +89,19 @@ $ npm start
 ```
 
 ##### Content
-- `SQTemplate`  
-	- `Template` >>> a template for `general architecture design` 
-	- `UITemplate`>>> `quickly` create a `template for the UI`
-- `SQBuilder`	
-	- `SQBuilder`	 >>> generate `iOS` / `Android` architecture code from a template
-	- `SQBuilder Sample` >>> a `simple version` generator written in `python`
+- **SQTemplate**  
+	- **Template:** a template for **general architecture design** 
+	- **UITemplate:** **quickly** create a **template for the UI**
+- **SQBuilder**	
+	- **SQBuilder:** generate **iOS** / **Android** architecture code from a template
+	- **SQBuilder Sample:** a **simple version** generator written in **python**
 	
 ##### Display
 
 <img src="./SQTemplate/contents/img1.png" width="370"><img src="./SQTemplate/contents/img2.png" width="370">
 
-- `img1`: `SQTemplate` project reference `MVC`, `MVVM`, `MVP`, `VIPER`, `CDD` design.
-- `img2`: `SQBuilder` project generator code on the desktop.
+- **img1**: **SQTemplate** project reference **MVC**, **MVVM**, **MVP**, **VIPER**, **CDD** design.
+- **img2**: **SQBuilder** project generator code on the desktop.
 
 ##### Article
 
@@ -114,14 +114,14 @@ $ npm start
 <br/>
 
 ### SQLifestyle
-> Focus on `quickly build projects` and integrate some fun `animations`
+> Focus on **quickly build projects** and integrate some fun **animations**
 
 ##### Contents
 
-- `SQExtension` >>> quickly build project infrastructure and `tools`.
-- `Infinite carousel` >>> the `easiest way` to achieve high performance infinite carousel.
-- `Custom transition` >>> achieve a full range of `custom transition mechanisms`.
-- `Gradient navigationbar`>>> analyze the implementation process and principle of the `gradient navigation bar` in all aspects
+- **SQExtension:** quickly build project infrastructure and **tools**.
+- **Infinite carousel:** the **easiest way** to achieve high performance infinite carousel.
+- **Custom transition:** achieve a full range of **custom transition mechanisms**.
+- **Gradient navigationbar:** analyze the implementation process and principle of the **gradient navigation bar** in all aspects
 
 
 ##### Display
