@@ -85,7 +85,7 @@
 }
 
 - (NSArray *)sq_getAddressColumnFromString:(NSString *)string {
-    NSString *pattern = @"^(.+?[省|市|区|盟|州|行政区划])";
+    NSString *pattern = @"^(.+?[省|市|区|盟|县|行政区划])";
     NSError *error = NULL;
     NSMutableArray *array = [NSMutableArray array];
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
