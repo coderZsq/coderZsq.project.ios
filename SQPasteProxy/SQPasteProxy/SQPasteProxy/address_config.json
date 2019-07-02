@@ -1,0 +1,10 @@
+{
+    "hook-controller": "CreateAddressVC",
+    "bind-list": [
+        "addresscell.AreaTextField",
+        "addresscell.addressTextView"
+    ],
+    "alert-title": "「已捕获」剪贴板地址",
+    "alert-message": "是否需要一键复制 嘻嘻!",
+    "alert-confirm-title": "确定"
+}
