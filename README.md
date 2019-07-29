@@ -23,8 +23,7 @@ $ . run.sh
 #### Sponsor
 - **Sponsor me a cup of coffee, let me have more energy to create!**
 <br/>
-<br/>
-<img src="./SQMagnet/contents/alipay.JPG" width="200"><img width="20"/><img src="./SQMagnet/contents/wechat.JPG" width="200">
+<img src="./SQMagnet/contents/alipay.JPG" width="200"><img src="./SQMagnet/contents/wechat.JPG" width="200">
 
 <br/>
 <br/>
