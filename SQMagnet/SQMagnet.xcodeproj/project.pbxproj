@@ -1,0 +1,842 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03CA965C13E0F5D8E8BDEF29 /* libPods-SQMagnet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2030CE818340DE7755991811 /* libPods-SQMagnet.a */; };
+		1401C43422DAD9D2004D9E6B /* SQType2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401C43222DAD9D2004D9E6B /* SQType2Cell.m */; };
+		1403C93822D781A300FC8349 /* SQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403C93722D781A300FC8349 /* SQHomeViewController.m */; };
+		1403C93B22D781B700FC8349 /* SQMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403C93A22D781B700FC8349 /* SQMovieViewController.m */; };
+		1403C93E22D781C600FC8349 /* SQTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403C93D22D781C600FC8349 /* SQTVViewController.m */; };
+		1403C94122D781DE00FC8349 /* SQSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403C94022D781DE00FC8349 /* SQSettingsViewController.m */; };
+		1403C94622D786B200FC8349 /* SQH1TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403C94522D786B200FC8349 /* SQH1TitleView.m */; };
+		141B746F22DAC93500812F80 /* SQLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B746E22DAC93500812F80 /* SQLoadingView.m */; };
+		141B748022DB825A00812F80 /* NSString+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B747822DB825A00812F80 /* NSString+Unicode.m */; };
+		141B748122DB825A00812F80 /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B747A22DB825A00812F80 /* NSDictionary+Unicode.m */; };
+		141B748222DB825A00812F80 /* NSObject+SafeSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B747D22DB825A00812F80 /* NSObject+SafeSwizzle.m */; };
+		141B748322DB825A00812F80 /* NSArray+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B747F22DB825A00812F80 /* NSArray+Unicode.m */; };
+		142B7E8222D829D400C3864B /* SQTabbarControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B7E8122D829D400C3864B /* SQTabbarControllerAnimatedTransitioning.m */; };
+		142B7E8522D82EA200C3864B /* UIViewController+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B7E8422D82EA200C3864B /* UIViewController+SQExtension.m */; };
+		142B7E8822D82F9700C3864B /* UIImage+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B7E8722D82F9700C3864B /* UIImage+SQExtension.m */; };
+		142B7E8B22D8300200C3864B /* UIView+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B7E8A22D8300200C3864B /* UIView+SQExtension.m */; };
+		142B7E8E22D8330500C3864B /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B7E8D22D8330500C3864B /* SQNavigationController.m */; };
+		142B7E9D22D8638A00C3864B /* SQSearchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B7E9C22D8638A00C3864B /* SQSearchInputView.m */; };
+		142C58B622D732D60042837B /* SQNetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C58B522D732D60042837B /* SQNetWorkTool.m */; };
+		1435451E22DA0C6800CA25A6 /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1435451D22DA0C6800CA25A6 /* UIColor+SQExtension.m */; };
+		1435452122DA126700CA25A6 /* NSObject+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1435452022DA126700CA25A6 /* NSObject+SQExtension.m */; };
+		143E845D22D827280028FAAF /* SQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143E845C22D827280028FAAF /* SQTabBarController.m */; };
+		145EC89E22E041C200A8E415 /* SQConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 145EC89D22E041C200A8E415 /* SQConnectViewController.m */; };
+		145EC8A022E041D200A8E415 /* SQConnectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145EC89F22E041D200A8E415 /* SQConnectViewController.storyboard */; };
+		145EC8A322E0581600A8E415 /* SQLongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 145EC8A222E0581600A8E415 /* SQLongViewController.m */; };
+		146116F122E161E9007B2005 /* SQDisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146116F022E161E9007B2005 /* SQDisclaimerViewController.m */; };
+		146116F322E161FD007B2005 /* SQDisclaimerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146116F222E161FD007B2005 /* SQDisclaimerViewController.storyboard */; };
+		146116F722E165B3007B2005 /* SQType3Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 146116F522E165B3007B2005 /* SQType3Cell.m */; };
+		146116F822E165B3007B2005 /* SQType3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146116F622E165B3007B2005 /* SQType3Cell.xib */; };
+		1469BB7422DF023B00804DB5 /* SQHomeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E0EFBA22D9719100B62EBF /* SQHomeData.plist */; };
+		1469BB7522DF023B00804DB5 /* SQMovieTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E0EFC022D9759400B62EBF /* SQMovieTag.plist */; };
+		1469BB7622DF023B00804DB5 /* SQMovieData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E0EFBE22D974FC00B62EBF /* SQMovieData.plist */; };
+		1469BB7722DF023B00804DB5 /* SQTVTag.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E0EFC322D9774400B62EBF /* SQTVTag.plist */; };
+		1469BB7822DF023B00804DB5 /* SQTVData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E0EFC222D9774400B62EBF /* SQTVData.plist */; };
+		1469BB7922DF023B00804DB5 /* SQChartList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E0EFCE22D98DF400B62EBF /* SQChartList.plist */; };
+		1469BB7A22DF023B00804DB5 /* SQTop250List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318122D9B4770010E920 /* SQTop250List.plist */; };
+		1469BB7B22DF023B00804DB5 /* SQMovie最新List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318922D9BB3B0010E920 /* SQMovie最新List.plist */; };
+		1469BB7C22DF023B00804DB5 /* SQMovie冷门佳片List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318622D9BB3A0010E920 /* SQMovie冷门佳片List.plist */; };
+		1469BB7D22DF023B00804DB5 /* SQMovie华语List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318822D9BB3A0010E920 /* SQMovie华语List.plist */; };
+		1469BB7E22DF023B00804DB5 /* SQMovie日本List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318A22D9BB3B0010E920 /* SQMovie日本List.plist */; };
+		1469BB7F22DF023B00804DB5 /* SQMovie欧美List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318722D9BB3A0010E920 /* SQMovie欧美List.plist */; };
+		1469BB8022DF023B00804DB5 /* SQMovie热门List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318322D9BB3A0010E920 /* SQMovie热门List.plist */; };
+		1469BB8122DF023B00804DB5 /* SQMovie韩国List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318522D9BB3A0010E920 /* SQMovie韩国List.plist */; };
+		1469BB8222DF023B00804DB5 /* SQMovie高分List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445318422D9BB3A0010E920 /* SQMovie高分List.plist */; };
+		1469BB8322DF023B00804DB5 /* SQTv国产剧List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319A22D9BF270010E920 /* SQTv国产剧List.plist */; };
+		1469BB8422DF023B00804DB5 /* SQTv日剧List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319822D9BF270010E920 /* SQTv日剧List.plist */; };
+		1469BB8522DF023B00804DB5 /* SQTv日本动画List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319722D9BF270010E920 /* SQTv日本动画List.plist */; };
+		1469BB8622DF023B00804DB5 /* SQTv热门List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319522D9BF270010E920 /* SQTv热门List.plist */; };
+		1469BB8722DF023B00804DB5 /* SQTv纪录片List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319622D9BF270010E920 /* SQTv纪录片List.plist */; };
+		1469BB8822DF023B00804DB5 /* SQTv综艺List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319922D9BF270010E920 /* SQTv综艺List.plist */; };
+		1469BB8922DF023B00804DB5 /* SQTv美剧List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319422D9BF260010E920 /* SQTv美剧List.plist */; };
+		1469BB8A22DF023B00804DB5 /* SQTv韩剧List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1445319322D9BF260010E920 /* SQTv韩剧List.plist */; };
+		1469BB8C22DF027400804DB5 /* Pods-SQMagnet.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6FF6F2DA6D35BE7297994189 /* Pods-SQMagnet.debug.xcconfig */; };
+		1469BB8D22DF027400804DB5 /* Pods-SQMagnet.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 34891DCFCD95F4DE8FDE88C0 /* Pods-SQMagnet.release.xcconfig */; };
+		1469BB8E22DF02C400804DB5 /* SQH1TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1403C94222D7860500FC8349 /* SQH1TitleView.xib */; };
+		1469BB8F22DF02C400804DB5 /* SQSearchInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142B7E9922D8631A00C3864B /* SQSearchInputView.xib */; };
+		1469BB9122DF02C400804DB5 /* SQLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141B746B22DAC6AE00812F80 /* SQLoadingView.xib */; };
+		1469BB9222DF02C400804DB5 /* SQType1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149B323922D8686D007F0C6C /* SQType1Cell.xib */; };
+		1469BB9322DF02C400804DB5 /* SQType1SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149B324122D86C36007F0C6C /* SQType1SubCell.xib */; };
+		1469BB9422DF02C400804DB5 /* SQType2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1401C43322DAD9D2004D9E6B /* SQType2Cell.xib */; };
+		1469BB9522DF02C400804DB5 /* SQListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E0EFCC22D97F6F00B62EBF /* SQListViewController.storyboard */; };
+		1469BB9622DF02C400804DB5 /* SQMagnetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A2E22122D9FDF5008BB226 /* SQMagnetViewController.storyboard */; };
+		1469BB9722DF02C400804DB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A9582D22D7297A002F90ED /* Main.storyboard */; };
+		1469BB9822DF02C400804DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A9583022D7297C002F90ED /* Assets.xcassets */; };
+		1469BB9922DF02C400804DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A9583222D7297C002F90ED /* LaunchScreen.storyboard */; };
+		1476E0AF22DA2DB100BF8DEF /* SQType2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1476E0AE22DA2DB100BF8DEF /* SQType2Model.m */; };
+		1476E0B422DAB07400BF8DEF /* SQMagnetTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1476E0B322DAB07400BF8DEF /* SQMagnetTitleView.m */; };
+		14781DD522E991AB00886F56 /* SQType3Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 14781DD422E991AB00886F56 /* SQType3Model.m */; };
+		1488AA4F22E98ED0001B0B5C /* SQType4Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488AA4D22E98ED0001B0B5C /* SQType4Cell.m */; };
+		1488AA5022E98ED0001B0B5C /* SQType4Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1488AA4E22E98ED0001B0B5C /* SQType4Cell.xib */; };
+		149B323A22D8686D007F0C6C /* SQType1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149B323822D8686D007F0C6C /* SQType1Cell.m */; };
+		149B324222D86C36007F0C6C /* SQType1SubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149B324022D86C36007F0C6C /* SQType1SubCell.m */; };
+		149B324622D8726B007F0C6C /* SQType1Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 149B324522D8726B007F0C6C /* SQType1Model.m */; };
+		14A136D822E5872500563E5F /* SQMagnetTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A136D722E5872400563E5F /* SQMagnetTitleView.xib */; };
+		14A2E22522D9FF33008BB226 /* SQMagnetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A2E22422D9FF33008BB226 /* SQMagnetViewController.m */; };
+		14A9582922D7297A002F90ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A9582822D7297A002F90ED /* AppDelegate.m */; };
+		14A9583722D7297C002F90ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A9583622D7297C002F90ED /* main.m */; };
+		14E0EFCB22D97DCA00B62EBF /* SQListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E0EFCA22D97DCA00B62EBF /* SQListViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1401C43122DAD9D2004D9E6B /* SQType2Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQType2Cell.h; sourceTree = "<group>"; };
+		1401C43222DAD9D2004D9E6B /* SQType2Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQType2Cell.m; sourceTree = "<group>"; };
+		1401C43322DAD9D2004D9E6B /* SQType2Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQType2Cell.xib; sourceTree = "<group>"; };
+		1403C93622D781A300FC8349 /* SQHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeViewController.h; sourceTree = "<group>"; };
+		1403C93722D781A300FC8349 /* SQHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeViewController.m; sourceTree = "<group>"; };
+		1403C93922D781B700FC8349 /* SQMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQMovieViewController.h; sourceTree = "<group>"; };
+		1403C93A22D781B700FC8349 /* SQMovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMovieViewController.m; sourceTree = "<group>"; };
+		1403C93C22D781C600FC8349 /* SQTVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTVViewController.h; sourceTree = "<group>"; };
+		1403C93D22D781C600FC8349 /* SQTVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTVViewController.m; sourceTree = "<group>"; };
+		1403C93F22D781DE00FC8349 /* SQSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSettingsViewController.h; sourceTree = "<group>"; };
+		1403C94022D781DE00FC8349 /* SQSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSettingsViewController.m; sourceTree = "<group>"; };
+		1403C94222D7860500FC8349 /* SQH1TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQH1TitleView.xib; sourceTree = "<group>"; };
+		1403C94422D786B200FC8349 /* SQH1TitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQH1TitleView.h; sourceTree = "<group>"; };
+		1403C94522D786B200FC8349 /* SQH1TitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQH1TitleView.m; sourceTree = "<group>"; };
+		141B746B22DAC6AE00812F80 /* SQLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQLoadingView.xib; sourceTree = "<group>"; };
+		141B746D22DAC93500812F80 /* SQLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoadingView.h; sourceTree = "<group>"; };
+		141B746E22DAC93500812F80 /* SQLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoadingView.m; sourceTree = "<group>"; };
+		141B747822DB825A00812F80 /* NSString+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Unicode.m"; sourceTree = "<group>"; };
+		141B747922DB825A00812F80 /* NSString+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Unicode.h"; sourceTree = "<group>"; };
+		141B747A22DB825A00812F80 /* NSDictionary+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Unicode.m"; sourceTree = "<group>"; };
+		141B747B22DB825A00812F80 /* NSArray+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Unicode.h"; sourceTree = "<group>"; };
+		141B747C22DB825A00812F80 /* NSObject+SafeSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SafeSwizzle.h"; sourceTree = "<group>"; };
+		141B747D22DB825A00812F80 /* NSObject+SafeSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SafeSwizzle.m"; sourceTree = "<group>"; };
+		141B747E22DB825A00812F80 /* NSDictionary+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Unicode.h"; sourceTree = "<group>"; };
+		141B747F22DB825A00812F80 /* NSArray+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Unicode.m"; sourceTree = "<group>"; };
+		142B7E8022D829D400C3864B /* SQTabbarControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTabbarControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		142B7E8122D829D400C3864B /* SQTabbarControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTabbarControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
+		142B7E8322D82EA200C3864B /* UIViewController+SQExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SQExtension.h"; sourceTree = "<group>"; };
+		142B7E8422D82EA200C3864B /* UIViewController+SQExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SQExtension.m"; sourceTree = "<group>"; };
+		142B7E8622D82F9700C3864B /* UIImage+SQExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SQExtension.h"; sourceTree = "<group>"; };
+		142B7E8722D82F9700C3864B /* UIImage+SQExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQExtension.m"; sourceTree = "<group>"; };
+		142B7E8922D8300200C3864B /* UIView+SQExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SQExtension.h"; sourceTree = "<group>"; };
+		142B7E8A22D8300200C3864B /* UIView+SQExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQExtension.m"; sourceTree = "<group>"; };
+		142B7E8C22D8330500C3864B /* SQNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQNavigationController.h; sourceTree = "<group>"; };
+		142B7E8D22D8330500C3864B /* SQNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQNavigationController.m; sourceTree = "<group>"; };
+		142B7E9922D8631A00C3864B /* SQSearchInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQSearchInputView.xib; sourceTree = "<group>"; };
+		142B7E9B22D8638A00C3864B /* SQSearchInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSearchInputView.h; sourceTree = "<group>"; };
+		142B7E9C22D8638A00C3864B /* SQSearchInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSearchInputView.m; sourceTree = "<group>"; };
+		142C58B422D732D60042837B /* SQNetWorkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQNetWorkTool.h; sourceTree = "<group>"; };
+		142C58B522D732D60042837B /* SQNetWorkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQNetWorkTool.m; sourceTree = "<group>"; };
+		1435451C22DA0C6800CA25A6 /* UIColor+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SQExtension.h"; sourceTree = "<group>"; };
+		1435451D22DA0C6800CA25A6 /* UIColor+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SQExtension.m"; sourceTree = "<group>"; };
+		1435451F22DA126700CA25A6 /* NSObject+SQExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SQExtension.h"; sourceTree = "<group>"; };
+		1435452022DA126700CA25A6 /* NSObject+SQExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SQExtension.m"; sourceTree = "<group>"; };
+		143E845B22D827280028FAAF /* SQTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTabBarController.h; sourceTree = "<group>"; };
+		143E845C22D827280028FAAF /* SQTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTabBarController.m; sourceTree = "<group>"; };
+		1445318122D9B4770010E920 /* SQTop250List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SQTop250List.plist; sourceTree = "<group>"; };
+		1445318322D9BB3A0010E920 /* SQMovie热门List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie热门List.plist"; sourceTree = "<group>"; };
+		1445318422D9BB3A0010E920 /* SQMovie高分List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie高分List.plist"; sourceTree = "<group>"; };
+		1445318522D9BB3A0010E920 /* SQMovie韩国List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie韩国List.plist"; sourceTree = "<group>"; };
+		1445318622D9BB3A0010E920 /* SQMovie冷门佳片List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie冷门佳片List.plist"; sourceTree = "<group>"; };
+		1445318722D9BB3A0010E920 /* SQMovie欧美List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie欧美List.plist"; sourceTree = "<group>"; };
+		1445318822D9BB3A0010E920 /* SQMovie华语List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie华语List.plist"; sourceTree = "<group>"; };
+		1445318922D9BB3B0010E920 /* SQMovie最新List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie最新List.plist"; sourceTree = "<group>"; };
+		1445318A22D9BB3B0010E920 /* SQMovie日本List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQMovie日本List.plist"; sourceTree = "<group>"; };
+		1445319322D9BF260010E920 /* SQTv韩剧List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv韩剧List.plist"; sourceTree = "<group>"; };
+		1445319422D9BF260010E920 /* SQTv美剧List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv美剧List.plist"; sourceTree = "<group>"; };
+		1445319522D9BF270010E920 /* SQTv热门List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv热门List.plist"; sourceTree = "<group>"; };
+		1445319622D9BF270010E920 /* SQTv纪录片List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv纪录片List.plist"; sourceTree = "<group>"; };
+		1445319722D9BF270010E920 /* SQTv日本动画List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv日本动画List.plist"; sourceTree = "<group>"; };
+		1445319822D9BF270010E920 /* SQTv日剧List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv日剧List.plist"; sourceTree = "<group>"; };
+		1445319922D9BF270010E920 /* SQTv综艺List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv综艺List.plist"; sourceTree = "<group>"; };
+		1445319A22D9BF270010E920 /* SQTv国产剧List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SQTv国产剧List.plist"; sourceTree = "<group>"; };
+		145EC89C22E041C200A8E415 /* SQConnectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQConnectViewController.h; sourceTree = "<group>"; };
+		145EC89D22E041C200A8E415 /* SQConnectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQConnectViewController.m; sourceTree = "<group>"; };
+		145EC89F22E041D200A8E415 /* SQConnectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQConnectViewController.storyboard; sourceTree = "<group>"; };
+		145EC8A122E0581600A8E415 /* SQLongViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLongViewController.h; sourceTree = "<group>"; };
+		145EC8A222E0581600A8E415 /* SQLongViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLongViewController.m; sourceTree = "<group>"; };
+		146116EF22E161E9007B2005 /* SQDisclaimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQDisclaimerViewController.h; sourceTree = "<group>"; };
+		146116F022E161E9007B2005 /* SQDisclaimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQDisclaimerViewController.m; sourceTree = "<group>"; };
+		146116F222E161FD007B2005 /* SQDisclaimerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQDisclaimerViewController.storyboard; sourceTree = "<group>"; };
+		146116F422E165B3007B2005 /* SQType3Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQType3Cell.h; sourceTree = "<group>"; };
+		146116F522E165B3007B2005 /* SQType3Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQType3Cell.m; sourceTree = "<group>"; };
+		146116F622E165B3007B2005 /* SQType3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQType3Cell.xib; sourceTree = "<group>"; };
+		1476E0AD22DA2DB100BF8DEF /* SQType2Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQType2Model.h; sourceTree = "<group>"; };
+		1476E0AE22DA2DB100BF8DEF /* SQType2Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQType2Model.m; sourceTree = "<group>"; };
+		1476E0B222DAB07400BF8DEF /* SQMagnetTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQMagnetTitleView.h; sourceTree = "<group>"; };
+		1476E0B322DAB07400BF8DEF /* SQMagnetTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMagnetTitleView.m; sourceTree = "<group>"; };
+		14781DD322E991AB00886F56 /* SQType3Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SQType3Model.h; path = "../../../../../../../../System/Volumes/Data/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/SQMagnet/SQMagnet/Coms/SQType3Model.h"; sourceTree = "<group>"; };
+		14781DD422E991AB00886F56 /* SQType3Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SQType3Model.m; path = "../../../../../../../../System/Volumes/Data/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/SQMagnet/SQMagnet/Coms/SQType3Model.m"; sourceTree = "<group>"; };
+		1488AA4C22E98ED0001B0B5C /* SQType4Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SQType4Cell.h; path = "../../../../../../../../System/Volumes/Data/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/SQMagnet/SQMagnet/Coms/SQType4Cell.h"; sourceTree = "<group>"; };
+		1488AA4D22E98ED0001B0B5C /* SQType4Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SQType4Cell.m; path = "../../../../../../../../System/Volumes/Data/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/SQMagnet/SQMagnet/Coms/SQType4Cell.m"; sourceTree = "<group>"; };
+		1488AA4E22E98ED0001B0B5C /* SQType4Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SQType4Cell.xib; path = "../../../../../../../../System/Volumes/Data/Users/zhushuangquan/Native Drive/GitHub/coderZsq.project.ios/SQMagnet/SQMagnet/Coms/SQType4Cell.xib"; sourceTree = "<group>"; };
+		149B323722D8686D007F0C6C /* SQType1Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQType1Cell.h; sourceTree = "<group>"; };
+		149B323822D8686D007F0C6C /* SQType1Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQType1Cell.m; sourceTree = "<group>"; };
+		149B323922D8686D007F0C6C /* SQType1Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQType1Cell.xib; sourceTree = "<group>"; };
+		149B323F22D86C36007F0C6C /* SQType1SubCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQType1SubCell.h; sourceTree = "<group>"; };
+		149B324022D86C36007F0C6C /* SQType1SubCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQType1SubCell.m; sourceTree = "<group>"; };
+		149B324122D86C36007F0C6C /* SQType1SubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQType1SubCell.xib; sourceTree = "<group>"; };
+		149B324422D8726B007F0C6C /* SQType1Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQType1Model.h; sourceTree = "<group>"; };
+		149B324522D8726B007F0C6C /* SQType1Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQType1Model.m; sourceTree = "<group>"; };
+		14A136D722E5872400563E5F /* SQMagnetTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQMagnetTitleView.xib; sourceTree = "<group>"; };
+		14A2E22122D9FDF5008BB226 /* SQMagnetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQMagnetViewController.storyboard; sourceTree = "<group>"; };
+		14A2E22322D9FF33008BB226 /* SQMagnetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQMagnetViewController.h; sourceTree = "<group>"; };
+		14A2E22422D9FF33008BB226 /* SQMagnetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMagnetViewController.m; sourceTree = "<group>"; };
+		14A9582422D7297A002F90ED /* SQMagnet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQMagnet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A9582722D7297A002F90ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14A9582822D7297A002F90ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14A9582E22D7297A002F90ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14A9583022D7297C002F90ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14A9583322D7297C002F90ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14A9583522D7297C002F90ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14A9583622D7297C002F90ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14E0EFBA22D9719100B62EBF /* SQHomeData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SQHomeData.plist; sourceTree = "<group>"; };
+		14E0EFBE22D974FC00B62EBF /* SQMovieData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SQMovieData.plist; sourceTree = "<group>"; };
+		14E0EFC022D9759400B62EBF /* SQMovieTag.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SQMovieTag.plist; sourceTree = "<group>"; };
+		14E0EFC222D9774400B62EBF /* SQTVData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SQTVData.plist; sourceTree = "<group>"; };
+		14E0EFC322D9774400B62EBF /* SQTVTag.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SQTVTag.plist; sourceTree = "<group>"; };
+		14E0EFC922D97DCA00B62EBF /* SQListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQListViewController.h; sourceTree = "<group>"; };
+		14E0EFCA22D97DCA00B62EBF /* SQListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQListViewController.m; sourceTree = "<group>"; };
+		14E0EFCC22D97F6F00B62EBF /* SQListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SQListViewController.storyboard; sourceTree = "<group>"; };
+		14E0EFCE22D98DF400B62EBF /* SQChartList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SQChartList.plist; sourceTree = "<group>"; };
+		2030CE818340DE7755991811 /* libPods-SQMagnet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQMagnet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34891DCFCD95F4DE8FDE88C0 /* Pods-SQMagnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQMagnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQMagnet/Pods-SQMagnet.release.xcconfig"; sourceTree = "<group>"; };
+		6FF6F2DA6D35BE7297994189 /* Pods-SQMagnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQMagnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQMagnet/Pods-SQMagnet.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14A9582122D7297A002F90ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CA965C13E0F5D8E8BDEF29 /* libPods-SQMagnet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		141B748422DB826F00812F80 /* Unicode */ = {
+			isa = PBXGroup;
+			children = (
+				141B747B22DB825A00812F80 /* NSArray+Unicode.h */,
+				141B747F22DB825A00812F80 /* NSArray+Unicode.m */,
+				141B747E22DB825A00812F80 /* NSDictionary+Unicode.h */,
+				141B747A22DB825A00812F80 /* NSDictionary+Unicode.m */,
+				141B747C22DB825A00812F80 /* NSObject+SafeSwizzle.h */,
+				141B747D22DB825A00812F80 /* NSObject+SafeSwizzle.m */,
+				141B747922DB825A00812F80 /* NSString+Unicode.h */,
+				141B747822DB825A00812F80 /* NSString+Unicode.m */,
+			);
+			path = Unicode;
+			sourceTree = "<group>";
+		};
+		141E9DD322DEF2F1004100F4 /* Thunder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Thunder;
+			sourceTree = "<group>";
+		};
+		142B7E9622D8628D00C3864B /* SQExtension */ = {
+			isa = PBXGroup;
+			children = (
+				142B7E8322D82EA200C3864B /* UIViewController+SQExtension.h */,
+				142B7E8422D82EA200C3864B /* UIViewController+SQExtension.m */,
+				142B7E8622D82F9700C3864B /* UIImage+SQExtension.h */,
+				142B7E8722D82F9700C3864B /* UIImage+SQExtension.m */,
+				142B7E8922D8300200C3864B /* UIView+SQExtension.h */,
+				142B7E8A22D8300200C3864B /* UIView+SQExtension.m */,
+				1435451C22DA0C6800CA25A6 /* UIColor+SQExtension.h */,
+				1435451D22DA0C6800CA25A6 /* UIColor+SQExtension.m */,
+				1435451F22DA126700CA25A6 /* NSObject+SQExtension.h */,
+				1435452022DA126700CA25A6 /* NSObject+SQExtension.m */,
+			);
+			path = SQExtension;
+			sourceTree = "<group>";
+		};
+		142B7E9722D862A200C3864B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				142C58B422D732D60042837B /* SQNetWorkTool.h */,
+				142C58B522D732D60042837B /* SQNetWorkTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		142B7E9822D862C600C3864B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				14A9582722D7297A002F90ED /* AppDelegate.h */,
+				14A9582822D7297A002F90ED /* AppDelegate.m */,
+				143E845B22D827280028FAAF /* SQTabBarController.h */,
+				143E845C22D827280028FAAF /* SQTabBarController.m */,
+				142B7E8022D829D400C3864B /* SQTabbarControllerAnimatedTransitioning.h */,
+				142B7E8122D829D400C3864B /* SQTabbarControllerAnimatedTransitioning.m */,
+				142B7E8C22D8330500C3864B /* SQNavigationController.h */,
+				142B7E8D22D8330500C3864B /* SQNavigationController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		144C200322E1BF0E00F2B726 /* Beiwo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Beiwo;
+			sourceTree = "<group>";
+		};
+		14772D0022DEF22400723118 /* Magnet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Magnet;
+			sourceTree = "<group>";
+		};
+		147736CB22DEF23900723118 /* Piaohua */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Piaohua;
+			sourceTree = "<group>";
+		};
+		149B323622D8654B007F0C6C /* Coms */ = {
+			isa = PBXGroup;
+			children = (
+				1403C94422D786B200FC8349 /* SQH1TitleView.h */,
+				1403C94522D786B200FC8349 /* SQH1TitleView.m */,
+				1403C94222D7860500FC8349 /* SQH1TitleView.xib */,
+				142B7E9B22D8638A00C3864B /* SQSearchInputView.h */,
+				142B7E9C22D8638A00C3864B /* SQSearchInputView.m */,
+				142B7E9922D8631A00C3864B /* SQSearchInputView.xib */,
+				1476E0B222DAB07400BF8DEF /* SQMagnetTitleView.h */,
+				1476E0B322DAB07400BF8DEF /* SQMagnetTitleView.m */,
+				14A136D722E5872400563E5F /* SQMagnetTitleView.xib */,
+				141B746D22DAC93500812F80 /* SQLoadingView.h */,
+				141B746E22DAC93500812F80 /* SQLoadingView.m */,
+				141B746B22DAC6AE00812F80 /* SQLoadingView.xib */,
+				149B323722D8686D007F0C6C /* SQType1Cell.h */,
+				149B323822D8686D007F0C6C /* SQType1Cell.m */,
+				149B323922D8686D007F0C6C /* SQType1Cell.xib */,
+				149B324422D8726B007F0C6C /* SQType1Model.h */,
+				149B324522D8726B007F0C6C /* SQType1Model.m */,
+				149B323F22D86C36007F0C6C /* SQType1SubCell.h */,
+				149B324022D86C36007F0C6C /* SQType1SubCell.m */,
+				149B324122D86C36007F0C6C /* SQType1SubCell.xib */,
+				1401C43122DAD9D2004D9E6B /* SQType2Cell.h */,
+				1401C43222DAD9D2004D9E6B /* SQType2Cell.m */,
+				1401C43322DAD9D2004D9E6B /* SQType2Cell.xib */,
+				1476E0AD22DA2DB100BF8DEF /* SQType2Model.h */,
+				1476E0AE22DA2DB100BF8DEF /* SQType2Model.m */,
+				146116F422E165B3007B2005 /* SQType3Cell.h */,
+				146116F522E165B3007B2005 /* SQType3Cell.m */,
+				146116F622E165B3007B2005 /* SQType3Cell.xib */,
+				1488AA4C22E98ED0001B0B5C /* SQType4Cell.h */,
+				1488AA4D22E98ED0001B0B5C /* SQType4Cell.m */,
+				1488AA4E22E98ED0001B0B5C /* SQType4Cell.xib */,
+				14781DD322E991AB00886F56 /* SQType3Model.h */,
+				14781DD422E991AB00886F56 /* SQType3Model.m */,
+			);
+			path = Coms;
+			sourceTree = "<group>";
+		};
+		14A9581B22D7297A002F90ED = {
+			isa = PBXGroup;
+			children = (
+				14A9582622D7297A002F90ED /* SQMagnet */,
+				14A9582522D7297A002F90ED /* Products */,
+				ED6C61350D1E21658198E95A /* Pods */,
+				63F26BA4304AEC511C24328B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		14A9582522D7297A002F90ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14A9582422D7297A002F90ED /* SQMagnet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14A9582622D7297A002F90ED /* SQMagnet */ = {
+			isa = PBXGroup;
+			children = (
+				14E0EFBC22D971AE00B62EBF /* Data */,
+				142B7E9822D862C600C3864B /* Main */,
+				149B323622D8654B007F0C6C /* Coms */,
+				142B7E9722D862A200C3864B /* Tools */,
+				14E0EFBD22D971D200B62EBF /* UI */,
+				141B748422DB826F00812F80 /* Unicode */,
+				142B7E9622D8628D00C3864B /* SQExtension */,
+				14A9582D22D7297A002F90ED /* Main.storyboard */,
+				14A9583022D7297C002F90ED /* Assets.xcassets */,
+				14A9583222D7297C002F90ED /* LaunchScreen.storyboard */,
+				14A9583522D7297C002F90ED /* Info.plist */,
+				14A9583622D7297C002F90ED /* main.m */,
+			);
+			path = SQMagnet;
+			sourceTree = "<group>";
+		};
+		14D157A822DC579000DF603B /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				14E0EFBA22D9719100B62EBF /* SQHomeData.plist */,
+				14E0EFC022D9759400B62EBF /* SQMovieTag.plist */,
+				14E0EFBE22D974FC00B62EBF /* SQMovieData.plist */,
+				14E0EFC322D9774400B62EBF /* SQTVTag.plist */,
+				14E0EFC222D9774400B62EBF /* SQTVData.plist */,
+				14E0EFCE22D98DF400B62EBF /* SQChartList.plist */,
+				1445318122D9B4770010E920 /* SQTop250List.plist */,
+				1445318922D9BB3B0010E920 /* SQMovie最新List.plist */,
+				1445318622D9BB3A0010E920 /* SQMovie冷门佳片List.plist */,
+				1445318822D9BB3A0010E920 /* SQMovie华语List.plist */,
+				1445318A22D9BB3B0010E920 /* SQMovie日本List.plist */,
+				1445318722D9BB3A0010E920 /* SQMovie欧美List.plist */,
+				1445318322D9BB3A0010E920 /* SQMovie热门List.plist */,
+				1445318522D9BB3A0010E920 /* SQMovie韩国List.plist */,
+				1445318422D9BB3A0010E920 /* SQMovie高分List.plist */,
+				1445319A22D9BF270010E920 /* SQTv国产剧List.plist */,
+				1445319822D9BF270010E920 /* SQTv日剧List.plist */,
+				1445319722D9BF270010E920 /* SQTv日本动画List.plist */,
+				1445319522D9BF270010E920 /* SQTv热门List.plist */,
+				1445319622D9BF270010E920 /* SQTv纪录片List.plist */,
+				1445319922D9BF270010E920 /* SQTv综艺List.plist */,
+				1445319422D9BF260010E920 /* SQTv美剧List.plist */,
+				1445319322D9BF260010E920 /* SQTv韩剧List.plist */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
+		14E0EFBC22D971AE00B62EBF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				144C200322E1BF0E00F2B726 /* Beiwo */,
+				141E9DD322DEF2F1004100F4 /* Thunder */,
+				147736CB22DEF23900723118 /* Piaohua */,
+				14772D0022DEF22400723118 /* Magnet */,
+				14D157A822DC579000DF603B /* XML */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		14E0EFBD22D971D200B62EBF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1403C93622D781A300FC8349 /* SQHomeViewController.h */,
+				1403C93722D781A300FC8349 /* SQHomeViewController.m */,
+				1403C93922D781B700FC8349 /* SQMovieViewController.h */,
+				1403C93A22D781B700FC8349 /* SQMovieViewController.m */,
+				1403C93C22D781C600FC8349 /* SQTVViewController.h */,
+				1403C93D22D781C600FC8349 /* SQTVViewController.m */,
+				1403C93F22D781DE00FC8349 /* SQSettingsViewController.h */,
+				1403C94022D781DE00FC8349 /* SQSettingsViewController.m */,
+				14E0EFC922D97DCA00B62EBF /* SQListViewController.h */,
+				14E0EFCA22D97DCA00B62EBF /* SQListViewController.m */,
+				14E0EFCC22D97F6F00B62EBF /* SQListViewController.storyboard */,
+				14A2E22322D9FF33008BB226 /* SQMagnetViewController.h */,
+				14A2E22422D9FF33008BB226 /* SQMagnetViewController.m */,
+				14A2E22122D9FDF5008BB226 /* SQMagnetViewController.storyboard */,
+				145EC89C22E041C200A8E415 /* SQConnectViewController.h */,
+				145EC89D22E041C200A8E415 /* SQConnectViewController.m */,
+				145EC89F22E041D200A8E415 /* SQConnectViewController.storyboard */,
+				145EC8A122E0581600A8E415 /* SQLongViewController.h */,
+				145EC8A222E0581600A8E415 /* SQLongViewController.m */,
+				146116EF22E161E9007B2005 /* SQDisclaimerViewController.h */,
+				146116F022E161E9007B2005 /* SQDisclaimerViewController.m */,
+				146116F222E161FD007B2005 /* SQDisclaimerViewController.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		63F26BA4304AEC511C24328B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2030CE818340DE7755991811 /* libPods-SQMagnet.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED6C61350D1E21658198E95A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FF6F2DA6D35BE7297994189 /* Pods-SQMagnet.debug.xcconfig */,
+				34891DCFCD95F4DE8FDE88C0 /* Pods-SQMagnet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14A9582322D7297A002F90ED /* SQMagnet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A9583A22D7297C002F90ED /* Build configuration list for PBXNativeTarget "SQMagnet" */;
+			buildPhases = (
+				4EDE8DD463E19529E7B44F62 /* [CP] Check Pods Manifest.lock */,
+				14A9582022D7297A002F90ED /* Sources */,
+				14A9582122D7297A002F90ED /* Frameworks */,
+				14A9582222D7297A002F90ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SQMagnet;
+			productName = SQMagnet;
+			productReference = 14A9582422D7297A002F90ED /* SQMagnet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14A9581C22D7297A002F90ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Castie!";
+				TargetAttributes = {
+					14A9582322D7297A002F90ED = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 14A9581F22D7297A002F90ED /* Build configuration list for PBXProject "SQMagnet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14A9581B22D7297A002F90ED;
+			productRefGroup = 14A9582522D7297A002F90ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14A9582322D7297A002F90ED /* SQMagnet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14A9582222D7297A002F90ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1469BB8E22DF02C400804DB5 /* SQH1TitleView.xib in Resources */,
+				1469BB8F22DF02C400804DB5 /* SQSearchInputView.xib in Resources */,
+				1469BB9122DF02C400804DB5 /* SQLoadingView.xib in Resources */,
+				1469BB9222DF02C400804DB5 /* SQType1Cell.xib in Resources */,
+				1469BB9322DF02C400804DB5 /* SQType1SubCell.xib in Resources */,
+				1469BB9422DF02C400804DB5 /* SQType2Cell.xib in Resources */,
+				1488AA5022E98ED0001B0B5C /* SQType4Cell.xib in Resources */,
+				1469BB9522DF02C400804DB5 /* SQListViewController.storyboard in Resources */,
+				1469BB9622DF02C400804DB5 /* SQMagnetViewController.storyboard in Resources */,
+				1469BB9722DF02C400804DB5 /* Main.storyboard in Resources */,
+				1469BB9822DF02C400804DB5 /* Assets.xcassets in Resources */,
+				1469BB9922DF02C400804DB5 /* LaunchScreen.storyboard in Resources */,
+				1469BB8C22DF027400804DB5 /* Pods-SQMagnet.debug.xcconfig in Resources */,
+				1469BB8D22DF027400804DB5 /* Pods-SQMagnet.release.xcconfig in Resources */,
+				1469BB7422DF023B00804DB5 /* SQHomeData.plist in Resources */,
+				1469BB7522DF023B00804DB5 /* SQMovieTag.plist in Resources */,
+				1469BB7622DF023B00804DB5 /* SQMovieData.plist in Resources */,
+				1469BB7722DF023B00804DB5 /* SQTVTag.plist in Resources */,
+				1469BB7822DF023B00804DB5 /* SQTVData.plist in Resources */,
+				1469BB7922DF023B00804DB5 /* SQChartList.plist in Resources */,
+				1469BB7A22DF023B00804DB5 /* SQTop250List.plist in Resources */,
+				1469BB7B22DF023B00804DB5 /* SQMovie最新List.plist in Resources */,
+				1469BB7C22DF023B00804DB5 /* SQMovie冷门佳片List.plist in Resources */,
+				1469BB7D22DF023B00804DB5 /* SQMovie华语List.plist in Resources */,
+				1469BB7E22DF023B00804DB5 /* SQMovie日本List.plist in Resources */,
+				1469BB7F22DF023B00804DB5 /* SQMovie欧美List.plist in Resources */,
+				1469BB8022DF023B00804DB5 /* SQMovie热门List.plist in Resources */,
+				1469BB8122DF023B00804DB5 /* SQMovie韩国List.plist in Resources */,
+				1469BB8222DF023B00804DB5 /* SQMovie高分List.plist in Resources */,
+				1469BB8322DF023B00804DB5 /* SQTv国产剧List.plist in Resources */,
+				1469BB8422DF023B00804DB5 /* SQTv日剧List.plist in Resources */,
+				146116F822E165B3007B2005 /* SQType3Cell.xib in Resources */,
+				1469BB8522DF023B00804DB5 /* SQTv日本动画List.plist in Resources */,
+				1469BB8622DF023B00804DB5 /* SQTv热门List.plist in Resources */,
+				1469BB8722DF023B00804DB5 /* SQTv纪录片List.plist in Resources */,
+				1469BB8822DF023B00804DB5 /* SQTv综艺List.plist in Resources */,
+				1469BB8922DF023B00804DB5 /* SQTv美剧List.plist in Resources */,
+				1469BB8A22DF023B00804DB5 /* SQTv韩剧List.plist in Resources */,
+				14A136D822E5872500563E5F /* SQMagnetTitleView.xib in Resources */,
+				145EC8A022E041D200A8E415 /* SQConnectViewController.storyboard in Resources */,
+				146116F322E161FD007B2005 /* SQDisclaimerViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EDE8DD463E19529E7B44F62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SQMagnet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14A9582022D7297A002F90ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				142C58B622D732D60042837B /* SQNetWorkTool.m in Sources */,
+				1403C94122D781DE00FC8349 /* SQSettingsViewController.m in Sources */,
+				1403C93822D781A300FC8349 /* SQHomeViewController.m in Sources */,
+				149B324622D8726B007F0C6C /* SQType1Model.m in Sources */,
+				145EC8A322E0581600A8E415 /* SQLongViewController.m in Sources */,
+				1403C93E22D781C600FC8349 /* SQTVViewController.m in Sources */,
+				142B7E8222D829D400C3864B /* SQTabbarControllerAnimatedTransitioning.m in Sources */,
+				14781DD522E991AB00886F56 /* SQType3Model.m in Sources */,
+				142B7E8522D82EA200C3864B /* UIViewController+SQExtension.m in Sources */,
+				143E845D22D827280028FAAF /* SQTabBarController.m in Sources */,
+				141B748222DB825A00812F80 /* NSObject+SafeSwizzle.m in Sources */,
+				142B7E8822D82F9700C3864B /* UIImage+SQExtension.m in Sources */,
+				1403C94622D786B200FC8349 /* SQH1TitleView.m in Sources */,
+				146116F122E161E9007B2005 /* SQDisclaimerViewController.m in Sources */,
+				1401C43422DAD9D2004D9E6B /* SQType2Cell.m in Sources */,
+				14E0EFCB22D97DCA00B62EBF /* SQListViewController.m in Sources */,
+				141B748022DB825A00812F80 /* NSString+Unicode.m in Sources */,
+				1435452122DA126700CA25A6 /* NSObject+SQExtension.m in Sources */,
+				149B324222D86C36007F0C6C /* SQType1SubCell.m in Sources */,
+				141B746F22DAC93500812F80 /* SQLoadingView.m in Sources */,
+				146116F722E165B3007B2005 /* SQType3Cell.m in Sources */,
+				1435451E22DA0C6800CA25A6 /* UIColor+SQExtension.m in Sources */,
+				1488AA4F22E98ED0001B0B5C /* SQType4Cell.m in Sources */,
+				1403C93B22D781B700FC8349 /* SQMovieViewController.m in Sources */,
+				141B748122DB825A00812F80 /* NSDictionary+Unicode.m in Sources */,
+				142B7E9D22D8638A00C3864B /* SQSearchInputView.m in Sources */,
+				145EC89E22E041C200A8E415 /* SQConnectViewController.m in Sources */,
+				14A9583722D7297C002F90ED /* main.m in Sources */,
+				142B7E8E22D8330500C3864B /* SQNavigationController.m in Sources */,
+				142B7E8B22D8300200C3864B /* UIView+SQExtension.m in Sources */,
+				1476E0B422DAB07400BF8DEF /* SQMagnetTitleView.m in Sources */,
+				14A9582922D7297A002F90ED /* AppDelegate.m in Sources */,
+				14A2E22522D9FF33008BB226 /* SQMagnetViewController.m in Sources */,
+				1476E0AF22DA2DB100BF8DEF /* SQType2Model.m in Sources */,
+				141B748322DB825A00812F80 /* NSArray+Unicode.m in Sources */,
+				149B323A22D8686D007F0C6C /* SQType1Cell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14A9582D22D7297A002F90ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14A9582E22D7297A002F90ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14A9583222D7297C002F90ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14A9583322D7297C002F90ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14A9583822D7297C002F90ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		14A9583922D7297C002F90ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14A9583B22D7297C002F90ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF6F2DA6D35BE7297994189 /* Pods-SQMagnet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NGPFU6GT2A;
+				INFOPLIST_FILE = SQMagnet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coderZsq.magnet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		14A9583C22D7297C002F90ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34891DCFCD95F4DE8FDE88C0 /* Pods-SQMagnet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NGPFU6GT2A;
+				INFOPLIST_FILE = SQMagnet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coderZsq.magnet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14A9581F22D7297A002F90ED /* Build configuration list for PBXProject "SQMagnet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A9583822D7297C002F90ED /* Debug */,
+				14A9583922D7297C002F90ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14A9583A22D7297C002F90ED /* Build configuration list for PBXNativeTarget "SQMagnet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A9583B22D7297C002F90ED /* Debug */,
+				14A9583C22D7297C002F90ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14A9581C22D7297A002F90ED /* Project object */;
+}

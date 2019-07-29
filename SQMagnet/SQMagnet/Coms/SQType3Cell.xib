@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14845" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14799.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SQType3Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHo-I3-iCm">
+                        <rect key="frame" x="15" y="5" width="295" height="39"/>
+                        <string key="text">「资源」应用作者提醒您：在使用「资源」搜索引擎（以下简称「资源」）前，请您务必仔细阅读并透彻理解本声明。您可以选择不使用「资源」，但如果您使用「资源」，您的使用行为将被视为对本声明全部内容的认可。
+
+鉴于「资源」以非人工检索方式、根据您键入的关键字自动生成到第三方资源的链接，除「资源」注明之服务条款外，其他一切因使用「资源」而可能遭致的意外、疏忽、侵权及其造成的损失（包括因下载被搜索链接到的第三方资源内容而感染电脑病毒），「资源」对其概不负责，亦不承担任何法律责任。
+
+任何通过使用「资源」而搜索链接到的第三方资源均系他人制作或提供，您可能从该第三方资源上获得资讯及享用服务，「资源」对其合法性概不负责，亦不承担任何法律责任。
+
+「资源」搜索结果根据您键入的关键字自动搜索获得并生成，不代表「资源」赞成被搜索链接到的第三方资源上的内容或立场。
+
+您应该对使用搜索引擎的结果自行承担风险。「资源」不做任何形式的保证：不保证搜索结果满足您的要求，不保证搜索服务不中断，不保证搜索结果的安全性、正确性、及时性、合法性。因网络状况、通讯线路、第三方资源等任何原因而导致您不能正常使用「资源」，「资源」不承担任何法律责任。
+
+「资源」尊重并保护所有使用「资源」用户的个人隐私权，您注册的用户名、电子邮件地址等个人资料，非经您亲自许可或根据相关法律、法规的强制性规定，「资源」不会主动地泄露给第三方。「资源」提醒您：您在使用搜索引擎时输入的关键字将不被认为是您的个人隐私资料。
+
+任何单位或个人认为通过「资源」搜索链接到的第三方资源内容可能涉嫌侵犯其信息网络传播权，应该及时向「资源」提出书面权利通知，并提供身份证明、权属证明及详细侵权情况证明。「资源」在收到上述法律文件后，将会依法尽快断开相关链接内容。详情参见特定频道的著作权保护声明。
+</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="nHo-I3-iCm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="IOf-ZR-PO8"/>
+                    <constraint firstAttribute="trailing" secondItem="nHo-I3-iCm" secondAttribute="trailing" constant="10" id="gn0-S5-n7x"/>
+                    <constraint firstAttribute="bottom" secondItem="nHo-I3-iCm" secondAttribute="bottom" id="mLU-Lr-qMS"/>
+                    <constraint firstItem="nHo-I3-iCm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ni9-Ws-2V4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="paraLabel" destination="nHo-I3-iCm" id="q8y-AC-e20"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="126"/>
+        </tableViewCell>
+    </objects>
+</document>

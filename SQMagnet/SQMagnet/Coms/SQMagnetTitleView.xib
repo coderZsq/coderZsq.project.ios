@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="SQMagnetTitleView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="127"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ch-Nc-HAg">
+                    <rect key="frame" x="15" y="30" width="60" height="85"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="TZ6-bU-xAL"/>
+                        <constraint firstAttribute="width" constant="60" id="ymQ-YD-A95"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5q-TV-Mtf">
+                    <rect key="frame" x="85" y="30" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ni-13-efm">
+                    <rect key="frame" x="85" y="40" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxP-mb-4UE">
+                    <rect key="frame" x="368" y="15" width="31" height="30"/>
+                    <state key="normal" title="关闭">
+                        <color key="titleColor" red="0.92549019610000005" green="0.33725490200000002" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Sb-dm-kJ8"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在从全宇宙为您寻找资源... 请耐心等候..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOX-tG-JNg">
+                    <rect key="frame" x="85" y="50" width="280" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="T4y-Oi-42h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lca-X4-1Qq">
+                    <rect key="frame" x="189.5" y="10" width="35" height="5"/>
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="6gx-jg-XaB"/>
+                        <constraint firstAttribute="width" constant="35" id="Gpb-FL-1Xy"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="9ni-13-efm" firstAttribute="top" secondItem="P5q-TV-Mtf" secondAttribute="bottom" constant="10" id="3F4-4t-nDA"/>
+                <constraint firstItem="Lca-X4-1Qq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4he-iK-py5"/>
+                <constraint firstItem="lOX-tG-JNg" firstAttribute="top" secondItem="9ni-13-efm" secondAttribute="bottom" constant="10" id="9hm-Ht-BIk"/>
+                <constraint firstItem="P5q-TV-Mtf" firstAttribute="leading" secondItem="8Ch-Nc-HAg" secondAttribute="trailing" constant="10" id="CLl-Ii-6F0"/>
+                <constraint firstItem="lOX-tG-JNg" firstAttribute="leading" secondItem="8Ch-Nc-HAg" secondAttribute="trailing" constant="10" id="G6z-DB-fIO"/>
+                <constraint firstAttribute="trailing" secondItem="MxP-mb-4UE" secondAttribute="trailing" constant="15" id="JOY-Lu-Ij8"/>
+                <constraint firstItem="Lca-X4-1Qq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="LQE-N9-nby"/>
+                <constraint firstItem="8Ch-Nc-HAg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="aoZ-1c-DGB"/>
+                <constraint firstItem="8Ch-Nc-HAg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="jBV-ZK-1Ze"/>
+                <constraint firstItem="9ni-13-efm" firstAttribute="leading" secondItem="8Ch-Nc-HAg" secondAttribute="trailing" constant="10" id="nFS-P4-zE2"/>
+                <constraint firstItem="MxP-mb-4UE" firstAttribute="centerY" secondItem="P5q-TV-Mtf" secondAttribute="centerY" id="sGV-pS-a6X"/>
+                <constraint firstItem="P5q-TV-Mtf" firstAttribute="top" secondItem="8Ch-Nc-HAg" secondAttribute="top" id="saY-DE-BQr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="lOX-tG-JNg" id="Tkg-Jb-fDo"/>
+                <outlet property="imageView" destination="8Ch-Nc-HAg" id="ged-yE-o6x"/>
+                <outlet property="rateLabel" destination="9ni-13-efm" id="Mag-0v-ULp"/>
+                <outlet property="titleLabel" destination="P5q-TV-Mtf" id="fTQ-NM-sWc"/>
+            </connections>
+            <point key="canvasLocation" x="124.6376811594203" y="-43.191964285714285"/>
+        </view>
+    </objects>
+</document>

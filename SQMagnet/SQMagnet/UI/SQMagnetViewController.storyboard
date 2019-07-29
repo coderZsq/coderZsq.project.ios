@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14845" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dJU-GV-n8x">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14799.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Magnet View Controller-->
+        <scene sceneID="t83-mh-YPx">
+            <objects>
+                <viewController id="dJU-GV-n8x" customClass="SQMagnetViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="xJB-Uc-B7n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-zM-HAo">
+                                <rect key="frame" x="0.0" y="150" width="414" height="746"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dJU-GV-n8x" id="ls1-i0-cpo"/>
+                                    <outlet property="delegate" destination="dJU-GV-n8x" id="Dgx-KU-wYO"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EX3-tm-ArL">
+                                <rect key="frame" x="0.0" y="20" width="414" height="130"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Uox-pb-5iO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NmA-zM-HAo" secondAttribute="bottom" id="4dI-So-sgd"/>
+                            <constraint firstItem="NmA-zM-HAo" firstAttribute="leading" secondItem="sBt-cP-Cla" secondAttribute="leading" id="C8h-hL-7X1"/>
+                            <constraint firstItem="sBt-cP-Cla" firstAttribute="trailing" secondItem="NmA-zM-HAo" secondAttribute="trailing" id="coP-yh-Llu"/>
+                            <constraint firstItem="sBt-cP-Cla" firstAttribute="trailing" secondItem="EX3-tm-ArL" secondAttribute="trailing" id="gUe-ao-EB4"/>
+                            <constraint firstItem="NmA-zM-HAo" firstAttribute="top" secondItem="EX3-tm-ArL" secondAttribute="bottom" id="juV-E3-qnZ"/>
+                            <constraint firstItem="EX3-tm-ArL" firstAttribute="top" secondItem="xJB-Uc-B7n" secondAttribute="top" constant="20" id="pS0-zg-vp7"/>
+                            <constraint firstItem="EX3-tm-ArL" firstAttribute="leading" secondItem="sBt-cP-Cla" secondAttribute="leading" id="uHC-RM-rGW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sBt-cP-Cla"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="NmA-zM-HAo" id="UsJ-jA-5rk"/>
+                        <outlet property="titleContentView" destination="EX3-tm-ArL" id="bmv-Yk-Zf9"/>
+                        <outlet property="topConstraint" destination="pS0-zg-vp7" id="PfX-Pd-YrB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y13-Zo-r0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="427.536231884058" y="203.57142857142856"/>
+        </scene>
+    </scenes>
+</document>
