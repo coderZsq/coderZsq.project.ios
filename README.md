@@ -12,6 +12,13 @@ $ . run.sh
 ```
 
 #### Contents
+- Adapt to **iOS13 dark mode**.
+- Use **part of SQExtesion** in this project.
+- Pre-parsed **WEBP format** image.
+- Don't have to **ask for resources everywhere**, just need **open your mouth**.
+- Search resources from the **whole universe for you**.
+- Massive film resources, **one touch**.
+- A **must-have** chase artifact to give you the **ultimate experience**.
 
 #### Display
 <img width="35"/><img src="./SQMagnet/contents/01.gif" width="290"><img width="85"/><img src="./SQMagnet/contents/02.gif" width="290">
