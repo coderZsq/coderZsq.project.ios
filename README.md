@@ -13,7 +13,7 @@ $ . run.sh
 
 #### Contents
 - Adapt to **iOS13 dark mode**.
-- Use **part of SQExtesion** in this project.
+- Use **part of SQExtension** in this project.
 - Pre-parsed **WEBP format** image.
 - Don't have to **ask for resources everywhere**, just need **open your mouth**.
 - Search resources from the **whole universe for you**.
