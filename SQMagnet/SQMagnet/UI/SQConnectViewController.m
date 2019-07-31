@@ -23,15 +23,15 @@
 
 - (void)hookApplicationWillEnterForeground {
     self.view.backgroundColor = [UIColor colorWithHexString:@"#f8f8f8"];
-//    if (@available(iOS 13.0, *)) {
-//        self.view.backgroundColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull trait) {
-//            if (trait.userInterfaceStyle == UIUserInterfaceStyleDark) {
-//                return [UIColor colorWithHexString:@"#1c1c1e"];
-//            } else {
-//                return [UIColor colorWithHexString:@"#f8f8f8"];
-//            }
-//        }];
-//    }
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull trait) {
+            if (trait.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithHexString:@"#1c1c1e"];
+            } else {
+                return [UIColor colorWithHexString:@"#f8f8f8"];
+            }
+        }];
+    }
 }
 
 @end
