@@ -1,16 +1,15 @@
 //
-//  AppDelegate+SQPasteProxy.m
-//  SQPasteProxy
+//  AppDelegate+SQExtension.m
 //
 //  Created by 朱双泉 on 2019/7/2.
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "AppDelegate+SQPasteProxy.h"
+#import "AppDelegate+SQExtension.h"
 #import <objc/runtime.h>
 #import <SafariServices/SafariServices.h>
 
-@implementation AppDelegate (SQPasteProxy)
+@implementation AppDelegate (SQExtension)
 
 + (void)load {
     static dispatch_once_t onceToken;

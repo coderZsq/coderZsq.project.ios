@@ -1,3 +1,11 @@
+//
+//  AppDelegate+SQExtension.h
+//
+//  Created by 朱双泉 on 2019/7/2.
+//  Copyright © 2019 Castie!. All rights reserved.
+//
+
+/*
 ## Example
 
 ```objc
@@ -27,3 +35,14 @@
     "alert-confirm-title": "确定"
 }
 ```
+*/
+
+#import "AppDelegate.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface AppDelegate (SQPasteProxy)
+
+@end
+
+NS_ASSUME_NONNULL_END
