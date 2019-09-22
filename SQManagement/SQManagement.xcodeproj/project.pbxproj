@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14DC37CB23374CFB00867A92 /* SQH1TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DC37C923374CFB00867A92 /* SQH1TitleView.xib */; };
+		14DC37CC23374CFB00867A92 /* SQH1TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37CA23374CFB00867A92 /* SQH1TitleView.m */; };
+		14DC37CF23374DC600867A92 /* SQConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */; };
+		14DC37DF23374FA500867A92 /* UIViewController+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37D523374FA500867A92 /* UIViewController+SQExtension.m */; };
+		14DC37E023374FA500867A92 /* NSObject+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37D823374FA500867A92 /* NSObject+SQExtension.m */; };
+		14DC37E123374FA500867A92 /* UIView+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37D923374FA500867A92 /* UIView+SQExtension.m */; };
+		14DC37E223374FA500867A92 /* UIImage+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37DB23374FA500867A92 /* UIImage+SQExtension.m */; };
+		14DC37E323374FA500867A92 /* UIColor+SQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37DC23374FA500867A92 /* UIColor+SQExtension.m */; };
+		14DC37E72337509E00867A92 /* SQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37E62337509E00867A92 /* SQNavigationController.m */; };
 		14E97DC72335014B004FC20D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E97DC62335014B004FC20D /* AppDelegate.m */; };
 		14E97DCA2335014B004FC20D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E97DC92335014B004FC20D /* SceneDelegate.m */; };
-		14E97DCD2335014B004FC20D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E97DCC2335014B004FC20D /* ViewController.m */; };
 		14E97DD02335014B004FC20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E97DCE2335014B004FC20D /* Main.storyboard */; };
 		14E97DD32335014B004FC20D /* SQManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14E97DD12335014B004FC20D /* SQManagement.xcdatamodeld */; };
 		14E97DD52335014C004FC20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E97DD42335014C004FC20D /* Assets.xcassets */; };
@@ -19,13 +27,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14DC37C823374CFB00867A92 /* SQH1TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQH1TitleView.h; sourceTree = "<group>"; };
+		14DC37C923374CFB00867A92 /* SQH1TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQH1TitleView.xib; sourceTree = "<group>"; };
+		14DC37CA23374CFB00867A92 /* SQH1TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQH1TitleView.m; sourceTree = "<group>"; };
+		14DC37CD23374DC600867A92 /* SQConnectionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQConnectionsViewController.h; sourceTree = "<group>"; };
+		14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQConnectionsViewController.m; sourceTree = "<group>"; };
+		14DC37D523374FA500867A92 /* UIViewController+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SQExtension.m"; sourceTree = "<group>"; };
+		14DC37D623374FA500867A92 /* UIColor+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SQExtension.h"; sourceTree = "<group>"; };
+		14DC37D723374FA500867A92 /* UIImage+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SQExtension.h"; sourceTree = "<group>"; };
+		14DC37D823374FA500867A92 /* NSObject+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SQExtension.m"; sourceTree = "<group>"; };
+		14DC37D923374FA500867A92 /* UIView+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQExtension.m"; sourceTree = "<group>"; };
+		14DC37DA23374FA500867A92 /* UIViewController+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SQExtension.h"; sourceTree = "<group>"; };
+		14DC37DB23374FA500867A92 /* UIImage+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQExtension.m"; sourceTree = "<group>"; };
+		14DC37DC23374FA500867A92 /* UIColor+SQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SQExtension.m"; sourceTree = "<group>"; };
+		14DC37DD23374FA500867A92 /* UIView+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQExtension.h"; sourceTree = "<group>"; };
+		14DC37DE23374FA500867A92 /* NSObject+SQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SQExtension.h"; sourceTree = "<group>"; };
+		14DC37E52337509E00867A92 /* SQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNavigationController.h; sourceTree = "<group>"; };
+		14DC37E62337509E00867A92 /* SQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNavigationController.m; sourceTree = "<group>"; };
 		14E97DC22335014B004FC20D /* SQManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E97DC52335014B004FC20D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14E97DC62335014B004FC20D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		14E97DC82335014B004FC20D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		14E97DC92335014B004FC20D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		14E97DCB2335014B004FC20D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		14E97DCC2335014B004FC20D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		14E97DCF2335014B004FC20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14E97DD22335014B004FC20D /* SQManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SQManagement.xcdatamodel; sourceTree = "<group>"; };
 		14E97DD42335014C004FC20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +72,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14DC37D023374F6E00867A92 /* Coms */ = {
+			isa = PBXGroup;
+			children = (
+				14DC37C823374CFB00867A92 /* SQH1TitleView.h */,
+				14DC37CA23374CFB00867A92 /* SQH1TitleView.m */,
+				14DC37C923374CFB00867A92 /* SQH1TitleView.xib */,
+			);
+			path = Coms;
+			sourceTree = "<group>";
+		};
+		14DC37D123374F7700867A92 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				14E97DC52335014B004FC20D /* AppDelegate.h */,
+				14E97DC62335014B004FC20D /* AppDelegate.m */,
+				14E97DC82335014B004FC20D /* SceneDelegate.h */,
+				14E97DC92335014B004FC20D /* SceneDelegate.m */,
+				14DC37E52337509E00867A92 /* SQNavigationController.h */,
+				14DC37E62337509E00867A92 /* SQNavigationController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		14DC37D423374FA500867A92 /* SQExtension */ = {
+			isa = PBXGroup;
+			children = (
+				14DC37D523374FA500867A92 /* UIViewController+SQExtension.m */,
+				14DC37DA23374FA500867A92 /* UIViewController+SQExtension.h */,
+				14DC37D623374FA500867A92 /* UIColor+SQExtension.h */,
+				14DC37DC23374FA500867A92 /* UIColor+SQExtension.m */,
+				14DC37D723374FA500867A92 /* UIImage+SQExtension.h */,
+				14DC37DB23374FA500867A92 /* UIImage+SQExtension.m */,
+				14DC37DD23374FA500867A92 /* UIView+SQExtension.h */,
+				14DC37D923374FA500867A92 /* UIView+SQExtension.m */,
+				14DC37DE23374FA500867A92 /* NSObject+SQExtension.h */,
+				14DC37D823374FA500867A92 /* NSObject+SQExtension.m */,
+			);
+			path = SQExtension;
+			sourceTree = "<group>";
+		};
+		14DC37E423374FC300867A92 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				14DC37CD23374DC600867A92 /* SQConnectionsViewController.h */,
+				14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		14E97DB92335014B004FC20D = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +142,10 @@
 		14E97DC42335014B004FC20D /* SQManagement */ = {
 			isa = PBXGroup;
 			children = (
-				14E97DC52335014B004FC20D /* AppDelegate.h */,
-				14E97DC62335014B004FC20D /* AppDelegate.m */,
-				14E97DC82335014B004FC20D /* SceneDelegate.h */,
-				14E97DC92335014B004FC20D /* SceneDelegate.m */,
-				14E97DCB2335014B004FC20D /* ViewController.h */,
-				14E97DCC2335014B004FC20D /* ViewController.m */,
+				14DC37D123374F7700867A92 /* Main */,
+				14DC37D023374F6E00867A92 /* Coms */,
+				14DC37E423374FC300867A92 /* UI */,
+				14DC37D423374FA500867A92 /* SQExtension */,
 				14E97DCE2335014B004FC20D /* Main.storyboard */,
 				14E97DD42335014C004FC20D /* Assets.xcassets */,
 				14E97DD62335014C004FC20D /* LaunchScreen.storyboard */,
@@ -161,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DC37CB23374CFB00867A92 /* SQH1TitleView.xib in Resources */,
 				14E97DD82335014C004FC20D /* LaunchScreen.storyboard in Resources */,
 				14E97DD52335014C004FC20D /* Assets.xcassets in Resources */,
 				14E97DD02335014B004FC20D /* Main.storyboard in Resources */,
@@ -199,11 +270,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DC37E123374FA500867A92 /* UIView+SQExtension.m in Sources */,
 				14E97DDB2335014C004FC20D /* main.m in Sources */,
-				14E97DCD2335014B004FC20D /* ViewController.m in Sources */,
+				14DC37E323374FA500867A92 /* UIColor+SQExtension.m in Sources */,
+				14DC37E72337509E00867A92 /* SQNavigationController.m in Sources */,
+				14DC37DF23374FA500867A92 /* UIViewController+SQExtension.m in Sources */,
 				14E97DC72335014B004FC20D /* AppDelegate.m in Sources */,
 				14E97DD32335014B004FC20D /* SQManagement.xcdatamodeld in Sources */,
+				14DC37CC23374CFB00867A92 /* SQH1TitleView.m in Sources */,
+				14DC37E023374FA500867A92 /* NSObject+SQExtension.m in Sources */,
+				14DC37CF23374DC600867A92 /* SQConnectionsViewController.m in Sources */,
 				14E97DCA2335014B004FC20D /* SceneDelegate.m in Sources */,
+				14DC37E223374FA500867A92 /* UIImage+SQExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
