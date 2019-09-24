@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="搜索你想寻找的人脉~" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-T3-HJU">
+                <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="职业 / 地区 / 行业" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-T3-HJU">
                     <rect key="frame" x="15" y="1" width="384" height="32"/>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93725490196078431" alpha="0.70473030821917804" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -23,22 +23,22 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSw-kd-gFd">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vc0-ZP-IyT">
                     <rect key="frame" x="0.0" y="43" width="414" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="cdI-Ab-apB"/>
+                        <constraint firstAttribute="height" constant="1" id="Tto-A4-XRt"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="NSw-kd-gFd" secondAttribute="trailing" id="2LQ-pL-nVZ"/>
-                <constraint firstAttribute="bottom" secondItem="NSw-kd-gFd" secondAttribute="bottom" id="Ugc-eX-xgl"/>
+                <constraint firstAttribute="trailing" secondItem="Vc0-ZP-IyT" secondAttribute="trailing" id="1GO-Yj-wvu"/>
+                <constraint firstItem="Vc0-ZP-IyT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7Lx-E1-33F"/>
                 <constraint firstItem="8dJ-T3-HJU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="bVb-n6-cua"/>
                 <constraint firstItem="8dJ-T3-HJU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="kaI-t1-cub"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8dJ-T3-HJU" secondAttribute="trailing" constant="15" id="n0D-47-VRY"/>
-                <constraint firstItem="NSw-kd-gFd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wzm-2L-RFQ"/>
+                <constraint firstAttribute="bottom" secondItem="Vc0-ZP-IyT" secondAttribute="bottom" id="uQZ-hS-xTs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

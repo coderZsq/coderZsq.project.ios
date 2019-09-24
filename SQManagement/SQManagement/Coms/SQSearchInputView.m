@@ -11,7 +11,7 @@
 #import "NSObject+SQExtension.h"
 #import "UIView+SQExtension.h"
 
-@interface SQSearchInputView () <UITextFieldDelegate>
+@interface SQSearchInputView ()
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic, strong) NSMutableDictionary *dict;
@@ -28,7 +28,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.textField.delegate = self;
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"search_icon"]];
     UIView *leftView = [UIView new];
     leftView.frame = CGRectMake(5, 0, imageView.width + 10, self.textField.height);
