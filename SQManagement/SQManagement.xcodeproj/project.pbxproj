@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		149AC8852339B92F009C88AB /* SQAddConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */; };
+		149AC8882339BEE6009C88AB /* SQProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */; };
+		149AC88A2339BEF1009C88AB /* SQProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */; };
+		149AC88E2339C146009C88AB /* SQConnectionPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC88C2339C146009C88AB /* SQConnectionPropertyCell.m */; };
+		149AC88F2339C146009C88AB /* SQConnectionPropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149AC88D2339C146009C88AB /* SQConnectionPropertyCell.xib */; };
 		14D633B0233763FF004FD86A /* SQAuthorizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D633AF233763FF004FD86A /* SQAuthorizationManager.m */; };
 		14D633B52337674F004FD86A /* SQSearchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D633B22337674F004FD86A /* SQSearchInputView.m */; };
 		14D633B62337674F004FD86A /* SQSearchInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D633B42337674F004FD86A /* SQSearchInputView.xib */; };
@@ -30,6 +35,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		149AC8832339B92F009C88AB /* SQAddConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAddConnectionViewController.h; sourceTree = "<group>"; };
+		149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAddConnectionViewController.m; sourceTree = "<group>"; };
+		149AC8862339BEE6009C88AB /* SQProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQProfileHeaderView.h; sourceTree = "<group>"; };
+		149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQProfileHeaderView.m; sourceTree = "<group>"; };
+		149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQProfileHeaderView.xib; sourceTree = "<group>"; };
+		149AC88B2339C146009C88AB /* SQConnectionPropertyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQConnectionPropertyCell.h; sourceTree = "<group>"; };
+		149AC88C2339C146009C88AB /* SQConnectionPropertyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQConnectionPropertyCell.m; sourceTree = "<group>"; };
+		149AC88D2339C146009C88AB /* SQConnectionPropertyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQConnectionPropertyCell.xib; sourceTree = "<group>"; };
 		14D633AE233763FF004FD86A /* SQAuthorizationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAuthorizationManager.h; sourceTree = "<group>"; };
 		14D633AF233763FF004FD86A /* SQAuthorizationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAuthorizationManager.m; sourceTree = "<group>"; };
 		14D633B22337674F004FD86A /* SQSearchInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSearchInputView.m; sourceTree = "<group>"; };
@@ -98,6 +111,12 @@
 				14DC37C823374CFB00867A92 /* SQH1TitleView.h */,
 				14DC37CA23374CFB00867A92 /* SQH1TitleView.m */,
 				14DC37C923374CFB00867A92 /* SQH1TitleView.xib */,
+				149AC8862339BEE6009C88AB /* SQProfileHeaderView.h */,
+				149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */,
+				149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */,
+				149AC88B2339C146009C88AB /* SQConnectionPropertyCell.h */,
+				149AC88C2339C146009C88AB /* SQConnectionPropertyCell.m */,
+				149AC88D2339C146009C88AB /* SQConnectionPropertyCell.xib */,
 			);
 			path = Coms;
 			sourceTree = "<group>";
@@ -137,6 +156,8 @@
 			children = (
 				14DC37CD23374DC600867A92 /* SQConnectionsViewController.h */,
 				14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */,
+				149AC8832339B92F009C88AB /* SQAddConnectionViewController.h */,
+				149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -257,6 +278,8 @@
 				14E97DD82335014C004FC20D /* LaunchScreen.storyboard in Resources */,
 				14E97DD52335014C004FC20D /* Assets.xcassets in Resources */,
 				14E97DD02335014B004FC20D /* Main.storyboard in Resources */,
+				149AC88A2339BEF1009C88AB /* SQProfileHeaderView.xib in Resources */,
+				149AC88F2339C146009C88AB /* SQConnectionPropertyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,12 +321,15 @@
 				14DC37E72337509E00867A92 /* SQNavigationController.m in Sources */,
 				14DC37DF23374FA500867A92 /* UIViewController+SQExtension.m in Sources */,
 				14E97DC72335014B004FC20D /* AppDelegate.m in Sources */,
+				149AC88E2339C146009C88AB /* SQConnectionPropertyCell.m in Sources */,
 				14E97DD32335014B004FC20D /* SQManagement.xcdatamodeld in Sources */,
 				14DC37CC23374CFB00867A92 /* SQH1TitleView.m in Sources */,
 				14D633B0233763FF004FD86A /* SQAuthorizationManager.m in Sources */,
+				149AC8882339BEE6009C88AB /* SQProfileHeaderView.m in Sources */,
 				14DC37E023374FA500867A92 /* NSObject+SQExtension.m in Sources */,
 				14DC37CF23374DC600867A92 /* SQConnectionsViewController.m in Sources */,
 				14D633B52337674F004FD86A /* SQSearchInputView.m in Sources */,
+				149AC8852339B92F009C88AB /* SQAddConnectionViewController.m in Sources */,
 				14E97DCA2335014B004FC20D /* SceneDelegate.m in Sources */,
 				14DC37E223374FA500867A92 /* UIImage+SQExtension.m in Sources */,
 			);

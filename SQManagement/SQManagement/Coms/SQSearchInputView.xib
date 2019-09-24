@@ -23,12 +23,22 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                 </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSw-kd-gFd">
+                    <rect key="frame" x="0.0" y="43" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="cdI-Ab-apB"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="NSw-kd-gFd" secondAttribute="trailing" id="2LQ-pL-nVZ"/>
+                <constraint firstAttribute="bottom" secondItem="NSw-kd-gFd" secondAttribute="bottom" id="Ugc-eX-xgl"/>
                 <constraint firstItem="8dJ-T3-HJU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="bVb-n6-cua"/>
                 <constraint firstItem="8dJ-T3-HJU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="kaI-t1-cub"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8dJ-T3-HJU" secondAttribute="trailing" constant="15" id="n0D-47-VRY"/>
+                <constraint firstItem="NSw-kd-gFd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wzm-2L-RFQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

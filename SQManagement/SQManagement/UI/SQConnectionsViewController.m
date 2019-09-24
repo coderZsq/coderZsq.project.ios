@@ -33,7 +33,7 @@
     self.navigationItem.titleView = titleLabel;
     self.titleLabel = titleLabel;
     
-    self.dataSource = @[].mutableCopy;
+    self.dataSource = [NSMutableArray array];
     [SQAuthorizationManager fetchContacts:^(NSString *name, NSArray *phoneNumbers) {
         [self.dataSource addObject:name];
         [self.tableView reloadData];
