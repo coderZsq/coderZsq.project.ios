@@ -17,32 +17,43 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hol-Rp-PFM">
+                        <rect key="frame" x="108" y="12.5" width="196" height="19"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iaw-Cj-dWE">
+                        <rect key="frame" x="16" y="7" width="30" height="30"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="OSX-ig-GMl"/>
+                            <constraint firstAttribute="width" constant="30" id="rff-gj-OPp"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFh-tr-qYF">
-                        <rect key="frame" x="16" y="11.5" width="42" height="21"/>
+                        <rect key="frame" x="56" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hol-Rp-PFM">
-                        <rect key="frame" x="68" y="13" width="236" height="18.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="HFh-tr-qYF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="036-b9-NNG"/>
-                    <constraint firstAttribute="trailing" secondItem="hol-Rp-PFM" secondAttribute="trailing" constant="16" id="Gwh-MI-Ujh"/>
-                    <constraint firstItem="hol-Rp-PFM" firstAttribute="leading" secondItem="HFh-tr-qYF" secondAttribute="trailing" constant="10" id="PEU-nw-zsh"/>
-                    <constraint firstItem="hol-Rp-PFM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="T4u-ZC-fDp"/>
-                    <constraint firstItem="HFh-tr-qYF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="s6g-Mj-xfN"/>
+                    <constraint firstItem="hol-Rp-PFM" firstAttribute="leading" secondItem="HFh-tr-qYF" secondAttribute="trailing" constant="10" id="4gc-fV-s2x"/>
+                    <constraint firstItem="hol-Rp-PFM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IjH-72-C8b"/>
+                    <constraint firstAttribute="trailing" secondItem="hol-Rp-PFM" secondAttribute="trailing" constant="16" id="Jez-Zq-S3Y"/>
+                    <constraint firstItem="Iaw-Cj-dWE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="SKc-6E-cl6"/>
+                    <constraint firstItem="HFh-tr-qYF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gpl-rm-Q5e"/>
+                    <constraint firstItem="Iaw-Cj-dWE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ifc-7h-gmK"/>
+                    <constraint firstItem="HFh-tr-qYF" firstAttribute="leading" secondItem="Iaw-Cj-dWE" secondAttribute="trailing" constant="10" id="nVa-9V-Mne"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="contentTextField" destination="hol-Rp-PFM" id="9y0-0d-Bh5"/>
+                <outlet property="iconImageView" destination="Iaw-Cj-dWE" id="Vxd-bI-qR1"/>
                 <outlet property="titleLabel" destination="HFh-tr-qYF" id="JeS-4O-0q8"/>
             </connections>
-            <point key="canvasLocation" x="75" y="52"/>
+            <point key="canvasLocation" x="73.913043478260875" y="51.5625"/>
         </tableViewCell>
     </objects>
 </document>
