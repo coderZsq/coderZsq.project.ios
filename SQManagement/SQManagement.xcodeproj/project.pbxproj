@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142787F3233CB4AB0000FEBB /* SQTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142787F2233CB4AB0000FEBB /* SQTimeViewController.m */; };
+		142787F6233CBC1F0000FEBB /* SQEnergyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142787F5233CBC1F0000FEBB /* SQEnergyViewController.m */; };
+		142787FC233CBC980000FEBB /* SQH1TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142787FB233CBC980000FEBB /* SQH1TitleViewController.m */; };
 		149AC8852339B92F009C88AB /* SQAddConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */; };
 		149AC8882339BEE6009C88AB /* SQProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */; };
 		149AC88A2339BEF1009C88AB /* SQProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */; };
@@ -35,6 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142787F1233CB4AB0000FEBB /* SQTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTimeViewController.h; sourceTree = "<group>"; };
+		142787F2233CB4AB0000FEBB /* SQTimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTimeViewController.m; sourceTree = "<group>"; };
+		142787F4233CBC1F0000FEBB /* SQEnergyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQEnergyViewController.h; sourceTree = "<group>"; };
+		142787F5233CBC1F0000FEBB /* SQEnergyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQEnergyViewController.m; sourceTree = "<group>"; };
+		142787FA233CBC980000FEBB /* SQH1TitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQH1TitleViewController.h; sourceTree = "<group>"; };
+		142787FB233CBC980000FEBB /* SQH1TitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQH1TitleViewController.m; sourceTree = "<group>"; };
 		149AC8832339B92F009C88AB /* SQAddConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAddConnectionViewController.h; sourceTree = "<group>"; };
 		149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAddConnectionViewController.m; sourceTree = "<group>"; };
 		149AC8862339BEE6009C88AB /* SQProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQProfileHeaderView.h; sourceTree = "<group>"; };
@@ -130,6 +139,8 @@
 				14E97DC92335014B004FC20D /* SceneDelegate.m */,
 				14DC37E52337509E00867A92 /* SQNavigationController.h */,
 				14DC37E62337509E00867A92 /* SQNavigationController.m */,
+				142787FA233CBC980000FEBB /* SQH1TitleViewController.h */,
+				142787FB233CBC980000FEBB /* SQH1TitleViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -154,6 +165,10 @@
 		14DC37E423374FC300867A92 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				142787F1233CB4AB0000FEBB /* SQTimeViewController.h */,
+				142787F2233CB4AB0000FEBB /* SQTimeViewController.m */,
+				142787F4233CBC1F0000FEBB /* SQEnergyViewController.h */,
+				142787F5233CBC1F0000FEBB /* SQEnergyViewController.m */,
 				14DC37CD23374DC600867A92 /* SQConnectionsViewController.h */,
 				14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */,
 				149AC8832339B92F009C88AB /* SQAddConnectionViewController.h */,
@@ -326,11 +341,14 @@
 				14DC37CC23374CFB00867A92 /* SQH1TitleView.m in Sources */,
 				149AC8982339F7D4009C88AB /* SQSearchInputView.m in Sources */,
 				14D633B0233763FF004FD86A /* SQAuthorizationManager.m in Sources */,
+				142787F6233CBC1F0000FEBB /* SQEnergyViewController.m in Sources */,
+				142787F3233CB4AB0000FEBB /* SQTimeViewController.m in Sources */,
 				149AC8882339BEE6009C88AB /* SQProfileHeaderView.m in Sources */,
 				14DC37E023374FA500867A92 /* NSObject+SQExtension.m in Sources */,
 				14DC37CF23374DC600867A92 /* SQConnectionsViewController.m in Sources */,
 				149AC8852339B92F009C88AB /* SQAddConnectionViewController.m in Sources */,
 				14E97DCA2335014B004FC20D /* SceneDelegate.m in Sources */,
+				142787FC233CBC980000FEBB /* SQH1TitleViewController.m in Sources */,
 				14DC37E223374FA500867A92 /* UIImage+SQExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,14 +7,11 @@
 //
 
 #import "SQConnectionsViewController.h"
-#import "UIViewController+SQExtension.h"
 #import "SQH1TitleView.h"
 #import "SQSearchInputView.h"
 #import "SQAuthorizationManager.h"
 
 @interface SQConnectionsViewController ()
-@property (nonatomic, weak) UILabel *titleLabel;
-@property (nonatomic, weak) UIColor *defaultColor;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @end
 
@@ -22,17 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"人脉";
-    self.titleLabel = [self findNavigationBarContentViewTitleLabel];
-    self.defaultColor = self.titleLabel.textColor;
-    UILabel *titleLabel = [UILabel new];
-    titleLabel.font = self.titleLabel.font;
-    titleLabel.text = self.titleLabel.text;
-    titleLabel.textColor = [UIColor clearColor];
-    titleLabel.frame = self.titleLabel.frame;
-    self.navigationItem.titleView = titleLabel;
-    self.titleLabel = titleLabel;
-    
+    self.title = @"人脉";    
     self.dataSource = [NSMutableArray array];
     [SQAuthorizationManager fetchContacts:^(NSString *name, NSArray *phoneNumbers) {
         [self.dataSource addObject:name];
@@ -66,11 +53,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) return 64;
     return 44;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.view endEditing:YES];
-    self.titleLabel.textColor = scrollView.contentOffset.y > -48.f ? self.defaultColor : [UIColor clearColor];
 }
 
 @end
