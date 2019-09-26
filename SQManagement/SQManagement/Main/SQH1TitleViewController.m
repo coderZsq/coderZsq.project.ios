@@ -13,21 +13,25 @@
 @interface SQH1TitleViewController ()
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, weak) UIColor *defaultColor;
+@property (nonatomic, assign, getter=isFirstAppear) BOOL firstAppear;
 @end
 
 @implementation SQH1TitleViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.titleLabel = [self findNavigationBarContentViewTitleLabel];
-    self.defaultColor = self.titleLabel.textColor;
-    UILabel *titleLabel = [UILabel new];
-    titleLabel.font = self.titleLabel.font;
-    titleLabel.text = self.titleLabel.text;
-    titleLabel.textColor = [UIColor clearColor];
-    titleLabel.frame = self.titleLabel.frame;
-    self.navigationItem.titleView = titleLabel;
-    self.titleLabel = titleLabel;
+    if (!self.isFirstAppear) {
+        self.titleLabel = [self findNavigationBarContentViewTitleLabel];
+        self.defaultColor = self.titleLabel.textColor;
+        UILabel *titleLabel = [UILabel new];
+        titleLabel.font = self.titleLabel.font;
+        titleLabel.text = self.titleLabel.text;
+        titleLabel.textColor = [UIColor clearColor];
+        titleLabel.frame = self.titleLabel.frame;
+        self.navigationItem.titleView = titleLabel;
+        self.titleLabel = titleLabel;
+        self.firstAppear = YES;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
