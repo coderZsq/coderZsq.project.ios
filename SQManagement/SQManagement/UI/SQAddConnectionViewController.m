@@ -36,20 +36,20 @@
     __weak typeof(self) weakSelf = self;
     [self.headerView whenTapped:^{
         UIImagePickerController *imagePickerVc = [[UIImagePickerController alloc] init];
-        imagePickerVc.delegate = self;
+        imagePickerVc.delegate = weakSelf;
         imagePickerVc.allowsEditing = YES;
         UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
         [alertVc addAction:[UIAlertAction actionWithTitle:@"立即拍摄照片" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
                 imagePickerVc.sourceType = UIImagePickerControllerSourceTypeCamera;
                 imagePickerVc.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-                [self presentViewController:imagePickerVc animated:YES completion:nil];
+                [weakSelf presentViewController:imagePickerVc animated:YES completion:nil];
             }
         }]];
         [alertVc addAction:[UIAlertAction actionWithTitle:@"从相册中获取" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
                 imagePickerVc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                [self presentViewController:imagePickerVc animated:YES completion:nil];
+                [weakSelf presentViewController:imagePickerVc animated:YES completion:nil];
             }
         }]];
         [alertVc addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
