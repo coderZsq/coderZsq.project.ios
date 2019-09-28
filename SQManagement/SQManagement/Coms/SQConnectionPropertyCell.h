@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SQConnectionPropertyCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inputLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
-@property (weak, nonatomic) IBOutlet UITextField *contentTextField;
 
 @end
 

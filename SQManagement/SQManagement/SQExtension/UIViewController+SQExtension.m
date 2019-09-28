@@ -28,7 +28,6 @@
 - (void)navigationBarGradualChangeWithScrollView:(UIScrollView *)scrollView titleView:(UIView *)titleView movableView:(UIView *)movableView offset:(CGFloat)offset color:(UIColor *)color {
     
     [self viewWillLayoutSubviews];
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [self.navigationController.navigationBar setUserInteractionEnabled:scrollView.contentOffset.y > offset ? YES : NO];
     
     float alpha = 1 - ((offset - scrollView.contentOffset.y) / offset);

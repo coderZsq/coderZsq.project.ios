@@ -9,6 +9,7 @@
 #import "SQH1TitleViewController.h"
 #import "SQH1TitleView.h"
 #import "UIViewController+SQExtension.h"
+#import "UIImage+SQExtension.h"
 
 @interface SQH1TitleViewController ()
 @property (nonatomic, weak) UILabel *titleLabel;
@@ -44,9 +45,20 @@
     return 44;
 }
 
+- (BOOL)isShowNavigationShadowImage {
+    return YES;
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
     self.titleLabel.textColor = scrollView.contentOffset.y > -48.f ? self.defaultColor : [UIColor clearColor];
+    if ([self isShowNavigationShadowImage]) {
+        UIColor *color = [UIColor whiteColor];
+        if (self.titleLabel.textColor == self.defaultColor) {
+            color = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+        }
+        [self.navigationController.navigationBar setShadowImage:[UIImage imageWithColor:color]];
+    }
 }
 
 @end

@@ -6,6 +6,5 @@ target 'SQManagement' do
   # use_frameworks!
 
   # Pods for SQManagement
-  pod 'QMUIKit'
   
 end

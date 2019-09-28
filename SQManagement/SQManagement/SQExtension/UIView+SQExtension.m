@@ -114,7 +114,7 @@ static char kWhenTouchedUpBlockKey;
 /** gesture method */
 - (UITapGestureRecognizer *)addTapGestureRecognizerWithTaps:(NSUInteger)taps touches:(NSUInteger)touches selector:(SEL)selector {
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:selector];
-    tapGesture.delegate                 = self;
+    tapGesture.delegate                 = (id)self;
     tapGesture.numberOfTapsRequired     = taps;
     tapGesture.numberOfTouchesRequired  = touches;
     [self addGestureRecognizer:tapGesture];

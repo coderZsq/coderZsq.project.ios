@@ -11,55 +11,50 @@
 #import "SQConnectionPropertyCell.h"
 #import "UIColor+SQExtension.h"
 #import "UIView+SQExtension.h"
+#import "SQConnectionModel.h"
 
 @interface SQAddConnectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) SQProfileHeaderView *headerView;
+@property (nonatomic, strong) SQConnectionModel *connection;
 @end
 
 @implementation SQAddConnectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    {
-        self.title = @"新增人脉";
-        self.dataSource = @[
-            @[@"姓名", @"角色", @"职业", @"地区", @"行业", @"影响力", @"亲密程度", @"黄金人脉圈"],
-            @[@"联系方式", @"社交记录"],
-            @[@"特征", @"工作", @"爱好", @"特殊细节", @"给我的启发"],
-        ];
-    }
-    
-    {
-        self.tableView.backgroundColor = [UIColor colorWithHexString:@"f8f8f8"];
-        [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SQConnectionPropertyCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SQConnectionPropertyCell class])];
-    }
-    
-    {
-        self.headerView = [SQProfileHeaderView headerView];
-        __weak typeof(self) weakSelf = self;
-        [self.headerView whenTapped:^{
-            UIImagePickerController *imagePickerVc = [[UIImagePickerController alloc] init];
-            imagePickerVc.delegate = self;
-            imagePickerVc.allowsEditing = YES;
-            UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
-            [alertVc addAction:[UIAlertAction actionWithTitle:@"立即拍摄照片" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
-                    imagePickerVc.sourceType = UIImagePickerControllerSourceTypeCamera;
-                    imagePickerVc.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-                    [self presentViewController:imagePickerVc animated:YES completion:nil];
-                }
-            }]];
-            [alertVc addAction:[UIAlertAction actionWithTitle:@"从相册中获取" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
-                    imagePickerVc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                    [self presentViewController:imagePickerVc animated:YES completion:nil];
-                }
-            }]];
-            [alertVc addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
-            [weakSelf presentViewController:alertVc animated:YES completion:nil];
-        }];
-    }
+    self.title = @"新增人脉";
+    self.dataSource = @[
+        @[@"姓名", @"角色", @"职业", @"地区", @"行业", @"影响力", @"亲密程度", @"黄金人脉圈"],
+        @[@"联系方式", @"社交记录"],
+        @[@"特征", @"工作", @"爱好", @"特殊细节", @"给我的启发"],
+    ];
+    self.connection = [SQConnectionModel new];
+    self.tableView.backgroundColor = [UIColor colorWithHexString:@"f8f8f8"];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SQConnectionPropertyCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SQConnectionPropertyCell class])];
+    self.headerView = [SQProfileHeaderView headerView];
+    __weak typeof(self) weakSelf = self;
+    [self.headerView whenTapped:^{
+        UIImagePickerController *imagePickerVc = [[UIImagePickerController alloc] init];
+        imagePickerVc.delegate = self;
+        imagePickerVc.allowsEditing = YES;
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        [alertVc addAction:[UIAlertAction actionWithTitle:@"立即拍摄照片" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+                imagePickerVc.sourceType = UIImagePickerControllerSourceTypeCamera;
+                imagePickerVc.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+                [self presentViewController:imagePickerVc animated:YES completion:nil];
+            }
+        }]];
+        [alertVc addAction:[UIAlertAction actionWithTitle:@"从相册中获取" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+                imagePickerVc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                [self presentViewController:imagePickerVc animated:YES completion:nil];
+            }
+        }]];
+        [alertVc addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
+        [weakSelf presentViewController:alertVc animated:YES completion:nil];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -74,15 +69,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SQConnectionPropertyCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SQConnectionPropertyCell class])];
     cell.titleLabel.text = self.dataSource[indexPath.section][indexPath.row];
-    if (indexPath.section != 0) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        cell.contentTextField.hidden = YES;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.contentTextField.hidden = NO;
-    }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.connection map:indexPath.row bind:cell.inputLabel];
     return cell;
 }
 
@@ -94,6 +82,21 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) return 100;
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"请输入 - %@", self.dataSource[indexPath.section][indexPath.row]] preferredStyle:(UIAlertControllerStyleAlert)];
+        [alertVc addTextFieldWithConfigurationHandler:nil];
+        [alertVc addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
+        __weak typeof(alertVc) weakSelf = alertVc;
+        [alertVc addAction:[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            [self.connection map:indexPath.row bind:weakSelf.textFields.firstObject];
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
+        }]];
+        [self presentViewController:alertVc animated:YES completion:nil];
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

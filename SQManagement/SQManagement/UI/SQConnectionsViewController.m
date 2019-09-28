@@ -27,6 +27,10 @@
     }];
 }
 
+- (BOOL)isShowNavigationShadowImage {
+    return NO;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
