@@ -22,6 +22,19 @@ typedef NS_ENUM(NSInteger, SQConnectionProperty) {
 
 @implementation SQConnectionModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.name = @"";
+        self.role = @"";
+        self.occupation=  @"";
+        self.region = @"";
+        self.industry = @"";
+    }
+    return self;
+}
+
 - (void)map:(NSUInteger)row bind:(UIView *)view {
     switch (row) {
         case SQConnectionName:

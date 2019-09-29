@@ -26,7 +26,8 @@
     [SQAuthorizationTool fetchContacts:^(NSArray * _Nonnull contacts) {
         for (SQContact *contact in contacts) {
             SQConnectionModel *model = [SQConnectionModel new];
-            model.profile = contact.imageData;
+            model.identifier = contact.identifier;
+            model.profile = contact.thumbnailImageData;
             model.name = [NSString stringWithFormat:@"%@%@", contact.familyName, contact.givenName];
             model.occupation = contact.jobTitle;
             [self.dataSource addObject:model];

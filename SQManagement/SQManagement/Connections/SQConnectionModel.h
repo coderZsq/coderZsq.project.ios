@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SQConnectionModel : NSObject
 
 @property (nonatomic, strong) NSData *profile;
+@property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *role;
 @property (nonatomic, copy) NSString *occupation;

@@ -115,10 +115,22 @@
                 [dates addObject:[NSString stringWithFormat:@"%@: %@", label, [dateFormatter stringFromDate:value]]];
             }
             obj.dates = dates;
-//            obj.urlAddresses = contact.urlAddresses;
-//            obj.contactRelations = contact.contactRelations;
-//            obj.socialProfiles = contact.socialProfiles;
-//            obj.instantMessageAddresses = contact.instantMessageAddresses;
+            NSMutableArray *urlAddresses = @[].mutableCopy;
+            for (CNLabeledValue *urlAddress in contact.urlAddresses) {
+                [urlAddresses addObject:[CNLabeledValue localizedStringForLabel:urlAddress.label]];
+            }
+            obj.urlAddresses = urlAddresses;
+            NSMutableArray *socialProfiles = @[].mutableCopy;
+            for (CNLabeledValue *socialProfile in contact.socialProfiles) {
+                [urlAddresses addObject:[CNLabeledValue localizedStringForLabel:socialProfile.label]];
+            }
+            obj.socialProfiles = socialProfiles;
+            NSMutableArray *instantMessageAddresses = @[].mutableCopy;
+            for (CNLabeledValue *instantMessageAddress in contact.instantMessageAddresses) {
+                [instantMessageAddresses addObject:[CNLabeledValue localizedStringForLabel:instantMessageAddress.label]];
+            }
+            obj.socialProfiles = socialProfiles;
+            obj.instantMessageAddresses = instantMessageAddresses;
             [array addObject:obj];
         }];
         if (callback) {

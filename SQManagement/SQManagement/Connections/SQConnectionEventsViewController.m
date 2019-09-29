@@ -36,6 +36,7 @@
     self.tableView.backgroundColor = [UIColor colorWithHexString:@"f8f8f8"];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SQConnectionPropertyCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SQConnectionPropertyCell class])];
     self.headerView = [SQProfileHeaderView headerView];
+    self.headerView.profileImageView.image = [UIImage imageWithData:self.connection.profile];;
     __weak typeof(self) weakSelf = self;
     [self.headerView whenTapped:^{
         UIImagePickerController *imagePickerVc = [[UIImagePickerController alloc] init];
@@ -91,9 +92,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0) {
-        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"请输入 - %@", self.dataSource[indexPath.section][indexPath.row]] preferredStyle:(UIAlertControllerStyleAlert)];
-        [alertVc addTextFieldWithConfigurationHandler:nil];
+    if (indexPath.section == 0 && indexPath.row < 5) {
+        NSString *string = self.dataSource[indexPath.section][indexPath.row];
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:string preferredStyle:(UIAlertControllerStyleAlert)];
+        [alertVc addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.text = [self mapConnectionModelFor:string];
+            textField.placeholder = [NSString stringWithFormat:@"请输入%@", string];
+        }];
         [alertVc addAction:[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil]];
         __weak typeof(alertVc) weakSelf = alertVc;
         [alertVc addAction:[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
@@ -102,6 +107,16 @@
         }]];
         [self presentViewController:alertVc animated:YES completion:nil];
     }
+}
+
+- (NSString *)mapConnectionModelFor:(NSString *)key {
+    return @{
+           @"姓名" : self.connection.name,
+           @"角色" : self.connection.role,
+           @"职业" : self.connection.occupation,
+           @"地区" : self.connection.region,
+           @"行业" : self.connection.industry
+    }[key];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
