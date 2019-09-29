@@ -1,30 +1,24 @@
 //
-//  SQConnectionsViewController.m
+//  SQTimeViewController.m
 //  SQManagement
 //
-//  Created by 朱双泉 on 2019/9/22.
+//  Created by 朱双泉 on 2019/9/26.
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "SQConnectionsViewController.h"
+#import "SQTimeViewController.h"
 #import "SQH1TitleView.h"
 #import "SQSearchInputView.h"
-#import "SQAuthorizationManager.h"
+#import "SQTimeEventsViewController.h"
 
-@interface SQConnectionsViewController ()
-@property (nonatomic, strong) NSMutableArray *dataSource;
+@interface SQTimeViewController ()
 @end
 
-@implementation SQConnectionsViewController
+@implementation SQTimeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"人脉";    
-    self.dataSource = [NSMutableArray array];
-    [SQAuthorizationManager fetchContacts:^(NSString *name, NSArray *phoneNumbers) {
-        [self.dataSource addObject:name];
-        [self.tableView reloadData];
-    }];
+    self.title = @"时间";
 }
 
 - (BOOL)isShowNavigationShadowImage {
@@ -37,7 +31,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) return 0;
-    else return self.dataSource.count;
+    else return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -45,7 +39,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = self.dataSource[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%li", indexPath.row];
     return cell;
 }
 
@@ -57,6 +51,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) return 64;
     return 44;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.navigationController pushViewController:[SQTimeEventsViewController new] animated:YES];
 }
 
 @end

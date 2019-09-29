@@ -9,21 +9,20 @@
 /* Begin PBXBuildFile section */
 		14040349233F887300D0BC12 /* SQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14040347233F887200D0BC12 /* SQTabBarController.m */; };
 		1404034A233F887300D0BC12 /* SQTabbarControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 14040348233F887200D0BC12 /* SQTabbarControllerAnimatedTransitioning.m */; };
-		140BBD162340550F0077E130 /* SQProjectTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140BBD152340550F0077E130 /* SQProjectTimeViewController.m */; };
-		140BBD19234059E30077E130 /* SQProjectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 140BBD18234059E30077E130 /* SQProjectTimeView.m */; };
-		140BBD1B23405A390077E130 /* SQProjectTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140BBD1A23405A390077E130 /* SQProjectTimeView.xib */; };
+		140BBD162340550F0077E130 /* SQTimeEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140BBD152340550F0077E130 /* SQTimeEventsViewController.m */; };
+		140BBD1E23408AED0077E130 /* SQConnectionEventsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140BBD1D23408AED0077E130 /* SQConnectionEventsViewController.storyboard */; };
 		14233205233F923700D4FA3B /* SQConnectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14233204233F923700D4FA3B /* SQConnectionModel.m */; };
 		142787F3233CB4AB0000FEBB /* SQTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142787F2233CB4AB0000FEBB /* SQTimeViewController.m */; };
 		142787F6233CBC1F0000FEBB /* SQEnergyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142787F5233CBC1F0000FEBB /* SQEnergyViewController.m */; };
 		142787FC233CBC980000FEBB /* SQH1TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142787FB233CBC980000FEBB /* SQH1TitleViewController.m */; };
-		149AC8852339B92F009C88AB /* SQAddConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */; };
+		149AC8852339B92F009C88AB /* SQConnectionEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8842339B92F009C88AB /* SQConnectionEventsViewController.m */; };
 		149AC8882339BEE6009C88AB /* SQProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */; };
 		149AC88A2339BEF1009C88AB /* SQProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */; };
 		149AC88E2339C146009C88AB /* SQConnectionPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC88C2339C146009C88AB /* SQConnectionPropertyCell.m */; };
 		149AC88F2339C146009C88AB /* SQConnectionPropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149AC88D2339C146009C88AB /* SQConnectionPropertyCell.xib */; };
 		149AC8982339F7D4009C88AB /* SQSearchInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149AC8962339F7D4009C88AB /* SQSearchInputView.m */; };
 		149AC8992339F7D4009C88AB /* SQSearchInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149AC8972339F7D4009C88AB /* SQSearchInputView.xib */; };
-		14D633B0233763FF004FD86A /* SQAuthorizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D633AF233763FF004FD86A /* SQAuthorizationManager.m */; };
+		14D633B0233763FF004FD86A /* SQAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D633AF233763FF004FD86A /* SQAuthorizationTool.m */; };
 		14DC37CB23374CFB00867A92 /* SQH1TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DC37C923374CFB00867A92 /* SQH1TitleView.xib */; };
 		14DC37CC23374CFB00867A92 /* SQH1TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37CA23374CFB00867A92 /* SQH1TitleView.m */; };
 		14DC37CF23374DC600867A92 /* SQConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */; };
@@ -48,11 +47,9 @@
 		14040346233F887200D0BC12 /* SQTabbarControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTabbarControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
 		14040347233F887200D0BC12 /* SQTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTabBarController.m; sourceTree = "<group>"; };
 		14040348233F887200D0BC12 /* SQTabbarControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTabbarControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
-		140BBD142340550F0077E130 /* SQProjectTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQProjectTimeViewController.h; sourceTree = "<group>"; };
-		140BBD152340550F0077E130 /* SQProjectTimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQProjectTimeViewController.m; sourceTree = "<group>"; };
-		140BBD17234059E30077E130 /* SQProjectTimeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQProjectTimeView.h; sourceTree = "<group>"; };
-		140BBD18234059E30077E130 /* SQProjectTimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQProjectTimeView.m; sourceTree = "<group>"; };
-		140BBD1A23405A390077E130 /* SQProjectTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQProjectTimeView.xib; sourceTree = "<group>"; };
+		140BBD142340550F0077E130 /* SQTimeEventsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTimeEventsViewController.h; sourceTree = "<group>"; };
+		140BBD152340550F0077E130 /* SQTimeEventsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTimeEventsViewController.m; sourceTree = "<group>"; };
+		140BBD1D23408AED0077E130 /* SQConnectionEventsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SQConnectionEventsViewController.storyboard; sourceTree = "<group>"; };
 		14233203233F923700D4FA3B /* SQConnectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQConnectionModel.h; sourceTree = "<group>"; };
 		14233204233F923700D4FA3B /* SQConnectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQConnectionModel.m; sourceTree = "<group>"; };
 		142787F1233CB4AB0000FEBB /* SQTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTimeViewController.h; sourceTree = "<group>"; };
@@ -61,8 +58,8 @@
 		142787F5233CBC1F0000FEBB /* SQEnergyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQEnergyViewController.m; sourceTree = "<group>"; };
 		142787FA233CBC980000FEBB /* SQH1TitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQH1TitleViewController.h; sourceTree = "<group>"; };
 		142787FB233CBC980000FEBB /* SQH1TitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQH1TitleViewController.m; sourceTree = "<group>"; };
-		149AC8832339B92F009C88AB /* SQAddConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAddConnectionViewController.h; sourceTree = "<group>"; };
-		149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAddConnectionViewController.m; sourceTree = "<group>"; };
+		149AC8832339B92F009C88AB /* SQConnectionEventsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQConnectionEventsViewController.h; sourceTree = "<group>"; };
+		149AC8842339B92F009C88AB /* SQConnectionEventsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQConnectionEventsViewController.m; sourceTree = "<group>"; };
 		149AC8862339BEE6009C88AB /* SQProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQProfileHeaderView.h; sourceTree = "<group>"; };
 		149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQProfileHeaderView.m; sourceTree = "<group>"; };
 		149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SQProfileHeaderView.xib; sourceTree = "<group>"; };
@@ -72,8 +69,8 @@
 		149AC8952339F7D4009C88AB /* SQSearchInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSearchInputView.h; sourceTree = "<group>"; };
 		149AC8962339F7D4009C88AB /* SQSearchInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSearchInputView.m; sourceTree = "<group>"; };
 		149AC8972339F7D4009C88AB /* SQSearchInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQSearchInputView.xib; sourceTree = "<group>"; };
-		14D633AE233763FF004FD86A /* SQAuthorizationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAuthorizationManager.h; sourceTree = "<group>"; };
-		14D633AF233763FF004FD86A /* SQAuthorizationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAuthorizationManager.m; sourceTree = "<group>"; };
+		14D633AE233763FF004FD86A /* SQAuthorizationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQAuthorizationTool.h; sourceTree = "<group>"; };
+		14D633AF233763FF004FD86A /* SQAuthorizationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQAuthorizationTool.m; sourceTree = "<group>"; };
 		14DC37C823374CFB00867A92 /* SQH1TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQH1TitleView.h; sourceTree = "<group>"; };
 		14DC37C923374CFB00867A92 /* SQH1TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQH1TitleView.xib; sourceTree = "<group>"; };
 		14DC37CA23374CFB00867A92 /* SQH1TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQH1TitleView.m; sourceTree = "<group>"; };
@@ -119,20 +116,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14233206233F923C00D4FA3B /* Model */ = {
+		140BBD1F23408B660077E130 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
 				14233203233F923700D4FA3B /* SQConnectionModel.h */,
 				14233204233F923700D4FA3B /* SQConnectionModel.m */,
+				149AC88B2339C146009C88AB /* SQConnectionPropertyCell.h */,
+				149AC88C2339C146009C88AB /* SQConnectionPropertyCell.m */,
+				149AC88D2339C146009C88AB /* SQConnectionPropertyCell.xib */,
+				14DC37CD23374DC600867A92 /* SQConnectionsViewController.h */,
+				14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */,
+				149AC8832339B92F009C88AB /* SQConnectionEventsViewController.h */,
+				149AC8842339B92F009C88AB /* SQConnectionEventsViewController.m */,
+				140BBD1D23408AED0077E130 /* SQConnectionEventsViewController.storyboard */,
 			);
-			path = Model;
+			path = Connections;
+			sourceTree = "<group>";
+		};
+		14CA7F0723408C6A00910428 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				142787F1233CB4AB0000FEBB /* SQTimeViewController.h */,
+				142787F2233CB4AB0000FEBB /* SQTimeViewController.m */,
+				140BBD142340550F0077E130 /* SQTimeEventsViewController.h */,
+				140BBD152340550F0077E130 /* SQTimeEventsViewController.m */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		14CA7F0823408C7E00910428 /* Energy */ = {
+			isa = PBXGroup;
+			children = (
+				142787F4233CBC1F0000FEBB /* SQEnergyViewController.h */,
+				142787F5233CBC1F0000FEBB /* SQEnergyViewController.m */,
+			);
+			path = Energy;
 			sourceTree = "<group>";
 		};
 		14D633B123376549004FD86A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				14D633AE233763FF004FD86A /* SQAuthorizationManager.h */,
-				14D633AF233763FF004FD86A /* SQAuthorizationManager.m */,
+				14D633AE233763FF004FD86A /* SQAuthorizationTool.h */,
+				14D633AF233763FF004FD86A /* SQAuthorizationTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -140,21 +165,8 @@
 		14DC37D023374F6E00867A92 /* Coms */ = {
 			isa = PBXGroup;
 			children = (
-				149AC8952339F7D4009C88AB /* SQSearchInputView.h */,
-				149AC8962339F7D4009C88AB /* SQSearchInputView.m */,
-				149AC8972339F7D4009C88AB /* SQSearchInputView.xib */,
-				14DC37C823374CFB00867A92 /* SQH1TitleView.h */,
-				14DC37CA23374CFB00867A92 /* SQH1TitleView.m */,
-				14DC37C923374CFB00867A92 /* SQH1TitleView.xib */,
-				149AC8862339BEE6009C88AB /* SQProfileHeaderView.h */,
-				149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */,
-				149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */,
-				149AC88B2339C146009C88AB /* SQConnectionPropertyCell.h */,
-				149AC88C2339C146009C88AB /* SQConnectionPropertyCell.m */,
-				149AC88D2339C146009C88AB /* SQConnectionPropertyCell.xib */,
-				140BBD17234059E30077E130 /* SQProjectTimeView.h */,
-				140BBD18234059E30077E130 /* SQProjectTimeView.m */,
-				140BBD1A23405A390077E130 /* SQProjectTimeView.xib */,
+				142787FA233CBC980000FEBB /* SQH1TitleViewController.h */,
+				142787FB233CBC980000FEBB /* SQH1TitleViewController.m */,
 			);
 			path = Coms;
 			sourceTree = "<group>";
@@ -172,8 +184,6 @@
 				14040347233F887200D0BC12 /* SQTabBarController.m */,
 				14040346233F887200D0BC12 /* SQTabbarControllerAnimatedTransitioning.h */,
 				14040348233F887200D0BC12 /* SQTabbarControllerAnimatedTransitioning.m */,
-				142787FA233CBC980000FEBB /* SQH1TitleViewController.h */,
-				142787FB233CBC980000FEBB /* SQH1TitleViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -198,16 +208,15 @@
 		14DC37E423374FC300867A92 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				142787F1233CB4AB0000FEBB /* SQTimeViewController.h */,
-				142787F2233CB4AB0000FEBB /* SQTimeViewController.m */,
-				140BBD142340550F0077E130 /* SQProjectTimeViewController.h */,
-				140BBD152340550F0077E130 /* SQProjectTimeViewController.m */,
-				142787F4233CBC1F0000FEBB /* SQEnergyViewController.h */,
-				142787F5233CBC1F0000FEBB /* SQEnergyViewController.m */,
-				14DC37CD23374DC600867A92 /* SQConnectionsViewController.h */,
-				14DC37CE23374DC600867A92 /* SQConnectionsViewController.m */,
-				149AC8832339B92F009C88AB /* SQAddConnectionViewController.h */,
-				149AC8842339B92F009C88AB /* SQAddConnectionViewController.m */,
+				149AC8952339F7D4009C88AB /* SQSearchInputView.h */,
+				149AC8962339F7D4009C88AB /* SQSearchInputView.m */,
+				149AC8972339F7D4009C88AB /* SQSearchInputView.xib */,
+				14DC37C823374CFB00867A92 /* SQH1TitleView.h */,
+				14DC37CA23374CFB00867A92 /* SQH1TitleView.m */,
+				14DC37C923374CFB00867A92 /* SQH1TitleView.xib */,
+				149AC8862339BEE6009C88AB /* SQProfileHeaderView.h */,
+				149AC8872339BEE6009C88AB /* SQProfileHeaderView.m */,
+				149AC8892339BEF1009C88AB /* SQProfileHeaderView.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -236,8 +245,10 @@
 				14DC37D123374F7700867A92 /* Main */,
 				14DC37D023374F6E00867A92 /* Coms */,
 				14D633B123376549004FD86A /* Tools */,
-				14233206233F923C00D4FA3B /* Model */,
 				14DC37E423374FC300867A92 /* UI */,
+				140BBD1F23408B660077E130 /* Connections */,
+				14CA7F0723408C6A00910428 /* Time */,
+				14CA7F0823408C7E00910428 /* Energy */,
 				14DC37D423374FA500867A92 /* SQExtension */,
 				14E97DCE2335014B004FC20D /* Main.storyboard */,
 				14E97DD42335014C004FC20D /* Assets.xcassets */,
@@ -326,8 +337,8 @@
 			files = (
 				149AC8992339F7D4009C88AB /* SQSearchInputView.xib in Resources */,
 				14DC37CB23374CFB00867A92 /* SQH1TitleView.xib in Resources */,
+				140BBD1E23408AED0077E130 /* SQConnectionEventsViewController.storyboard in Resources */,
 				14E97DD82335014C004FC20D /* LaunchScreen.storyboard in Resources */,
-				140BBD1B23405A390077E130 /* SQProjectTimeView.xib in Resources */,
 				14E97DD52335014C004FC20D /* Assets.xcassets in Resources */,
 				14E97DD02335014B004FC20D /* Main.storyboard in Resources */,
 				149AC88A2339BEF1009C88AB /* SQProfileHeaderView.xib in Resources */,
@@ -368,7 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DC37E123374FA500867A92 /* UIView+SQExtension.m in Sources */,
-				140BBD162340550F0077E130 /* SQProjectTimeViewController.m in Sources */,
+				140BBD162340550F0077E130 /* SQTimeEventsViewController.m in Sources */,
 				14E97DDB2335014C004FC20D /* main.m in Sources */,
 				14DC37E323374FA500867A92 /* UIColor+SQExtension.m in Sources */,
 				14DC37E72337509E00867A92 /* SQNavigationController.m in Sources */,
@@ -379,16 +390,15 @@
 				14DC37CC23374CFB00867A92 /* SQH1TitleView.m in Sources */,
 				149AC8982339F7D4009C88AB /* SQSearchInputView.m in Sources */,
 				14040349233F887300D0BC12 /* SQTabBarController.m in Sources */,
-				14D633B0233763FF004FD86A /* SQAuthorizationManager.m in Sources */,
+				14D633B0233763FF004FD86A /* SQAuthorizationTool.m in Sources */,
 				14233205233F923700D4FA3B /* SQConnectionModel.m in Sources */,
 				142787F6233CBC1F0000FEBB /* SQEnergyViewController.m in Sources */,
 				142787F3233CB4AB0000FEBB /* SQTimeViewController.m in Sources */,
 				149AC8882339BEE6009C88AB /* SQProfileHeaderView.m in Sources */,
-				140BBD19234059E30077E130 /* SQProjectTimeView.m in Sources */,
 				14DC37E023374FA500867A92 /* NSObject+SQExtension.m in Sources */,
 				1404034A233F887300D0BC12 /* SQTabbarControllerAnimatedTransitioning.m in Sources */,
 				14DC37CF23374DC600867A92 /* SQConnectionsViewController.m in Sources */,
-				149AC8852339B92F009C88AB /* SQAddConnectionViewController.m in Sources */,
+				149AC8852339B92F009C88AB /* SQConnectionEventsViewController.m in Sources */,
 				14E97DCA2335014B004FC20D /* SceneDelegate.m in Sources */,
 				142787FC233CBC980000FEBB /* SQH1TitleViewController.m in Sources */,
 				14DC37E223374FA500867A92 /* UIImage+SQExtension.m in Sources */,

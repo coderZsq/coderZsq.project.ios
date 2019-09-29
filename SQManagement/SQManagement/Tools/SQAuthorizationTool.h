@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQAuthorizationManager : NSObject
+@interface SQAuthorizationTool : NSObject
 
 + (void)fetchContacts: (void(^)(NSString *, NSArray *))callback;
 

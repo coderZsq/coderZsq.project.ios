@@ -1,24 +1,32 @@
 //
-//  SQTimeViewController.m
+//  SQConnectionsViewController.m
 //  SQManagement
 //
-//  Created by 朱双泉 on 2019/9/26.
+//  Created by 朱双泉 on 2019/9/22.
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "SQTimeViewController.h"
+#import "SQConnectionsViewController.h"
 #import "SQH1TitleView.h"
 #import "SQSearchInputView.h"
-#import "SQProjectTimeViewController.h"
+#import "SQAuthorizationTool.h"
+#import "SQConnectionEventsViewController.h"
+#import "SQConnectionModel.h"
 
-@interface SQTimeViewController ()
+@interface SQConnectionsViewController ()
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @end
 
-@implementation SQTimeViewController
+@implementation SQConnectionsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"时间";
+    self.title = @"人脉";    
+    self.dataSource = [NSMutableArray array];
+    [SQAuthorizationTool fetchContacts:^(NSString *name, NSArray *phoneNumbers) {
+        [self.dataSource addObject:name];
+        [self.tableView reloadData];
+    }];
 }
 
 - (BOOL)isShowNavigationShadowImage {
@@ -31,7 +39,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) return 0;
-    else return 20;
+    else return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -39,7 +47,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%li", indexPath.row];
+    cell.textLabel.text = self.dataSource[indexPath.row];
     return cell;
 }
 
@@ -55,7 +63,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController pushViewController:[SQProjectTimeViewController new] animated:YES];
+    SQConnectionEventsViewController *connectionEventsVc = [[UIStoryboard storyboardWithName:NSStringFromClass(SQConnectionEventsViewController.class) bundle:nil] instantiateInitialViewController];
+    SQConnectionModel *connection = [SQConnectionModel new];
+    connection.name = self.dataSource[indexPath.row];
+    connectionEventsVc.connection = connection;
+    [self.navigationController pushViewController:connectionEventsVc animated:YES];
 }
 
 @end

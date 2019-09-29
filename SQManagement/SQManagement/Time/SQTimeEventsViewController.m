@@ -6,13 +6,13 @@
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "SQProjectTimeViewController.h"
+#import "SQTimeEventsViewController.h"
 
-@interface SQProjectTimeViewController ()
+@interface SQTimeEventsViewController ()
 
 @end
 
-@implementation SQProjectTimeViewController
+@implementation SQTimeEventsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

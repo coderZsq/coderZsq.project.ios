@@ -51,6 +51,37 @@
             </objects>
             <point key="canvasLocation" x="213.04347826086959" y="220.98214285714286"/>
         </scene>
+        <!--Connection Events View Controller-->
+        <scene sceneID="lcI-xu-gSS">
+            <objects>
+                <tableViewController id="Vc5-ha-Xna" customClass="SQConnectionEventsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="wwX-G7-be9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="separatorInset" minX="55" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Vc5-ha-Xna" id="Tk7-85-uoO"/>
+                            <outlet property="delegate" destination="Vc5-ha-Xna" id="RYT-nj-HC7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Nns-H4-WZ8">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="R4a-ex-d6Y">
+                            <connections>
+                                <action selector="cancelButtonClick:" destination="Vc5-ha-Xna" id="KyL-BW-0we"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="fkl-dW-kZg">
+                            <connections>
+                                <action selector="doneButtonClick:" destination="Vc5-ha-Xna" id="mFc-Vp-hXa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTB-bg-kbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2963.768115942029" y="220.98214285714286"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="vDH-oL-Qck">
             <objects>
@@ -62,7 +93,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="QcG-as-Xre" kind="relationship" relationship="rootViewController" id="fz7-Uc-Rfk"/>
+                        <segue destination="Vc5-ha-Xna" kind="relationship" relationship="rootViewController" id="fz7-Uc-Rfk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqX-mb-Pr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -206,16 +237,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwQ-iV-Vvw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2960.8695652173915" y="-1132.3660714285713"/>
-        </scene>
-        <!--SQConnectionEventsViewController-->
-        <scene sceneID="oLX-Ku-mI7">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SQConnectionEventsViewController" id="QcG-as-Xre" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="w0h-tl-iXN"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pU1-iL-rMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2963.768115942029" y="220.98214285714286"/>
         </scene>
     </scenes>
 </document>

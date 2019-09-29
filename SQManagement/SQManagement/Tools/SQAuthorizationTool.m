@@ -1,15 +1,15 @@
 //
-//  SQAuthorizationManager.m
+//  SQAuthorizationTool.m
 //  SQManagement
 //
 //  Created by 朱双泉 on 2019/9/22.
 //  Copyright © 2019 Castie!. All rights reserved.
 //
 
-#import "SQAuthorizationManager.h"
+#import "SQAuthorizationTool.h"
 #import <Contacts/Contacts.h>
 
-@implementation SQAuthorizationManager
+@implementation SQAuthorizationTool
 
 + (void)fetchContacts:(void (^)(NSString *, NSArray *))callback {
     dispatch_async(dispatch_get_main_queue(), ^{

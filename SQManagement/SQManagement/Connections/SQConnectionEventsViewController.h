@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SQAddConnectionViewController : UITableViewController
+@class SQConnectionModel;
+
+@interface SQConnectionEventsViewController : UITableViewController
+
+@property (nonatomic, strong) SQConnectionModel *connection;
 
 @end
 
