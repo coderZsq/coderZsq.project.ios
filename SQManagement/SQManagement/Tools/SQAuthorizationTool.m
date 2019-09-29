@@ -105,11 +105,20 @@
                 [postalAddresses addObject:[NSString stringWithFormat:@"%@: 国家: %@, 省: %@, 城市: %@, 街道: %@, 邮编: %@", label, country, state, city, street, code]];
             }
             obj.postalAddresses = postalAddresses;
-            obj.dates = contact.dates;
-            obj.urlAddresses = contact.urlAddresses;
-            obj.contactRelations = contact.contactRelations;
-            obj.socialProfiles = contact.socialProfiles;
-            obj.instantMessageAddresses = contact.instantMessageAddresses;
+            NSMutableArray *dates = @[].mutableCopy;
+            for (CNLabeledValue *date in contact.dates) {
+                NSString *label = [CNLabeledValue localizedStringForLabel:date.label];
+                id dateComponents = date.value;
+                NSDate *value = [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
+                NSDateFormatter *dateFormatter = [NSDateFormatter new];
+                dateFormatter.dateFormat = @"yyyy年MM月dd日 HH:mm:ss";
+                [dates addObject:[NSString stringWithFormat:@"%@: %@", label, [dateFormatter stringFromDate:value]]];
+            }
+            obj.dates = dates;
+//            obj.urlAddresses = contact.urlAddresses;
+//            obj.contactRelations = contact.contactRelations;
+//            obj.socialProfiles = contact.socialProfiles;
+//            obj.instantMessageAddresses = contact.instantMessageAddresses;
             [array addObject:obj];
         }];
         if (callback) {
