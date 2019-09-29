@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,11 +32,11 @@
             </objects>
             <point key="canvasLocation" x="1123.1884057971015" y="220.98214285714286"/>
         </scene>
-        <!--Item-->
+        <!--人脉-->
         <scene sceneID="aVS-SP-C6N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uRP-gN-aQg" customClass="SQNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RQ8-7F-Usz"/>
+                    <tabBarItem key="tabBarItem" title="人脉" id="RQ8-7F-Usz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tVa-Z8-Q9g">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -112,7 +113,9 @@
                             <outlet property="delegate" destination="v7y-8g-PbY" id="qOh-0f-HuK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lUA-dJ-38I"/>
+                    <navigationItem key="navigationItem" id="lUA-dJ-38I">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aBZ-ad-ktQ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESJ-Sq-Qn0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,11 +140,11 @@
             </objects>
             <point key="canvasLocation" x="-728" y="-453"/>
         </scene>
-        <!--Item-->
+        <!--精力-->
         <scene sceneID="M4l-7K-M1h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xFr-vW-13h" customClass="SQNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pqD-2Z-Kay"/>
+                    <tabBarItem key="tabBarItem" title="精力" id="pqD-2Z-Kay"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LFH-0g-Ao2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -163,23 +166,28 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W2g-NK-v9Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
                             <outlet property="dataSource" destination="re7-3g-Afi" id="CNk-VW-air"/>
                             <outlet property="delegate" destination="re7-3g-Afi" id="VIZ-Y7-QfW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VsG-H7-AMn"/>
+                    <navigationItem key="navigationItem" id="VsG-H7-AMn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="x1e-wd-dvg">
+                            <connections>
+                                <segue destination="fhq-xq-wex" kind="showDetail" id="ySr-ap-iS6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JW-42-1aS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1122" y="-1132"/>
         </scene>
-        <!--Item-->
+        <!--时间-->
         <scene sceneID="pLa-TX-CoX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PlH-0R-Wjq" customClass="SQNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="12t-an-Qc2"/>
+                    <tabBarItem key="tabBarItem" title="时间" id="12t-an-Qc2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EGv-XJ-P8n">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -193,6 +201,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oe-8c-8xp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="213" y="-1132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="675-tC-Ad4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fhq-xq-wex" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ElU-oG-zhk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UBK-s3-7bQ" kind="relationship" relationship="rootViewController" id="pyY-dY-Y4W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zQ-Ls-Fbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2053.6231884057975" y="-1132.3660714285713"/>
+        </scene>
+        <!--Project Time View Controller-->
+        <scene sceneID="bfH-z7-Xcl">
+            <objects>
+                <viewController id="UBK-s3-7bQ" customClass="SQProjectTimeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z9s-qE-ToN" customClass="SQProjectTimeView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eGq-if-VdV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zwH-UF-93d">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="kRb-s0-jvD"/>
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="zeL-gX-vUC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwQ-iV-Vvw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2960.8695652173915" y="-1132.3660714285713"/>
         </scene>
     </scenes>
 </document>
