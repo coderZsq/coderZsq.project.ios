@@ -23,8 +23,14 @@
     [super viewDidLoad];
     self.title = @"人脉";    
     self.dataSource = [NSMutableArray array];
-    [SQAuthorizationTool fetchContacts:^(NSString *name, NSArray *phoneNumbers) {
-        [self.dataSource addObject:name];
+    [SQAuthorizationTool fetchContacts:^(NSArray * _Nonnull contacts) {
+        for (SQContact *contact in contacts) {
+            SQConnectionModel *model = [SQConnectionModel new];
+            model.profile = contact.imageData;
+            model.name = [NSString stringWithFormat:@"%@%@", contact.familyName, contact.givenName];
+            model.occupation = contact.jobTitle;
+            [self.dataSource addObject:model];
+        }
         [self.tableView reloadData];
     }];
 }
@@ -47,7 +53,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = self.dataSource[indexPath.row];
+    SQConnectionModel *model = self.dataSource[indexPath.row];
+    cell.textLabel.text = model.name;
     return cell;
 }
 
@@ -64,9 +71,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     SQConnectionEventsViewController *connectionEventsVc = [[UIStoryboard storyboardWithName:NSStringFromClass(SQConnectionEventsViewController.class) bundle:nil] instantiateInitialViewController];
-    SQConnectionModel *connection = [SQConnectionModel new];
-    connection.name = self.dataSource[indexPath.row];
-    connectionEventsVc.connection = connection;
+    connectionEventsVc.connection = self.dataSource[indexPath.row];
     [self.navigationController pushViewController:connectionEventsVc animated:YES];
 }
 

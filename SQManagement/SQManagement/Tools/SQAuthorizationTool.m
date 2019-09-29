@@ -9,9 +9,12 @@
 #import "SQAuthorizationTool.h"
 #import <Contacts/Contacts.h>
 
+@implementation SQContact
+@end
+
 @implementation SQAuthorizationTool
 
-+ (void)fetchContacts:(void (^)(NSString *, NSArray *))callback {
++ (void)fetchContacts:(void (^)(NSArray * _Nonnull))callback{
     dispatch_async(dispatch_get_main_queue(), ^{
         CNContactStore *store = [[CNContactStore alloc] init];
         CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType: CNEntityTypeContacts];
@@ -24,18 +27,94 @@
                 }
             }];
         }
-        CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactFamilyNameKey, CNContactGivenNameKey,CNContactPhoneNumbersKey]];
+        NSArray *keys = @[
+            CNContactIdentifierKey,
+            CNContactNamePrefixKey,
+            CNContactGivenNameKey,
+            CNContactMiddleNameKey,
+            CNContactFamilyNameKey,
+            CNContactPreviousFamilyNameKey,
+            CNContactNameSuffixKey,
+            CNContactNicknameKey,
+            CNContactOrganizationNameKey,
+            CNContactDepartmentNameKey,
+            CNContactJobTitleKey,
+            CNContactPhoneticGivenNameKey,
+            CNContactPhoneticMiddleNameKey,
+            CNContactPhoneticFamilyNameKey,
+            CNContactPhoneticOrganizationNameKey,
+            CNContactBirthdayKey,
+            CNContactNonGregorianBirthdayKey,
+            CNContactImageDataKey,
+            CNContactThumbnailImageDataKey,
+            CNContactImageDataAvailableKey,
+            CNContactTypeKey,
+            CNContactPhoneNumbersKey,
+            CNContactEmailAddressesKey,
+            CNContactPostalAddressesKey,
+            CNContactDatesKey,
+            CNContactUrlAddressesKey,
+            CNContactRelationsKey,
+            CNContactSocialProfilesKey,
+            CNContactInstantMessageAddressesKey
+        ];
+        CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
+        NSMutableArray *array = [NSMutableArray array];
         [store enumerateContactsWithFetchRequest:request error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
-            NSString *name = [contact.familyName stringByAppendingString:contact.givenName];
+            SQContact *obj = [SQContact new];
+            obj.identifier = contact.identifier;
+            obj.namePrefix = contact.namePrefix;
+            obj.givenName = contact.givenName;
+            obj.middleName = contact.middleName;
+            obj.familyName = contact.familyName;
+            obj.previousFamilyName = contact.previousFamilyName;
+            obj.nameSuffix = contact.nameSuffix;
+            obj.nickname = contact.nickname;
+            obj.organizationName = contact.organizationName;
+            obj.departmentName = contact.departmentName;
+            obj.jobTitle = contact.jobTitle;
+            obj.phoneticGivenName = contact.phoneticGivenName;
+            obj.phoneticMiddleName = contact.phoneticMiddleName;
+            obj.phoneticFamilyName = contact.phoneticFamilyName;
+            obj.phoneticOrganizationName = contact.phoneticOrganizationName;
+            obj.birthday = contact.birthday;
+            obj.nonGregorianBirthday = contact.nonGregorianBirthday;
+            obj.imageData = contact.imageData;
+            obj.thumbnailImageData = contact.thumbnailImageData;
+            obj.imageDataAvailable = contact.imageDataAvailable;
             NSMutableArray *phoneNumbers = @[].mutableCopy;
             for (CNLabeledValue *phoneNumber in contact.phoneNumbers) {
                 CNPhoneNumber *phoneNumberValue = phoneNumber.value;
                 [phoneNumbers addObject:phoneNumberValue.stringValue];
             }
-            if (callback) {
-                callback(name, phoneNumbers);
+            obj.phoneNumbers = phoneNumbers;
+            NSMutableArray *emailAddresses = @[].mutableCopy;
+            for (CNLabeledValue *emailAddress in contact.emailAddresses) {
+                [emailAddresses addObject:[CNLabeledValue localizedStringForLabel:emailAddress.label]];
             }
+            obj.emailAddresses = emailAddresses;
+            NSMutableArray *postalAddresses = @[].mutableCopy;
+            for (CNLabeledValue *postalAddress in contact.postalAddresses) {
+                NSString *label = [CNLabeledValue localizedStringForLabel:postalAddress.label];
+                id detail = postalAddress.value;
+                id country = [detail valueForKey:CNPostalAddressCountryKey];
+                id state = [detail valueForKey:CNPostalAddressStateKey];
+                id city = [detail valueForKey:CNPostalAddressCityKey];
+                id street = [detail valueForKey:CNPostalAddressStreetKey];
+                id code = [detail valueForKey:CNPostalAddressPostalCodeKey];
+                [postalAddresses addObject:[NSString stringWithFormat:@"%@: 国家: %@, 省: %@, 城市: %@, 街道: %@, 邮编: %@", label, country, state, city, street, code]];
+            }
+            obj.postalAddresses = postalAddresses;
+            obj.dates = contact.dates;
+            obj.urlAddresses = contact.urlAddresses;
+            obj.contactRelations = contact.contactRelations;
+            obj.socialProfiles = contact.socialProfiles;
+            obj.instantMessageAddresses = contact.instantMessageAddresses;
+            [array addObject:obj];
         }];
+        if (callback) {
+            callback(array);
+        }
     });
 }
 
