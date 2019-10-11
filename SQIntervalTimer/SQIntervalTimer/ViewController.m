@@ -46,7 +46,7 @@
 }
 
 - (void)configureView {
-        [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:(UIControlEventValueChanged)];
+    [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:(UIControlEventValueChanged)];
     self.segmentedControl.selectedSegmentIndex = 1;
     [self segmentedControlValueChanged:self.segmentedControl];
 }
