@@ -11,9 +11,7 @@
 @interface ViewController ()<UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *circles;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *operators;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
 @property (strong, nonatomic) NSMutableArray *dataSource;
 @property (strong, nonatomic) NSMutableArray *numbers;
@@ -24,7 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialData];
-    [self configureView];
 }
 
 - (void)initialData {
@@ -48,12 +45,6 @@
     self.numbers = @[@0, @0, @0].mutableCopy;
 }
 
-- (void)configureView {
-    [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:(UIControlEventValueChanged)];
-    self.segmentedControl.selectedSegmentIndex = 1;
-    [self segmentedControlValueChanged:self.segmentedControl];
-}
-
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
@@ -73,12 +64,6 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.numbers[component] = self.dataSource[component][row];
-}
-
-- (void)segmentedControlValueChanged:(UISegmentedControl *)sender {
-    for (UILabel *label in self.labels) {
-        label.text = @[@"时", @"分", @"秒"][sender.selectedSegmentIndex];
-    }
 }
 
 - (IBAction)operatorEventTouchUpInside:(UIButton *)sender {
