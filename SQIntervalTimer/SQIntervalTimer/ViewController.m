@@ -14,25 +14,27 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
 @property (strong, nonatomic) NSMutableArray *dataSource;
+@property (strong, nonatomic) NSMutableArray *numbers;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadData];
+    [self initialData];
     [self configureView];
 }
 
-- (void)loadData {
+- (void)initialData {
     self.dataSource = [NSMutableArray array];
     NSMutableArray *actions = [NSMutableArray array];
-    for (NSUInteger i = 0; i <= 60; i++)
+    for (NSUInteger i = 1; i <= 60; i++)
         [actions addObject:@(i).stringValue];
     [self.dataSource addObject:actions];
     NSMutableArray *breaks = [NSMutableArray array];
-    for (NSUInteger i = 1; i <= 60; i++)
+    for (NSUInteger i = 0; i <= 60; i++)
         [breaks addObject:@(i).stringValue];
     [self.dataSource addObject:breaks];
     NSMutableArray *times = [NSMutableArray array];
@@ -43,6 +45,7 @@
         view.layer.cornerRadius = view.bounds.size.width * 0.5;
         view.layer.masksToBounds = YES;
     }
+    self.numbers = @[@0, @0, @0].mutableCopy;
 }
 
 - (void)configureView {
@@ -68,6 +71,10 @@
     return [[NSAttributedString alloc] initWithString:self.dataSource[component][row] attributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.numbers[component] = self.dataSource[component][row];
+}
+
 - (void)segmentedControlValueChanged:(UISegmentedControl *)sender {
     for (UILabel *label in self.labels) {
         label.text = @[@"时", @"分", @"秒"][sender.selectedSegmentIndex];
@@ -75,6 +82,20 @@
 }
 
 - (IBAction)operatorEventTouchUpInside:(UIButton *)sender {
+    [self operatorsStyleToggle];
+    
+    NSNumber *action = self.numbers[0];
+    __block NSUInteger number = action.integerValue;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        if (number == 0) {
+            [timer invalidate];
+        }
+        self.countDownLabel.text = @(number).stringValue;
+        number--;
+    }];
+}
+
+- (void)operatorsStyleToggle {
     for (UIView *operator in self.operators) {
         operator.backgroundColor = [UIColor colorWithRed:133 / 255. green:85 / 255. blue:32 / 255. alpha:1];
         if ([operator isKindOfClass:UIButton.class]) {

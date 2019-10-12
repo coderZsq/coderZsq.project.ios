@@ -25,6 +25,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="IP9-Xy-nc1"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHu-8m-66E">
+                                <rect key="frame" x="15" y="96" width="69" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-Ly-a3k">
+                                <rect key="frame" x="301" y="101" width="98" height="32"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="时"/>
+                                    <segment title="分"/>
+                                    <segment title="秒"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPF-DO-Rzk">
                                 <rect key="frame" x="149.5" y="253" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -35,23 +51,6 @@
                                 <rect key="frame" x="246.5" y="253" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.76684117892066839" green="0.76684117892066839" blue="0.76684117892066839" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-Ly-a3k">
-                                <rect key="frame" x="301" y="101" width="98" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="时"/>
-                                    <segment title="分"/>
-                                    <segment title="秒"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHu-8m-66E">
-                                <rect key="frame" x="15" y="96" width="69" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="执行" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-mf-wOK">
@@ -138,6 +137,13 @@
                                     <action selector="operatorEventTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZQ5-1H-g9x"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qep-A9-VTe">
+                                <rect key="frame" x="142" y="426" width="130" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -151,6 +157,7 @@
                             <constraint firstItem="Qjv-ld-sNL" firstAttribute="centerY" secondItem="PQY-cO-PkF" secondAttribute="centerY" id="C7L-Y2-fj1"/>
                             <constraint firstItem="13o-bN-7YL" firstAttribute="centerY" secondItem="8Xd-6t-B0t" secondAttribute="centerY" id="CuN-3w-unM"/>
                             <constraint firstItem="kli-UI-BPo" firstAttribute="leading" secondItem="5GG-lx-Gu6" secondAttribute="trailing" constant="33.5" id="D1h-q0-uD7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yDf-Ly-a3k" secondAttribute="trailing" constant="15" id="DnA-lw-3UE"/>
                             <constraint firstItem="5GG-lx-Gu6" firstAttribute="centerY" secondItem="8Xd-6t-B0t" secondAttribute="centerY" id="G19-l3-Si0"/>
                             <constraint firstItem="hPF-DO-Rzk" firstAttribute="leading" secondItem="T9I-mf-wOK" secondAttribute="trailing" constant="33.5" id="HXN-a6-dY0"/>
                             <constraint firstItem="Qjv-ld-sNL" firstAttribute="centerY" secondItem="YgB-3O-hDN" secondAttribute="centerY" id="JZX-Uz-BBH"/>
@@ -163,6 +170,7 @@
                             <constraint firstItem="6xl-uf-8Po" firstAttribute="centerX" secondItem="GWO-WE-4Fc" secondAttribute="centerX" id="QbR-Ld-nLV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6xl-uf-8Po" secondAttribute="trailing" constant="35" id="REI-Uw-I3y"/>
                             <constraint firstItem="5GG-lx-Gu6" firstAttribute="leading" secondItem="13o-bN-7YL" secondAttribute="trailing" constant="7.5" id="UER-90-AZI"/>
+                            <constraint firstItem="yDf-Ly-a3k" firstAttribute="centerY" secondItem="kHu-8m-66E" secondAttribute="centerY" id="WSf-4K-GFQ"/>
                             <constraint firstItem="8Xd-6t-B0t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="7.5" id="jGe-kk-M1I"/>
                             <constraint firstItem="Qjv-ld-sNL" firstAttribute="centerX" secondItem="PQY-cO-PkF" secondAttribute="centerX" id="jSg-kn-13Y"/>
                             <constraint firstItem="kHu-8m-66E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="qr7-lB-hzT"/>
@@ -173,6 +181,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="countDownLabel" destination="Qep-A9-VTe" id="asv-iF-gSy"/>
                         <outlet property="pickView" destination="8Xd-6t-B0t" id="wK1-Iw-6Kg"/>
                         <outlet property="segmentedControl" destination="yDf-Ly-a3k" id="czB-NI-ewo"/>
                         <outletCollection property="circles" destination="GWO-WE-4Fc" id="fsu-1k-hEj"/>
