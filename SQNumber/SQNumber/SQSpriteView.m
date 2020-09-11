@@ -6,23 +6,32 @@
 //
 
 #import "SQSpriteView.h"
-#import "SQTimer.h"
 
 @interface SQSpriteView ()
 
-@property (nonatomic, copy) NSString *directionTimerId;
-@property (nonatomic, copy) NSString *frameTimerId;
+@property (nonatomic, strong) NSTimer *directionTimer;
+@property (nonatomic, strong) NSTimer *frameTimer;
 
 @end
 
 @implementation SQSpriteView
 
+- (void)dealloc {
+    [self clearTimer];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self updateCoordinate];
+        [self performSelector:@selector(updateCoordinate)
+                   withObject:nil afterDelay:(arc4random() % 3)];
     }
     return self;
+}
+
+- (void)clearTimer {
+    [self.directionTimer invalidate];
+    [self.frameTimer invalidate];
 }
 
 typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
@@ -39,11 +48,12 @@ typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
 
 - (void)updateCoordinate {
     __block NSInteger direction = 0;
-        
-    self.directionTimerId = [SQTimer execTask:^{
+    
+    self.directionTimer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
         direction = arc4random() % 9;
-    } start:0 interval:2 repeats:YES async:NO];
-    self.frameTimerId = [SQTimer execTask:^{
+    }];
+    
+    self.frameTimer = [NSTimer scheduledTimerWithTimeInterval:0.03 repeats:YES block:^(NSTimer * _Nonnull timer) {
         CGRect frame = self.frame;
         switch (direction) {
             case SQSpriteDirectionNone:
@@ -91,12 +101,7 @@ typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
         } else if (self.frame.origin.y + self.bounds.size.height + margin >= self.superview.bounds.size.height) {
             direction = SQSpriteDirectionUp;
         }
-    } start:0 interval:0.03 repeats:YES async:NO];
-}
-
-- (void)clearTimer {
-    [SQTimer cancelTask:self.directionTimerId];
-    [SQTimer cancelTask:self.frameTimerId];
+    }];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -104,6 +109,8 @@ typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
     [self clearTimer];
     
     if (self.matched) return;
+    
+    [self.superview bringSubviewToFront:self];
     
     UITouch * touch = [touches anyObject];
     CGPoint current = [touch locationInView:self];
@@ -128,6 +135,7 @@ typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
     
     _match = CGRectContainsRect(self.matchRect, self.frame);
     if (self.isMatch) {
+        [self.superview sendSubviewToBack:self];
         [self clearTimer];
     } else {
         [self updateCoordinate];

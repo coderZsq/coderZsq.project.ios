@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1461A83A250BC1BC006CE5FE /* SQSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1461A839250BC1BC006CE5FE /* SQSceneView.m */; };
 		14EABDA3250B57520091F19B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EABDA2250B57520091F19B /* AppDelegate.m */; };
 		14EABDA6250B57520091F19B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EABDA5250B57520091F19B /* SceneDelegate.m */; };
 		14EABDA9250B57520091F19B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EABDA8250B57520091F19B /* ViewController.m */; };
@@ -15,10 +16,11 @@
 		14EABDB1250B57530091F19B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EABDAF250B57530091F19B /* LaunchScreen.storyboard */; };
 		14EABDB4250B57530091F19B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EABDB3250B57530091F19B /* main.m */; };
 		14EABDC1250B60A10091F19B /* SQSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EABDC0250B60A10091F19B /* SQSpriteView.m */; };
-		14EABE11250BB6FA0091F19B /* SQTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EABE0F250BB6F90091F19B /* SQTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1461A838250BC1BC006CE5FE /* SQSceneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQSceneView.h; sourceTree = "<group>"; };
+		1461A839250BC1BC006CE5FE /* SQSceneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQSceneView.m; sourceTree = "<group>"; };
 		14EABD9E250B57520091F19B /* SQNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EABDA1250B57520091F19B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		14EABDA2250B57520091F19B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,8 +35,6 @@
 		14EABDB3250B57530091F19B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14EABDBF250B60A10091F19B /* SQSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSpriteView.h; sourceTree = "<group>"; };
 		14EABDC0250B60A10091F19B /* SQSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSpriteView.m; sourceTree = "<group>"; };
-		14EABE0F250BB6F90091F19B /* SQTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQTimer.m; sourceTree = "<group>"; };
-		14EABE10250BB6FA0091F19B /* SQTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQTimer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +73,10 @@
 				14EABDA5250B57520091F19B /* SceneDelegate.m */,
 				14EABDA7250B57520091F19B /* ViewController.h */,
 				14EABDA8250B57520091F19B /* ViewController.m */,
+				1461A838250BC1BC006CE5FE /* SQSceneView.h */,
+				1461A839250BC1BC006CE5FE /* SQSceneView.m */,
 				14EABDBF250B60A10091F19B /* SQSpriteView.h */,
 				14EABDC0250B60A10091F19B /* SQSpriteView.m */,
-				14EABE10250BB6FA0091F19B /* SQTimer.h */,
-				14EABE0F250BB6F90091F19B /* SQTimer.m */,
 				14EABDAA250B57520091F19B /* Main.storyboard */,
 				14EABDAD250B57530091F19B /* Assets.xcassets */,
 				14EABDAF250B57530091F19B /* LaunchScreen.storyboard */,
@@ -158,8 +158,8 @@
 			files = (
 				14EABDA9250B57520091F19B /* ViewController.m in Sources */,
 				14EABDA3250B57520091F19B /* AppDelegate.m in Sources */,
+				1461A83A250BC1BC006CE5FE /* SQSceneView.m in Sources */,
 				14EABDB4250B57530091F19B /* main.m in Sources */,
-				14EABE11250BB6FA0091F19B /* SQTimer.m in Sources */,
 				14EABDA6250B57520091F19B /* SceneDelegate.m in Sources */,
 				14EABDC1250B60A10091F19B /* SQSpriteView.m in Sources */,
 			);
