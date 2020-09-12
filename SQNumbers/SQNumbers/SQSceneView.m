@@ -1,6 +1,6 @@
 //
 //  SQSceneView.m
-//  SQNumber
+//  SQNumbers
 //
 //  Created by 朱双泉 on 2020/9/11.
 //  Copyright © 2020 朱双泉. All rights reserved.
@@ -14,7 +14,7 @@
 - (void)renderToCanvas:(UIView *)superView {
     [superView addSubview:self];
     
-    NSInteger capacity = self.capacity ? self.capacity : 3;
+    NSInteger capacity = self.capacity ? self.capacity : 5;
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:capacity];
     
     UIView *containerView = [UIView new];
@@ -29,8 +29,8 @@
     CGFloat innerViewH = innerViewW;
     CGFloat innerViewY = (containerViewH - innerViewH) * 0.5;
     CGFloat innerViewS = (containerViewW - (innerViewW * capacity)) / (capacity + 1);
-    CGFloat movableViewW = innerViewW - 20;
-    CGFloat movableViewH = movableViewW;
+    CGFloat spriteViewW = innerViewW - 20;
+    CGFloat spriteViewH = spriteViewW;
     for (NSInteger i = 0; i < capacity; i++) {
         UIView *innerView = [UIView new];
         CGFloat innerViewX = innerViewS + (i * (innerViewW + innerViewS));
@@ -67,17 +67,17 @@
             }
         };
         
-        CGFloat movableViewX = arc4random() % (int)(self.bounds.size.width - movableViewW);
-        CGFloat movableViewY = arc4random() % (int)(self.bounds.size.height - movableViewH);
-        spriteView.frame = CGRectMake(movableViewX, movableViewY, movableViewW, movableViewH);
+        CGFloat spriteViewX = arc4random() % (int)(self.bounds.size.width - spriteViewW);
+        CGFloat spriteViewY = arc4random() % (int)(self.bounds.size.height - spriteViewH);
+        spriteView.frame = CGRectMake(spriteViewX, spriteViewY, spriteViewW, spriteViewH);
         [self addSubview:spriteView];
         
-        UILabel *movableLabel = [UILabel new];
-        movableLabel.text = innerLabel.text;
-        movableLabel.textAlignment = innerLabel.textAlignment;
-        movableLabel.font = innerLabel.font;
-        movableLabel.frame = spriteView.bounds;
-        [spriteView addSubview:movableLabel];
+        UILabel *spriteLabel = [UILabel new];
+        spriteLabel.text = innerLabel.text;
+        spriteLabel.textAlignment = innerLabel.textAlignment;
+        spriteLabel.font = innerLabel.font;
+        spriteLabel.frame = spriteView.bounds;
+        [spriteView addSubview:spriteLabel];
     }
 }
 

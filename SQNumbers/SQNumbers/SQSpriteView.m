@@ -1,11 +1,13 @@
 //
 //  SQSpriteView.m
+//  SQNumbers
 //
-//  Created by Doubles_Z on 15/9/5.
-//  Copyright (c) 2015年 Doubles_Z. All rights reserved.
+//  Created by 朱双泉 on 2020/9/11.
+//  Copyright © 2020 朱双泉. All rights reserved.
 //
 
 #import "SQSpriteView.h"
+#import "SQRandoms.h"
 
 @interface SQSpriteView ()
 
@@ -24,7 +26,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self performSelector:@selector(updateCoordinate)
-                   withObject:nil afterDelay:(arc4random() % 3)];
+                   withObject:nil afterDelay:[SQRandoms randomNumberFrom:0 to:1 accuracy:8]];
     }
     return self;
 }
@@ -32,6 +34,8 @@
 - (void)clearTimer {
     [self.directionTimer invalidate];
     [self.frameTimer invalidate];
+    self.directionTimer = nil;
+    self.frameTimer = nil;
 }
 
 typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
@@ -49,42 +53,44 @@ typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
 - (void)updateCoordinate {
     __block NSInteger direction = 0;
     
-    self.directionTimer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    NSTimeInterval randomInterval = [SQRandoms randomNumberFrom:1 to:3 accuracy:16];
+    self.directionTimer = [NSTimer scheduledTimerWithTimeInterval: randomInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
         direction = arc4random() % 9;
     }];
     
     self.frameTimer = [NSTimer scheduledTimerWithTimeInterval:0.03 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        NSInteger offset = 1;
         CGRect frame = self.frame;
         switch (direction) {
             case SQSpriteDirectionNone:
                 break;
             case SQSpriteDirectionUp:
-                frame.origin.y -= 1;
+                frame.origin.y -= offset;
                 break;
             case SQSpriteDirectionDown:
-                frame.origin.y += 1;
+                frame.origin.y += offset;
                 break;
             case SQSpriteDirectionLeft:
-                frame.origin.x -= 1;
+                frame.origin.x -= offset;
                 break;
             case SQSpriteDirectionRight:
-                frame.origin.x += 1;
+                frame.origin.x += offset;
                 break;
             case SQSpriteDirectionLeftUp: {
-                frame.origin.x -= 1;
-                frame.origin.y -= 1;
+                frame.origin.x -= offset;
+                frame.origin.y -= offset;
             }   break;
             case SQSpriteDirectionRightUp: {
-                frame.origin.x += 1;
-                frame.origin.y -= 1;
+                frame.origin.x += offset;
+                frame.origin.y -= offset;
             }   break;
             case SQSpriteDirectionLeftDown: {
-                frame.origin.x -= 1;
-                frame.origin.y += 1;
+                frame.origin.x -= offset;
+                frame.origin.y += offset;
             }   break;
             case SQSpriteDirectionRightDown: {
-                frame.origin.x += 1;
-                frame.origin.y += 1;
+                frame.origin.x += offset;
+                frame.origin.y += offset;
             }   break;
             default:
                 break;
@@ -135,7 +141,7 @@ typedef NS_ENUM(NSUInteger, SQSpriteDirection) {
     
     _match = CGRectContainsRect(self.matchRect, self.frame);
     if (self.isMatch) {
-        [self.superview sendSubviewToBack:self];
+        [self removeFromSuperview];
         [self clearTimer];
     } else {
         [self updateCoordinate];

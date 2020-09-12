@@ -1,11 +1,14 @@
 //
 //  SQSpriteView.h
+//  SQNumbers
 //
-//  Created by Doubles_Z on 15/9/5.
-//  Copyright (c) 2015年 Doubles_Z. All rights reserved.
+//  Created by 朱双泉 on 2020/9/11.
+//  Copyright © 2020 朱双泉. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface SQSpriteView : UIView
 
@@ -19,3 +22,4 @@
 
 @end
 
+NS_ASSUME_NONNULL_END
