@@ -6,15 +6,23 @@
 //  Copyright © 2020 朱双泉. All rights reserved.
 //
 
+#import "SceneDelegate.h"
 #import "SQSceneView.h"
 #import "SQSpriteView.h"
+
+@interface SQSceneView ()
+
+@property (nonatomic, assign) NSInteger currnetLevel;
+
+@end
 
 @implementation SQSceneView
 
 - (void)renderToCanvas:(UIView *)superView {
     [superView addSubview:self];
     
-    NSInteger capacity = self.capacity ? self.capacity : 5;
+    self.currnetLevel += 1;
+    NSInteger capacity = arc4random_uniform(5) + 1;
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:capacity];
     
     UIView *containerView = [UIView new];
@@ -63,7 +71,17 @@
                 }
             }
             if (successed) {
-                NSLog(@"游戏通关");
+                UIAlertController *altvc = [UIAlertController alertControllerWithTitle:@"闯关成功" message:[NSString stringWithFormat:@"恭喜你通过第%li关, 请进入第%li关", self.currnetLevel, self.currnetLevel + 1] preferredStyle:UIAlertControllerStyleAlert];
+                [altvc addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    for (UIView *view in self.subviews) {
+                        [view removeFromSuperview];
+                    }
+                    [self renderToCanvas:superView];
+                }]];
+                NSArray *array = [[[UIApplication sharedApplication] connectedScenes] allObjects];
+                UIWindowScene *windowScene = (UIWindowScene *)array.firstObject;
+                SceneDelegate *delegate = (SceneDelegate *)windowScene.delegate;
+                [delegate.window.rootViewController presentViewController:altvc animated:YES completion:nil];
             }
         };
         

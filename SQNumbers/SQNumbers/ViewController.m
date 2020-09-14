@@ -20,7 +20,6 @@
     
     SQSceneView *sceneView = [SQSceneView new];
     sceneView.frame = self.view.bounds;
-    sceneView.capacity = arc4random() % 6;
     [sceneView renderToCanvas:self.view];
     
 }
