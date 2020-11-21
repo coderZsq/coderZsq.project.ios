@@ -45,6 +45,10 @@ info.plist root \<dict>\</dict>中添加ATS
 </dict>
 ```
 
+```shell
+$ npm i koa koa-router koa-send koa-multer
+```
+
 ```js
 const Router = require('koa-router');
 const send = require('koa-send');
