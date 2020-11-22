@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self sharedNetworkReachability];
+    [self debug_AFNURLRequestSerialSerialization];
 }
 
 - (void)create_a_downloadTask {
@@ -115,30 +115,30 @@
 
 - (void)create_an_uploadTaskFor_a_MultiPartRequestWithProgress {
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://localhost:8080/afn/uploadTask/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileURL:[NSURL fileURLWithPath:@"/Users/zhushuangquan/Desktop/AFN.png"] name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
-        } error:nil];
+        [formData appendPartWithFileURL:[NSURL fileURLWithPath:@"/Users/zhushuangquan/Desktop/AFN.png"] name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
+    } error:nil];
     
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-
+    
     NSURLSessionUploadTask *uploadTask;
     uploadTask = [manager
                   uploadTaskWithStreamedRequest:request
                   progress:^(NSProgress * _Nonnull uploadProgress) {
-                      // This is not called back on the main queue.
-                      // You are responsible for dispatching to the main queue for UI updates
-                      dispatch_async(dispatch_get_main_queue(), ^{
-                          //Update the progress view
-                          [self.progressView setProgress:uploadProgress.fractionCompleted];
-                      });
-                  }
+        // This is not called back on the main queue.
+        // You are responsible for dispatching to the main queue for UI updates
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //Update the progress view
+            [self.progressView setProgress:uploadProgress.fractionCompleted];
+        });
+    }
                   completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                      if (error) {
-                          NSLog(@"Error: %@", error);
-                      } else {
-                          NSLog(@"%@ %@", response, responseObject);
-                      }
-                  }];
-
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"%@ %@", response, responseObject);
+        }
+    }];
+    
     [uploadTask resume];
 }
 
@@ -146,7 +146,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-
+    
     NSURL *URL = [NSURL URLWithString:@"http://localhost:8080/afn/dataTask/get"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
@@ -165,6 +165,14 @@
     }];
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+
+- (void)debug_AFNURLRequestSerialSerialization {
+    NSLog(@"URL: %@", AFPercentEscapedStringFromString(@"http://localhost:8080/afn/dataTask/get?a=1&b=2&c=3"));
+    // URL: http%3A//localhost%3A8080/afn/dataTask/get?a%3D1%26b%3D2%26c%3D3
+    
+    NSLog(@"QueryString: %@", AFQueryStringFromParameters(@{@"a": @1, @"b": @2,  @"c": @3}));
+    // QueryString: a=1&b=2&c=3
 }
 
 @end
