@@ -27,11 +27,18 @@ const upload = multer({
   storage
 });
 
-router.post('/uploadTask/upload', upload.single('afn'), (ctx, next) => {
+router.post('/uploadTask/upload', upload.single('file'), (ctx, next) => {
   console.log(ctx.req.file);
   ctx.response.body = {
     msg: 'upload success!'
   };
+});
+
+router.get('/dataTask/get', (ctx, next) => {
+  ctx.status = 200;
+  ctx.body = {
+    msg: 'get success!'
+  }
 });
 
 module.exports = router;

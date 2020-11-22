@@ -9,14 +9,14 @@
 #import <AFNetworking.h>
 
 @interface ViewController ()
-
+@property (nonatomic, weak) IBOutlet UIProgressView *progressView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self create_an_uploadTask];
+    [self sharedNetworkReachability];
 }
 
 - (void)create_a_downloadTask {
@@ -105,12 +105,66 @@
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager POST:@"http://localhost:8080/afn/uploadTask/upload" parameters:nil headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSURL *filePath = [NSURL fileURLWithPath:@"/Users/zhushuangquan/Desktop/AFN.png"];
-        [formData appendPartWithFileURL:filePath name:@"afn" error:nil];
+        [formData appendPartWithFileURL:filePath name:@"file" error:nil];
     } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"Success: %@", responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)create_an_uploadTaskFor_a_MultiPartRequestWithProgress {
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://localhost:8080/afn/uploadTask/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileURL:[NSURL fileURLWithPath:@"/Users/zhushuangquan/Desktop/AFN.png"] name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
+        } error:nil];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+
+    NSURLSessionUploadTask *uploadTask;
+    uploadTask = [manager
+                  uploadTaskWithStreamedRequest:request
+                  progress:^(NSProgress * _Nonnull uploadProgress) {
+                      // This is not called back on the main queue.
+                      // You are responsible for dispatching to the main queue for UI updates
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          //Update the progress view
+                          [self.progressView setProgress:uploadProgress.fractionCompleted];
+                      });
+                  }
+                  completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                      if (error) {
+                          NSLog(@"Error: %@", error);
+                      } else {
+                          NSLog(@"%@ %@", response, responseObject);
+                      }
+                  }];
+
+    [uploadTask resume];
+}
+
+- (void)create_a_dataTask {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    NSURL *URL = [NSURL URLWithString:@"http://localhost:8080/afn/dataTask/get"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"%@ %@", response, responseObject);
+        }
+    }];
+    [dataTask resume];
+}
+
+- (void)sharedNetworkReachability {
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+    }];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 
 @end

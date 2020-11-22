@@ -145,7 +145,7 @@ router.post('/uploadTask/upload', upload.single('afn'), (ctx, next) => {
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager POST:@"http://localhost:8080/afn/uploadTask/upload" parameters:nil headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSURL *filePath = [NSURL fileURLWithPath:@"/Users/zhushuangquan/Desktop/AFN.png"];
-        [formData appendPartWithFileURL:filePath name:@"afn" error:nil];
+        [formData appendPartWithFileURL:filePath name:@"file" error:nil];
     } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"Success: %@", responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -156,19 +156,190 @@ router.post('/uploadTask/upload', upload.single('afn'), (ctx, next) => {
 
 ```js
 {
-  fieldname: 'afn',
-  originalname: 'AFN.png',
+  fieldname: 'file',
+  originalname: 'AFN.jpg',
   encoding: '7bit',
-  mimetype: 'image/png',
+  mimetype: 'image/jpeg',
   destination: 'uploads/',
-  filename: '1605983019624.png',
-  path: 'uploads/1605983019624.png',
+  filename: '1606012485650.jpg',
+  path: 'uploads/1606012485650.jpg',
   size: 88871
 }
 ```
 
 ```js
 Success: { msg = 'upload success!' }
+```
+
+```objc
+- (void)create_an_uploadTaskFor_a_MultiPartRequestWithProgress {
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://localhost:8080/afn/uploadTask/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileURL:[NSURL fileURLWithPath:@"/Users/zhushuangquan/Desktop/AFN.png"] name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg" error:nil];
+        } error:nil];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+
+    NSURLSessionUploadTask *uploadTask;
+    uploadTask = [manager
+                  uploadTaskWithStreamedRequest:request
+                  progress:^(NSProgress * _Nonnull uploadProgress) {
+                      // This is not called back on the main queue.
+                      // You are responsible for dispatching to the main queue for UI updates
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          //Update the progress view
+                          [self.progressView setProgress:uploadProgress.fractionCompleted];
+                      });
+                  }
+                  completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                      if (error) {
+                          NSLog(@"Error: %@", error);
+                      } else {
+                          NSLog(@"%@ %@", response, responseObject);
+                      }
+                  }];
+
+    [uploadTask resume];
+}
+```
+
+```objc
+<NSHTTPURLResponse: 0x600000f74ee0> { URL: http://localhost:8080/afn/uploadTask/upload } { Status Code: 200, Headers {
+    Connection =     (
+        "keep-alive"
+    );
+    "Content-Length" =     (
+        25
+    );
+    "Content-Type" =     (
+        "application/json; charset=utf-8"
+    );
+    Date =     (
+        "Sun, 22 Nov 2020 02:47:06 GMT"
+    );
+    "Keep-Alive" =     (
+        "timeout=5"
+    );
+} } {
+    msg = "upload success!";
+}
+```
+
+```objc
+- (void)create_a_dataTask {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    NSURL *URL = [NSURL URLWithString:@"http://localhost:8080/afn/dataTask/get"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"%@ %@", response, responseObject);
+        }
+    }];
+    [dataTask resume];
+}
+```
+
+```js
+router.get('/dataTask/get', (ctx, next) => {
+  ctx.status = 200;
+  ctx.body = {
+    msg: 'get success!'
+  }
+});
+```
+
+```objc
+<NSHTTPURLResponse: 0x600002b5c960> { URL: http://localhost:8080/afn/dataTask/get } { Status Code: 200, Headers {
+    Connection =     (
+        "keep-alive"
+    );
+    "Content-Length" =     (
+        22
+    );
+    "Content-Type" =     (
+        "application/json; charset=utf-8"
+    );
+    Date =     (
+        "Sun, 22 Nov 2020 02:55:30 GMT"
+    );
+    "Keep-Alive" =     (
+        "timeout=5"
+    );
+} } {
+    msg = "get success!";
+}
+```
+
+```objc
+/*
+ * Configuration options for an NSURLSession.  When a session is
+ * created, a copy of the configuration object is made - you cannot
+ * modify the configuration of a session after it has been created.
+ *
+ * The shared session uses the global singleton credential, cache
+ * and cookie storage objects.
+ *
+ * An ephemeral session has no persistent disk storage for cookies,
+ * cache or credentials.
+ *
+ * A background session can be used to perform networking operations
+ * on behalf of a suspended application, within certain constraints.
+ */
+API_AVAILABLE(macos(10.9), ios(7.0), watchos(2.0), tvos(9.0))
+@interface NSURLSessionConfiguration : NSObject <NSCopying>
+```
+
+```objc
+@interface NSURL: NSObject <NSSecureCoding, NSCopying>
+{
+    NSString *_urlString;
+    NSURL *_baseURL;
+    void *_clients;
+    void *_reserved;
+}
+```
+
+```objc
+@interface NSURLRequest : NSObject <NSSecureCoding, NSCopying, NSMutableCopying>
+{
+    @private
+    NSURLRequestInternal *_internal;
+}
+```
+
+```objc
+@interface NSMutableURLRequest : NSURLRequest
+```
+
+```objc
+@interface NSURLSessionDownloadTask : NSURLSessionTask
+```
+
+```objc
+@interface NSURLSessionUploadTask : NSURLSessionDataTask
+```
+
+```objc
+@interface NSURLSessionDataTask : NSURLSessionTask
+```
+
+```objc
+- (void)sharedNetworkReachability {
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+    }];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+```
+
+```
+Reachability: Reachable via WiFi
+Reachability: Not Reachable
 ```
 
 ```shell
