@@ -1,11 +1,13 @@
 ## AFNetworking
 
-[Github 官方文档](https://github.com/AFNetworking/AFNetworking)
-[AFNetworking 4.0.1 源码下载](https://github.com/AFNetworking/AFNetworking/archive/4.0.1.zip)
-
 >AFNetworking是一个适用于iOS，macOS，watchOS和tvOS的令人愉悦的网络库。它建立在Foundation URL loading System的基础上，扩展了Cocoa中内置的强大的高级网络抽象。它具有模块化的体系结构，以及精心设计的，功能丰富的API，使用起来很愉快。
 
-### AFNetworking Debug
+- [Github 官方文档](https://github.com/AFNetworking/AFNetworking)
+- [AFNetworking 4.0.1 源码下载](https://github.com/AFNetworking/AFNetworking/archive/4.0.1.zip)
+- [关注我 获取中文版源码](https://github.com/coderZsq/coderZsq.project.ios/tree/master/SQDebug)
+
+
+## 0x00 准备工作
 
 ```shell
 $ pod init
@@ -48,6 +50,8 @@ info.plist root \<dict>\</dict>中添加ATS
 ```shell
 $ npm i koa koa-router koa-send koa-multer
 ```
+
+## 0x01 搭建服务器体验AFNetworking
 
 ```js
 const Router = require('koa-router');
@@ -337,6 +341,8 @@ Reachability: Reachable via WiFi
 Reachability: Not Reachable
 ```
 
+## 0x02 导览AFNetworing知识架构
+
 ```shell
 $ cd AFNetworking-4.0.1
 $ tree
@@ -403,7 +409,10 @@ $ tree
     └── AFURLResponseSerialization.m
 ```
 
-AFNetworking.h
+```objc
+#import <"AFNetworking.h">
+```
+
 ```objc
 #import <Foundation/Foundation.h>
 #import <Availability.h>
@@ -469,6 +478,8 @@ Contains:   Mac OS X和iPhone的TARGET_条件的自动配置
     #import "AFURLSessionManager.h"
     #import "AFHTTPSessionManager.h"
 ```
+
+## 0x03 AFNetworking请求序列化.h文件详解
 
 ```objc
 #import "AFURLRequestSerialization.h"
@@ -656,10 +667,6 @@ typedef NS_ENUM(NSUInteger, AFHTTPRequestQueryStringSerializationStyle) {
                                   delay:(NSTimeInterval)delay;
 
 @end
-```
-
-```objc
-@interface AFHTTPRequestSerializer : NSObject <AFURLRequestSerialization>
 ```
 
 ```objc
@@ -898,6 +905,305 @@ AFPropertyListRequestSerializer是AFHTTPRequestSerializer的子类，它使用NS
                         writeOptions:(NSPropertyListWriteOptions)writeOptions;
 
 @end
+```
+
+```objc
+///----------------
+/// @name 常数
+///----------------
+
+/**
+ ##错误域
+
+ 以下错误域是预定义的。
+
+ -`NSString * const AFURLRequestSerializationErrorDomain`
+
+ ###常数
+
+ AFURLRequestSerializationErrorDomain AFURLRequestSerializer错误。
+ AFURLRequestSerializationErrorDomain的错误代码对应于NSURLErrorDomain的代码。
+ */
+FOUNDATION_EXPORT NSString * const AFURLRequestSerializationErrorDomain;
+
+/**
+ ##用户信息字典键
+
+ 除了为NSError定义的密钥外，这些密钥还可以存在于用户信息字典中。
+
+ -`NSString * const AFNetworkingOperationFailingURLRequestErrorKey`
+
+ ###常数
+
+ AFNetworkingOperationFailingURLRequestErrorKey
+ 相应的值为“ NSURLRequest”，其中包含与错误相关联的操作请求。 该密钥仅存在于“ AFURLRequestSerializationErrorDomain”中。
+ */
+FOUNDATION_EXPORT NSString * const AFNetworkingOperationFailingURLRequestErrorKey;
+
+/**
+ ## HTTP请求输入流的限制带宽
+
+ @see -throttleBandwidthWithPacketSize：delay：
+
+ ###常数
+
+ kAFUploadStream3GSuggestedPacketSize
+ 最大数据包大小，以字节数为单位。 等于16kb。
+
+ kAFUploadStream3GSuggestedDelay
+ 每次读取数据包的延迟时间。 等于0.2秒。
+ */
+FOUNDATION_EXPORT NSUInteger const kAFUploadStream3GSuggestedPacketSize;
+FOUNDATION_EXPORT NSTimeInterval const kAFUploadStream3GSuggestedDelay;
+```
+
+```objc
+NSLog(@"AFURLRequestSerializationErrorDomain: %@", AFURLRequestSerializationErrorDomain);
+```
+
+```
+AFURLRequestSerializationErrorDomain: com.alamofire.error.serialization.request
+```
+
+```objc
+NSLog(@"AFNetworkingOperationFailingURLRequestErrorKey: %@", AFNetworkingOperationFailingURLRequestErrorKey);
+```
+
+```
+AFNetworkingOperationFailingURLRequestErrorKey: com.alamofire.serialization.request.error.response
+```
+
+```objc
+NSLog(@"kAFUploadStream3GSuggestedPacketSize: %lu", kAFUploadStream3GSuggestedPacketSize);
+```
+
+```
+kAFUploadStream3GSuggestedPacketSize: 16384
+```
+
+```objc
+NSLog(@"kAFUploadStream3GSuggestedDelay: %f", kAFUploadStream3GSuggestedDelay);
+```
+
+```
+kAFUploadStream3GSuggestedDelay: 0.200000
+```
+
+## 0x04 AFNetworking请求序列化.m详解
+
+```objc
+NSString * const AFURLRequestSerializationErrorDomain = @"com.alamofire.error.serialization.request";
+NSString * const AFNetworkingOperationFailingURLRequestErrorKey = @"com.alamofire.serialization.request.error.response";
+```
+
+```objc
+/**
+ AFURLRequestSerialization.m line: 191
+ */
+typedef NSString * (^AFQueryStringSerializationBlock)(NSURLRequest *request, id parameters, NSError *__autoreleasing *error);
+```
+
+```objc
+/**
+ 返回遵循RFC 3986的查询字符串键或值的百分比转义字符串。
+   RFC 3986声明以下字符为“保留”字符。
+      -通用分隔符：“：”，“＃”，“ [”，“]”，“ @”，“？”，“ /”
+      -子定界符：“！”，“ $”，“＆”，“'”，“（”，“）”，“ *”，“ +”，“，”，“，”，“ =”
+
+   在RFC 3986-3.4节中，它指出“？” 和“ /”字符不应转义以允许查询字符串包含URL。 因此，所有“保留”字符（“？”除外） 和“ /”应该在查询字符串中转义。
+      -参数字符串：要百分号转义的字符串。
+      -返回：转义百分比的字符串。
+ */
+NSString * AFPercentEscapedStringFromString(NSString *string) {
+    static NSString * const kAFCharactersGeneralDelimitersToEncode = @":#[]@"; // 不包括 ”？” 或“ /”（由于RFC 3986-第3.4节）
+    static NSString * const kAFCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
+
+    NSMutableCharacterSet * allowedCharacterSet = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
+    [allowedCharacterSet removeCharactersInString:[kAFCharactersGeneralDelimitersToEncode stringByAppendingString:kAFCharactersSubDelimitersToEncode]];
+
+	// FIXME: https://github.com/AFNetworking/AFNetworking/pull/3028
+    // return [string stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacterSet];
+
+    static NSUInteger const batchSize = 50;
+
+    NSUInteger index = 0;
+    NSMutableString *escaped = @"".mutableCopy;
+
+    while (index < string.length) {
+        NSUInteger length = MIN(string.length - index, batchSize);
+        NSRange range = NSMakeRange(index, length);
+
+        //为了避免破坏诸如👴🏻👮🏽之类的字符序列
+        range = [string rangeOfComposedCharacterSequencesForRange:range];
+
+        NSString *substring = [string substringWithRange:range];
+        NSString *encoded = [substring stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacterSet];
+        [escaped appendString:encoded];
+
+        index += range.length;
+    }
+
+	return escaped;
+}
+```
+
+```objc
+@interface AFQueryStringPair : NSObject
+@property (readwrite, nonatomic, strong) id field;
+@property (readwrite, nonatomic, strong) id value;
+
+- (instancetype)initWithField:(id)field value:(id)value;
+
+- (NSString *)URLEncodedStringValue;
+@end
+
+@implementation AFQueryStringPair
+
+- (instancetype)initWithField:(id)field value:(id)value {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+
+    self.field = field;
+    self.value = value;
+
+    return self;
+}
+
+- (NSString *)URLEncodedStringValue {
+    if (!self.value || [self.value isEqual:[NSNull null]]) {
+        return AFPercentEscapedStringFromString([self.field description]);
+    } else {
+        return [NSString stringWithFormat:@"%@=%@", AFPercentEscapedStringFromString([self.field description]), AFPercentEscapedStringFromString([self.value description])];
+    }
+}
+
+@end
+```
+
+```objc
+SQQueryStringPair *pair = [[SQQueryStringPair alloc] initWithField:@"a" value:@1];
+```
+
+```objc
+NSLog(@"%@", [pair URLEncodedStringValue]);
+```
+
+```
+a=1
+```
+
+```objc
+SQQueryStringPair *pair2 = [[SQQueryStringPair alloc] initWithField:@"b" value:nil];
+```
+
+```objc
+NSLog(@"%@", [pair2 URLEncodedStringValue]);
+```
+
+```
+b
+```
+
+```objc
+FOUNDATION_EXPORT NSArray * AFQueryStringPairsFromDictionary(NSDictionary *dictionary);
+FOUNDATION_EXPORT NSArray * AFQueryStringPairsFromKeyAndValue(NSString *key, id value);
+
+NSString * AFQueryStringFromParameters(NSDictionary *parameters) {
+    NSMutableArray *mutablePairs = [NSMutableArray array];
+    for (AFQueryStringPair *pair in AFQueryStringPairsFromDictionary(parameters)) {
+        [mutablePairs addObject:[pair URLEncodedStringValue]];
+    }
+
+    return [mutablePairs componentsJoinedByString:@"&"];
+}
+
+NSArray * AFQueryStringPairsFromDictionary(NSDictionary *dictionary) {
+    return AFQueryStringPairsFromKeyAndValue(nil, dictionary);
+}
+
+NSArray * AFQueryStringPairsFromKeyAndValue(NSString *key, id value) {
+    NSMutableArray *mutableQueryStringComponents = [NSMutableArray array];
+
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"description" ascending:YES selector:@selector(compare:)];
+
+    if ([value isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dictionary = value;
+        // 对字典键进行排序以确保查询字符串中的顺序一致，这在反序列化可能含糊的序列（例如字典数组）时很重要
+        for (id nestedKey in [dictionary.allKeys sortedArrayUsingDescriptors:@[ sortDescriptor ]]) {
+            id nestedValue = dictionary[nestedKey];
+            if (nestedValue) {
+                [mutableQueryStringComponents addObjectsFromArray:AFQueryStringPairsFromKeyAndValue((key ? [NSString stringWithFormat:@"%@[%@]", key, nestedKey] : nestedKey), nestedValue)];
+            }
+        }
+    } else if ([value isKindOfClass:[NSArray class]]) {
+        NSArray *array = value;
+        for (id nestedValue in array) {
+            [mutableQueryStringComponents addObjectsFromArray:AFQueryStringPairsFromKeyAndValue([NSString stringWithFormat:@"%@[]", key], nestedValue)];
+        }
+    } else if ([value isKindOfClass:[NSSet class]]) {
+        NSSet *set = value;
+        for (id obj in [set sortedArrayUsingDescriptors:@[ sortDescriptor ]]) {
+            [mutableQueryStringComponents addObjectsFromArray:AFQueryStringPairsFromKeyAndValue(key, obj)];
+        }
+    } else {
+        [mutableQueryStringComponents addObject:[[AFQueryStringPair alloc] initWithField:key value:value]];
+    }
+
+    return mutableQueryStringComponents;
+}
+```
+
+```objc
+NSLog(@"%@", SQQueryStringPairsFromKeyAndValue(@"a", @1));
+```
+```
+(
+    "a=1"
+)
+``` 
+
+```objc 
+NSLog(@"%@", SQQueryStringPairsFromKeyAndValue(@"a", @{@"b": @{@"c": @3}, @"d": @""}));
+```
+
+```
+(
+    "a[b][c]=3",
+    "a[d]="
+)
+```
+
+```objc
+NSLog(@"%@", SQQueryStringPairsFromKeyAndValue(@"a", @[@"b", @{@"c": @3}, @"d"]));
+```
+
+```
+(
+    "a[]=b",
+    "a[][c]=3",
+    "a[]=d"
+)
+```
+
+```objc
+NSLog(@"%@", SQQueryStringPairFromDictionary(@{@"a": @{@"b": @{@"c": @3}, @"d": @""}}));
+```
+
+```
+(
+    "a[b][c]=3",
+    "a[d]="
+)
+```
+
+```objc
+NSLog(@"%@", SQQueryStringFromParameters(@{@"a": @{@"b": @{@"c": @3}, @"d": @""}}));
+```
+
+```
+a[b][c]=3&a[d]=
 ```
 
 ```objc

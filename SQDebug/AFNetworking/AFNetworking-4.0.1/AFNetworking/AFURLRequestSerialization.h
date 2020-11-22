@@ -427,49 +427,49 @@ forHTTPHeaderField:(NSString *)field;
 #pragma mark -
 
 ///----------------
-/// @name Constants
+/// @name 常数
 ///----------------
 
 /**
- ## Error Domains
+ ##错误域
 
- The following error domain is predefined.
+ 以下错误域是预定义的。
 
- - `NSString * const AFURLRequestSerializationErrorDomain`
+ -`NSString * const AFURLRequestSerializationErrorDomain`
 
- ### Constants
+ ###常数
 
- `AFURLRequestSerializationErrorDomain`
- AFURLRequestSerializer errors. Error codes for `AFURLRequestSerializationErrorDomain` correspond to codes in `NSURLErrorDomain`.
+ AFURLRequestSerializationErrorDomain AFURLRequestSerializer错误。
+ AFURLRequestSerializationErrorDomain的错误代码对应于NSURLErrorDomain的代码。
  */
 FOUNDATION_EXPORT NSString * const AFURLRequestSerializationErrorDomain;
 
 /**
- ## User info dictionary keys
+ ##用户信息字典键
 
- These keys may exist in the user info dictionary, in addition to those defined for NSError.
+ 除了为NSError定义的密钥外，这些密钥还可以存在于用户信息字典中。
 
- - `NSString * const AFNetworkingOperationFailingURLRequestErrorKey`
+ -`NSString * const AFNetworkingOperationFailingURLRequestErrorKey`
 
- ### Constants
+ ###常数
 
- `AFNetworkingOperationFailingURLRequestErrorKey`
- The corresponding value is an `NSURLRequest` containing the request of the operation associated with an error. This key is only present in the `AFURLRequestSerializationErrorDomain`.
+ AFNetworkingOperationFailingURLRequestErrorKey
+ 相应的值为“ NSURLRequest”，其中包含与错误相关联的操作请求。 该密钥仅存在于“ AFURLRequestSerializationErrorDomain”中。
  */
 FOUNDATION_EXPORT NSString * const AFNetworkingOperationFailingURLRequestErrorKey;
 
 /**
- ## Throttling Bandwidth for HTTP Request Input Streams
+ ## HTTP请求输入流的限制带宽
 
- @see -throttleBandwidthWithPacketSize:delay:
+ @see -throttleBandwidthWithPacketSize：delay：
 
- ### Constants
+ ###常数
 
- `kAFUploadStream3GSuggestedPacketSize`
- Maximum packet size, in number of bytes. Equal to 16kb.
+ kAFUploadStream3GSuggestedPacketSize
+ 最大数据包大小，以字节数为单位。 等于16kb。
 
- `kAFUploadStream3GSuggestedDelay`
- Duration of delay each time a packet is read. Equal to 0.2 seconds.
+ kAFUploadStream3GSuggestedDelay
+ 每次读取数据包的延迟时间。 等于0.2秒。
  */
 FOUNDATION_EXPORT NSUInteger const kAFUploadStream3GSuggestedPacketSize;
 FOUNDATION_EXPORT NSTimeInterval const kAFUploadStream3GSuggestedDelay;

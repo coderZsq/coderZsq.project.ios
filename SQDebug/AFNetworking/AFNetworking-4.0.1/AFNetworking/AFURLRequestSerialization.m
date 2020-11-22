@@ -33,19 +33,17 @@ NSString * const AFNetworkingOperationFailingURLRequestErrorKey = @"com.alamofir
 typedef NSString * (^AFQueryStringSerializationBlock)(NSURLRequest *request, id parameters, NSError *__autoreleasing *error);
 
 /**
- Returns a percent-escaped string following RFC 3986 for a query string key or value.
- RFC 3986 states that the following characters are "reserved" characters.
-    - General Delimiters: ":", "#", "[", "]", "@", "?", "/"
-    - Sub-Delimiters: "!", "$", "&", "'", "(", ")", "*", "+", ",", ";", "="
+ 返回遵循RFC 3986的查询字符串键或值的百分比转义字符串。
+   RFC 3986声明以下字符为“保留”字符。
+      -通用分隔符：“：”，“＃”，“ [”，“]”，“ @”，“？”，“ /”
+      -子定界符：“！”，“ $”，“＆”，“'”，“（”，“）”，“ *”，“ +”，“，”，“，”，“ =”
 
- In RFC 3986 - Section 3.4, it states that the "?" and "/" characters should not be escaped to allow
- query strings to include a URL. Therefore, all "reserved" characters with the exception of "?" and "/"
- should be percent-escaped in the query string.
-    - parameter string: The string to be percent-escaped.
-    - returns: The percent-escaped string.
+   在RFC 3986-3.4节中，它指出“？” 和“ /”字符不应转义以允许查询字符串包含URL。 因此，所有“保留”字符（“？”除外） 和“ /”应该在查询字符串中转义。
+      -参数字符串：要百分号转义的字符串。
+      -返回：转义百分比的字符串。
  */
 NSString * AFPercentEscapedStringFromString(NSString *string) {
-    static NSString * const kAFCharactersGeneralDelimitersToEncode = @":#[]@"; // does not include "?" or "/" due to RFC 3986 - Section 3.4
+    static NSString * const kAFCharactersGeneralDelimitersToEncode = @":#[]@"; // 不包括 ”？” 或“ /”（由于RFC 3986-第3.4节）
     static NSString * const kAFCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
 
     NSMutableCharacterSet * allowedCharacterSet = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
@@ -63,7 +61,7 @@ NSString * AFPercentEscapedStringFromString(NSString *string) {
         NSUInteger length = MIN(string.length - index, batchSize);
         NSRange range = NSMakeRange(index, length);
 
-        // To avoid breaking up character sequences such as 👴🏻👮🏽
+        //为了避免破坏诸如👴🏻👮🏽之类的字符序列
         range = [string rangeOfComposedCharacterSequencesForRange:range];
 
         NSString *substring = [string substringWithRange:range];
@@ -136,7 +134,7 @@ NSArray * AFQueryStringPairsFromKeyAndValue(NSString *key, id value) {
 
     if ([value isKindOfClass:[NSDictionary class]]) {
         NSDictionary *dictionary = value;
-        // Sort dictionary keys to ensure consistent ordering in query string, which is important when deserializing potentially ambiguous sequences, such as an array of dictionaries
+        // 对字典键进行排序以确保查询字符串中的顺序一致，这在反序列化可能含糊的序列（例如字典数组）时很重要
         for (id nestedKey in [dictionary.allKeys sortedArrayUsingDescriptors:@[ sortDescriptor ]]) {
             id nestedValue = dictionary[nestedKey];
             if (nestedValue) {

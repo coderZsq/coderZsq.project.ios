@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		14A334922568D62500772436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A334912568D62500772436 /* Assets.xcassets */; };
 		14A334952568D62500772436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A334932568D62500772436 /* LaunchScreen.storyboard */; };
 		14A334982568D62500772436 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A334972568D62500772436 /* main.m */; };
+		14ED0256256A480700D370FD /* SQQueryStringPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ED0255256A480700D370FD /* SQQueryStringPair.m */; };
+		14ED0267256A4AD700D370FD /* SQURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ED0266256A4AD700D370FD /* SQURLRequestSerialization.m */; };
 		1E4C433D320B90193A1EE719 /* Pods_AFNetworking_Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E27C56A0FCB7F71F556F4D1 /* Pods_AFNetworking_Debug.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,10 @@
 		14A334942568D62500772436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14A334962568D62500772436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14A334972568D62500772436 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14ED0254256A480700D370FD /* SQQueryStringPair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQQueryStringPair.h; sourceTree = "<group>"; };
+		14ED0255256A480700D370FD /* SQQueryStringPair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQQueryStringPair.m; sourceTree = "<group>"; };
+		14ED0265256A4AD700D370FD /* SQURLRequestSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQURLRequestSerialization.h; sourceTree = "<group>"; };
+		14ED0266256A4AD700D370FD /* SQURLRequestSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQURLRequestSerialization.m; sourceTree = "<group>"; };
 		3E27C56A0FCB7F71F556F4D1 /* Pods_AFNetworking_Debug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFNetworking_Debug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E409C126A533A0A2F1DA57 /* Pods-AFNetworking-Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNetworking-Debug.debug.xcconfig"; path = "Target Support Files/Pods-AFNetworking-Debug/Pods-AFNetworking-Debug.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +80,10 @@
 				14A334892568D62400772436 /* SceneDelegate.m */,
 				14A3348B2568D62400772436 /* ViewController.h */,
 				14A3348C2568D62400772436 /* ViewController.m */,
+				14ED0254256A480700D370FD /* SQQueryStringPair.h */,
+				14ED0255256A480700D370FD /* SQQueryStringPair.m */,
+				14ED0265256A4AD700D370FD /* SQURLRequestSerialization.h */,
+				14ED0266256A4AD700D370FD /* SQURLRequestSerialization.m */,
 				14A3348E2568D62400772436 /* Main.storyboard */,
 				14A334912568D62500772436 /* Assets.xcassets */,
 				14A334932568D62500772436 /* LaunchScreen.storyboard */,
@@ -97,7 +107,6 @@
 				67E409C126A533A0A2F1DA57 /* Pods-AFNetworking-Debug.debug.xcconfig */,
 				002F3802D60E85956ACBBB58 /* Pods-AFNetworking-Debug.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -216,8 +225,10 @@
 			files = (
 				14A3348D2568D62400772436 /* ViewController.m in Sources */,
 				14A334872568D62400772436 /* AppDelegate.m in Sources */,
+				14ED0267256A4AD700D370FD /* SQURLRequestSerialization.m in Sources */,
 				14A334982568D62500772436 /* main.m in Sources */,
 				14A3348A2568D62400772436 /* SceneDelegate.m in Sources */,
+				14ED0256256A480700D370FD /* SQQueryStringPair.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
