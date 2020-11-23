@@ -9,10 +9,6 @@
 
 @interface SQURLRequestSerialization : NSObject
 
-NSString * SQQueryStringFromParameters(NSDictionary *parameters);
 
-NSArray * SQQueryStringPairFromDictionary(NSDictionary *dictionary);
-
-NSArray * SQQueryStringPairsFromKeyAndValue(NSString *key, id value);
 
 @end

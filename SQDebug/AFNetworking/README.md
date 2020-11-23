@@ -6,6 +6,7 @@
 - [AFNetworking 4.0.1 源码下载](https://github.com/AFNetworking/AFNetworking/archive/4.0.1.zip)
 - [关注我 获取中文版源码](https://github.com/coderZsq/coderZsq.project.ios/tree/master/SQDebug)
 
+>2020-11-21
 
 ## 0x00 准备工作
 
@@ -174,6 +175,8 @@ router.post('/uploadTask/upload', upload.single('afn'), (ctx, next) => {
 ```js
 Success: { msg = 'upload success!' }
 ```
+
+>2020-11-22
 
 ```objc
 - (void)create_an_uploadTaskFor_a_MultiPartRequestWithProgress {
@@ -1205,6 +1208,305 @@ NSLog(@"%@", SQQueryStringFromParameters(@{@"a": @{@"b": @{@"c": @3}, @"d": @""}
 ```
 a[b][c]=3&a[d]=
 ```
+
+>2020-11-23
+
+```objc
+@interface AFStreamingMultipartFormData : NSObject <AFMultipartFormData>
+- (instancetype)initWithURLRequest:(NSMutableURLRequest *)urlRequest
+                    stringEncoding:(NSStringEncoding)encoding;
+
+- (NSMutableURLRequest *)requestByFinalizingMultipartFormData;
+@end
+```
+
+```objc
+AFMultipartFormData -> AFURLRequestSerialization.h line 281
+AFStreamingMultipartFormData -> AFURLRequestSerialization.m line 663
+AFMultipartBodyStream -> AFURLRequestSerialization.m line 642
+AFHTTPBodyPart -> AFURLRequestSerialization.m line 624
+```
+
+```objc
+static NSString * AFCreateMultipartFormBoundary() {
+    return [NSString stringWithFormat:@"Boundary+%08X%08X", arc4random(), arc4random()];
+}
+
+static NSString * const kAFMultipartFormCRLF = @"\r\n";
+
+static inline NSString * AFMultipartFormInitialBoundary(NSString *boundary) {
+    return [NSString stringWithFormat:@"--%@%@", boundary, kAFMultipartFormCRLF];
+}
+
+static inline NSString * AFMultipartFormEncapsulationBoundary(NSString *boundary) {
+    return [NSString stringWithFormat:@"%@--%@%@", kAFMultipartFormCRLF, boundary, kAFMultipartFormCRLF];
+}
+
+static inline NSString * AFMultipartFormFinalBoundary(NSString *boundary) {
+    return [NSString stringWithFormat:@"%@--%@--%@", kAFMultipartFormCRLF, boundary, kAFMultipartFormCRLF];
+}
+
+static inline NSString * AFContentTypeForPathExtension(NSString *extension) {
+    NSString *UTI = (__bridge_transfer NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)extension, NULL);
+    NSString *contentType = (__bridge_transfer NSString *)UTTypeCopyPreferredTagWithClass((__bridge CFStringRef)UTI, kUTTagClassMIMEType);
+    if (!contentType) {
+        return @"application/octet-stream";
+    } else {
+        return contentType;
+    }
+}
+
+NSUInteger const kAFUploadStream3GSuggestedPacketSize = 1024 * 16;
+NSTimeInterval const kAFUploadStream3GSuggestedDelay = 0.2;
+```
+
+```objc
+@interface AFHTTPBodyPart : NSObject
+@property (nonatomic, assign) NSStringEncoding stringEncoding;
+@property (nonatomic, strong) NSDictionary *headers;
+@property (nonatomic, copy) NSString *boundary;
+@property (nonatomic, strong) id body;
+@property (nonatomic, assign) unsigned long long bodyContentLength;
+@property (nonatomic, strong) NSInputStream *inputStream;
+
+@property (nonatomic, assign) BOOL hasInitialBoundary;
+@property (nonatomic, assign) BOOL hasFinalBoundary;
+
+@property (readonly, nonatomic, assign, getter = hasBytesAvailable) BOOL bytesAvailable;
+@property (readonly, nonatomic, assign) unsigned long long contentLength;
+
+- (NSInteger)read:(uint8_t *)buffer
+        maxLength:(NSUInteger)length;
+@end
+```
+
+```objc
+typedef enum {
+    AFEncapsulationBoundaryPhase = 1,
+    AFHeaderPhase                = 2,
+    AFBodyPhase                  = 3,
+    AFFinalBoundaryPhase         = 4,
+} AFHTTPBodyPartReadPhase;
+
+@interface AFHTTPBodyPart () <NSCopying> {
+    AFHTTPBodyPartReadPhase _phase;
+    NSInputStream *_inputStream;
+    unsigned long long _phaseReadOffset;
+}
+
+- (BOOL)transitionToNextPhase;
+- (NSInteger)readData:(NSData *)data
+           intoBuffer:(uint8_t *)buffer
+            maxLength:(NSUInteger)length;
+@end
+
+@implementation AFHTTPBodyPart
+
+- (instancetype)init {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+
+    [self transitionToNextPhase];
+
+    return self;
+}
+
+- (void)dealloc {
+    if (_inputStream) {
+        [_inputStream close];
+        _inputStream = nil;
+    }
+}
+
+- (NSInputStream *)inputStream {
+    if (!_inputStream) {
+        if ([self.body isKindOfClass:[NSData class]]) {
+            _inputStream = [NSInputStream inputStreamWithData:self.body];
+        } else if ([self.body isKindOfClass:[NSURL class]]) {
+            _inputStream = [NSInputStream inputStreamWithURL:self.body];
+        } else if ([self.body isKindOfClass:[NSInputStream class]]) {
+            _inputStream = self.body;
+        } else {
+            _inputStream = [NSInputStream inputStreamWithData:[NSData data]];
+        }
+    }
+
+    return _inputStream;
+}
+
+- (NSString *)stringForHeaders {
+    NSMutableString *headerString = [NSMutableString string];
+    for (NSString *field in [self.headers allKeys]) {
+        [headerString appendString:[NSString stringWithFormat:@"%@: %@%@", field, [self.headers valueForKey:field], kAFMultipartFormCRLF]];
+    }
+    [headerString appendString:kAFMultipartFormCRLF];
+
+    return [NSString stringWithString:headerString];
+}
+
+- (unsigned long long)contentLength {
+    unsigned long long length = 0;
+
+    NSData *encapsulationBoundaryData = [([self hasInitialBoundary] ? AFMultipartFormInitialBoundary(self.boundary) : AFMultipartFormEncapsulationBoundary(self.boundary)) dataUsingEncoding:self.stringEncoding];
+    length += [encapsulationBoundaryData length];
+
+    NSData *headersData = [[self stringForHeaders] dataUsingEncoding:self.stringEncoding];
+    length += [headersData length];
+
+    length += _bodyContentLength;
+
+    NSData *closingBoundaryData = ([self hasFinalBoundary] ? [AFMultipartFormFinalBoundary(self.boundary) dataUsingEncoding:self.stringEncoding] : [NSData data]);
+    length += [closingBoundaryData length];
+
+    return length;
+}
+
+- (BOOL)hasBytesAvailable {
+    // 如果AFMultipartFormFinalBoundary不适合可用缓冲区，则允许再次调用read：maxLength：
+    if (_phase == AFFinalBoundaryPhase) {
+        return YES;
+    }
+
+    switch (self.inputStream.streamStatus) {
+        case NSStreamStatusNotOpen:
+        case NSStreamStatusOpening:
+        case NSStreamStatusOpen:
+        case NSStreamStatusReading:
+        case NSStreamStatusWriting:
+            return YES;
+        case NSStreamStatusAtEnd:
+        case NSStreamStatusClosed:
+        case NSStreamStatusError:
+        default:
+            return NO;
+    }
+}
+
+- (NSInteger)read:(uint8_t *)buffer
+        maxLength:(NSUInteger)length
+{
+    NSInteger totalNumberOfBytesRead = 0;
+
+    if (_phase == AFEncapsulationBoundaryPhase) {
+        NSData *encapsulationBoundaryData = [([self hasInitialBoundary] ? AFMultipartFormInitialBoundary(self.boundary) : AFMultipartFormEncapsulationBoundary(self.boundary)) dataUsingEncoding:self.stringEncoding];
+        totalNumberOfBytesRead += [self readData:encapsulationBoundaryData intoBuffer:&buffer[totalNumberOfBytesRead] maxLength:(length - (NSUInteger)totalNumberOfBytesRead)];
+    }
+
+    if (_phase == AFHeaderPhase) {
+        NSData *headersData = [[self stringForHeaders] dataUsingEncoding:self.stringEncoding];
+        totalNumberOfBytesRead += [self readData:headersData intoBuffer:&buffer[totalNumberOfBytesRead] maxLength:(length - (NSUInteger)totalNumberOfBytesRead)];
+    }
+
+    if (_phase == AFBodyPhase) {
+        NSInteger numberOfBytesRead = 0;
+
+        numberOfBytesRead = [self.inputStream read:&buffer[totalNumberOfBytesRead] maxLength:(length - (NSUInteger)totalNumberOfBytesRead)];
+        if (numberOfBytesRead == -1) {
+            return -1;
+        } else {
+            totalNumberOfBytesRead += numberOfBytesRead;
+
+            if ([self.inputStream streamStatus] >= NSStreamStatusAtEnd) {
+                [self transitionToNextPhase];
+            }
+        }
+    }
+
+    if (_phase == AFFinalBoundaryPhase) {
+        NSData *closingBoundaryData = ([self hasFinalBoundary] ? [AFMultipartFormFinalBoundary(self.boundary) dataUsingEncoding:self.stringEncoding] : [NSData data]);
+        totalNumberOfBytesRead += [self readData:closingBoundaryData intoBuffer:&buffer[totalNumberOfBytesRead] maxLength:(length - (NSUInteger)totalNumberOfBytesRead)];
+    }
+
+    return totalNumberOfBytesRead;
+}
+
+- (NSInteger)readData:(NSData *)data
+           intoBuffer:(uint8_t *)buffer
+            maxLength:(NSUInteger)length
+{
+    NSRange range = NSMakeRange((NSUInteger)_phaseReadOffset, MIN([data length] - ((NSUInteger)_phaseReadOffset), length));
+    [data getBytes:buffer range:range];
+
+    _phaseReadOffset += range.length;
+
+    if (((NSUInteger)_phaseReadOffset) >= [data length]) {
+        [self transitionToNextPhase];
+    }
+
+    return (NSInteger)range.length;
+}
+
+- (BOOL)transitionToNextPhase {
+    if (![[NSThread currentThread] isMainThread]) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self transitionToNextPhase];
+        });
+        return YES;
+    }
+
+    switch (_phase) {
+        case AFEncapsulationBoundaryPhase:
+            _phase = AFHeaderPhase;
+            break;
+        case AFHeaderPhase:
+            [self.inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+            [self.inputStream open];
+            _phase = AFBodyPhase;
+            break;
+        case AFBodyPhase:
+            [self.inputStream close];
+            _phase = AFFinalBoundaryPhase;
+            break;
+        case AFFinalBoundaryPhase:
+        default:
+            _phase = AFEncapsulationBoundaryPhase;
+            break;
+    }
+    _phaseReadOffset = 0;
+
+    return YES;
+}
+
+#pragma mark - NSCopying
+
+- (instancetype)copyWithZone:(NSZone *)zone {
+    AFHTTPBodyPart *bodyPart = [[[self class] allocWithZone:zone] init];
+
+    bodyPart.stringEncoding = self.stringEncoding;
+    bodyPart.headers = self.headers;
+    bodyPart.bodyContentLength = self.bodyContentLength;
+    bodyPart.body = self.body;
+    bodyPart.boundary = self.boundary;
+
+    return bodyPart;
+}
+
+@end
+```
+
+```objc
+SQHTTPBodyPart *bodyPart = [[SQHTTPBodyPart alloc] init];
+bodyPart.headers = @{
+    @"accept": @"application/json, text/javascript, */*; q=0.01",
+    @"accept-encoding": @"gzip, deflate, br",
+    @"accept-language": @"en-US,en;q=0.9,zh;q=0.8",
+    @"content-length": @"9",
+    @"content-type": @"application/json; charset=UTF-8"
+};
+NSLog(@"%@", [bodyPart stringForHeaders]);
+```
+
+```
+accept: application/json, text/javascript, */*; q=0.01
+accept-language: en-US,en;q=0.9,zh;q=0.8
+content-length: 9
+accept-encoding: gzip, deflate, br
+content-type: application/json; charset=UTF-8
+
+```
+
 
 ```objc
 #import "AFURLSessionManager.h"

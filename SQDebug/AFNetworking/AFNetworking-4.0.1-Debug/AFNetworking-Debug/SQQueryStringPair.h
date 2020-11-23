@@ -7,6 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
+NSString * SQQueryStringFromParameters(NSDictionary *parameters);
+
+NSArray * SQQueryStringPairFromDictionary(NSDictionary *dictionary);
+
+NSArray * SQQueryStringPairsFromKeyAndValue(NSString *key, id value);
+
 @interface SQQueryStringPair : NSObject
 
 @property (readwrite, nonatomic, strong) id field;

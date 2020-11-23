@@ -7,8 +7,8 @@
 
 #import "ViewController.h"
 #import <AFNetworking.h>
-#import "SQQueryStringPair.h"
 #import "SQURLRequestSerialization.h"
+#import "SQHTTPBodyPart.h"
 
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet UIProgressView *progressView;
@@ -184,46 +184,6 @@
     // kAFUploadStream3GSuggestedPacketSize: 16384
     NSLog(@"kAFUploadStream3GSuggestedDelay: %f", kAFUploadStream3GSuggestedDelay);
     // kAFUploadStream3GSuggestedDelay: 0.200000
-    
-    SQQueryStringPair *pair = [[SQQueryStringPair alloc] initWithField:@"a" value:@1];
-    NSLog(@"%@", [pair URLEncodedStringValue]);
-    // a=1
-    
-    SQQueryStringPair *pair2 = [[SQQueryStringPair alloc] initWithField:@"b" value:nil];
-    NSLog(@"%@", [pair2 URLEncodedStringValue]);
-    // b
-    
-    NSLog(@"%@", SQQueryStringPairsFromKeyAndValue(@"a", @1));
-    /**
-     (
-         "a=1"
-     )
-     */
-    
-    NSLog(@"%@", SQQueryStringPairsFromKeyAndValue(@"a", @{@"b": @{@"c": @3}, @"d": @""}));
-    /**
-     (
-         "a[b][c]=3",
-         "a[d]="
-     )
-     */
-    NSLog(@"%@", SQQueryStringPairsFromKeyAndValue(@"a", @[@"b", @{@"c": @3}, @"d"]));
-    /**
-     (
-         "a[]=b",
-         "a[][c]=3",
-         "a[]=d"
-     )
-     */
-    NSLog(@"%@", SQQueryStringPairFromDictionary(@{@"a": @{@"b": @{@"c": @3}, @"d": @""}}));
-    /**
-     (
-         "a[b][c]=3",
-         "a[d]="
-     )
-     */
-    NSLog(@"%@", SQQueryStringFromParameters(@{@"a": @{@"b": @{@"c": @3}, @"d": @""}}));
-    // a[b][c]=3&a[d]=
 }
 
 @end

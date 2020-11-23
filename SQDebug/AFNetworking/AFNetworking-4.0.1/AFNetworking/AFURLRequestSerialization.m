@@ -1096,7 +1096,7 @@ typedef enum {
 }
 
 - (BOOL)hasBytesAvailable {
-    // Allows `read:maxLength:` to be called again if `AFMultipartFormFinalBoundary` doesn't fit into the available buffer
+    // 如果AFMultipartFormFinalBoundary不适合可用缓冲区，则允许再次调用read：maxLength：
     if (_phase == AFFinalBoundaryPhase) {
         return YES;
     }
