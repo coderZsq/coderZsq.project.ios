@@ -897,12 +897,12 @@ AFPropertyListRequestSerializer是AFHTTPRequestSerializer的子类，它使用NS
 @property (nonatomic, assign) NSPropertyListWriteOptions writeOptions;
 
 /**
- Creates and returns a property list serializer with a specified format, read options, and write options.
+ 创建并返回具有指定格式，读取选项和写入选项的属性列表序列化程序。
 
- @param format The property list format.
- @param writeOptions The property list write options.
+   @param format 属性列表格式。
+   @param writeOptions 属性列表写入选项。
 
- @warning The `writeOptions` property is currently unused.
+   @warning`writeOptions`属性当前未使用。
  */
 + (instancetype)serializerWithFormat:(NSPropertyListFormat)format
                         writeOptions:(NSPropertyListWriteOptions)writeOptions;
