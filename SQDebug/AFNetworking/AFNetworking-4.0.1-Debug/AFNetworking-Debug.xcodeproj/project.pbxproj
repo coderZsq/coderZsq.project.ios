@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		143474D1256BFA8300149168 /* SQURLRequestSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 143474D0256BFA8300149168 /* SQURLRequestSerializationTest.m */; };
+		14560566256E957F00746C4A /* SQMultipartBodyStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 14560565256E957F00746C4A /* SQMultipartBodyStream.m */; };
 		14963573256BEC5200B1E31B /* SQHTTPBodyPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 14963572256BEC5200B1E31B /* SQHTTPBodyPart.m */; };
 		149635AB256BFA3600B1E31B /* AFNetworking_DebugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 149635AA256BFA3600B1E31B /* AFNetworking_DebugTests.m */; };
 		14A334872568D62400772436 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A334862568D62400772436 /* AppDelegate.m */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		002F3802D60E85956ACBBB58 /* Pods-AFNetworking-Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNetworking-Debug.release.xcconfig"; path = "Target Support Files/Pods-AFNetworking-Debug/Pods-AFNetworking-Debug.release.xcconfig"; sourceTree = "<group>"; };
 		143474D0256BFA8300149168 /* SQURLRequestSerializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQURLRequestSerializationTest.m; sourceTree = "<group>"; };
+		14560564256E957F00746C4A /* SQMultipartBodyStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQMultipartBodyStream.h; sourceTree = "<group>"; };
+		14560565256E957F00746C4A /* SQMultipartBodyStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQMultipartBodyStream.m; sourceTree = "<group>"; };
 		14963571256BEC5200B1E31B /* SQHTTPBodyPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHTTPBodyPart.h; sourceTree = "<group>"; };
 		14963572256BEC5200B1E31B /* SQHTTPBodyPart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHTTPBodyPart.m; sourceTree = "<group>"; };
 		149635A8256BFA3600B1E31B /* AFNetworking-DebugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AFNetworking-DebugTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +125,8 @@
 				14ED0255256A480700D370FD /* SQQueryStringPair.m */,
 				14963571256BEC5200B1E31B /* SQHTTPBodyPart.h */,
 				14963572256BEC5200B1E31B /* SQHTTPBodyPart.m */,
+				14560564256E957F00746C4A /* SQMultipartBodyStream.h */,
+				14560565256E957F00746C4A /* SQMultipartBodyStream.m */,
 				14ED0265256A4AD700D370FD /* SQURLRequestSerialization.h */,
 				14ED0266256A4AD700D370FD /* SQURLRequestSerialization.m */,
 				14A3348E2568D62400772436 /* Main.storyboard */,
@@ -304,6 +309,7 @@
 			files = (
 				14A3348D2568D62400772436 /* ViewController.m in Sources */,
 				14963573256BEC5200B1E31B /* SQHTTPBodyPart.m in Sources */,
+				14560566256E957F00746C4A /* SQMultipartBodyStream.m in Sources */,
 				14A334872568D62400772436 /* AppDelegate.m in Sources */,
 				14ED0267256A4AD700D370FD /* SQURLRequestSerialization.m in Sources */,
 				14A334982568D62500772436 /* main.m in Sources */,
